@@ -1,0 +1,8 @@
+"イベント：クィーンフェアリー" -> "Event: Queen Fairy"
+"【クィーンフェアリー】" -> "【Queen Fairy】"
+"自然は大切にするのですよ。" -> "Nature is important."
+"粗末に扱えば、必ず牙を剥くでしょう。" -> "If you treat it poorly, you will surely peel off your fangs."
+"【クィーンフェアリー】" -> "【Queen Fairy】"
+"自然の力を授けましょう……キラッ☆" -> "Let's give the power of nature ...... ☆"
+"クィーンフェアリーから不思議な力が与えられた！" -> "Queen Fairy gave a magical power!"
+"次のボスフロアまで、自然感応の威力が二倍になる！" -> "Up to the next boss floor, the power of natural sensitivity doubles!"

@@ -1,0 +1,14 @@
+// EVENT 0010
+Name "Special Boss Difficulty Adjusting 1"
+
+If(1,902,0,-1,2)
+ ChangeSwitch(23,23,0)
+ ShowMessageFace("",0,0,2,1)
+ ShowMessage("You cannot fight this boss on EASY or below.\nThe difficulty will be temporarily set to NORMAL for this fight.")
+ ChangeVariable(908,908,0,1,902)
+ ChangeVariable(902,902,0,0,0)
+ RunCommonEvent(112)
+ 0()
+EndIf()
+0()
+

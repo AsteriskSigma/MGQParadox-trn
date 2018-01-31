@@ -1,0 +1,1859 @@
+=begin
+=An illustrator based script
+
+This is a script that summarizes the basic functions related to an illustration.
+
+
+==Change log
+  Date     Version Author Comment
+==15/09/03 2.0.2   Tris integration J ~ U N T
+==17/09/21 2.2.0   Sunflower integration 3
+=end
+
+#==============================================================================
+# ■ NWConst::LibraryManager
+#----------------------------------------------------------------------------
+# It is a set of methods to acquire and manipulate flag data of an illustration.
+# We mixin and use objects that require functions.
+#==============================================================================
+module NWConst::LibraryManager
+  #--------------------------------------------------------------------------
+  # ● Can an illustration be used?(Is there at least one unlocked picture book?)
+  #--------------------------------------------------------------------------
+  def lib_usable?
+    lib_actor_unlocked? || lib_enemy_unlocked? || lib_weapon_unlocked? || lib_armor_unlocked? || lib_accessory_unlocked? || lib_item_unlocked? || lib_medal_unlocked?
+  end
+  #--------------------------------------------------------------------------
+  # ● Has the actor picture unlocked?
+  #--------------------------------------------------------------------------
+  def lib_actor_unlocked?
+    $game_library.lib_actor_unlocked?
+  end
+  #--------------------------------------------------------------------------
+  # ● Enemy picture book has been unlocked?
+  #--------------------------------------------------------------------------
+  def lib_enemy_unlocked?
+    $game_library.lib_enemy_unlocked?
+  end
+  #--------------------------------------------------------------------------
+  # ● Is the weapon books unlocked?
+  #--------------------------------------------------------------------------
+  def lib_weapon_unlocked?
+    $game_library.lib_weapon_unlocked?
+  end
+  #--------------------------------------------------------------------------
+  # ● Is the armor picture unlocked already?
+  #--------------------------------------------------------------------------
+  def lib_armor_unlocked?
+    $game_library.lib_armor_unlocked?
+  end
+  #--------------------------------------------------------------------------
+  # ● Is the accessory unlocked?
+  #--------------------------------------------------------------------------
+  def lib_accessory_unlocked?
+    $game_library.lib_accessory_unlocked?
+  end
+  #--------------------------------------------------------------------------
+  # ● Is the item booklet unlocked?
+  #--------------------------------------------------------------------------
+  def lib_item_unlocked?
+    $game_library.lib_item_unlocked?
+  end
+  #--------------------------------------------------------------------------
+  # Is the acquisition result unlocked?
+  #--------------------------------------------------------------------------
+  def lib_medal_unlocked?
+    $game_library.lib_medal_unlocked?
+  end
+  #--------------------------------------------------------------------------
+  # ● Actor illustration unlock
+  #--------------------------------------------------------------------------
+  def unlock_lib_actor
+    $game_library.unlock_lib_actor
+  end
+  #--------------------------------------------------------------------------
+  # ● Enemy picture book unlock
+  #--------------------------------------------------------------------------
+  def unlock_lib_enemy
+    $game_library.unlock_lib_enemy
+  end
+  #--------------------------------------------------------------------------
+  # ● Weapon books unlock
+  #--------------------------------------------------------------------------
+  def unlock_lib_weapon
+    $game_library.unlock_lib_weapon
+  end
+  #--------------------------------------------------------------------------
+  # ● Armor picture book unlock
+  #--------------------------------------------------------------------------
+  def unlock_lib_armor
+    $game_library.unlock_lib_armor
+  end
+  #--------------------------------------------------------------------------
+  # ● Accessory unlock
+  #--------------------------------------------------------------------------
+  def unlock_lib_accessory
+    $game_library.unlock_lib_accessory
+  end
+  #--------------------------------------------------------------------------
+  # ● Item picture book unlock
+  #--------------------------------------------------------------------------
+  def unlock_lib_item
+    $game_library.unlock_lib_item
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition record unlock
+  #--------------------------------------------------------------------------
+  def unlock_lib_medal
+    $game_library.unlock_lib_medal
+  end
+  #--------------------------------------------------------------------------
+  # ● Actor illustration lock
+  #--------------------------------------------------------------------------
+  def lock_lib_actor
+    $game_library.lock_lib_actor
+  end
+  #--------------------------------------------------------------------------
+  # ● Enemy indication lock
+  #--------------------------------------------------------------------------
+  def lock_lib_enemy
+    $game_library.lock_lib_enemy
+  end
+  #--------------------------------------------------------------------------
+  # ● Weapon Figure lock
+  #--------------------------------------------------------------------------
+  def lock_lib_weapon
+    $game_library.lock_lib_weapon
+  end
+  #--------------------------------------------------------------------------
+  # ● Armor locked lock
+  #--------------------------------------------------------------------------
+  def lock_lib_armor
+    $game_library.lock_lib_armor
+  end
+  #--------------------------------------------------------------------------
+  # ● Accessory lock
+  #--------------------------------------------------------------------------
+  def lock_lib_accessory
+    $game_library.lock_lib_accessory
+  end
+  #--------------------------------------------------------------------------
+  # ● Item lock lock
+  #--------------------------------------------------------------------------
+  def lock_lib_item
+    $game_library.lock_lib_item
+  end
+  #--------------------------------------------------------------------------
+  # ● acquisition achievement lock
+  #--------------------------------------------------------------------------
+  def lock_lib_medal
+    $game_library.lock_lib_medal
+  end
+  #--------------------------------------------------------------------------
+  # ● Number of times the actor has defeated the enemy
+  #--------------------------------------------------------------------------
+  def actor_defeat(id)
+    $game_library.actor_defeat(id)
+  end
+  #--------------------------------------------------------------------------
+  # ● Number of times the actor made squid
+  #--------------------------------------------------------------------------
+  def actor_carry(id)
+    $game_library.actor_carry(id)
+  end
+  #--------------------------------------------------------------------------
+  # ● Number of times the actor got caught
+  #--------------------------------------------------------------------------
+  def actor_orgasm(id)
+    $game_library.actor_orgasm(id)
+  end
+  #--------------------------------------------------------------------------
+  # ● Number of times the actor became unable to fight
+  #--------------------------------------------------------------------------
+  def actor_down(id)
+    $game_library.actor_down(id)
+  end
+  #--------------------------------------------------------------------------
+  # ● Number of times Enemy got destroyed
+  #--------------------------------------------------------------------------
+  def enemy_down(id)
+    $game_library.enemy_down(id)
+  end
+  #--------------------------------------------------------------------------
+  # ● Number of times enemy won victory
+  #--------------------------------------------------------------------------
+  def enemy_victory(id)
+    $game_library.enemy_victory(id)
+  end
+  #--------------------------------------------------------------------------
+  # ● Number of times Enemy got caught
+  #--------------------------------------------------------------------------
+  def enemy_orgasm(id)
+    $game_library.enemy_orgasm(id)
+  end
+  #--------------------------------------------------------------------------
+  # ● Party battle count acquisition
+  #--------------------------------------------------------------------------
+  def party_battle
+    $game_library.party_battle
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire number of party escape times
+  #--------------------------------------------------------------------------
+  def party_escape
+    $game_library.party_escape
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire number of party defeat
+  #--------------------------------------------------------------------------
+  def party_lose
+    $game_library.party_lose
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire the total number of destroyed parties
+  #--------------------------------------------------------------------------
+  def party_defeat
+    $game_library.party_defeat
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire the total number of knocked down party
+  #--------------------------------------------------------------------------
+  def party_down    
+    $game_library.party_down
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire the total number of parties
+  #--------------------------------------------------------------------------
+  def party_orgasm
+    $game_library.party_orgasm
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire total number of parties
+  #--------------------------------------------------------------------------
+  def party_friendly
+    ($game_party.all_members + $game_party.stand_members).reject{|actor| actor.luca?}.size
+  end  
+  #--------------------------------------------------------------------------
+  # ● Get the number of actors killed
+  #--------------------------------------------------------------------------
+  def actor_down(id)
+    $game_library.actor_down(id)
+  end
+  #--------------------------------------------------------------------------
+  # ● Get the number of actors who got it
+  #--------------------------------------------------------------------------
+  def actor_orgasm(id)
+    $game_library.actor_orgasm(id)
+  end
+  #--------------------------------------------------------------------------
+  # ● Luke gets a number that was made by a group
+  #--------------------------------------------------------------------------
+  def friendly_orgasm
+    $game_library.friendly_orgasm
+  end
+  #--------------------------------------------------------------------------
+  # ● Get Battle Fuck Victory Number
+  #--------------------------------------------------------------------------
+  def battlefuck_win
+    $game_library.battlefuck_win
+  end  
+  #--------------------------------------------------------------------------
+  # ● Get battle fuck defeat number
+  #--------------------------------------------------------------------------
+  def battlefuck_lose
+    $game_library.battlefuck_lose
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire cumulative purchase amount
+  #--------------------------------------------------------------------------
+  def purchase_gold
+    $game_library.purchase_gold
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire number of composures
+  #--------------------------------------------------------------------------
+  def party_synthesize
+    $game_library.party_synthesize
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire number of job change
+  #--------------------------------------------------------------------------
+  def party_class_change
+    $game_library.party_class_change
+  end
+  #--------------------------------------------------------------------------
+  # ● Get number of transformation
+  #--------------------------------------------------------------------------
+  def party_tribe_change
+    $game_library.party_tribe_change
+  end
+  #--------------------------------------------------------------------------
+  # ● Referrals for flags actor discovery flag
+  #--------------------------------------------------------------------------
+  def actor_discovery?(id)
+    $game_library.actor.discovery?(id)
+  end
+  #--------------------------------------------------------------------------
+  # ● Referrals Enumy discovery flags
+  #--------------------------------------------------------------------------
+  def enemy_discovery?(id)
+    $game_library.enemy.discovery?(id)
+  end
+  #--------------------------------------------------------------------------
+  # ● Referrals Weapons Disclosure Flag Referrals
+  #--------------------------------------------------------------------------
+  def weapon_discovery?(id)
+    $game_library.weapon.discovery?(id)
+  end
+  #--------------------------------------------------------------------------
+  # ● Pictorial Armor Tool Detection Flag Display
+  #--------------------------------------------------------------------------
+  def armor_discovery?(id)
+    $game_library.armor.discovery?(id)
+  end
+  #--------------------------------------------------------------------------
+  # ● Inquiry of picture book accessory discovery flag
+  #--------------------------------------------------------------------------
+  def accessory_discovery?(id)
+    $game_library.accessory.discovery?(id)
+  end
+  #--------------------------------------------------------------------------
+  # ● Refer to figure book item discovery flag
+  #--------------------------------------------------------------------------
+  def item_discovery?(id)
+    $game_library.item.discovery?(id)
+  end
+  #--------------------------------------------------------------------------
+  # ● Referrals flag ownership ownership flag
+  #--------------------------------------------------------------------------
+  def actor_had?(id)
+    $game_library.actor.had?(id)
+  end
+  #--------------------------------------------------------------------------
+  # ● Refer to Enumy owned flags
+  #--------------------------------------------------------------------------
+  def enemy_had?(id)
+    $game_library.enemy.had?(id)
+  end
+  #--------------------------------------------------------------------------
+  # ● Referrals weapon ownership flags inquiries
+  #--------------------------------------------------------------------------
+  def weapon_had?(id)
+    $game_library.weapon.had?(id)
+  end
+  #--------------------------------------------------------------------------
+  # ● Pictorial Armor Equipment Owned flag inquiry
+  #--------------------------------------------------------------------------
+  def armor_had?(id)
+    $game_library.armor.had?(id)
+  end
+  #--------------------------------------------------------------------------
+  # ● Display of the accessory ownership flag of the picture book
+  #--------------------------------------------------------------------------
+  def accessory_had?(id)
+    $game_library.accessory.had?(id)
+  end
+  #--------------------------------------------------------------------------
+  # ● Refer to the picture book ownership flag
+  #--------------------------------------------------------------------------
+  def item_had?(id)
+    $game_library.item.had?(id)
+  end
+  #--------------------------------------------------------------------------
+  # ● Disclosure of picture book finder flags
+  #--------------------------------------------------------------------------
+  def set_actor_discovery(*args)
+    $game_library.actor.set_discovery(args)
+  end
+  #--------------------------------------------------------------------------
+  # ● Enclosed Enemy discovery flag disclosure
+  #--------------------------------------------------------------------------
+  def set_enemy_discovery(*args)
+    $game_library.enemy.set_discovery(args)
+  end
+  #--------------------------------------------------------------------------
+  # Disclosure Weapons Disclosure Flag
+  #--------------------------------------------------------------------------
+  def set_weapon_discovery(*args)
+    $game_library.weapon.set_discovery(args)
+  end
+  #--------------------------------------------------------------------------
+  # ● Pictorial Armor tool discovery flag disclosure
+  #--------------------------------------------------------------------------
+  def set_armor_discovery(*args)
+    $game_library.armor.set_discovery(args)
+  end
+  #--------------------------------------------------------------------------
+  # Disclosure accessory discovery flag disclosure
+  #--------------------------------------------------------------------------
+  def set_accessory_discovery(*args)
+    $game_library.accessory.set_discovery(args)
+  end
+  #--------------------------------------------------------------------------
+  # ● Disclosure guidebook discovery flag disclosure
+  #--------------------------------------------------------------------------
+  def set_item_discovery(*args)
+    $game_library.item.set_discovery(args)
+  end
+  #--------------------------------------------------------------------------
+  # ● Booklet owned flag disclosure
+  #--------------------------------------------------------------------------
+  def set_actor_had(*args)
+    $game_library.unlock_actor_item unless $game_library.lib_actor_unlocked?
+    $game_library.actor.set_had(args)
+  end
+  #--------------------------------------------------------------------------
+  # ● Enclosed Enemy possession flag disclosure
+  #--------------------------------------------------------------------------
+  def set_enemy_had(*args)
+    $game_library.unlock_lib_enemy unless $game_library.lib_enemy_unlocked?
+    $game_library.enemy.set_had(args)
+  end
+  #--------------------------------------------------------------------------
+  # ● Disclosure of weapons owned flags
+  #--------------------------------------------------------------------------
+  def set_weapon_had(*args)
+    $game_library.unlock_lib_weapon unless $game_library.lib_weapon_unlocked?
+    $game_library.weapon.set_had(args)
+  end
+  #--------------------------------------------------------------------------
+  # ● Book class guard possession flag disclosure
+  #--------------------------------------------------------------------------
+  def set_armor_had(*args)
+    $game_library.unlock_lib_armor unless $game_library.lib_armor_unlocked?
+    $game_library.armor.set_had(args)
+  end
+  #--------------------------------------------------------------------------
+  # ● Disclosure of accessories owned flag
+  #--------------------------------------------------------------------------
+  def set_accessory_had(*args)
+    $game_library.unlock_lib_accessory unless $game_library.lib_accessory_unlocked?
+    $game_library.accessory.set_had(args)
+  end
+  #--------------------------------------------------------------------------
+  # ● Disclosure of book-owner flags
+  #--------------------------------------------------------------------------
+  def set_item_had(*args)
+    $game_library.unlock_lib_item unless $game_library.lib_item_unlocked?
+    $game_library.item.set_had(args)
+  end
+  #--------------------------------------------------------------------------
+  # ● Picture viewer actor discovery flag erase
+  #--------------------------------------------------------------------------
+  def clear_actor_discovery(*args)
+    $game_library.actor.clear_discovery(args)
+  end
+  #--------------------------------------------------------------------------
+  # ● Enclosed Enemy Discovery Flag
+  #--------------------------------------------------------------------------
+  def clear_enemy_discovery(*args)
+    $game_library.enemy.clear_discovery(args)
+  end
+  #--------------------------------------------------------------------------
+  # ● Illustrator Weapon Discovery Flag Erase
+  #--------------------------------------------------------------------------
+  def clear_weapon_discovery(*args)
+    $game_library.weapon.clear_discovery(args)
+  end
+  #--------------------------------------------------------------------------
+  # ● Pictorial Armor Protection Flag Erase
+  #--------------------------------------------------------------------------
+  def clear_armor_discovery(*args)
+    $game_library.armor.clear_discovery(args)
+  end
+  #--------------------------------------------------------------------------
+  # ● Hakuhodo Accessory Discovery Flag Erase
+  #--------------------------------------------------------------------------
+  def clear_accessory_discovery(*args)
+    $game_library.accessory.clear_discovery(args)
+  end
+  #--------------------------------------------------------------------------
+  # ● Erase the guidebook discovery flag
+  #--------------------------------------------------------------------------
+  def clear_item_discovery(*args)
+    $game_library.item.clear_discovery(args)
+  end
+  #--------------------------------------------------------------------------
+  # ● Figure view Actor owned flag erased
+  #--------------------------------------------------------------------------
+  def clear_actor_had(*args)
+    $game_library.actor.clear_had(args)
+  end
+  #--------------------------------------------------------------------------
+  # ● Enclosed Enemy possession flag erase
+  #--------------------------------------------------------------------------
+  def clear_enemy_had(*args)
+    $game_library.enemy.clear_had(args)
+  end
+  #--------------------------------------------------------------------------
+  # ● Illustrated weapon ownership flag erased
+  #--------------------------------------------------------------------------
+  def clear_weapon_had(*args)
+    $game_library.weapon.clear_had(args)
+  end
+  #--------------------------------------------------------------------------
+  # ● Picture book armor protection owner flag erase
+  #--------------------------------------------------------------------------
+  def clear_armor_had(*args)
+    $game_library.armor.clear_had(args)
+  end
+  #--------------------------------------------------------------------------
+  # ● Entry of accessory ownership flag erase
+  #--------------------------------------------------------------------------
+  def clear_accessory_had(*args)
+    $game_library.accessory.clear_had(args)
+  end
+  #--------------------------------------------------------------------------
+  # ● Picture book item ownership flag erase
+  #--------------------------------------------------------------------------
+  def clear_item_had(*args)
+    $game_library.item.clear_had(args)
+  end
+  #--------------------------------------------------------------------------
+  # ● Listing of Actor Discovery Flag All Disclosure
+  #--------------------------------------------------------------------------
+  def all_actor_discovery
+    $game_library.actor.set_discovery(get_valid_actors)
+  end
+  #--------------------------------------------------------------------------
+  # ● Enclosed Enemy discovery flag Full disclosure
+  #--------------------------------------------------------------------------
+  def all_enemy_discovery
+    $game_library.enemy.set_discovery(get_valid_enemies)
+  end
+  #--------------------------------------------------------------------------
+  # ● Illustration Weapons Discovery Flag All Disclosure
+  #--------------------------------------------------------------------------
+  def all_weapon_discovery
+    $game_library.weapon.set_discovery(get_valid_weapons)
+  end
+  #--------------------------------------------------------------------------
+  # ● Pictorial Armor Tool Detection Flag Disclosure All
+  #--------------------------------------------------------------------------
+  def all_armor_discovery
+    $game_library.armor.set_discovery(get_valid_armors)
+  end
+  #--------------------------------------------------------------------------
+  # ● Entry book accessory discovery flag Disclosure all
+  #--------------------------------------------------------------------------
+  def all_accessory_discovery
+    $game_library.accessory.set_discovery(get_valid_accessories)
+  end
+  #--------------------------------------------------------------------------
+  # ● Disclosure of the figure book discovery flag
+  #--------------------------------------------------------------------------
+  def all_item_discovery
+    $game_library.item.set_discovery(get_valid_items)
+  end
+  #--------------------------------------------------------------------------
+  # ● Listing of Actor Owned Flags All Disclosures
+  #--------------------------------------------------------------------------
+  def all_actor_had
+    $game_library.actor.set_had(get_valid_actors)
+    $game_library.unlock_lib_actor
+  end
+  #--------------------------------------------------------------------------
+  # ● Enclosed Enemy Owned Flag All Disclosure
+  #--------------------------------------------------------------------------
+  def all_enemy_had
+    $game_library.enemy.set_had(get_valid_enemies)
+    $game_library.unlock_lib_enemy
+  end
+  #--------------------------------------------------------------------------
+  # ● Illustrated Weapons Owned Flag All Disclosure
+  #--------------------------------------------------------------------------
+  def all_weapon_had
+    $game_library.weapon.set_had(get_valid_weapons)
+    $game_library.unlock_lib_weapon
+  end
+  #--------------------------------------------------------------------------
+  # ● Pictorial Armor Equipment Owned Flag Disclosure
+  #--------------------------------------------------------------------------
+  def all_armor_had
+    $game_library.armor.set_had(get_valid_armors)
+    $game_library.unlock_lib_armor
+  end
+  #--------------------------------------------------------------------------
+  # ● Entry book accessory flag fully disclosed
+  #--------------------------------------------------------------------------
+  def all_accessory_had
+    $game_library.accessory.set_had(get_valid_accessories)
+    $game_library.unlock_lib_accessory
+  end
+  #--------------------------------------------------------------------------
+  # ● Entry Flags All of the flags owned
+  #--------------------------------------------------------------------------
+  def all_item_had
+    $game_library.item.set_had(get_valid_items)
+    $game_library.unlock_lib_item
+  end
+  #--------------------------------------------------------------------------
+  # ● Picture viewer Actor Discovery Flag Erase all
+  #--------------------------------------------------------------------------
+  def all_clear_actor_discovery
+    $game_library.actor.clear_discovery(get_valid_actors)
+  end
+  #--------------------------------------------------------------------------
+  # ● Enclosed Enemy Discovery Flag Erase all
+  #--------------------------------------------------------------------------
+  def all_clear_enemy_discovery
+    $game_library.enemy.clear_discovery(get_valid_enemies)
+  end
+  #--------------------------------------------------------------------------
+  # ● Illustration weapon discovery flag Erase all
+  #--------------------------------------------------------------------------
+  def all_clear_weapon_discovery
+    $game_library.weapon.clear_discovery(get_valid_weapons)
+  end
+  #--------------------------------------------------------------------------
+  # ● Pictorial Armor Tool Detection Flag Erase All
+  #--------------------------------------------------------------------------
+  def all_clear_armor_discovery
+    $game_library.armor.clear_discovery(get_valid_armors)
+  end
+  #--------------------------------------------------------------------------
+  # ● Entry book accessory discovery flag Erase all
+  #--------------------------------------------------------------------------
+  def all_clear_accessory_discovery
+    $game_library.accessory.clear_discovery(get_valid_accessories)
+  end
+  #--------------------------------------------------------------------------
+  # ● Picture book item discovery flag Clear all
+  #--------------------------------------------------------------------------
+  def all_clear_item_discovery
+    $game_library.item.clear_discovery(get_valid_items)
+  end
+  #--------------------------------------------------------------------------
+  # ● Picture viewer Actor owned flag Clear all
+  #--------------------------------------------------------------------------
+  def all_clear_actor_had
+    $game_library.actor.clear_had(get_valid_actors)
+  end
+  #--------------------------------------------------------------------------
+  # ● Enclosed Enemy Owned Flag Erase All
+  #--------------------------------------------------------------------------
+  def all_clear_enemy_had
+    $game_library.enemy.clear_had(get_valid_enemies)
+  end
+  #--------------------------------------------------------------------------
+  # ● Illustrated weapon ownership flag Clear all
+  #--------------------------------------------------------------------------
+  def all_clear_weapon_had
+    $game_library.weapon.clear_had(get_valid_weapons)
+  end
+  #--------------------------------------------------------------------------
+  # ● Candidate Armor Equipment Owned Flag Total Erase
+  #--------------------------------------------------------------------------
+  def all_clear_armor_had
+    $game_library.armor.clear_had(get_valid_armors)
+  end
+  #--------------------------------------------------------------------------
+  # ● Entry book accessories own flag Flush all
+  #--------------------------------------------------------------------------
+  def all_clear_accessory_had
+    $game_library.accessory.clear_had(get_valid_accessories)
+  end
+  #--------------------------------------------------------------------------
+  # ● Entry Flag for Picture Book Items Clear All
+  #--------------------------------------------------------------------------
+  def all_clear_item_had
+    $game_library.item.clear_had(get_valid_items)
+  end
+  #--------------------------------------------------------------------------
+  # ● Disclosure of the entire book
+  #--------------------------------------------------------------------------
+  def library_all_open
+    p "For testing: Disclosure of the entire book"
+    all_actor_had
+    all_enemy_had
+    all_weapon_had
+    all_armor_had
+    all_accessory_had
+    all_item_had
+  end
+  #--------------------------------------------------------------------------
+  # ● Erase all of the illustration
+  #--------------------------------------------------------------------------
+  def library_all_close
+    all_clear_actor_discovery
+    all_clear_enemy_discovery
+    all_clear_weapon_discovery
+    all_clear_armor_discovery
+    all_clear_accessory_discovery
+    all_clear_item_discovery
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of perfection degree of actor items in an illustration
+  #--------------------------------------------------------------------------
+  def collect_per_actor
+    Integer($data_library.collect_per_actor * 100)
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of the degree of completion of enemy items in an illustration
+  #--------------------------------------------------------------------------
+  def collect_per_enemy
+    Integer($data_library.collect_per_enemy * 100)
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire perfection of weapons items in an illustration
+  #--------------------------------------------------------------------------
+  def collect_per_weapon
+    Integer($data_library.collect_per_weapon * 100)
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of perfection degree of armor items in the illustration
+  #--------------------------------------------------------------------------
+  def collect_per_armor
+    Integer($data_library.collect_per_armor * 100)
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire the completeness of the accessory items in the illustration
+  #--------------------------------------------------------------------------
+  def collect_per_accessory
+    Integer($data_library.collect_per_accessory * 100)
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire the completeness of the item items in the illustration
+  #--------------------------------------------------------------------------
+  def collect_per_item
+    Integer($data_library.collect_per_item * 100)
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire perfection of performance items in an illustration
+  #--------------------------------------------------------------------------
+  def collect_per_medal
+    Integer($data_library.collect_per_medal * 100)
+  end
+  #--------------------------------------------------------------------------
+  # ● Complete degree of total of all items in an illustration
+  #--------------------------------------------------------------------------
+  def collect_per_all
+    Integer($data_library.collect_per_all * 100)
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire all valid actor IDs
+  #--------------------------------------------------------------------------
+  def get_valid_actors
+    $data_actors.select {|item| !item.nil? && !item.name.empty? && !item.lib_exclude? }.collect {|item| item.id }
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire all valid enemy ID
+  #--------------------------------------------------------------------------
+  def get_valid_enemies
+    $data_enemies.select {|item| !item.nil? && !item.name.empty? && !item.lib_exclude? }.collect {|item| item.id }
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire all valid Weapon ID
+  #--------------------------------------------------------------------------
+  def get_valid_weapons
+    $data_weapons.select {|item| !item.nil? && !item.name.empty? && !item.lib_exclude? }.collect {|item| item.id }
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire all valid armor ID
+  #--------------------------------------------------------------------------
+  def get_valid_armors
+    $data_armors.select {|item| !item.nil? && !item.name.empty? && !item.lib_exclude? && !item.is_accessory? }.collect {|item| item.id }
+  end
+  #--------------------------------------------------------------------------
+  # ● Get all valid accessory IDs
+  #--------------------------------------------------------------------------
+  def get_valid_accessories
+    $data_armors.select {|item| !item.nil? && !item.name.empty? && !item.lib_exclude? && item.is_accessory? }.collect {|item| item.id }
+  end
+  #--------------------------------------------------------------------------
+  # ● Get all valid item IDs
+  #--------------------------------------------------------------------------
+  def get_valid_items
+    $data_items.select {|item| !item.nil? && !item.name.empty? && !item.lib_exclude?}.collect {|item| item.id }
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire all valid occupational ID
+  #--------------------------------------------------------------------------
+  def get_valid_jobs
+    $data_classes.select {|item| !item.nil? && !item.name.empty? && !item.lib_exclude? && item.job?}.collect {|item| item.id }
+  end  
+  #--------------------------------------------------------------------------
+  # ● Acquire all valid tribal IDs
+  #--------------------------------------------------------------------------
+  def get_valid_tribes
+    $data_classes.select {|item| !item.nil? && !item.name.empty? && !item.lib_exclude? && item.tribe?}.collect {|item| item.id }
+  end  
+  #--------------------------------------------------------------------------
+  # ● Get all valid medal IDs
+  #--------------------------------------------------------------------------
+  def get_valid_medals
+    NWConst::Library::MEDAL_DATA.keys.select do |id|
+      !NWConst::Library::NO_USE_MEDAL.include?(id)
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of results
+  #--------------------------------------------------------------------------
+  def gain_medal(id)
+    $game_library.gain_medal(id)
+  end
+  #--------------------------------------------------------------------------
+  # ● Performance acquired already?
+  #--------------------------------------------------------------------------
+  def has_medal?(id)
+    $game_library.has_medal?(id)
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire achievement icon ID
+  #--------------------------------------------------------------------------
+  def medal_icon_id(id)
+    $game_library.medal_icon_id(id)
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire achievement title
+  #--------------------------------------------------------------------------
+  def medal_title(id)
+    $game_library.medal_title(id)
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of achievement explanation
+  #--------------------------------------------------------------------------
+  def medal_description(id)
+    $game_library.medal_description(id)
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire achievement priorities
+  #--------------------------------------------------------------------------
+  def medal_priority(id)
+    $game_library.medal_priority(id)
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of actual results acquisition time
+  #--------------------------------------------------------------------------
+  def medal_gain_time(id)
+    $game_library.medal_gain_time(id)
+  end  
+end
+
+#==============================================================================
+# ■ Flag_Library
+#----------------------------------------------------------------------------
+# This is a class of data structure that saves data on the books.
+# We will store a 30 bit flag in one element of the array.
+# IDWith the key as the value&1=Discovered, &2=It is owned.
+# Since 2 bits are used for one item, 15 items are stored for each element of the array.
+#==============================================================================
+class Flag_Library
+  #--------------------------------------------------------------------------
+  # ● Constants
+  #--------------------------------------------------------------------------
+  BIT   = 2
+  LIMIT = 15
+  #--------------------------------------------------------------------------
+  # ● Public instance variables
+  #--------------------------------------------------------------------------
+  attr_reader :data
+  #--------------------------------------------------------------------------
+  # ● Object initialization
+  #--------------------------------------------------------------------------
+  def initialize
+    @data = []
+  end
+  #--------------------------------------------------------------------------
+  # ● Assignment destination data position conversion
+  #--------------------------------------------------------------------------
+  def trans_base(id)
+    @data[id / LIMIT] ||= 0
+  end
+  #--------------------------------------------------------------------------
+  # ● Assignment data position conversion
+  #--------------------------------------------------------------------------
+  def trans_flag(id, flag)
+    flag << BIT * (id % LIMIT)
+  end
+  #--------------------------------------------------------------------------
+  # ● Flag set
+  #--------------------------------------------------------------------------
+  def set_flag(id, flag)
+    @data[id / LIMIT] ||= 0
+    @data[id / LIMIT] |= trans_flag(id, flag)
+  end
+  #--------------------------------------------------------------------------
+  # ● Flag Clear
+  #--------------------------------------------------------------------------
+  def clear_flag(id, flag)
+    @data[id / LIMIT] ||= 0
+    @data[id / LIMIT] &= ~trans_flag(id, flag)
+  end
+  #--------------------------------------------------------------------------
+  # ● Is it a discovered item?
+  #--------------------------------------------------------------------------
+  def discovery?(id)
+    trans_base(id) & trans_flag(id, 0b01) > 0
+  end
+  #--------------------------------------------------------------------------
+  # ● Owned items?
+  #--------------------------------------------------------------------------
+  def had?(id)
+    trans_base(id) & trans_flag(id, 0b10) > 0
+  end
+  #--------------------------------------------------------------------------
+  # ● Discovered settings
+  #--------------------------------------------------------------------------
+  def set_discovery(*args)
+    args.flatten.each do |id| 
+      next unless id.is_a?(Integer)
+      next if id < 0
+      set_flag(id, 0b01) 
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Owned settings(Set the discovered flag at the same time)
+  #--------------------------------------------------------------------------
+  def set_had(*args)
+    args.flatten.each do |id| 
+      next unless id.is_a?(Integer)
+      next if id < 0
+      set_flag(id, 0b11) 
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Discovered Clear(Also delete owning flag)
+  #--------------------------------------------------------------------------
+  def clear_discovery(*args)
+    args.flatten.each do |id| 
+      next unless id.is_a?(Integer)
+      next if id < 0
+      clear_flag(id, 0b11) 
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Owned clear(Delete owned flag only)
+  #--------------------------------------------------------------------------
+  def clear_had(*args)
+    args.flatten.each do |id| 
+      next unless id.is_a?(Integer)
+      next if id < 0
+      clear_flag(id, 0b10)
+    end
+  end
+end
+
+#==============================================================================
+# ■ Data_Library
+#----------------------------------------------------------------------------
+# We manage the data to be displayed in an illustration.
+# Objects of this class are generated at the beginning,
+# $game_libraryYou can access with.
+#==============================================================================
+class Data_Library
+  #--------------------------------------------------------------------------
+  # ● Mix-in
+  #--------------------------------------------------------------------------
+  include NWConst::LibraryManager
+  #--------------------------------------------------------------------------
+  # ● Public instance variables
+  #--------------------------------------------------------------------------
+  attr_reader :actor
+  attr_reader :enemy
+  attr_reader :weapon
+  attr_reader :armor
+  attr_reader :accessory
+  attr_reader :item
+  attr_reader :job
+  attr_reader :tribe  
+  attr_reader :medal  
+  #--------------------------------------------------------------------------
+  # ● Object initialization
+  #--------------------------------------------------------------------------
+  def initialize
+    @actor      = get_valid_actors
+    @enemy      = get_valid_enemies
+    @weapon     = get_valid_weapons
+    @armor      = get_valid_armors
+    @accessory  = get_valid_accessories
+    @item       = get_valid_items
+    @job        = get_valid_jobs
+    @tribe      = get_valid_tribes
+    @medal      = get_valid_medals
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of perfection degree of actor items in an illustration
+  #--------------------------------------------------------------------------
+  def collect_per_actor
+    now  = comp = 0
+    @actor.each do |id|
+      comp += 1
+      now  += 1 if actor_had?(id)
+    end
+    now.to_f / comp.to_f
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of the degree of completion of enemy items in an illustration
+  #--------------------------------------------------------------------------
+  def collect_per_enemy
+    now  = comp = 0
+    @enemy.each do |id|
+      comp += 1
+      now  += 1 if enemy_had?(id)
+    end
+    now.to_f / comp.to_f
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire perfection of weapons items in an illustration
+  #--------------------------------------------------------------------------
+  def collect_per_weapon
+    now  = comp = 0
+    @weapon.each do |id|
+      comp += 1
+      now  += 1 if weapon_had?(id)
+    end
+    now.to_f / comp.to_f
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of perfection degree of armor items in the illustration
+  #--------------------------------------------------------------------------
+  def collect_per_armor
+    now  = comp = 0
+    @armor.each do |id|
+      comp += 1
+      now  += 1 if armor_had?(id)
+    end
+    now.to_f / comp.to_f
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire the completeness of the accessory items in the illustration
+  #--------------------------------------------------------------------------
+  def collect_per_accessory
+    now  = comp = 0
+    @accessory.each do |id|
+      comp += 1
+      now  += 1 if accessory_had?(id)
+    end
+    now.to_f / comp.to_f
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire the completeness of the item items in the illustration
+  #--------------------------------------------------------------------------
+  def collect_per_item
+    now  = comp = 0
+    @item.each do |id|
+      comp += 1
+      now  += 1 if item_had?(id)
+    end
+    now.to_f / comp.to_f
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire perfection of performance items in an illustration
+  #--------------------------------------------------------------------------
+  def collect_per_medal
+    now  = comp = 0
+    @medal.each do |id|
+      comp += 1
+      now  += 1 if has_medal?(id)
+    end
+    now.to_f / comp.to_f
+  end
+  #--------------------------------------------------------------------------
+  # ● Complete degree of total of all items in an illustration
+  #--------------------------------------------------------------------------
+  def collect_per_all
+    now  = comp = 0
+    # actor
+    @actor.each do |id|
+      comp += 1
+      now  += 1 if actor_had?(id)
+    end
+    # enemy
+    @enemy.each do |id|
+      comp += 1
+      now  += 1 if enemy_had?(id)
+    end
+    # Weapon
+    @weapon.each do |id|
+      comp += 1
+      now  += 1 if weapon_had?(id)
+    end
+    # armor
+    @armor.each do |id|
+      comp += 1
+      now  += 1 if armor_had?(id)
+    end
+    # accessory
+    @accessory.each do |id|
+      comp += 1
+      now  += 1 if accessory_had?(id)
+    end
+    # item
+    @item.each do |id|
+      comp += 1
+      now  += 1 if item_had?(id)
+    end
+    # Performance
+    @medal.each do |id|
+      comp += 1
+      now  += 1 if has_medal?(id)
+    end
+    now.to_f / comp.to_f
+  end
+end
+
+#==============================================================================
+# ■ Game_Library
+#----------------------------------------------------------------------------
+# We manage data on the books.
+#==============================================================================
+class Game_Library
+  #--------------------------------------------------------------------------
+  # ● Public instance variables
+  #--------------------------------------------------------------------------
+  attr_reader :actor
+  attr_reader :enemy
+  attr_reader :weapon
+  attr_reader :armor
+  attr_reader :accessory
+  attr_reader :item
+  attr_reader :medal
+  
+  #--------------------------------------------------------------------------
+  # ● Object initialization
+  #--------------------------------------------------------------------------
+  def initialize
+    @actor      = Flag_Library.new
+    @enemy      = Flag_Library.new
+    @weapon     = Flag_Library.new
+    @armor      = Flag_Library.new
+    @accessory  = Flag_Library.new
+    @item       = Flag_Library.new
+    @medal      = Hash.new
+    # Initialization of the illustration unlock flag
+    @unlock = {
+      :actor      => false,
+      :enemy      => false,
+      :weapon     => false,
+      :armor      => false,
+      :accessory  => false,
+      :item       => false,
+      :medal      => false,
+    } 
+    @actor_stat = {}
+    @enemy_stat = {}
+    @enemy_skill = {}
+    @enemy_drop  = {}
+    @enemy_steal = {}
+    init_party_stat    
+  end
+  #--------------------------------------------------------------------------
+  # ● Initialization of party statistics
+  #--------------------------------------------------------------------------
+  def init_party_stat
+    @party_stat = {}
+    @party_stat[:lose_event]          = {} # Defeat event check
+    @party_stat[:purchase_gold]       = 0  # Purchase price
+    @party_stat[:cnt_synthesize]      = 0  # Number of compositing
+    @party_stat[:cnt_class_change]    = 0  # Number of turns
+    @party_stat[:cnt_tribe_change]    = 0  # Number of transformation
+    @party_stat[:cnt_battle]          = 0  # Battle frequency
+    @party_stat[:cnt_escape]          = 0  # Number of runaways
+    @party_stat[:cnt_lose]            = 0  # Number of defeats
+    @party_stat[:cnt_defeat]          = 0  # Total number destroyed
+    @party_stat[:cnt_down]            = 0  # Total number killed
+    @party_stat[:cnt_orgasm]          = 0  # Total number counted
+    @party_stat[:cnt_friendly_orgasm] = 0  # Number of times that Ruga has been made to a friend
+    @party_stat[:cnt_battlefuck_win]  = 0  # Battle Fuck Victory Count
+    @party_stat[:cnt_battlefuck_lose] = 0  # Battle Fuck defeat count
+    @party_stat[:open_class]          = {} # Disclosed occupation
+    @party_stat[:open_tribe]          = {} # Disclosed tribe
+		@party_stat[:damage_record_actor] = 0  # Maximum damage given
+		@party_stat[:damage_record_enemy] = 0  #Maximum damage received
+  end
+  #--------------------------------------------------------------------------
+  # ● Generate list based on library data
+  #--------------------------------------------------------------------------
+  def make_preparation_list
+    make_get_item_drop_list
+    make_get_item_steal_list    
+  end  
+  #--------------------------------------------------------------------------
+  # ● Generate an enemy list possessing drop items
+  #--------------------------------------------------------------------------
+  def make_get_item_drop_list
+    @get_item_drop = {}
+    $data_enemies.compact.each do |enemy|
+      next if enemy.name.empty? || enemy.lib_exclude?
+      enemy.drop_items.each do |item|
+        next if item.kind == 0
+        @get_item_drop[{:kind => item.kind, :id => item.data_id}] ||= []
+        @get_item_drop[{:kind => item.kind, :id => item.data_id}] |= [enemy.id]
+      end
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Generate enemy list possessing items to steal
+  #--------------------------------------------------------------------------
+  def make_get_item_steal_list
+    @get_item_steal = {}
+    $data_enemies.compact.each do |enemy|
+      next if enemy.name.empty? || enemy.lib_exclude?
+      enemy.steal_list.each_value { |steal|
+        steal.each do |s|
+          @get_item_steal[{:kind => s[:kind], :id => s[:data_id]}] ||= []
+          @get_item_steal[{:kind => s[:kind], :id => s[:data_id]}] |= [enemy.id]
+        end
+      }
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Has the actor picture unlocked?
+  #--------------------------------------------------------------------------
+  def lib_actor_unlocked?
+    @unlock[:actor]
+  end
+  #--------------------------------------------------------------------------
+  # ● Enemy picture book has been unlocked?
+  #--------------------------------------------------------------------------
+  def lib_enemy_unlocked?
+    @unlock[:enemy]
+  end
+  #--------------------------------------------------------------------------
+  # ● Is the weapon books unlocked?
+  #--------------------------------------------------------------------------
+  def lib_weapon_unlocked?
+    @unlock[:weapon]
+  end
+  #--------------------------------------------------------------------------
+  # ● Is the armor picture unlocked already?
+  #--------------------------------------------------------------------------
+  def lib_armor_unlocked?
+    @unlock[:armor]
+  end
+  #--------------------------------------------------------------------------
+  # ● Is the accessory unlocked?
+  #--------------------------------------------------------------------------
+  def lib_accessory_unlocked?
+    @unlock[:accessory]
+  end
+  #--------------------------------------------------------------------------
+  # ● Is the item booklet unlocked?
+  #--------------------------------------------------------------------------
+  def lib_item_unlocked?
+    @unlock[:item]
+  end
+  #--------------------------------------------------------------------------
+  # Is the acquisition result unlocked?
+  #--------------------------------------------------------------------------
+  def lib_medal_unlocked?
+    @unlock[:medal]
+  end
+  #--------------------------------------------------------------------------
+  # ● Actor illustration unlock
+  #--------------------------------------------------------------------------
+  def unlock_lib_actor
+    @unlock[:actor] = true
+  end
+  #--------------------------------------------------------------------------
+  # ● Enemy picture book unlock
+  #--------------------------------------------------------------------------
+  def unlock_lib_enemy
+    @unlock[:enemy] = true
+  end
+  #--------------------------------------------------------------------------
+  # ● Weapon books unlock
+  #--------------------------------------------------------------------------
+  def unlock_lib_weapon
+    @unlock[:weapon] = true
+  end
+  #--------------------------------------------------------------------------
+  # ● Armor picture book unlock
+  #--------------------------------------------------------------------------
+  def unlock_lib_armor
+    @unlock[:armor] = true
+  end
+  #--------------------------------------------------------------------------
+  # ● Accessory unlock
+  #--------------------------------------------------------------------------
+  def unlock_lib_accessory
+    @unlock[:accessory] = true
+  end
+  #--------------------------------------------------------------------------
+  # ● Item picture book unlock
+  #--------------------------------------------------------------------------
+  def unlock_lib_item
+    @unlock[:item] = true
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition record unlock
+  #--------------------------------------------------------------------------
+  def unlock_lib_medal
+    @unlock[:medal] = true
+  end
+  #--------------------------------------------------------------------------
+  # ● Actor illustration lock
+  #--------------------------------------------------------------------------
+  def lock_lib_actor
+    @unlock[:actor] = false
+  end
+  #--------------------------------------------------------------------------
+  # ● Enemy indication lock
+  #--------------------------------------------------------------------------
+  def lock_lib_enemy
+    @unlock[:enemy] = false
+  end
+  #--------------------------------------------------------------------------
+  # ● Weapon Figure lock
+  #--------------------------------------------------------------------------
+  def lock_lib_weapon
+    @unlock[:weapon] = false
+  end
+  #--------------------------------------------------------------------------
+  # ● Armor locked lock
+  #--------------------------------------------------------------------------
+  def lock_lib_armor
+    @unlock[:armor] = false
+  end
+  #--------------------------------------------------------------------------
+  # ● Accessory lock
+  #--------------------------------------------------------------------------
+  def lock_lib_accessory
+    @unlock[:accessory] = false
+  end
+  #--------------------------------------------------------------------------
+  # ● Item lock lock
+  #--------------------------------------------------------------------------
+  def lock_lib_item
+    @unlock[:item] = false
+  end
+  #--------------------------------------------------------------------------
+  # ● acquisition achievement lock
+  #--------------------------------------------------------------------------
+  def lock_lib_medal
+    @unlock[:medal] = false
+  end
+  #--------------------------------------------------------------------------
+  # ● Number of times the actor got destroyed
+  #--------------------------------------------------------------------------
+  def actor_defeat(id)
+    actor = @actor_stat[id] || {}
+    num = actor[:defeat] || 0
+    return num
+  end
+  #--------------------------------------------------------------------------
+  # ● Number of times the actor got hooked up
+  #--------------------------------------------------------------------------
+  def actor_carry(id)
+    actor = @actor_stat[id] || {}
+    num = actor[:carry] || 0
+    return num
+  end
+  #--------------------------------------------------------------------------
+  # ● Number of times the actor got caught
+  #--------------------------------------------------------------------------
+  def actor_orgasm(id)
+    actor = @actor_stat[id] || {}
+    num = actor[:orgasm] || 0
+    return num
+  end
+  #--------------------------------------------------------------------------
+  # ● Number of times the actor became unable to fight
+  #--------------------------------------------------------------------------
+  def actor_down(id)
+    actor = @actor_stat[id] || {}
+    num = actor[:down] || 0
+    return num
+  end
+  #--------------------------------------------------------------------------
+  # ● Number of times the actor participated in battle
+  #--------------------------------------------------------------------------
+  def actor_battle(id)
+    actor = @actor_stat[id] || {}
+    num = actor[:battle] || 0
+    return num
+  end
+  #--------------------------------------------------------------------------
+  # ● Number of times the actor stealed successfully
+  #--------------------------------------------------------------------------
+  def actor_steal(id)
+    actor = @actor_stat[id] || {}
+    num = actor[:steal] || 0
+    return num
+  end
+  #--------------------------------------------------------------------------
+  # ● Number of times Enemy got destroyed
+  #--------------------------------------------------------------------------
+  def enemy_down(id)
+    enemy = @enemy_stat[id] || {}
+    num = enemy[:down] || 0
+    return num
+  end
+  #--------------------------------------------------------------------------
+  # ● Number of times enemy won victory
+  #--------------------------------------------------------------------------
+  def enemy_victory(id)
+    return 0 if $data_enemies[id] and $data_enemies[id].no_lose_skip?
+    enemy = @enemy_stat[id] || {}
+    num = enemy[:victory] || 0
+    return num
+  end
+  #--------------------------------------------------------------------------
+  # ● Number of times Enemy got sick
+  #--------------------------------------------------------------------------
+  def enemy_orgasm(id)
+    enemy = @enemy_stat[id] || {}
+    num = enemy[:orgasm] || 0
+    return num
+  end
+  #--------------------------------------------------------------------------
+  # ● Number of times Enemy used skills
+  #--------------------------------------------------------------------------
+  def enemy_skill_used_num(enemy_id, skill_id)
+    enemy_list = @enemy_skill[enemy_id] || {}
+    num = enemy_list[skill_id] || 0
+    return num
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire the number of items that Enemy dropped
+  #--------------------------------------------------------------------------
+  def enemy_item_drop_num(enemy_id, drop)
+    drop_key = {:kind => drop.kind, :data_id => drop.data_id, :denominator => drop.denominator}
+    enemy_list = @enemy_drop[enemy_id] || {}
+    num = enemy_list[drop_key] || 0    
+    return num
+  end  
+  #--------------------------------------------------------------------------
+  # ● Get the number of items stolen from Enemy
+  #--------------------------------------------------------------------------
+  def enemy_item_steal_num(enemy_id, list_id, steal)
+    enemy_list = @enemy_steal[enemy_id] || {}
+    steal_list = enemy_list[list_id] || {}
+    num = steal_list[steal] || 0
+    return num
+  end  
+  #--------------------------------------------------------------------------
+  # ● Did you see the defeat event?
+  #--------------------------------------------------------------------------
+  def lose_event_view?(lose_event_id)
+    num = @party_stat[:lose_event][lose_event_id] || 0
+    return 0 < num
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire cumulative purchase amount
+  #--------------------------------------------------------------------------
+  def purchase_gold
+    return @party_stat[:purchase_gold]
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire number of composures
+  #--------------------------------------------------------------------------
+  def party_synthesize
+    return @party_stat[:cnt_synthesize]
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire number of job change
+  #--------------------------------------------------------------------------
+  def party_class_change
+    return @party_stat[:cnt_class_change]
+  end
+  #--------------------------------------------------------------------------
+  # ● Get number of transformation
+  #--------------------------------------------------------------------------
+  def party_tribe_change
+    return @party_stat[:cnt_tribe_change]
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire the number of times a party battled
+  #--------------------------------------------------------------------------
+  def party_battle
+    return @party_stat[:cnt_battle]
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire the number of times a party escaped
+  #--------------------------------------------------------------------------
+  def party_escape
+    return @party_stat[:cnt_escape]
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire the number of times the party wiped out
+  #--------------------------------------------------------------------------
+  def party_lose
+    return @party_stat[:cnt_lose]
+  end
+  #--------------------------------------------------------------------------
+  # ● Get the total number of parties destroyed
+  #--------------------------------------------------------------------------
+  def party_defeat
+    return @party_stat[:cnt_defeat]
+  end  
+  #--------------------------------------------------------------------------
+  # ● Acquire the total number of destroyed parties
+  #--------------------------------------------------------------------------
+  def party_down
+    return @party_stat[:cnt_down]
+  end  
+  #--------------------------------------------------------------------------
+  # ● Acquire the total number of parties
+  #--------------------------------------------------------------------------
+  def party_orgasm
+    return @party_stat[:cnt_orgasm]
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire the number of times Luke has been made to a friend
+  #--------------------------------------------------------------------------
+  def friendly_orgasm
+    return @party_stat[:cnt_friendly_orgasm]
+  end
+  #--------------------------------------------------------------------------
+  # ● Get battle fuck victory count
+  #--------------------------------------------------------------------------
+  def battlefuck_win
+    return @party_stat[:cnt_battlefuck_win]
+  end
+  #--------------------------------------------------------------------------
+  # ● Get number of battle fuck defeat
+  #--------------------------------------------------------------------------
+  def battlefuck_lose
+    return @party_stat[:cnt_battlefuck_lose]
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire occupational disclosure rate for parties
+  #--------------------------------------------------------------------------
+  def party_open_class
+     all = $data_library.job.size
+     now = @party_stat[:open_class].size
+     return now.to_f / all.to_f
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire the party's tribal disclosure rate
+  #--------------------------------------------------------------------------
+  def party_open_tribe
+     all = $data_library.tribe.size
+     now = @party_stat[:open_tribe].size
+     return now.to_f / all.to_f
+  end
+  #--------------------------------------------------------------------------
+  # ● Count up count of actor destroyed
+  #--------------------------------------------------------------------------
+  def count_up_actor_defeat(id)
+    @actor_stat[id] ||= {}
+    @actor_stat[id][:defeat] ||= 0
+    @actor_stat[id][:defeat] += 1
+    count_up_party_defeat
+  end
+  #--------------------------------------------------------------------------
+  # ● Count up the number of times the actor went off
+  #--------------------------------------------------------------------------
+  def count_up_actor_carry(id)
+    @actor_stat[id] ||= {}
+    @actor_stat[id][:carry] ||= 0
+    @actor_stat[id][:carry] += 1
+  end
+  #--------------------------------------------------------------------------
+  # ● Count up the number of times the actor was spoken
+  #--------------------------------------------------------------------------
+  def count_up_actor_orgasm(id)
+    @actor_stat[id] ||= {}
+    @actor_stat[id][:orgasm] ||= 0
+    @actor_stat[id][:orgasm] += 1
+    count_up_party_orgasm
+  end
+  #--------------------------------------------------------------------------
+  # ● Count up when the actor became unable to fight
+  #--------------------------------------------------------------------------
+  def count_up_actor_down(id)
+    @actor_stat[id] ||= {}
+    @actor_stat[id][:down] ||= 0
+    @actor_stat[id][:down] += 1
+    count_up_party_down
+  end
+  #--------------------------------------------------------------------------
+  # ● Count up when actor participated in battle
+  #--------------------------------------------------------------------------
+  def count_up_actor_battle(id)
+    @actor_stat[id] ||= {}
+    @actor_stat[id][:battle] ||= 0
+    @actor_stat[id][:battle] += 1
+  end
+  #--------------------------------------------------------------------------
+  # ● Count up when the actor steals successfully
+  #--------------------------------------------------------------------------
+  def count_up_actor_steal(id)
+    @actor_stat[id] ||= {}
+    @actor_stat[id][:steal] ||= 0
+    @actor_stat[id][:steal] += 1
+  end
+  #--------------------------------------------------------------------------
+  # ● Count up times when Enemy was destroyed
+  #--------------------------------------------------------------------------
+  def count_up_enemy_down(id)
+    id -= 1000 if $data_enemies[id].ex_dungeon_enemy?
+    @enemy_stat[id] ||= {}
+    @enemy_stat[id][:down] ||= 0
+    @enemy_stat[id][:down] += 1
+  end
+  #--------------------------------------------------------------------------
+  # ● Count up the number of times enemy won
+  #--------------------------------------------------------------------------
+  def count_up_enemy_victory(id)
+    id -= 1000 if $data_enemies[id].ex_dungeon_enemy?
+    @enemy_stat[id] ||= {}
+    @enemy_stat[id][:victory] ||= 0
+    @enemy_stat[id][:victory] += 1
+  end
+  #--------------------------------------------------------------------------
+  # ● Count up the number of times Enemy was caught
+  #--------------------------------------------------------------------------
+  def count_up_enemy_orgasm(id)
+    id -= 1000 if $data_enemies[id].ex_dungeon_enemy?
+    @enemy_stat[id] ||= {}
+    @enemy_stat[id][:orgasm] ||= 0
+    @enemy_stat[id][:orgasm] += 1
+  end
+  #--------------------------------------------------------------------------
+  # ● Enemy's skill use count up
+  #--------------------------------------------------------------------------
+  def count_up_skill_use(enemy_id, skill_id)
+    @enemy_skill[enemy_id] ||= {}
+    @enemy_skill[enemy_id][skill_id] ||= 0
+    @enemy_skill[enemy_id][skill_id] += 1
+  end
+  #--------------------------------------------------------------------------
+  # ● Count up items dropped by enemy
+  #--------------------------------------------------------------------------
+  def count_up_drop_item(enemy_id, drop)
+    drop_key = {:kind => drop.kind, :data_id => drop.data_id, :denominator => drop.denominator}    
+    @enemy_drop[enemy_id] ||= {}
+    @enemy_drop[enemy_id][drop_key] ||= 0
+    @enemy_drop[enemy_id][drop_key] += 1
+  end
+  #--------------------------------------------------------------------------
+  # ● Count up items stolen by Enemy
+  #--------------------------------------------------------------------------
+  def count_up_steal_item(enemy_id, list_id, steal)
+    @enemy_steal[enemy_id] ||= {}
+    @enemy_steal[enemy_id][list_id] ||= {}
+    @enemy_steal[enemy_id][list_id][steal] ||= 0
+    @enemy_steal[enemy_id][list_id][steal] += 1
+  end
+  #--------------------------------------------------------------------------
+  # ● Count up the number of times you saw the defeat event
+  #--------------------------------------------------------------------------
+  def count_up_lose_event(lose_event_id)
+    @party_stat[:lose_event][lose_event_id] ||= 0
+    @party_stat[:lose_event][lose_event_id] += 1    
+  end
+  #--------------------------------------------------------------------------
+  # ● Add the total purchase amount
+  #--------------------------------------------------------------------------
+  def addition_purchase_gold(value)
+    @party_stat[:purchase_gold] += value
+  end  
+  #--------------------------------------------------------------------------
+  # ● Count up compositing times
+  #--------------------------------------------------------------------------
+  def count_up_party_synthesize
+    @party_stat[:cnt_synthesize] += 1
+  end
+  #--------------------------------------------------------------------------
+  # ● Count up changeover number
+  #--------------------------------------------------------------------------
+  def count_up_party_class_change
+    @party_stat[:cnt_class_change] += 1
+  end
+  #--------------------------------------------------------------------------
+  # ● Count up the number of transformations
+  #--------------------------------------------------------------------------
+  def count_up_party_tribe_change
+    @party_stat[:cnt_tribe_change] += 1
+  end
+  #--------------------------------------------------------------------------
+  # ● Count up the number of times a party battled
+  #--------------------------------------------------------------------------
+  def count_up_party_battle
+    @party_stat[:cnt_battle] += 1
+  end
+  #--------------------------------------------------------------------------
+  # ● Count up the number of times a party escaped
+  #--------------------------------------------------------------------------
+  def count_up_party_escape
+    @party_stat[:cnt_escape] += 1
+  end
+  #--------------------------------------------------------------------------
+  # ● Count up the number of times the party wiped out
+  #--------------------------------------------------------------------------
+  def count_up_party_lose
+    @party_stat[:cnt_lose] += 1
+  end
+  #--------------------------------------------------------------------------
+  # ● Count up the total number of destroyed parties
+  #--------------------------------------------------------------------------
+  def count_up_party_defeat
+    @party_stat[:cnt_defeat] += 1
+  end    
+  #--------------------------------------------------------------------------
+  # ● Count up the total number of destroyed parties
+  #--------------------------------------------------------------------------
+  def count_up_party_down
+    @party_stat[:cnt_down] += 1
+  end    
+  #--------------------------------------------------------------------------
+  # ● Count up the total number of parties
+  #--------------------------------------------------------------------------
+  def count_up_party_orgasm
+    @party_stat[:cnt_orgasm] += 1
+  end
+  #--------------------------------------------------------------------------
+  # ● Count up the number of times Luke has been idle to a group
+  #--------------------------------------------------------------------------
+  def count_up_friendly_orgasm
+    @party_stat[:cnt_friendly_orgasm] += 1
+  end
+  #--------------------------------------------------------------------------
+  # ● Count up Battle Fuck Victory Count
+  #--------------------------------------------------------------------------
+  def count_up_battlefuck_win
+    @party_stat[:cnt_battlefuck_win] += 1
+  end
+  #--------------------------------------------------------------------------
+  # ● Count up battlefuck defeat count
+  #--------------------------------------------------------------------------
+  def count_up_battlefuck_lose
+    @party_stat[:cnt_battlefuck_lose] += 1
+  end
+	#--------------------------------------------------------------------------
+  # ● Maximum damage given by actor
+  #--------------------------------------------------------------------------
+	def party_damage_record_actor
+		return @party_stat[:damage_record_actor] || 0
+	end
+	#--------------------------------------------------------------------------
+  # ● Maximum damage received by the actor
+  #--------------------------------------------------------------------------
+	def party_damage_record_enemy
+		return @party_stat[:damage_record_enemy] || 0
+	end
+	#--------------------------------------------------------------------------
+  # ● Maximum damage input by the actor
+  #--------------------------------------------------------------------------
+	def set_party_damage_record_actor(damage)
+		@party_stat[:damage_record_actor] = [damage,party_damage_record_actor].max
+	end
+	#--------------------------------------------------------------------------
+  # ● Maximum damage input by the actor
+  #--------------------------------------------------------------------------
+	def set_party_damage_record_enemy(damage)
+		@party_stat[:damage_record_enemy] = [damage,party_damage_record_enemy].max
+	end
+  #--------------------------------------------------------------------------
+  # ● Check occupational disclosure rate
+  #--------------------------------------------------------------------------
+  def check_open_class(id)
+    @party_stat[:open_class][id] = true    
+  end
+  #--------------------------------------------------------------------------
+  # ● Check tribal disclosure rate
+  #--------------------------------------------------------------------------
+  def check_open_tribe(id)
+    @party_stat[:open_tribe][id] = true
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire enemy encounter place arrangement
+  #--------------------------------------------------------------------------
+  def encounter_enemy_place(id)
+    NWConst::Library::ENCOUNTER_ENEMY_PLACE[id]
+  end  
+  #--------------------------------------------------------------------------
+  # ● Acquisition of an item acquisition place array
+  #--------------------------------------------------------------------------
+  def get_item_places(kind, id)
+    case kind
+    when 1
+      return NWConst::Library::GET_ITEM_PLACES[id]
+    when 2
+      return NWConst::Library::GET_WEAPON_PLACES[id]
+    when 3      
+      return NWConst::Library::GET_ARMOR_PLACES[id]
+    end
+    return nil
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire items Collecting fellow arrangements
+  #--------------------------------------------------------------------------
+  def get_item_actors(kind, id)
+    case kind
+    when 1
+      return NWConst::Library::GET_ITEM_ACTORS[id]
+    when 2
+      return NWConst::Library::GET_WEAPON_ACTORS[id]
+    when 3      
+      return NWConst::Library::GET_ARMOR_ACTORS[id]
+    end
+    return nil
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire Drop Item possession Enemy array
+  #--------------------------------------------------------------------------
+  def get_item_drop(kind, id)
+    @get_item_drop[{:kind => kind, :id => id}]
+  end
+  #--------------------------------------------------------------------------
+  # ● Retrieve steel item possession enemy array
+  #--------------------------------------------------------------------------
+  def get_item_steal(kind, id)
+    @get_item_steal[{:kind => kind, :id => id}]
+  end
+  #--------------------------------------------------------------------------
+  # ● Check location flag
+  #--------------------------------------------------------------------------
+  def place?(place)
+    index = NWConst::Library::PLACE.index(place)
+    index ? $game_switches[NWConst::Sw::PLACE_FLAG_BASE + index] : false
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of results
+  #--------------------------------------------------------------------------
+  def gain_medal(id)
+    return unless NWConst::Library::MEDAL_DATA.key?(id)
+    return if NWConst::Library::NO_USE_MEDAL.include?(id)
+    return if has_medal?(id)
+    unlock_lib_medal
+    $game_temp.gain_medal_push(id)
+    @medal[id] = $game_system.realtime_s
+  end
+  #--------------------------------------------------------------------------
+  # ● Performance acquired already?
+  #--------------------------------------------------------------------------
+  def has_medal?(id)
+    return @medal.key?(id)
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire achievement icon ID
+  #--------------------------------------------------------------------------
+  def medal_icon_id(id)
+    NWConst::Library::MEDAL_DATA[id][:icon_id]
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire achievement title
+  #--------------------------------------------------------------------------
+  def medal_title(id)
+    NWConst::Library::MEDAL_DATA[id][:title]
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of achievement explanation
+  #--------------------------------------------------------------------------
+  def medal_description(id)
+    NWConst::Library::MEDAL_DATA[id][:description]
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of achievement categories
+  #--------------------------------------------------------------------------
+  def medal_priority(id)
+    NWConst::Library::MEDAL_DATA[id][:priority]
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of actual results acquisition time
+  #--------------------------------------------------------------------------
+  def medal_gain_time(id)
+    has_medal?(id) ? @medal[id] : "Unacquired"
+  end  
+	
+
+end
+
+
+
+
+

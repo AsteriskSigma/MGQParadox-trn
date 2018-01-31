@@ -1,0 +1,8 @@
+"アレリア：敗北" -> "Alleria: Defeat"
+"【アレリア】" -> "【Alleria】"
+"私の勝ちですわね……" -> "I am the winner ... ..."
+"それでは、賭け金を頂きますわ。" -> "Well then, I will get a stake."
+"ルカは 1200G 支払った！" -> "Luke paid 1200 G!"
+"【アレリア】" -> "【Alleria】"
+"また私に挑みたければ、いつでもどうぞ。" -> "If you want to challenge me again, please come any time."
+"その精子、何度でも搾って差し上げますわ。" -> "I will squeeze that sperm many times."

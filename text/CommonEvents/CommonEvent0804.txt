@@ -1,0 +1,1 @@
+"器速武器" -> "Instrument speed weapon"

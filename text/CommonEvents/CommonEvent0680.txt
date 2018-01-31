@@ -1,0 +1,8 @@
+"【ハインリヒ】" -> "【Heinrich】"
+"せっかくだから、勇者の剣技を伝習するよ。" -> "Because I am impatient, I will learn the sword skill of the brave."
+"勇者技のうち、どちらか一つを選んでくれ。" -> "Please choose one out of the brave skills."
+"選択" -> "Choice"
+"選択" -> "Choice"
+"選択" -> "Choice"
+"【ハインリヒ】" -> "【Heinrich】"
+"その技で、悪者を打ち倒そう！" -> "Let's overthrow the bad guy with that technique!"

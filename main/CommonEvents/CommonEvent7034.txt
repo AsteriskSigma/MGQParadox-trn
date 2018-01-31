@@ -1,0 +1,23 @@
+// EVENT 7034
+Name "Don Dahlia: Ejaculation 2"
+
+ShowMessageFace("ruka_fc1",0,0,2,1)
+ShowMessage("\\n<Luka>Huaaa... Coming...")
+PictureDisplay(10,"sys_white",0,0,0,0,100,100,0,0)
+PictureMove(10,null,0,0,0,0,100,100,255,0,20,true)
+PictureDisplay(6,"ev_dondaria_h2",0,0,120,50,100,100,255,0)
+250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0f,0x6d,0x6f,0x6e,0x5f,0x73,0x79,0x61,0x73,0x65,0x69,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69))
+PictureMove(10,null,0,0,0,0,100,100,0,0,25,true)
+PictureMove(10,null,0,0,0,0,100,100,255,0,20,true)
+PictureMove(10,null,0,0,0,0,100,100,0,0,25,true)
+PictureMove(10,null,0,0,0,0,100,100,255,0,6,true)
+PictureMove(10,null,0,0,0,0,100,100,0,0,60,true)
+ShowMessageFace("",0,0,2,2)
+ShowMessage("Wrapped in her tender armpit, Luka was forced to come. His penis sprays semen all over Don Dahlia's arm and chest.")
+PictureDisplay(6,"ev_dondaria_h3",0,0,120,50,100,100,255,0)
+ShowMessageFace("dondaria_fc1",0,0,2,3)
+ShowMessage("\\n<Don Dahlia>Heheh, gotcha.\nMan, I love the defeated look men have on their faces after I squeeze 'em out.")
+RunCommonEvent(7035)
+EndEventProcessing()
+0()
+

@@ -1,0 +1,28 @@
+#==============================================================================
+# ■ Game_Pictures
+#------------------------------------------------------------------------------
+# It is a wrapper around an array of pictures. This class is Game_Screen Used inside class
+# It will be. The picture on the map screen and the picture on the battle screen are handled separately.
+#==============================================================================
+
+class Game_Pictures
+  #--------------------------------------------------------------------------
+  # ● Object initialization
+  #--------------------------------------------------------------------------
+  def initialize
+    @data = []
+  end
+  #--------------------------------------------------------------------------
+  # ● Picture acquisition
+  #--------------------------------------------------------------------------
+  def [](number)
+    @data[number] ||= Game_Picture.new(number)
+  end
+  #--------------------------------------------------------------------------
+  # ● Iterator
+  #--------------------------------------------------------------------------
+  def each
+    @data.compact.each {|picture| yield picture } if block_given?
+  end
+end
+

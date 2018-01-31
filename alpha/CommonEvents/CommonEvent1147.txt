@@ -1,0 +1,11 @@
+// EVENT 1147
+Name "Talk: Principality Nagael"
+
+ChangeVariable(25,25,0,0,0)
+ShowMessageFace("nagael_fc1",0,0,2,1)
+ShowMessage("\\n<Nagael>Silence, sinner.")
+ShowMessageFace("",0,0,2,2)
+ShowMessage("Nagael refused to talk.")
+EndEventProcessing()
+0()
+

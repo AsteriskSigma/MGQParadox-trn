@@ -1,0 +1,341 @@
+
+=begin
+
+Troublesome · ___ ___ 0 RPG
+Extended choice ver 2 2015/02/22
+
+
+
+5It is possible to invalidate choices by line and above options and switches and variables
+The variable that saves the item ID of the selected item in the variable is IDReserve.rb Of EX_CHOICE_RESULT Set with
+
+● Item script ex_choice_add(item name, Item ID, Effective condition, Behavior when disabled)
+Example ex_choice_add("Item 1", 1)
+Example ex_choice_add("Item 2", 2, "v[1] >= 100", 1)
+ ·item name
+String displayed in window
+· Item ID
+Value assigned to variable
+· Effective condition
+In case""Described as a string by being sandwiched by
+· S[n]Is the switch n
+In case"s[n]"  Or"s[n] == true"  : Switch n is on
+In case"!s[n]" Or"s[n] == false" : Switch n is off
+· V[n]Is the variable n
+In case"v[n] == 100" : If the variable n is equal to 100
+Comparisons are equivalent(==),that's all(>=),Super(>),Less than(<=),Less than(<)Excepting(!=)Have
+· And and or multiple conditions can be specified
+In case"!s[a] and s[b]"      : Switch a is off and switch b is on
+In case"s[a] or v[b] == 100" : Switch a is on or variable b is equal to 100
+·()Combine conditions with and and with or
+        "s[a] and (s[b] or s[c])"    : \"A is on\" and \"b is on or c is on\"
+        "s[a] or (s[b] and s[c])"    : \"A is on\" or \"b is on and c is on\"
+Behavior when disabled
+0:Hide items
+1:It can not be selected by displaying with translucent characters
+○ Optional elements
+Effective condition:Always active
+Behavior when disabled:0
+○ Attention
+If the item name and effective condition are long and the line break occurs in the middle of the item script,
+In the middle of a character string, no line break, always end of line \",Make it to be \"
+
+● Display script ex_choice_show(Cancellation result, Number of lines, Display coordinate correction)
+Example ex_choice_show
+Example ex_choice_show(0, 4, [0, 0])
+Execute this after the item script
+· Cancellation result
+0 or more:When canceling, substitute this value for variable minus:No cancellation
+ ·Number of lines
+Number of vertical rows of the window
+· Display coordinate correction
+In case[xCoordinate, yCoordinate] Specify
+In case[0, 0]Displayed at the same coordinates as normal choice event command
+○ Optional elements
+Cancellation ID:-1(No cancellation)
+Number of vertical items:14(The height of the screen filling up with the message window)
+Display coordinate correction:[0, 0]
+○ When the number of valid items is 0
+If there is no valid item when executing the display script,
+Do not open the window,-1 Substitute
+
+● Simultaneous display with sentence window
+Simultaneous display with sentence window is possible like normal choice
+Simultaneously displayed by executing \"display script\" in \"execution of text display\"
+· What is \"when displaying sentences\"
+Basically, after execution of \"display of sentences\", the next command is not executed until the display of sentences is finished
+However, only when the next command of the sentence is \"option, numeric value input, item selection\"
+By simultaneously executing without waiting for display end, they are displayed simultaneously with sentences
+Likewise, if the next command is \"specific script\", it is executed at the same time
+· \"Specific script\" to be executed at the same time
+In the first line of the next script command ex_choice When it contains the character string '
+Execute the script command
+Furthermore, if the next command is a script, it is executed under the same condition
+In other words, \"ex_choiceRun \"as long as the script command continues
+○ Attention
+By default, script commands are not executed while displaying sentences
+There is a possibility that a malfunction may occur if extra script is executed
+Therefore, when placing the \"specific script\" command next to \"display sentences\"
+In the script, ex_choice_add And ex_choice_show Do not include other than
+
+=end
+
+
+#==============================================================================
+# ■ Game_Interpreter
+#==============================================================================
+class Game_Interpreter
+  #--------------------------------------------------------------------------
+  # ● Display text
+  #--------------------------------------------------------------------------
+  def command_101
+    wait_for_message
+    $game_message.face_name = @params[0]
+    $game_message.face_index = @params[1]
+    $game_message.background = @params[2]
+    $game_message.position = @params[3]
+    
+    while next_event_code == 401       # Text data
+      @index += 1
+      $game_message.add(@list[@index].parameters[0])
+    end
+    case next_event_code
+    when 102  # Display choices
+      @index += 1
+      setup_choices(@list[@index].parameters)
+    when 103  # Processing numerical input
+      @index += 1
+      setup_num_input(@list[@index].parameters)
+    when 104  # Processing item selection
+      @index += 1
+      setup_item_choice(@list[@index].parameters)
+    when 355
+      while next_command_ex_choice?
+        @index += 1
+        command_355
+      end
+    end
+    wait_for_message
+  end
+  #--------------------------------------------------------------------------
+  # ● Whether the next is an extended option or not
+  #--------------------------------------------------------------------------
+  def next_command_ex_choice?
+    return false unless [355].include?(next_event_code)
+    s = @list[@index + 1].parameters[0]
+    return true if s =~ /ex_choice/
+    return false
+  end
+  #--------------------------------------------------------------------------
+  # ● Display options
+  #--------------------------------------------------------------------------
+  def ex_choice_add(name, id, e = "true", disable = 0)
+    $game_message.ex_choice_item ||= []
+    $game_message.ex_choice_item.push([name, id, e, disable])
+  end
+  #--------------------------------------------------------------------------
+  # ● Display options
+  #--------------------------------------------------------------------------
+  def ex_choice_show(cancel = -1, row_max = 14, pos = [0, 0])
+    $game_message.ex_choice_setting = [cancel, row_max, pos]
+    wait_for_message
+  end
+end
+#==============================================================================
+# ■ Game_Message
+#==============================================================================
+class Game_Message
+  #--------------------------------------------------------------------------
+  # ● Public instance variables
+  #--------------------------------------------------------------------------
+  attr_accessor :ex_choice_item
+  attr_accessor :ex_choice_setting
+  #--------------------------------------------------------------------------
+  # ○ Clear extended options
+  #--------------------------------------------------------------------------
+  def ex_choice_clear
+    @ex_choice_item = []
+    @ex_choice_setting = nil
+  end
+  #--------------------------------------------------------------------------
+  # Extended choice mode judgment
+  #--------------------------------------------------------------------------
+  def ex_choice?
+    @ex_choice_setting
+  end
+  #--------------------------------------------------------------------------
+  # ○ Busy determination
+  #--------------------------------------------------------------------------
+  alias :nw_ex_choice_busy? :busy?
+  def busy?
+    nw_ex_choice_busy? || ex_choice?
+  end
+end
+#==============================================================================
+# ■ Window_Message
+#==============================================================================
+class Window_Message < Window_Base
+  #--------------------------------------------------------------------------
+  # ● Create all windows
+  #--------------------------------------------------------------------------
+  alias :nw_ex_choice_create_all_windows :create_all_windows
+  def create_all_windows
+    nw_ex_choice_create_all_windows
+    @ex_choice_window = Window_ExChoiceList.new(self)
+  end
+  #--------------------------------------------------------------------------
+  # ● Release of all windows
+  #--------------------------------------------------------------------------
+  alias :nw_ex_choice_dispose_all_windows :dispose_all_windows
+  def dispose_all_windows
+    nw_ex_choice_dispose_all_windows
+    @ex_choice_window.dispose
+  end
+  #--------------------------------------------------------------------------
+  # ● Update all windows
+  #--------------------------------------------------------------------------
+  alias :nw_ex_choice_update_all_windows :update_all_windows
+  def update_all_windows
+    nw_ex_choice_update_all_windows
+    @ex_choice_window.update
+  end
+  #--------------------------------------------------------------------------
+  # ● Determine whether all windows are completely closed
+  #--------------------------------------------------------------------------
+  alias :nw_ex_choice_all_close? :all_close?
+  def all_close?
+    nw_ex_choice_all_close? && @ex_choice_window.close?
+  end
+  #--------------------------------------------------------------------------
+  # ● Input processing
+  #--------------------------------------------------------------------------
+  alias :nw_ex_choice_process_input :process_input
+  def process_input
+    if $game_message.ex_choice?
+      input_ex_choice
+    else
+      nw_ex_choice_process_input
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Input processing of options
+  #--------------------------------------------------------------------------
+  def input_ex_choice
+    @ex_choice_window.start
+    Fiber.yield while @ex_choice_window.active
+  end
+end
+#==============================================================================
+# ■ Window_ExChoiceList
+#==============================================================================
+class Window_ExChoiceList < Window_ChoiceList
+  #--------------------------------------------------------------------------
+  # ● Start input processing
+  #--------------------------------------------------------------------------
+  def start
+    refresh
+    return process_zero if max_choice_width == nil
+    update_placement
+    refresh
+    select(0)
+    open
+    activate
+  end
+  #--------------------------------------------------------------------------
+  # ● Update window position
+  #--------------------------------------------------------------------------
+  def update_placement
+    self.width = [max_choice_width + 12, 96].max + padding * 2
+    self.width = [width, Graphics.width].min
+    self.height = fitting_height(page_row)
+    self.x = Graphics.width - width
+    if @message_window.y >= Graphics.height / 2
+      self.y = @message_window.y - height
+    else
+      self.y = @message_window.y + @message_window.height
+    end
+    self.x += $game_message.ex_choice_setting[2][0]
+    self.y += $game_message.ex_choice_setting[2][1]
+  end
+  #--------------------------------------------------------------------------
+  # ● Get the maximum width of options
+  #--------------------------------------------------------------------------
+  def max_choice_width
+    @list.collect {|item| text_size(item[:name]).width }.max
+  end
+  #--------------------------------------------------------------------------
+  # ● Get the maximum width of options
+  #--------------------------------------------------------------------------
+  def page_row
+    [item_max, $game_message.ex_choice_setting[1]].min
+  end
+  #--------------------------------------------------------------------------
+  # ● Create command list
+  #--------------------------------------------------------------------------
+  def make_command_list
+    return unless $game_message.ex_choice?
+    return unless $game_message.ex_choice_item
+    s = $game_switches
+    v = $game_variables
+    $game_message.ex_choice_item.each do |item|
+      enabled = eval(item[2])
+      add_command(item[0], item[1], enabled) if enabled or item[3] == 1
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Drawing items
+  #--------------------------------------------------------------------------
+  def draw_item(index)
+    @enabled = command_enabled?(index)
+    super(index)
+  end
+  #--------------------------------------------------------------------------
+  # ● Changing the text drawing color
+  #--------------------------------------------------------------------------
+  def change_color(color, enabled = @enabled)
+    super(color, enabled)
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire the effective state of cancel processing
+  #--------------------------------------------------------------------------
+  def cancel_enabled?
+    true
+  end
+  #--------------------------------------------------------------------------
+  # ● Processing when the cancel button is pressed
+  #--------------------------------------------------------------------------
+  def process_cancel
+    if $game_message.ex_choice_setting[0] >= 0
+      super
+    else
+      Sound.play_buzzer
+      Input.update
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Calling a decision handler
+  #--------------------------------------------------------------------------
+  def call_ok_handler
+    process_end(current_symbol)
+  end
+  #--------------------------------------------------------------------------
+  # ● Calling a cancel handler
+  #--------------------------------------------------------------------------
+  def call_cancel_handler
+    process_end($game_message.ex_choice_setting[0])
+  end
+  #--------------------------------------------------------------------------
+  # ● Processing when there are 0 choices
+  #--------------------------------------------------------------------------
+  def process_zero
+    process_end(-1)
+  end
+  #--------------------------------------------------------------------------
+  # ● Save results and exit
+  #--------------------------------------------------------------------------
+  def process_end(n)
+    $game_variables[NWConst::Var::EX_CHOICE_RESULT] = n
+    close
+    $game_message.ex_choice_clear
+  end
+endd

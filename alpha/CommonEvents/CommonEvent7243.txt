@@ -1,0 +1,27 @@
+// EVENT 7243
+Name "Satsuki: Defeat"
+
+RunCommonEvent(7000)
+PictureDisplay(5,"80_mob_miko1_st01",0,0,0,0,100,100,255,0)
+PictureClear(6)
+ShowMessageFace("mob_miko1_fc1",2,0,2,1)
+ShowMessage("Satsuki")
+ShowMessage("Refuge, I'm the winner.")
+ShowMessage("Well then, we will have to pay you ....")
+125(1,0,700)
+ShowMessageFace("",0,0,2,2)
+ShowMessage("Luke paid 700 G!")
+ShowMessageFace("mob_miko1_fc1",6,0,2,3)
+ShowMessage("Satsuki")
+ShowMessage("Well then, please come back to the battle fuck again.")
+ShowMessage("I will give you as many opponents as possible ... ...")
+If(0,2331,1)
+ PictureClear(5)
+ 281(1)
+ TeleportPlayer(0,53,47,22,2,0)
+ 216(0)
+ 0()
+EndIf()
+EndEventProcessing()
+0()
+

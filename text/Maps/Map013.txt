@@ -1,0 +1,7 @@
+"♪" -> "♪"
+"♪" -> "♪"
+"☆" -> "☆"
+"♪ uhehe♪" -> "♪ uhehe ♪"
+"♪" -> "♪"
+"♪　Someone save me" -> "♪ Someone save me"
+"♪" -> "♪"

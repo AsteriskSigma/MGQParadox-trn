@@ -1,0 +1,635 @@
+
+DisplayName "MS Fish Mid Deck"
+
+
+
+EVENT   1
+ PAGE   1
+  281(0)
+  If(6,-1,8)
+   250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+   TeleportPlayer(0,376,13,27,0,0)
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   2
+ PAGE   1
+  281(0)
+  If(6,-1,8)
+   250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+   TeleportPlayer(0,376,13,27,0,0)
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   3
+ PAGE   1
+  281(0)
+  If(6,-1,2)
+   250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+   TeleportPlayer(0,479,20,16,0,0)
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   4
+ PAGE   1
+  281(0)
+  If(6,-1,2)
+   250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+   TeleportPlayer(0,479,21,16,0,0)
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   5
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Cow>Moo!")
+  If(0,6,0)
+   ShowMessageFace("sonia_fc2",2,0,2,2)
+   ShowMessage("\\n<Sonya>This cow, are you keeping it as...food?")
+   0()
+  Else()
+   ShowMessageFace("ruka_fc1",0,0,2,3)
+   ShowMessage("\\n<Luka>This cow, are you keeping it as...food?")
+   0()
+  EndIf()
+  ShowMessageFace("ashel_fc1",0,0,2,4)
+  ShowMessage("\\n<Ashel>That was the original plan, yes...")
+  ShowMessage("But because of the lady's crying, we reconsidered.")
+  ShowMessageFace("ashel_fc1",0,0,2,5)
+  ShowMessage("\\n<Ashel>Now, it's getting all the leftovers.")
+  ShowMessage("It better give as much milk as it can...")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("141")
+  ShowMessageFace("mino_fc1",2,0,2,6)
+  ShowMessage("\\n<Mina>Why don't we just eat it?...I'm sorry.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   6
+ PAGE   1
+  // condition: switch 2168 is ON
+  ShowMessageFace("bonny_fc1",0,0,2,1)
+  ShowMessage("\\n<Bonnie>*Munch* *Munch*")
+  205(0,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x08,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x29,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x1e,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  ShowSpeechBalloon(0,1,true)
+  241(bytes(0x04,0x08,0x6f,0x3a,0x0d,0x52,0x50,0x47,0x3a,0x3a,0x42,0x47,0x4d,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x10,0x73,0x63,0x65,0x6e,0x65,0x5f,0x63,0x6f,0x6d,0x69,0x32,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69))
+  PictureDisplay(5,"80_bonny_st01",0,0,0,0,100,100,0,0)
+  PictureMove(5,null,0,0,0,0,100,100,255,0,30,true)
+  ShowMessageFace("bonny_fc1",0,0,2,2)
+  ShowMessage("\\n<Bonnie>This isn't what it looks like!")
+  PictureDisplay(5,"80_bonny_st01",0,0,-150,0,100,100,255,0)
+  PictureDisplay(6,"80_ashel_st01",0,0,150,0,100,100,255,0)
+  ShowMessageFace("ashel_fc1",0,0,2,3)
+  ShowMessage("\\n<Ashel>Sure it isn't, milady...\nI believe you've already had your afternoon snack for the day.")
+  ShowMessageFace("bonny_fc1",0,0,2,4)
+  ShowMessage("\\n<Bonnie>A captain has to inspect her provisions!\nAnyway, what's your business?")
+  ShowMessageFace("ashel_fc1",0,0,2,5)
+  ShowMessage("\\n<Ashel>Them.\nThey're the ones the navy chose for their operation against us.")
+  ShowMessageFace("bonny_fc1",0,0,2,6)
+  ShowMessage("\\n<Bonnie>Oh, I've heard about you!\nI'm Bonnie, leader of the Fishy Pirates!")
+  If(4,79,0)
+   ShowMessageFace("nuruko_fc1",0,0,2,7)
+   ShowMessage("\\n<Nuruko>Kyuu!")
+   0()
+  EndIf()
+  If(4,129,0)
+   ShowMessageFace("brunhild_fc1",0,0,2,8)
+   ShowMessage("\\n<Hild>Pleased to meet you...")
+   0()
+  EndIf()
+  ShowMessageFace("bonny_fc1",0,0,2,9)
+  ShowMessage("\\n<Bonnie>I learned about your circumstances from Wow. You're being tempted by the navy to arrest us!")
+  If(0,4,0)
+   ShowMessageFace("alice_fc5",0,0,2,10)
+   ShowMessage("\\n<Alice>Well, that is what we agreed upon. We have to get to Grand Noah.")
+   0()
+  EndIf()
+  If(0,5,0)
+   ShowMessageFace("iriasu_fc4",0,0,2,11)
+   ShowMessage("\\n<Ilias>We aren't doing it for the navy. It is the will of Heaven to subjugate vile pirates.")
+   ShowMessageFace("iriasu_fc4",2,0,2,12)
+   ShowMessage("\\n<Ilias>Well... we do need to get to Grand Noah, too.")
+   0()
+  EndIf()
+  ShowMessageFace("bonny_fc1",0,0,2,13)
+  ShowMessage("\\n<Bonnie>You want to go to Grand Noah?\nHow about we take you there on the MS Fish?")
+  If(0,6,0)
+   ShowMessageFace("sonia_fc1",0,0,2,14)
+   ShowMessage("\\n<Sonya>Eh? That solves our problem, doesn't it? Let's just take this ship to Grand Noah!")
+   0()
+  EndIf()
+  ShowMessageFace("ashel_fc1",0,0,2,15)
+  ShowMessage("\\n<Ashel>You're being too generous, milady.\nWe're pirates, so we should at least attach a condition in this situation.")
+  ShowMessageFace("bonny_fc1",0,0,2,16)
+  ShowMessage("\\n<Bonnie>Really? Okay... hmm...\nI've got it! Help us with a plan we have!")
+  ShowMessageFace("bonny_fc1",0,0,2,17)
+  ShowMessage("\\n<Bonnie>On a deserted island west of here, there's a place called Grand Pirates' Cave. The treasure of the famed pirate Roza lies there.")
+  ShowMessageFace("bonny_fc1",0,0,2,18)
+  ShowMessage("\\n<Bonnie>Seeing how I'm a descendant of Roza, don't you agree that I should have that treasure? Yet there's a reason we can't just walk into the cave...")
+  ShowMessageFace("bonny_fc1",0,0,2,19)
+  ShowMessage("\\n<Bonnie>The navy has the place under strict supervision, and security is tight. It'd be difficult for us to enter alone.")
+  If(4,171,0)
+   ShowMessageFace("lizardboss_fc1",0,0,2,20)
+   ShowMessage("\\n<Miranda>Pirate treasure guarded by the navy?\nThat's the kind of thing I live for.")
+   0()
+  EndIf()
+  If(0,4,0)
+   ShowMessageFace("alice_fc5",0,0,2,21)
+   ShowMessage("\\n<Alice>So you need our help...\nIf we land on their island, the navy will see it as an act of aggression, though.")
+   0()
+  EndIf()
+  If(0,5,0)
+   ShowMessageFace("iriasu_fc4",2,0,2,22)
+   ShowMessage("\\n<Ilias>And that's where we come in?\nIf we encroach on their territory, the navy will see it as an act of aggression, though.")
+   0()
+  EndIf()
+  If(4,53,0)
+   ShowMessageFace("slime_fc1",2,0,2,23)
+   ShowMessage("\\n<Lime>They'll get mad at us...")
+   0()
+  EndIf()
+  If(0,6,0)
+   ShowMessageFace("sonia_fc2",2,0,2,24)
+   ShowMessage("\\n<Sonya>In other words, we have two choices: allying with the navy or the pirates. Choosing either one will make enemies of the other...")
+   0()
+  EndIf()
+  If(0,4,0)
+   ShowMessageFace("alice_fc5",0,0,2,25)
+   ShowMessage("\\n<Alice>If we don't choose a side, we're stuck, though. We have to get to Grand Noah somehow.")
+   0()
+  EndIf()
+  If(0,5,0)
+   ShowMessageFace("iriasu_fc4",2,0,2,26)
+   ShowMessage("\\n<Ilias>Be that as it may, we must make a decision. We must make our way to Grand Noah.")
+   0()
+  EndIf()
+  If(4,12,0)
+   ShowMessageFace("sylph_fc1",2,0,2,27)
+   ShowMessage("\\n<Sylph>Let's become pirates! Piiiiiraaaaaaaaates!")
+   0()
+  EndIf()
+  If(4,13,0)
+   ShowMessageFace("gnome_fc1",0,0,2,28)
+   ShowMessage("\\n<Gnome>......")
+   0()
+  EndIf()
+  If(4,163,0)
+   ShowMessageFace("lily_fc1",3,0,2,29)
+   ShowMessage("\\n<Lily>Being a pirate sounds fun.\nI'm definitely on the pirates' side here.")
+   0()
+  EndIf()
+  If(4,167,0)
+   ShowMessageFace("lusia_fc1",2,0,2,30)
+   ShowMessage("\\n<Lucia>I am opposed to cooperating with pirates...")
+   0()
+  EndIf()
+  ShowMessageFace("bonny_fc1",0,0,2,31)
+  ShowMessage("\\n<Bonnie>Time to choose!\nWill you be pawns of the navy, or fight with us?!")
+  ShowMessageFace("ashel_fc1",0,0,2,32)
+  ShowMessage("\\n<Ashel>Please use your head, milady...\nPressing them to make a decision now could cause us problems.")
+  ShowMessageFace("ashel_fc1",0,0,2,33)
+  ShowMessage("\\n<Ashel>If they commit to the navy, we'd have to fight them right here. The ship would get trashed, to say nothing of our own safety.")
+  ShowMessageFace("bonny_fc1",0,0,2,34)
+  ShowMessage("\\n<Bonnie>Oh, you're right... Fine.\nLike Ashel said, don't make your choice here.")
+  If(4,41,0)
+   ShowMessageFace("stein_fc2",0,0,2,35)
+   ShowMessage("\\n<Promestein>Oh bother...")
+   0()
+  EndIf()
+  ShowMessageFace("ashel_fc1",0,0,2,36)
+  ShowMessage("\\n<Ashel>To that end, let's change location. We'll take you back, and you can decide there.")
+  ShowMessageFace("ashel_fc1",0,0,2,37)
+  ShowMessage("\\n<Ashel>If you wish to ally with the Fishy Pirates, we'll have a boat waiting for you at the same place as before.")
+  ShowMessageFace("ashel_fc1",0,0,2,38)
+  ShowMessage("\\n<Ashel>If you become pawns of the navy...\nGet on their warship, and make enemies of us.")
+  ShowMessageFace("bonny_fc1",1,0,2,39)
+  ShowMessage("\\n<Bonnie>I have a feeling we're going to get along. I'm looking forward to you returning as friends!")
+  ShowMessageFace("ruka_fc1",0,0,2,40)
+  ShowMessage("\\n<Luka>......")
+  PictureClear(5)
+  PictureClear(6)
+  ShowMessageFace("",0,0,2,41)
+  ShowMessage("We've managed to land in a difficult situation--")
+  ChangeSwitch(100,100,1)
+  221()
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0b,0x57,0x61,0x74,0x65,0x72,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ShowMessageFace("",0,0,2,42)
+  ShowMessage("Luka's party is taken back to the Navy Headquarters by boat...")
+  Wait(60)
+  TeleportPlayer(0,279,56,6,2,2)
+  222()
+  ShowMessageFace("",0,0,2,43)
+  ShowMessage("If we cooperate with the navy, we'll get on their warship and board the MS Fish, making enemies of the pirates in the process.")
+  ShowMessageFace("",0,0,2,44)
+  ShowMessage("If we cooperate with the Fishy Pirates, we'll take a boat back to the MS Fish, straining our relationship with the navy.")
+  If(0,4,0)
+   ShowMessageFace("alice_fc5",0,0,2,45)
+   ShowMessage("\\n<Alice>Time to decide. You're the leader, so I'll defer to your judgment.")
+   0()
+  EndIf()
+  If(0,5,0)
+   ShowMessageFace("iriasu_fc4",0,0,2,46)
+   ShowMessage("\\n<Ilias>You have to decide on one of them... Choose the path you won't regret.")
+   0()
+  EndIf()
+  If(4,79,0)
+   ShowMessageFace("nuruko_fc1",0,0,2,47)
+   ShowMessage("\\n<Nuruko>Kyuu! Kyuu!")
+   0()
+  EndIf()
+  ChangeVariable(1050,1050,0,0,6)
+  EndEventProcessing()
+  0()
+ PAGE   2
+  // condition: switch 2149 is ON
+  0()
+ PAGE   3
+  // condition: switch 2169 is ON
+  ShowMessageFace("bonny_fc1",0,0,2,1)
+  ShowMessage("\\n<Bonnie>*Munch* *Munch*")
+  205(0,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x08,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x29,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x1e,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  ShowSpeechBalloon(0,1,true)
+  241(bytes(0x04,0x08,0x6f,0x3a,0x0d,0x52,0x50,0x47,0x3a,0x3a,0x42,0x47,0x4d,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x10,0x73,0x63,0x65,0x6e,0x65,0x5f,0x63,0x6f,0x6d,0x69,0x32,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69))
+  PictureDisplay(5,"80_bonny_st01",0,0,0,0,100,100,0,0)
+  PictureMove(5,null,0,0,0,0,100,100,255,0,30,true)
+  ShowMessageFace("bonny_fc1",0,0,2,2)
+  ShowMessage("\\n<Bonnie>This isn't what it looks like!")
+  PictureDisplay(5,"80_bonny_st01",0,0,-150,0,100,100,255,0)
+  PictureDisplay(6,"80_ashel_st01",0,0,150,0,100,100,255,0)
+  ShowMessageFace("ashel_fc1",0,0,2,3)
+  ShowMessage("\\n<Ashel>Sure it isn't, milady...\nAll your overeating is only making your boobs bigger.")
+  ShowMessageFace("bonny_fc1",2,0,2,4)
+  ShowMessage("\\n<Bonnie>They're emergency floatation devices...")
+  If(4,66,0)
+   ShowMessageFace("vgirl_fc1",2,0,2,5)
+   ShowMessage("\\n<Vanilla>Share your flotation devices with me...")
+   0()
+  EndIf()
+  If(4,79,0)
+   ShowMessageFace("nuruko_fc1",0,0,2,6)
+   ShowMessage("\\n<Nuruko>Kyuu...")
+   0()
+  EndIf()
+  If(0,4,0)
+   ShowMessageFace("alice_fc5",0,0,2,7)
+   ShowMessage("\\n<Alice>Can we get down to business before we regret joining you pirates?")
+   0()
+  EndIf()
+  If(0,5,0)
+   ShowMessageFace("iriasu_fc4",2,0,2,8)
+   ShowMessage("\\n<Ilias>Spare us the comedy act and let us move on...")
+   0()
+  EndIf()
+  PictureDisplay(5,"80_bonny_st02",0,0,-150,0,100,100,255,0)
+  ShowMessageFace("bonny_fc1",1,0,2,9)
+  ShowMessage("\\n<Bonnie>Oh, you did end up coming back! I knew we'd become friends!")
+  ShowMessageFace("bonny_fc1",1,0,2,10)
+  ShowMessage("\\n<Bonnie>Now it's time to get Roza's treasure that I've wanted for so long! Let's head to the Grand Pirates' Cave without delay!")
+  PictureClear(5)
+  PictureClear(6)
+  Wait(60)
+  205(0,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x09,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x2a,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x0f,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x2c,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  355("add_actor_ex(202)")
+  249(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0c,0x66,0x61,0x6e,0x66,0x61,0x6c,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69))
+  ShowMessageFace("",0,0,2,11)
+  ShowMessage("Bonnie joined the party!")
+  Wait(60)
+  ShowMessageFace("bonny_fc1",1,0,2,12)
+  ShowMessage("\\n<Bonnie>All right, let's shove off! When you're ready, go talk to the nekomata in the captain's quarters.")
+  If(0,6,0)
+   ShowMessageFace("sonia_fc4",0,0,2,13)
+   ShowMessage("\\n<Sonya>What position does that nekomata hold on this ship...?")
+   0()
+  Else()
+   ShowMessageFace("ruka_fc1",0,0,2,14)
+   ShowMessage("\\n<Luka>What position does that nekomata hold on this ship...?")
+   0()
+  EndIf()
+  241(bytes(0x04,0x08,0x6f,0x3a,0x0d,0x52,0x50,0x47,0x3a,0x3a,0x42,0x47,0x4d,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x08,0x75,0x6d,0x69,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69))
+  ChangeVariable(1051,1051,0,0,2)
+  EndEventProcessing()
+  0()
+ PAGE   4
+  // condition: variable 1051 >= 2
+  0()
+
+
+
+EVENT   7
+ PAGE   1
+  281(0)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,376,7,43,0,0)
+  0()
+
+
+
+EVENT   8
+ PAGE   1
+  281(0)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,376,7,43,0,0)
+  0()
+
+
+
+EVENT   9
+ PAGE   1
+  ShowMessageFace("k_mermaid_fc1",0,0,2,1)
+  ShowMessage("\\n<Mermaid Pirate>This floor is a room of a general seafarer ... ....")
+  ShowMessage("Also, there are dining places, kitchens and food storage.")
+  ShowMessageFace("k_mermaid_fc1",0,0,2,2)
+  ShowMessage("\\n<Mermaid Pirate>Our boss is on the floor down this staircase.")
+  0()
+
+
+
+EVENT   10
+ PAGE   1
+  ShowMessageFace("k_mermaid_fc1",0,0,2,1)
+  ShowMessage("\\n<Mermaid Pirate>This is our food storage.")
+  ShowMessage("The pinch eclipse is the penalty for the screw.")
+  0()
+ PAGE   2
+  // condition: switch 2168 is ON
+  0()
+
+
+
+EVENT   11
+ PAGE   1
+  ShowMessageFace("k_mermaid_fc1",0,0,2,1)
+  ShowMessage("\\n<Mermaid Pirate>Okashira, there are places where you can rely unexpectedly")
+  ShowMessage("There seems to be some feeling.")
+  0()
+
+
+
+EVENT   12
+ PAGE   1
+  ShowMessageFace("k_mermaid_fc1",2,0,2,1)
+  ShowMessage("\\n<Mermaid Pirate>The Navy is planning to punish us ....")
+  ShowMessage("To be honest, I have not done so much bad things ... ... Is not it terrible?")
+  ShowMessageFace("k_mermaid_fc1",2,0,2,2)
+  ShowMessage("\\n<Mermaid Pirate>We only prey on rouge ships.")
+  ShowMessage("Killing is a good battle party of the good will ......")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("62")
+  ShowMessageFace("gob_fc1",0,0,2,3)
+  ShowMessage("\\n<A gob>If a gaijin was true ... ...")
+  ShowMessage("I guess you do not have to hit it?")
+  EndEventProcessing()
+  DefineLabel("167")
+  ShowMessageFace("lusia_fc1",2,0,2,4)
+  ShowMessage("\\n<Lucia>Nonetheless, we must obey the law ......")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   13
+ PAGE   1
+  ShowMessageFace("k_mermaid_fc1",0,0,2,1)
+  ShowMessage("\\n<Mermaid Pirate>Our boss is lacking something essential for a pirate...")
+  ShowMessage("Hey, what do you think?")
+  ShowChoices(strings("She's weak","She's stupid","She can't swim"),0)
+  IfPlayerPicksChoice(0,null)
+   ShowMessageFace("k_mermaid_fc1",0,0,2,2)
+   ShowMessage("\\n<Mermaid Pirate>Our boss is good looking and has strong arms.")
+   ShowMessage("She isn't a decendant of Roza for nothing.")
+   0()
+  IfPlayerPicksChoice(1,null)
+   ShowMessageFace("k_mermaid_fc1",0,0,2,3)
+   ShowMessage("\\n<Mermaid Pirate>Yeah, she isn't that smart but...\nAs long as she has Ashel, it will be fine..")
+   0()
+  IfPlayerPicksChoice(2,null)
+   ShowMessageFace("k_mermaid_fc1",0,0,2,4)
+   ShowMessage("\\n<Mermaid Pirate>...so you know the secret of the fishy pirates.")
+   ShowMessage("So that means you'll become a friend...or you'll die.")
+   0()
+  404()
+  0()
+
+
+
+EVENT   14
+ PAGE   1
+  ShowMessageFace("k_mermaid_fc1",0,0,2,1)
+  ShowMessage("\\n<Mermaid Pirate>Our boss is a decendant of Pirate Queen Roza.")
+  ShowMessage("We will definitely make it big!")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("143")
+  ShowMessageFace("eva_fc1",0,0,2,2)
+  ShowMessage("\\n<Eva>I want to make it big too...")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   15
+ PAGE   1
+  ShowMessageFace("k_mermaid_fc1",0,0,2,1)
+  ShowMessage("\\n<Mermaid Pirate>Ashel's dishes are always delicious!")
+  0()
+
+
+
+EVENT   16
+ PAGE   1
+  ShowMessageFace("k_mermaid_fc1",0,0,2,1)
+  ShowMessage("\\n<Mermaid Pirate>My older sister! Pleae help me cook!")
+  ShowMessageFace("ashel_fc1",0,0,2,2)
+  ShowMessage("\\n<Ashel>Later, I wish I wasn't busy now...")
+  If(0,6,0)
+   ShowMessageFace("sonia_fc1",0,0,2,3)
+   ShowMessage("\\n<Sonya>Ashel, are you good at cooking?")
+   0()
+  Else()
+   ShowMessageFace("ruka_fc1",0,0,2,4)
+   ShowMessage("\\n<Luka>Ashel, are you good at cooking?")
+   0()
+  EndIf()
+  ShowMessageFace("ashel_fc1",0,0,2,5)
+  ShowMessage("\\n<Ashel>Well.")
+  ShowMessage("As vice captain, it is my duty to manage the meals on the ship.")
+  ShowMessageFace("k_mermaid_fc1",0,0,2,6)
+  ShowMessage("\\n<Mermaid Pirate>My sister 's food is all over the ocean!")
+  ShowMessage("She won't loose even to professional chefs.")
+  ShowMessageFace("ashel_fc1",1,0,2,7)
+  ShowMessage("\\n<Ashel>Actually, I do a have a professional qualification.")
+  0()
+
+
+
+EVENT   17
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("KITCHEN: CAPTAIN KEEP OUT")
+  If(0,6,0)
+   ShowMessageFace("sonia_fc2",2,0,2,2)
+   ShowMessage("\\n<Sonya>Why is the captain not allowed in...?")
+   0()
+  Else()
+   ShowMessageFace("ruka_fc1",0,0,2,3)
+   ShowMessage("\\n<Luka>Why is the captain not allowed in...?")
+   0()
+  EndIf()
+  ShowMessageFace("ashel_fc1",0,0,2,4)
+  ShowMessage("\\n<Ashel>Her attempts at cooking always end in disaster. Last time she nearly set the whole ship ablaze...")
+  0()
+
+
+
+EVENT   18
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("FOOD STORAGE: CAPTAIN KEEP OUT")
+  If(0,6,0)
+   ShowMessageFace("sonia_fc2",2,0,2,2)
+   ShowMessage("\\n<Sonya>Why is the captain not allowed in...?")
+   0()
+  Else()
+   ShowMessageFace("ruka_fc1",0,0,2,3)
+   ShowMessage("\\n<Luka>Why is the captain not allowed in...?")
+   0()
+  EndIf()
+  ShowMessageFace("ashel_fc1",0,0,2,4)
+  ShowMessage("\\n<Ashel>She has a habit of snitching food...")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("5")
+  ShowMessageFace("alice_fc5",0,0,2,5)
+  ShowMessage("\\n<Alice>What a glutton of a leader...")
+  EndEventProcessing()
+  DefineLabel("70")
+  ShowMessageFace("nezumi_fc1",0,0,2,6)
+  ShowMessage("\\n<Ratty>Greedy leader...")
+  EndEventProcessing()
+  DefineLabel("143")
+  ShowMessageFace("eva_fc1",0,0,2,7)
+  ShowMessage("\\n<Eva>Snitching food? Was she that poorly raised?")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   19
+ PAGE   1
+  ShowMessageFace("k_mermaid_fc1",0,0,2,1)
+  ShowMessage("\\n<Mermaid Pirate>I am studying nutrition!")
+  ShowMessage("It is essential knowledge for long voyages!")
+  ShowMessageFace("ashel_fc1",0,0,2,2)
+  ShowMessage("\\n<Ashel>I only have myself in nutrition knowing in the crew.")
+  ShowMessage("I have to let other people learn a little too.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("166")
+  ShowMessageFace("narcubus_fc1",0,0,2,3)
+  ShowMessage("\\n<Nabis>In long voyages, nutrition management is important ♪")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   20
+ PAGE   1
+  ShowMessageFace("k_mermaid_fc1",0,0,2,1)
+  ShowMessage("\\n<Mermaid Pirate>It is troublesome meal duty ~")
+  ShowMessage("The guard is still better.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("168")
+  ShowMessageFace("dodome_fc1",0,0,2,2)
+  ShowMessage("\\n<Manako>If you are looking for something, leave it to me!")
+  ShowMessageFace("k_mermaid_fc1",0,0,2,3)
+  ShowMessage("\\n<Mermaid Pirate>If the eyes match so much, the lookout seems to be comfortable ~")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   21
+ PAGE   1
+  ShowMessageFace("k_mermaid_fc1",0,0,2,1)
+  ShowMessage("\\n<Mermaid Pirate>Cleaning~♪ Cleaning~♪")
+  ShowMessageFace("ashel_fc1",0,0,2,2)
+  ShowMessage("\\n<Ashel>In that corner, there is still a lot of dust.")
+  ShowMessageFace("k_mermaid_fc1",0,0,2,3)
+  ShowMessage("\\n<Mermaid Pirate>My older sister, it's cheap!")
+  ShowMessage("The cleaning skill is not as high as my sister ....")
+  ShowMessageFace("ashel_fc1",0,0,2,4)
+  ShowMessage("\\n<Ashel>You are too crowded ......")
+  If(0,6,0)
+   ShowMessageFace("sonia_fc1",0,0,2,5)
+   ShowMessage("\\n<Sonya>Ashel, you are good at cleaning?")
+   0()
+  Else()
+   ShowMessageFace("ruka_fc1",0,0,2,6)
+   ShowMessage("\\n<Luka>Ashel, you are good at cleaning?")
+   0()
+  EndIf()
+  ShowMessageFace("ashel_fc1",0,0,2,7)
+  ShowMessage("\\n<Ashel>Well. As vice captain, it is my duty to look after the state of the ship.")
+  0()
+
+
+
+EVENT   22
+ PAGE   1
+  ShowMessageFace("dog_fc1",4,0,2,1)
+  ShowMessage("\\n<Wow>Woof, woof, woof!")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("525")
+  ShowMessageFace("sonia_fc2",2,0,2,2)
+  ShowMessage("\\n<Sonya>Was not this child, on the deck?")
+  ShowMessage("It is not another dog, is not it ...?")
+  ShowMessageFace("dog_fc1",0,0,2,3)
+  ShowMessage("\\n<Wow>It is a Dog!")
+  ShowMessage("In the ship, I'm running around!")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   23
+ PAGE   1
+  ShowMessageFace("k_mermaid_fc1",0,0,2,1)
+  ShowMessage("\\n<Mermaid Pirate>Chitchase, older sisters!")
+  ShowMessage("……that? They are an example ...")
+  ShowMessageFace("ashel_fc1",0,0,2,2)
+  ShowMessage("\\n<Ashel>Ah.")
+  ShowMessage("I guided the boat as a daughter as well as seeing you lady.")
+  ShowMessageFace("k_mermaid_fc1",0,0,2,3)
+  ShowMessage("\\n<Mermaid Pirate>I see!Nice to meet you ♪")
+  0()
+
+
+
+EVENT   24
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(328,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+

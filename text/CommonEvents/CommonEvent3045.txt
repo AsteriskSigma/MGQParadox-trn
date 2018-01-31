@@ -1,0 +1,4 @@
+"反省会" -> "Evaluation meeting"
+"　Aaah" -> "Aaah"
+"　Aaaah" -> "Aaaah"
+"反省会" -> "Evaluation meeting"

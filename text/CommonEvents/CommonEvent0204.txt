@@ -1,0 +1,2 @@
+"スイッチ11がオフなら、敵が有効ではないので中断" -> "If the switch 11 is off, the enemy is not effective so it is interrupted"
+"スイッチ12をオフにすることで、この後の誘惑と会話をキャンセル" -> "Cancel temptation and conversation after this by turning off switch 12"

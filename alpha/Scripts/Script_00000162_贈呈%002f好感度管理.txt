@@ -1,0 +1,298 @@
+=begin
+=Presentation/Favorability management by Foo
+
+Class to manage gifts and actor likes
+
+==Change log
+Date     Version Author Comment
+
+=end
+
+#==============================================================================
+# ■ NWConst::Present
+#==============================================================================
+module NWConst::Present
+  LOVE_UP_SE = RPG::SE.new("Item1")
+  LOVE_DOWN_SE = RPG::SE.new("Raise2")  
+  RESULT_STR_UP = "%s's happiness increased by %d points! (Happiness:%d)"
+  RESULT_STR_DOWN =  "%s's happiness decreased by %d points... (Happiness:%d)"
+  RESULT_STR_INVARIANT = "%s's happiness didn't change... (Happiness:%d)"
+end
+
+#==============================================================================
+# ■ RPG::Actor
+#==============================================================================
+class RPG::Actor < RPG::BaseItem
+  #--------------------------------------------------------------------------
+  # ● Assign positivity
+  #--------------------------------------------------------------------------
+  def love=(value)
+    $game_variables[NWConst::Var::ACTOR_REL_BASE + self.id] = value
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of favorability
+  #--------------------------------------------------------------------------
+  def love
+    $game_variables[NWConst::Var::ACTOR_REL_BASE + self.id]
+  end
+end
+
+#==============================================================================
+# ■ Game_Temp
+#==============================================================================
+class Game_Temp
+  #--------------------------------------------------------------------------
+  # ● Public instance variables
+  #--------------------------------------------------------------------------
+  attr_accessor     :choice_present_id
+  attr_accessor     :choice_present_index
+  #--------------------------------------------------------------------------
+  # ○ Object initialization
+  #--------------------------------------------------------------------------
+  alias nw_present_initialize initialize
+  def initialize
+    nw_present_initialize
+    @choice_present_id = 0
+    @choice_present_index = 0
+  end
+end
+  
+#==============================================================================
+# ■ Game_Message
+#==============================================================================
+class Game_Message
+  #--------------------------------------------------------------------------
+  # ● Public instance variables
+  #--------------------------------------------------------------------------
+  attr_accessor :present_actor_id    # Actor ID to be gifted
+  #--------------------------------------------------------------------------
+  # ○ Clear
+  #--------------------------------------------------------------------------
+  alias nw_present_clear clear
+  def clear
+    nw_present_clear
+    @present_actor_id = 0
+  end
+  #--------------------------------------------------------------------------
+  # ● Present selection mode judgment
+  #--------------------------------------------------------------------------
+  def present_choice?
+    @present_actor_id > 0
+  end
+  #--------------------------------------------------------------------------
+  # ○ Busy determination
+  #--------------------------------------------------------------------------
+  alias nw_present_busy? busy?
+  def busy?
+    nw_present_busy? || present_choice?
+  end
+end
+
+#==============================================================================
+# ■ Game_Actor
+#==============================================================================
+class Game_Actor < Game_Battler
+  #--------------------------------------------------------------------------
+  # ● Assign positivity
+  #--------------------------------------------------------------------------
+  def love=(value)
+    actor.love = value
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of favorability
+  #--------------------------------------------------------------------------
+  def love
+    return actor.love
+  end
+  #--------------------------------------------------------------------------
+  # ● Present data exists?
+  #--------------------------------------------------------------------------
+  def exist_present?(present_id)
+    NWConst::Present::SETTINGS.key?(self.id) && present_data.key?(present_id)
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of present data
+  #--------------------------------------------------------------------------
+  def present_data
+    NWConst::Present::SETTINGS[self.id]
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of favorable likelihood increase value for gifts
+  #--------------------------------------------------------------------------
+  def present_loveup(present_id)
+    present_data[present_id][:love]
+  end  
+  #--------------------------------------------------------------------------
+  # ● Acquire gift line of speech
+  #--------------------------------------------------------------------------
+  def present_words(present_id)
+    return [] unless exist_present?(present_id)
+    
+    (1..10).collect{|i| "word_#{i}".to_sym}.collect{|key|
+      present_data[present_id][key]
+    }.compact.collect{|w|
+      Word.new(w[0], w[1], w[2])
+    }
+  end
+end
+
+#==============================================================================
+# ■ Game_Interpreter
+#==============================================================================
+class Game_Interpreter
+  #--------------------------------------------------------------------------
+  # ● Present
+  #--------------------------------------------------------------------------
+  def present_start(actor_id)
+    wait_for_message
+    $game_message.present_actor_id = actor_id
+    Fiber.yield while $game_message.present_choice?    
+    # Receiving Serif
+    actor = $game_actors[actor_id]
+    actor.present_words($game_temp.choice_present_id).each{|word|
+      word.execute
+      wait_for_message
+    }
+    # Escape decision
+    if $game_temp.choice_present_id < 1
+      $game_message.present_actor_id = 0
+      return
+    end
+    love_result_message(actor_id, actor.present_loveup($game_temp.choice_present_id))
+    present_start(actor_id)
+  end
+  #--------------------------------------------------------------------------
+  # ● Displaying the likelihood result
+  #--------------------------------------------------------------------------    
+  def love_result_message(actor_id, love)
+    actor = $game_actors[actor_id]
+    result = (0 < love) ? :up : (love < 0) ? :down : :invariant
+    love = love.abs
+    case result
+    when :up
+      NWConst::Present::LOVE_UP_SE.play
+      $game_message.add(sprintf(NWConst::Present::RESULT_STR_UP, actor.name, love, actor.love))
+    when :down
+      NWConst::Present::LOVE_DOWN_SE.play
+      $game_message.add(sprintf(NWConst::Present::RESULT_STR_DOWN, actor.name, love, actor.love))
+    when :invariant
+      $game_message.add(sprintf(NWConst::Present::RESULT_STR_INVARIANT, actor.name, actor.love))      
+    end
+    wait_for_message    
+  end
+end
+
+#==============================================================================
+# ■ Window_PresentItem
+#==============================================================================
+class Window_PresentItem < Window_KeyItem
+  #--------------------------------------------------------------------------
+  # ● Start input processing
+  #--------------------------------------------------------------------------
+  def start
+    update_placement
+    refresh
+    select((@data.size <= $game_temp.choice_present_index) ? 0 : $game_temp.choice_present_index)
+    open
+    activate
+    present_impossible if @data.empty?
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of selected actors
+  #--------------------------------------------------------------------------
+  def actor
+    $game_actors[$game_message.present_actor_id]
+  end  
+  #--------------------------------------------------------------------------
+  # ● Whether to include items in the list
+  #--------------------------------------------------------------------------
+  def include?(item)
+    item.is_a?(RPG::Item) && item.is_present? && actor.exist_present?(item.id)
+  end
+  #--------------------------------------------------------------------------
+  # There is no selectable gift (when it gone)
+  #--------------------------------------------------------------------------  
+  def present_impossible
+    $game_temp.choice_present_id = 0
+    $game_temp.choice_present_index = 0
+    deactivate
+    close
+  end
+  #--------------------------------------------------------------------------
+  # ● Process at decision
+  #--------------------------------------------------------------------------
+  def on_ok
+    actor.love += actor.present_loveup(item.id)
+    $game_party.lose_item(item, 1)
+    $game_temp.choice_present_id = item.id
+    $game_temp.choice_present_index = self.index
+    close
+  end
+  #--------------------------------------------------------------------------
+  # ● Process at Cancellation
+  #--------------------------------------------------------------------------
+  def on_cancel
+    $game_temp.choice_present_id = -1
+    $game_temp.choice_present_index = 0
+    close
+  end
+end
+
+#==============================================================================
+# ■ Window_Message
+#==============================================================================
+class Window_Message < Window_Base
+  #--------------------------------------------------------------------------
+  # ○ Create all windows
+  #--------------------------------------------------------------------------
+  alias nw_present_create_all_windows create_all_windows
+  def create_all_windows
+    nw_present_create_all_windows
+    @present_window = Window_PresentItem.new(self)
+  end
+  #--------------------------------------------------------------------------
+  # ○ Release of all windows
+  #--------------------------------------------------------------------------
+  alias nw_present_dispose_all_windows dispose_all_windows
+  def dispose_all_windows
+    nw_present_dispose_all_windows
+    @present_window.dispose
+  end
+  #--------------------------------------------------------------------------
+  # ○ Update all windows
+  #--------------------------------------------------------------------------
+  alias nw_present_update_all_windows update_all_windows
+  def update_all_windows
+    nw_present_update_all_windows
+    @present_window.update
+  end
+  #--------------------------------------------------------------------------
+  # ○ Determine whether all windows are completely closed
+  #--------------------------------------------------------------------------
+  alias nw_present_all_close? all_close?
+  def all_close?
+    nw_present_all_close? && @present_window.close?
+  end
+  #--------------------------------------------------------------------------
+  # ○ Input processing
+  #--------------------------------------------------------------------------
+  alias nw_present_process_input process_input
+  def process_input
+    if $game_message.present_choice?
+      input_present
+    else
+      nw_present_process_input
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Present selection process
+  #--------------------------------------------------------------------------
+  def input_present
+    @present_window.start
+    Fiber.yield while @present_window.active
+  end
+end
+
+
+
+

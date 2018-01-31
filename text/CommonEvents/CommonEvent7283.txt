@@ -1,0 +1,8 @@
+"アウグスタ：敗北" -> "Augusta: Defeat"
+"【アウグスタ】" -> "【Augusta】"
+"勝利したであります！" -> "I have triumph!"
+"申し訳ありませんが、賭け金を頂きます……" -> "I'm sorry, but I get a stake ... ..."
+"ルカは 1000G 支払った！" -> "Luke paid 1000 G!"
+"【アウグスタ】" -> "【Augusta】"
+"相手をして頂き、ありがとうございました！" -> "Thank you for your opponent!"
+"また機会があれば、付き合ってもらいたいのであります！" -> "If there is opportunity again, I would like to go out with you!"

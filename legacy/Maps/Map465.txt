@@ -1,0 +1,768 @@
+
+
+
+EVENT   1
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Papers and scientific gadgets line the shelves.")
+  If(4,41,0)
+   ShowMessageFace("stein_fc2",0,0,2,2)
+   ShowMessage("\\n<Promestein>We can leave my experimental data here. I've read them enough times to have them all memorized.")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   2
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Papers and scientific gadgets line the shelves.")
+  If(4,41,0)
+   ShowMessageFace("stein_fc2",0,0,2,2)
+   ShowMessage("\\n<Promestein>We can leave my experimental data here. I've read them enough times to have them all memorized.")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   3
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,464,16,53,0,0)
+  0()
+
+
+
+EVENT   4
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,464,16,53,0,0)
+  0()
+
+
+
+EVENT   5
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,464,16,53,0,0)
+  0()
+
+
+
+EVENT   6
+ PAGE   1
+  // condition: switch 4 is ON
+  If(2,"A",1)
+   PictureDisplay(5,"80_stein_st33",0,0,0,0,100,100,0,0)
+   PictureMove(5,null,0,0,0,0,100,100,255,0,30,true)
+   ShowMessageFace("stein_fc2",2,0,2,1)
+   ShowMessage("\\n<???>Whoa! Who in the world...!?")
+   ShowMessageFace("alice_fc5",2,0,2,2)
+   ShowMessage("\\n<Alice>That's our line! And what are you even doing here!?")
+   ShowMessageFace("stein_fc2",2,0,2,3)
+   ShowMessage("\\n<Promestein>I, I'm Promestein. I'm a librarian, and a low-ranking angel.")
+   ShowMessageFace("alice_fc5",0,0,2,4)
+   ShowMessage("\\n<Alice>An angel...?\nHmm, so it appears. That doesn't explain what a librarian is doing in a place like this though.")
+   PictureDisplay(5,"80_stein_st31",0,0,0,0,100,100,255,0)
+   ShowMessageFace("stein_fc2",0,0,2,5)
+   ShowMessage("\\n<Promestein>Before I explain that, can I ask you a question first?\nWhat year is it?")
+   If(0,6,0)
+    ShowMessageFace("sonia_fc2",2,0,2,6)
+    ShowMessage("\\n<Sonya>It should be Johannes 1455, but here... who knows when it is.")
+    0()
+   Else()
+    ShowMessageFace("ruka_fc1",0,0,2,7)
+    ShowMessage("\\n<Luka>It should be Johannes 1455, but here... who knows when it is.")
+    0()
+   EndIf()
+   ShowMessageFace("stein_fc2",0,0,2,8)
+   ShowMessage("\\n<Promestein>Ah, no I simply wanted to know what era you came from. 1455 by the Johannes calendar is quite a ways into the future though...")
+   ShowMessageFace("alice_fc5",0,0,2,9)
+   ShowMessage("\\n<Alice>The future? So that means you're someone from the past? How the hell did you end up here?")
+   ShowMessageFace("stein_fc2",0,0,2,10)
+   ShowMessage("\\n<Promestein>You kind of remind me of a sand snake... Are you possibly a descendent of those giant monsters?")
+   ShowMessageFace("alice_fc6",1,0,2,11)
+   ShowMessage("\\n<Alice>Hey, I asked first! If you don't answer, I'm going to start quaffing vials!")
+   PictureDisplay(5,"80_stein_st33",0,0,0,0,100,100,255,0)
+   ShowMessageFace("stein_fc2",2,0,2,12)
+   ShowMessage("\\n<Promestein>Please don't! I'm relying on these experiments to travel through spacetime...")
+   ShowMessageFace("alice_fc5",0,0,2,13)
+   ShowMessage("\\n<Alice>Experiments? Are you saying that Ilias actually ordered her angels to conduct experiments?")
+   PictureDisplay(5,"80_stein_st31",0,0,0,0,100,100,255,0)
+   ShowMessageFace("stein_fc2",0,0,2,14)
+   ShowMessage("\\n<Promestein>No, I'm doing this on my own. I was testing the reaction between holy and dark mana and ended up here...")
+   ShowMessageFace("alice_fc5",0,0,2,15)
+   ShowMessage("\\n<Alice>Wow, conducting magical experiments without permission from Ilias. You're quite the delinquent angel.")
+   ShowMessageFace("ruka_fc1",0,0,2,16)
+   ShowMessage("\\n<Luka>Wait, is it possible... Did your experiment cause the Great Disaster?")
+   ShowMessageFace("stein_fc2",0,0,2,17)
+   ShowMessage("\\n<Promestein>No, not possible. My experiment was very limited in scope.")
+   ShowMessageFace("stein_fc2",0,0,2,18)
+   ShowMessage("\\n<Promestein>It simply opened a small gate in spacetime, and even that was an unexpected and accidental side effect.")
+   ShowMessageFace("stein_fc2",0,0,2,19)
+   ShowMessage("\\n<Promestein>However, I've been running more experiments and taking measurements since I got here, and I've discovered the existence of a large-scale rent in spacetime.")
+   ShowMessageFace("stein_fc2",0,0,2,20)
+   ShowMessage("\\n<Promestein>I'm currently investigating the cause of the spacetime rent. I imagine it has something to do with how I was flung here in the first place.")
+   If(0,6,0)
+    ShowMessageFace("sonia_fc2",2,0,2,21)
+    ShowMessage("\\n<Sonya>It sounds like you've been experimenting for quite some time. How many days have you been here?")
+    0()
+   Else()
+    ShowMessageFace("ruka_fc1",0,0,2,22)
+    ShowMessage("\\n<Luka>It sounds like you've been experimenting for quite some time. How many days have you been here?")
+    0()
+   EndIf()
+   ShowMessageFace("stein_fc2",0,0,2,23)
+   ShowMessage("\\n<Promestein>Days...? I've been here nearly 200 years.")
+   If(0,6,0)
+    ShowMessageFace("sonia_fc3",2,0,2,24)
+    ShowMessage("\\n<Sonya>Whaaaat!?")
+    0()
+   Else()
+    ShowMessageFace("ruka_fc1",0,0,2,25)
+    ShowMessage("\\n<Luka>Whaaaat!?")
+    0()
+   EndIf()
+   ShowMessageFace("stein_fc2",0,0,2,26)
+   ShowMessage("\\n<Promestein>By the way, what kind of experiment got you guys here? I'd love to know what you were doing in as much detail as you can provide.")
+   ShowMessageFace("alice_fc5",0,0,2,27)
+   ShowMessage("\\n<Alice>We weren't experimenting or anything. This fake hero over here can open doors through spacetime.")
+   ShowMessageFace("",0,0,2,28)
+   ShowMessage("We explain our circumstances to Promestein...")
+   PictureDisplay(5,"80_stein_st33",0,0,0,0,100,100,255,0)
+   ShowMessageFace("stein_fc2",2,0,2,29)
+   ShowMessage("\\n<Promestein>No way... How could a human possibly cross parallel worlds...")
+   PictureDisplay(5,"80_stein_st31",0,0,0,0,100,100,255,0)
+   ShowMessageFace("stein_fc2",0,0,2,30)
+   ShowMessage("\\n<Promestein>When humans manifest special powers like that, there are visible changes to the frontal lobe. Would you mind letting me dissect your brain, Mr. Luka?")
+   ShowMessageFace("ruka_fc1",0,0,2,31)
+   ShowMessage("\\n<Luka>That would kill me.")
+   ShowMessageFace("stein_fc2",0,0,2,32)
+   ShowMessage("\\n<Promestein>Okay, then let me clone you. Here, fill this beaker with your semen.")
+   ShowMessageFace("alice_fc5",2,0,2,33)
+   ShowMessage("\\n<Alice>As if we'd let you do that! Get out of here, you mad angel scientist!")
+   ShowMessageFace("stein_fc2",0,0,2,34)
+   ShowMessage("\\n<Promestein>You're the ones who came to me...\nWell, would it be all right if I accompanied you?")
+   ShowMessageFace("ruka_fc1",0,0,2,35)
+   ShowMessage("\\n<Luka>Accompany us...?\nYou want to join our party?")
+   PictureDisplay(5,"80_stein_st32",0,0,0,0,100,100,255,0)
+   ShowMessageFace("stein_fc2",1,0,2,36)
+   ShowMessage("\\n<Promestein>Yes, I would love to obser--\nI mean, have your help.")
+   If(0,6,0)
+    ShowMessageFace("sonia_fc4",0,0,2,37)
+    ShowMessage("\\n<Sonya>You really mean that you want to use Luka as a guinea pig, right?")
+    0()
+   Else()
+    ShowMessageFace("ruka_fc1",0,0,2,38)
+    ShowMessage("\\n<Luka>You don't intend to use me as a guinea pig, do you?")
+    0()
+   EndIf()
+   ShowMessageFace("stein_fc2",1,0,2,39)
+   ShowMessage("\\n<Promestein>Don't worry. There won't be any noticeable effects from losing a slice of your frontal lobe.")
+   If(0,6,0)
+    ShowMessageFace("sonia_fc3",2,0,2,40)
+    ShowMessage("\\n<Sonya>I knew you still wanted to dissect him!")
+    0()
+   Else()
+    ShowMessageFace("ruka_fc1",0,0,2,41)
+    ShowMessage("\\n<Luka>So you do want to dissect me!")
+    0()
+   EndIf()
+   DefineLabel("null")
+   If(4,41,0)
+    ShowMessageFace("stein_fc2",2,0,2,42)
+    ShowMessage("\\n<Promestein>What...? Another one of me!?")
+    ShowMessageFace("stein_fc2",0,0,2,43)
+    ShowMessage("\\n<Promestein>It looks like the fog of chaos is strong around here. If you join up with us, the situation should converge.")
+    ShowMessageFace("stein_fc2",0,0,2,44)
+    ShowMessage("\\n<Promestein>I see. That makes enough sense for me.")
+    0()
+   EndIf()
+   ShowMessageFace("",0,0,2,45)
+   ShowMessage("Add Promestein to the party?")
+   ShowChoices(strings("Yes","No"),2)
+   IfPlayerPicksChoice(0,null)
+    ShowMessageFace("stein_fc2",1,0,2,46)
+    ShowMessage("\\n<Promestein>Well then, it's a pleasure to make your acquaintences. I may not be that special, but I'll try my hardest.")
+    PictureClear(5)
+    205(0,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x09,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x2a,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x0f,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x2c,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+    355("add_actor_ex(41)")
+    249(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0c,0x66,0x61,0x6e,0x66,0x61,0x6c,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69))
+    ShowMessageFace("",0,0,2,47)
+    ShowMessage("Promestein has joined the party!")
+    Wait(60)
+    ChangeSwitch(2126,2126,0)
+    If(0,6,0)
+     ShowMessageFace("sonia_fc2",2,0,2,48)
+     ShowMessage("\\n<Sonya>Luka, don't let your guard down or she'll dissect you. She looks pure, but her heart is pitch black...")
+     0()
+    EndIf()
+    If(4,72,0)
+     ShowMessageFace("phoenix_fc1",3,0,2,49)
+     ShowMessage("\\n<Mini>I'd better be careful too...")
+     0()
+    EndIf()
+    If(4,79,0)
+     ShowMessageFace("nuruko_fc1",0,0,2,50)
+     ShowMessage("\\n<Nuruko>Kyu...")
+     0()
+    EndIf()
+    EndEventProcessing()
+    0()
+   IfPlayerPicksChoice(1,null)
+    PictureDisplay(5,"80_stein_st31",0,0,0,0,100,100,255,0)
+    ShowMessageFace("stein_fc2",0,0,2,51)
+    ShowMessage("\\n<Promestein>Oh... I'll just keep performing experiments here then.")
+    ChangeSelfSwitch("A",0)
+    PictureMove(5,null,0,0,0,0,100,100,0,0,30,true)
+    PictureClear(5)
+    EndEventProcessing()
+    0()
+   404()
+   0()
+  Else()
+   PictureDisplay(5,"80_stein_st31",0,0,0,0,100,100,0,0)
+   PictureMove(5,null,0,0,0,0,100,100,255,0,30,true)
+   ShowMessageFace("stein_fc2",0,0,2,52)
+   ShowMessage("\\n<Promestein>Will you take me along now?")
+   JumpToLabel("Friend 1")
+   0()
+  EndIf()
+  0()
+ PAGE   2
+  // condition: switch 5 is ON
+  If(2,"A",1)
+   PictureDisplay(5,"80_stein_st33",0,0,0,0,100,100,0,0)
+   PictureMove(5,null,0,0,0,0,100,100,255,0,30,true)
+   ShowMessageFace("stein_fc2",2,0,2,1)
+   ShowMessage("\\n<???>Whoa! Who in the world...!?")
+   ShowMessageFace("iriasu_fc4",7,0,2,2)
+   ShowMessage("\\n<Ilias>Promestein...? It IS you! But why are you here and why do you look like that...")
+   ShowMessageFace("stein_fc2",2,0,2,3)
+   ShowMessage("\\n<Promestein>H-how do you know my name? You're a low-ranking angel like me, but I don't--")
+   ShowMessageFace("iriasu_fc5",0,0,2,4)
+   ShowMessage("\\n<Ilias>Low-ranking angel? How dare you show me disrespect! The Thunder of Judgment shall purge you!")
+   250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0f,0x6d,0x6f,0x6e,0x5f,0x64,0x65,0x6e,0x70,0x61,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+   225(5,5,30,true)
+   ShowMessageFace("",0,0,2,5)
+   ShowMessage("Ilias releases the Thunder of Judgment!")
+   ShowMessageFace("stein_fc2",2,0,2,6)
+   ShowMessage("\\n<Promestein>Eek! What are you? A cross between an angel and an electric eel?")
+   ShowMessageFace("ruka_fc1",0,0,2,7)
+   ShowMessage("\\n<Luka>All right, calm down you two.\nSo what are you doing here anyway?")
+   PictureDisplay(5,"80_stein_st31",0,0,0,0,100,100,255,0)
+   ShowMessageFace("stein_fc2",0,0,2,8)
+   ShowMessage("\\n<Promestein>Before I explain that, can I ask you a question first?\nWhat year is it?")
+   If(0,6,0)
+    ShowMessageFace("sonia_fc2",2,0,2,9)
+    ShowMessage("\\n<Sonya>It should be Johannes 1455, but here... who knows when it is.")
+    0()
+   Else()
+    ShowMessageFace("ruka_fc1",0,0,2,10)
+    ShowMessage("\\n<Luka>It should be Johannes 1455, but here... who knows when it is.")
+    0()
+   EndIf()
+   ShowMessageFace("stein_fc2",0,0,2,11)
+   ShowMessage("\\n<Promestein>Ah, no I simply wanted to know what era you came from. 1455 by the Johannes calendar is quite a ways into the future though...")
+   ShowMessageFace("iriasu_fc4",2,0,2,12)
+   ShowMessage("\\n<Ilias>The future? I see.\nYou were not shrunk like me.\nRather, you are simply from the past.")
+   ShowMessageFace("iriasu_fc4",0,0,2,13)
+   ShowMessage("\\n<Ilias>With that settled, let us hear how the you from a long time ago ended up here in the first place.")
+   PictureDisplay(5,"80_stein_st33",0,0,0,0,100,100,255,0)
+   ShowMessageFace("stein_fc2",2,0,2,14)
+   ShowMessage("\\n<Promestein>I was flung here during an experiment.\nSee, I was testing the reaction between holy and dark mana...")
+   ShowMessageFace("ruka_fc1",0,0,2,15)
+   ShowMessage("\\n<Luka>Wait, is it possible... Did your experiment cause the Great Disaster?")
+   PictureDisplay(5,"80_stein_st31",0,0,0,0,100,100,255,0)
+   ShowMessageFace("stein_fc2",0,0,2,16)
+   ShowMessage("\\n<Promestein>No, not possible. My experiment was very limited in scope.")
+   ShowMessageFace("stein_fc2",0,0,2,17)
+   ShowMessage("\\n<Promestein>It simply opened a small gate in spacetime, and even that was an unexpected and accidental side effect.")
+   ShowMessageFace("stein_fc2",0,0,2,18)
+   ShowMessage("\\n<Promestein>However, I've been running more experiments and taking measurements since I got here, and I've discovered the existence of a large-scale rent in spacetime.")
+   ShowMessageFace("stein_fc2",0,0,2,19)
+   ShowMessage("\\n<Promestein>I'm currently investigating the cause of the spacetime rent. I imagine it has something to do with how I was flung here in the first place.")
+   If(0,6,0)
+    ShowMessageFace("sonia_fc2",2,0,2,20)
+    ShowMessage("\\n<Sonya>It sounds like you've been experimenting for quite some time. How many days have you been here?")
+    0()
+   Else()
+    ShowMessageFace("ruka_fc1",0,0,2,21)
+    ShowMessage("\\n<Luka>It sounds like you've been experimenting for quite some time. How many days have you been here?")
+    0()
+   EndIf()
+   ShowMessageFace("stein_fc2",0,0,2,22)
+   ShowMessage("\\n<Promestein>Days...? I've been here nearly 200 years.")
+   If(0,6,0)
+    ShowMessageFace("sonia_fc3",2,0,2,23)
+    ShowMessage("\\n<Sonya>Whaaaat!?")
+    0()
+   Else()
+    ShowMessageFace("ruka_fc1",0,0,2,24)
+    ShowMessage("\\n<Luka>Whaaaat!?")
+    0()
+   EndIf()
+   ShowMessageFace("stein_fc2",0,0,2,25)
+   ShowMessage("\\n<Promestein>By the way, what kind of experiment got you guys here? I'd love to know what you were doing in as much detail as you can provide.")
+   ShowMessageFace("iriasu_fc4",2,0,2,26)
+   ShowMessage("\\n<Ilias>We performed no such experiment. We came here using Luka's power.")
+   ShowMessageFace("",0,0,2,27)
+   ShowMessage("We explain our circumstances to Promestein...")
+   PictureDisplay(5,"80_stein_st33",0,0,0,0,100,100,255,0)
+   ShowMessageFace("stein_fc2",2,0,2,28)
+   ShowMessage("\\n<Promestein>No way... How could a human possibly cross parallel worlds...")
+   PictureDisplay(5,"80_stein_st31",0,0,0,0,100,100,255,0)
+   ShowMessageFace("stein_fc2",0,0,2,29)
+   ShowMessage("\\n<Promestein>When humans manifest special powers like that, there are visible changes to the frontal lobe. Would you mind letting me dissect your brain, Mr. Luka?")
+   ShowMessageFace("ruka_fc1",0,0,2,30)
+   ShowMessage("\\n<Luka>That would kill me.")
+   ShowMessageFace("stein_fc2",0,0,2,31)
+   ShowMessage("\\n<Promestein>Okay, then let me clone you. Here, fill this beaker with your semen.")
+   ShowMessageFace("iriasu_fc5",0,0,2,32)
+   ShowMessage("\\n<Ilias>Luka is my servant! You will NOT do as you please with him!")
+   ShowMessageFace("stein_fc2",0,0,2,33)
+   ShowMessage("\\n<Promestein>I, I see... Well anyway, would it be all right if I accompanied you?")
+   ShowMessageFace("ruka_fc1",0,0,2,34)
+   ShowMessage("\\n<Luka>Accompany us...?\nYou want to join our party?")
+   PictureDisplay(5,"80_stein_st32",0,0,0,0,100,100,255,0)
+   ShowMessageFace("stein_fc2",1,0,2,35)
+   ShowMessage("\\n<Promestein>Yes, I would love to obser--\nI mean, have your help.")
+   If(0,6,0)
+    ShowMessageFace("sonia_fc4",0,0,2,36)
+    ShowMessage("\\n<Sonya>You really mean that you want to use Luka as a guinea pig, right?")
+    0()
+   Else()
+    ShowMessageFace("ruka_fc1",0,0,2,37)
+    ShowMessage("\\n<Luka>You don't intend to use me as a guinea pig, do you?")
+    0()
+   EndIf()
+   ShowMessageFace("stein_fc2",1,0,2,38)
+   ShowMessage("\\n<Promestein>Don't worry. There won't be any noticeable effects from losing a slice of your frontal lobe.")
+   If(0,6,0)
+    ShowMessageFace("sonia_fc3",2,0,2,39)
+    ShowMessage("\\n<Sonya>I knew you still wanted to dissect him!")
+    0()
+   Else()
+    ShowMessageFace("ruka_fc1",0,0,2,40)
+    ShowMessage("\\n<Luka>So you do want to dissect me!")
+    0()
+   EndIf()
+   DefineLabel("null")
+   If(4,41,0)
+    ShowMessageFace("stein_fc2",2,0,2,41)
+    ShowMessage("\\n<Promestein>What...? Another one of me!?")
+    ShowMessageFace("stein_fc2",0,0,2,42)
+    ShowMessage("\\n<Promestein>It looks like the fog of chaos is strong around here. If you join up with us, the situation should converge.")
+    ShowMessageFace("stein_fc2",0,0,2,43)
+    ShowMessage("\\n<Promestein>I see. That makes enough sense for me.")
+    0()
+   EndIf()
+   ShowMessageFace("",0,0,2,44)
+   ShowMessage("Add Promestein to the party?")
+   ShowChoices(strings("Yes","No"),2)
+   IfPlayerPicksChoice(0,null)
+    ShowMessageFace("stein_fc2",1,0,2,45)
+    ShowMessage("\\n<Promestein>Well then, it's a pleasure to make your acquaintences. I may not be that special, but I'll try my hardest.")
+    PictureClear(5)
+    205(0,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x09,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x2a,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x0f,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x2c,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+    355("add_actor_ex(41)")
+    249(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0c,0x66,0x61,0x6e,0x66,0x61,0x6c,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69))
+    ShowMessageFace("",0,0,2,46)
+    ShowMessage("Promestein has joined the party!")
+    ChangeSwitch(2126,2126,0)
+    Wait(60)
+    ShowMessageFace("iriasu_fc4",3,0,2,47)
+    ShowMessage("\\n<Ilias>By the way Promestein, have you still not figured out who I am? Hint number one: I used to be much larger.")
+    ShowMessageFace("stein_fc2",2,0,2,48)
+    ShowMessage("\\n<Promestein>Ummm... and you knew me, I assume? Hermes, maybe?")
+    ShowMessageFace("iriasu_fc5",0,0,2,49)
+    ShowMessage("\\n<Ilias>You deserve death for confusing me with that lackey! Hint number two: I am very, very important!")
+    ShowMessageFace("stein_fc2",2,0,2,50)
+    ShowMessage("\\n<Promestein>Oh crap, you're an archangel? Mariel after major reconstructive surgery?")
+    ShowMessageFace("iriasu_fc5",0,0,2,51)
+    ShowMessage("\\n<Ilias>An archangel!? More underlings! Hint number three: I am stupendously powerful, famous, and eminent!")
+    If(0,6,0)
+     ShowMessageFace("sonia_fc4",0,0,2,52)
+     ShowMessage("\\n<Sonya>Stop fooling around, we need to get going...")
+     0()
+    Else()
+     ShowMessageFace("ruka_fc1",0,0,2,53)
+     ShowMessage("\\n<Luka>Stop fooling around, we need to get going...")
+     0()
+    EndIf()
+    EndEventProcessing()
+    0()
+   IfPlayerPicksChoice(1,null)
+    ShowMessageFace("stein_fc2",0,0,2,54)
+    ShowMessage("\\n<Promestein>Oh... I'll just keep performing experiments here then.")
+    ChangeSelfSwitch("A",0)
+    PictureMove(5,null,0,0,0,0,100,100,0,0,30,true)
+    PictureClear(5)
+    EndEventProcessing()
+    0()
+   404()
+   0()
+  Else()
+   PictureDisplay(5,"80_stein_st31",0,0,0,0,100,100,0,0)
+   PictureMove(5,null,0,0,0,0,100,100,255,0,30,true)
+   ShowMessageFace("stein_fc2",0,0,2,55)
+   ShowMessage("\\n<Promestein>Will you take me along now?")
+   JumpToLabel("Fellow 2")
+   0()
+  EndIf()
+  0()
+ PAGE   3
+  // condition: switch 2126 is ON
+  0()
+ PAGE   4
+  // condition: switch 3 is ON
+  0()
+
+
+
+EVENT   7
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Various types of chemicals are neatly arranged on top of the desk.")
+  If(4,41,0)
+   ShowMessageFace("stein_fc2",0,0,2,2)
+   ShowMessage("\\n<Promestein>It should be safe to leave my reagents and equipment behind. It's not like anyone is going to drop by...")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   8
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Various types of chemicals are neatly arranged on top of the desk.")
+  If(4,41,0)
+   ShowMessageFace("stein_fc2",0,0,2,2)
+   ShowMessage("\\n<Promestein>It should be safe to leave my reagents and equipment behind. It's not like anyone is going to drop by...")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   9
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Various types of chemicals are neatly arranged on top of the desk.")
+  If(4,41,0)
+   ShowMessageFace("stein_fc2",0,0,2,2)
+   ShowMessage("\\n<Promestein>It should be safe to leave my reagents and equipment behind. It's not like anyone is going to drop by...")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   10
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Various types of chemicals are neatly arranged on top of the desk.")
+  If(4,41,0)
+   ShowMessageFace("stein_fc2",0,0,2,2)
+   ShowMessage("\\n<Promestein>It should be safe to leave my reagents and equipment behind. It's not like anyone is going to drop by...")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   11
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Various types of chemicals are neatly arranged on top of the desk.")
+  If(4,41,0)
+   ShowMessageFace("stein_fc2",0,0,2,2)
+   ShowMessage("\\n<Promestein>It should be safe to leave my reagents and equipment behind. It's not like anyone is going to drop by...")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   12
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Various types of chemicals are neatly arranged on top of the desk.")
+  If(4,41,0)
+   ShowMessageFace("stein_fc2",0,0,2,2)
+   ShowMessage("\\n<Promestein>It should be safe to leave my reagents and equipment behind. It's not like anyone is going to drop by...")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   13
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Experimental apparatuses line the top of the desk.")
+  If(4,41,0)
+   ShowMessageFace("stein_fc2",0,0,2,2)
+   ShowMessage("\\n<Promestein>It should be safe to leave my reagents and equipment behind. It's not like anyone is going to drop by...")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   14
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Experimental apparatuses line the top of the desk.")
+  If(4,41,0)
+   ShowMessageFace("stein_fc2",0,0,2,2)
+   ShowMessage("\\n<Promestein>It should be safe to leave my reagents and equipment behind. It's not like anyone is going to drop by...")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   15
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("The desk is covered in papers.")
+  If(4,41,0)
+   ShowMessageFace("stein_fc2",0,0,2,2)
+   ShowMessage("\\n<Promestein>We can leave my experimental data here. I've read them enough times to have them all memorized.")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   16
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("The desk is covered in papers.")
+  If(4,41,0)
+   ShowMessageFace("stein_fc2",0,0,2,2)
+   ShowMessage("\\n<Promestein>We can leave my experimental data here. I've read them enough times to have them all memorized.")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   17
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Experimental apparatuses line the top of the desk.")
+  If(4,41,0)
+   ShowMessageFace("stein_fc2",0,0,2,2)
+   ShowMessage("\\n<Promestein>It should be safe to leave my reagents and equipment behind. It's not like anyone is going to drop by...")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   18
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("The gems on the desk look long since degenerated.")
+  If(4,41,0)
+   ShowMessageFace("stein_fc2",0,0,2,2)
+   ShowMessage("\\n<Promestein>Those were originally in this item shop. I used them in some experiments.")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   19
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("The desk is covered in papers.")
+  If(4,41,0)
+   ShowMessageFace("stein_fc2",0,0,2,2)
+   ShowMessage("\\n<Promestein>We can leave my experimental data here. I've read them enough times to have them all memorized.")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   20
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("The books on the desk are crammed full of formulas and data.")
+  If(4,41,0)
+   ShowMessageFace("stein_fc2",0,0,2,2)
+   ShowMessage("\\n<Promestein>We can leave my experimental data here. I've read them enough times to have them all memorized.")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   21
+ PAGE   1
+  // condition: switch 1041 is ON
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("-Apoptosis Investigation-\nThey can be thought of as the immune system for this area of space itself. They appear to be composed of the living and inorganic matter collected here.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("In addition, the apoptosis share the same bodies. The ones that call themselves Luxuru remember the exact same human memories. It appears that they are duplicates even down to their personalities.")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("However, the actual mechanism that produces them remains unknown. I believe it is a process of the erosion of space itself, but I have no basis for this conclusion. It will take more time and equipment to confirm.")
+  If(4,41,0)
+   ShowMessageFace("stein_fc2",0,0,2,4)
+   ShowMessage("\\n<Promestein>I wrote this in case anyone else showed up after me, but it ended up just being a rough summary and general observations...")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   22
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("The gems on the desk look long since degenerated.")
+  If(4,41,0)
+   ShowMessageFace("stein_fc2",0,0,2,2)
+   ShowMessage("\\n<Promestein>Those were originally in this item shop. I used them in some experiments.")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   23
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("The gems on the desk look long since degenerated.")
+  If(4,41,0)
+   ShowMessageFace("stein_fc2",0,0,2,2)
+   ShowMessage("\\n<Promestein>Those were originally in this item shop. I used them in some experiments.")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   24
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("The wooden box is filled with scientific equipment.")
+  If(4,41,0)
+   ShowMessageFace("stein_fc2",0,0,2,2)
+   ShowMessage("\\n<Promestein>It should be safe to leave my reagents and equipment behind. It's not like anyone is going to drop by...")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   25
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("The wooden box is filled with scientific equipment.")
+  If(4,41,0)
+   ShowMessageFace("stein_fc2",0,0,2,2)
+   ShowMessage("\\n<Promestein>It should be safe to leave my reagents and equipment behind. It's not like anyone is going to drop by...")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   26
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("The wooden box is filled with scientific equipment.")
+  If(4,41,0)
+   ShowMessageFace("stein_fc2",0,0,2,2)
+   ShowMessage("\\n<Promestein>It should be safe to leave my reagents and equipment behind. It's not like anyone is going to drop by...")
+   0()
+  EndIf()
+  0()
+
+EVENT   27
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("There are a pair of stuffed rabbits on the desk.")
+  If(4,41,0)
+   ShowMessageFace("stein_fc2",0,0,2,2)
+   ShowMessage("\\n<Promestein>Those came with the item shop. I call them 'left rabbit' and 'right rabbit.'")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   28
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("There's a stuffed bear on the desk.")
+  If(4,41,0)
+   ShowMessageFace("stein_fc2",0,0,2,2)
+   ShowMessage("\\n<Promestein>That's Helper Bear. I found him here.")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   29
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Papers and scientific gadgets line the shelves.")
+  If(4,41,0)
+   ShowMessageFace("stein_fc2",0,0,2,2)
+   ShowMessage("\\n<Promestein>We can leave my experimental data here. I've read them enough times to have them all memorized.")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   30
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Papers and scientific gadgets line the shelves.")
+  If(4,41,0)
+   ShowMessageFace("stein_fc2",0,0,2,2)
+   ShowMessage("\\n<Promestein>We can leave my experimental data here. I've read them enough times to have them all memorized.")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   31
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Papers and scientific gadgets line the shelves.")
+  If(4,41,0)
+   ShowMessageFace("stein_fc2",0,0,2,2)
+   ShowMessage("\\n<Promestein>We can leave my experimental data here. I've read them enough times to have them all memorized.")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   32
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Papers and scientific gadgets line the shelves.")
+  If(4,41,0)
+   ShowMessageFace("stein_fc2",0,0,2,2)
+   ShowMessage("\\n<Promestein>We can leave my experimental data here. I've read them enough times to have them all memorized.")
+   0()
+  EndIf()
+  0()
+
+
+

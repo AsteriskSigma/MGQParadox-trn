@@ -1,0 +1,238 @@
+=begin
+=Remodeling/Error handling
+
+
+
+
+==Change log
+  Date     Version Author Comment
+==15/09/03 2.0.2   Tris integration J ~ U R grafting
+==17/10/21 2.2.0   Sunflower bug fix
+=end
+
+#==============================================================================
+# ■ Window_ItemList
+#==============================================================================
+class Window_ItemList < Window_Selectable
+	#--------------------------------------------------------------------------
+	# ○ Move the cursor to No. 0 if you do not move the cursor to the specified item
+	#--------------------------------------------------------------------------
+	def select_item(s_item)
+		@data.each_with_index do |d_item, i|
+			return select(i) if s_item == d_item
+		end
+		return select(0)
+	end
+end
+
+#==============================================================================
+# ■ FavoriteItem
+#==============================================================================
+module FavoriteItem
+	#--------------------------------------------------------------------------
+	# ○ Change favorite state of selected item
+	#--------------------------------------------------------------------------
+	def process_set_favorite_item
+		Input.update
+		return Sound.play_buzzer if @item_window.item.nil?
+		Sound.play_ok
+		@item_window.set_favorite_item
+		@item_window.refresh
+		if @item_window.favorite_mode
+			@item_window.select([@item_window.index - 1 ,0].max)
+			
+		end
+		
+		@item_window.refresh
+	end
+	#--------------------------------------------------------------------------
+	# ○ Change favorite display mode
+	#--------------------------------------------------------------------------
+	def process_change_favorite_mode
+		Input.update
+		Sound.play_ok
+		last_item = @item_window.item
+		@item_window.change_favorite_mode
+		@item_window.refresh
+		if @item_window.active
+			@item_window.select_item(last_item)
+		else
+			@item_window.select(-1)
+		end
+	end
+	#--------------------------------------------------------------------------
+	# ○ Frame update
+	#--------------------------------------------------------------------------
+	def update
+		if enable_set_favorite_item?
+			return process_set_favorite_item if Input.trigger?(:Y)
+		end
+		if enable_change_favorite_mode?
+			return process_change_favorite_mode if Input.trigger?(:Z)
+		end
+		if off_favorite_mode? and @item_window.favorite_mode
+			@item_window.change_favorite_mode
+		end
+		super
+	end
+	#--------------------------------------------------------------------------
+	# ○ Yes / No Change the favorite state of the selected item
+	#--------------------------------------------------------------------------
+	def enable_set_favorite_item?
+		false
+	end
+	#--------------------------------------------------------------------------
+	# ○ Change availability favorite display mode
+	#--------------------------------------------------------------------------
+	def enable_change_favorite_mode?
+		false
+	end
+	#--------------------------------------------------------------------------
+	# ○ Presence / Absence Turn off the favorite display mode
+	#--------------------------------------------------------------------------
+	def off_favorite_mode?
+		!@item_window.visible
+	end
+end
+
+#==============================================================================
+# ■ Scene_Item
+#==============================================================================
+class Scene_Item < Scene_ItemBase
+	include FavoriteItem
+	#--------------------------------------------------------------------------
+	# ○ Yes / No Change the favorite state of the selected item
+	#--------------------------------------------------------------------------
+	def enable_set_favorite_item?
+		@item_window.active
+	end
+	#--------------------------------------------------------------------------
+	# ○ Change availability favorite display mode
+	#--------------------------------------------------------------------------
+	def enable_change_favorite_mode?
+		@item_window.active or @category_window.active
+	end
+end
+#==============================================================================
+# ■ Scene_Equip
+#==============================================================================
+class Scene_Equip < Scene_MenuBase
+	include FavoriteItem
+	#--------------------------------------------------------------------------
+	# ○ Yes / No Change the favorite state of the selected item
+	#--------------------------------------------------------------------------
+	def enable_set_favorite_item?
+		@item_window.active
+	end
+	#--------------------------------------------------------------------------
+	# ○ Change availability favorite display mode
+	#--------------------------------------------------------------------------
+	def enable_change_favorite_mode?
+		@item_window.active or @slot_window.active
+	end
+end
+#==============================================================================
+# ■ Scene_Battle
+#==============================================================================
+class Scene_Battle < Scene_Base
+	include FavoriteItem
+	#--------------------------------------------------------------------------
+	# ○ Yes / No Change the favorite state of the selected item
+	#--------------------------------------------------------------------------
+	def enable_set_favorite_item?
+		@item_window.active
+	end
+	#--------------------------------------------------------------------------
+	# ○ Change availability favorite display mode
+	#--------------------------------------------------------------------------
+	def enable_change_favorite_mode?
+		@item_window.active
+	end
+end
+#==============================================================================
+# ■ Window_ItemList
+#==============================================================================
+class Window_ItemList < Window_Selectable
+	#--------------------------------------------------------------------------
+	# ● Public instance variables
+	#--------------------------------------------------------------------------
+	attr_reader   :favorite_mode            # Favorite mode
+	#--------------------------------------------------------------------------
+	# ○ Get the favorite state of the selected item
+	#--------------------------------------------------------------------------
+	def get_favorite_item_state
+		$game_party.favorite_item?(item)
+	end
+	#--------------------------------------------------------------------------
+	# ○ Change favorite state of selected item
+	#--------------------------------------------------------------------------
+	def set_favorite_item
+		$game_party.set_favorite_item(item)
+		update_help
+	end
+	#--------------------------------------------------------------------------
+	# ○ Change favorite display mode
+	#--------------------------------------------------------------------------
+	def change_favorite_mode
+		@favorite_mode = !@favorite_mode
+	end
+	#--------------------------------------------------------------------------
+	# ● Create item list
+	#--------------------------------------------------------------------------
+	def make_item_list
+		@data = $game_party.all_items.select {|item| include?(item) }
+		@data.reject! {|item| !$game_party.favorite_item?(item) } if @favorite_mode
+		@data.push(nil) if include?(nil)
+	end
+	
+	#--------------------------------------------------------------------------
+	# ● Draw item name
+	#     enabled : Valid flag. Draw semi-transparent when false
+	#--------------------------------------------------------------------------
+	#~ def draw_item_name(item, x, y, enabled = true, width = 236)
+		#~ return unless item
+		#~ draw_icon(item.icon_index, x, y, enabled)
+		#~ color = $game_party.favorite_item?(item) ? tp_gauge_color2 : normal_color
+		#~ change_color(color, enabled)
+		#~ draw_text(x + 24, y, width, line_height, item.name)
+	#~ end
+end
+
+#==============================================================================
+# ■ Game_Party
+#==============================================================================
+class Game_Party < Game_Unit
+	#--------------------------------------------------------------------------
+	# ○ Item favorite key
+	#--------------------------------------------------------------------------
+	def favorite_key(item)
+		return [:item,   item.id] if item.is_a?(RPG::Item)
+		return [:weapon, item.id] if item.is_a?(RPG::Weapon)
+		return [:armor,  item.id] if item.is_a?(RPG::Armor)
+		return nil
+	end
+	#--------------------------------------------------------------------------
+	# ○ Change the item's favorite state
+	#--------------------------------------------------------------------------
+	def set_favorite_item(item)
+		return if item.nil?
+		key = favorite_key(item)
+		symbol = key[0]
+		id = key[1]
+		@favorite_item ||= {}
+		@favorite_item[symbol] ||= []
+		@favorite_item[symbol][id] = !@favorite_item[symbol][id]
+	end
+	#--------------------------------------------------------------------------
+	# ○ Whether it is favorites or not
+	#--------------------------------------------------------------------------
+	def favorite_item?(item)
+		return nil if item.nil?
+		key = favorite_key(item)
+		symbol = key[0]
+		id = key[1]
+		@favorite_item ||= {}
+		@favorite_item[symbol] ||= []
+		return @favorite_item[symbol][id]
+	end
+endd

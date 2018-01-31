@@ -1,0 +1,957 @@
+
+EVENT   1
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,39,10,16,0,0)
+  0()
+
+
+
+EVENT   2
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,40,29,5,0,0)
+  0()
+
+
+
+EVENT   3
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,40,30,5,0,0)
+  0()
+
+
+
+EVENT   4
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,40,29,32,0,0)
+  0()
+
+
+
+EVENT   5
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,40,30,32,0,0)
+  0()
+
+
+
+EVENT   6
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,39,16,18,0,0)
+  0()
+
+
+
+EVENT   7
+ PAGE   1
+  0()
+
+
+
+EVENT   8
+ PAGE   1
+  0()
+
+
+
+EVENT   9
+ PAGE   1
+  0()
+
+
+
+EVENT   10
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,39,31,13,0,0)
+  0()
+
+
+
+EVENT   11
+ PAGE   1
+  0()
+
+
+
+EVENT   12
+ PAGE   1
+  0()
+
+
+
+EVENT   13
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,39,39,14,0,0)
+  0()
+
+
+
+EVENT   14
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,39,22,39,0,0)
+  0()
+
+
+
+EVENT   15
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,39,27,39,0,0)
+  0()
+
+
+
+EVENT   16
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,39,41,26,0,0)
+  0()
+
+
+
+EVENT   17
+ PAGE   1
+  0()
+
+
+
+EVENT   18
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,39,21,48,0,0)
+  216(0)
+  0()
+
+
+
+EVENT   19
+ PAGE   1
+  ShowMessageFace("s_mermaid_fc1",0,0,2,1)
+  ShowMessage("\\n<Mermaid Merchant>You can find weapons and armor here. We also have a favorite item amongst pirates, the Piiirate's Helm. ♪")
+  Shop(1,15,0,0,false)
+  605(1,65,0,0)
+  605(1,125,0,0)
+  605(1,675,0,0)
+  605(1,900,0,0)
+  605(2,168,0,0)
+  605(2,200,0,0)
+  0()
+
+
+
+EVENT   20
+ PAGE   1
+  ShowMessageFace("s_mermaid_fc1",0,0,2,1)
+  ShowMessage("\\n<Mermaid Merchant>Dear customers, aren't you adventurers? You should take special precautions by stocking up with these items.")
+  Shop(0,2,0,0,false)
+  605(0,7,0,0)
+  605(0,11,0,0)
+  605(0,13,0,0)
+  605(0,14,0,0)
+  605(0,15,0,0)
+  605(0,16,0,0)
+  605(0,17,0,0)
+  605(0,18,0,0)
+  605(0,19,0,0)
+  605(0,23,0,0)
+  605(0,35,0,0)
+  0()
+
+
+
+EVENT   21
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Accessory Vendor>We have accessories that will help you on your journey! They're accessories any good adventurer should have!")
+  Shop(2,1267,0,0,false)
+  605(2,1270,0,0)
+  605(2,1537,0,0)
+  605(2,1554,0,0)
+  605(2,1556,0,0)
+  605(2,1558,0,0)
+  605(2,1734,0,0)
+  605(2,1736,0,0)
+  0()
+
+
+
+EVENT   22
+ PAGE   1
+  ShowMessageFace("tatunoko_k_fc1",2,0,2,1)
+  ShowMessage("\\n<Sea Horse Marine>*nom* *nom* ... *munch* *munch* ...")
+  0()
+
+
+
+EVENT   23
+ PAGE   1
+  ShowMessageFace("tatunoko_k_fc1",1,0,2,1)
+  ShowMessage("\\n<Sea Horse Marine>Another large serving, please!")
+  0()
+
+
+
+EVENT   24
+ PAGE   1
+  ShowMessageFace("tatunoko_k_fc1",1,0,2,1)
+  ShowMessage("\\n<Sea Horse Marine>The food is really tasty in this cafeteria! What we eat at our headquarters doesn't even compare!")
+  0()
+
+
+
+EVENT   25
+ PAGE   1
+  ShowMessageFace("tatunoko_k_fc1",1,0,2,1)
+  ShowMessage("\\n<Sea Horse Marine>This also is a marine's duty! *munch* *munch* ...")
+  0()
+
+
+
+EVENT   26
+ PAGE   1
+  ShowMessageFace("tatunoko_k_fc1",1,0,2,1)
+  ShowMessage("\\n<Sea Horse Marine>Delicious!")
+  0()
+
+
+
+EVENT   27
+ PAGE   1
+  ShowMessageFace("tatunoko_k_fc1",1,0,2,1)
+  ShowMessage("\\n<Sea Horse Marine>I need to eat plenty to become a top-notch marine!")
+  0()
+
+
+
+EVENT   28
+ PAGE   1
+  ShowMessageFace("tatunoko_k_fc1",2,0,2,1)
+  ShowMessage("\\n<Sea Horse Marine>I'm full...")
+  ShowMessageFace("tatunoko_k_fc1",1,0,2,2)
+  ShowMessage("\\n<Sea Horse Marine>...I'll have seconds!")
+  0()
+
+
+
+EVENT   29
+ PAGE   1
+  ShowMessageFace("tatunoko_k_fc1",1,0,2,1)
+  ShowMessage("\\n<Sea Horse Marine>So tasty...")
+  0()
+
+
+
+EVENT   30
+ PAGE   1
+  ShowMessageFace("tatunoko_k_fc1",1,0,2,1)
+  ShowMessage("\\n<Sea Horse Marine>This is delicious...")
+  0()
+
+
+
+EVENT   31
+ PAGE   1
+  ShowMessageFace("tatunoko_k_fc1",2,0,2,1)
+  ShowMessage("\\n<Sea Horse Marine>This tea is so good...")
+  0()
+
+
+
+EVENT   32
+ PAGE   1
+  ShowMessageFace("tatunoko_k_fc1",1,0,2,1)
+  ShowMessage("\\n<Sea Horse Marine>This is delicious...")
+  0()
+
+
+
+EVENT   33
+ PAGE   1
+  ShowMessageFace("tatunoko_k_fc1",2,0,2,1)
+  ShowMessage("\\n<Sea Horse Marine>Zzz... *munch* *munch* ...")
+  0()
+
+
+
+EVENT   34
+ PAGE   1
+  ShowMessageFace("tatunoko_k_fc1",1,0,2,1)
+  ShowMessage("\\n<Sea Horse Marine>This tastes great...")
+  0()
+
+
+
+EVENT   35
+ PAGE   1
+  ShowMessageFace("tatunoko_k_fc1",1,0,2,1)
+  ShowMessage("\\n<Sea Horse Marine>Sea Horses are dragons! We need to eat plenty to become great dragons!")
+  0()
+
+
+
+EVENT   36
+ PAGE   1
+  ShowMessageFace("tatunoko_k_fc1",1,0,2,1)
+  ShowMessage("\\n<Sea Horse Marine>So tasty...")
+  0()
+
+
+
+EVENT   37
+ PAGE   1
+  ShowMessageFace("tatunoko_k_fc1",1,0,2,1)
+  ShowMessage("\\n<Sea Horse Marine>Rice balls!")
+  0()
+
+
+
+EVENT   38
+ PAGE   1
+  ShowMessageFace("tatunoko_k_fc1",1,0,2,1)
+  ShowMessage("\\n<Sea Horse Marine>This tastes great...")
+  0()
+
+
+
+EVENT   39
+ PAGE   1
+  ShowMessageFace("",1,0,2,1)
+  ShowMessage("\\n<Cafeteria's Owner>This cafeteria has been a great success ever since the navy began stationing here. I hope they stay forever to keep business booming.")
+  0()
+
+
+
+EVENT   40
+ PAGE   1
+  ShowMessageFace("",1,0,2,1)
+  ShowMessage("\\n<Waitress>I'm sorry! We have no seating available!")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("64")
+  ShowMessageFace("pramia_fc1",0,0,2,2)
+  ShowMessage("\\n<Teeny>Looks like they're raking in the money... I wonder if the inn here is just as popular...")
+  EndEventProcessing()
+  DefineLabel("141")
+  ShowMessageFace("mino_fc1",2,0,2,3)
+  ShowMessage("\\n<Mina>What a shame... Seeing others eat makes me even hungrier.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   41
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Old Man>This shop once had a skilled blacksmith... but he works at the Navy Headquarters now.")
+  0()
+
+
+
+EVENT   42
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Rowdy Man>Sea Horse Girls... They're cute, but don't let your guard down. They're proper members of the sea dragon race.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Rowdy Man>Yesterday, some drunk thugs started a brawl and were completely beat up by these girls... Ahh, that was scary...")
+  0()
+
+
+
+EVENT   43
+ PAGE   1
+  ShowMessageFace("tatunoko_k_fc1",1,0,2,1)
+  ShowMessage("\\n<Sea Horse Marine>Any marine should have a robust stock of items.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("144")
+  ShowMessageFace("saboresu_fc1",0,0,2,2)
+  ShowMessage("\\n<Sunny>It's even more critical if you're an adventurer!")
+  EndEventProcessing()
+  DefineLabel("165")
+  ShowMessageFace("onaho_fc1",0,0,2,3)
+  ShowMessage("\\n<Naho>A stock of onaholes is also important... ♪")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   44
+ PAGE   1
+  ShowMessageFace("tatunoko_k_fc1",1,0,2,1)
+  ShowMessage("\\n<Sea Horse Marine>I'm on guard!")
+  0()
+
+
+
+EVENT   45
+ PAGE   1
+  ShowMessageFace("tatunoko_k_fc1",1,0,2,1)
+  ShowMessage("\\n<Sea Horse Marine>Spies and other troublemakers tend to pose as travelers... That's why we have been ordered by the admiral to watch the inn.")
+  0()
+
+
+
+EVENT   46
+ PAGE   1
+  If(1,1001,0,25,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Traveling Warrior>We planned to go to the Noah region, but we got stuck here. Maybe we should change our destination and go to Sabasa instead...")
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Black Mage>NO! I don't want to go to a place full of sand... Also, what if we're seized by that crazy queen of theirs?")
+   If(4,529,0)
+    ShowMessageFace("sara_fc1",4,0,2,3)
+    ShowMessage("\\n<Sara>Looks like cleansing my name will be tough...")
+    0()
+   EndIf()
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,26,1)
+   ShowMessageFace("",0,0,2,4)
+   ShowMessage("\\n<Traveling Warrior>Because travel by civilian ships has been suspended, we can't progress past this town... Bah... I can't go beat the Monster Lord like this...")
+   ShowMessageFace("",0,0,2,5)
+   ShowMessage("\\n<Black Mage>It's not like you have the resources or skill to do that...")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   47
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Black Mage>I was supposed to get the Eastern Book of Secrets at Yamatai Village. If you have that, you can change your job to Samurai or Taoist.")
+  0()
+
+
+
+EVENT   48
+ PAGE   1
+  ShowMessageFace("tatunoko_k_fc1",2,0,2,1)
+  ShowMessage("\\n<Sea Horse Marine>Zzz...")
+  0()
+
+
+
+EVENT   49
+ PAGE   1
+  ShowMessageFace("tatunoko_k_fc1",1,0,2,1)
+  ShowMessage("\\n<Sea Horse Marine>It's snack break!")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("161")
+  ShowMessageFace("ustrel_fc1",0,0,2,2)
+  ShowMessage("\\n<Lemon>I want a snack break during the adventure, too...")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   50
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Inn>Want to stay for 20G? For a limited time, you'll be with cute Sea Horse Girls!\\$")
+  ShowChoices(strings("Yes","No"),2)
+  IfPlayerPicksChoice(0,null)
+   If(7,20,0)
+    125(1,0,20)
+    221()
+    249(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x08,0x49,0x6e,0x6e,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69))
+    Wait(150)
+    314(0,0)
+    222()
+    0()
+   Else()
+    ShowMessageFace("",0,0,2,2)
+    ShowMessage("\\n<Inn's Mistress>Oh my, it appears you don't have enough money.")
+    0()
+   EndIf()
+   0()
+  IfPlayerPicksChoice(1,null)
+   0()
+  404()
+  0()
+
+
+
+EVENT   51
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Middle-Aged Man>More female customers have been coming to see the Sea Horse Girls recently. All right! Let's plan a 'Meet the Sea Horse Girls' tour!")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("172")
+  ShowMessageFace("sinkiro_fc1",4,0,2,2)
+  ShowMessage("\\n<Mirage>How about 'The Ghosts Are Inn'? ♪")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Middle-Aged Man>That's way worse than anything I'd come up with!")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   52
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Woman>A Sea Horsey! She's so cuuuute! ♪ Can I take one home...?")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("131")
+  ShowMessageFace("doll_fc1",0,0,2,2)
+  ShowMessage("\\n<Miyabi>You can take ME back home...")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Woman>You're cute, but I think I'd get cursed...")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   53
+ PAGE   1
+  ShowMessageFace("tatunoko_k_fc1",1,0,2,1)
+  ShowMessage("\\n<Sea Horse Marine>I'm on duty!")
+  0()
+
+
+
+EVENT   54
+ PAGE   1
+  ShowMessageFace("tatunoko_k_fc1",0,0,2,1)
+  ShowMessage("\\n<Sea Horse Marine>I want to become a full-grown adult so this necklace will fit me...")
+  ShowMessageFace("tatunoko_k_fc1",1,0,2,2)
+  ShowMessage("\\n<Sea Horse Marine>But I also aim to become a sea dragon bigger than a mountain!")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("174")
+  ShowMessageFace("sandw_fc1",0,0,2,3)
+  ShowMessage("\\n<Dahlia>Being that big is very bothersome...")
+  ShowMessageFace("tatunoko_k_fc1",2,0,2,4)
+  ShowMessage("\\n<Sea Horse Marine>I-I guess...")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   55
+ PAGE   1
+  ShowMessageFace("tatunoko_k_fc1",0,0,2,1)
+  ShowMessage("\\n<Sea Horse Marine>You shouldn't go on a drunken rampage. We will punish those who disturb the peace.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("75")
+  ShowMessageFace("hituzi_fc1",3,0,2,2)
+  ShowMessage("\\n<Mary>Why are you looking at me...?")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   56
+ PAGE   1
+  ShowMessageFace("tatunoko_k_fc1",0,0,2,1)
+  ShowMessage("\\n<Sea Horse Marine>I want a strong, cool-looking spear!")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("171")
+  ShowMessageFace("lizardboss_fc1",3,0,2,2)
+  ShowMessage("\\n<Miranda>Don't choose a weapon by its looks...")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   57
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Mermaid>If you have the Sonic Tome, your sonic attacks will be stronger. It's a perfect accessory for a mermaid.")
+  0()
+
+
+
+EVENT   58
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Warrior>There are many monsters using attacks that cause mental abnormalities. It's better to prepare against those with related accessories.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Warrior>...Well, it makes no difference in my case. I can't get out to the sea because of the blockade...")
+  0()
+
+
+
+EVENT   59
+ PAGE   1
+  If(1,1001,0,25,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Sailor>Ever since the war started, I've had a bigger workload than usual. We're sending canned food and cannonballs to the marines on the front line every day.")
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Sailor>Even cruise ships are being used for transport missions. This situation probably won't change until the war ends.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,26,1)
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("\\n<Sailor>Ever since the Monster Lord declared war, the transportation work has become busier than ever. Many civilian ships were acquired for missions, and there has been a higher enlistment rate for new marines.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   60
+ PAGE   1
+  If(1,1001,0,25,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Merchant>I wonder when this war will end... My home is in Grand Noah, so this situation is no small matter to me.")
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Merchant>If Grand Noah were to be invaded by Grangold's army... Uhh, I wonder if we should evacuate this town right away.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,26,1)
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("\\n<Merchant>War continues, but this time it's with the Monster Lord's Army... What has this world come to...?")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   61
+ PAGE   1
+  ShowMessageFace("tatunoko_k_fc1",2,0,2,1)
+  ShowMessage("\\n<Sea Horse Marine>Orange juice is tasty...")
+  0()
+
+
+
+EVENT   62
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Man>Having a drink after work is the best!")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Man>...Although, I didn't really do any work...")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("143")
+  ShowMessageFace("eva_fc1",0,0,2,3)
+  ShowMessage("\\n<Eva>Me neither! So treat me to a drink, too!")
+  ShowMessageFace("",0,0,2,4)
+  ShowMessage("\\n<Man>Sorry, I don't really get it...")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   63
+ PAGE   1
+  If(1,1001,0,25,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Traveling Warrior>Grand Noah's royal palace appears to have recruited an advisor skilled in magic. Her name was... Mephisto, I think. What an evil-sounding name...")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,26,1)
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Traveling Warrior>Many know that Grangold was freed thanks to hero Luka's efforts... but it appears that the operation was planned by the magic advisor Mephisto.")
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("\\n<Traveling Warrior>I'm sure Mephisto will be a valuable asset in the war against the Monster Lord's army, as well. I'd expect no less coming from Grand Noah Queen's right-hand.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   64
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Master>Welcome! What would you like?")
+  Shop(0,428,0,0,false)
+  605(0,431,0,0)
+  0()
+
+
+
+EVENT   65
+ PAGE   1
+  If(1,1050,0,9,1)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Sailor>It seems the Fishy Pirates were caught by the navy. Some special agents took 'em out in a splash...")
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Sailor>What happened to the Fishy Pirates? They were guilty of only minor crimes, so they're doin' some labor in Navy Headquarters.")
+   ShowMessageFace("tatunoko_k_fc1",1,0,2,3)
+   ShowMessage("\\n<Tatsuko>You can thank us for that!")
+   ShowMessageFace("umiusi_k_fc1",1,0,2,4)
+   ShowMessage("\\n<Stacy>It was a big success. ♪")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1051,0,5,1)
+   ShowMessageFace("",0,0,2,5)
+   ShowMessage("\\n<Sailor>Do y'know about the Fishy Pirates? There are rumors they acquired Pirate Queen Roza's secret treasure.")
+   If(1,1051,0,6,1)
+    ShowMessageFace("",0,0,2,6)
+    ShowMessage("\\n<Sailor>On top o' that, they went into the Navy Headquarters and beat 'em. No one doubts now that Captain Bonnie is Roza's descendant.")
+    0()
+   EndIf()
+   ShowMessageFace("bonny_fc1",1,0,2,7)
+   ShowMessage("\\n<Bonnie>Heh-heh! The Fishy Pirates are getting more and more famous!")
+   ShowMessageFace("ashel_fc1",0,0,2,8)
+   ShowMessage("\\n<Ashel>Miss, let's not get full of ourselves. They say human rumors last 75 days.")
+   ShowMessageFace("bonny_fc1",0,0,2,9)
+   ShowMessage("\\n<Bonnie>I know. I don't need you to tell me that... So don't lecture me with proverbs. You make yourself sound like a granny.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  ShowMessageFace("",0,0,2,10)
+  ShowMessage("\\n<Sailor>Ever since the navy's crackdown, most pirates haven't been causing any trouble. The Fishy Pirates seem to be the only pirates active right now.")
+  ShowMessageFace("",0,0,2,11)
+  ShowMessage("\\n<Sailor>According to rumors, their captain is a descendant of the famous Pirate Queen Roza... But that can't be true, can it?")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("53")
+  ShowMessageFace("slime_fc1",0,0,2,12)
+  ShowMessage("\\n<Lime>Fishy Pirates?! Fishiiies! ♪ Fishiiies! ♪")
+  EndEventProcessing()
+  DefineLabel("144")
+  ShowMessageFace("saboresu_fc1",0,0,2,13)
+  ShowMessage("\\n<Sunny>Pirates, huh? ...That sounds fun.")
+  EndEventProcessing()
+  DefineLabel("525")
+  ShowMessageFace("sonia_fc1",0,0,2,14)
+  ShowMessage("\\n<Sonya>Roza was a super-famous mermaid pirate. Does she really have a living descendant...?")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   66
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Perverted Warrior>This p-p-p-pink leotard... *sniff sniff* Haa, haaa, haaah... *sniff sniff* Leotaaaard...")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("123")
+  ShowMessageFace("sisccubus_fc1",0,0,2,2)
+  ShowMessage("\\n<Christie>So you love the leotard? What about a girl wearing it...?")
+  EndEventProcessing()
+  DefineLabel("185")
+  ShowMessageFace("radio_fc1",0,0,2,3)
+  ShowMessage("\\n<Radio>That leotard is not a logical choice. It would provide an estimated 21.4% less protection compared to his armor...")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   67
+ PAGE   1
+  ShowMessageFace("tatunoko_k_fc1",1,0,2,1)
+  ShowMessage("\\n<Sea Horse Marine>They give me food! *munch* *munch* ...")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("143")
+  ShowMessageFace("eva_fc1",0,0,2,2)
+  ShowMessage("\\n<Eva>I want to be given food too!")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   68
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Grandpa>These marines are so cute...")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Granny>Eat as much as you like.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("166")
+  ShowMessageFace("narcubus_fc1",0,0,2,3)
+  ShowMessage("\\n<Nabisu>They make elders happy, thanks to their charm. I should spread this to the world as Sea Horse Girl therapy.")
+  EndEventProcessing()
+  DefineLabel("525")
+  ShowMessageFace("sonia_fc1",0,0,2,4)
+  ShowMessage("\\n<Sonya>Looks like they get along with the elderly well. These Sea Horse Girls are really nice...")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   69
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Grandpa>These marines are so cute...")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Granny>Eat as much as you like.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("166")
+  ShowMessageFace("narcubus_fc1",0,0,2,3)
+  ShowMessage("\\n<Nabisu> They make elders happy, thanks to their charm. I should spread this to the world as Sea Horse Girl therapy.")
+  EndEventProcessing()
+  DefineLabel("525")
+  ShowMessageFace("sonia_fc1",0,0,2,4)
+  ShowMessage("\\n<Sonya> Looks like the Sea Horse Girls get along with the elderly well. They are really nice...")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   70
+ PAGE   1
+  If(1,1001,0,25,2)
+   ShowMessageFace("",1,0,2,1)
+   ShowMessage("\\n<Young Woman>Grandpa and Grandma are in better spirits lately. ...Me? I'm their granddaughter, but I can't go back home because of the sea blockade.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,26,1)
+   ShowMessageFace("",1,0,2,2)
+   ShowMessage("\\n<Young Woman>Grandpa and Grandma are in better spirits, but... I would like to go back home to Grand Noah.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   71
+ PAGE   1
+  If(1,1001,0,25,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Mermaid>I should buy as many items as I can. Once the war escalates, there might be some I won't be able to get anymore...")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,26,1)
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Mermaid>I need to stockpile things for the war with the Monster Lord...")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   72
+ PAGE   1
+  If(1,821,0,2,1)
+   If(0,1570,1)
+    ShowMessageFace("mob_kensi_fc1",0,0,2,1)
+    ShowMessage("\\n<Gina>You seem confident in your arms.")
+    ShowMessage("Won't you take me along on your journey...?")
+    ShowChoices(strings("Let her join","Decline for now"),0)
+    IfPlayerPicksChoice(0,null)
+     ShowMessageFace("mob_kensi_fc1",0,0,2,2)
+     ShowMessage("\\n<Gina>You have my sword then.\nWell, let's go!")
+     PictureClear(5)
+     205(0,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x09,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x2a,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x0f,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x2c,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+     355("add_actor_ex(570)")
+     249(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0c,0x66,0x61,0x6e,0x66,0x61,0x6c,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69))
+     ShowMessageFace("",0,0,2,3)
+     ShowMessage("Gina joined the party!")
+     Wait(60)
+     EndEventProcessing()
+     0()
+    IfPlayerPicksChoice(1,null)
+     ShowMessageFace("mob_kensi_fc1",0,0,2,4)
+     ShowMessage("\\n<Gina>That's...too bad.")
+     0()
+    404()
+    0()
+   EndIf()
+   0()
+  EndIf()
+  RunCommonEvent(7201)
+  0()
+ PAGE   2
+  // condition: party contains actor #570
+  0()
+
+
+
+EVENT   73
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Mermaid>Welcooome! ♪")
+  0()
+
+
+
+EVENT   74
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(201,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   75
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(32,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   76
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(429,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   77
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(358,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   78
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(343,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+

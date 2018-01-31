@@ -1,0 +1,2715 @@
+Enemy 001
+ Name "Slime Girl"
+ Notes "<Occupation Exp 1>\r\n<Escape Level 1>\r\n<Race:Slime>\r\n<Temporary use skill:3502>\r\n<Steel list 1,I,1,2>\r\n<Steel list 1,W,657,8>\r\n<Steel list 2,I,322,2>\r\n<Steel list 3,I,160,2>\r\n<Fellow ID:1053>"
+Enemy 002
+ Name "Bunny Slime"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 2>\r\n<Race:Slime>\r\n<Temporary use skill:3502>\r\n<Illustration title:Bunny Slime(Boss)>\r\n<Fellow ID:1054>\r\n<Battle recollection impossible>\r\n"
+Enemy 003
+ Name "Bunny Slime"
+ Notes "<Occupation Exp 1>\r\n<Escape Level 2>\r\n<Race:Slime>\r\n<Temporary use skill:3502>\r\n<Steel list 1,I,1,2>\r\n<Steel list 1,A,1175,8>\r\n<Steel list 2,I,310,2>\r\n<Steel list 3,I,160,2>\r\n"
+Enemy 004
+ Name "Slug Girl"
+ Notes "<Occupation Exp 1>\r\n<Escape Level 2>\r\n<Race:Terrestrial species>\r\n<Temporary use skill:3512>\r\n<Steel list 1,I,13,2>\r\n<Steel list 1,A,1026,8>\r\n<Steel list 2,I,309,2>\r\n<Steel list 3,I,161,2>\r\n<Steel list 4,A,1801,8>\r\n"
+Enemy 005
+ Name "Imp"
+ Notes "<Occupation Exp 1>\r\n<Escape Level 2>\r\n<Race:Bad luck>\r\n<Temporary use skill:3520>\r\n<Steel list 1,I,1,2>\r\n<Steel list 1,A,1171,8>\r\n<Steel list 2,I,357,2>\r\n<Steel list 3,I,162,2>\r\n<Steel list 4,A,1802,8>\r\n"
+Enemy 006
+ Name "Mandragora"
+ Notes "<Occupation Exp 1>\r\n<Escape Level 3>\r\n<Race:plant>\r\n<Temporary use skill:3527>\r\n<Steel list 1,I,1,2>\r\n<Steel list 1,I,163,8>\r\n<Steel list 2,I,307,2>\r\n<Steel list 3,I,163,2>\r\n"
+Enemy 007
+ Name "Dog Girl"
+ Notes "<Occupation Exp 1>\r\n<Escape Level 3>\r\n<Race:A monster>\r\n<Temporary use skill:3535>\r\n<Steel list 1,I,442,2>\r\n<Steel list 1,I,11,4>\r\n<Steel list 2,I,442,2>\r\n<Steel list 3,I,164,2>\r\n<Steel list 4,A,1805,8>\r\n"
+Enemy 008
+ Name "Earthworm Girl"
+ Notes "<Occupation Exp 1>\r\n<Escape Level 4>\r\n<Race:Terrestrial species>\r\n<Temporary use skill:3511>\r\n<Steel list 1,I,13,2>\r\n<Steel list 1,I,67,4>\r\n<Steel list 2,I,301,2>\r\n<Steel list 3,I,161,2>\r\n"
+Enemy 009
+ Name "Goblin Girl"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 4>\r\n<Race:Fellow>\r\n<Temporary use skill:3546>\r\n<Steel list 4,A,1806,8>\r\n<Fellow ID:1062>\r\n<Battle recollection impossible>"
+Enemy 010
+ Name "Tiny Lamia"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 4>\r\n<Race:Lamia>\r\n<Temporary use skill:3555>\r\n<Fellow ID:1064>\r\n<Battle recollection impossible>\r\n"
+Enemy 011
+ Name "Vampire Girl"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 4>\r\n<Race:vampire>\r\n<Temporary use skill:3563>\r\n<Steel list 4,A,1807,8>\r\n<Fellow ID:1066>\r\n<Battle recollection impossible>"
+Enemy 012
+ Name "Dragon Pup"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 4>\r\n<Race:dragon>\r\n<Temporary use skill:4228>\r\n<Steel list 4,A,1808,8>\r\n<Fellow ID:1068>\r\n<Battle recollection impossible>\r\n"
+Enemy 013
+ Name "Rat Girl"
+ Notes "<Occupation Exp 1>\r\n<Escape Level 4>\r\n<Race:A monster>\r\n<Temporary use skill:3535>\r\n<Steel list 1,I,1,2>\r\n<Steel list 1,A,1036,8>\r\n<Steel list 2,I,341,2>\r\n<Steel list 3,I,164,2>\r\n<Steel list 4,A,1809,8>\r\n"
+Enemy 014
+ Name "Wolf Girl"
+ Notes "<Occupation Exp 1>\r\n<Escape Level 4>\r\n<Race:A monster>\r\n<Temporary use skill:3535>\r\n<Steel list 1,I,7,2>\r\n<Steel list 1,I,11,4>\r\n<Steel list 2,I,329,2>\r\n<Steel list 3,I,164,2>\r\n"
+Enemy 015
+ Name "Phoenix Girl"
+ Notes "<Occupation Exp 7>\r\n<Escape Level 5>\r\n<Race:bird>\r\n<Temporary use skill:3574>\r\n<Steel list 4,A,1810,8>\r\n<Fellow ID:1072>\r\n<Predatory invalid>\r\n<Battle recollection impossible>"
+Enemy 016
+ Name "Leech Girl"
+ Notes "<Occupation Exp 1>\r\n<Escape Level 5>\r\n<Race:Terrestrial species>\r\n<Temporary use skill:3576>\r\n<Steel list 1,I,13,2>\r\n<Steel list 1,A,1041,8>\r\n<Steel list 2,I,337,2>\r\n<Steel list 3,I,165,2>\r\n"
+Enemy 017
+ Name "Rabbit Girl"
+ Notes "<Occupation Exp 1>\r\n<Escape Level 5>\r\n<Race:A monster>\r\n<Temporary use skill:3585>\r\n<Steel list 1,I,1,2>\r\n<Steel list 1,W,550,8>\r\n<Steel list 2,I,310,2>\r\n<Steel list 3,I,51,2>\r\n<Steel list 4,A,1811,8>\r\n"
+Enemy 018
+ Name "Sheep Girl"
+ Notes "<Occupation Exp 1>\r\n<Escape Level 5>\r\n<Race:A monster>\r\n<Temporary use skill:3592>\r\n<Steel list 1,I,433,4>\r\n<Steel list 1,A,1147,8>\r\n<Steel list 2,I,431,2>\r\n<Steel list 3,I,55,2>\r\n<Steel list 4,A,1812,8>\r\n"
+Enemy 019
+ Name "Sully"
+ Notes "<Occupation Exp 1>\r\n<Runaway Level 6>\r\n<Race:Apoptosis>\r\n<Temporary use skill:3786>\r\n<Steel list 1,I,55,4>\r\n<Steel list 1,A,1006,8>\r\n<Steel list 3,I,166,2>\r\n"
+Enemy 020
+ Name "Jaide"
+ Notes "<Occupation Exp 1>\r\n<Runaway Level 6>\r\n<Race:Apoptosis>\r\n<Temporary use skill:3497>\r\n<Steel list 1,I,59,4>\r\n<Steel list 1,A,1011,8>\r\n<Steel list 3,I,166,2>\r\n"
+Enemy 021
+ Name "Shesta"
+ Notes "<Occupation Exp 2>\r\n<Runaway Level 6>\r\n<Race:Apoptosis>\r\n<Temporary use skill:3611>\r\n<Steel list 1,I,166,4>\r\n<Steel list 1,A,148,8>\r\n<Steel list 3,I,166,2>\r\n<Steel list 4,A,1813,8>\r\n"
+Enemy 022
+ Name "???"
+ Notes "<Occupation Exp 9>\r\n<Runaway Level 6>\r\n<Race:Apoptosis>\r\n<Temporary use skill:3614>\r\n<Illustration title:Nurco>\r\n<Fellow ID:1079>\r\n<Battle recollection impossible>"
+Enemy 023
+ Name "Orc Girl"
+ Notes "<Occupation Exp 1>\r\n<Escape Level 7>\r\n<Race:A monster>\r\n<Temporary use skill:3622>\r\n<Steel list 1,I,23,2>\r\n<Steel list 1,A,1016,8>\r\n<Steel list 2,I,331,2>\r\n<Steel list 3,I,67,2>\r\n"
+Enemy 024
+ Name "Bee Girl"
+ Notes "<Occupation Exp 1>\r\n<Escape Level 7>\r\n<Race:insect>\r\n<Temporary use skill:3627>\r\n<Steel list 1,I,14,2>\r\n<Steel list 1,I,167,4>\r\n<Steel list 2,I,436,2>\r\n<Steel list 3,I,167,2>\r\n"
+Enemy 025
+ Name "Sparrow Girl"
+ Notes "<Occupation Exp 1>\r\n<Escape Level 7>\r\n<Race:bird>\r\n<Temporary use skill:3574>\r\n<Steel list 1,I,1,2>\r\n<Steel list 1,I,23,4>\r\n<Steel list 2,I,360,2>\r\n<Steel list 3,I,168,2>\r\n<Steel list 4,A,1814,8>\r\n"
+Enemy 026
+ Name "Harpy"
+ Notes "<Occupation Exp 3>\r\n<Escape Level 7>\r\n<Race:bird>\r\n<Temporary use skill:3636>\r\n<Steel list 1,I,23,2>\r\n<Steel list 1,I,63,4>\r\n<Steel list 2,I,361,2>\r\n<Steel list 3,I,168,2>\r\n"
+Enemy 027
+ Name "Harpy Sisters"
+ Notes "<Occupation Exp 3>\r\n<Escape Level 7>\r\n<Race:bird>\r\n<Temporary use skill:3574>\r\n<Steel list 1,I,23,4>\r\n<Steel list 1,I,168,4>\r\n<Steel list 2,I,305,2>\r\n<Steel list 3,I,168,2>\r\n"
+Enemy 028
+ Name "Queen Harpy"
+ Notes "<Occupation Exp 10>\r\n<Escape Level 7>\r\n<Race:bird>\r\n<Temporary use skill:3649>\r\n<Predatory invalid>\r\n<Battle recollection impossible>\r\n<Fellow ID:1323>"
+Enemy 029
+ Name "High Slug"
+ Notes "<Occupation Exp 2>\r\n<Escape Level 8>\r\n<Race:Terrestrial species>\r\n<Temporary use skill:3512>\r\n<Steel list 1,I,13,2>\r\n<Steel list 1,A,1145,8>\r\n<Steel list 2,I,309,2>\r\n<Steel list 3,I,165,2>\r\n<Steel list 4,A,1815,8>\r\n"
+Enemy 030
+ Name "Slug Nun"
+ Notes "<Occupation Exp 2>\r\n<Escape Level 8>\r\n<Race:Terrestrial species>\r\n<Temporary use skill:3661>\r\n<Steel list 1,I,13,2>\r\n<Steel list 1,A,1031,8>\r\n<Steel list 2,I,309,2>\r\n<Steel list 3,I,165,2>\r\n<Steel list 4,A,1816,8>\r\n"
+Enemy 031
+ Name "Sluggy Stars"
+ Notes "<Occupation Exp 10>\r\n<Escape Level 8>\r\n<Race:Terrestrial species>\r\n<Temporary use skill:3658>\r\n<Fellow ID:1087>\r\n<Battle recollection impossible>"
+Enemy 032
+ Name "Jack O Lantern"
+ Notes "<Occupation Exp 2>\r\n<Escape Level 9>\r\n<Race:fairy>\r\n<Temporary use skill:4140>\r\n<Steel list 1,I,447,2>\r\n<Steel list 1,A,234,8>\r\n<Steel list 2,I,435,2>\r\n<Steel list 3,I,169,2>\r\n<Steel list 4,A,1817,8>\r\n"
+Enemy 033
+ Name "Roper Girl"
+ Notes "<Occupation Exp 2>\r\n<Escape Level 9>\r\n<Race:Terrestrial species>\r\n<Temporary use skill:3614>\r\n<Steel list 1,I,1,2>\r\n<Steel list 1,A,1061,8>\r\n<Steel list 2,I,312,2>\r\n<Steel list 3,I,161,2>\r\n"
+Enemy 034
+ Name "Meda"
+ Notes "<Occupation Exp 2>\r\n<Escape Level 9>\r\n<Race:insect>\r\n<Temporary use skill:3614>\r\n<Steel list 1,I,14,2>\r\n<Steel list 1,I,11,4>\r\n<Steel list 2,I,432,2>\r\n<Steel list 3,I,59,2>\r\n"
+Enemy 035
+ Name "Candle Girl"
+ Notes "<Occupation Exp 2>\r\n<Escape Level 10>\r\n<Race:ghost>\r\n<Temporary use skill:3679>\r\n<Steel list 1,I,1,2>\r\n<Steel list 1,I,51,4>\r\n<Steel list 2,I,338,2>\r\n<Steel list 3,I,51,2>\r\n"
+Enemy 036
+ Name "Eater"
+ Notes "<Occupation Exp 2>\r\n<Escape Level 11>\r\n<Race:Apoptosis>\r\n<Temporary use skill:3685>\r\n<Steel list 1,I,1,2>\r\n<Steel list 1,A,1113,8>\r\n<Steel list 3,I,172,2>\r\n"
+Enemy 037
+ Name "Riot"
+ Notes "<Occupation Exp 2>\r\n<Escape Level 11>\r\n<Race:Apoptosis>\r\n<Temporary use skill:3535>\r\n<Steel list 1,I,7,2>\r\n<Steel list 1,A,1016,8>\r\n<Steel list 3,I,166,2>\r\n"
+Enemy 038
+ Name "Luxuru"
+ Notes "<Occupation Exp 2>\r\n<Escape Level 11>\r\n<Race:Apoptosis>\r\n<Temporary use skill:3496>\r\n<Steel list 1,I,11,2>\r\n<Steel list 1,I,79,4>\r\n<Steel list 3,I,166,2>\r\n"
+Enemy 039
+ Name "Dark Elf Swordsman"
+ Notes "<Occupation Exp 2>\r\n<Escape Level 12>\r\n<Race:Elf>\r\n<Temporary use skill:3706>\r\n<Steel list 1,I,1,2>\r\n<Steel list 1,A,1011,8>\r\n<Steel list 2,I,343,2>\r\n<Steel list 3,I,170,2>\r\n<Steel list 4,A,1818,8>\r\n<Illustration title:Dark elf (sword)>\r\n"
+Enemy 040
+ Name "Dark Elf Mage"
+ Notes "<Occupation Exp 2>\r\n<Escape Level 12>\r\n<Race:Elf>\r\n<Temporary use skill:3614>\r\n<Steel list 1,I,15,2>\r\n<Steel list 1,A,1100,8>\r\n<Steel list 2,I,331,2>\r\n<Steel list 3,I,170,2>\r\n<Steel list 4,A,1819,8>\r\n<Illustration title:Dark Elf (Summon)>\r\n"
+Enemy 041
+ Name "Fairy"
+ Notes "<Occupation Exp 2>\r\n<Escape Level 12>\r\n<Race:fairy>\r\n<Temporary use skill:3716>\r\n<Steel list 1,I,1,1>\r\n<Steel list 1,A,1006,8>\r\n<Steel list 2,I,434,2>\r\n<Steel list 3,I,169,2>\r\n<Steel list 4,A,1820,8>"
+Enemy 042
+ Name "Mini Crab Girl"
+ Notes "<Occupation Exp 2>\r\n<Escape Level 12>\r\n<Race:Marine species>\r\n<Temporary use skill:3719>\r\n<Steel list 1,I,1,2>\r\n<Steel list 1,I,71,4>\r\n<Steel list 2,I,335,2>\r\n<Steel list 3,I,171,2>\r\n"
+Enemy 043
+ Name "Catfish Girl"
+ Notes "<Occupation Exp 2>\r\n<Escape Level 12>\r\n<Race:mermaid>\r\n<Temporary use skill:3511>\r\n<Steel list 1,I,7,2>\r\n<Steel list 1,I,59,4>\r\n<Steel list 2,I,328,2>\r\n<Steel list 3,I,165,2>\r\n"
+Enemy 044
+ Name "Rafflesia Girl"
+ Notes "<Occupation Exp 2>\r\n<Escape Level 13>\r\n<Race:plant>\r\n<Temporary use skill:3726>\r\n<Steel list 1,I,1,2>\r\n<Steel list 1,A,1721,8>\r\n<Steel list 2,I,321,2>\r\n<Steel list 3,I,163,2>\r\n"
+Enemy 045
+ Name "Centaur"
+ Notes "<Occupation Exp 2>\r\n<Escape Level 13>\r\n<Race:A monster>\r\n<Temporary use skill:3735>\r\n<Steel list 1,I,173,2>\r\n<Steel list 1,A,1730,8>\r\n<Steel list 2,I,310,2>\r\n<Steel list 3,I,173,2>\r\n"
+Enemy 046
+ Name "Kitsune"
+ Notes "<Occupation Exp 2>\r\n<Escape Level 13>\r\n<Race:Fox>\r\n<Temporary use skill:3740>\r\n<Steel list 1,I,174,2>\r\n<Steel list 1,I,67,4>\r\n<Steel list 2,I,370,2>\r\n<Steel list 3,I,174,2>\r\n<Steel list 4,A,1821,8>\r\n"
+Enemy 047
+ Name "Kamuro"
+ Notes "<Occupation Exp 2>\r\n<Escape Level 13>\r\n<Race:Fox>\r\n<Temporary use skill:3740>\r\n<Steel list 1,I,1,2>\r\n<Steel list 1,A,1061,8>\r\n<Steel list 2,I,333,2>\r\n<Steel list 3,I,174,2>\r\n<Steel list 4,A,1822,8>\r\n"
+Enemy 048
+ Name "Spider Girl"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 13>\r\n<Race:insect>\r\n<Temporary use skill:3748>\r\n<Steel list 1,I,13,2>\r\n<Steel list 1,A,163,8>\r\n<Steel list 2,I,432,2>\r\n<Steel list 3,I,175,2>\r\n"
+Enemy 049
+ Name "Mimic"
+ Notes "<Occupation Exp 15>\r\n<Escape Level 17>\r\n<Race:ghost>\r\n<Temporary use skill:3655>\r\n<Steel list 1,I,11,2>\r\n<Steel list 1,I,4,32>\r\n<Steel list 2,I,359,2>\r\n<Steel list 3,I,161,2>\r\n<Steel list 4,A,1823,8>\r\n"
+Enemy 050
+ Name "Nanabi"
+ Notes "<Occupation Exp 20>\r\n<Escape Level 30>\r\n<Race:Fox>\r\n<Temporary use skill:3755>\r\n<Fellow ID:1106>\r\n<Predatory invalid>\r\n<Battle recollection impossible>"
+Enemy 051
+ Name "Morrigan"
+ Notes "<Occupation Exp 20>\r\n<Runaway Level 14>\r\n<Race:Bad luck>\r\n<Temporary use skill:3765>\r\n<Steel list 4,A,1824,8>\r\n<Predatory invalid>\r\n<Battle recollection impossible>\r\n<Fellow ID:1382>"
+Enemy 052
+ Name "Sea Cucumber Girl"
+ Notes "<Occupation Exp 3>\r\n<Runaway Level 14>\r\n<Race:Marine species>\r\n<Temporary use skill:3495>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,I,71,4>\r\n<Steel list 2,I,322,2>\r\n<Steel list 3,I,171,2>\r\n"
+Enemy 053
+ Name "Shellfish Girl"
+ Notes "<Occupation Exp 3>\r\n<Runaway Level 14>\r\n<Race:Marine species>\r\n<Temporary use skill:3778>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,I,27,32>\r\n<Steel list 2,I,389,2>\r\n<Steel list 3,I,176,3>\r\n"
+Enemy 054
+ Name "Crab Girl"
+ Notes "<Occupation Exp 3>\r\n<Runaway Level 14>\r\n<Race:Marine species>\r\n<Temporary use skill:3786>\r\n<Steel list 1,I,17,2>\r\n<Steel list 1,A,1558,8>\r\n<Steel list 2,I,326,2>\r\n<Steel list 3,I,171,2>\r\n"
+Enemy 055
+ Name "Slime Beth"
+ Notes "<Occupation Exp 3>\r\n<Escape Level 15>\r\n<Race:Slime>\r\n<Temporary use skill:3793>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,A,1375,8>\r\n<Steel list 2,I,329,2>\r\n<Steel list 3,I,177,3>\r\n"
+Enemy 056
+ Name "Watermelon Girl"
+ Notes "<Occupation Exp 3>\r\n<Escape Level 15>\r\n<Race:plant>\r\n<Temporary use skill:3800>\r\n<Steel list 1,I,163,2>\r\n<Steel list 1,W,8,8>\r\n<Steel list 2,I,304,2>\r\n<Steel list 3,I,163,2>\r\n"
+Enemy 057
+ Name "Pitcher Plant Girl"
+ Notes "<Occupation Exp 3>\r\n<Escape Level 15>\r\n<Race:plant>\r\n<Temporary use skill:3685>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,A,1576,8>\r\n<Steel list 2,I,337,2>\r\n<Steel list 3,I,163,2>\r\n"
+Enemy 058
+ Name "Lamia"
+ Notes "<Occupation Exp 6>\r\n<Escape Level 15>\r\n<Race:Lamia>\r\n<Temporary use skill:3802>\r\n<Steel list 1,I,16,2>\r\n<Steel list 1,A,1381,8>\r\n<Steel list 2,I,376,2>\r\n<Steel list 3,I,178,3>\r\n"
+Enemy 059
+ Name "Seaweed Girl"
+ Notes "<Occupation Exp 3>\r\n<Runaway Level 14>\r\n<Race:plant>\r\n<Temporary use skill:3814>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,A,1142,8>\r\n<Steel list 2,I,335,2>\r\n<Steel list 3,I,71,2>\r\n"
+Enemy 060
+ Name "Jellyfish Girl"
+ Notes "<Occupation Exp 3>\r\n<Runaway Level 14>\r\n<Race:Marine species>\r\n<Temporary use skill:3614>\r\n<Steel list 1,I,17,2>\r\n<Steel list 1,A,1115,8>\r\n<Steel list 2,I,322,2>\r\n<Steel list 3,I,179,3>\r\n"
+Enemy 061
+ Name "Sea Anemone Girl"
+ Notes "<Occupation Exp 6>\r\n<Runaway Level 14>\r\n<Race:Marine species>\r\n<Temporary use skill:3614>\r\n<Steel list 1,I,13,2>\r\n<Steel list 1,A,1548,8>\r\n<Steel list 2,I,322,2>\r\n<Steel list 3,I,179,3>\r\n"
+Enemy 062
+ Name "Anglerfish Girl"
+ Notes "<Occupation Exp 3>\r\n<Runaway Level 14>\r\n<Race:mermaid>\r\n<Temporary use skill:3494>\r\n<Steel list 1,I,14,2>\r\n<Steel list 1,W,408,8>\r\n<Steel list 2,I,327,2>\r\n<Steel list 3,I,71,2>\r\n"
+Enemy 063
+ Name "Meia"
+ Notes "<Occupation Exp 22>\r\n<Escape Level 15>\r\n<Race:mermaid>\r\n<Temporary use skill:3843>\r\n<Fellow ID:1118>\r\n<Battle recollection impossible>"
+Enemy 064
+ Name "Page 17"
+ Notes "<Occupation Exp 3>\r\n<Escape Level 15>\r\n<Race:ghost>\r\n<Temporary use skill:3846>\r\n<Steel list 1,I,17,2>\r\n<Steel list 1,A,1007,8>\r\n<Steel list 2,I,314,2>\r\n<Steel list 3,I,180,3>\r\n"
+Enemy 065
+ Name "Page 257"
+ Notes "<Occupation Exp 3>\r\n<Escape Level 15>\r\n<Race:ghost>\r\n<Temporary use skill:4140>\r\n<Steel list 1,I,15,2>\r\n<Steel list 1,A,1552,8>\r\n<Steel list 2,I,418,2>\r\n<Steel list 3,I,180,3>\r\n<Steel list 4,A,1825,8>\r\n"
+Enemy 066
+ Name "Page 65537"
+ Notes "<Occupation Exp 25>\r\n<Escape Level 15>\r\n<Race:ghost>\r\n<Temporary use skill:3614>\r\n<Steel list 4,A,1826,8>\r\n<Fellow ID:1121>\r\n<Predatory invalid>\r\n<Battle recollection impossible>"
+Enemy 067
+ Name "Sister Lamia"
+ Notes "<Occupation Exp 3>\r\n<Escape Level 15>\r\n<Race:Lamia>\r\n<Temporary use skill:3869>\r\n<Steel list 1,I,19,2>\r\n<Steel list 1,W,59,16>\r\n<Steel list 2,I,317,2>\r\n<Steel list 3,I,178,3>\r\n"
+Enemy 068
+ Name "Succubus Nun"
+ Notes "<Occupation Exp 3>\r\n<Escape Level 15>\r\n<Race:Bad luck>\r\n<Temporary use skill:3873>\r\n<Steel list 1,I,4,4>\r\n<Steel list 1,A,1315,8>\r\n<Steel list 2,I,317,2>\r\n<Steel list 3,I,181,3>\r\n<Steel list 4,A,1827,8>\r\n"
+Enemy 069
+ Name "Anteater Girl"
+ Notes "<Occupation Exp 3>\r\n<Escape Level 15>\r\n<Race:A monster>\r\n<Temporary use skill:3878>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,W,294,8>\r\n<Steel list 2,I,336,2>\r\n<Steel list 3,I,182,3>\r\n<Steel list 4,A,1828,8>\r\n"
+Enemy 070
+ Name "Grizzly Bear Girl"
+ Notes "<Occupation Exp 3>\r\n<Escape Level 15>\r\n<Race:A monster>\r\n<Temporary use skill:3535>\r\n<Steel list 1,I,7,2>\r\n<Steel list 1,A,1378,8>\r\n<Steel list 2,I,329,2>\r\n<Steel list 3,I,182,3>\r\n"
+Enemy 071
+ Name "Experiment XX-7"
+ Notes "<Occupation Exp 3>\r\n<Runaway Level 16>\r\n<Race:Lloyd>\r\n<Temporary use skill:3892>\r\n<Steel list 1,I,7,2>\r\n<Steel list 1,A,1042,8>\r\n<Steel list 2,I,339,2>\r\n<Steel list 3,I,183,3>\r\n"
+Enemy 072
+ Name "Little Bug"
+ Notes "<Occupation Exp 3>\r\n<Runaway Level 16>\r\n<Race:Chimera>\r\n<Temporary use skill:3896>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,I,30,32>\r\n<Steel list 2,I,301,2>\r\n<Steel list 3,I,184,3>\r\n"
+Enemy 073
+ Name "Canceroid"
+ Notes "<Occupation Exp 6>\r\n<Runaway Level 16>\r\n<Race:Lloyd>\r\n<Temporary use skill:3493>\r\n<Steel list 1,I,20,2>\r\n<Steel list 1,A,1022,8>\r\n<Steel list 2,I,326,2>\r\n<Steel list 3,I,183,3>\r\n"
+Enemy 074
+ Name "Brynhildr"
+ Notes "<Occupation Exp 28>\r\n<Escape Level 17>\r\n<Race:Lloyd>\r\n<Temporary use skill:4141>\r\n<Fellow ID:1129>\r\n<Predatory invalid>\r\n<Battle recollection impossible>"
+Enemy 075
+ Name "Ghost Girl"
+ Notes "<Occupation Exp 3>\r\n<Escape Level 17>\r\n<Race:ghost>\r\n<Temporary use skill:3913>\r\n<Steel list 1,I,4,4>\r\n<Steel list 1,A,70,16>\r\n<Steel list 2,I,311,2>\r\n<Steel list 3,I,185,3>\r\n<Steel list 4,A,1829,8>\r\n"
+Enemy 076
+ Name "Cursed Doll"
+ Notes "<Occupation Exp 3>\r\n<Escape Level 17>\r\n<Race:Doll>\r\n<Temporary use skill:3920>\r\n<Steel list 1,I,18,2>\r\n<Steel list 1,W,446,16>\r\n<Steel list 2,I,435,2>\r\n<Steel list 3,I,185,3>\r\n<Steel list 4,A,1830,8>\r\n"
+Enemy 077
+ Name "Zombie Swordsman"
+ Notes "<Occupation Exp 3>\r\n<Escape Level 17>\r\n<Race:zombie>\r\n<Temporary use skill:3933>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,A,3,4>\r\n<Steel list 2,I,432,2>\r\n<Steel list 3,I,186,3>\r\n<Steel list 4,A,1831,8>\r\n<Auto State 19>"
+Enemy 078
+ Name "Zombie Girls"
+ Notes "<Occupation Exp 3>\r\n<Escape Level 17>\r\n<Race:zombie>\r\n<Temporary use skill:3933>\r\n<Steel list 1,I,16,2>\r\n<Steel list 1,A,1556,8>\r\n<Steel list 2,I,432,2>\r\n<Steel list 3,I,186,3>\r\n<Steel list 4,A,1832,8>\r\n<Illustration title:Zombie daughter A>\r\n<Auto State 19>"
+Enemy 079
+ Name "Zombie Girls"
+ Notes "<Occupation Exp 3>\r\n<Escape Level 17>\r\n<Race:zombie>\r\n<Temporary use skill:3933>\r\n<Steel list 1,I,13,2>\r\n<Steel list 1,A,1167,8>\r\n<Steel list 2,I,432,2>\r\n<Steel list 3,I,186,3>\r\n<Steel list 4,A,1833,8>\r\n<Illustration title:Zombie daughter B>\r\n<Auto State 19>\r\n<Fellow ID:1133>"
+Enemy 080
+ Name "Zombie Girls"
+ Notes "<Occupation Exp 3>\r\n<Escape Level 17>\r\n<Race:zombie>\r\n<Temporary use skill:3933>\r\n<Steel list 1,I,17,2>\r\n<Steel list 1,A,1002,8>\r\n<Steel list 2,I,432,2>\r\n<Steel list 3,I,186,3>\r\n<Steel list 4,A,1834,8>\r\n<Illustration title:Zombie daughter C>\r\n<Auto State 19>\r\n<Fellow ID:1133>"
+Enemy 081
+ Name "Zombie Girls"
+ Notes "<Occupation Exp 3>\r\n<Escape Level 17>\r\n<Race:zombie>\r\n<Temporary use skill:3933>\r\n<Steel list 1,I,4,4>\r\n<Steel list 1,A,1572,8>\r\n<Steel list 2,I,432,2>\r\n<Steel list 3,I,186,3>\r\n<Steel list 4,A,1835,8>\r\n<Illustration title:Zombie daughter D>\r\n<Auto State 19>\r\n<Fellow ID:1133>"
+Enemy 082
+ Name "Frederica"
+ Notes "<Occupation Exp 15>\r\n<Escape Level 18>\r\n<Race:zombie>\r\n<Temporary use skill:3942>\r\n<Steel list 4,A,1836,8>\r\n<Auto State 19>\r\n<Fellow ID:1135>\r\n<Predatory invalid>\r\n<Battle recollection impossible>"
+Enemy 083
+ Name "Chrome"
+ Notes "<Occupation Exp 15>\r\n<Escape Level 18>\r\n<Race:Bad luck>\r\n<Temporary use skill:4019>\r\n<Steel list 4,A,1837,8>\r\n<Fellow ID:1134>\r\n<Battle recollection impossible>"
+Enemy 084
+ Name "Elf"
+ Notes "<Occupation Exp 3>\r\n<Escape Level 18>\r\n<Race:Elf>\r\n<Temporary use skill:3962>\r\n<Steel list 1,I,4,4>\r\n<Steel list 1,A,73,8>\r\n<Steel list 2,I,311,2>\r\n<Steel list 3,I,187,3>\r\n<Steel list 4,A,1838,8>\r\n"
+Enemy 085
+ Name "Brownies"
+ Notes "<Occupation Exp 3>\r\n<Escape Level 18>\r\n<Race:fairy>\r\n<Temporary use skill:3970>\r\n<Steel list 1,I,446,2>\r\n<Steel list 1,A,1372,8>\r\n<Steel list 2,I,304,2>\r\n<Steel list 3,I,188,3>\r\n<Steel list 4,A,1839,8>\r\n"
+Enemy 086
+ Name "Twin Fairies"
+ Notes "<Occupation Exp 3>\r\n<Escape Level 18>\r\n<Race:fairy>\r\n<Temporary use skill:3972>\r\n<Steel list 1,I,447,2>\r\n<Steel list 1,A,1007,8>\r\n<Steel list 2,I,301,2>\r\n<Steel list 3,I,188,3>\r\n<Steel list 4,A,1840,8>\r\n"
+Enemy 087
+ Name "Fairies"
+ Notes "<Occupation Exp 3>\r\n<Escape Level 18>\r\n<Race:fairy>\r\n<Temporary use skill:3972>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,A,1276,8>\r\n<Steel list 2,I,435,2>\r\n<Steel list 3,I,188,3>\r\n<Steel list 4,A,1841,8>\r\n<Illustration title:Fairies A>\r\n"
+Enemy 088
+ Name "Fairies"
+ Notes "<Occupation Exp 3>\r\n<Escape Level 18>\r\n<Race:fairy>\r\n<Temporary use skill:3972>\r\n<Steel list 1,I,4,4>\r\n<Steel list 1,A,1115,8>\r\n<Steel list 2,I,301,2>\r\n<Steel list 3,I,188,3>\r\n<Steel list 4,A,1841,8>\r\n<Illustration title:Fairies B>\r\n<Fellow ID:1139>"
+Enemy 089
+ Name "Fairies"
+ Notes "<Occupation Exp 3>\r\n<Escape Level 18>\r\n<Race:fairy>\r\n<Temporary use skill:3972>\r\n<Steel list 1,I,11,2>\r\n<Steel list 1,W,520,8>\r\n<Steel list 2,I,304,2>\r\n<Steel list 3,I,188,3>\r\n<Steel list 4,A,1841,8>\r\n<Illustration title:Fairies C>\r\n<Fellow ID:1139>"
+Enemy 090
+ Name "Fairies"
+ Notes "<Occupation Exp 3>\r\n<Escape Level 18>\r\n<Race:fairy>\r\n<Temporary use skill:3972>\r\n<Steel list 1,I,19,2>\r\n<Steel list 1,W,561,16>\r\n<Steel list 2,I,417,2>\r\n<Steel list 3,I,64,3>\r\n<Steel list 4,A,1841,8>\r\n<Illustration title:Fairies D>\r\n<Fellow ID:1139>"
+Enemy 091
+ Name "Fairies"
+ Notes "<Occupation Exp 3>\r\n<Escape Level 18>\r\n<Race:fairy>\r\n<Temporary use skill:3972>\r\n<Steel list 1,I,18,2>\r\n<Steel list 1,I,12,16>\r\n<Steel list 2,I,434,2>\r\n<Steel list 3,I,188,3>\r\n<Steel list 4,A,1841,8>\r\n<Illustration title:Fairies E>\r\n<Fellow ID:1139>"
+Enemy 092
+ Name "Fairies"
+ Notes "<Occupation Exp 3>\r\n<Escape Level 18>\r\n<Race:fairy>\r\n<Temporary use skill:3972>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,W,894,16>\r\n<Steel list 2,I,361,2>\r\n<Steel list 3,I,188,3>\r\n<Steel list 4,A,1841,8>\r\n<Illustration title:Fairies F>\r\n<Fellow ID:1139>"
+Enemy 093
+ Name "Sylph"
+ Notes "<Occupation Exp 32>\r\n<Escape Level 18>\r\n<Race:fairy>\r\n<Temporary use skill:3986>\r\n<Steel list 4,A,1842,8>\r\n<Fellow ID:1012>\r\n<Predatory invalid>\r\n<Battle recollection impossible>"
+Enemy 094
+ Name "Armored Berserker"
+ Notes "<Occupation Exp 0>\r\n<Runaway Level 60>\r\n<Race:A human>\r\n<Impossible to skip>\r\n<Ignore difficulty correction>\r\n<Predatory invalid>\r\n<Battle recollection impossible>"
+Enemy 095
+ Name "Tarantula Girl"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 18>\r\n<Race:insect>\r\n<Temporary use skill:3994>\r\n<Steel list 1,I,17,2>\r\n<Steel list 1,A,1393,8>\r\n<Steel list 2,I,329,2>\r\n<Steel list 3,I,175,2>\r\n"
+Enemy 096
+ Name "Minotaur Girl"
+ Notes "<Occupation Exp 9>\r\n<Escape Level 18>\r\n<Race:A monster>\r\n<Temporary use skill:4005>\r\n<Steel list 1,I,7,2>\r\n<Steel list 1,A,1306,8>\r\n<Steel list 2,I,342,2>\r\n<Steel list 3,I,189,3>\r\n<Steel list 4,A,1843,8>\r\n"
+Enemy 097
+ Name "Bandersnatch Girl"
+ Notes "<Occupation Exp 9>\r\n<Escape Level 18>\r\n<Race:Doll>\r\n<Temporary use skill:3492>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,A,1300,8>\r\n<Steel list 2,I,312,2>\r\n<Steel list 3,I,68,3>\r\n"
+Enemy 098
+ Name "Eva"
+ Notes "<Occupation Exp 33>\r\n<Escape Level 18>\r\n<Race:Bad luck>\r\n<Temporary use skill:4019>\r\n<Steel list 4,A,1844,8>\r\n<Fellow ID:1143>\r\n<Battle recollection impossible>\r\n"
+Enemy 099
+ Name "Sables"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 18>\r\n<Race:Scura>\r\n<Temporary use skill:3878>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,A,1120,8>\r\n<Steel list 2,I,330,2>\r\n<Steel list 3,I,190,3>\r\n"
+Enemy 100
+ Name "Centipede Girl"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 19>\r\n<Race:insect>\r\n<Temporary use skill:4036>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,A,1022,8>\r\n<Steel list 2,I,432,2>\r\n<Steel list 3,I,68,3>\r\n"
+Enemy 101
+ Name "Scorpion Girl"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 20>\r\n<Race:insect>\r\n<Temporary use skill:4043>\r\n<Steel list 1,I,13,2>\r\n<Steel list 1,A,1711,8>\r\n<Steel list 2,I,303,2>\r\n<Steel list 3,I,60,3>\r\n"
+Enemy 102
+ Name "Cactus Girl"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 20>\r\n<Race:plant>\r\n<Temporary use skill:4049>\r\n<Steel list 1,I,17,2>\r\n<Steel list 1,A,1558,8>\r\n<Steel list 2,I,316,2>\r\n<Steel list 3,I,191,3>\r\n"
+Enemy 103
+ Name "Ostrich Girl"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 20>\r\n<Race:bird>\r\n<Temporary use skill:4057>\r\n<Steel list 1,I,23,2>\r\n<Steel list 1,A,8,16>\r\n<Steel list 2,I,307,2>\r\n<Steel list 3,I,192,3>\r\n"
+Enemy 104
+ Name "Lamp Genie"
+ Notes "<Occupation Exp 9>\r\n<Escape Level 20>\r\n<Race:Demon>\r\n<Temporary use skill:4066>\r\n<Steel list 1,I,4,4>\r\n<Steel list 1,W,93,16>\r\n<Steel list 2,I,363,2>\r\n<Steel list 3,I,52,3>\r\n"
+Enemy 105
+ Name "Mummy Girl"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 20>\r\n<Race:zombie>\r\n<Temporary use skill:4079>\r\n<Steel list 1,I,59,4>\r\n<Steel list 1,A,1264,8>\r\n<Steel list 2,I,432,2>\r\n<Steel list 3,I,186,3>\r\n"
+Enemy 106
+ Name "Cobra Girl"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 20>\r\n<Race:Lamia>\r\n<Temporary use skill:4089>\r\n<Steel list 1,I,13,2>\r\n<Steel list 1,A,1333,8>\r\n<Steel list 2,I,329,2>\r\n<Steel list 3,I,193,3>\r\n"
+Enemy 107
+ Name "Nefertiti Lamias"
+ Notes "<Occupation Exp 10>\r\n<Escape Level 20>\r\n<Race:Lamia>\r\n<Temporary use skill:4099>\r\n<Steel list 1,I,4,2>\r\n<Steel list 1,A,300,16>\r\n<Steel list 2,I,419,2>\r\n<Steel list 3,I,193,3>\r\n"
+Enemy 108
+ Name "Sphinx"
+ Notes "<Occupation Exp 50>\r\n<Runaway Level 60>\r\n<Race:Demon>\r\n<Temporary use skill:4114>\r\n<Fellow ID:1153>\r\n<Predatory invalid>\r\n<Battle recollection impossible>\r\n"
+Enemy 109
+ Name "Sara"
+ Notes "<Occupation Exp 35>\r\n<Escape Level 21>\r\n<Race:Bad luck>\r\n<Temporary use skill:4116>\r\n<Fellow ID:1530>\r\n<Predatory invalid>\r\n<Battle recollection impossible>\r\n"
+Enemy 110
+ Name "Astaroth"
+ Notes "<Occupation Exp 38>\r\n<Escape Level 21>\r\n<Race:Bad luck>\r\n<Temporary use skill:4125>\r\n<Steel list 4,A,1845,8>\r\n<Predatory invalid>\r\n<Battle recollection impossible>"
+Enemy 111
+ Name "Crocodile Girl"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 20>\r\n<Race:Terrestrial species>\r\n<Temporary use skill:4141>\r\n<Steel list 1,I,7,2>\r\n<Steel list 1,A,1082,8>\r\n<Steel list 2,I,330,2>\r\n<Steel list 3,I,194,3>\r\n\r\n\r\n\r\n\r\n"
+Enemy 112
+ Name "Saki"
+ Notes "<Occupation Exp 40>\r\n<Escape Level 21>\r\n<Race:Bad luck>\r\n<Temporary use skill:4136>\r\n<Steel list 4,A,1846,8>\r\n<Fellow ID:1155>\r\n<Predatory invalid>\r\n<Battle recollection impossible>"
+Enemy 113
+ Name "Devil Fighter"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 21>\r\n<Race:Demon>\r\n<Temporary use skill:4141>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,A,1285,8>\r\n<Steel list 2,I,320,2>\r\n<Steel list 3,I,52,3>\r\n<Steel list 4,A,1847,8>\r\n"
+Enemy 114
+ Name "Large Spider"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 21>\r\n<Race:insect>\r\n<Temporary use skill:3747>\r\n<Steel list 1,I,17,2>\r\n<Steel list 1,A,1012,8>\r\n<Steel list 2,I,360,2>\r\n<Steel list 3,I,175,2>\r\n"
+Enemy 115
+ Name "Suck Vore"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 21>\r\n<Race:A human>\r\n<Temporary use skill:4146>\r\n<Steel list 1,I,4,4>\r\n<Steel list 1,A,1163,8>\r\n<Steel list 2,I,343,2>\r\n<Steel list 3,I,195,3>\r\n"
+Enemy 116
+ Name "Iron Maiden"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 21>\r\n<Race:Doll>\r\n<Temporary use skill:3491>\r\n<Steel list 1,I,19,2>\r\n<Steel list 1,A,1402,8>\r\n<Steel list 2,I,432,2>\r\n<Steel list 3,I,195,3>\r\n"
+Enemy 117
+ Name "Worm Villager"
+ Notes "<Occupation Exp 10>\r\n<Escape Level 21>\r\n<Race:A human>\r\n<Temporary use skill:4159>\r\n<Steel list 1,I,4,4>\r\n<Steel list 1,A,1384,8>\r\n<Steel list 2,I,337,2>\r\n<Steel list 3,I,195,3>\r\n<Steel list 4,A,1848,8>\r\n"
+Enemy 118
+ Name "Ustrel"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 21>\r\n<Race:Scura>\r\n<Temporary use skill:3878>\r\n<Steel list 1,I,4,4>\r\n<Steel list 1,A,1734,8>\r\n<Steel list 2,I,324,2>\r\n<Steel list 3,I,190,3>\r\n"
+Enemy 119
+ Name "Honey Pot"
+ Notes "<Occupation Exp 25>\r\n<Escape Level 25>\r\n<Race:ghost>\r\n<Temporary use skill:3502>\r\n<Steel list 1,I,3,4>\r\n<Steel list 1,I,4,32>\r\n<Steel list 2,I,436,2>\r\n<Steel list 3,I,177,3>\r\n"
+Enemy 120
+ Name "Lily"
+ Notes "<Occupation Exp 40>\r\n<Escape Level 22>\r\n<Race:A human>\r\n<Temporary use skill:4159>\r\n<Steel list 4,A,1849,8>\r\n<Fellow ID:1163>\r\n<Predatory invalid>\r\n<Battle recollection impossible>\r\n"
+Enemy 121
+ Name "Oni"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 21>\r\n<Race:Fellow>\r\n<Temporary use skill:4183>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,A,1309,8>\r\n<Steel list 2,I,332,2>\r\n<Steel list 3,I,196,3>\r\n<Steel list 4,A,1850,8>\r\n"
+Enemy 122
+ Name "Onahole Girl"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 21>\r\n<Race:Slime>\r\n<Temporary use skill:4188>\r\n<Steel list 1,I,4,4>\r\n<Steel list 1,A,1360,8>\r\n<Steel list 2,I,422,2>\r\n<Steel list 3,I,195,3>\r\n"
+Enemy 123
+ Name "Naccubus"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 21>\r\n<Race:Bad luck>\r\n<Temporary use skill:4196>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,A,1345,8>\r\n<Steel list 2,I,357,2>\r\n<Steel list 3,I,181,3>\r\n<Steel list 4,A,1851,8>\r\n"
+Enemy 124
+ Name "Lucia"
+ Notes "<Occupation Exp 40>\r\n<Escape Level 22>\r\n<Race:A human>\r\n<Temporary use skill:4159>\r\n<Fellow ID:1167>\r\n<Predatory invalid>\r\n<Battle recollection impossible>"
+Enemy 125
+ Name "Dodomeki"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 22>\r\n<Race:Fellow>\r\n<Temporary use skill:4216>\r\n<Steel list 1,I,14,2>\r\n<Steel list 1,A,1550,8>\r\n<Steel list 2,I,360,2>\r\n<Steel list 3,I,196,3>\r\n<Steel list 4,A,1852,8>\r\n"
+Enemy 126
+ Name "Lizard Thief"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 22>\r\n<Race:dragon>\r\n<Temporary use skill:4228>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,A,1282,8>\r\n<Steel list 2,I,340,2>\r\n<Steel list 3,I,197,3>\r\n<Steel list 4,A,1853,8>\r\n<Illustration title:Lizards Thief A>\r\n"
+Enemy 127
+ Name "Lizard Thief"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 22>\r\n<Race:dragon>\r\n<Temporary use skill:4229>\r\n<Steel list 1,I,7,2>\r\n<Steel list 1,A,1002,8>\r\n<Steel list 2,I,343,2>\r\n<Steel list 3,I,197,3>\r\n<Steel list 4,A,1854,8>\r\n<Illustration title:Lizards Thief B>\r\n"
+Enemy 128
+ Name "Lizard Boss"
+ Notes "<Occupation Exp 42>\r\n<Escape Level 23>\r\n<Race:dragon>\r\n<Temporary use skill:4228>\r\n<Steel list 4,A,1855,8>\r\n<Fellow ID:1171>\r\n<Predatory invalid>\r\n<Battle recollection impossible>\r\n"
+Enemy 129
+ Name "Mirage Girl"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 23>\r\n<Race:ghost>\r\n<Temporary use skill:4233>\r\n<Steel list 1,I,4,4>\r\n<Steel list 1,A,1318,8>\r\n<Steel list 2,I,316,2>\r\n<Steel list 3,I,52,3>\r\n<Steel list 4,A,1856,8>\r\n"
+Enemy 130
+ Name "Antlion Girl"
+ Notes "<Occupation Exp 10>\r\n<Escape Level 23>\r\n<Race:insect>\r\n<Temporary use skill:3896>\r\n<Steel list 1,I,68,4>\r\n<Steel list 1,A,1393,8>\r\n<Steel list 2,I,432,2>\r\n<Steel list 3,I,201,3>\r\n"
+Enemy 131
+ Name "Sandworm"
+ Notes "<Occupation Exp 12>\r\n<Escape Level 23>\r\n<Race:insect>\r\n<Temporary use skill:3490>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,I,26,32>\r\n<Steel list 2,I,303,2>\r\n<Steel list 3,I,201,3>\r\n"
+Enemy 132
+ Name "Desert Scylla"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 23>\r\n<Race:Scura>\r\n<Temporary use skill:3614>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,A,1384,8>\r\n<Steel list 2,I,330,2>\r\n<Steel list 3,I,202,3>\r\n"
+Enemy 133
+ Name "Gnome"
+ Notes "<Occupation Exp 45>\r\n<Escape Level 23>\r\n<Race:fairy>\r\n<Temporary use skill:3489>\r\n<Steel list 4,A,1857,8>\r\n<Fellow ID:1013>\r\n<Predatory invalid>\r\n<Battle recollection impossible>"
+Enemy 134
+ Name "Vitae"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 23>\r\n<Race:Apoptosis>\r\n<Temporary use skill:4258>\r\n<Steel list 1,I,71,4>\r\n<Steel list 1,A,1066,8>\r\n<Steel list 3,I,198,3>\r\n"
+Enemy 135
+ Name "Vetala"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 23>\r\n<Race:Apoptosis>\r\n<Temporary use skill:4261>\r\n<Steel list 1,I,17,2>\r\n<Steel list 1,A,1149,8>\r\n<Steel list 3,I,198,3>\r\n"
+Enemy 136
+ Name "Valto"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 23>\r\n<Race:Apoptosis>\r\n<Temporary use skill:3892>\r\n<Steel list 1,I,60,4>\r\n<Steel list 1,A,1564,8>\r\n<Steel list 3,I,198,3>\r\n"
+Enemy 137
+ Name "Shinifa"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 23>\r\n<Race:Apoptosis>\r\n<Temporary use skill:4275>\r\n<Steel list 1,I,4,4>\r\n<Steel list 1,A,1111,8>\r\n<Steel list 3,I,198,3>\r\n"
+Enemy 138
+ Name "Shadow Girl"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 24>\r\n<Race:ghost>\r\n<Temporary use skill:4279>\r\n<Steel list 1,I,16,2>\r\n<Steel list 1,A,1086,8>\r\n<Steel list 2,I,321,2>\r\n<Steel list 3,I,185,3>\r\n"
+Enemy 139
+ Name "Paintgeist"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 24>\r\n<Race:ghost>\r\n<Temporary use skill:3940>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,A,1539,8>\r\n<Steel list 2,I,313,2>\r\n<Steel list 3,I,185,3>\r\n<Steel list 4,A,1858,8>\r\n"
+Enemy 140
+ Name "Chimera Homunculus"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 24>\r\n<Race:Chimera>\r\n<Temporary use skill:4299>\r\n<Steel list 1,I,4,4>\r\n<Steel list 1,A,1554,8>\r\n<Steel list 2,I,325,2>\r\n<Steel list 3,I,199,3>\r\n"
+Enemy 141
+ Name "Neo Iron Maiden"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 24>\r\n<Race:Doll>\r\n<Temporary use skill:3491>\r\n<Steel list 1,I,19,2>\r\n<Steel list 1,A,1584,8>\r\n<Steel list 2,I,301,2>\r\n<Steel list 3,I,199,3>\r\n"
+Enemy 142
+ Name "Junk Doll Girl"
+ Notes "<Occupation Exp 12>\r\n<Escape Level 24>\r\n<Race:Doll>\r\n<Temporary use skill:4313>\r\n<Steel list 1,I,23,2>\r\n<Steel list 1,A,1267,8>\r\n<Steel list 2,I,338,2>\r\n<Steel list 3,I,200,3>\r\n"
+Enemy 143
+ Name "Adramelech"
+ Notes "<Occupation Exp 50>\r\n<Escape Level 24>\r\n<Race:Apoptosis>\r\n<Temporary use skill:3614>\r\n<Predatory invalid>\r\n<Battle recollection impossible>"
+Enemy 144
+ Name "Alipheese the 16th"
+ Notes "<Occupation Exp 50>\r\n<Escape Level 50>\r\n<Race:Demon>\r\n<Temporary use skill:3488>\r\n<Steel list 4,A,1953,8>\r\n<Illustration title:Alice Fies 16 (Hell)>\r\n<Predatory invalid>\r\n<Battle recollection impossible>\r\n"
+Enemy 145
+ Name "Reaper"
+ Notes "<Occupation Exp 99>\r\n<Escape Level 80>\r\n<Race:ghost>\r\n<Temporary use skill:3912>\r\n<Steel list 1,I,9,16>\r\n<Steel list 1,I,24,16>\r\n<Steel list 2,I,444,2>\r\n<Steel list 3,I,273,16>\r\n<Steel list 4,A,1954,8>\r\n<Predatory invalid>\r\n<Battle recollection impossible>\r\n"
+Enemy 146
+ Name "Archangel Ranael"
+ Notes "<Occupation Exp 15>\r\n<Runaway Level 60>\r\n<Race:angel>\r\n<Illustration title:Ranael (another world)>\r\n<Predatory invalid>\r\n<Battle recollection impossible>\r\n"
+Enemy 147
+ Name "Principality Nagael"
+ Notes "<Occupation Exp 15>\r\n<Runaway Level 60>\r\n<Race:angel>\r\n<Illustration title:Nagaeru (another world)>\r\n<Predatory invalid>\r\n<Battle recollection impossible>\r\n"
+Enemy 151
+ Name "Mushroom Girl"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 24>\r\n<Race:plant>\r\n<Temporary use skill:4066>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,A,1556,8>\r\n<Steel list 2,I,318,2>\r\n<Steel list 3,I,56,3>\r\n"
+Enemy 152
+ Name "Novistador Girl"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 24>\r\n<Race:insect>\r\n<Temporary use skill:5613>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,A,1736,8>\r\n<Steel list 2,I,342,2>\r\n<Steel list 3,I,201,3>\r\n"
+Enemy 153
+ Name "Urscylla"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 24>\r\n<Race:Scura>\r\n<Temporary use skill:3614>\r\n<Steel list 1,I,4,4>\r\n<Steel list 1,A,1123,8>\r\n<Steel list 2,I,322,2>\r\n<Steel list 3,I,202,3>\r\n"
+Enemy 154
+ Name "Fusuma"
+ Notes "<Occupation Exp 10>\r\n<Escape Level 24>\r\n<Race:Fellow>\r\n<Temporary use skill:4608>\r\n<Steel list 1,I,15,2>\r\n<Steel list 1,A,1312,8>\r\n<Steel list 2,I,332,2>\r\n<Steel list 3,I,203,3>\r\n<Steel list 4,A,1859,8>\r\n"
+Enemy 155
+ Name "Mermaid"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 25>\r\n<Race:mermaid>\r\n<Temporary use skill:3842>\r\n<Steel list 1,I,4,4>\r\n<Steel list 1,W,525,16>\r\n<Steel list 2,I,322,2>\r\n<Steel list 3,I,204,4>\r\n"
+Enemy 156
+ Name "Mermaid Merchant"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 25>\r\n<Race:mermaid>\r\n<Temporary use skill:3843>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,W,781,16>\r\n<Steel list 2,I,368,2>\r\n<Steel list 3,I,204,4>\r\n"
+Enemy 157
+ Name "Pirate Mermaid"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 25>\r\n<Race:mermaid>\r\n<Temporary use skill:3843>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,A,200,8>\r\n<Steel list 2,I,327,2>\r\n<Steel list 3,I,204,4>\r\n"
+Enemy 158
+ Name "Bolt of Cotton Girl A"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 25>\r\n<Race:Fellow>\r\n<Temporary use skill:4620>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,A,1062,8>\r\n<Steel list 2,I,361,2>\r\n<Steel list 3,I,203,3>\r\n<Steel list 4,A,1860,8>\r\n<Illustration title:Bolt of Cotton Girl A>\r\n"
+Enemy 159
+ Name "Bolt of Cotton Girl B"
+ Notes "<Occupation Exp 3>\r\n<Escape Level 25>\r\n<Race:Fellow>\r\n<Temporary use skill:4620>\r\n<Steel list 1,I,4,4>\r\n<Steel list 1,A,1065,8>\r\n<Steel list 2,I,384,2>\r\n<Steel list 3,I,203,3>\r\n<Steel list 4,A,1860,8>\r\n<Illustration title:Bolt of Cotton Girl B>\r\n<Fellow ID:1198>\r\n"
+Enemy 160
+ Name "Bolt of Cotton Girl C"
+ Notes "<Occupation Exp 3>\r\n<Escape Level 25>\r\n<Race:Fellow>\r\n<Temporary use skill:4620>\r\n<Steel list 1,I,7,2>\r\n<Steel list 1,A,1143,8>\r\n<Steel list 2,I,383,2>\r\n<Steel list 3,I,203,3>\r\n<Steel list 4,A,1860,8>\r\n<Illustration title:Bolt of Cotton Girl C>\r\n<Fellow ID:1198>\r\n"
+Enemy 161
+ Name "Dagon"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 24>\r\n<Race:Marine species>\r\n<Temporary use skill:3614>\r\n<Steel list 1,I,72,4>\r\n<Steel list 1,A,1060,8>\r\n<Steel list 2,I,324,2>\r\n<Steel list 3,I,202,3>\r\n"
+Enemy 162
+ Name "Will-o-wisp Girl"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 24>\r\n<Race:ghost>\r\n<Temporary use skill:3912>\r\n<Steel list 1,I,4,4>\r\n<Steel list 1,A,1055,8>\r\n<Steel list 2,I,334,2>\r\n<Steel list 3,I,185,3>\r\n"
+Enemy 163
+ Name "Ashel"
+ Notes "<Occupation Exp 25>\r\n<Escape Level 24>\r\n<Race:mermaid>\r\n<Temporary use skill:3843>\r\n<Fellow ID:1201>\r\n<Predatory invalid>\r\n<Battle recollection impossible>"
+Enemy 164
+ Name "Bonnie"
+ Notes "<Occupation Exp 25>\r\n<Escape Level 24>\r\n<Race:mermaid>\r\n<Temporary use skill:3843>\r\n<Fellow ID:1202>\r\n<Predatory invalid>\r\n<Battle recollection impossible>"
+Enemy 165
+ Name "Sea Horse Sailor"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 24>\r\n<Race:dragon>\r\n<Temporary use skill:3740>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,A,1165,8>\r\n<Steel list 2,I,365,2>\r\n<Steel list 3,I,171,2>\r\n<Fellow ID:1203>"
+Enemy 166
+ Name "Sea Slug Sailor"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 24>\r\n<Race:Marine species>\r\n<Temporary use skill:3512>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,A,1449,8>\r\n<Steel list 2,I,326,2>\r\n<Steel list 3,I,176,3>\r\n<Fellow ID:1204>"
+Enemy 167
+ Name "Leviathan"
+ Notes "<Occupation Exp 50>\r\n<Escape Level 55>\r\n<Race:dragon>\r\n<Temporary use skill:5614>\r\n<Fellow ID:1205>\r\n<Predatory invalid>\r\n<Battle recollection impossible>"
+Enemy 168
+ Name "Frog Girl A"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 26>\r\n<Race:Terrestrial species>\r\n<Temporary use skill:4634>\r\n<Steel list 1,I,72,4>\r\n<Steel list 1,A,1470,8>\r\n<Steel list 2,I,328,2>\r\n<Steel list 3,I,165,2>\r\n<Illustration title:Frog Girl A>\r\n"
+Enemy 169
+ Name "Frog Girl B"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 26>\r\n<Race:Terrestrial species>\r\n<Temporary use skill:4634>\r\n<Steel list 1,I,68,4>\r\n<Steel list 1,A,1580,8>\r\n<Steel list 2,I,322,2>\r\n<Steel list 3,I,165,2>\r\n<Illustration title:Frog Girl B>\r\n<Fellow ID:1206>"
+Enemy 170
+ Name "Centaur Girl"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 26>\r\n<Race:A monster>\r\n<Temporary use skill:3735>\r\n<Steel list 1,I,7,4>\r\n<Steel list 1,A,1038,8>\r\n<Steel list 2,I,310,2>\r\n<Steel list 3,I,173,2>\r\n"
+Enemy 171
+ Name "Alraune"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 26>\r\n<Race:plant>\r\n<Temporary use skill:3685>\r\n<Steel list 1,I,3,4>\r\n<Steel list 1,A,1476,8>\r\n<Steel list 2,I,305,2>\r\n<Steel list 3,I,205,4>\r\n<Steel list 4,A,1861,8>\r\n"
+Enemy 172
+ Name "Mikoshi"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 26>\r\n<Race:insect>\r\n<Temporary use skill:3895>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,A,1148,8>\r\n<Steel list 2,I,308,2>\r\n<Steel list 3,I,201,3>\r\n"
+Enemy 173
+ Name "Spirit Girl"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 26>\r\n<Race:ghost>\r\n<Temporary use skill:3913>\r\n<Steel list 1,I,52,4>\r\n<Steel list 1,W,156,16>\r\n<Steel list 2,I,360,2>\r\n<Steel list 3,I,210,4>\r\n<Steel list 4,A,1862,8>\r\n"
+Enemy 174
+ Name "Box Girl"
+ Notes "<Occupation Exp 30>\r\n<Escape Level 30>\r\n<Race:ghost>\r\n<Temporary use skill:4646>\r\n<Steel list 1,A,1183,8>\r\n<Steel list 1,I,32,32>\r\n<Steel list 2,I,418,2>\r\n<Steel list 3,I,195,3>\r\n<Steel list 4,A,1863,8>\r\n"
+Enemy 175
+ Name "Dullahan"
+ Notes "<Occupation Exp 35>\r\n<Escape Level 26>\r\n<Race:Elf>\r\n<Temporary use skill:3709>\r\n<Steel list 4,A,1864,8>\r\n<Fellow ID:1212>\r\n<Predatory invalid>\r\n<Battle recollection impossible>"
+Enemy 176
+ Name "Cerberus"
+ Notes "<Occupation Exp 35>\r\n<Escape Level 26>\r\n<Race:A monster>\r\n<Temporary use skill:4658>\r\n<Fellow ID:1213>\r\n<Predatory invalid>\r\n<Battle recollection impossible>"
+Enemy 177
+ Name "Alma Elma"
+ Notes "<Occupation Exp 40>\r\n<Escape Level 26>\r\n<Race:Bad luck>\r\n<Temporary use skill:4019>\r\n<Steel list 4,A,1865,8>\r\n<Illustration title:Alma ElmaIn case(1)>\r\n<Fellow ID:1019>\r\n<Predatory invalid>\r\n<Battle recollection impossible>\r\n"
+Enemy 178
+ Name "Granberia"
+ Notes "<Occupation Exp 40>\r\n<Escape Level 26>\r\n<Race:dragon>\r\n<Temporary use skill:3741>\r\n<Steel list 4,A,1866,8>\r\n<Illustration title:GranberiaIn case(1)>\r\n<Predatory invalid>\r\n<Battle recollection impossible>"
+Enemy 179
+ Name "Nure-onna"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 26>\r\n<Race:Lamia>\r\n<Temporary use skill:4667>\r\n<Steel list 1,I,56,4>\r\n<Steel list 1,W,739,8>\r\n<Steel list 2,I,384,2>\r\n<Steel list 3,I,211,4>\r\n"
+Enemy 180
+ Name "High Minotauros"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 27>\r\n<Race:A monster>\r\n<Temporary use skill:4004>\r\n<Steel list 1,I,8,4>\r\n<Steel list 1,W,417,16>\r\n<Steel list 2,I,329,2>\r\n<Steel list 3,I,213,4>\r\n<Steel list 4,A,1868,8>\r\n"
+Enemy 181
+ Name "Misstauros"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 27>\r\n<Race:A monster>\r\n<Temporary use skill:4672>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,W,763,16>\r\n<Steel list 2,I,342,2>\r\n<Steel list 3,I,213,4>\r\n<Steel list 4,A,1869,8>\r\n"
+Enemy 182
+ Name "Genitauros"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 27>\r\n<Race:A monster>\r\n<Temporary use skill:4678>\r\n<Steel list 1,I,14,2>\r\n<Steel list 1,A,1013,8>\r\n<Steel list 2,I,375,2>\r\n<Steel list 3,I,213,4>\r\n<Steel list 4,A,1870,8>\r\n"
+Enemy 183
+ Name "Sun Wukong"
+ Notes "<Occupation Exp 40>\r\n<Escape Level 27>\r\n<Race:Fellow>\r\n<Temporary use skill:4678>\r\n<Steel list 4,A,1867,8>\r\n<Predatory invalid>\r\n<Battle recollection impossible>"
+Enemy 184
+ Name "Demon Cow Queen"
+ Notes "<Occupation Exp 40>\r\n<Escape Level 27>\r\n<Race:A monster>\r\n<Temporary use skill:4004>\r\n<Steel list 4,A,1871,8>\r\n<Fellow ID:1218>\r\n<Predatory invalid>\r\n<Battle recollection impossible>"
+Enemy 185
+ Name "Kunoichi Elf"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 28>\r\n<Race:Elf>\r\n<Temporary use skill:4694>\r\n<Steel list 1,I,101,2>\r\n<Steel list 1,A,1452,8>\r\n<Steel list 2,I,361,2>\r\n<Steel list 3,I,187,3>\r\n<Steel list 4,A,1872,8>\r\n"
+Enemy 186
+ Name "Samurai Elf"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 28>\r\n<Race:Elf>\r\n<Temporary use skill:4695>\r\n<Steel list 1,I,8,4>\r\n<Steel list 1,A,31,32>\r\n<Steel list 2,I,329,2>\r\n<Steel list 3,I,187,3>\r\n<Steel list 4,A,1873,8>\r\n"
+Enemy 187
+ Name "Yuki-Onna"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 28>\r\n<Race:Fellow>\r\n<Temporary use skill:4706>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,A,1497,8>\r\n<Steel list 2,I,424,2>\r\n<Steel list 3,I,56,3>\r\n<Steel list 4,A,1874,8>\r\n"
+Enemy 188
+ Name "Nekomata"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 29>\r\n<Race:A monster>\r\n<Temporary use skill:4717>\r\n<Steel list 1,I,334,2>\r\n<Steel list 1,W,309,16>\r\n<Steel list 2,I,334,2>\r\n<Steel list 3,I,206,4>\r\n"
+Enemy 189
+ Name "Akaname"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 29>\r\n<Race:Fellow>\r\n<Temporary use skill:4728>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,A,1467,8>\r\n<Steel list 2,I,408,2>\r\n<Steel list 3,I,210,4>\r\n<Steel list 4,A,1875,8>\r\n"
+Enemy 190
+ Name "Kappa"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 29>\r\n<Race:Fellow>\r\n<Temporary use skill:4736>\r\n<Steel list 1,I,212,4>\r\n<Steel list 1,A,1513,8>\r\n<Steel list 2,I,306,2>\r\n<Steel list 3,I,212,4>\r\n"
+Enemy 191
+ Name "Futakuchi Girl"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 29>\r\n<Race:Fellow>\r\n<Temporary use skill:3878>\r\n<Steel list 1,I,361,2>\r\n<Steel list 1,I,425,4>\r\n<Steel list 2,I,410,2>\r\n<Steel list 3,I,210,4>\r\n<Steel list 4,A,1876,8>\r\n"
+Enemy 192
+ Name "Shirohebi"
+ Notes "<Occupation Exp 42>\r\n<Escape Level 29>\r\n<Race:Lamia>\r\n<Temporary use skill:4740>\r\n<Fellow ID:1226>\r\n<Predatory invalid>\r\n<Battle recollection impossible>"
+Enemy 193
+ Name "Miko Lamia"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 29>\r\n<Race:Lamia>\r\n<Temporary use skill:4752>\r\n<Steel list 1,I,76,4>\r\n<Steel list 1,A,1174,8>\r\n<Steel list 2,I,332,2>\r\n<Steel list 3,I,211,4>\r\n"
+Enemy 194
+ Name "Miko Arachne"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 29>\r\n<Race:insect>\r\n<Temporary use skill:3748>\r\n<Steel list 1,I,4,8>\r\n<Steel list 1,A,1566,16>\r\n<Steel list 2,I,408,2>\r\n<Steel list 3,I,175,2>\r\n"
+Enemy 195
+ Name "Kejourou"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 29>\r\n<Race:Fellow>\r\n<Temporary use skill:4762>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,A,1425,8>\r\n<Steel list 2,I,383,2>\r\n<Steel list 3,I,210,4>\r\n<Steel list 4,A,1877,8>\r\n"
+Enemy 196
+ Name "Yamata no Orochi"
+ Notes "<Occupation Exp 55>\r\n<Escape Level 55>\r\n<Race:Lamia>\r\n<Temporary use skill:4769>\r\n<Fellow ID:1230>\r\n<Predatory invalid>\r\n<Battle recollection impossible>"
+Enemy 197
+ Name "Magical Butterfly"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 29>\r\n<Race:insect>\r\n<Temporary use skill:3896>\r\n<Steel list 1,I,64,4>\r\n<Steel list 1,A,1211,8>\r\n<Steel list 2,I,343,2>\r\n<Steel list 3,I,207,4>\r\n<Steel list 4,A,1878,8>\r\n"
+Enemy 198
+ Name "Magical Fly"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 29>\r\n<Race:insect>\r\n<Temporary use skill:3741>\r\n<Steel list 1,I,68,4>\r\n<Steel list 1,W,874,16>\r\n<Steel list 2,I,344,2>\r\n<Steel list 3,I,207,4>\r\n<Steel list 4,A,1879,8>\r\n<Fellow ID:1231>"
+Enemy 199
+ Name "Magical Ladybug"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 29>\r\n<Race:insect>\r\n<Temporary use skill:3740>\r\n<Steel list 1,I,72,4>\r\n<Steel list 1,A,1437,8>\r\n<Steel list 2,I,406,2>\r\n<Steel list 3,I,207,4>\r\n<Steel list 4,A,1880,8>\r\n<Fellow ID:1231>"
+Enemy 200
+ Name "Magical Pixie"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 29>\r\n<Race:fairy>\r\n<Temporary use skill:3740>\r\n<Steel list 1,I,18,4>\r\n<Steel list 1,W,636,16>\r\n<Steel list 2,I,424,2>\r\n<Steel list 3,I,208,4>\r\n<Steel list 4,A,1881,8>\r\n"
+Enemy 201
+ Name "Magical Elf"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 29>\r\n<Race:Elf>\r\n<Temporary use skill:3741>\r\n<Steel list 1,I,5,8>\r\n<Steel list 1,A,1446,8>\r\n<Steel list 2,I,349,2>\r\n<Steel list 3,I,208,4>\r\n<Steel list 4,A,1882,8>\r\n<Fellow ID:1232>"
+Enemy 202
+ Name "Magical Succubus"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 29>\r\n<Race:Bad luck>\r\n<Temporary use skill:4019>\r\n<Steel list 1,I,56,4>\r\n<Steel list 1,A,1443,8>\r\n<Steel list 2,I,348,2>\r\n<Steel list 3,I,208,4>\r\n<Fellow ID:1232>"
+Enemy 203
+ Name "Mephisto"
+ Notes "<Occupation Exp 44>\r\n<Escape Level 29>\r\n<Race:Demon>\r\n<Temporary use skill:4751>\r\n<Fellow ID:1233>\r\n<Predatory invalid>\r\n<Battle recollection impossible>"
+Enemy 204
+ Name "Mantis Girl"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 29>\r\n<Race:insect>\r\n<Temporary use skill:4785>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,I,30,32>\r\n<Steel list 2,I,448,2>\r\n<Steel list 3,I,214,4>\r\n"
+Enemy 205
+ Name "Silkworm Girl"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 29>\r\n<Race:insect>\r\n<Temporary use skill:4792>\r\n<Steel list 1,I,21,2>\r\n<Steel list 1,A,1476,8>\r\n<Steel list 2,I,308,2>\r\n<Steel list 3,I,214,4>\r\n"
+Enemy 206
+ Name "Alra Alum"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 30>\r\n<Race:plant>\r\n<Temporary use skill:4799>\r\n<Steel list 1,I,3,4>\r\n<Steel list 1,I,60,4>\r\n<Steel list 2,I,307,2>\r\n<Steel list 3,I,216,4>\r\n"
+Enemy 207
+ Name "Alra Rooty"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 30>\r\n<Race:plant>\r\n<Temporary use skill:4802>\r\n<Steel list 1,I,8,4>\r\n<Steel list 1,A,1428,8>\r\n<Steel list 2,I,312,2>\r\n<Steel list 3,I,216,4>\r\n<Fellow ID:1236>"
+Enemy 208
+ Name "Alra Vore"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 30>\r\n<Race:plant>\r\n<Temporary use skill:4808>\r\n<Steel list 1,I,14,2>\r\n<Steel list 1,A,1464,8>\r\n<Steel list 2,I,329,2>\r\n<Steel list 3,I,216,4>\r\n"
+Enemy 209
+ Name "Alra Parasol"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 30>\r\n<Race:plant>\r\n<Temporary use skill:4813>\r\n<Steel list 1,I,17,2>\r\n<Steel list 1,A,1437,8>\r\n<Steel list 2,I,443,2>\r\n<Steel list 3,I,216,4>\r\n<Fellow ID:1237>"
+Enemy 210
+ Name "Alra Prison"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 30>\r\n<Race:plant>\r\n<Temporary use skill:4817>\r\n<Steel list 1,I,21,2>\r\n<Steel list 1,A,1529,8>\r\n<Steel list 2,I,314,2>\r\n<Steel list 3,I,216,4>\r\n<Fellow ID:1237>"
+Enemy 211
+ Name "Alra Shroom"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 30>\r\n<Race:plant>\r\n<Temporary use skill:4812>\r\n<Steel list 1,I,16,2>\r\n<Steel list 1,A,1446,8>\r\n<Steel list 2,I,318,2>\r\n<Steel list 3,I,216,4>\r\n<Fellow ID:1237>"
+Enemy 212
+ Name "Dorothy"
+ Notes "<Occupation Exp 15>\r\n<Escape Level 30>\r\n<Race:plant>\r\n<Temporary use skill:4825>\r\n<Fellow ID:1238>\r\n<Predatory invalid>\r\n<Battle recollection impossible>"
+Enemy 213
+ Name "Raffia"
+ Notes "<Occupation Exp 15>\r\n<Escape Level 30>\r\n<Race:plant>\r\n<Temporary use skill:4832>\r\n<Fellow ID:1239>\r\n<Predatory invalid>\r\n<Battle recollection impossible>"
+Enemy 214
+ Name "Deana"
+ Notes "<Occupation Exp 15>\r\n<Escape Level 30>\r\n<Race:plant>\r\n<Temporary use skill:4837>\r\n<Fellow ID:1240>\r\n<Predatory invalid>\r\n<Battle recollection impossible>"
+Enemy 215
+ Name "Alra Priestess"
+ Notes "<Occupation Exp 43>\r\n<Escape Level 30>\r\n<Race:plant>\r\n<Temporary use skill:4845>\r\n<Fellow ID:1241>\r\n<Predatory invalid>\r\n<Battle recollection impossible>"
+Enemy 216
+ Name "Moth Girl"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 30>\r\n<Race:insect>\r\n<Temporary use skill:4852>\r\n<Steel list 1,I,17,2>\r\n<Steel list 1,A,1437,8>\r\n<Steel list 2,I,336,2>\r\n<Steel list 3,I,214,4>\r\n"
+Enemy 217
+ Name "Mosquito Girl"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 30>\r\n<Race:insect>\r\n<Temporary use skill:4854>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,A,1107,8>\r\n<Steel list 2,I,337,2>\r\n<Steel list 3,I,214,4>\r\n<Fellow ID:1243>"
+Enemy 218
+ Name "Caterpillar Girl"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 30>\r\n<Race:insect>\r\n<Temporary use skill:3895>\r\n<Steel list 1,I,1,2>\r\n<Steel list 1,A,1688,8>\r\n<Steel list 2,I,302,2>\r\n<Steel list 3,I,64,2>\r\n<Fellow ID:1243>"
+Enemy 219
+ Name "Hornet Girl"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 30>\r\n<Race:insect>\r\n<Temporary use skill:4856>\r\n<Steel list 1,I,13,2>\r\n<Steel list 1,I,436,4>\r\n<Steel list 2,I,436,2>\r\n<Steel list 3,I,217,4>\r\n"
+Enemy 220
+ Name "Queen Bee"
+ Notes "<Occupation Exp 43>\r\n<Escape Level 30>\r\n<Race:insect>\r\n<Temporary use skill:3896>\r\n<Fellow ID:1245>\r\n<Predatory invalid>\r\n<Battle recollection impossible>"
+Enemy 221
+ Name "Tezcatlipoca"
+ Notes "<Occupation Exp 45>\r\n<Escape Level 30>\r\n<Race:A monster>\r\n<Temporary use skill:4717>\r\n<Predatory invalid>\r\n<Battle recollection impossible>\r\n"
+Enemy 222
+ Name "Quetzalcoatl"
+ Notes "<Occupation Exp 45>\r\n<Escape Level 30>\r\n<Race:Lamia>\r\n<Temporary use skill:3649>\r\n<Steel list 4,A,1883,8>\r\n<Predatory invalid>\r\n<Battle recollection impossible>\r\n"
+Enemy 223
+ Name "Gnosis"
+ Notes "<Occupation Exp 45>\r\n<Escape Level 31>\r\n<Race:angel>\r\n<Temporary use skill:5490>\r\n<Illustration title:GnosisIn case(1)>\r\n<Predatory invalid>\r\n<Battle recollection impossible>\r\n"
+Enemy 224
+ Name "Zion"
+ Notes "<Occupation Exp 45>\r\n<Escape Level 31>\r\n<Race:angel>\r\n<Temporary use skill:5478>\r\n<Steel list 4,A,1884,8>\r\n<Illustration title:ZionIn case(1)>\r\n<Predatory invalid>\r\n<Battle recollection impossible>\r\n"
+Enemy 225
+ Name "Jelly Girl"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 31>\r\n<Race:Slime>\r\n<Temporary use skill:4871>\r\n<Steel list 1,I,4,4>\r\n<Steel list 1,A,1114,8>\r\n<Steel list 2,I,423,2>\r\n<Steel list 3,I,218,4>\r\n"
+Enemy 226
+ Name "Blob Girl"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 31>\r\n<Race:Slime>\r\n<Temporary use skill:4877>\r\n<Steel list 1,I,8,4>\r\n<Steel list 1,A,1176,8>\r\n<Steel list 2,I,329,2>\r\n<Steel list 3,I,218,4>\r\n"
+Enemy 227
+ Name "Green Slime"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 31>\r\n<Race:Slime>\r\n<Temporary use skill:4882>\r\n<Steel list 1,I,64,4>\r\n<Steel list 1,I,218,4>\r\n<Steel list 2,I,414,2>\r\n<Steel list 3,I,218,4>\r\n<Fellow ID:1248>"
+Enemy 228
+ Name "Red Slime"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 31>\r\n<Race:Slime>\r\n<Temporary use skill:4887>\r\n<Steel list 1,I,52,4>\r\n<Steel list 1,A,82,16>\r\n<Steel list 2,I,417,2>\r\n<Steel list 3,I,218,4>\r\n<Fellow ID:1248>"
+Enemy 229
+ Name "Blue Slime"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 31>\r\n<Race:Slime>\r\n<Temporary use skill:4890>\r\n<Steel list 1,I,72,4>\r\n<Steel list 1,A,213,16>\r\n<Steel list 2,I,424,2>\r\n<Steel list 3,I,218,4>\r\n<Fellow ID:1248>"
+Enemy 230
+ Name "Purple Slime"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 31>\r\n<Race:Slime>\r\n<Temporary use skill:4893>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,I,9,16>\r\n<Steel list 2,I,427,2>\r\n<Steel list 3,I,218,4>\r\n"
+Enemy 231
+ Name "Undine"
+ Notes "<Occupation Exp 45>\r\n<Escape Level 31>\r\n<Race:Slime>\r\n<Temporary use skill:4901>\r\n<Fellow ID:1014>\r\n<Predatory invalid>\r\n<Battle recollection impossible>"
+Enemy 232
+ Name "Erubetie"
+ Notes "<Occupation Exp 45>\r\n<Escape Level 31>\r\n<Race:Slime>\r\n<Temporary use skill:4912>\r\n<Predatory invalid>\r\n<Battle recollection impossible>\r\n"
+Enemy 233
+ Name "Ant Girls"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 32>\r\n<Race:insect>\r\n<Temporary use skill:4919>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,I,214,4>\r\n<Steel list 2,I,336,2>\r\n<Steel list 3,I,214,4>\r\n"
+Enemy 234
+ Name "Automata Girl"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 32>\r\n<Race:Doll>\r\n<Temporary use skill:4929>\r\n<Steel list 1,I,21,2>\r\n<Steel list 1,A,1169,16>\r\n<Steel list 2,I,357,2>\r\n<Steel list 3,I,219,4>\r\n"
+Enemy 235
+ Name "Paizuri Doll"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 32>\r\n<Race:Doll>\r\n<Temporary use skill:4938>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,A,1691,8>\r\n<Steel list 2,I,417,2>\r\n<Steel list 3,I,219,4>\r\n<Steel list 4,A,1885,8>\r\n"
+Enemy 236
+ Name "Scylla"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 32>\r\n<Race:Scura>\r\n<Temporary use skill:4945>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,W,605,8>\r\n<Steel list 2,I,324,2>\r\n<Steel list 3,I,202,3>\r\n"
+Enemy 237
+ Name "Medusa"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 32>\r\n<Race:Lamia>\r\n<Temporary use skill:4954>\r\n<Steel list 1,I,20,2>\r\n<Steel list 1,A,1461,8>\r\n<Steel list 2,I,315,2>\r\n<Steel list 3,I,220,4>\r\n<Steel list 4,A,1886,8>\r\n"
+Enemy 238
+ Name "Butterfly Girl"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 32>\r\n<Race:insect>\r\n<Temporary use skill:4962>\r\n<Steel list 1,I,17,2>\r\n<Steel list 1,A,1047,16>\r\n<Steel list 2,I,301,2>\r\n<Steel list 3,I,214,4>\r\n<Steel list 4,A,1887,8>\r\n"
+Enemy 239
+ Name "Brom Girl"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 32>\r\n<Race:Slime>\r\n<Temporary use skill:4967>\r\n<Steel list 1,I,13,2>\r\n<Steel list 1,A,1211,8>\r\n<Steel list 2,I,338,2>\r\n<Steel list 3,I,218,4>\r\n"
+Enemy 240
+ Name "Warmer"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 32>\r\n<Race:zombie>\r\n<Temporary use skill:3942>\r\n<Steel list 1,I,13,2>\r\n<Steel list 1,I,80,4>\r\n<Steel list 2,I,331,2>\r\n<Steel list 3,I,221,4>\r\n<Auto State 19>"
+Enemy 241
+ Name "Ghoul A"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 32>\r\n<Race:zombie>\r\n<Temporary use skill:3942>\r\n<Steel list 1,I,15,2>\r\n<Steel list 1,I,80,4>\r\n<Steel list 2,I,432,2>\r\n<Steel list 3,I,221,4>\r\n<Auto State 19>\r\n<Illustration title:Ghoul A>\r\n"
+Enemy 242
+ Name "Ghoul B"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 32>\r\n<Race:zombie>\r\n<Temporary use skill:3942>\r\n<Steel list 1,I,14,2>\r\n<Steel list 1,I,80,4>\r\n<Steel list 2,I,432,2>\r\n<Steel list 3,I,221,4>\r\n<Auto State 19>\r\n<Illustration title:Ghoul B>\r\n<Fellow ID:1257>"
+Enemy 243
+ Name "Ghoul C"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 32>\r\n<Race:zombie>\r\n<Temporary use skill:3942>\r\n<Steel list 1,I,21,2>\r\n<Steel list 1,I,80,4>\r\n<Steel list 2,I,432,2>\r\n<Steel list 3,I,221,4>\r\n<Auto State 19>\r\n<Illustration title:Ghoul C>\r\n<Fellow ID:1257>"
+Enemy 244
+ Name "Fake Jelly"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 33>\r\n<Race:Marine species>\r\n<Temporary use skill:4191>\r\n<Steel list 1,I,11,4>\r\n<Steel list 1,A,1109,16>\r\n<Steel list 2,I,326,2>\r\n<Steel list 3,I,190,3>\r\n<Steel list 4,A,1888,8>\r\n"
+Enemy 245
+ Name "Wing Harpy"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 33>\r\n<Race:bird>\r\n<Temporary use skill:3649>\r\n<Steel list 1,I,23,2>\r\n<Steel list 1,A,1337,16>\r\n<Steel list 2,I,361,2>\r\n<Steel list 3,I,192,3>"
+Enemy 246
+ Name "Harpy Knight"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 33>\r\n<Race:bird>\r\n<Temporary use skill:3649>\r\n<Steel list 1,I,23,2>\r\n<Steel list 1,A,1118,16>\r\n<Steel list 2,I,358,2>\r\n<Steel list 3,I,192,3>\r\n<Steel list 4,A,1889,8>\r\n"
+Enemy 247
+ Name "Mud Golem Girl"
+ Notes "<Occupation Exp 10>\r\n<Escape Level 33>\r\n<Race:Doll>\r\n<Temporary use skill:4982>\r\n<Steel list 1,I,80,4>\r\n<Steel list 1,I,5,8>\r\n<Steel list 2,I,430,2>\r\n<Steel list 3,I,219,4>\r\n"
+Enemy 248
+ Name "Golem Girl"
+ Notes "<Occupation Exp 45>\r\n<Escape Level 33>\r\n<Race:Doll>\r\n<Temporary use skill:5615>\r\n<Fellow ID:1262>\r\n<Predatory invalid>\r\n<Battle recollection impossible>"
+Enemy 249
+ Name "Flower Mantis Girl"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 33>\r\n<Race:insect>\r\n<Temporary use skill:4784>\r\n<Steel list 1,I,17,2>\r\n<Steel list 1,A,1509,16>\r\n<Steel list 2,I,362,2>\r\n<Steel list 3,I,214,4>\r\n"
+Enemy 250
+ Name "Black Golem"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 34>\r\n<Race:Doll>\r\n<Temporary use skill:4993>\r\n<Steel list 1,I,5,8>\r\n<Steel list 1,I,9,16>\r\n<Steel list 2,I,301,2>\r\n<Steel list 3,I,219,4>\r\n"
+Enemy 251
+ Name "Feral Kitsune"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 34>\r\n<Race:Fox>\r\n<Temporary use skill:3740>\r\n<Steel list 1,I,5,8>\r\n<Steel list 1,A,1051,8>\r\n<Steel list 2,I,333,2>\r\n<Steel list 3,I,209,4>\r\n"
+Enemy 252
+ Name "Three-tailed Kunoichi"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 34>\r\n<Race:Fox>\r\n<Temporary use skill:4694>\r\n<Steel list 1,I,101,2>\r\n<Steel list 1,A,1154,16>\r\n<Steel list 2,I,333,2>\r\n<Steel list 3,I,209,4>\r\n<Steel list 4,A,1890,8>\r\n"
+Enemy 253
+ Name "Four-tailed Samurai"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 34>\r\n<Race:Fox>\r\n<Temporary use skill:3756>\r\n<Steel list 1,W,243,8>\r\n<Steel list 1,A,1193,16>\r\n<Steel list 2,I,333,2>\r\n<Steel list 3,I,209,4>\r\n<Steel list 4,A,1891,8>\r\n"
+Enemy 254
+ Name "Queen Ant"
+ Notes "<Occupation Exp 45>\r\n<Escape Level 34>\r\n<Race:insect>\r\n<Temporary use skill:5003>\r\n<Fellow ID:1268>\r\n<Predatory invalid>\r\n<Battle recollection impossible>"
+Enemy 255
+ Name "Lilith"
+ Notes "<Occupation Exp 45>\r\n<Escape Level 34>\r\n<Race:Bad luck>\r\n<Temporary use skill:5009>\r\n<Steel list 4,A,1892,8>\r\n<Illustration title:LilithIn case(1)>\r\n<Predatory invalid>\r\n<Battle recollection impossible>\r\n"
+Enemy 256
+ Name "Lava Girl"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 35>\r\n<Race:Slime>\r\n<Temporary use skill:5014>\r\n<Steel list 1,I,8,4>\r\n<Steel list 1,A,1202,16>\r\n<Steel list 2,I,339,2>\r\n<Steel list 3,I,52,3>\r\n"
+Enemy 257
+ Name "Demon Lamia"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 35>\r\n<Race:Lamia>\r\n<Temporary use skill:3802>\r\n<Steel list 1,I,21,2>\r\n<Steel list 1,A,1192,16>\r\n<Steel list 2,I,345,2>\r\n<Steel list 3,I,211,4>\r\n"
+Enemy 258
+ Name "Demon Scylla"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 35>\r\n<Race:Scura>\r\n<Temporary use skill:4945>\r\n<Steel list 1,I,3,4>\r\n<Steel list 1,A,1431,16>\r\n<Steel list 2,I,325,2>\r\n<Steel list 3,I,202,3>\r\n"
+Enemy 259
+ Name "Siren"
+ Notes "<Occupation Exp 5>\r\n<Runaway Level 36>\r\n<Race:bird>\r\n<Temporary use skill:5028>\r\n<Steel list 1,I,16,2>\r\n<Steel list 1,A,1526,16>\r\n<Steel list 2,I,330,2>\r\n<Steel list 3,I,227,8>\r\n"
+Enemy 260
+ Name "Coral Girl"
+ Notes "<Occupation Exp 5>\r\n<Runaway Level 36>\r\n<Race:Marine species>\r\n<Temporary use skill:5032>\r\n<Steel list 1,I,20,2>\r\n<Steel list 1,A,1575,16>\r\n<Steel list 2,I,328,2>\r\n<Steel list 3,I,226,8>\r\n"
+Enemy 261
+ Name "Starfish Girl"
+ Notes "<Occupation Exp 5>\r\n<Runaway Level 36>\r\n<Race:Marine species>\r\n<Temporary use skill:5034>\r\n<Steel list 1,I,8,4>\r\n<Steel list 1,A,1546,16>\r\n<Steel list 2,I,326,2>\r\n<Steel list 3,I,226,8>\r\n"
+Enemy 262
+ Name "Beelzebub A"
+ Notes "<Profession Exp 16>\r\n<Runaway Level 36>\r\n<Race:insect>\r\n<Temporary use skill:5042>\r\n<Illustration title:Beelzebub A>\r\n<Fellow ID:1275>\r\n<Predatory invalid>\r\n<Battle recollection impossible>"
+Enemy 263
+ Name "Beelzebub B"
+ Notes "<Profession Exp 16>\r\n<Runaway Level 36>\r\n<Race:insect>\r\n<Temporary use skill:5043>\r\n<Illustration title:Beelzebub B>\r\n<Fellow ID:1276>\r\n<Predatory invalid>\r\n<Battle recollection impossible>"
+Enemy 264
+ Name "Beelzebub C"
+ Notes "<Profession Exp 16>\r\n<Runaway Level 36>\r\n<Race:insect>\r\n<Temporary use skill:5044>\r\n<Illustration title:Beelzebub C>\r\n<Fellow ID:1277>\r\n<Predatory invalid>\r\n<Battle recollection impossible>"
+Enemy 265
+ Name "Arch Jelly"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 37>\r\n<Race:Marine species>\r\n<Temporary use skill:3614>\r\n<Steel list 1,I,73,8>\r\n<Steel list 1,A,1559,16>\r\n<Steel list 2,I,323,2>\r\n<Steel list 3,I,226,8>\r\n"
+Enemy 266
+ Name "Elder Scylla"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 37>\r\n<Race:Scura>\r\n<Temporary use skill:5055>\r\n<Steel list 1,I,3,4>\r\n<Steel list 1,W,607,16>\r\n<Steel list 2,I,335,2>\r\n<Steel list 3,I,202,3>\r\n"
+Enemy 267
+ Name "Poseidoness"
+ Notes "<Occupation Exp 47>\r\n<Escape Level 37>\r\n<Race:Marine species>\r\n<Temporary use skill:5061>\r\n<Fellow ID:1280>\r\n<Battle recollection impossible>"
+Enemy 268
+ Name "Succubus A"
+ Notes "<Occupation Exp 3>\r\n<Escape Level 38>\r\n<Race:Bad luck>\r\n<Temporary use skill:4019>\r\n<Steel list 1,I,52,4>\r\n<Steel list 1,A,1473,16>\r\n<Steel list 2,I,415,2>\r\n<Steel list 3,I,222,4>\r\n<Steel list 4,A,1893,8>\r\n<Illustration title:Succubus A>\r\n"
+Enemy 269
+ Name "Succubus B"
+ Notes "<Occupation Exp 3>\r\n<Escape Level 38>\r\n<Race:Bad luck>\r\n<Temporary use skill:4021>\r\n<Steel list 1,I,64,4>\r\n<Steel list 1,A,1476,16>\r\n<Steel list 2,I,419,2>\r\n<Steel list 3,I,222,4>\r\n<Steel list 4,A,1894,8>\r\n<Illustration title:Succubus B>\r\n<Fellow ID:1281>"
+Enemy 270
+ Name "Succubus C"
+ Notes "<Occupation Exp 3>\r\n<Escape Level 38>\r\n<Race:Bad luck>\r\n<Temporary use skill:4022>\r\n<Steel list 1,I,68,4>\r\n<Steel list 1,A,1479,16>\r\n<Steel list 2,I,424,2>\r\n<Steel list 3,I,222,4>\r\n<Steel list 4,A,1895,8>\r\n<Illustration title:Succubus C>\r\n<Fellow ID:1281>"
+Enemy 271
+ Name "Succubus D"
+ Notes "<Occupation Exp 3>\r\n<Escape Level 38>\r\n<Race:Bad luck>\r\n<Temporary use skill:4019>\r\n<Steel list 1,I,72,4>\r\n<Steel list 1,A,1482,16>\r\n<Steel list 2,I,423,2>\r\n<Steel list 3,I,222,4>\r\n<Steel list 4,A,1896,8>\r\n<Illustration title:Succubus D>\r\n<Fellow ID:1281>"
+Enemy 272
+ Name "Meiccubus"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 38>\r\n<Race:Bad luck>\r\n<Temporary use skill:4122>\r\n<Steel list 1,I,21,2>\r\n<Steel list 1,I,64,4>\r\n<Steel list 2,I,418,2>\r\n<Steel list 3,I,222,4>\r\n<Steel list 4,A,1897,8>\r\n"
+Enemy 273
+ Name "Maccubus"
+ Notes "<Occupation Exp 15>\r\n<Escape Level 38>\r\n<Race:Bad luck>\r\n<Temporary use skill:5076>\r\n<Steel list 1,I,21,2>\r\n<Steel list 1,A,1201,16>\r\n<Steel list 2,I,394,2>\r\n<Steel list 3,I,222,4>\r\n<Fellow ID:1283>\r\n<Battle recollection impossible>"
+Enemy 274
+ Name "Mincubus"
+ Notes "<Occupation Exp 10>\r\n<Escape Level 38>\r\n<Race:Bad luck>\r\n<Temporary use skill:5084>\r\n<Steel list 1,I,21,2>\r\n<Steel list 1,A,1201,16>\r\n<Steel list 2,I,415,2>\r\n<Steel list 3,I,222,4>\r\n<Fellow ID:1284>\r\n<Battle recollection impossible>"
+Enemy 275
+ Name "Lencubus"
+ Notes "<Occupation Exp 13>\r\n<Escape Level 38>\r\n<Race:Bad luck>\r\n<Temporary use skill:4019>\r\n<Steel list 1,I,21,2>\r\n<Steel list 1,A,1201,16>\r\n<Steel list 2,I,342,2>\r\n<Steel list 3,I,222,4>\r\n<Fellow ID:1285>\r\n<Battle recollection impossible>"
+Enemy 276
+ Name "Succubus"
+ Notes "<Occupation Exp 46>\r\n<Escape Level 38>\r\n<Race:Bad luck>\r\n<Temporary use skill:5093>\r\n<Fellow ID:1287>\r\n<Predatory invalid>\r\n<Battle recollection impossible>"
+Enemy 277
+ Name "Natasha"
+ Notes "<Occupation Exp 46>\r\n<Escape Level 38>\r\n<Race:Bad luck>\r\n<Temporary use skill:5093>\r\n<Steel list 1,I,5,8>\r\n<Steel list 1,A,1077,16>\r\n<Steel list 2,I,321,2>\r\n<Steel list 3,I,180,3>\r\n<Fellow ID:1288>\r\n<Predatory invalid>\r\n<Battle recollection impossible>"
+Enemy 278
+ Name "Scylla Maid"
+ Notes "<Occupation Exp 20>\r\n<Escape Level 38>\r\n<Race:Scura>\r\n<Temporary use skill:5101>\r\n<Fellow ID:1289>\r\n<Predatory invalid>\r\n<Battle recollection impossible>"
+Enemy 279
+ Name "Madame Insect"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 38>\r\n<Race:insect>\r\n<Temporary use skill:5113>\r\n<Steel list 1,I,60,4>\r\n<Steel list 1,I,5,8>\r\n<Steel list 2,I,345,2>\r\n<Steel list 3,I,214,4>\r\n"
+Enemy 280
+ Name "Madame Umbrella"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 38>\r\n<Race:Scura>\r\n<Temporary use skill:5118>\r\n<Steel list 1,I,3,4>\r\n<Steel list 1,I,56,4>\r\n<Steel list 2,I,325,2>\r\n<Steel list 3,I,202,3>\r\n"
+Enemy 281
+ Name "Aradia"
+ Notes "<Occupation Exp 10>\r\n<Escape Level 38>\r\n<Race:Demon>\r\n<Temporary use skill:5616>\r\n<Steel list 1,I,15,4>\r\n<Steel list 1,I,4,16>\r\n<Steel list 2,I,325,2>\r\n<Steel list 3,I,202,3>"
+Enemy 282
+ Name "Candy"
+ Notes "<Occupation Exp 47>\r\n<Escape Level 38>\r\n<Race:Demon>\r\n<Temporary use skill:5132>\r\n<Steel list 4,A,1898,8>\r\n<Fellow ID:1293>\r\n<Battle recollection impossible>"
+Enemy 283
+ Name "Basilisk"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 39>\r\n<Race:A monster>\r\n<Temporary use skill:5143>\r\n<Steel list 1,I,20,2>\r\n<Steel list 1,A,1461,16>\r\n<Steel list 2,I,330,2>\r\n<Steel list 3,I,192,3>\r\n"
+Enemy 284
+ Name "Dragon Girl"
+ Notes "<Occupation Exp 10>\r\n<Escape Level 39>\r\n<Race:dragon>\r\n<Temporary use skill:5149>\r\n<Steel list 1,I,52,4>\r\n<Steel list 1,A,1493,16>\r\n<Steel list 2,I,358,2>\r\n<Steel list 3,I,223,4>\r\n"
+Enemy 285
+ Name "Salamander"
+ Notes "<Occupation Exp 48>\r\n<Escape Level 39>\r\n<Race:dragon>\r\n<Temporary use skill:5155>\r\n<Fellow ID:1015>\r\n<Predatory invalid>\r\n<Battle recollection impossible>"
+Enemy 286
+ Name "Granberia"
+ Notes "<Occupation Exp 48>\r\n<Escape Level 39>\r\n<Race:dragon>\r\n<Temporary use skill:3741>\r\n<Steel list 4,A,1866,8>\r\n<Illustration title:GranberiaIn case(2)>\r\n<Predatory invalid>\r\n<Battle recollection impossible>\r\n"
+Enemy 287
+ Name "Gelatinous Cube Girl"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 39>\r\n<Race:Slime>\r\n<Temporary use skill:5162>\r\n<Steel list 1,I,72,4>\r\n<Steel list 1,A,154,16>\r\n<Steel list 2,I,422,2>\r\n<Steel list 3,I,218,4>\r\n"
+Enemy 288
+ Name "Youki"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 39>\r\n<Race:Fellow>\r\n<Temporary use skill:4005>\r\n<Steel list 1,I,3,4>\r\n<Steel list 1,I,215,8>\r\n<Steel list 2,I,378,2>\r\n<Steel list 3,I,215,4>\r\n<Steel list 4,A,1899,8>\r\n"
+Enemy 289
+ Name "Tiger Girl"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 39>\r\n<Race:A monster>\r\n<Temporary use skill:3535>\r\n<Steel list 1,I,8,4>\r\n<Steel list 1,W,315,16>\r\n<Steel list 2,I,431,2>\r\n<Steel list 3,I,194,3>\r\n"
+Enemy 290
+ Name "Vampire"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 39>\r\n<Race:vampire>\r\n<Temporary use skill:5173>\r\n<Steel list 1,I,21,2>\r\n<Steel list 1,A,1057,16>\r\n<Steel list 2,I,313,2>\r\n<Steel list 3,I,224,4>\r\n<Steel list 4,A,1900,8>\r\n"
+Enemy 291
+ Name "Jellaila"
+ Notes "<Occupation Exp 6>\r\n<Escape Level 40>\r\n<Race:Apoptosis>\r\n<Temporary use skill:5183>\r\n<Steel list 1,I,22,4>\r\n<Steel list 1,A,1526,16>\r\n<Steel list 3,I,235,8>\r\n"
+Enemy 292
+ Name "Libo-Libo"
+ Notes "<Occupation Exp 6>\r\n<Escape Level 40>\r\n<Race:Apoptosis>\r\n<Temporary use skill:5617>\r\n<Steel list 1,I,5,8>\r\n<Steel list 1,A,1538,16>\r\n<Steel list 3,I,235,8>\r\n"
+Enemy 293
+ Name "Amphil"
+ Notes "<Occupation Exp 6>\r\n<Escape Level 40>\r\n<Race:Apoptosis>\r\n<Temporary use skill:4159>\r\n<Steel list 1,I,3,4>\r\n<Steel list 1,A,1530,16>\r\n<Steel list 3,I,235,8>\r\n"
+Enemy 294
+ Name "Twinkell"
+ Notes "<Occupation Exp 12>\r\n<Escape Level 40>\r\n<Race:Apoptosis>\r\n<Temporary use skill:5194>\r\n<Steel list 1,I,8,4>\r\n<Steel list 1,A,1364,16>\r\n<Steel list 3,I,235,8>\r\n"
+Enemy 295
+ Name "Lilith & Lilim"
+ Notes "<Occupation Exp 48>\r\n<Escape Level 41>\r\n<Race:Bad luck>\r\n<Temporary use skill:5197>\r\n<Fellow ID:1341>\r\n<Predatory invalid>\r\n<Battle recollection impossible>"
+Enemy 296
+ Name "Emily"
+ Notes "<Occupation Exp 25>\r\n<Escape Level 38>\r\n<Race:Scura>\r\n<Temporary use skill:5206>\r\n<Fellow ID:1294>\r\n<Predatory invalid>\r\n<Battle recollection impossible>"
+Enemy 297
+ Name "Cassandra"
+ Notes "<Occupation Exp 25>\r\n<Escape Level 38>\r\n<Race:Demon>\r\n<Temporary use skill:5217>\r\n<Fellow ID:1295>\r\n<Predatory invalid>\r\n<Battle recollection impossible>"
+Enemy 298
+ Name "Succubus Witch"
+ Notes "<Occupation Exp 48>\r\n<Escape Level 38>\r\n<Race:Bad luck>\r\n<Temporary use skill:5225>\r\n<Steel list 4,A,1901,8>\r\n<Fellow ID:1286>\r\n<Predatory invalid>\r\n<Battle recollection impossible>"
+Enemy 299
+ Name "Sea Anemone Girl"
+ Notes "<Occupation Exp 6>\r\n<Escape Level 42>\r\n<Race:Marine species>\r\n<Temporary use skill:5229>\r\n<Steel list 1,I,5,8>\r\n<Steel list 1,A,1583,16>\r\n<Steel list 2,I,323,2>\r\n<Steel list 3,I,226,8>\r\n"
+Enemy 300
+ Name "Sea Dragon Girl"
+ Notes "<Occupation Exp 6>\r\n<Escape Level 42>\r\n<Race:dragon>\r\n<Temporary use skill:4141>\r\n<Steel list 1,I,5,8>\r\n<Steel list 1,W,425,16>\r\n<Steel list 2,I,323,2>\r\n<Steel list 3,I,226,3>\r\n"
+Enemy 301
+ Name "Manta Girl"
+ Notes "<Occupation Exp 12>\r\n<Escape Level 42>\r\n<Race:Marine species>\r\n<Temporary use skill:5235>\r\n<Steel list 1,I,12,16>\r\n<Steel list 1,A,1097,16>\r\n<Steel list 2,I,366,2>\r\n<Steel list 3,I,226,8>\r\n"
+Enemy 302
+ Name "Narwhal Girl"
+ Notes "<Occupation Exp 12>\r\n<Escape Level 42>\r\n<Race:mermaid>\r\n<Temporary use skill:5614>\r\n<Steel list 1,I,9,16>\r\n<Steel list 1,I,25,32>\r\n<Steel list 2,I,396,2>\r\n<Steel list 3,I,228,8>\r\n"
+Enemy 303
+ Name "Trick Fairy"
+ Notes "<Occupation Exp 6>\r\n<Escape Level 43>\r\n<Race:fairy>\r\n<Temporary use skill:5238>\r\n<Steel list 1,I,5,8>\r\n<Steel list 1,A,1373,16>\r\n<Steel list 2,I,412,2>\r\n<Steel list 3,I,229,8>\r\n"
+Enemy 304
+ Name "Elf Amazoness"
+ Notes "<Occupation Exp 6>\r\n<Escape Level 43>\r\n<Race:Elf>\r\n<Temporary use skill:3706>\r\n<Steel list 1,I,8,4>\r\n<Steel list 1,A,1710,16>\r\n<Steel list 2,I,319,2>\r\n<Steel list 3,I,230,8>\r\n<Steel list 4,A,1902,8>\r\n"
+Enemy 305
+ Name "Carbuncle Girl"
+ Notes "<Occupation Exp 6>\r\n<Escape Level 43>\r\n<Race:A monster>\r\n<Temporary use skill:3535>\r\n<Steel list 1,I,5,8>\r\n<Steel list 1,A,1009,16>\r\n<Steel list 2,I,379,2>\r\n<Steel list 3,I,65,8>\r\n"
+Enemy 306
+ Name "Gigantic Girl"
+ Notes "<Occupation Exp 12>\r\n<Escape Level 43>\r\n<Race:Elf>\r\n<Temporary use skill:5618>\r\n<Steel list 1,I,8,4>\r\n<Steel list 1,A,1024,16>\r\n<Steel list 2,I,329,2>\r\n<Steel list 3,I,69,8>\r\n<Steel list 4,A,1903,8>\r\n"
+Enemy 307
+ Name "Queen Fairy"
+ Notes "<Occupation Exp 50>\r\n<Escape Level 43>\r\n<Race:fairy>\r\n<Temporary use skill:5253>\r\n<Steel list 4,A,1904,8>\r\n<Fellow ID:1315>\r\n<Predatory invalid>\r\n<Battle recollection impossible>"
+Enemy 308
+ Name "Queen Elf"
+ Notes "<Occupation Exp 50>\r\n<Escape Level 43>\r\n<Race:Elf>\r\n<Temporary use skill:3709>\r\n<Steel list 4,A,1905,8>\r\n<Fellow ID:1316>\r\n<Predatory invalid>\r\n<Battle recollection impossible>"
+Enemy 309
+ Name "Forest Alraune"
+ Notes "<Occupation Exp 6>\r\n<Escape Level 44>\r\n<Race:plant>\r\n<Temporary use skill:3528>\r\n<Steel list 1,I,3,4>\r\n<Steel list 1,A,1609,16>\r\n<Steel list 2,I,390,2>\r\n<Steel list 3,I,232,8>\r\n"
+Enemy 310
+ Name "Forest Dryad"
+ Notes "<Occupation Exp 6>\r\n<Escape Level 44>\r\n<Race:plant>\r\n<Temporary use skill:5272>\r\n<Steel list 1,I,5,8>\r\n<Steel list 1,A,1230,16>\r\n<Steel list 2,I,367,2>\r\n<Steel list 3,I,232,8>\r\n"
+Enemy 311
+ Name "Walraune"
+ Notes "<Occupation Exp 6>\r\n<Escape Level 44>\r\n<Race:plant>\r\n<Temporary use skill:5279>\r\n<Steel list 1,I,22,4>\r\n<Steel list 1,A,1194,16>\r\n<Steel list 2,I,393,2>\r\n<Steel list 3,I,232,8>\r\n"
+Enemy 312
+ Name "Green Dryad"
+ Notes "<Occupation Exp 6>\r\n<Escape Level 44>\r\n<Race:plant>\r\n<Temporary use skill:5270>\r\n<Steel list 1,I,22,4>\r\n<Steel list 1,A,1585,16>\r\n<Steel list 2,I,381,2>\r\n<Steel list 3,I,232,8>\r\n<Illustration title:DryadIn case(Green)>\r\n"
+Enemy 313
+ Name "Blue Dryad"
+ Notes "<Occupation Exp 6>\r\n<Escape Level 44>\r\n<Race:plant>\r\n<Temporary use skill:5270>\r\n<Steel list 1,I,22,4>\r\n<Steel list 1,A,1549,16>\r\n<Steel list 2,I,380,2>\r\n<Steel list 3,I,232,8>\r\n<Illustration title:DryadIn case(Blue)>"
+Enemy 314
+ Name "Queen Alraune"
+ Notes "<Occupation Exp 50>\r\n<Escape Level 44>\r\n<Race:plant>\r\n<Temporary use skill:5289>\r\n<Fellow ID:1322>\r\n<Predatory invalid>\r\n<Battle recollection impossible>"
+Enemy 315
+ Name "Aži Dahāka"
+ Notes "<Occupation Exp 55>\r\n<Escape Level 44>\r\n<Race:dragon>\r\n<Temporary use skill:5298>\r\n<Predatory invalid>\r\n<Battle recollection impossible>\r\n"
+Enemy 316
+ Name "Mermaid Knight"
+ Notes "<Occupation Exp 6>\r\n<Escape Level 45>\r\n<Race:mermaid>\r\n<Temporary use skill:3838>\r\n<Steel list 1,I,73,8>\r\n<Steel list 1,A,1370,16>\r\n<Steel list 2,I,357,2>\r\n<Steel list 3,I,234,8>\r\n"
+Enemy 317
+ Name "Mermaid General"
+ Notes "<Occupation Exp 6>\r\n<Escape Level 45>\r\n<Race:mermaid>\r\n<Temporary use skill:5303>\r\n<Steel list 1,I,5,8>\r\n<Steel list 1,A,1291,16>\r\n<Steel list 2,I,382,2>\r\n<Steel list 3,I,234,8>\r\n"
+Enemy 318
+ Name "Lorelei"
+ Notes "<Occupation Exp 12>\r\n<Escape Level 45>\r\n<Race:mermaid>\r\n<Temporary use skill:3842>\r\n<Steel list 1,I,2,4>\r\n<Steel list 1,A,1369,16>\r\n<Steel list 2,I,337,2>\r\n<Steel list 3,I,234,8>\r\n"
+Enemy 319
+ Name "El"
+ Notes "<Occupation Exp 20>\r\n<Escape Level 45>\r\n<Race:mermaid>\r\n<Temporary use skill:5314>\r\n<Fellow ID:1327>\r\n<Predatory invalid>\r\n<Battle recollection impossible>"
+Enemy 320
+ Name "Queen Mermaid"
+ Notes "<Occupation Exp 50>\r\n<Escape Level 45>\r\n<Race:mermaid>\r\n<Temporary use skill:5324>\r\n<Fellow ID:1328>\r\n<Predatory invalid>\r\n<Battle recollection impossible>"
+Enemy 321
+ Name "Arachne A"
+ Notes "<Occupation Exp 4>\r\n<Runaway Level 46>\r\n<Race:insect>\r\n<Temporary use skill:5338>\r\n<Steel list 1,I,65,8>\r\n<Steel list 1,A,1450,16>\r\n<Steel list 2,I,319,2>\r\n<Steel list 3,I,175,2>\r\n<Illustration title:Arachne A>\r\n"
+Enemy 322
+ Name "Arachne B"
+ Notes "<Occupation Exp 4>\r\n<Runaway Level 46>\r\n<Race:insect>\r\n<Temporary use skill:5338>\r\n<Steel list 1,I,69,8>\r\n<Steel list 1,A,1450,16>\r\n<Steel list 2,I,321,2>\r\n<Steel list 3,I,175,2>\r\n<Illustration title:Arachne B>\r\n<Fellow ID:1330>"
+Enemy 323
+ Name "Arachne C"
+ Notes "<Occupation Exp 4>\r\n<Runaway Level 46>\r\n<Race:insect>\r\n<Temporary use skill:5338>\r\n<Steel list 1,I,73,8>\r\n<Steel list 1,A,1450,16>\r\n<Steel list 2,I,315,2>\r\n<Steel list 3,I,175,2>\r\n<Illustration title:Arachne C>\r\n<Fellow ID:1330>"
+Enemy 324
+ Name "Tsuchigumo"
+ Notes "<Occupation Exp 12>\r\n<Runaway Level 46>\r\n<Race:insect>\r\n<Temporary use skill:5342>\r\n<Steel list 1,I,17,2>\r\n<Steel list 1,A,1569,16>\r\n<Steel list 2,I,332,2>\r\n<Steel list 3,I,175,2>\r\n"
+Enemy 325
+ Name "Arachne Lord"
+ Notes "<Occupation Exp 6>\r\n<Runaway Level 46>\r\n<Race:insect>\r\n<Temporary use skill:5338>\r\n<Steel list 1,I,22,4>\r\n<Steel list 1,I,29,32>\r\n<Steel list 2,I,351,2>\r\n<Steel list 3,I,175,2>\r\n"
+Enemy 326
+ Name "Atlach-Nacha"
+ Notes "<Occupation Exp 12>\r\n<Runaway Level 46>\r\n<Race:insect>\r\n<Temporary use skill:5338>\r\n<Steel list 1,I,12,16>\r\n<Steel list 1,A,251,64>\r\n<Steel list 2,I,354,2>\r\n<Steel list 3,I,175,2>\r\n"
+Enemy 327
+ Name "Spider Princess"
+ Notes "<Occupation Exp 50>\r\n<Runaway Level 46>\r\n<Race:insect>\r\n<Temporary use skill:5358>\r\n<Fellow ID:1334>\r\n<Predatory invalid>\r\n<Battle recollection impossible>"
+Enemy 328
+ Name "Conquista"
+ Notes "<Occupation Exp 6>\r\n<Runaway Level 46>\r\n<Race:vampire>\r\n<Temporary use skill:5173>\r\n<Steel list 1,I,21,2>\r\n<Steel list 1,A,1282,16>\r\n<Steel list 2,I,304,2>\r\n<Steel list 3,I,224,4>\r\n<Steel list 4,A,1906,8>"
+Enemy 329
+ Name "Vendetta"
+ Notes "<Occupation Exp 6>\r\n<Runaway Level 46>\r\n<Race:vampire>\r\n<Temporary use skill:5173>\r\n<Steel list 1,I,22,2>\r\n<Steel list 1,A,1288,16>\r\n<Steel list 2,I,359,2>\r\n<Steel list 3,I,224,4>\r\n<Steel list 4,A,1907,8>"
+Enemy 330
+ Name "Elder Vampire"
+ Notes "<Occupation Exp 12>\r\n<Runaway Level 46>\r\n<Race:vampire>\r\n<Temporary use skill:4159>\r\n<Steel list 1,I,20,2>\r\n<Steel list 1,A,1216,16>\r\n<Steel list 2,I,313,2>\r\n<Steel list 3,I,224,4>\r\n"
+Enemy 331
+ Name "Carmilla"
+ Notes "<Occupation Exp 20>\r\n<Runaway Level 46>\r\n<Race:vampire>\r\n<Temporary use skill:5373>\r\n<Steel list 4,A,1908,8>\r\n<Fellow ID:1338>\r\n<Predatory invalid>\r\n<Battle recollection impossible>"
+Enemy 332
+ Name "Elizabeth"
+ Notes "<Occupation Exp 20>\r\n<Runaway Level 46>\r\n<Race:vampire>\r\n<Temporary use skill:5379>\r\n<Steel list 4,A,1909,8>\r\n<Fellow ID:1339>\r\n<Predatory invalid>\r\n<Battle recollection impossible>"
+Enemy 333
+ Name "Queen Vampire"
+ Notes "<Occupation Exp 50>\r\n<Runaway Level 46>\r\n<Race:vampire>\r\n<Temporary use skill:5389>\r\n<Steel list 4,A,1910,8>\r\n<Fellow ID:1340>\r\n<Predatory invalid>\r\n<Battle recollection impossible>"
+Enemy 334
+ Name "Master Shadow"
+ Notes "<Occupation Exp 6>\r\n<Runaway Level 47>\r\n<Race:ghost>\r\n<Temporary use skill:3914>\r\n<Steel list 1,I,5,8>\r\n<Steel list 1,A,1400,16>\r\n<Steel list 2,I,311,2>\r\n<Steel list 3,I,210,4>\r\n<Steel list 4,A,1911,8>\r\n"
+Enemy 335
+ Name "Enera"
+ Notes "<Occupation Exp 6>\r\n<Runaway Level 47>\r\n<Race:Fellow>\r\n<Temporary use skill:3740>\r\n<Steel list 1,I,22,4>\r\n<Steel list 1,A,1214,16>\r\n<Steel list 2,I,408,2>\r\n<Steel list 3,I,236,8>\r\n"
+Enemy 336
+ Name "Kirin"
+ Notes "<Occupation Exp 6>\r\n<Runaway Level 47>\r\n<Race:Fellow>\r\n<Temporary use skill:3740>\r\n<Steel list 1,I,5,8>\r\n<Steel list 1,A,1250,16>\r\n<Steel list 2,I,403,2>\r\n<Steel list 3,I,236,8>\r\n<Steel list 4,A,1912,8>\r\n"
+Enemy 337
+ Name "Jakotsu Girl"
+ Notes "<Occupation Exp 6>\r\n<Runaway Level 47>\r\n<Race:Fellow>\r\n<Temporary use skill:4740>\r\n<Steel list 1,I,5,8>\r\n<Steel list 1,A,1382,16>\r\n<Steel list 2,I,383,2>\r\n<Steel list 3,I,236,8>\r\n<Steel list 4,A,1913,8>\r\n"
+Enemy 338
+ Name "Behemoth"
+ Notes "<Occupation Exp 12>\r\n<Runaway Level 48>\r\n<Race:A monster>\r\n<Temporary use skill:5413>\r\n<Steel list 1,I,8,4>\r\n<Steel list 1,A,1379,16>\r\n<Steel list 2,I,371,2>\r\n<Steel list 3,I,238,8>\r\n"
+Enemy 339
+ Name "Wyvern"
+ Notes "<Occupation Exp 10>\r\n<Runaway Level 48>\r\n<Race:dragon>\r\n<Temporary use skill:5422>\r\n<Steel list 1,I,3,4>\r\n<Steel list 1,A,1494,16>\r\n<Steel list 2,I,386,2>\r\n<Steel list 3,I,237,8>\r\n"
+Enemy 340
+ Name "Kyoryuu"
+ Notes "<Occupation Exp 12>\r\n<Runaway Level 48>\r\n<Race:dragon>\r\n<Temporary use skill:5426>\r\n<Steel list 1,I,237,4>\r\n<Steel list 1,A,1024,16>\r\n<Steel list 2,I,435,2>\r\n<Steel list 3,I,237,8>\r\n"
+Enemy 341
+ Name "Succubus Monk"
+ Notes "<Occupation Exp 6>\r\n<Escape Level 49>\r\n<Race:Bad luck>\r\n<Temporary use skill:4019>\r\n<Steel list 1,I,8,4>\r\n<Steel list 1,A,1083,16>\r\n<Steel list 2,I,358,2>\r\n<Steel list 3,I,222,4>\r\n<Steel list 4,A,1914,8>\r\n"
+Enemy 342
+ Name "Demon Monk"
+ Notes "<Occupation Exp 6>\r\n<Escape Level 49>\r\n<Race:Demon>\r\n<Temporary use skill:4651>\r\n<Steel list 1,I,3,4>\r\n<Steel list 1,A,1301,16>\r\n<Steel list 2,I,402,2>\r\n<Steel list 3,I,236,8>\r\n<Steel list 4,A,1915,8>\r\n"
+Enemy 343
+ Name "Scylla Servant"
+ Notes "<Occupation Exp 6>\r\n<Escape Level 49>\r\n<Race:Scura>\r\n<Temporary use skill:5101>\r\n<Steel list 1,I,3,4>\r\n<Steel list 1,A,1618,16>\r\n<Steel list 2,I,393,2>\r\n<Steel list 3,I,202,3>\r\n"
+Enemy 344
+ Name "Guivre Girl"
+ Notes "<Occupation Exp 6>\r\n<Escape Level 49>\r\n<Race:Demon>\r\n<Temporary use skill:4651>\r\n<Steel list 1,I,5,8>\r\n<Steel list 1,A,1367,16>\r\n<Steel list 2,I,350,2>\r\n<Steel list 3,I,236,8>\r\n"
+Enemy 345
+ Name "Kokka"
+ Notes "<Occupation Exp 18>\r\n<Escape Level 49>\r\n<Race:Bad luck>\r\n<Temporary use skill:5094>\r\n<Steel list 4,A,1916,8>\r\n<Illustration title:KokkaIn case(1)>\r\n<Predatory invalid>\r\n<Battle recollection impossible>\r\n"
+Enemy 346
+ Name "Kokuja"
+ Notes "<Occupation Exp 18>\r\n<Escape Level 49>\r\n<Race:Lamia>\r\n<Temporary use skill:3802>\r\n<Illustration title:KokujaIn case(1)>\r\n<Predatory invalid>\r\n<Battle recollection impossible>\r\n"
+Enemy 347
+ Name "Kurobara"
+ Notes "<Occupation Exp 18>\r\n<Escape Level 49>\r\n<Race:vampire>\r\n<Temporary use skill:5173>\r\n<Steel list 4,A,1917,8>\r\n<Illustration title:KurobaraIn case(1)>\r\n<Predatory invalid>\r\n<Battle recollection impossible>\r\n"
+Enemy 348
+ Name "Black Alice"
+ Notes "<Occupation Exp 0>\r\n<Escape Level 80>\r\n<Race:Demon>\r\n<Temporary use skill:5445>\r\n<Steel list 4,A,1918,8>\r\n<Illustration title:Black Alice (1st Form)>\r\n<Predatory invalid>\r\n<Battle recollection impossible>\r\n"
+Enemy 349
+ Name "Black Alice"
+ Notes "<Occupation Exp 0>\r\n<Escape Level 80>\r\n<Race:Demon>\r\n<Temporary use skill:5453>\r\n<Illustration title:Black Alice (2nd Form)>\r\n<Predatory invalid>\r\n<Battle recollection impossible>"
+Enemy 350
+ Name "Black Alice"
+ Notes "<Occupation Exp 99>\r\n<Escape Level 80>\r\n<Race:Demon>\r\n<Temporary use skill:5462>\r\n<Illustration title:Black Alice (3rd Form)>\r\n<Predatory invalid>\r\n<Battle recollection impossible>"
+Enemy 351
+ Name "Ice Witch"
+ Notes "<Occupation Exp 7>\r\n<Escape Level 50>\r\n<Race:Demon>\r\n<Temporary use skill:4706>\r\n<Steel list 1,I,5,8>\r\n<Steel list 1,A,1498,16>\r\n<Steel list 2,I,424,2>\r\n<Steel list 3,I,236,8>\r\n<Steel list 4,A,1919,8>\r\n"
+Enemy 352
+ Name "Polar Bear Girl"
+ Notes "<Occupation Exp 7>\r\n<Escape Level 50>\r\n<Race:A monster>\r\n<Temporary use skill:3535>\r\n<Steel list 1,I,57,8>\r\n<Steel list 1,A,1304,16>\r\n<Steel list 2,I,416,2>\r\n<Steel list 3,I,238,8>\r\n"
+Enemy 353
+ Name "Angel Soldier A"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 50>\r\n<Race:angel>\r\n<Temporary use skill:5479>\r\n<Steel list 1,I,3,4>\r\n<Steel list 1,I,77,8>\r\n<Steel list 2,I,329,2>\r\n<Steel list 3,I,241,8>\r\n<Steel list 4,A,1920,8>\r\n<Illustration title:AngelA>\r\n"
+Enemy 354
+ Name "Angel Soldier B"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 50>\r\n<Race:angel>\r\n<Temporary use skill:5479>\r\n<Steel list 1,I,8,4>\r\n<Steel list 1,I,77,8>\r\n<Steel list 2,I,319,2>\r\n<Steel list 3,I,241,8>\r\n<Steel list 4,A,1920,8>\r\n<Illustration title:AngelB>\r\n<Fellow ID:1355>"
+Enemy 355
+ Name "Angel Soldier C"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 50>\r\n<Race:angel>\r\n<Temporary use skill:5479>\r\n<Steel list 1,I,77,8>\r\n<Steel list 1,I,6,16>\r\n<Steel list 2,I,316,2>\r\n<Steel list 3,I,241,8>\r\n<Steel list 4,A,1920,8>\r\n<Illustration title:AngelC>\r\n<Fellow ID:1355>"
+Enemy 356
+ Name "Angel Soldier D"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 50>\r\n<Race:angel>\r\n<Temporary use skill:5479>\r\n<Steel list 1,I,22,4>\r\n<Steel list 1,I,77,8>\r\n<Steel list 2,I,339,2>\r\n<Steel list 3,I,241,8>\r\n<Steel list 4,A,1920,8>\r\n<Illustration title:AngelD>\r\n<Fellow ID:1355>"
+Enemy 357
+ Name "Angel Soldier E"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 50>\r\n<Race:angel>\r\n<Temporary use skill:5479>\r\n<Steel list 1,I,77,8>\r\n<Steel list 1,I,12,16>\r\n<Steel list 2,I,360,2>\r\n<Steel list 3,I,241,8>\r\n<Steel list 4,A,1920,8>\r\n<Illustration title:AngelE>\r\n<Fellow ID:1355>"
+Enemy 358
+ Name "Trinity A"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 51>\r\n<Race:angel>\r\n<Temporary use skill:5490>\r\n<Steel list 1,I,6,16>\r\n<Steel list 1,A,1406,16>\r\n<Steel list 2,I,424,2>\r\n<Steel list 3,I,241,8>\r\n<Steel list 4,A,1921,8>\r\n<Illustration title:TrinityA>\r\n"
+Enemy 359
+ Name "Trinity B"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 51>\r\n<Race:angel>\r\n<Temporary use skill:5490>\r\n<Steel list 1,I,77,8>\r\n<Steel list 1,I,9,16>\r\n<Steel list 2,I,424,2>\r\n<Steel list 3,I,241,8>\r\n<Steel list 4,A,1921,8>\r\n<Illustration title:TrinityB>\r\n<Fellow ID:1356>"
+Enemy 360
+ Name "Trinity C"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 51>\r\n<Race:angel>\r\n<Temporary use skill:5490>\r\n<Steel list 1,I,3,4>\r\n<Steel list 1,A,1268,16>\r\n<Steel list 2,I,424,2>\r\n<Steel list 3,I,241,8>\r\n<Steel list 4,A,1921,8>\r\n<Illustration title:TrinityC>\r\n<Fellow ID:1356>"
+Enemy 361
+ Name "Uranus"
+ Notes "<Occupation Exp 7>\r\n<Escape Level 51>\r\n<Race:angel>\r\n<Temporary use skill:5495>\r\n<Steel list 1,I,3,4>\r\n<Steel list 1,I,24,32>\r\n<Steel list 2,I,348,2>\r\n<Steel list 3,I,241,8>\r\n"
+Enemy 362
+ Name "Eliciel"
+ Notes "<Occupation Exp 7>\r\n<Escape Level 51>\r\n<Race:angel>\r\n<Temporary use skill:5499>\r\n<Steel list 1,I,22,4>\r\n<Steel list 1,A,1409,16>\r\n<Steel list 2,I,301,2>\r\n<Steel list 3,I,241,8>\r\n"
+Enemy 363
+ Name "Cupid"
+ Notes "<Occupation Exp 7>\r\n<Escape Level 52>\r\n<Race:angel>\r\n<Temporary use skill:5504>\r\n<Steel list 1,I,6,16>\r\n<Steel list 1,A,1636,16>\r\n<Steel list 2,I,304,2>\r\n<Steel list 3,I,241,8>\r\n<Steel list 4,A,1922,8>\r\n"
+Enemy 364
+ Name "Valkyrie"
+ Notes "<Occupation Exp 7>\r\n<Escape Level 52>\r\n<Race:angel>\r\n<Temporary use skill:5516>\r\n<Steel list 1,I,8,4>\r\n<Steel list 1,A,1632,16>\r\n<Steel list 2,I,425,2>\r\n<Steel list 3,I,241,8>\r\n<Steel list 4,A,1923,8>\r\n"
+Enemy 365
+ Name "Eden"
+ Notes "<Occupation Exp 55>\r\n<Escape Level 52>\r\n<Race:angel>\r\n<Temporary use skill:5490>\r\n<Illustration title:EdenIn case(1)>\r\n<Fellow ID:1383>\r\n<Predatory invalid>\r\n<Battle recollection impossible>"
+Enemy 366
+ Name "Heliel"
+ Notes "<Occupation Exp 15>\r\n<Escape Level 53>\r\n<Race:angel>\r\n<Temporary use skill:5528>\r\n<Steel list 1,I,6,16>\r\n<Steel list 1,A,1063,16>\r\n<Steel list 2,I,376,2>\r\n<Steel list 3,I,241,8>\r\n"
+Enemy 367
+ Name "Alciel"
+ Notes "<Occupation Exp 15>\r\n<Escape Level 53>\r\n<Race:angel>\r\n<Temporary use skill:5534>\r\n<Steel list 1,I,9,16>\r\n<Steel list 1,A,1271,16>\r\n<Steel list 2,I,355,2>\r\n<Steel list 3,I,241,8>\r\n"
+Enemy 368
+ Name "Sonya Mazda"
+ Notes "<Occupation Exp 60>\r\n<Escape Level 54>\r\n<Race:Apoptosis>\r\n<Temporary use skill:4563>\r\n<Steel list 4,A,1924,8>\r\n<Predatory invalid>\r\n<Battle recollection impossible>\r\n"
+Enemy 369
+ Name "Sonya Mainyu"
+ Notes "<Occupation Exp 60>\r\n<Escape Level 54>\r\n<Race:Apoptosis>\r\n<Temporary use skill:5539>\r\n<Steel list 4,A,1924,8>\r\n<Predatory invalid>\r\n<Battle recollection impossible>\r\n"
+Enemy 370
+ Name "Sonya Chaos"
+ Notes "<Occupation Exp 65>\r\n<Escape Level 54>\r\n<Race:Apoptosis>\r\n<Temporary use skill:4563>\r\n<Steel list 4,A,1924,8>\r\n<Predatory invalid>\r\n<Battle recollection impossible>\r\n"
+Enemy 373
+ Name "Chimera Beast"
+ Notes "<Occupation Exp 7>\r\n<Escape Level 53>\r\n<Race:Chimera>\r\n<Temporary use skill:5542>\r\n<Steel list 1,I,3,4>\r\n<Steel list 1,A,1127,16>\r\n<Steel list 2,I,329,2>\r\n<Steel list 3,I,225,4>\r\n"
+Enemy 374
+ Name "S-2"
+ Notes "<Occupation Exp 7>\r\n<Escape Level 53>\r\n<Race:Chimera>\r\n<Temporary use skill:5549>\r\n<Steel list 1,I,3,4>\r\n<Steel list 1,A,221,4>\r\n<Steel list 2,I,414,2>\r\n<Steel list 3,I,225,4>\r\n"
+Enemy 375
+ Name "A-3"
+ Notes "<Occupation Exp 7>\r\n<Escape Level 53>\r\n<Race:Chimera>\r\n<Temporary use skill:5557>\r\n<Steel list 1,I,76,4>\r\n<Steel list 1,A,1416,16>\r\n<Steel list 2,I,317,2>\r\n<Steel list 3,I,225,4>\r\n"
+Enemy 376
+ Name "AD-5"
+ Notes "<Occupation Exp 7>\r\n<Escape Level 53>\r\n<Race:Chimera>\r\n<Temporary use skill:5480>\r\n<Steel list 1,I,80,4>\r\n<Steel list 1,A,1413,16>\r\n<Steel list 2,I,338,2>\r\n<Steel list 3,I,225,4>\r\n"
+Enemy 377
+ Name "Q-5"
+ Notes "<Occupation Exp 7>\r\n<Escape Level 53>\r\n<Race:Chimera>\r\n<Temporary use skill:5061>\r\n<Steel list 1,I,3,4>\r\n<Steel list 1,A,1131,16>\r\n<Steel list 2,I,316,2>\r\n<Steel list 3,I,225,4>\r\n"
+Enemy 378
+ Name "Fernandez"
+ Notes "<Occupation Exp 25>\r\n<Escape Level 55>\r\n<Race:Elf>\r\n<Temporary use skill:3964>\r\n<Steel list 4,A,1925,8>\r\n<Illustration title:FernandezIn case(Zombie)>\r\n<Fellow ID:1368>\r\n<Predatory invalid>\r\n<Battle recollection impossible>"
+Enemy 379
+ Name "Titania"
+ Notes "<Occupation Exp 25>\r\n<Escape Level 55>\r\n<Race:fairy>\r\n<Temporary use skill:5572>\r\n<Steel list 4,A,1926,8>\r\n<Illustration title:TitaniaIn case(Zombie)>\r\n<Fellow ID:1370>\r\n<Predatory invalid>\r\n<Battle recollection impossible>"
+Enemy 380
+ Name "Rosa"
+ Notes "<Occupation Exp 25>\r\n<Escape Level 55>\r\n<Race:mermaid>\r\n<Temporary use skill:5576>\r\n<Illustration title:RosaIn case(Zombie)>\r\n<Fellow ID:1372>\r\n<Predatory invalid>\r\n<Battle recollection impossible>"
+Enemy 381
+ Name "Queen Lamia"
+ Notes "<Occupation Exp 25>\r\n<Escape Level 55>\r\n<Race:Lamia>\r\n<Temporary use skill:5581>\r\n<Illustration title:QueenLamia(Zombie)>\r\n<Fellow ID:1374>\r\n<Predatory invalid>\r\n<Battle recollection impossible>"
+Enemy 382
+ Name "Former Queen Harpy"
+ Notes "<Occupation Exp 25>\r\n<Escape Level 55>\r\n<Race:bird>\r\n<Temporary use skill:3650>\r\n<Steel list 4,A,1927,8>\r\n<Illustration title:QueenHarpy(Zombie)>\r\n<Fellow ID:1376>\r\n<Predatory invalid>\r\n<Battle recollection impossible>"
+Enemy 383
+ Name "Queen Scylla"
+ Notes "<Occupation Exp 25>\r\n<Escape Level 55>\r\n<Race:Scura>\r\n<Temporary use skill:5589>\r\n<Illustration title:QueenScylla(Zombie)>\r\n<Fellow ID:1378>\r\n<Predatory invalid>\r\n<Battle recollection impossible>"
+Enemy 384
+ Name "Tamamo no Mae"
+ Notes "<Occupation Exp 0>\r\n<Escape Level 80>\r\n<Race:Fox>\r\n<Impossible to skip>\r\n<Ignore difficulty correction>\r\n<Predatory invalid>\r\n<Battle recollection impossible>"
+Enemy 385
+ Name "Alma Elma"
+ Notes "<Occupation Exp 70>\r\n<Escape Level 55>\r\n<Race:Bad luck>\r\n<Temporary use skill:4019>\r\n<Steel list 4,A,1865,8>\r\n<Illustration title:Alma ElmaIn case(2)>\r\n<Fellow ID:1019>\r\n<Predatory invalid>\r\n<Battle recollection impossible>\r\n"
+Enemy 406
+ Name "***dummy"
+Enemy 407
+ Name "***dummy"
+Enemy 408
+ Name "***dummy"
+Enemy 409
+ Name "***dummy"
+Enemy 410
+ Name "***dummy"
+Enemy 411
+ Name "***dummy"
+Enemy 412
+ Name "***dummy"
+Enemy 413
+ Name "***dummy"
+Enemy 414
+ Name "***dummy"
+Enemy 415
+ Name "***dummy"
+Enemy 416
+ Name "***dummy"
+Enemy 417
+ Name "***dummy"
+Enemy 418
+ Name "***dummy"
+Enemy 419
+ Name "***dummy"
+Enemy 420
+ Name "***dummy"
+Enemy 421
+ Name "***dummy"
+Enemy 422
+ Name "***dummy"
+Enemy 423
+ Name "***dummy"
+Enemy 424
+ Name "***dummy"
+Enemy 425
+ Name "***dummy"
+Enemy 426
+ Name "***dummy"
+Enemy 427
+ Name "***dummy"
+Enemy 428
+ Name "***dummy"
+Enemy 429
+ Name "***dummy"
+Enemy 430
+ Name "***dummy"
+Enemy 431
+ Name "***dummy"
+Enemy 432
+ Name "***dummy"
+Enemy 433
+ Name "***dummy"
+Enemy 434
+ Name "***dummy"
+Enemy 435
+ Name "***dummy"
+Enemy 436
+ Name "***dummy"
+Enemy 437
+ Name "***dummy"
+Enemy 438
+ Name "***dummy"
+Enemy 439
+ Name "***dummy"
+Enemy 440
+ Name "***dummy"
+Enemy 441
+ Name "***dummy"
+Enemy 442
+ Name "***dummy"
+Enemy 443
+ Name "***dummy"
+Enemy 444
+ Name "***dummy"
+Enemy 445
+ Name "***dummy"
+Enemy 446
+ Name "***dummy"
+Enemy 447
+ Name "***dummy"
+Enemy 448
+ Name "***dummy"
+Enemy 449
+ Name "***dummy"
+Enemy 450
+ Name "***dummy"
+Enemy 451
+ Name "***dummy"
+Enemy 452
+ Name "***dummy"
+Enemy 453
+ Name "***dummy"
+Enemy 454
+ Name "***dummy"
+Enemy 455
+ Name "***dummy"
+Enemy 456
+ Name "***dummy"
+Enemy 457
+ Name "***dummy"
+Enemy 458
+ Name "***dummy"
+Enemy 459
+ Name "***dummy"
+Enemy 460
+ Name "***dummy"
+Enemy 461
+ Name "***dummy"
+Enemy 462
+ Name "***dummy"
+Enemy 463
+ Name "***dummy"
+Enemy 464
+ Name "***dummy"
+Enemy 465
+ Name "***dummy"
+Enemy 466
+ Name "***dummy"
+Enemy 467
+ Name "***dummy"
+Enemy 468
+ Name "***dummy"
+Enemy 469
+ Name "***dummy"
+Enemy 470
+ Name "***dummy"
+Enemy 471
+ Name "***dummy"
+Enemy 472
+ Name "***dummy"
+Enemy 473
+ Name "***dummy"
+Enemy 474
+ Name "***dummy"
+Enemy 475
+ Name "***dummy"
+Enemy 476
+ Name "***dummy"
+Enemy 477
+ Name "***dummy"
+Enemy 478
+ Name "***dummy"
+Enemy 479
+ Name "***dummy"
+Enemy 480
+ Name "***dummy"
+Enemy 481
+ Name "***dummy"
+Enemy 482
+ Name "***dummy"
+Enemy 483
+ Name "***dummy"
+Enemy 484
+ Name "***dummy"
+Enemy 485
+ Name "***dummy"
+Enemy 486
+ Name "***dummy"
+Enemy 487
+ Name "***dummy"
+Enemy 488
+ Name "***dummy"
+Enemy 489
+ Name "***dummy"
+Enemy 490
+ Name "***dummy"
+Enemy 491
+ Name "***dummy"
+Enemy 492
+ Name "***dummy"
+Enemy 493
+ Name "***dummy"
+Enemy 494
+ Name "***dummy"
+Enemy 495
+ Name "***dummy"
+Enemy 500
+ Name "***dummy"
+Enemy 501
+ Name "***dummy"
+Enemy 502
+ Name "***dummy"
+Enemy 503
+ Name "***dummy"
+Enemy 504
+ Name "***dummy"
+Enemy 505
+ Name "***dummy"
+Enemy 506
+ Name "***dummy"
+Enemy 507
+ Name "***dummy"
+Enemy 508
+ Name "***dummy"
+Enemy 509
+ Name "***dummy"
+Enemy 510
+ Name "***dummy"
+Enemy 511
+ Name "***dummy"
+Enemy 512
+ Name "***dummy"
+Enemy 513
+ Name "***dummy"
+Enemy 514
+ Name "***dummy"
+Enemy 515
+ Name "***dummy"
+Enemy 516
+ Name "***dummy"
+Enemy 517
+ Name "***dummy"
+Enemy 518
+ Name "***dummy"
+Enemy 519
+ Name "***dummy"
+Enemy 520
+ Name "***dummy"
+Enemy 521
+ Name "***dummy"
+Enemy 522
+ Name "***dummy"
+Enemy 523
+ Name "***dummy"
+Enemy 524
+ Name "***dummy"
+Enemy 525
+ Name "***dummy"
+Enemy 526
+ Name "***dummy"
+Enemy 527
+ Name "***dummy"
+Enemy 528
+ Name "***dummy"
+Enemy 529
+ Name "***dummy"
+Enemy 530
+ Name "***dummy"
+Enemy 531
+ Name "***dummy"
+Enemy 532
+ Name "***dummy"
+Enemy 533
+ Name "***dummy"
+Enemy 534
+ Name "***dummy"
+Enemy 535
+ Name "***dummy"
+Enemy 536
+ Name "***dummy"
+Enemy 537
+ Name "***dummy"
+Enemy 538
+ Name "***dummy"
+Enemy 539
+ Name "***dummy"
+Enemy 540
+ Name "***dummy"
+Enemy 541
+ Name "***dummy"
+Enemy 542
+ Name "***dummy"
+Enemy 543
+ Name "***dummy"
+Enemy 544
+ Name "***dummy"
+Enemy 545
+ Name "***dummy"
+Enemy 546
+ Name "***dummy"
+Enemy 547
+ Name "***dummy"
+Enemy 548
+ Name "***dummy"
+Enemy 549
+ Name "***dummy"
+Enemy 550
+ Name "***dummy"
+Enemy 551
+ Name "***dummy"
+Enemy 552
+ Name "***dummy"
+Enemy 553
+ Name "***dummy"
+Enemy 554
+ Name "***dummy"
+Enemy 555
+ Name "***dummy"
+Enemy 556
+ Name "***dummy"
+Enemy 557
+ Name "***dummy"
+Enemy 558
+ Name "***dummy"
+Enemy 559
+ Name "***dummy"
+Enemy 560
+ Name "***dummy"
+Enemy 561
+ Name "***dummy"
+Enemy 562
+ Name "***dummy"
+Enemy 563
+ Name "***dummy"
+Enemy 564
+ Name "***dummy"
+Enemy 565
+ Name "***dummy"
+Enemy 566
+ Name "***dummy"
+Enemy 567
+ Name "***dummy"
+Enemy 568
+ Name "***dummy"
+Enemy 569
+ Name "***dummy"
+Enemy 570
+ Name "***dummy"
+Enemy 571
+ Name "***dummy"
+Enemy 572
+ Name "***dummy"
+Enemy 573
+ Name "***dummy"
+Enemy 574
+ Name "***dummy"
+Enemy 575
+ Name "***dummy"
+Enemy 576
+ Name "***dummy"
+Enemy 577
+ Name "***dummy"
+Enemy 578
+ Name "***dummy"
+Enemy 579
+ Name "***dummy"
+Enemy 580
+ Name "***dummy"
+Enemy 581
+ Name "***dummy"
+Enemy 582
+ Name "***dummy"
+Enemy 583
+ Name "***dummy"
+Enemy 584
+ Name "***dummy"
+Enemy 585
+ Name "***dummy"
+Enemy 586
+ Name "***dummy"
+Enemy 587
+ Name "***dummy"
+Enemy 588
+ Name "***dummy"
+Enemy 589
+ Name "***dummy"
+Enemy 590
+ Name "***dummy"
+Enemy 591
+ Name "***dummy"
+Enemy 592
+ Name "***dummy"
+Enemy 593
+ Name "***dummy"
+Enemy 594
+ Name "***dummy"
+Enemy 595
+ Name "***dummy"
+Enemy 596
+ Name "***dummy"
+Enemy 597
+ Name "***dummy"
+Enemy 598
+ Name "***dummy"
+Enemy 599
+ Name "***dummy"
+Enemy 600
+ Name "***dummy"
+Enemy 601
+ Name "***dummy"
+Enemy 602
+ Name "***dummy"
+Enemy 603
+ Name "***dummy"
+Enemy 604
+ Name "***dummy"
+Enemy 605
+ Name "***dummy"
+Enemy 606
+ Name "***dummy"
+Enemy 607
+ Name "***dummy"
+Enemy 608
+ Name "***dummy"
+Enemy 1001
+ Name "Slime Girl"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:Slime>\r\n<Temporary use skill:3502>\r\n<Steel list 1,I,1,2>\r\n<Steel list 1,W,679,16>\r\n<Steel list 2,I,322,2>\r\n<Steel list 3,I,160,2>\r\n"
+Enemy 1003
+ Name "Bunny Slime"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:Slime>\r\n<Temporary use skill:3502>\r\n<Steel list 1,I,1,2>\r\n<Steel list 1,A,1176,16>\r\n<Steel list 2,I,310,2>\r\n<Steel list 3,I,160,2>\r\n\r\n"
+Enemy 1004
+ Name "Slug Girl"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:Terrestrial species>\r\n<Temporary use skill:3512>\r\n<Steel list 1,I,13,2>\r\n<Steel list 1,A,1028,8>\r\n<Steel list 2,I,309,2>\r\n<Steel list 3,I,161,2>\r\n<Steel list 4,A,1801,8>\r\n"
+Enemy 1005
+ Name "Imp"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:Bad luck>\r\n<Temporary use skill:3520>\r\n<Steel list 1,I,1,2>\r\n<Steel list 1,A,1244,8>\r\n<Steel list 2,I,357,2>\r\n<Steel list 3,I,162,2>\r\n<Steel list 4,A,1802,8>\r\n"
+Enemy 1006
+ Name "Mandragora"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:plant>\r\n<Temporary use skill:3527>\r\n<Steel list 1,I,1,2>\r\n<Steel list 1,I,163,8>\r\n<Steel list 2,I,307,2>\r\n<Steel list 3,I,163,2>\r\n\r\n"
+Enemy 1007
+ Name "Dog Girl"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:A monster>\r\n<Temporary use skill:3535>\r\n<Steel list 1,I,442,2>\r\n<Steel list 1,I,11,4>\r\n<Steel list 2,I,442,2>\r\n<Steel list 3,I,164,2>\r\n<Steel list 4,A,1805,8>\r\n<Accuracy 50%>\r\n"
+Enemy 1008
+ Name "Earthworm Girl"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:Terrestrial species>\r\n<Temporary use skill:3511>\r\n<Steel list 1,I,13,2>\r\n<Steel list 1,I,67,4>\r\n<Steel list 2,I,301,2>\r\n<Steel list 3,I,161,2>"
+Enemy 1009
+ Name "Goblin Girl"
+ Notes "<Occupation Exp 12>\r\n<Escape Level 99999>\r\n<Race:Fellow>\r\n<Temporary use skill:3546>\r\n<Steel list 4,A,1806,8>\r\n\r\n"
+Enemy 1010
+ Name "Tiny Lamia"
+ Notes "<Occupation Exp 12>\r\n<Escape Level 99999>\r\n<Race:Lamia>\r\n<Temporary use skill:3555>\r\n\r\n"
+Enemy 1011
+ Name "Vampire Girl"
+ Notes "<Occupation Exp 12>\r\n<Escape Level 99999>\r\n<Race:vampire>\r\n<Temporary use skill:3563>\r\n<Steel list 4,A,1807,8>\r\n"
+Enemy 1012
+ Name "Dragon Pup"
+ Notes "<Occupation Exp 12>\r\n<Escape Level 99999>\r\n<Race:dragon>\r\n<Temporary use skill:4228>\r\n<Steel list 4,A,1808,8>\r\n"
+Enemy 1013
+ Name "Rat Girl"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:A monster>\r\n<Temporary use skill:3535>\r\n<Steel list 1,I,1,2>\r\n<Steel list 1,A,1038,8>\r\n<Steel list 2,I,341,2>\r\n<Steel list 3,I,164,2>\r\n<Steel list 4,A,1809,8>\r\n<Accuracy 50%>\r\n"
+Enemy 1014
+ Name "Wolf Girl"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:A monster>\r\n<Temporary use skill:3535>\r\n<Steel list 1,I,7,2>\r\n<Steel list 1,I,11,4>\r\n<Steel list 2,I,329,2>\r\n<Steel list 3,I,164,2>\r\n<Accuracy 50%>\r\n"
+Enemy 1015
+ Name "Phoenix Girl"
+ Notes "<Occupation Exp 40>\r\n<Escape Level 99999>\r\n<Race:bird>\r\n<Temporary use skill:3574>\r\n<Steel list 4,A,1810,8>\r\n<Predatory invalid>\r\n<Accuracy 50%>"
+Enemy 1016
+ Name "Leech Girl"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:Terrestrial species>\r\n<Temporary use skill:3576>\r\n<Steel list 1,I,13,2>\r\n<Steel list 1,A,1043,8>\r\n<Steel list 2,I,337,2>\r\n<Steel list 3,I,165,2>\r\n"
+Enemy 1017
+ Name "Rabbit Girl"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:A monster>\r\n<Temporary use skill:3585>\r\n<Steel list 1,I,1,2>\r\n<Steel list 1,W,556,16>\r\n<Steel list 2,I,310,2>\r\n<Steel list 3,I,51,2>\r\n<Steel list 4,A,1811,8>\r\n<Accuracy 100%>\r\n"
+Enemy 1018
+ Name "Sheep Girl"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:A monster>\r\n<Temporary use skill:3592>\r\n<Steel list 1,I,433,4>\r\n<Steel list 1,A,1148,8>\r\n<Steel list 2,I,431,2>\r\n<Steel list 3,I,55,2>\r\n<Steel list 4,A,1812,8>\r\n<Accuracy 50%>\r\n"
+Enemy 1019
+ Name "Sully"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:Apoptosis>\r\n<Temporary use skill:3786>\r\n<Steel list 1,I,55,4>\r\n<Steel list 1,A,1008,8>\r\n<Steel list 3,I,166,2>\r\n\r\n"
+Enemy 1020
+ Name "Jaide"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:Apoptosis>\r\n<Temporary use skill:3497>\r\n<Steel list 1,I,59,4>\r\n<Steel list 1,A,1013,8>\r\n<Steel list 3,I,166,2>\r\n<Accuracy 100%>\r\n<Physical Reflectance 100%>"
+Enemy 1021
+ Name "Shesta"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:Apoptosis>\r\n<Temporary use skill:3611>\r\n<Steel list 1,I,166,4>\r\n<Steel list 1,A,152,8>\r\n<Steel list 3,I,166,2>\r\n<Steel list 4,A,1813,8>\r\n"
+Enemy 1022
+ Name "Nuruko"
+ Notes "<Occupation Exp 50>\r\n<Escape Level 99999>\r\n<Race:Apoptosis>\r\n<Temporary use skill:3614>\r\n\r\n"
+Enemy 1023
+ Name "Orc Girl"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:A monster>\r\n<Temporary use skill:3622>\r\n<Steel list 1,I,23,2>\r\n<Steel list 1,A,1018,8>\r\n<Steel list 2,I,331,2>\r\n<Steel list 3,I,67,2>\r\n"
+Enemy 1024
+ Name "Bee Girl"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:insect>\r\n<Temporary use skill:3627>\r\n<Steel list 1,I,14,2>\r\n<Steel list 1,I,167,4>\r\n<Steel list 2,I,436,2>\r\n<Steel list 3,I,167,2>\r\n"
+Enemy 1025
+ Name "Sparrow Girl"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:bird>\r\n<Temporary use skill:3574>\r\n<Steel list 1,I,1,2>\r\n<Steel list 1,I,23,4>\r\n<Steel list 2,I,360,2>\r\n<Steel list 3,I,168,2>\r\n<Steel list 4,A,1814,8>\r\n<Accuracy 50%>\r\n"
+Enemy 1026
+ Name "Harpy"
+ Notes "<Occupation Exp 10>\r\n<Escape Level 99999>\r\n<Race:bird>\r\n<Temporary use skill:3636>\r\n<Steel list 1,I,23,2>\r\n<Steel list 1,I,63,4>\r\n<Steel list 2,I,361,2>\r\n<Steel list 3,I,168,2>\r\n<Accuracy 50%>\r\n"
+Enemy 1027
+ Name "Harpy Sisters"
+ Notes "<Occupation Exp 10>\r\n<Escape Level 99999>\r\n<Race:bird>\r\n<Temporary use skill:3574>\r\n<Steel list 1,I,23,4>\r\n<Steel list 1,I,168,4>\r\n<Steel list 2,I,305,2>\r\n<Steel list 3,I,168,2>\r\n<Accuracy 50%>\r\n"
+Enemy 1028
+ Name "Queen Harpy"
+ Notes "<Occupation Exp 50>\r\n<Escape Level 99999>\r\n<Race:bird>\r\n<Temporary use skill:3649>\r\n<Predatory invalid>\r\n<Accuracy 50%>"
+Enemy 1029
+ Name "High Slug"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:Terrestrial species>\r\n<Temporary use skill:3512>\r\n<Steel list 1,I,13,2>\r\n<Steel list 1,A,1146,8>\r\n<Steel list 2,I,309,2>\r\n<Steel list 3,I,165,2>\r\n<Steel list 4,A,1815,8>\r\n"
+Enemy 1030
+ Name "Slug Nun"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:Terrestrial species>\r\n<Temporary use skill:3661>\r\n<Steel list 1,I,13,2>\r\n<Steel list 1,A,1033,8>\r\n<Steel list 2,I,309,2>\r\n<Steel list 3,I,165,2>\r\n<Steel list 4,A,1816,8>\r\n"
+Enemy 1031
+ Name "Sluggy Stars"
+ Notes "<Occupation Exp 42>\r\n<Escape Level 99999>\r\n<Race:Terrestrial species>\r\n<Temporary use skill:3658>\r\n"
+Enemy 1032
+ Name "Jack O Lantern"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:fairy>\r\n<Temporary use skill:4140>\r\n<Steel list 1,I,447,2>\r\n<Steel list 1,A,247,8>\r\n<Steel list 2,I,435,2>\r\n<Steel list 3,I,169,2>\r\n<Steel list 4,A,1817,8>\r\n<Accuracy 50%>"
+Enemy 1033
+ Name "Roper Girl"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:Terrestrial species>\r\n<Temporary use skill:3614>\r\n<Steel list 1,I,1,2>\r\n<Steel list 1,A,1062,8>\r\n<Steel list 2,I,312,2>\r\n<Steel list 3,I,161,2>\r\n\r\n"
+Enemy 1034
+ Name "Meda"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:insect>\r\n<Temporary use skill:3614>\r\n<Steel list 1,I,14,2>\r\n<Steel list 1,I,11,4>\r\n<Steel list 2,I,432,2>\r\n<Steel list 3,I,59,2>\r\n<Accuracy 50%>\r\n"
+Enemy 1035
+ Name "Candle Girl"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:ghost>\r\n<Temporary use skill:3679>\r\n<Steel list 1,I,1,2>\r\n<Steel list 1,I,51,4>\r\n<Steel list 2,I,338,2>\r\n<Steel list 3,I,51,2>\r\n"
+Enemy 1036
+ Name "Eater"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:Apoptosis>\r\n<Temporary use skill:3685>\r\n<Steel list 1,I,1,2>\r\n<Steel list 1,A,1114,8>\r\n<Steel list 3,I,172,2>\r\n"
+Enemy 1037
+ Name "Riot"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:Apoptosis>\r\n<Temporary use skill:3535>\r\n<Steel list 1,I,7,2>\r\n<Steel list 1,A,1018,8>\r\n<Steel list 3,I,166,2>\r\n<Accuracy 50%>\r\n"
+Enemy 1038
+ Name "Luxuru"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:Apoptosis>\r\n<Temporary use skill:3496>\r\n<Steel list 1,I,11,2>\r\n<Steel list 1,I,79,4>\r\n<Steel list 3,I,166,2>\r\n<Accuracy 100%>\r\n<Physical Reflectance 100%>\r\n"
+Enemy 1039
+ Name "Dark Elf Swordsman"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:Elf>\r\n<Temporary use skill:3706>\r\n<Steel list 1,I,1,2>\r\n<Steel list 1,A,1013,8>\r\n<Steel list 2,I,343,2>\r\n<Steel list 3,I,170,2>\r\n<Steel list 4,A,1818,8>\r\n"
+Enemy 1040
+ Name "Dark Elf Mage"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:Elf>\r\n<Temporary use skill:3614>\r\n<Steel list 1,I,15,2>\r\n<Steel list 1,A,1101,8>\r\n<Steel list 2,I,331,2>\r\n<Steel list 3,I,170,2>\r\n<Steel list 4,A,1819,8>\r\n"
+Enemy 1041
+ Name "Fairy"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:fairy>\r\n<Temporary use skill:3716>\r\n<Steel list 1,I,1,1>\r\n<Steel list 1,A,1008,8>\r\n<Steel list 2,I,434,2>\r\n<Steel list 3,I,169,2>\r\n<Steel list 4,A,1820,8>\r\n<Accuracy 50%>"
+Enemy 1042
+ Name "Mini Crab Girl"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:Marine species>\r\n<Temporary use skill:3719>\r\n<Steel list 1,I,1,2>\r\n<Steel list 1,I,71,4>\r\n<Steel list 2,I,335,2>\r\n<Steel list 3,I,171,2>\r\n\r\n"
+Enemy 1043
+ Name "Catfish Girl"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:mermaid>\r\n<Temporary use skill:3511>\r\n<Steel list 1,I,7,2>\r\n<Steel list 1,I,59,4>\r\n<Steel list 2,I,328,2>\r\n<Steel list 3,I,165,2>\r\n\r\n"
+Enemy 1044
+ Name "Rafflesia Girl"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:plant>\r\n<Temporary use skill:3726>\r\n<Steel list 1,I,1,2>\r\n<Steel list 1,A,1722,8>\r\n<Steel list 2,I,321,2>\r\n<Steel list 3,I,163,2>\r\n"
+Enemy 1045
+ Name "Centaur"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:A monster>\r\n<Temporary use skill:3735>\r\n<Steel list 1,I,173,2>\r\n<Steel list 1,A,1731,8>\r\n<Steel list 2,I,310,2>\r\n<Steel list 3,I,173,2>\r\n<Accuracy 100%>\r\n"
+Enemy 1046
+ Name "Kitsune"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:Fox>\r\n<Temporary use skill:3740>\r\n<Steel list 1,I,174,2>\r\n<Steel list 1,I,67,4>\r\n<Steel list 2,I,370,2>\r\n<Steel list 3,I,174,2>\r\n<Steel list 4,A,1821,8>\r\n"
+Enemy 1047
+ Name "Kamuro"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:Fox>\r\n<Temporary use skill:3740>\r\n<Steel list 1,I,1,2>\r\n<Steel list 1,A,1062,8>\r\n<Steel list 2,I,333,2>\r\n<Steel list 3,I,174,2>\r\n<Steel list 4,A,1822,8>\r\n"
+Enemy 1048
+ Name "Spider Girl"
+ Notes "<Occupation Exp 15>\r\n<Escape Level 99999>\r\n<Race:insect>\r\n<Temporary use skill:3748>\r\n<Steel list 1,I,13,2>\r\n<Steel list 1,A,167,8>\r\n<Steel list 2,I,432,2>\r\n<Steel list 3,I,175,2>\r\n"
+Enemy 1049
+ Name "Mimic"
+ Notes "<Occupation Exp 30>\r\n<Escape Level 99999>\r\n<Race:ghost>\r\n<Temporary use skill:3655>\r\n<Steel list 1,I,11,2>\r\n<Steel list 1,I,4,32>\r\n<Steel list 2,I,359,2>\r\n<Steel list 3,I,161,2>\r\n<Steel list 4,A,1823,8>\r\n"
+Enemy 1050
+ Name "Nanabi"
+ Notes "<Occupation Exp 50>\r\n<Escape Level 99999>\r\n<Race:Fox>\r\n<Temporary use skill:3755>\r\n<Predatory invalid>\r\n<Accuracy 50%>"
+Enemy 1051
+ Name "Morrigan"
+ Notes "<Occupation Exp 99>\r\n<Escape Level 99999>\r\n<Race:Bad luck>\r\n<Temporary use skill:3765>\r\n<Steel list 4,A,1824,8>\r\n<Predatory invalid>\r\n<Accuracy 50%>"
+Enemy 1052
+ Name "Sea Cucumber Girl"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Marine species>\r\n<Temporary use skill:3495>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,I,71,4>\r\n<Steel list 2,I,322,2>\r\n<Steel list 3,I,171,2>\r\n\r\n"
+Enemy 1053
+ Name "Shellfish Girl"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Marine species>\r\n<Temporary use skill:3778>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,I,27,32>\r\n<Steel list 2,I,389,2>\r\n<Steel list 3,I,176,3>\r\n\r\n"
+Enemy 1054
+ Name "Crab Girl"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Marine species>\r\n<Temporary use skill:3786>\r\n<Steel list 1,I,17,2>\r\n<Steel list 1,A,1559,8>\r\n<Steel list 2,I,326,2>\r\n<Steel list 3,I,171,2>\r\n\r\n"
+Enemy 1055
+ Name "Slime Bess"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Slime>\r\n<Temporary use skill:3793>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,A,1376,8>\r\n<Steel list 2,I,329,2>\r\n<Steel list 3,I,177,3>\r\n\r\n"
+Enemy 1056
+ Name "Watermelon Girl"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:plant>\r\n<Temporary use skill:3800>\r\n<Steel list 1,I,163,2>\r\n<Steel list 1,W,17,8>\r\n<Steel list 2,I,304,2>\r\n<Steel list 3,I,163,2>\r\n\r\n"
+Enemy 1057
+ Name "Pitcher Plant Girl"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:plant>\r\n<Temporary use skill:3685>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,A,1577,8>\r\n<Steel list 2,I,337,2>\r\n<Steel list 3,I,163,2>\r\n\r\n"
+Enemy 1058
+ Name "Lamia"
+ Notes "<Occupation Exp 6>\r\n<Escape Level 99999>\r\n<Race:Lamia>\r\n<Temporary use skill:3802>\r\n<Steel list 1,I,16,2>\r\n<Steel list 1,A,1382,8>\r\n<Steel list 2,I,376,2>\r\n<Steel list 3,I,178,3>\r\n\r\n"
+Enemy 1059
+ Name "Seaweed Girl"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:plant>\r\n<Temporary use skill:3814>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,A,1143,8>\r\n<Steel list 2,I,335,2>\r\n<Steel list 3,I,71,2>\r\n\r\n"
+Enemy 1060
+ Name "Jellyfish Girl"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Marine species>\r\n<Temporary use skill:3614>\r\n<Steel list 1,I,17,2>\r\n<Steel list 1,A,1115,8>\r\n<Steel list 2,I,322,2>\r\n<Steel list 3,I,179,3>\r\n\r\n"
+Enemy 1061
+ Name "Sea Anemone Girl"
+ Notes "<Occupation Exp 6>\r\n<Escape Level 99999>\r\n<Race:Marine species>\r\n<Temporary use skill:3614>\r\n<Steel list 1,I,13,2>\r\n<Steel list 1,A,1549,8>\r\n<Steel list 2,I,322,2>\r\n<Steel list 3,I,179,3>\r\n\r\n"
+Enemy 1062
+ Name "Anglerfish Girl"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:mermaid>\r\n<Temporary use skill:3494>\r\n<Steel list 1,I,14,2>\r\n<Steel list 1,W,416,8>\r\n<Steel list 2,I,327,2>\r\n<Steel list 3,I,71,2>\r\n"
+Enemy 1063
+ Name "Meia"
+ Notes "<Occupation Exp 44>\r\n<Escape Level 99999>\r\n<Race:mermaid>\r\n<Temporary use skill:3843>\r\n"
+Enemy 1064
+ Name "Page 17"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:ghost>\r\n<Temporary use skill:3846>\r\n<Steel list 1,I,17,2>\r\n<Steel list 1,A,1008,8>\r\n<Steel list 2,I,314,2>\r\n<Steel list 3,I,180,3>\r\n<Accuracy 50%>\r\n"
+Enemy 1065
+ Name "Page 257"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:ghost>\r\n<Temporary use skill:4140>\r\n<Steel list 1,I,15,2>\r\n<Steel list 1,A,1553,8>\r\n<Steel list 2,I,418,2>\r\n<Steel list 3,I,180,3>\r\n<Steel list 4,A,1825,8>\r\n\r\n"
+Enemy 1066
+ Name "Page 65537"
+ Notes "<Occupation Exp 45>\r\n<Escape Level 99999>\r\n<Race:ghost>\r\n<Temporary use skill:3614>\r\n<Steel list 4,A,1826,8>\r\n<Predatory invalid>"
+Enemy 1067
+ Name "Sister Lamia"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Lamia>\r\n<Temporary use skill:3869>\r\n<Steel list 1,I,19,2>\r\n<Steel list 1,W,65,8>\r\n<Steel list 2,I,317,2>\r\n<Steel list 3,I,178,3>\r\n"
+Enemy 1068
+ Name "Succubus Nun"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Bad luck>\r\n<Temporary use skill:3873>\r\n<Steel list 1,I,4,4>\r\n<Steel list 1,A,1316,8>\r\n<Steel list 2,I,317,2>\r\n<Steel list 3,I,181,3>\r\n<Steel list 4,A,1827,8>\r\n\r\n"
+Enemy 1069
+ Name "Anteater Girl"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:A monster>\r\n<Temporary use skill:3878>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,W,307,8>\r\n<Steel list 2,I,336,2>\r\n<Steel list 3,I,182,3>\r\n<Steel list 4,A,1828,8>\r\n<Accuracy 50%>\r\n"
+Enemy 1070
+ Name "Grizzly Bear Girl"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:A monster>\r\n<Temporary use skill:3535>\r\n<Steel list 1,I,7,2>\r\n<Steel list 1,A,1379,8>\r\n<Steel list 2,I,329,2>\r\n<Steel list 3,I,182,3>\r\n<Accuracy 50%>\r\n"
+Enemy 1071
+ Name "Experiment XX-7"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Lloyd>\r\n<Temporary use skill:3892>\r\n<Steel list 1,I,7,2>\r\n<Steel list 1,A,1043,8>\r\n<Steel list 2,I,339,2>\r\n<Steel list 3,I,183,3>\r\n<Accuracy 100%>\r\n<Physical Reflectance 100%>\r\n"
+Enemy 1072
+ Name "Little Bug"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Chimera>\r\n<Temporary use skill:3896>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,I,30,32>\r\n<Steel list 2,I,301,2>\r\n<Steel list 3,I,184,3>\r\n<Accuracy 50%>\r\n"
+Enemy 1073
+ Name "Canceroid"
+ Notes "<Occupation Exp 6>\r\n<Escape Level 99999>\r\n<Race:Lloyd>\r\n<Temporary use skill:3493>\r\n<Steel list 1,I,20,2>\r\n<Steel list 1,A,1023,8>\r\n<Steel list 2,I,326,2>\r\n<Steel list 3,I,183,3>\r\n<Accuracy 100%>\r\n<Physical Reflectance 100%>\r\n"
+Enemy 1074
+ Name "Brynhildr"
+ Notes "<Occupation Exp 50>\r\n<Escape Level 99999>\r\n<Race:Lloyd>\r\n<Temporary use skill:4141>\r\n<Predatory invalid>\r\n<Accuracy 100%>\r\n<Physical Reflectance 100%>"
+Enemy 1075
+ Name "Ghost Girl"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:ghost>\r\n<Temporary use skill:3913>\r\n<Steel list 1,I,4,4>\r\n<Steel list 1,A,76,16>\r\n<Steel list 2,I,311,2>\r\n<Steel list 3,I,185,3>\r\n<Steel list 4,A,1829,8>\r\n\r\n"
+Enemy 1076
+ Name "Cursed Doll"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Doll>\r\n<Temporary use skill:3920>\r\n<Steel list 1,I,18,2>\r\n<Steel list 1,W,451,16>\r\n<Steel list 2,I,435,2>\r\n<Steel list 3,I,185,3>\r\n<Steel list 4,A,1830,8>\r\n"
+Enemy 1077
+ Name "Zombie Swordsman"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:zombie>\r\n<Temporary use skill:3933>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,A,7,8>\r\n<Steel list 2,I,432,2>\r\n<Steel list 3,I,186,3>\r\n<Steel list 4,A,1831,8>\r\n<Auto State 19>\r\n"
+Enemy 1078
+ Name "Zombie Girls"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:zombie>\r\n<Temporary use skill:3933>\r\n<Steel list 1,I,16,2>\r\n<Steel list 1,A,1557,8>\r\n<Steel list 2,I,432,2>\r\n<Steel list 3,I,186,3>\r\n<Steel list 4,A,1832,8>\r\n<Auto State 19>\r\n"
+Enemy 1079
+ Name "Zombie Girls"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:zombie>\r\n<Temporary use skill:3933>\r\n<Steel list 1,I,13,2>\r\n<Steel list 1,A,1168,8>\r\n<Steel list 2,I,432,2>\r\n<Steel list 3,I,186,3>\r\n<Steel list 4,A,1833,8>\r\n<Auto State 19>\r\n"
+Enemy 1080
+ Name "Zombie Girls"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:zombie>\r\n<Temporary use skill:3933>\r\n<Steel list 1,I,17,2>\r\n<Steel list 1,A,1003,8>\r\n<Steel list 2,I,432,2>\r\n<Steel list 3,I,186,3>\r\n<Steel list 4,A,1834,8>\r\n<Auto State 19>\r\n"
+Enemy 1081
+ Name "Zombie Girls"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:zombie>\r\n<Temporary use skill:3933>\r\n<Steel list 1,I,4,4>\r\n<Steel list 1,A,1573,8>\r\n<Steel list 2,I,432,2>\r\n<Steel list 3,I,186,3>\r\n<Steel list 4,A,1835,8>\r\n<Auto State 19>\r\n"
+Enemy 1082
+ Name "Frederica"
+ Notes "<Occupation Exp 25>\r\n<Escape Level 99999>\r\n<Race:zombie>\r\n<Temporary use skill:3942>\r\n<Steel list 4,A,1836,8>\r\n<Auto State 19>\r\n<Predatory invalid>\r\n"
+Enemy 1083
+ Name "Chrome"
+ Notes "<Occupation Exp 25>\r\n<Escape Level 99999>\r\n<Race:Bad luck>\r\n<Temporary use skill:4019>\r\n<Steel list 4,A,1837,8>\r\n\r\n"
+Enemy 1084
+ Name "Elf"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Elf>\r\n<Temporary use skill:3962>\r\n<Steel list 1,I,4,4>\r\n<Steel list 1,A,74,8>\r\n<Steel list 2,I,311,2>\r\n<Steel list 3,I,187,3>\r\n<Steel list 4,A,1838,8>\r\n<Accuracy 100%>\r\n"
+Enemy 1085
+ Name "Brownies"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:fairy>\r\n<Temporary use skill:3970>\r\n<Steel list 1,I,446,2>\r\n<Steel list 1,A,1373,8>\r\n<Steel list 2,I,304,2>\r\n<Steel list 3,I,188,3>\r\n<Steel list 4,A,1839,8>\r\n"
+Enemy 1086
+ Name "Twin Fairies"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:fairy>\r\n<Temporary use skill:3972>\r\n<Steel list 1,I,447,2>\r\n<Steel list 1,A,1008,8>\r\n<Steel list 2,I,301,2>\r\n<Steel list 3,I,188,3>\r\n<Steel list 4,A,1840,8>\r\n<Accuracy 50%>"
+Enemy 1087
+ Name "Fairies"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:fairy>\r\n<Temporary use skill:3972>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,A,1277,8>\r\n<Steel list 2,I,435,2>\r\n<Steel list 3,I,188,3>\r\n<Steel list 4,A,1841,8>\r\n<Accuracy 50%>"
+Enemy 1088
+ Name "Fairies"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:fairy>\r\n<Temporary use skill:3972>\r\n<Steel list 1,I,4,4>\r\n<Steel list 1,A,1115,8>\r\n<Steel list 2,I,301,2>\r\n<Steel list 3,I,188,3>\r\n<Steel list 4,A,1841,8>\r\n<Accuracy 50%>"
+Enemy 1089
+ Name "Fairies"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:fairy>\r\n<Temporary use skill:3972>\r\n<Steel list 1,I,11,2>\r\n<Steel list 1,W,525,8>\r\n<Steel list 2,I,304,2>\r\n<Steel list 3,I,188,3>\r\n<Steel list 4,A,1841,8>\r\n<Accuracy 50%>"
+Enemy 1090
+ Name "Fairies"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:fairy>\r\n<Temporary use skill:3972>\r\n<Steel list 1,I,19,2>\r\n<Steel list 1,W,562,8>\r\n<Steel list 2,I,417,2>\r\n<Steel list 3,I,64,3>\r\n<Steel list 4,A,1841,8>\r\n<Accuracy 50%>"
+Enemy 1091
+ Name "Fairies"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:fairy>\r\n<Temporary use skill:3972>\r\n<Steel list 1,I,18,2>\r\n<Steel list 1,I,12,16>\r\n<Steel list 2,I,434,2>\r\n<Steel list 3,I,188,3>\r\n<Steel list 4,A,1841,8>\r\n<Accuracy 50%>"
+Enemy 1092
+ Name "Fairies"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:fairy>\r\n<Temporary use skill:3972>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,W,900,16>\r\n<Steel list 2,I,361,2>\r\n<Steel list 3,I,188,3>\r\n<Steel list 4,A,1841,8>\r\n<Accuracy 50%>"
+Enemy 1093
+ Name "Sylph"
+ Notes "<Occupation Exp 47>\r\n<Escape Level 99999>\r\n<Race:fairy>\r\n<Temporary use skill:3986>\r\n<Steel list 4,A,1842,8>\r\n<Predatory invalid>\r\n<Accuracy 50%>"
+Enemy 1095
+ Name "Tarantula Girl"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:insect>\r\n<Temporary use skill:3994>\r\n<Steel list 1,I,17,2>\r\n<Steel list 1,A,1394,8>\r\n<Steel list 2,I,329,2>\r\n<Steel list 3,I,175,2>\r\n\r\n"
+Enemy 1096
+ Name "Minotaur Girl"
+ Notes "<Occupation Exp 6>\r\n<Escape Level 99999>\r\n<Race:A monster>\r\n<Temporary use skill:4005>\r\n<Steel list 1,I,7,2>\r\n<Steel list 1,A,1307,8>\r\n<Steel list 2,I,342,2>\r\n<Steel list 3,I,189,3>\r\n<Steel list 4,A,1843,8>\r\n\r\n"
+Enemy 1097
+ Name "Bandersnatch Girl"
+ Notes "<Occupation Exp 6>\r\n<Escape Level 99999>\r\n<Race:Doll>\r\n<Temporary use skill:3492>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,A,1301,8>\r\n<Steel list 2,I,312,2>\r\n<Steel list 3,I,68,3>\r\n\r\n"
+Enemy 1098
+ Name "Eva"
+ Notes "<Occupation Exp 47>\r\n<Escape Level 99999>\r\n<Race:Bad luck>\r\n<Temporary use skill:4019>\r\n<Steel list 4,A,1844,8>\r\n<Accuracy 50%>"
+Enemy 1099
+ Name "Sables"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Scura>\r\n<Temporary use skill:3878>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,A,1121,8>\r\n<Steel list 2,I,330,2>\r\n<Steel list 3,I,190,3>\r\n\r\n"
+Enemy 1100
+ Name "Centipede Girl"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:insect>\r\n<Temporary use skill:4036>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,A,1023,8>\r\n<Steel list 2,I,432,2>\r\n<Steel list 3,I,68,3>\r\n\r\n"
+Enemy 1101
+ Name "Scorpion Girl"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:insect>\r\n<Temporary use skill:4043>\r\n<Steel list 1,I,13,2>\r\n<Steel list 1,A,1712,8>\r\n<Steel list 2,I,303,2>\r\n<Steel list 3,I,60,3>\r\n\r\n"
+Enemy 1102
+ Name "Cactus Girl"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:plant>\r\n<Temporary use skill:4049>\r\n<Steel list 1,I,17,2>\r\n<Steel list 1,A,1559,8>\r\n<Steel list 2,I,316,2>\r\n<Steel list 3,I,191,3>\r\n<Accuracy 50%>\r\n"
+Enemy 1103
+ Name "Ostritch Girl"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:bird>\r\n<Temporary use skill:4057>\r\n<Steel list 1,I,23,2>\r\n<Steel list 1,A,40,8>\r\n<Steel list 2,I,307,2>\r\n<Steel list 3,I,192,3>\r\n<Accuracy 50%>\r\n"
+Enemy 1104
+ Name "Lamp Genie"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Demon>\r\n<Temporary use skill:4066>\r\n<Steel list 1,I,4,4>\r\n<Steel list 1,W,97,16>\r\n<Steel list 2,I,363,2>\r\n<Steel list 3,I,52,3>\r\n\r\n"
+Enemy 1105
+ Name "Mummy Girl"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:zombie>\r\n<Temporary use skill:4079>\r\n<Steel list 1,I,59,4>\r\n<Steel list 1,A,1265,8>\r\n<Steel list 2,I,432,2>\r\n<Steel list 3,I,186,3>\r\n\r\n"
+Enemy 1106
+ Name "Cobra Girl"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Lamia>\r\n<Temporary use skill:4089>\r\n<Steel list 1,I,13,2>\r\n<Steel list 1,A,1334,8>\r\n<Steel list 2,I,329,2>\r\n<Steel list 3,I,193,3>\r\n\r\n"
+Enemy 1107
+ Name "Nefertiti Lamias"
+ Notes "<Occupation Exp 12>\r\n<Escape Level 99999>\r\n<Race:Lamia>\r\n<Temporary use skill:4099>\r\n<Steel list 1,I,4,2>\r\n<Steel list 1,A,1612,8>\r\n<Steel list 2,I,419,2>\r\n<Steel list 3,I,193,3>\r\n\r\n"
+Enemy 1108
+ Name "Sphinx"
+ Notes "<Occupation Exp 99>\r\n<Escape Level 99999>\r\n<Race:Demon>\r\n<Temporary use skill:4114>\r\n<Predatory invalid>\r\n<Accuracy 50%>"
+Enemy 1109
+ Name "Sara"
+ Notes "<Occupation Exp 47>\r\n<Escape Level 99999>\r\n<Race:Bad luck>\r\n<Temporary use skill:4116>\r\n<Predatory invalid>\r\n<Accuracy 50%>"
+Enemy 1110
+ Name "Astaroth"
+ Notes "<Occupation Exp 99>\r\n<Escape Level 99999>\r\n<Race:Bad luck>\r\n<Temporary use skill:4125>\r\n<Steel list 4,A,1845,8>\r\n<Predatory invalid>\r\n<Accuracy 50%>"
+Enemy 1111
+ Name "Crocodile Girl"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Terrestrial species>\r\n<Temporary use skill:4141>\r\n<Steel list 1,I,7,2>\r\n<Steel list 1,A,1083,8>\r\n<Steel list 2,I,330,2>\r\n<Steel list 3,I,194,3>\r\n\r\n\r\n\r\n\r\n\r\n"
+Enemy 1112
+ Name "Saki"
+ Notes "<Occupation Exp 47>\r\n<Escape Level 99999>\r\n<Race:Bad luck>\r\n<Temporary use skill:4136>\r\n<Steel list 4,A,1846,8>\r\n<Predatory invalid>\r\n"
+Enemy 1113
+ Name "Devil Fighter"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Demon>\r\n<Temporary use skill:4141>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,A,1286,8>\r\n<Steel list 2,I,320,2>\r\n<Steel list 3,I,52,3>\r\n<Steel list 4,A,1847,8>\r\n\r\n"
+Enemy 1114
+ Name "Large Spider"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:insect>\r\n<Temporary use skill:3747>\r\n<Steel list 1,I,17,2>\r\n<Steel list 1,A,1013,8>\r\n<Steel list 2,I,360,2>\r\n<Steel list 3,I,175,2>\r\n\r\n"
+Enemy 1115
+ Name "Suck Vore"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:A human>\r\n<Temporary use skill:4146>\r\n<Steel list 1,I,4,4>\r\n<Steel list 1,A,1624,8>\r\n<Steel list 2,I,343,2>\r\n<Steel list 3,I,195,3>\r\n\r\n"
+Enemy 1116
+ Name "Iron Maiden"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Doll>\r\n<Temporary use skill:3491>\r\n<Steel list 1,I,19,2>\r\n<Steel list 1,A,1403,8>\r\n<Steel list 2,I,432,2>\r\n<Steel list 3,I,195,3>\r\n\r\n"
+Enemy 1117
+ Name "Worm Villager"
+ Notes "<Occupation Exp 6>\r\n<Escape Level 99999>\r\n<Race:A human>\r\n<Temporary use skill:4159>\r\n<Steel list 1,I,4,4>\r\n<Steel list 1,A,1385,8>\r\n<Steel list 2,I,337,2>\r\n<Steel list 3,I,195,3>\r\n<Steel list 4,A,1848,8>\r\n\r\n"
+Enemy 1118
+ Name "Ustrel"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Scura>\r\n<Temporary use skill:3878>\r\n<Steel list 1,I,4,4>\r\n<Steel list 1,A,1614,8>\r\n<Steel list 2,I,324,2>\r\n<Steel list 3,I,190,3>\r\n"
+Enemy 1119
+ Name "Honey Pot"
+ Notes "<Occupation Exp 30>\r\n<Escape Level 99999>\r\n<Race:ghost>\r\n<Temporary use skill:3502>\r\n<Steel list 1,I,3,4>\r\n<Steel list 1,I,4,32>\r\n<Steel list 2,I,436,2>\r\n<Steel list 3,I,177,3>\r\n"
+Enemy 1120
+ Name "Lily"
+ Notes "<Occupation Exp 48>\r\n<Escape Level 99999>\r\n<Race:A human>\r\n<Temporary use skill:4159>\r\n<Steel list 4,A,1849,8>\r\n<Predatory invalid>"
+Enemy 1121
+ Name "Oni"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Fellow>\r\n<Temporary use skill:4183>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,A,1310,8>\r\n<Steel list 2,I,332,2>\r\n<Steel list 3,I,196,3>\r\n<Steel list 4,A,1850,8>\r\n\r\n"
+Enemy 1122
+ Name "Onahole Girl"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Slime>\r\n<Temporary use skill:4188>\r\n<Steel list 1,I,4,4>\r\n<Steel list 1,A,1361,8>\r\n<Steel list 2,I,422,2>\r\n<Steel list 3,I,195,3>\r\n\r\n"
+Enemy 1123
+ Name "Naccubus"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Bad luck>\r\n<Temporary use skill:4196>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,A,1346,8>\r\n<Steel list 2,I,357,2>\r\n<Steel list 3,I,181,3>\r\n<Steel list 4,A,1851,8>\r\n\r\n"
+Enemy 1124
+ Name "Lucia"
+ Notes "<Occupation Exp 48>\r\n<Escape Level 99999>\r\n<Race:A human>\r\n<Temporary use skill:4159>\r\n<Predatory invalid>"
+Enemy 1125
+ Name "Dodomeki"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Fellow>\r\n<Temporary use skill:4216>\r\n<Steel list 1,I,14,2>\r\n<Steel list 1,A,1551,8>\r\n<Steel list 2,I,360,2>\r\n<Steel list 3,I,196,3>\r\n<Steel list 4,A,1852,8>\r\n\r\n"
+Enemy 1126
+ Name "Lizard Thief"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:dragon>\r\n<Temporary use skill:4228>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,A,1283,8>\r\n<Steel list 2,I,340,2>\r\n<Steel list 3,I,197,3>\r\n<Steel list 4,A,1853,8>\r\n<Accuracy 50%>"
+Enemy 1127
+ Name "Lizard Thief"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:dragon>\r\n<Temporary use skill:4229>\r\n<Steel list 1,I,7,2>\r\n<Steel list 1,A,1003,8>\r\n<Steel list 2,I,343,2>\r\n<Steel list 3,I,197,3>\r\n<Steel list 4,A,1854,8>\r\n<Accuracy 50%>"
+Enemy 1128
+ Name "Lizard Boss"
+ Notes "<Occupation Exp 48>\r\n<Escape Level 99999>\r\n<Race:dragon>\r\n<Temporary use skill:4228>\r\n<Steel list 4,A,1855,8>\r\n<Predatory invalid>\r\n<Accuracy 50%>"
+Enemy 1129
+ Name "Mirage Girl"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:ghost>\r\n<Temporary use skill:4233>\r\n<Steel list 1,I,4,4>\r\n<Steel list 1,A,1319,8>\r\n<Steel list 2,I,316,2>\r\n<Steel list 3,I,52,3>\r\n<Steel list 4,A,1856,8>\r\n\r\n"
+Enemy 1130
+ Name "Ant Lion Girl"
+ Notes "<Occupation Exp 12>\r\n<Escape Level 99999>\r\n<Race:insect>\r\n<Temporary use skill:3896>\r\n<Steel list 1,I,68,4>\r\n<Steel list 1,A,1394,8>\r\n<Steel list 2,I,432,2>\r\n<Steel list 3,I,201,3>\r\n\r\n"
+Enemy 1131
+ Name "Sandworm"
+ Notes "<Occupation Exp 12>\r\n<Escape Level 99999>\r\n<Race:insect>\r\n<Temporary use skill:3490>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,I,26,32>\r\n<Steel list 2,I,303,2>\r\n<Steel list 3,I,201,3>\r\n\r\n"
+Enemy 1132
+ Name "Desert Scylla"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Scura>\r\n<Temporary use skill:3614>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,A,1385,8>\r\n<Steel list 2,I,330,2>\r\n<Steel list 3,I,202,3>\r\n\r\n"
+Enemy 1133
+ Name "Gnome"
+ Notes "<Occupation Exp 49>\r\n<Escape Level 99999>\r\n<Race:fairy>\r\n<Temporary use skill:3489>\r\n<Steel list 4,A,1857,8>\r\n<Predatory invalid>"
+Enemy 1134
+ Name "Vitae"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Apoptosis>\r\n<Temporary use skill:4258>\r\n<Steel list 1,I,71,4>\r\n<Steel list 1,A,1067,16>\r\n<Steel list 3,I,198,3>\r\n\r\n"
+Enemy 1135
+ Name "Vetala"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Apoptosis>\r\n<Temporary use skill:4261>\r\n<Steel list 1,I,17,2>\r\n<Steel list 1,A,1150,16>\r\n<Steel list 3,I,198,3>\r\n\r\n"
+Enemy 1136
+ Name "Valto"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Apoptosis>\r\n<Temporary use skill:3892>\r\n<Steel list 1,I,60,4>\r\n<Steel list 1,A,1565,8>\r\n<Steel list 3,I,198,3>\r\n<Accuracy 100%>\r\n<Physical Reflectance 100%>\r\n"
+Enemy 1137
+ Name "Shinifa"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Apoptosis>\r\n<Temporary use skill:4275>\r\n<Steel list 1,I,4,4>\r\n<Steel list 1,A,1112,16>\r\n<Steel list 3,I,198,3>\r\n<Physical Reflectance 100%>\r\n"
+Enemy 1138
+ Name "Shadow Girl"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:ghost>\r\n<Temporary use skill:4279>\r\n<Steel list 1,I,16,2>\r\n<Steel list 1,A,1087,16>\r\n<Steel list 2,I,321,2>\r\n<Steel list 3,I,185,3>\r\n\r\n"
+Enemy 1139
+ Name "Paintgeist"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:ghost>\r\n<Temporary use skill:3940>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,A,1540,16>\r\n<Steel list 2,I,313,2>\r\n<Steel list 3,I,185,3>\r\n<Steel list 4,A,1858,8>\r\n\r\n"
+Enemy 1140
+ Name "Chimera Homunculus"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Chimera>\r\n<Temporary use skill:4299>\r\n<Steel list 1,I,4,4>\r\n<Steel list 1,A,1555,8>\r\n<Steel list 2,I,325,2>\r\n<Steel list 3,I,199,3>\r\n\r\n"
+Enemy 1141
+ Name "Neo Iron Maiden"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Doll>\r\n<Temporary use skill:3491>\r\n<Steel list 1,I,19,2>\r\n<Steel list 1,A,1585,8>\r\n<Steel list 2,I,301,2>\r\n<Steel list 3,I,199,3>\r\n"
+Enemy 1142
+ Name "Junk Doll Girl"
+ Notes "<Occupation Exp 12>\r\n<Escape Level 99999>\r\n<Race:Doll>\r\n<Temporary use skill:4313>\r\n<Steel list 1,I,23,2>\r\n<Steel list 1,A,1268,8>\r\n<Steel list 2,I,338,2>\r\n<Steel list 3,I,200,3>\r\n"
+Enemy 1143
+ Name "Adramelech"
+ Notes "<Occupation Exp 99>\r\n<Escape Level 99999>\r\n<Race:Apoptosis>\r\n<Temporary use skill:3614>\r\n<Predatory invalid>\r\n\r\n"
+Enemy 1144
+ Name "Alipheese the 16th"
+ Notes "<Occupation Exp 99>\r\n<Escape Level 99999>\r\n<Race:Demon>\r\n<Temporary use skill:3488>\r\n<Steel list 4,A,1953,8>\r\n<Predatory invalid>\r\n"
+Enemy 1145
+ Name "Reaper"
+ Notes "<Occupation Exp 99>\r\n<Escape Level 99999>\r\n<Race:ghost>\r\n<Temporary use skill:3912>\r\n<Steel list 4,A,1954,8>\r\n<Predatory invalid>\r\n\r\n\r\n"
+Enemy 1148
+ Name "Imp"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:Bad luck>\r\n<Temporary use skill:3516>\r\n<Steel list 1,I,1,2>\r\n<Steel list 1,A,1301,8>\r\n<Steel list 2,I,372,2>\r\n<Steel list 3,I,162,2>\r\n<Steel list 4,A,1804,8>\r\n<Accuracy 50%>"
+Enemy 1149
+ Name "Imp"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:Bad luck>\r\n<Temporary use skill:3518>\r\n<Steel list 1,I,1,2>\r\n<Steel list 1,A,1316,8>\r\n<Steel list 2,I,301,2>\r\n<Steel list 3,I,162,2>\r\n<Steel list 4,A,1803,8>\r\n\r\n"
+Enemy 1151
+ Name "Mushroom Girl"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:plant>\r\n<Temporary use skill:4066>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,A,1556,8>\r\n<Steel list 2,I,318,2>\r\n<Steel list 3,I,56,3>\r\n"
+Enemy 1152
+ Name "Novistador Girl"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:insect>\r\n<Temporary use skill:5613>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,A,1736,8>\r\n<Steel list 2,I,342,2>\r\n<Steel list 3,I,201,3>\r\n<Accuracy 50%>"
+Enemy 1153
+ Name "Urscylla"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Scura>\r\n<Temporary use skill:3614>\r\n<Steel list 1,I,4,4>\r\n<Steel list 1,A,1123,8>\r\n<Steel list 2,I,322,2>\r\n<Steel list 3,I,202,3>\r\n"
+Enemy 1154
+ Name "Fusuma"
+ Notes "<Occupation Exp 12>\r\n<Escape Level 99999>\r\n<Race:Fellow>\r\n<Temporary use skill:4608>\r\n<Steel list 1,I,15,2>\r\n<Steel list 1,A,1312,8>\r\n<Steel list 2,I,332,2>\r\n<Steel list 3,I,203,3>\r\n<Steel list 4,A,1859,8>\r\n"
+Enemy 1155
+ Name "Mermaid"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:mermaid>\r\n<Temporary use skill:3842>\r\n<Steel list 1,I,4,4>\r\n<Steel list 1,W,525,16>\r\n<Steel list 2,I,322,2>\r\n<Steel list 3,I,204,4>\r\n"
+Enemy 1156
+ Name "Mermaid Merchant"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:mermaid>\r\n<Temporary use skill:3843>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,W,781,16>\r\n<Steel list 2,I,368,2>\r\n<Steel list 3,I,204,4>\r\n"
+Enemy 1157
+ Name "Pirate Mermaid"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:mermaid>\r\n<Temporary use skill:3843>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,A,200,8>\r\n<Steel list 2,I,327,2>\r\n<Steel list 3,I,204,4>\r\n"
+Enemy 1158
+ Name "Bolt of Cotton Girl A"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:Fellow>\r\n<Temporary use skill:4620>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,A,1062,8>\r\n<Steel list 2,I,361,2>\r\n<Steel list 3,I,203,3>\r\n<Steel list 4,A,1860,8>"
+Enemy 1159
+ Name "Bolt of Cotton Girl B"
+ Notes "<Occupation Exp 3>\r\n<Escape Level 99999>\r\n<Race:Fellow>\r\n<Temporary use skill:4620>\r\n<Steel list 1,I,4,4>\r\n<Steel list 1,A,1065,8>\r\n<Steel list 2,I,384,2>\r\n<Steel list 3,I,203,3>\r\n<Steel list 4,A,1860,8>"
+Enemy 1160
+ Name "Bolt of Cotton Girl C"
+ Notes "<Occupation Exp 3>\r\n<Escape Level 99999>\r\n<Race:Fellow>\r\n<Temporary use skill:4620>\r\n<Steel list 1,I,7,2>\r\n<Steel list 1,A,1143,8>\r\n<Steel list 2,I,383,2>\r\n<Steel list 3,I,203,3>\r\n<Steel list 4,A,1860,8>\r\n"
+Enemy 1161
+ Name "Dagon"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Marine species>\r\n<Temporary use skill:3614>\r\n<Steel list 1,I,72,4>\r\n<Steel list 1,A,1060,8>\r\n<Steel list 2,I,324,2>\r\n<Steel list 3,I,202,3>\r\n"
+Enemy 1162
+ Name "Will-o-wisp Girl"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:ghost>\r\n<Temporary use skill:3912>\r\n<Steel list 1,I,4,4>\r\n<Steel list 1,A,1055,8>\r\n<Steel list 2,I,334,2>\r\n<Steel list 3,I,185,3>\r\n"
+Enemy 1163
+ Name "Ashel"
+ Notes "<Occupation Exp 25>\r\n<Escape Level 99999>\r\n<Race:mermaid>\r\n<Temporary use skill:3843>\r\n<Predatory invalid>"
+Enemy 1164
+ Name "Bonnie"
+ Notes "<Occupation Exp 25>\r\n<Escape Level 99999>\r\n<Race:mermaid>\r\n<Temporary use skill:3843>\r\n<Predatory invalid>"
+Enemy 1165
+ Name "Sea Horse Sailor"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:dragon>\r\n<Temporary use skill:3740>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,A,1165,8>\r\n<Steel list 2,I,365,2>\r\n<Steel list 3,I,171,2>"
+Enemy 1166
+ Name "Sea Slug Sailor"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Marine species>\r\n<Temporary use skill:3512>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,A,1449,8>\r\n<Steel list 2,I,326,2>\r\n<Steel list 3,I,176,3>"
+Enemy 1167
+ Name "Leviathan Girl"
+ Notes "<Occupation Exp 50>\r\n<Escape Level 99999>\r\n<Race:dragon>\r\n<Temporary use skill:5614>\r\n<Predatory invalid>"
+Enemy 1168
+ Name "Frog Girl A"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Terrestrial species>\r\n<Temporary use skill:4634>\r\n<Steel list 1,I,72,4>\r\n<Steel list 1,A,1470,8>\r\n<Steel list 2,I,328,2>\r\n<Steel list 3,I,165,2>\r\n<Illustration title:Frog Musume A>\r\n"
+Enemy 1169
+ Name "Frog Girl B"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Terrestrial species>\r\n<Temporary use skill:4634>\r\n<Steel list 1,I,68,4>\r\n<Steel list 1,A,1580,8>\r\n<Steel list 2,I,322,2>\r\n<Steel list 3,I,165,2>\r\n<Illustration title:Frog Musume B>\r\n<Fellow ID:1206>"
+Enemy 1170
+ Name "Centaur Girl"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:A monster>\r\n<Temporary use skill:3735>\r\n<Steel list 1,I,7,4>\r\n<Steel list 1,A,1038,8>\r\n<Steel list 2,I,310,2>\r\n<Steel list 3,I,173,2>\r\n"
+Enemy 1171
+ Name "Alraune"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:plant>\r\n<Temporary use skill:3685>\r\n<Steel list 1,I,3,4>\r\n<Steel list 1,A,1476,8>\r\n<Steel list 2,I,305,2>\r\n<Steel list 3,I,205,4>\r\n<Steel list 4,A,1861,8>\r\n"
+Enemy 1172
+ Name "Chrysanthemum Bug"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:insect>\r\n<Temporary use skill:3895>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,A,1148,8>\r\n<Steel list 2,I,308,2>\r\n<Steel list 3,I,201,3>\r\n<Accuracy 50%>"
+Enemy 1173
+ Name "Spirit Girl"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:ghost>\r\n<Temporary use skill:3913>\r\n<Steel list 1,I,52,4>\r\n<Steel list 1,W,156,16>\r\n<Steel list 2,I,360,2>\r\n<Steel list 3,I,210,4>\r\n<Steel list 4,A,1862,8>\r\n"
+Enemy 1174
+ Name "Boxed Girl"
+ Notes "<Occupation Exp 30>\r\n<Escape Level 99999>\r\n<Race:ghost>\r\n<Temporary use skill:4646>\r\n<Steel list 1,A,1183,8>\r\n<Steel list 1,I,32,32>\r\n<Steel list 2,I,418,2>\r\n<Steel list 3,I,195,3>\r\n<Steel list 4,A,1863,8>\r\n"
+Enemy 1175
+ Name "Dullahan"
+ Notes "<Occupation Exp 35>\r\n<Escape Level 99999>\r\n<Race:Elf>\r\n<Temporary use skill:3709>\r\n<Steel list 4,A,1864,8>\r\n<Predatory invalid>"
+Enemy 1176
+ Name "Cerberus"
+ Notes "<Occupation Exp 35>\r\n<Escape Level 99999>\r\n<Race:A monster>\r\n<Temporary use skill:4658>\r\n<Predatory invalid>"
+Enemy 1177
+ Name "Alma Elma"
+ Notes "<Occupation Exp 40>\r\n<Escape Level 99999>\r\n<Race:Bad luck>\r\n<Temporary use skill:4019>\r\n<Steel list 4,A,1865,8>\r\n<Predatory invalid>\r\n<Accuracy 100%>\r\n<Attribute absorption 2>"
+Enemy 1178
+ Name "Granberia"
+ Notes "<Occupation Exp 40>\r\n<Escape Level 99999>\r\n<Race:dragon>\r\n<Temporary use skill:3741>\r\n<Steel list 4,A,1866,8>\r\n<Predatory invalid>\r\n<Accuracy 50%>"
+Enemy 1179
+ Name "Nure-onna"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Lamia>\r\n<Temporary use skill:4667>\r\n<Steel list 1,I,56,4>\r\n<Steel list 1,W,739,8>\r\n<Steel list 2,I,384,2>\r\n<Steel list 3,I,211,4>\r\n"
+Enemy 1180
+ Name "High Minotauros"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:A monster>\r\n<Temporary use skill:4004>\r\n<Steel list 1,I,8,4>\r\n<Steel list 1,W,417,16>\r\n<Steel list 2,I,329,2>\r\n<Steel list 3,I,213,4>\r\n<Steel list 4,A,1868,8>\r\n"
+Enemy 1181
+ Name "Misstauros"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:A monster>\r\n<Temporary use skill:4672>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,W,763,16>\r\n<Steel list 2,I,342,2>\r\n<Steel list 3,I,213,4>\r\n<Steel list 4,A,1869,8>\r\n"
+Enemy 1182
+ Name "Genitauros"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:A monster>\r\n<Temporary use skill:4678>\r\n<Steel list 1,I,14,2>\r\n<Steel list 1,A,1013,8>\r\n<Steel list 2,I,375,2>\r\n<Steel list 3,I,213,4>\r\n<Steel list 4,A,1870,8>\r\n"
+Enemy 1183
+ Name "Sun Wukong"
+ Notes "<Occupation Exp 40>\r\n<Escape Level 99999>\r\n<Race:Fellow>\r\n<Temporary use skill:4678>\r\n<Steel list 4,A,1867,8>\r\n<Predatory invalid>\r\n<Attribute reflex:1>"
+Enemy 1184
+ Name "Demon Cow Queen"
+ Notes "<Occupation Exp 40>\r\n<Escape Level 99999>\r\n<Race:A monster>\r\n<Temporary use skill:4004>\r\n<Steel list 4,A,1871,8>\r\n<Predatory invalid>"
+Enemy 1185
+ Name "Kunoichi Elf"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Elf>\r\n<Temporary use skill:4694>\r\n<Steel list 1,I,101,2>\r\n<Steel list 1,A,1452,8>\r\n<Steel list 2,I,361,2>\r\n<Steel list 3,I,187,3>\r\n<Steel list 4,A,1872,8>\r\n"
+Enemy 1186
+ Name "Samurai Elf"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Elf>\r\n<Temporary use skill:4695>\r\n<Steel list 1,I,8,4>\r\n<Steel list 1,A,31,32>\r\n<Steel list 2,I,329,2>\r\n<Steel list 3,I,187,3>\r\n<Steel list 4,A,1873,8>\r\n"
+Enemy 1187
+ Name "Yuki-onna"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Fellow>\r\n<Temporary use skill:4706>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,A,1497,8>\r\n<Steel list 2,I,424,2>\r\n<Steel list 3,I,56,3>\r\n<Steel list 4,A,1874,8>\r\n"
+Enemy 1188
+ Name "Nekomata"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:A monster>\r\n<Temporary use skill:4717>\r\n<Steel list 1,I,334,2>\r\n<Steel list 1,W,309,16>\r\n<Steel list 2,I,334,2>\r\n<Steel list 3,I,206,4>\r\n<Accuracy 50%>"
+Enemy 1189
+ Name "Akaname"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Fellow>\r\n<Temporary use skill:4728>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,A,1467,8>\r\n<Steel list 2,I,408,2>\r\n<Steel list 3,I,210,4>\r\n<Steel list 4,A,1875,8>\r\n"
+Enemy 1190
+ Name "Kappa"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Fellow>\r\n<Temporary use skill:4736>\r\n<Steel list 1,I,212,4>\r\n<Steel list 1,A,1513,8>\r\n<Steel list 2,I,306,2>\r\n<Steel list 3,I,212,4>\r\n"
+Enemy 1191
+ Name "Futakuchi Girl"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Fellow>\r\n<Temporary use skill:3878>\r\n<Steel list 1,I,361,2>\r\n<Steel list 1,I,425,4>\r\n<Steel list 2,I,410,2>\r\n<Steel list 3,I,210,4>\r\n<Steel list 4,A,1876,8>\r\n"
+Enemy 1192
+ Name "Shirohebi"
+ Notes "<Occupation Exp 42>\r\n<Escape Level 99999>\r\n<Race:Lamia>\r\n<Temporary use skill:4740>\r\n<Predatory invalid>"
+Enemy 1193
+ Name "Miko Lamia"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Lamia>\r\n<Temporary use skill:4752>\r\n<Steel list 1,I,76,4>\r\n<Steel list 1,A,1174,8>\r\n<Steel list 2,I,332,2>\r\n<Steel list 3,I,211,4>\r\n"
+Enemy 1194
+ Name "Miko Arachne"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:insect>\r\n<Temporary use skill:3748>\r\n<Steel list 1,I,4,8>\r\n<Steel list 1,A,1566,16>\r\n<Steel list 2,I,408,2>\r\n<Steel list 3,I,175,2>\r\n"
+Enemy 1195
+ Name "Kejourou"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Fellow>\r\n<Temporary use skill:4762>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,A,1425,8>\r\n<Steel list 2,I,383,2>\r\n<Steel list 3,I,210,4>\r\n<Steel list 4,A,1877,8>\r\n"
+Enemy 1196
+ Name "Yamata no Orochi"
+ Notes "<Occupation Exp 55>\r\n<Escape Level 99999>\r\n<Race:Lamia>\r\n<Temporary use skill:4769>\r\n<Predatory invalid>"
+Enemy 1197
+ Name "Magical Butterfly"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:insect>\r\n<Temporary use skill:3896>\r\n<Steel list 1,I,64,4>\r\n<Steel list 1,A,1211,8>\r\n<Steel list 2,I,343,2>\r\n<Steel list 3,I,207,4>\r\n<Steel list 4,A,1878,8>\r\n"
+Enemy 1198
+ Name "Magical Fly"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:insect>\r\n<Temporary use skill:3741>\r\n<Steel list 1,I,68,4>\r\n<Steel list 1,W,874,16>\r\n<Steel list 2,I,344,2>\r\n<Steel list 3,I,207,4>\r\n<Steel list 4,A,1879,8>\r\n<Fellow ID:1231>"
+Enemy 1199
+ Name "Magical Ladybug"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:insect>\r\n<Temporary use skill:3740>\r\n<Steel list 1,I,72,4>\r\n<Steel list 1,A,1437,8>\r\n<Steel list 2,I,406,2>\r\n<Steel list 3,I,207,4>\r\n<Steel list 4,A,1880,8>"
+Enemy 1200
+ Name "Magical Pixie"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:fairy>\r\n<Temporary use skill:3740>\r\n<Steel list 1,I,18,4>\r\n<Steel list 1,W,636,16>\r\n<Steel list 2,I,424,2>\r\n<Steel list 3,I,208,4>\r\n<Steel list 4,A,1881,8>\r\n"
+Enemy 1201
+ Name "Magical Elf"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:Elf>\r\n<Temporary use skill:3741>\r\n<Steel list 1,I,5,8>\r\n<Steel list 1,A,1446,8>\r\n<Steel list 2,I,349,2>\r\n<Steel list 3,I,208,4>\r\n<Steel list 4,A,1882,8>"
+Enemy 1202
+ Name "Magical Succubus"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:Bad luck>\r\n<Temporary use skill:4019>\r\n<Steel list 1,I,56,4>\r\n<Steel list 1,A,1443,8>\r\n<Steel list 2,I,348,2>\r\n<Steel list 3,I,208,4>"
+Enemy 1203
+ Name "Mephisto"
+ Notes "<Occupation Exp 44>\r\n<Escape Level 99999>\r\n<Race:Demon>\r\n<Temporary use skill:4751>\r\n<Predatory invalid>"
+Enemy 1204
+ Name "Mantis Girl"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:insect>\r\n<Temporary use skill:4785>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,I,30,32>\r\n<Steel list 2,I,448,2>\r\n<Steel list 3,I,214,4>\r\n"
+Enemy 1205
+ Name "Silkworm Girl"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:insect>\r\n<Temporary use skill:4792>\r\n<Steel list 1,I,21,2>\r\n<Steel list 1,A,1476,8>\r\n<Steel list 2,I,308,2>\r\n<Steel list 3,I,214,4>\r\n"
+Enemy 1206
+ Name "Alra Alum"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:plant>\r\n<Temporary use skill:4799>\r\n<Steel list 1,I,3,4>\r\n<Steel list 1,I,60,4>\r\n<Steel list 2,I,307,2>\r\n<Steel list 3,I,216,4>\r\n"
+Enemy 1207
+ Name "Alra Rooty"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:plant>\r\n<Temporary use skill:4802>\r\n<Steel list 1,I,8,4>\r\n<Steel list 1,A,1428,8>\r\n<Steel list 2,I,312,2>\r\n<Steel list 3,I,216,4>"
+Enemy 1208
+ Name "Alra Vore"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:plant>\r\n<Temporary use skill:4808>\r\n<Steel list 1,I,14,2>\r\n<Steel list 1,A,1464,8>\r\n<Steel list 2,I,329,2>\r\n<Steel list 3,I,216,4>\r\n"
+Enemy 1209
+ Name "Alra Parasol"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:plant>\r\n<Temporary use skill:4813>\r\n<Steel list 1,I,17,2>\r\n<Steel list 1,A,1437,8>\r\n<Steel list 2,I,443,2>\r\n<Steel list 3,I,216,4>"
+Enemy 1210
+ Name "Alra Prison"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:plant>\r\n<Temporary use skill:4817>\r\n<Steel list 1,I,21,2>\r\n<Steel list 1,A,1529,8>\r\n<Steel list 2,I,314,2>\r\n<Steel list 3,I,216,4>"
+Enemy 1211
+ Name "Alra Shroom"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:plant>\r\n<Temporary use skill:4812>\r\n<Steel list 1,I,16,2>\r\n<Steel list 1,A,1446,8>\r\n<Steel list 2,I,318,2>\r\n<Steel list 3,I,216,4>"
+Enemy 1212
+ Name "Dorothy"
+ Notes "<Occupation Exp 15>\r\n<Escape Level 99999>\r\n<Race:plant>\r\n<Temporary use skill:4825>\r\n<Predatory invalid>"
+Enemy 1213
+ Name "Raffia"
+ Notes "<Occupation Exp 15>\r\n<Escape Level 99999>\r\n<Race:plant>\r\n<Temporary use skill:4832>\r\n<Predatory invalid>"
+Enemy 1214
+ Name "Deana"
+ Notes "<Occupation Exp 15>\r\n<Escape Level 99999>\r\n<Race:plant>\r\n<Temporary use skill:4837>\r\n<Predatory invalid>"
+Enemy 1215
+ Name "Alra Priestess"
+ Notes "<Occupation Exp 43>\r\n<Escape Level 99999>\r\n<Race:plant>\r\n<Temporary use skill:4845>\r\n<Predatory invalid>"
+Enemy 1216
+ Name "Moth Girl"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:insect>\r\n<Temporary use skill:4852>\r\n<Steel list 1,I,17,2>\r\n<Steel list 1,A,1437,8>\r\n<Steel list 2,I,336,2>\r\n<Steel list 3,I,214,4>\r\n<Accuracy 50%>"
+Enemy 1217
+ Name "Mosquito Girl"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:insect>\r\n<Temporary use skill:4854>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,A,1107,8>\r\n<Steel list 2,I,337,2>\r\n<Steel list 3,I,214,4>\r\n<Accuracy 50%>"
+Enemy 1218
+ Name "Caterpillar Girl"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:insect>\r\n<Temporary use skill:3895>\r\n<Steel list 1,I,1,2>\r\n<Steel list 1,A,1688,8>\r\n<Steel list 2,I,302,2>\r\n<Steel list 3,I,64,2>\r\n<Accuracy 50%>"
+Enemy 1219
+ Name "Hornet Girl"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:insect>\r\n<Temporary use skill:4856>\r\n<Steel list 1,I,13,2>\r\n<Steel list 1,I,436,4>\r\n<Steel list 2,I,436,2>\r\n<Steel list 3,I,217,4>\r\n<Accuracy 50%>"
+Enemy 1220
+ Name "Queen Bee"
+ Notes "<Occupation Exp 43>\r\n<Escape Level 99999>\r\n<Race:insect>\r\n<Temporary use skill:3896>\r\n<Predatory invalid>\r\n<Accuracy 50%>"
+Enemy 1221
+ Name "Tezcatlipoca"
+ Notes "<Occupation Exp 45>\r\n<Escape Level 99999>\r\n<Race:A monster>\r\n<Temporary use skill:4717>\r\n<Predatory invalid>\r\n<Accuracy 50%>"
+Enemy 1222
+ Name "Quetzalcoatl"
+ Notes "<Occupation Exp 45>\r\n<Escape Level 99999>\r\n<Race:Lamia>\r\n<Temporary use skill:3649>\r\n<Steel list 4,A,1883,8>\r\n<Predatory invalid>\r\n<Accuracy 50%>"
+Enemy 1223
+ Name "Gnosis"
+ Notes "<Occupation Exp 45>\r\n<Escape Level 99999>\r\n<Race:angel>\r\n<Temporary use skill:5490>\r\n<Predatory invalid>\r\n<Accuracy 100%>\r\n<Physical Reflectance 100%>\r\n<Attribute absorption 9>"
+Enemy 1224
+ Name "Zion"
+ Notes "<Occupation Exp 45>\r\n<Escape Level 99999>\r\n<Race:angel>\r\n<Temporary use skill:5478>\r\n<Steel list 4,A,1884,8>\r\n<Predatory invalid>\r\n<Accuracy 50%>\r\n<Attribute absorption 9>"
+Enemy 1225
+ Name "Jelly Girl"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Slime>\r\n<Temporary use skill:4871>\r\n<Steel list 1,I,4,4>\r\n<Steel list 1,A,1114,8>\r\n<Steel list 2,I,423,2>\r\n<Steel list 3,I,218,4>\r\n"
+Enemy 1226
+ Name "Blob Girl"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Slime>\r\n<Temporary use skill:4877>\r\n<Steel list 1,I,8,4>\r\n<Steel list 1,A,1176,8>\r\n<Steel list 2,I,329,2>\r\n<Steel list 3,I,218,4>\r\n"
+Enemy 1227
+ Name "Green Slime"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:Slime>\r\n<Temporary use skill:4882>\r\n<Steel list 1,I,64,4>\r\n<Steel list 1,I,218,4>\r\n<Steel list 2,I,414,2>\r\n<Steel list 3,I,218,4>"
+Enemy 1228
+ Name "Red Slime"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:Slime>\r\n<Temporary use skill:4887>\r\n<Steel list 1,I,52,4>\r\n<Steel list 1,A,82,16>\r\n<Steel list 2,I,417,2>\r\n<Steel list 3,I,218,4>"
+Enemy 1229
+ Name "Blue Slime"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:Slime>\r\n<Temporary use skill:4890>\r\n<Steel list 1,I,72,4>\r\n<Steel list 1,A,213,16>\r\n<Steel list 2,I,424,2>\r\n<Steel list 3,I,218,4>"
+Enemy 1230
+ Name "Purple Slime"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:Slime>\r\n<Temporary use skill:4893>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,I,9,16>\r\n<Steel list 2,I,427,2>\r\n<Steel list 3,I,218,4>\r\n"
+Enemy 1231
+ Name "Undine"
+ Notes "<Occupation Exp 45>\r\n<Escape Level 99999>\r\n<Race:Slime>\r\n<Temporary use skill:4901>\r\n<Predatory invalid>"
+Enemy 1232
+ Name "Erubetie"
+ Notes "<Occupation Exp 45>\r\n<Escape Level 99999>\r\n<Race:Slime>\r\n<Temporary use skill:4912>\r\n<Predatory invalid>"
+Enemy 1233
+ Name "Ant Girls"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:insect>\r\n<Temporary use skill:4919>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,I,214,4>\r\n<Steel list 2,I,336,2>\r\n<Steel list 3,I,214,4>\r\n<Accuracy 50%>"
+Enemy 1234
+ Name "Automata Girl"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Doll>\r\n<Temporary use skill:4929>\r\n<Steel list 1,I,21,2>\r\n<Steel list 1,A,1169,16>\r\n<Steel list 2,I,357,2>\r\n<Steel list 3,I,219,4>\r\n"
+Enemy 1235
+ Name "Paizuri Doll"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:Doll>\r\n<Temporary use skill:4938>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,A,1691,8>\r\n<Steel list 2,I,417,2>\r\n<Steel list 3,I,219,4>\r\n<Steel list 4,A,1885,8>\r\n"
+Enemy 1236
+ Name "Scylla"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Scura>\r\n<Temporary use skill:4945>\r\n<Steel list 1,I,2,2>\r\n<Steel list 1,W,605,8>\r\n<Steel list 2,I,324,2>\r\n<Steel list 3,I,202,3>\r\n"
+Enemy 1237
+ Name "Medusa"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Lamia>\r\n<Temporary use skill:4954>\r\n<Steel list 1,I,20,2>\r\n<Steel list 1,A,1461,8>\r\n<Steel list 2,I,315,2>\r\n<Steel list 3,I,220,4>\r\n<Steel list 4,A,1886,8>\r\n"
+Enemy 1238
+ Name "Butterfly Girl"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:insect>\r\n<Temporary use skill:4962>\r\n<Steel list 1,I,17,2>\r\n<Steel list 1,A,1047,16>\r\n<Steel list 2,I,301,2>\r\n<Steel list 3,I,214,4>\r\n<Steel list 4,A,1887,8>\r\n<Accuracy 50%>"
+Enemy 1239
+ Name "Brom Girl"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Slime>\r\n<Temporary use skill:4967>\r\n<Steel list 1,I,13,2>\r\n<Steel list 1,A,1211,8>\r\n<Steel list 2,I,338,2>\r\n<Steel list 3,I,218,4>\r\n"
+Enemy 1240
+ Name "Warmer"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:zombie>\r\n<Temporary use skill:3942>\r\n<Steel list 1,I,13,2>\r\n<Steel list 1,I,80,4>\r\n<Steel list 2,I,331,2>\r\n<Steel list 3,I,221,4>\r\n<Auto State 19>"
+Enemy 1241
+ Name "Ghoul A"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:zombie>\r\n<Temporary use skill:3942>\r\n<Steel list 1,I,15,2>\r\n<Steel list 1,I,80,4>\r\n<Steel list 2,I,432,2>\r\n<Steel list 3,I,221,4>\r\n<Auto State 19>"
+Enemy 1242
+ Name "Ghoul B"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:zombie>\r\n<Temporary use skill:3942>\r\n<Steel list 1,I,14,2>\r\n<Steel list 1,I,80,4>\r\n<Steel list 2,I,432,2>\r\n<Steel list 3,I,221,4>\r\n<Auto State 19>"
+Enemy 1243
+ Name "Ghoul C"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:zombie>\r\n<Temporary use skill:3942>\r\n<Steel list 1,I,21,2>\r\n<Steel list 1,I,80,4>\r\n<Steel list 2,I,432,2>\r\n<Steel list 3,I,221,4>\r\n<Auto State 19>"
+Enemy 1244
+ Name "Fake Jelly"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Marine species>\r\n<Temporary use skill:4191>\r\n<Steel list 1,I,11,4>\r\n<Steel list 1,A,1109,16>\r\n<Steel list 2,I,326,2>\r\n<Steel list 3,I,190,3>\r\n<Steel list 4,A,1888,8>\r\n"
+Enemy 1245
+ Name "Wing Harpy"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:bird>\r\n<Temporary use skill:3649>\r\n<Steel list 1,I,23,2>\r\n<Steel list 1,A,1337,16>\r\n<Steel list 2,I,361,2>\r\n<Steel list 3,I,192,3>\r\n<Accuracy 50%>"
+Enemy 1246
+ Name "Harpy Knight"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:bird>\r\n<Temporary use skill:3649>\r\n<Steel list 1,I,23,2>\r\n<Steel list 1,A,1118,16>\r\n<Steel list 2,I,358,2>\r\n<Steel list 3,I,192,3>\r\n<Steel list 4,A,1889,8>\r\n<Accuracy 100%>"
+Enemy 1247
+ Name "Mud Golem Girl"
+ Notes "<Occupation Exp 10>\r\n<Escape Level 99999>\r\n<Race:Doll>\r\n<Temporary use skill:4982>\r\n<Steel list 1,I,80,4>\r\n<Steel list 1,I,5,8>\r\n<Steel list 2,I,430,2>\r\n<Steel list 3,I,219,4>\r\n"
+Enemy 1248
+ Name "Golem Girl"
+ Notes "<Occupation Exp 45>\r\n<Escape Level 99999>\r\n<Race:Doll>\r\n<Temporary use skill:5615>\r\n<Predatory invalid>"
+Enemy 1249
+ Name "Flower Mantis Girl"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:insect>\r\n<Temporary use skill:4784>\r\n<Steel list 1,I,17,2>\r\n<Steel list 1,A,1509,16>\r\n<Steel list 2,I,362,2>\r\n<Steel list 3,I,214,4>\r\n"
+Enemy 1250
+ Name "Black Golem"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Doll>\r\n<Temporary use skill:4993>\r\n<Steel list 1,I,5,8>\r\n<Steel list 1,I,9,16>\r\n<Steel list 2,I,301,2>\r\n<Steel list 3,I,219,4>\r\n"
+Enemy 1251
+ Name "Feral Kitsune"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Fox>\r\n<Temporary use skill:3740>\r\n<Steel list 1,I,5,8>\r\n<Steel list 1,A,1051,8>\r\n<Steel list 2,I,333,2>\r\n<Steel list 3,I,209,4>\r\n"
+Enemy 1252
+ Name "Three-tailed Kunoichi"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Fox>\r\n<Temporary use skill:4694>\r\n<Steel list 1,I,101,2>\r\n<Steel list 1,A,1154,16>\r\n<Steel list 2,I,333,2>\r\n<Steel list 3,I,209,4>\r\n<Steel list 4,A,1890,8>\r\n"
+Enemy 1253
+ Name "Four-tailed Samurai"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Fox>\r\n<Temporary use skill:3756>\r\n<Steel list 1,W,243,8>\r\n<Steel list 1,A,1193,16>\r\n<Steel list 2,I,333,2>\r\n<Steel list 3,I,209,4>\r\n<Steel list 4,A,1891,8>\r\n"
+Enemy 1254
+ Name "Queen Ant"
+ Notes "<Occupation Exp 45>\r\n<Escape Level 99999>\r\n<Race:insect>\r\n<Temporary use skill:5003>\r\n<Predatory invalid>\r\n<Accuracy 50%>"
+Enemy 1255
+ Name "Lilith"
+ Notes "<Occupation Exp 45>\r\n<Escape Level 99999>\r\n<Race:Bad luck>\r\n<Temporary use skill:5009>\r\n<Steel list 4,A,1892,8>\r\n<Predatory invalid>\r\n<Accuracy 50%>"
+Enemy 1256
+ Name "Lava Girl"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Slime>\r\n<Temporary use skill:5014>\r\n<Steel list 1,I,8,4>\r\n<Steel list 1,A,1202,16>\r\n<Steel list 2,I,339,2>\r\n<Steel list 3,I,52,3>\r\n"
+Enemy 1257
+ Name "Demon Lamia"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Lamia>\r\n<Temporary use skill:3802>\r\n<Steel list 1,I,21,2>\r\n<Steel list 1,A,1192,16>\r\n<Steel list 2,I,345,2>\r\n<Steel list 3,I,211,4>\r\n"
+Enemy 1258
+ Name "Demon Scylla"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Scura>\r\n<Temporary use skill:4945>\r\n<Steel list 1,I,3,4>\r\n<Steel list 1,A,1431,16>\r\n<Steel list 2,I,325,2>\r\n<Steel list 3,I,202,3>\r\n"
+Enemy 1259
+ Name "Siren"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:bird>\r\n<Temporary use skill:5028>\r\n<Steel list 1,I,16,2>\r\n<Steel list 1,A,1526,16>\r\n<Steel list 2,I,330,2>\r\n<Steel list 3,I,227,8>\r\n<Accuracy 50%>"
+Enemy 1260
+ Name "Coral Girl"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Marine species>\r\n<Temporary use skill:5032>\r\n<Steel list 1,I,20,2>\r\n<Steel list 1,A,1575,16>\r\n<Steel list 2,I,328,2>\r\n<Steel list 3,I,226,8>\r\n"
+Enemy 1261
+ Name "Starfish Girl"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Marine species>\r\n<Temporary use skill:5034>\r\n<Steel list 1,I,8,4>\r\n<Steel list 1,A,1546,16>\r\n<Steel list 2,I,326,2>\r\n<Steel list 3,I,226,8>\r\n"
+Enemy 1262
+ Name "Beelzebub A"
+ Notes "<Profession Exp 16>\r\n<Escape Level 99999>\r\n<Race:insect>\r\n<Temporary use skill:5042>\r\n<Predatory invalid>"
+Enemy 1263
+ Name "Beelzebub B"
+ Notes "<Profession Exp 16>\r\n<Escape Level 99999>\r\n<Race:insect>\r\n<Temporary use skill:5043>\r\n<Predatory invalid>"
+Enemy 1264
+ Name "Beelzebub C"
+ Notes "<Profession Exp 16>\r\n<Escape Level 99999>\r\n<Race:insect>\r\n<Temporary use skill:5044>\r\n<Predatory invalid>"
+Enemy 1265
+ Name "Arch Jelly"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Marine species>\r\n<Temporary use skill:3614>\r\n<Steel list 1,I,73,8>\r\n<Steel list 1,A,1559,16>\r\n<Steel list 2,I,323,2>\r\n<Steel list 3,I,226,8>\r\n"
+Enemy 1266
+ Name "Elder Scylla"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Scura>\r\n<Temporary use skill:5055>\r\n<Steel list 1,I,3,4>\r\n<Steel list 1,W,607,16>\r\n<Steel list 2,I,335,2>\r\n<Steel list 3,I,202,3>\r\n"
+Enemy 1267
+ Name "Poseidoness"
+ Notes "<Occupation Exp 47>\r\n<Escape Level 99999>\r\n<Race:Marine species>\r\n<Temporary use skill:5061>"
+Enemy 1268
+ Name "Succubus A"
+ Notes "<Occupation Exp 3>\r\n<Escape Level 99999>\r\n<Race:Bad luck>\r\n<Temporary use skill:4019>\r\n<Steel list 1,I,52,4>\r\n<Steel list 1,A,1473,16>\r\n<Steel list 2,I,415,2>\r\n<Steel list 3,I,222,4>\r\n<Steel list 4,A,1893,8>\r\n<Accuracy 50%>"
+Enemy 1269
+ Name "Succubus B"
+ Notes "<Occupation Exp 3>\r\n<Escape Level 99999>\r\n<Race:Bad luck>\r\n<Temporary use skill:4021>\r\n<Steel list 1,I,64,4>\r\n<Steel list 1,A,1476,16>\r\n<Steel list 2,I,419,2>\r\n<Steel list 3,I,222,4>\r\n<Steel list 4,A,1894,8>\r\n<Accuracy 50%>"
+Enemy 1270
+ Name "Succubus C"
+ Notes "<Occupation Exp 3>\r\n<Escape Level 99999>\r\n<Race:Bad luck>\r\n<Temporary use skill:4022>\r\n<Steel list 1,I,68,4>\r\n<Steel list 1,A,1479,16>\r\n<Steel list 2,I,424,2>\r\n<Steel list 3,I,222,4>\r\n<Steel list 4,A,1895,8>\r\n<Accuracy 50%>"
+Enemy 1271
+ Name "Succubus D"
+ Notes "<Occupation Exp 3>\r\n<Escape Level 99999>\r\n<Race:Bad luck>\r\n<Temporary use skill:4019>\r\n<Steel list 1,I,72,4>\r\n<Steel list 1,A,1482,16>\r\n<Steel list 2,I,423,2>\r\n<Steel list 3,I,222,4>\r\n<Steel list 4,A,1896,8>\r\n<Accuracy 50%>"
+Enemy 1272
+ Name "Meiccubus"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Bad luck>\r\n<Temporary use skill:4122>\r\n<Steel list 1,I,21,2>\r\n<Steel list 1,I,64,4>\r\n<Steel list 2,I,418,2>\r\n<Steel list 3,I,222,4>\r\n<Steel list 4,A,1897,8>\r\n<Accuracy 50%>"
+Enemy 1273
+ Name "Maccubus"
+ Notes "<Occupation Exp 15>\r\n<Escape Level 99999>\r\n<Race:Bad luck>\r\n<Temporary use skill:5076>\r\n<Steel list 1,I,21,2>\r\n<Steel list 1,A,1201,16>\r\n<Steel list 2,I,394,2>\r\n<Steel list 3,I,222,4>\r\n<Accuracy 50%>"
+Enemy 1274
+ Name "Mincubus"
+ Notes "<Occupation Exp 10>\r\n<Escape Level 99999>\r\n<Race:Bad luck>\r\n<Temporary use skill:5084>\r\n<Steel list 1,I,21,2>\r\n<Steel list 1,A,1201,16>\r\n<Steel list 2,I,415,2>\r\n<Steel list 3,I,222,4>\r\n<Accuracy 50%>"
+Enemy 1275
+ Name "Lencubus"
+ Notes "<Occupation Exp 13>\r\n<Escape Level 99999>\r\n<Race:Bad luck>\r\n<Temporary use skill:4019>\r\n<Steel list 1,I,21,2>\r\n<Steel list 1,A,1201,16>\r\n<Steel list 2,I,342,2>\r\n<Steel list 3,I,222,4>\r\n<Accuracy 50%>"
+Enemy 1276
+ Name "Succubus"
+ Notes "<Occupation Exp 46>\r\n<Escape Level 99999>\r\n<Race:Bad luck>\r\n<Temporary use skill:5093>\r\n<Predatory invalid>\r\n<Accuracy 50%>"
+Enemy 1277
+ Name "Natasha"
+ Notes "<Occupation Exp 46>\r\n<Escape Level 99999>\r\n<Race:Bad luck>\r\n<Temporary use skill:5093>\r\n<Predatory invalid>\r\n<Accuracy 50%>"
+Enemy 1278
+ Name "Scylla Maid"
+ Notes "<Occupation Exp 20>\r\n<Escape Level 99999>\r\n<Race:Scura>\r\n<Temporary use skill:5101>\r\n<Predatory invalid>"
+Enemy 1279
+ Name "Madame Insect"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:insect>\r\n<Temporary use skill:5113>\r\n<Steel list 1,I,60,4>\r\n<Steel list 1,I,5,8>\r\n<Steel list 2,I,345,2>\r\n<Steel list 3,I,214,4>\r\n"
+Enemy 1280
+ Name "Madame Umbrella"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Scura>\r\n<Temporary use skill:5118>\r\n<Steel list 1,I,3,4>\r\n<Steel list 1,I,56,4>\r\n<Steel list 2,I,325,2>\r\n<Steel list 3,I,202,3>\r\n"
+Enemy 1281
+ Name "Aradia"
+ Notes "<Occupation Exp 10>\r\n<Escape Level 99999>\r\n<Race:Demon>\r\n<Temporary use skill:5616>\r\n<Steel list 1,I,15,4>\r\n<Steel list 1,I,4,16>\r\n<Steel list 2,I,325,2>\r\n<Steel list 3,I,202,3>"
+Enemy 1282
+ Name "Candy"
+ Notes "<Occupation Exp 47>\r\n<Escape Level 99999>\r\n<Race:Demon>\r\n<Temporary use skill:5132>\r\n<Steel list 4,A,1898,8>"
+Enemy 1283
+ Name "Basilisk"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:A monster>\r\n<Temporary use skill:5143>\r\n<Steel list 1,I,20,2>\r\n<Steel list 1,A,1461,16>\r\n<Steel list 2,I,330,2>\r\n<Steel list 3,I,192,3>\r\n<Accuracy 50%>"
+Enemy 1284
+ Name "Dragon Girl"
+ Notes "<Occupation Exp 10>\r\n<Escape Level 99999>\r\n<Race:dragon>\r\n<Temporary use skill:5149>\r\n<Steel list 1,I,52,4>\r\n<Steel list 1,A,1493,16>\r\n<Steel list 2,I,358,2>\r\n<Steel list 3,I,223,4>\r\n"
+Enemy 1285
+ Name "Salamander"
+ Notes "<Occupation Exp 48>\r\n<Escape Level 99999>\r\n<Race:dragon>\r\n<Temporary use skill:5155>\r\n<Predatory invalid>\r\n<Accuracy 100%>"
+Enemy 1287
+ Name "Gelatinous Cube Girl"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Slime>\r\n<Temporary use skill:5162>\r\n<Steel list 1,I,72,4>\r\n<Steel list 1,A,154,16>\r\n<Steel list 2,I,422,2>\r\n<Steel list 3,I,218,4>\r\n"
+Enemy 1288
+ Name "Youki"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:Fellow>\r\n<Temporary use skill:4005>\r\n<Steel list 1,I,3,4>\r\n<Steel list 1,I,215,8>\r\n<Steel list 2,I,378,2>\r\n<Steel list 3,I,215,4>\r\n<Steel list 4,A,1899,8>\r\n"
+Enemy 1289
+ Name "Tiger Girl"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:A monster>\r\n<Temporary use skill:3535>\r\n<Steel list 1,I,8,4>\r\n<Steel list 1,W,315,16>\r\n<Steel list 2,I,431,2>\r\n<Steel list 3,I,194,3>\r\n<Accuracy 50%>"
+Enemy 1290
+ Name "Vampire"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:vampire>\r\n<Temporary use skill:5173>\r\n<Steel list 1,I,21,2>\r\n<Steel list 1,A,1057,16>\r\n<Steel list 2,I,313,2>\r\n<Steel list 3,I,224,4>\r\n<Steel list 4,A,1900,8>\r\n"
+Enemy 1291
+ Name "Jellaila"
+ Notes "<Occupation Exp 6>\r\n<Escape Level 99999>\r\n<Race:Apoptosis>\r\n<Temporary use skill:5183>\r\n<Steel list 1,I,22,4>\r\n<Steel list 1,A,1526,16>\r\n<Steel list 3,I,235,8>\r\n"
+Enemy 1292
+ Name "Libo-Libo"
+ Notes "<Occupation Exp 6>\r\n<Escape Level 99999>\r\n<Race:Apoptosis>\r\n<Temporary use skill:5617>\r\n<Steel list 1,I,5,8>\r\n<Steel list 1,A,1538,16>\r\n<Steel list 3,I,235,8>\r\n<Accuracy 100%>\r\n<Physical Reflectance 100%>"
+Enemy 1293
+ Name "Amphil"
+ Notes "<Occupation Exp 6>\r\n<Escape Level 99999>\r\n<Race:Apoptosis>\r\n<Temporary use skill:4159>\r\n<Steel list 1,I,3,4>\r\n<Steel list 1,A,1530,16>\r\n<Steel list 3,I,235,8>\r\n"
+Enemy 1294
+ Name "Twinkell"
+ Notes "<Occupation Exp 12>\r\n<Escape Level 99999>\r\n<Race:Apoptosis>\r\n<Temporary use skill:5194>\r\n<Steel list 1,I,8,4>\r\n<Steel list 1,A,1364,16>\r\n<Steel list 3,I,235,8>\r\n<Accuracy 50%>\r\n<Physical Reflectance 100%>\r\n"
+Enemy 1295
+ Name "Lilith & Lilim"
+ Notes "<Occupation Exp 48>\r\n<Escape Level 99999>\r\n<Race:Bad luck>\r\n<Temporary use skill:5197>\r\n<Predatory invalid>\r\n<Accuracy 50%>"
+Enemy 1296
+ Name "Emily"
+ Notes "<Occupation Exp 25>\r\n<Escape Level 99999>\r\n<Race:Scura>\r\n<Temporary use skill:5206>\r\n<Predatory invalid>"
+Enemy 1297
+ Name "Cassandra"
+ Notes "<Occupation Exp 25>\r\n<Escape Level 99999>\r\n<Race:Demon>\r\n<Temporary use skill:5217>\r\n<Predatory invalid>"
+Enemy 1298
+ Name "Succubus Witch"
+ Notes "<Occupation Exp 48>\r\n<Escape Level 99999>\r\n<Race:Bad luck>\r\n<Temporary use skill:5225>\r\n<Steel list 4,A,1901,8>\r\n<Predatory invalid>"
+Enemy 1299
+ Name "Sea Anemone Girl"
+ Notes "<Occupation Exp 6>\r\n<Escape Level 99999>\r\n<Race:Marine species>\r\n<Temporary use skill:5229>\r\n<Steel list 1,I,5,8>\r\n<Steel list 1,A,1583,16>\r\n<Steel list 2,I,323,2>\r\n<Steel list 3,I,226,8>\r\n"
+Enemy 1300
+ Name "Sea Dragon Girl"
+ Notes "<Occupation Exp 6>\r\n<Escape Level 99999>\r\n<Race:dragon>\r\n<Temporary use skill:4141>\r\n<Steel list 1,I,5,8>\r\n<Steel list 1,W,425,16>\r\n<Steel list 2,I,323,2>\r\n<Steel list 3,I,226,3>\r\n"
+Enemy 1301
+ Name "Manta Girl"
+ Notes "<Occupation Exp 12>\r\n<Escape Level 99999>\r\n<Race:Marine species>\r\n<Temporary use skill:5235>\r\n<Steel list 1,I,12,16>\r\n<Steel list 1,A,1097,16>\r\n<Steel list 2,I,366,2>\r\n<Steel list 3,I,226,8>\r\n"
+Enemy 1302
+ Name "Narwhal Girl"
+ Notes "<Occupation Exp 12>\r\n<Escape Level 99999>\r\n<Race:mermaid>\r\n<Temporary use skill:5614>\r\n<Steel list 1,I,9,16>\r\n<Steel list 1,I,25,32>\r\n<Steel list 2,I,396,2>\r\n<Steel list 3,I,228,8>\r\n"
+Enemy 1303
+ Name "Trick Fairy"
+ Notes "<Occupation Exp 6>\r\n<Escape Level 99999>\r\n<Race:fairy>\r\n<Temporary use skill:5238>\r\n<Steel list 1,I,5,8>\r\n<Steel list 1,A,1373,16>\r\n<Steel list 2,I,412,2>\r\n<Steel list 3,I,229,8>\r\n<Accuracy 50%>"
+Enemy 1304
+ Name "Elf Amazoness"
+ Notes "<Occupation Exp 6>\r\n<Escape Level 99999>\r\n<Race:Elf>\r\n<Temporary use skill:3706>\r\n<Steel list 1,I,8,4>\r\n<Steel list 1,A,1710,16>\r\n<Steel list 2,I,319,2>\r\n<Steel list 3,I,230,8>\r\n<Steel list 4,A,1902,8>\r\n<Accuracy 100%>"
+Enemy 1305
+ Name "Carbuncle Girl"
+ Notes "<Occupation Exp 6>\r\n<Escape Level 99999>\r\n<Race:A monster>\r\n<Temporary use skill:3535>\r\n<Steel list 1,I,5,8>\r\n<Steel list 1,A,1009,16>\r\n<Steel list 2,I,379,2>\r\n<Steel list 3,I,65,8>\r\n<Accuracy 50%>"
+Enemy 1306
+ Name "Gigantic Girl"
+ Notes "<Occupation Exp 12>\r\n<Escape Level 99999>\r\n<Race:Elf>\r\n<Temporary use skill:5618>\r\n<Steel list 1,I,8,4>\r\n<Steel list 1,A,1024,16>\r\n<Steel list 2,I,329,2>\r\n<Steel list 3,I,69,8>\r\n<Steel list 4,A,1903,8>\r\n"
+Enemy 1307
+ Name "Queen Fairy"
+ Notes "<Occupation Exp 50>\r\n<Escape Level 99999>\r\n<Race:fairy>\r\n<Temporary use skill:5253>\r\n<Steel list 4,A,1904,8>\r\n<Predatory invalid>\r\n<Accuracy 50%>"
+Enemy 1308
+ Name "Queen Elf"
+ Notes "<Occupation Exp 50>\r\n<Escape Level 99999>\r\n<Race:Elf>\r\n<Temporary use skill:3709>\r\n<Steel list 4,A,1905,8>\r\n<Predatory invalid>\r\n<Accuracy 100%>"
+Enemy 1309
+ Name "Forest Alraune"
+ Notes "<Occupation Exp 6>\r\n<Escape Level 99999>\r\n<Race:plant>\r\n<Temporary use skill:3528>\r\n<Steel list 1,I,3,4>\r\n<Steel list 1,A,1609,16>\r\n<Steel list 2,I,390,2>\r\n<Steel list 3,I,232,8>\r\n"
+Enemy 1310
+ Name "Forest Dryad"
+ Notes "<Occupation Exp 6>\r\n<Escape Level 99999>\r\n<Race:plant>\r\n<Temporary use skill:5272>\r\n<Steel list 1,I,5,8>\r\n<Steel list 1,A,1230,16>\r\n<Steel list 2,I,367,2>\r\n<Steel list 3,I,232,8>\r\n"
+Enemy 1311
+ Name "Walraune"
+ Notes "<Occupation Exp 6>\r\n<Escape Level 99999>\r\n<Race:plant>\r\n<Temporary use skill:5279>\r\n<Steel list 1,I,22,4>\r\n<Steel list 1,A,1194,16>\r\n<Steel list 2,I,393,2>\r\n<Steel list 3,I,232,8>\r\n"
+Enemy 1312
+ Name "Green Dryad"
+ Notes "<Occupation Exp 6>\r\n<Escape Level 99999>\r\n<Race:plant>\r\n<Temporary use skill:5270>\r\n<Steel list 1,I,22,4>\r\n<Steel list 1,A,1585,16>\r\n<Steel list 2,I,381,2>\r\n<Steel list 3,I,232,8>"
+Enemy 1313
+ Name "Blue Dryad"
+ Notes "<Occupation Exp 6>\r\n<Escape Level 99999>\r\n<Race:plant>\r\n<Temporary use skill:5270>\r\n<Steel list 1,I,22,4>\r\n<Steel list 1,A,1549,16>\r\n<Steel list 2,I,380,2>\r\n<Steel list 3,I,232,8>"
+Enemy 1314
+ Name "Queen Alraune"
+ Notes "<Occupation Exp 50>\r\n<Escape Level 99999>\r\n<Race:plant>\r\n<Temporary use skill:5289>\r\n<Predatory invalid>"
+Enemy 1315
+ Name "Aži Dahāka"
+ Notes "<Occupation Exp 55>\r\n<Escape Level 99999>\r\n<Race:dragon>\r\n<Temporary use skill:5298>\r\n<Predatory invalid>\r\n<Attribute absorption 3,4>"
+Enemy 1316
+ Name "Mermaid Knight"
+ Notes "<Occupation Exp 6>\r\n<Escape Level 99999>\r\n<Race:mermaid>\r\n<Temporary use skill:3838>\r\n<Steel list 1,I,73,8>\r\n<Steel list 1,A,1370,16>\r\n<Steel list 2,I,357,2>\r\n<Steel list 3,I,234,8>\r\n"
+Enemy 1317
+ Name "Mermaid General"
+ Notes "<Occupation Exp 6>\r\n<Escape Level 99999>\r\n<Race:mermaid>\r\n<Temporary use skill:5303>\r\n<Steel list 1,I,5,8>\r\n<Steel list 1,A,1291,16>\r\n<Steel list 2,I,382,2>\r\n<Steel list 3,I,234,8>\r\n<Accuracy 50%>"
+Enemy 1318
+ Name "Lorelei"
+ Notes "<Occupation Exp 12>\r\n<Escape Level 99999>\r\n<Race:mermaid>\r\n<Temporary use skill:3842>\r\n<Steel list 1,I,2,4>\r\n<Steel list 1,A,1369,16>\r\n<Steel list 2,I,337,2>\r\n<Steel list 3,I,234,8>\r\n"
+Enemy 1319
+ Name "El"
+ Notes "<Occupation Exp 20>\r\n<Escape Level 99999>\r\n<Race:mermaid>\r\n<Temporary use skill:5314>\r\n<Predatory invalid>"
+Enemy 1320
+ Name "Queen Mermaid"
+ Notes "<Occupation Exp 50>\r\n<Escape Level 99999>\r\n<Race:mermaid>\r\n<Temporary use skill:5324>\r\n<Predatory invalid>"
+Enemy 1321
+ Name "Arachne A"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:insect>\r\n<Temporary use skill:5338>\r\n<Steel list 1,I,65,8>\r\n<Steel list 1,A,1450,16>\r\n<Steel list 2,I,319,2>\r\n<Steel list 3,I,175,2>"
+Enemy 1322
+ Name "Arachne B"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:insect>\r\n<Temporary use skill:5338>\r\n<Steel list 1,I,69,8>\r\n<Steel list 1,A,1450,16>\r\n<Steel list 2,I,321,2>\r\n<Steel list 3,I,175,2>"
+Enemy 1323
+ Name "Arachne C"
+ Notes "<Occupation Exp 4>\r\n<Escape Level 99999>\r\n<Race:insect>\r\n<Temporary use skill:5338>\r\n<Steel list 1,I,73,8>\r\n<Steel list 1,A,1450,16>\r\n<Steel list 2,I,315,2>\r\n<Steel list 3,I,175,2>"
+Enemy 1324
+ Name "Tsuchigumo"
+ Notes "<Occupation Exp 12>\r\n<Escape Level 99999>\r\n<Race:insect>\r\n<Temporary use skill:5342>\r\n<Steel list 1,I,17,2>\r\n<Steel list 1,A,1569,16>\r\n<Steel list 2,I,332,2>\r\n<Steel list 3,I,175,2>\r\n"
+Enemy 1325
+ Name "Arachne Lord"
+ Notes "<Occupation Exp 6>\r\n<Escape Level 99999>\r\n<Race:insect>\r\n<Temporary use skill:5338>\r\n<Steel list 1,I,22,4>\r\n<Steel list 1,I,29,32>\r\n<Steel list 2,I,351,2>\r\n<Steel list 3,I,175,2>\r\n"
+Enemy 1326
+ Name "Atlach-Nacha"
+ Notes "<Occupation Exp 12>\r\n<Escape Level 99999>\r\n<Race:insect>\r\n<Temporary use skill:5338>\r\n<Steel list 1,I,12,16>\r\n<Steel list 1,A,251,64>\r\n<Steel list 2,I,354,2>\r\n<Steel list 3,I,175,2>\r\n"
+Enemy 1327
+ Name "Spider Princess"
+ Notes "<Occupation Exp 50>\r\n<Escape Level 99999>\r\n<Race:insect>\r\n<Temporary use skill:5358>\r\n<Predatory invalid>"
+Enemy 1328
+ Name "Conquista"
+ Notes "<Occupation Exp 6>\r\n<Escape Level 99999>\r\n<Race:vampire>\r\n<Temporary use skill:5173>\r\n<Steel list 1,I,21,2>\r\n<Steel list 1,A,1282,16>\r\n<Steel list 2,I,304,2>\r\n<Steel list 3,I,224,4>\r\n<Steel list 4,A,1906,8>"
+Enemy 1329
+ Name "Vendetta"
+ Notes "<Occupation Exp 6>\r\n<Escape Level 99999>\r\n<Race:vampire>\r\n<Temporary use skill:5173>\r\n<Steel list 1,I,22,2>\r\n<Steel list 1,A,1288,16>\r\n<Steel list 2,I,359,2>\r\n<Steel list 3,I,224,4>\r\n<Steel list 4,A,1907,8>"
+Enemy 1330
+ Name "Elder Vampire"
+ Notes "<Occupation Exp 12>\r\n<Escape Level 99999>\r\n<Race:vampire>\r\n<Temporary use skill:4159>\r\n<Steel list 1,I,20,2>\r\n<Steel list 1,A,1216,16>\r\n<Steel list 2,I,313,2>\r\n<Steel list 3,I,224,4>\r\n"
+Enemy 1331
+ Name "Carmilla"
+ Notes "<Occupation Exp 20>\r\n<Escape Level 99999>\r\n<Race:vampire>\r\n<Temporary use skill:5373>\r\n<Steel list 4,A,1908,8>\r\n<Predatory invalid>\r\n<Accuracy 50%>"
+Enemy 1332
+ Name "Elizabeth"
+ Notes "<Occupation Exp 20>\r\n<Escape Level 99999>\r\n<Race:vampire>\r\n<Temporary use skill:5379>\r\n<Steel list 4,A,1909,8>\r\n<Predatory invalid>"
+Enemy 1333
+ Name "Queen Vampire"
+ Notes "<Occupation Exp 50>\r\n<Escape Level 99999>\r\n<Race:vampire>\r\n<Temporary use skill:5389>\r\n<Steel list 4,A,1910,8>\r\n<Predatory invalid>\r\n<Accuracy 50%>"
+Enemy 1334
+ Name "Master Shadow"
+ Notes "<Occupation Exp 6>\r\n<Escape Level 99999>\r\n<Race:ghost>\r\n<Temporary use skill:3914>\r\n<Steel list 1,I,5,8>\r\n<Steel list 1,A,1400,16>\r\n<Steel list 2,I,311,2>\r\n<Steel list 3,I,210,4>\r\n<Steel list 4,A,1911,8>\r\n"
+Enemy 1335
+ Name "Enera"
+ Notes "<Occupation Exp 6>\r\n<Escape Level 99999>\r\n<Race:Fellow>\r\n<Temporary use skill:3740>\r\n<Steel list 1,I,22,4>\r\n<Steel list 1,A,1214,16>\r\n<Steel list 2,I,408,2>\r\n<Steel list 3,I,236,8>\r\n"
+Enemy 1336
+ Name "Kirin"
+ Notes "<Occupation Exp 6>\r\n<Escape Level 99999>\r\n<Race:Fellow>\r\n<Temporary use skill:3740>\r\n<Steel list 1,I,5,8>\r\n<Steel list 1,A,1250,16>\r\n<Steel list 2,I,403,2>\r\n<Steel list 3,I,236,8>\r\n<Steel list 4,A,1912,8>\r\n<Accuracy 50%>"
+Enemy 1337
+ Name "Jakotsu-onna"
+ Notes "<Occupation Exp 6>\r\n<Escape Level 99999>\r\n<Race:Fellow>\r\n<Temporary use skill:4740>\r\n<Steel list 1,I,5,8>\r\n<Steel list 1,A,1382,16>\r\n<Steel list 2,I,383,2>\r\n<Steel list 3,I,236,8>\r\n<Steel list 4,A,1913,8>\r\n"
+Enemy 1338
+ Name "Behemoth"
+ Notes "<Occupation Exp 12>\r\n<Escape Level 99999>\r\n<Race:A monster>\r\n<Temporary use skill:5413>\r\n<Steel list 1,I,8,4>\r\n<Steel list 1,A,1379,16>\r\n<Steel list 2,I,371,2>\r\n<Steel list 3,I,238,8>\r\n<Accuracy 50%>"
+Enemy 1339
+ Name "Wyvern"
+ Notes "<Occupation Exp 10>\r\n<Escape Level 99999>\r\n<Race:dragon>\r\n<Temporary use skill:5422>\r\n<Steel list 1,I,3,4>\r\n<Steel list 1,A,1494,16>\r\n<Steel list 2,I,386,2>\r\n<Steel list 3,I,237,8>\r\n<Accuracy 50%>"
+Enemy 1340
+ Name "Kyoryuu"
+ Notes "<Occupation Exp 12>\r\n<Escape Level 99999>\r\n<Race:dragon>\r\n<Temporary use skill:5426>\r\n<Steel list 1,I,237,4>\r\n<Steel list 1,A,1024,16>\r\n<Steel list 2,I,435,2>\r\n<Steel list 3,I,237,8>\r\n"
+Enemy 1341
+ Name "Succubus Monk"
+ Notes "<Occupation Exp 6>\r\n<Escape Level 99999>\r\n<Race:Bad luck>\r\n<Temporary use skill:4019>\r\n<Steel list 1,I,8,4>\r\n<Steel list 1,A,1083,16>\r\n<Steel list 2,I,358,2>\r\n<Steel list 3,I,222,4>\r\n<Steel list 4,A,1914,8>\r\n<Accuracy 50%>"
+Enemy 1342
+ Name "Demon Monk"
+ Notes "<Occupation Exp 6>\r\n<Escape Level 99999>\r\n<Race:Demon>\r\n<Temporary use skill:4651>\r\n<Steel list 1,I,3,4>\r\n<Steel list 1,A,1301,16>\r\n<Steel list 2,I,402,2>\r\n<Steel list 3,I,236,8>\r\n<Steel list 4,A,1915,8>\r\n<Accuracy 50%>"
+Enemy 1343
+ Name "Scylla Servant"
+ Notes "<Occupation Exp 6>\r\n<Escape Level 99999>\r\n<Race:Scura>\r\n<Temporary use skill:5101>\r\n<Steel list 1,I,3,4>\r\n<Steel list 1,A,1618,16>\r\n<Steel list 2,I,393,2>\r\n<Steel list 3,I,202,3>\r\n"
+Enemy 1344
+ Name "Guivre Girl"
+ Notes "<Occupation Exp 6>\r\n<Escape Level 99999>\r\n<Race:Demon>\r\n<Temporary use skill:4651>\r\n<Steel list 1,I,5,8>\r\n<Steel list 1,A,1367,16>\r\n<Steel list 2,I,350,2>\r\n<Steel list 3,I,236,8>\r\n"
+Enemy 1345
+ Name "Kokka"
+ Notes "<Occupation Exp 18>\r\n<Escape Level 99999>\r\n<Race:Bad luck>\r\n<Temporary use skill:5094>\r\n<Steel list 4,A,1916,8>\r\n<Predatory invalid>\r\n<Accuracy 50%>"
+Enemy 1346
+ Name "Kokuja"
+ Notes "<Occupation Exp 18>\r\n<Escape Level 99999>\r\n<Race:Lamia>\r\n<Temporary use skill:3802>\r\n<Predatory invalid>"
+Enemy 1347
+ Name "Kurobara"
+ Notes "<Occupation Exp 18>\r\n<Escape Level 99999>\r\n<Race:vampire>\r\n<Temporary use skill:5173>\r\n<Steel list 4,A,1917,8>\r\n<Predatory invalid>"
+Enemy 1348
+ Name "Black Alice (1st Form)"
+ Notes "<Occupation Exp 0>\r\n<Escape Level 99999>\r\n<Race:Demon>\r\n<Temporary use skill:5445>\r\n<Steel list 4,A,1918,8>\r\n<Predatory invalid>"
+Enemy 1349
+ Name "Black Alice (2nd Form)"
+ Notes "<Occupation Exp 0>\r\n<Escape Level 99999>\r\n<Race:Demon>\r\n<Temporary use skill:5453>\r\n<Predatory invalid>"
+Enemy 1350
+ Name "Black Alice (3rd Form)"
+ Notes "<Occupation Exp 99>\r\n<Escape Level 99999>\r\n<Race:Demon>\r\n<Temporary use skill:5462>\r\n<Predatory invalid>"
+Enemy 1351
+ Name "Ice Witch"
+ Notes "<Occupation Exp 7>\r\n<Escape Level 99999>\r\n<Race:Demon>\r\n<Temporary use skill:4706>\r\n<Steel list 1,I,5,8>\r\n<Steel list 1,A,1498,16>\r\n<Steel list 2,I,424,2>\r\n<Steel list 3,I,236,8>\r\n<Steel list 4,A,1919,8>\r\n"
+Enemy 1352
+ Name "Polar Bear Girl"
+ Notes "<Occupation Exp 7>\r\n<Escape Level 99999>\r\n<Race:A monster>\r\n<Temporary use skill:3535>\r\n<Steel list 1,I,57,8>\r\n<Steel list 1,A,1304,16>\r\n<Steel list 2,I,416,2>\r\n<Steel list 3,I,238,8>\r\n<Accuracy 50%>"
+Enemy 1353
+ Name "Angel Soldier A"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:angel>\r\n<Temporary use skill:5479>\r\n<Steel list 1,I,3,4>\r\n<Steel list 1,I,77,8>\r\n<Steel list 2,I,329,2>\r\n<Steel list 3,I,241,8>\r\n<Steel list 4,A,1920,8>"
+Enemy 1354
+ Name "Angel Soldier B"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:angel>\r\n<Temporary use skill:5479>\r\n<Steel list 1,I,8,4>\r\n<Steel list 1,I,77,8>\r\n<Steel list 2,I,319,2>\r\n<Steel list 3,I,241,8>\r\n<Steel list 4,A,1920,8>"
+Enemy 1355
+ Name "Angel Soldier C"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:angel>\r\n<Temporary use skill:5479>\r\n<Steel list 1,I,77,8>\r\n<Steel list 1,I,6,16>\r\n<Steel list 2,I,316,2>\r\n<Steel list 3,I,241,8>\r\n<Steel list 4,A,1920,8>"
+Enemy 1356
+ Name "Angel Soldier D"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:angel>\r\n<Temporary use skill:5479>\r\n<Steel list 1,I,22,4>\r\n<Steel list 1,I,77,8>\r\n<Steel list 2,I,339,2>\r\n<Steel list 3,I,241,8>\r\n<Steel list 4,A,1920,8>"
+Enemy 1357
+ Name "Angel Soldier E"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:angel>\r\n<Temporary use skill:5479>\r\n<Steel list 1,I,77,8>\r\n<Steel list 1,I,12,16>\r\n<Steel list 2,I,360,2>\r\n<Steel list 3,I,241,8>\r\n<Steel list 4,A,1920,8>"
+Enemy 1358
+ Name "Trinity A"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:angel>\r\n<Temporary use skill:5490>\r\n<Steel list 1,I,6,16>\r\n<Steel list 1,A,1406,16>\r\n<Steel list 2,I,424,2>\r\n<Steel list 3,I,241,8>\r\n<Steel list 4,A,1921,8>"
+Enemy 1359
+ Name "Trinity B"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:angel>\r\n<Temporary use skill:5490>\r\n<Steel list 1,I,77,8>\r\n<Steel list 1,I,9,16>\r\n<Steel list 2,I,424,2>\r\n<Steel list 3,I,241,8>\r\n<Steel list 4,A,1921,8>"
+Enemy 1360
+ Name "Trinity C"
+ Notes "<Occupation Exp 5>\r\n<Escape Level 99999>\r\n<Race:angel>\r\n<Temporary use skill:5490>\r\n<Steel list 1,I,3,4>\r\n<Steel list 1,A,1268,16>\r\n<Steel list 2,I,424,2>\r\n<Steel list 3,I,241,8>\r\n<Steel list 4,A,1921,8>"
+Enemy 1361
+ Name "Uranus"
+ Notes "<Occupation Exp 7>\r\n<Escape Level 99999>\r\n<Race:angel>\r\n<Temporary use skill:5495>\r\n<Steel list 1,I,3,4>\r\n<Steel list 1,I,24,32>\r\n<Steel list 2,I,348,2>\r\n<Steel list 3,I,241,8>\r\n<Accuracy 50%>"
+Enemy 1362
+ Name "Eliciel"
+ Notes "<Occupation Exp 7>\r\n<Escape Level 99999>\r\n<Race:angel>\r\n<Temporary use skill:5499>\r\n<Steel list 1,I,22,4>\r\n<Steel list 1,A,1409,16>\r\n<Steel list 2,I,301,2>\r\n<Steel list 3,I,241,8>\r\n"
+Enemy 1363
+ Name "Cupid"
+ Notes "<Occupation Exp 7>\r\n<Escape Level 99999>\r\n<Race:angel>\r\n<Temporary use skill:5504>\r\n<Steel list 1,I,6,16>\r\n<Steel list 1,A,1636,16>\r\n<Steel list 2,I,304,2>\r\n<Steel list 3,I,241,8>\r\n<Steel list 4,A,1922,8>\r\n<Accuracy 50%>"
+Enemy 1364
+ Name "Valkyrie"
+ Notes "<Occupation Exp 7>\r\n<Escape Level 99999>\r\n<Race:angel>\r\n<Temporary use skill:5516>\r\n<Steel list 1,I,8,4>\r\n<Steel list 1,A,1632,16>\r\n<Steel list 2,I,425,2>\r\n<Steel list 3,I,241,8>\r\n<Steel list 4,A,1923,8>\r\n<Accuracy 50%>\r\n<Physical Reflectance 100%>"
+Enemy 1365
+ Name "Eden"
+ Notes "<Occupation Exp 55>\r\n<Escape Level 99999>\r\n<Race:angel>\r\n<Temporary use skill:5490>\r\n<Predatory invalid>\r\n<Attribute absorption 9>"
+Enemy 1366
+ Name "Heliel"
+ Notes "<Occupation Exp 15>\r\n<Escape Level 99999>\r\n<Race:angel>\r\n<Temporary use skill:5528>\r\n<Steel list 1,I,6,16>\r\n<Steel list 1,A,1063,16>\r\n<Steel list 2,I,376,2>\r\n<Steel list 3,I,241,8>\r\n"
+Enemy 1367
+ Name "Alciel"
+ Notes "<Occupation Exp 15>\r\n<Escape Level 99999>\r\n<Race:angel>\r\n<Temporary use skill:5534>\r\n<Steel list 1,I,9,16>\r\n<Steel list 1,A,1271,16>\r\n<Steel list 2,I,355,2>\r\n<Steel list 3,I,241,8>\r\n"
+Enemy 1368
+ Name "Sonya Mazda"
+ Notes "<Occupation Exp 99>\r\n<Escape Level 99999>\r\n<Race:Apoptosis>\r\n<Temporary use skill:3607>\r\n<Steel list 4,A,1924,8>\r\n<Predatory invalid>\r\n\r\n"
+Enemy 1369
+ Name "Sonya Mainyu"
+ Notes "<Occupation Exp 99>\r\n<Escape Level 99999>\r\n<Race:Apoptosis>\r\n<Temporary use skill:3607>\r\n<Steel list 4,A,1924,8>\r\n<Predatory invalid>\r\n\r\n"
+Enemy 1370
+ Name "Sonya Chaos"
+ Notes "<Occupation Exp 99>\r\n<Escape Level 99999>\r\n<Race:Apoptosis>\r\n<Temporary use skill:4563>\r\n<Steel list 4,A,1924,8>\r\n<Predatory invalid>"
+Enemy 1371
+ Name "Micaela"
+ Notes "<Occupation Exp 99>\r\n<Escape Level 99999>\r\n<Race:angel>\r\n<Temporary use skill:4588>\r\n<Steel list 4,A,1955,16>\r\n<Predatory invalid>\r\n<Accuracy 50%>\r\n<Physical Reflectance 100%>"
+Enemy 1372
+ Name "Lucifina"
+ Notes "<Occupation Exp 99>\r\n<Escape Level 99999>\r\n<Race:angel>\r\n<Temporary use skill:4588>\r\n<Steel list 4,A,1956,16>\r\n<Predatory invalid>\r\n<Accuracy 50%>"
+Enemy 1373
+ Name "Chimera Beast"
+ Notes "<Occupation Exp 7>\r\n<Escape Level 99999>\r\n<Race:Chimera>\r\n<Temporary use skill:5542>\r\n<Steel list 1,I,3,4>\r\n<Steel list 1,A,1127,16>\r\n<Steel list 2,I,329,2>\r\n<Steel list 3,I,225,4>\r\n<Accuracy 50%>"
+Enemy 1374
+ Name "S-2"
+ Notes "<Occupation Exp 7>\r\n<Escape Level 99999>\r\n<Race:Chimera>\r\n<Temporary use skill:5549>\r\n<Steel list 1,I,3,4>\r\n<Steel list 1,A,221,4>\r\n<Steel list 2,I,414,2>\r\n<Steel list 3,I,225,4>\r\n"
+Enemy 1375
+ Name "A-3"
+ Notes "<Occupation Exp 7>\r\n<Escape Level 99999>\r\n<Race:Chimera>\r\n<Temporary use skill:5557>\r\n<Steel list 1,I,76,4>\r\n<Steel list 1,A,1416,16>\r\n<Steel list 2,I,317,2>\r\n<Steel list 3,I,225,4>\r\n"
+Enemy 1376
+ Name "AD-5"
+ Notes "<Occupation Exp 7>\r\n<Escape Level 99999>\r\n<Race:Chimera>\r\n<Temporary use skill:5480>\r\n<Steel list 1,I,80,4>\r\n<Steel list 1,A,1413,16>\r\n<Steel list 2,I,338,2>\r\n<Steel list 3,I,225,4>\r\n"
+Enemy 1377
+ Name "Q-5"
+ Notes "<Occupation Exp 7>\r\n<Escape Level 99999>\r\n<Race:Chimera>\r\n<Temporary use skill:5061>\r\n<Steel list 1,I,3,4>\r\n<Steel list 1,A,1131,16>\r\n<Steel list 2,I,316,2>\r\n<Steel list 3,I,225,4>\r\n"
+Enemy 1378
+ Name "Fernandez"
+ Notes "<Occupation Exp 25>\r\n<Escape Level 99999>\r\n<Race:Elf>\r\n<Temporary use skill:3964>\r\n<Steel list 4,A,1925,8>\r\n<Predatory invalid>\r\n<Accuracy 50%>"
+Enemy 1379
+ Name "Titania"
+ Notes "<Occupation Exp 25>\r\n<Escape Level 99999>\r\n<Race:fairy>\r\n<Temporary use skill:5572>\r\n<Steel list 4,A,1926,8>\r\n<Predatory invalid>\r\n<Accuracy 50%>"
+Enemy 1380
+ Name "Roza"
+ Notes "<Occupation Exp 25>\r\n<Escape Level 99999>\r\n<Race:mermaid>\r\n<Temporary use skill:5576>\r\n<Predatory invalid>"
+Enemy 1381
+ Name "Queen Lamia"
+ Notes "<Occupation Exp 25>\r\n<Escape Level 99999>\r\n<Race:Lamia>\r\n<Temporary use skill:5581>\r\n<Predatory invalid>"
+Enemy 1382
+ Name "Former Queen Harpy"
+ Notes "<Occupation Exp 25>\r\n<Escape Level 99999>\r\n<Race:bird>\r\n<Temporary use skill:3650>\r\n<Steel list 4,A,1927,8>\r\n<Predatory invalid>\r\n<Accuracy 50%>"
+Enemy 1383
+ Name "Queen Scylla"
+ Notes "<Occupation Exp 25>\r\n<Escape Level 99999>\r\n<Race:Scura>\r\n<Temporary use skill:5589>\r\n<Predatory invalid>"
+Enemy 1384
+ Name "Tamamo no Mae"
+ Notes "<Occupation Exp 0>\r\n<Escape Level 99999>\r\n<Race:Fox>\r\n<Steel list 4,A,1928,16>\r\n<Predatory invalid>"
+Enemy 1386
+ Name "Luka Holy"
+ Notes "<Occupation Exp 15>\r\n<Escape Level 99999>\r\n<Race:angel>\r\n<Steel list 4,A,1929,4>\r\n<Predatory invalid>"
+Enemy 1387
+ Name "Luka Riona"
+ Notes "<Occupation Exp 15>\r\n<Escape Level 99999>\r\n<Race:angel>\r\n<Steel list 4,A,1930,4>\r\n<Predatory invalid>"
+Enemy 1388
+ Name "Luka Heine"
+ Notes "<Occupation Exp 15>\r\n<Escape Level 99999>\r\n<Race:angel>\r\n<Steel list 4,A,1931,4>\r\n<Predatory invalid>"
+Enemy 1389
+ Name "Luka Kyrie"
+ Notes "<Occupation Exp 15>\r\n<Escape Level 99999>\r\n<Race:angel>\r\n<Steel list 4,A,1932,4>\r\n<Predatory invalid>"
+Enemy 1390
+ Name "Fernandez"
+ Notes "<Occupation Exp 55>\r\n<Escape Level 99999>\r\n<Race:Elf>\r\n<Steel list 4,A,1925,8>\r\n<Predatory invalid>\r\n<Accuracy 50%>"
+Enemy 1391
+ Name "Titania"
+ Notes "<Occupation Exp 55>\r\n<Escape Level 99999>\r\n<Race:fairy>\r\n<Steel list 4,A,1926,8>\r\n<Predatory invalid>\r\n<Accuracy 50%>"
+Enemy 1392
+ Name "Roza"
+ Notes "<Occupation Exp 55>\r\n<Escape Level 99999>\r\n<Race:mermaid>\r\n<Predatory invalid>"
+Enemy 1393
+ Name "QueenLamia"
+ Notes "<Occupation Exp 55>\r\n<Escape Level 99999>\r\n<Race:Lamia>\r\n<Predatory invalid>"
+Enemy 1394
+ Name "Former Queen Harpy"
+ Notes "<Occupation Exp 55>\r\n<Escape Level 99999>\r\n<Race:bird>\r\n<Steel list 4,A,1927,8>\r\n<Predatory invalid>\r\n<Accuracy 50%>"
+Enemy 1395
+ Name "Queen Scylla"
+ Notes "<Occupation Exp 55>\r\n<Escape Level 99999>\r\n<Race:Scura>\r\n<Predatory invalid>"
+Enemy 1396
+ Name "Angel Killer"
+ Notes "<Occupation Exp 99>\r\n<Escape Level 99999>\r\n<Race:ghost>\r\n<Predatory invalid>\r\n<Attribute enhancement 34-200>"
+Enemy 1397
+ Name "Devil Killer"
+ Notes "<Occupation Exp 99>\r\n<Escape Level 99999>\r\n<Race:A human>\r\n<Predatory invalid>\r\n<Physical Reflectance 100%>\r\n<Attribute enhancement 12-200,32-200,33-200>"
+Enemy 1398
+ Name "Judgment"
+ Notes "<Occupation Exp 99>\r\n<Escape Level 99999>\r\n<Race:angel>\r\n<Predatory invalid>\r\n<Attribute reflex:9>"
+Enemy 1399
+ Name "World Breaker"
+ Notes "<Occupation Exp 99>\r\n<Escape Level 99999>\r\n<Race:angel>\r\n<Predatory invalid>\r\n<Attribute reflex:10>\r\n"
+

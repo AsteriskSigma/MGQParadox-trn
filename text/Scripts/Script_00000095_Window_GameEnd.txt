@@ -1,0 +1,6 @@
+"■ Window" -> "■ Window"
+"　ゲーム終了画面で、タイトルへ／シャットダウンを選択するウィンドウです。" -> "On the game end screen, you can select the shuttle to title / title window."
+"● オブジェクト初期化" -> "● Object initialization"
+"● ウィンドウ幅の取得" -> "● Obtain window width"
+"● ウィンドウ位置の更新" -> "● Update window position"
+"● コマンドリストの作成" -> "● Create command list"

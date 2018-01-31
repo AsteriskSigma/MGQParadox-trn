@@ -1,0 +1,4 @@
+"反省会" -> "Evaluation meeting"
+"？" -> "What?"
+"♪" -> "♪"
+"反省会" -> "Evaluation meeting"

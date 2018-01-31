@@ -1,0 +1,3 @@
+"【ナメクジ娘】" -> "【Slug Sister】"
+"えっ、9人以上のパーティが組めるの……！？" -> "Well, I can organize a party of nine people or more ...! What?"
+"すごいわね、そんなの初めて聞いたわ……" -> "That's amazing, I heard that for the first time ... ..."

@@ -1,0 +1,311 @@
+#actor_class_level_over?の修正
+
+#==============================================================================
+# ■ Game_Actors
+#==============================================================================
+class Game_Actors
+	#--------------------------------------------------------------------------
+	# ● 主人格のIDへ変換
+	#--------------------------------------------------------------------------
+	def original_id(actor_id)
+		return nil unless $data_actors[actor_id]
+		actor = $data_actors[actor_id]
+		(actor.persona_kind == :sub) ? actor.original_persona_id : actor_id
+	end
+	#--------------------------------------------------------------------------
+	# ● 存在する？
+	#--------------------------------------------------------------------------
+	def exist?(actor_id)
+		id = original_id(actor_id)
+		return id && @data[id] != nil
+	end
+end
+
+#アイテム入手時の諸々
+class Game_Temp
+	attr_reader :get_item_data
+	#--------------------------------------------------------------------------
+	# ● オブジェクト初期化
+	#--------------------------------------------------------------------------
+	alias hima_initialize initialize
+	def initialize
+		hima_initialize
+		@get_item_data = []
+	end
+	def clear_get_item
+		@get_item_data = []
+	end
+	
+	
+end
+
+
+#==============================================================================
+# ■ Game_Interpreter
+#==============================================================================
+class Game_Interpreter
+	#--------------------------------------------------------------------------
+	# ● アイテムの増減
+	#--------------------------------------------------------------------------
+	def command_126
+		$game_temp.clear_get_item
+		tmecex_game_interpreter_command_126
+		$game_temp.get_item_data.each{|item_data|
+			if item_data[:value] > 0 && $game_switches[NWConst::Sw::AUTO_MESSAGE] && !$game_party.in_battle
+				$game_message.add(sprintf(Vocab::ObtainItem,
+						(item_data[:item].enchant_item? ? "":"#{item_data[:value]}x") + " \\T[#{item_data[:item].id}]"))
+			end
+		}
+	end
+	#--------------------------------------------------------------------------
+	# ● 武器の増減
+	#--------------------------------------------------------------------------
+	def command_127
+		$game_temp.clear_get_item
+		tmecex_game_interpreter_command_127
+		$game_temp.get_item_data.each{|item_data|
+			if item_data[:value] > 0 && $game_switches[NWConst::Sw::AUTO_MESSAGE] && !$game_party.in_battle
+				$game_message.add(sprintf(Vocab::ObtainItem,
+						(item_data[:item].enchant_item? ? "":"#{item_data[:value]}x") + " \\W[#{item_data[:item].id}]"))
+			end
+		}
+	end
+	#--------------------------------------------------------------------------
+	# ● 防具の増減
+	#--------------------------------------------------------------------------
+	def command_128
+		$game_temp.clear_get_item
+		tmecex_game_interpreter_command_128
+		$game_temp.get_item_data.each{|item_data|
+			if item_data[:value] > 0 && $game_switches[NWConst::Sw::AUTO_MESSAGE] && !$game_party.in_battle
+				$game_message.add(sprintf(Vocab::ObtainItem,
+						(item_data[:item].enchant_item? ? "":"#{item_data[:value]}x") + " \\A[#{item_data[:item].id}]"))
+			end
+		}
+	end
+end
+
+module BattleManager
+	#--------------------------------------------------------------------------
+	# ● ドロップアイテムの獲得と表示 【再定義】
+	#--------------------------------------------------------------------------
+	def self.gain_drop_items
+		$game_temp.clear_get_item
+		
+		$game_troop.make_drop_items.each do |item|
+			$game_party.gain_item(item, 1)
+		end
+		
+		$game_temp.get_item_data.each{|item_data|
+			case item_data[:item]
+			when RPG::Item;   text = "\\T[#{item_data[:item].id}]"
+			when RPG::Weapon; text = "\\W[#{item_data[:item].id}]"
+			when RPG::Armor;  text = "\\A[#{item_data[:item].id}]"
+			end
+			$game_message.add(sprintf(Vocab::ObtainItem, text))
+		}
+		
+		wait_for_message
+	end
+end
+
+
+#表示色を全てのシーンで変える
+
+#==============================================================================
+# ■ Window_Base
+#==============================================================================
+class Window_Base < Window
+	def convert_escape_characters(text)
+		result = tmecex_window_base_convert_escape_characters(text)
+		result.gsub!(/\eJ\[(\d+)\]/i) { actor_class_name($1.to_i) }
+		result.gsub!(/\eK\[(\d+)\]/i) { actor_nickname($1.to_i) }
+		result.gsub!(/\eT\[(\d+)\]/i) {
+			item = $data_items[$1.to_i]
+			item ? "\eI[#{item.icon_index}]#{item.name}" : ""
+		}
+		result.gsub!(/\eW\[(\d+)\]/i) {
+			item = $data_weapons[$1.to_i]
+			item ? "\eI[#{item.icon_index}]\eC[#{item.display_color}]#{item.name}\eC[#{font_color_id}]" : ""
+		}
+		result.gsub!(/\eA\[(\d+)\]/i) {
+			item = $data_armors[$1.to_i]
+			item ? "\eI[#{item.icon_index}]\eC[#{item.display_color}]#{item.name}\eC[#{font_color_id}]" : ""
+		}
+		result.gsub!(/\eS\[(\d+)\]/i) {
+			skill = $data_skills[$1.to_i]
+			skill ? "\eI[#{skill.icon_index}]#{skill.name}" : ""
+		}
+		result
+	end
+	#現在のフォント色取得
+	def font_color_id
+		(0..33).each{|id|
+			c = contents.font.color
+			n = text_color(id)
+			if c.red == n.red && c.blue == n.blue && c.green == n.green
+				return id
+			end
+		}
+	end
+	def text_size_ex(text)
+		reset_font_settings
+		text = convert_escape_characters(text)
+		pos = {:x => 0, :y => 0, :new_x => 0, :height => calc_line_height(text)}
+		process_character_size(text.slice!(0, 1), text, pos) until text.empty?
+		Rect.new(0, 0, pos[:x], pos[:height])
+	end
+	def process_character_size(c, str, pos)
+		case c
+		when "\n"   # 改行
+			process_new_line(text, pos)
+		when "\e"   # 制御文字
+			process_escape_character_size(obtain_escape_code(str), str, pos)
+		else        # 普通の文字
+			pos[:x] += text_size(c).width
+		end
+	end
+	
+	def process_escape_character_size(code, text, pos)
+		case code.upcase
+		when 'C'
+			obtain_escape_param(text)
+		when 'I'
+			obtain_escape_param(text); pos[:x] += 24
+		when '{'
+			contents.font.size += 8 if contents.font.size <= 64
+		when '}'
+			contents.font.size -= 8 if contents.font.size >= 16
+		end
+	end
+	#--------------------------------------------------------------------------
+	# ● アイテム名の描画
+	#     enabled : 有効フラグ。false のとき半透明で描画
+	#--------------------------------------------------------------------------
+	def draw_item_name(item, x, y, enabled = true, width = 236)
+		f = contents.font.size
+		return unless item
+		draw_icon(item.icon_index, x, y, enabled)
+		change_color(item_color(item), enabled)
+		if item.enchant_item? 
+			f = contents.font.size
+			while (text_size(item.name).width*2/3) > width
+				contents.font.size -= 1 
+			end
+			t = text_size(item.name)
+			y += (line_height - t.height)/2
+			h = t.height
+			draw_text(x + 24, y, width, h, item.name)
+			contents.font.size = f
+		else
+			draw_text(x + 24, y, width, line_height, item.name)
+		end
+		
+		
+	end
+	
+	def item_color(item)
+		text_color(item.display_color)
+	end
+end
+class Window_ItemList < Window_Selectable
+	def item_color(item)
+		return tp_gauge_color2 if $game_party.favorite_item?(item)
+		super
+	end
+end
+
+#==============================================================================
+# ■ Window_PopupConfirm
+#==============================================================================
+class Window_PopupConfirm < Window_Selectable
+	
+	
+	#--------------------------------------------------------------------------
+	# ● ウィンドウ高さの取得
+	#--------------------------------------------------------------------------
+	def window_height
+		fitting_height(2) + title_line_size
+	end
+	
+	def title_line_size
+		@title ? text_size_ex(@title).height : 0
+	end
+end
+
+
+#==============================================================================
+# ■ Window_PopupConfirm
+#==============================================================================
+class Window_PopupConfirm < Window_Selectable
+	#--------------------------------------------------------------------------
+	# ● オブジェクト初期化
+	#--------------------------------------------------------------------------
+	def initialize
+		@title = ""
+		@name  = ""
+		super(0,0,1,1)
+		self.z = 200
+	end
+	#--------------------------------------------------------------------------
+	# ● ウィンドウ幅の取得
+	#--------------------------------------------------------------------------
+	def window_width
+		data = @title.split("\\n").map{|line|
+			text_size_ex(sprintf(line, @name)).width
+		}.max || 0
+		[data + 20 + standard_padding * 2 ,Graphics.width].min
+	end
+	#--------------------------------------------------------------------------
+	# ● ウィンドウ高さの取得
+	#--------------------------------------------------------------------------
+	def window_height
+		fitting_height(2) + title_line_size
+	end
+	
+	def title_line_size
+		return 0 unless @title
+		@title.split("\\n").map{|line|
+			text_size_ex(sprintf(line, @name)).height
+		}.inject(&:+) || 0
+	end
+	
+	#--------------------------------------------------------------------------
+	# ● 項目を描画する矩形の取得
+	#--------------------------------------------------------------------------
+	def item_rect(index)
+		rect = Rect.new
+		rect.width = item_width
+		rect.height = item_height
+		rect.x = (window_width / 2) - (item_width / 2)
+		rect.y = title_line_size + (index / col_max * item_height)
+		rect
+	end
+	#--------------------------------------------------------------------------
+	# ● タイトルの描画
+	#--------------------------------------------------------------------------
+	def draw_title
+		y = 0
+		@title.split("\\n").each{|line|
+			rect = text_size_ex(sprintf(line, @name))
+			x = (contents.width - rect.width) / 2
+			draw_text_ex(x,y ,sprintf(line, @name))
+			y += rect.height
+		}
+	end
+	#--------------------------------------------------------------------------
+	# ● リフレッシュ
+	#--------------------------------------------------------------------------
+	def refresh
+		move((Graphics.width/2) - (window_width/2), (Graphics.height/2) - (window_height/2), window_width, window_height)
+		update_padding
+		create_contents
+		draw_title
+		draw_all_items
+	end
+	
+end
+
+
+
+

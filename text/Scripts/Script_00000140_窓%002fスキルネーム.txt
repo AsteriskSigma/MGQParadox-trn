@@ -1,0 +1,7 @@
+"窓" -> "window"
+"スキルネーム" -> "Skill name"
+"更新履歴" -> "Change log"
+"■ Window" -> "■ Window"
+"● オブジェクト初期化" -> "● Object initialization"
+"● 更新処理" -> "● Update processing"
+"● リフレッシュ" -> "● Refresh"

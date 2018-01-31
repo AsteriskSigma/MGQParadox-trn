@@ -1,0 +1,524 @@
+=begin
+=Entertainment/Exchange prize
+
+CasinoPrize
+
+
+==Change log
+  Date     Version Author Comment
+
+=end
+
+#==============================================================================
+# ■ NWConst::Casino
+#==============================================================================
+module NWConst::Casino
+  CONFIRM_TEXT = "Exchange coins for %s. Are you sure?"
+end
+
+#==============================================================================
+# ■ Game_Interpreter
+#==============================================================================
+class Game_Interpreter
+  #--------------------------------------------------------------------------
+  # ● Increase (decrease) possession of coins
+  #--------------------------------------------------------------------------
+  def gain_coin(amount)
+    $game_party.gain_coin(amount)
+  end
+  #--------------------------------------------------------------------------
+  # ● Reduce possession of coins
+  #--------------------------------------------------------------------------
+  def lose_coin(amount)
+    $game_party.lose_coin(amount)
+  end
+  #--------------------------------------------------------------------------
+  # ● Calling for freebies
+  #--------------------------------------------------------------------------
+  def call_casino_prize(goods)
+    SceneManager.call(Scene_CasinoPrize)
+    SceneManager.scene.prepare(goods)
+    Fiber.yield
+  end
+end
+
+#==============================================================================
+# ■ Window_CasinoPrizeCommand
+#==============================================================================
+class Window_CasinoPrizeCommand < Window_HorzCommand
+  #--------------------------------------------------------------------------
+  # ● Object initialization
+  #--------------------------------------------------------------------------
+  def initialize
+    super(0, 0)
+  end
+  #--------------------------------------------------------------------------
+  # ● Obtain window width
+  #--------------------------------------------------------------------------
+  def window_width
+    480
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of the number of digits
+  #--------------------------------------------------------------------------
+  def col_max
+    return 2
+  end
+  #--------------------------------------------------------------------------
+  # ● Create command list
+  #--------------------------------------------------------------------------
+  def make_command_list
+    add_command("Exchange", :prize)
+    add_command("Exit", :cancel)
+  end  
+end
+
+#==============================================================================
+# ■ Window_CasinoPrizeStatus
+#==============================================================================
+class Window_CasinoPrizeStatus < Window_Base
+  #--------------------------------------------------------------------------
+  # ● Object initialization
+  #--------------------------------------------------------------------------
+  def initialize
+    super(304, 120, window_width, 360)
+    @item = nil
+    @page_index = 0
+  end
+  #--------------------------------------------------------------------------
+  # ● Obtain window width
+  #--------------------------------------------------------------------------
+  def window_width
+    return 336
+  end
+  #--------------------------------------------------------------------------
+  # ● Item set
+  #--------------------------------------------------------------------------
+  def set_item(after_item)
+    @item = after_item
+    @page_index = 0
+    refresh
+  end
+  #--------------------------------------------------------------------------
+  # ● Refresh
+  #--------------------------------------------------------------------------
+  def refresh
+    contents.clear
+    return if @item.nil?
+    draw_possession(4, 0)
+    return if @item.is_a?(RPG::Item)
+    draw_button(0, contents.height - (line_height * 2))
+    return if page_max == 0
+    
+    method_name = draw_methods[@page_index][:name]
+    index = draw_methods[@page_index][:index]
+    send(method_name, 0, 28, index)    
+  end
+  #--------------------------------------------------------------------------
+  # ● Drawing instruction method array acquisition
+  #--------------------------------------------------------------------------
+  def draw_methods
+    methods = []
+    param_page_max.times{|i| methods.push({:name => :draw_params, :index => i})}
+    enchant_page_max.times{|i| methods.push({:name => :draw_enchants, :index => i})}    
+    return methods
+  end  
+  #--------------------------------------------------------------------------
+  # ● Drawing number of possession
+  #--------------------------------------------------------------------------
+  def draw_possession(x, y)
+    rect = Rect.new(x, y, contents.width - 4 - x, line_height)
+    change_color(system_color)
+    draw_text(rect, Vocab::Possession)
+    change_color(normal_color)
+    draw_text(rect, $game_party.item_number(@item), 2)
+  end  
+  #--------------------------------------------------------------------------
+  # ● Drawing a button description
+  #--------------------------------------------------------------------------
+  def draw_button(x, y)
+    rect = Rect.new(x, y, contents.width, line_height)
+    change_color(system_color)
+    if 1 < page_max
+      draw_text(rect, Help.shop_equip_change)      
+      draw_text(rect, "#{@page_index + 1}/#{page_max}", 2)      
+    end
+    rect.y += line_height
+    draw_text(rect, Help.shop_param_compare)
+  end
+  #--------------------------------------------------------------------------
+  # ● Drawing basic performance
+  #--------------------------------------------------------------------------
+  def draw_params(x, y, index)
+    rect = Rect.new(x, y, contents.width, line_height)
+    param_names = @item.param_names[index * NWConst::Shop::STATUS_MAX, NWConst::Shop::STATUS_MAX]
+    change_color(system_color)
+    draw_text(rect, "Basic Stats")
+    rect.y += line_height + 2
+    change_color(normal_color)
+    param_names.each{|name|
+      draw_text(rect, name)
+      rect.y += line_height
+    }
+  end
+  #--------------------------------------------------------------------------
+  # ● Draw special effects
+  #--------------------------------------------------------------------------
+  def draw_enchants(x, y, index)
+    rect = Rect.new(x, y, contents.width, line_height)
+    enchant_names = @item.enchant_names[index * NWConst::Shop::STATUS_MAX, NWConst::Shop::STATUS_MAX]
+    change_color(system_color)
+    draw_text(rect, "Special Effects")
+    rect.y += line_height + 2
+    change_color(normal_color)
+    enchant_names.each{|name|
+      draw_text(rect, name)
+      rect.y += line_height
+    }
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of maximum number of pages for basic performance
+  #--------------------------------------------------------------------------
+  def param_page_max
+    return (@item.param_names.size - 1) / NWConst::Shop::STATUS_MAX + 1
+  end  
+  #--------------------------------------------------------------------------
+  # ● Acquire special effect maximum page number
+  #--------------------------------------------------------------------------
+  def enchant_page_max
+    return (@item.enchant_names.size - 1) / NWConst::Shop::STATUS_MAX + 1
+  end  
+  #--------------------------------------------------------------------------
+  # ● Acquiring the maximum number of pages
+  #--------------------------------------------------------------------------
+  def page_max
+    return param_page_max + enchant_page_max
+  end
+  #--------------------------------------------------------------------------
+  # ● Frame update
+  #--------------------------------------------------------------------------
+  def update
+    super
+    update_page
+  end
+  #--------------------------------------------------------------------------
+  # ● Updating pages
+  #--------------------------------------------------------------------------
+  def update_page
+    if visible && @item.is_a?(RPG::EquipItem) && page_max > 1
+      if Input.trigger?(:RIGHT)
+        @page_index = (@page_index + 1) % page_max
+        refresh
+      elsif Input.trigger?(:LEFT)
+        @page_index = ((@page_index - 1) + page_max) % page_max
+        refresh
+      end
+    end
+  end
+end
+
+#==============================================================================
+# ■ Window_CasinoPrizeLineUp
+#==============================================================================
+class Window_CasinoPrizeLineUp < Window_Selectable
+  #--------------------------------------------------------------------------
+  # ● Public instance variables
+  #--------------------------------------------------------------------------
+  attr_reader   :status_window            # Status window
+  #--------------------------------------------------------------------------
+  # ● Object initialization
+  #--------------------------------------------------------------------------
+  def initialize(goods)
+    super(0, 120, window_width, 360)
+    @goods = goods
+    @money = 0
+    refresh
+    select(0)
+  end
+  #--------------------------------------------------------------------------
+  # ● Obtain window width
+  #--------------------------------------------------------------------------
+  def window_width
+    return 304
+  end
+  #--------------------------------------------------------------------------
+  # ● Activating the window
+  #--------------------------------------------------------------------------
+  def activate
+    @compare_window.hide.activate if @compare_window
+    super
+  end
+  #--------------------------------------------------------------------------
+  # ● Deactivate the window
+  #--------------------------------------------------------------------------
+  def deactivate
+    @compare_window.hide.deactivate if @compare_window
+    super
+  end  
+  #--------------------------------------------------------------------------
+  # ● Acquisition of number of items
+  #--------------------------------------------------------------------------
+  def item_max
+    @data ? @data.size : 1
+  end
+  #--------------------------------------------------------------------------
+  # ● Item acquisition
+  #--------------------------------------------------------------------------
+  def item
+    @data[index]
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire the price of the item
+  #--------------------------------------------------------------------------
+  def price(item)
+    @price[item]
+  end
+  #--------------------------------------------------------------------------
+  # ● Set money
+  #--------------------------------------------------------------------------
+  def money=(money)
+    @money = money
+    refresh
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire the effective state of the selected item
+  #--------------------------------------------------------------------------
+  def current_item_enabled?
+    enable?(@data[index])
+  end
+  #--------------------------------------------------------------------------
+  # ● Whether items are displayed in the permitted state
+  #--------------------------------------------------------------------------
+  def enable?(item)
+    item && price(item) <= @money && !$game_party.item_max?(item)
+  end
+  #--------------------------------------------------------------------------
+  # ● Refresh
+  #--------------------------------------------------------------------------
+  def refresh
+    make_item_list
+    create_contents
+    draw_all_items
+  end
+  #--------------------------------------------------------------------------
+  # ● Create item list
+  #--------------------------------------------------------------------------
+  def make_item_list
+    @data = []
+    @price = {}
+    @goods.each{|data|
+      case data[1]
+      when :I; item = $data_items[data[2]]
+      when :W; item = $data_weapons[data[2]]
+      when :A; item = $data_armors[data[2]]
+      end
+      if item
+        @data.push(item)
+        @price[item] = data[0]
+      end
+    }
+  end
+  #--------------------------------------------------------------------------
+  # ● Drawing items
+  #--------------------------------------------------------------------------
+  def draw_item(index)
+    item = @data[index]
+    rect = item_rect(index)
+    name_width = rect.width - text_size(price(item)).width - 24
+    draw_item_name(item, rect.x, rect.y, enable?(item), name_width)
+    rect.width -= 4
+    draw_text(rect, price(item), 2)
+  end
+  #--------------------------------------------------------------------------
+  # ● Status Window Settings
+  #--------------------------------------------------------------------------
+  def status_window=(status_window)
+    @status_window = status_window
+    call_update_help
+  end
+  #--------------------------------------------------------------------------
+  # ● Setting of Performance Difference Comparison Window
+  #--------------------------------------------------------------------------
+  def compare_window=(compare_window)
+    @compare_window = compare_window
+    call_update_help
+  end
+  #--------------------------------------------------------------------------
+  # ● Help text update
+  #--------------------------------------------------------------------------
+  def update_help
+    @help_window.set_item(item) if @help_window
+    @status_window.set_item(item) if @status_window
+    @compare_window.item = item if @compare_window
+  end
+end
+
+#==============================================================================
+# ■ Window_CoinSimple
+#==============================================================================
+class Window_CoinSimple < Window_Gold
+  #--------------------------------------------------------------------------
+  # ● Acquisition of possession money
+  #--------------------------------------------------------------------------
+  def value
+    $game_party.coin
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of currency unit
+  #--------------------------------------------------------------------------
+  def currency_unit
+    "Coins"
+  end
+end
+
+#==============================================================================
+# ■ Scene_CasinoPrize
+#==============================================================================
+class Scene_CasinoPrize < Scene_MenuBase
+  #--------------------------------------------------------------------------
+  # ● Preparation
+  #--------------------------------------------------------------------------
+  def prepare(goods)
+    @goods = goods
+  end  
+  #--------------------------------------------------------------------------
+  # ● Start processing
+  #--------------------------------------------------------------------------
+  def start
+    super
+    create_help_window
+    create_gold_window
+    create_command_window
+    create_dummy_window
+    create_status_window
+    create_compare_window
+    create_lineup_window
+    create_popup_confirm_window
+  end  
+  #--------------------------------------------------------------------------
+  # ● Create a gold window
+  #--------------------------------------------------------------------------
+  def create_gold_window
+    @gold_window = Window_CoinSimple.new
+    @gold_window.viewport = @viewport
+    @gold_window.x = Graphics.width - @gold_window.width
+    @gold_window.y = @help_window.height
+  end
+  #--------------------------------------------------------------------------
+  # ● Create Command Window
+  #--------------------------------------------------------------------------
+  def create_command_window
+    @command_window = Window_CasinoPrizeCommand.new
+    @command_window.viewport = @viewport
+    @command_window.y = @help_window.height
+    @command_window.set_handler(:prize, method(:command_prize))
+    @command_window.set_handler(:cancel, method(:return_scene))
+  end
+  #--------------------------------------------------------------------------
+  # ● Command: Exchange
+  #--------------------------------------------------------------------------
+  def command_prize
+    @lineup_window.money = money
+    @dummy_window.hide
+    @lineup_window.show
+    @status_window.show
+    @lineup_window.activate
+  end
+  #--------------------------------------------------------------------------
+  # ● Create dummy window
+  #--------------------------------------------------------------------------
+  def create_dummy_window
+    wy = @command_window.y + @command_window.height
+    wh = Graphics.height - wy
+    @dummy_window = Window_Base.new(0, wy, Graphics.width, wh)
+    @dummy_window.viewport = @viewport
+  end
+  #--------------------------------------------------------------------------
+  # ● Create status window
+  #--------------------------------------------------------------------------
+  def create_status_window
+    @status_window = Window_CasinoPrizeStatus.new
+    @status_window.viewport = @viewport
+    @status_window.hide
+  end    
+  #--------------------------------------------------------------------------
+  # ● Creating performance difference comparison window
+  #--------------------------------------------------------------------------  
+  def create_compare_window
+    @compare_window = Window_ShopCompare.new
+    @compare_window.viewport = @viewport
+  end
+  #--------------------------------------------------------------------------
+  # ● Create lineup window
+  #--------------------------------------------------------------------------
+  def create_lineup_window
+    @lineup_window = Window_CasinoPrizeLineUp.new(@goods)
+    @lineup_window.viewport = @viewport
+    @lineup_window.hide
+    @lineup_window.set_handler(:ok, method(:prize_ok))
+    @lineup_window.set_handler(:cancel, method(:prize_cancel))
+    @lineup_window.help_window = @help_window
+    @lineup_window.status_window = @status_window
+    @lineup_window.compare_window = @compare_window    
+  end  
+  #--------------------------------------------------------------------------
+  # ● Exchange: decision
+  #--------------------------------------------------------------------------
+  def prize_ok
+    @popup_confirm_window.refresh
+    @popup_confirm_window.show.activate
+    @popup_confirm_window.set_name(@lineup_window.item.name)
+    @popup_confirm_window.select(0)
+  end
+  #--------------------------------------------------------------------------
+  # ● Exchange: Cancel
+  #--------------------------------------------------------------------------
+  def prize_cancel
+    @lineup_window.hide
+    @status_window.hide
+    @dummy_window.show
+    @help_window.clear
+    @command_window.activate
+  end
+  #--------------------------------------------------------------------------
+  # ● Create confirmation popup window
+  #--------------------------------------------------------------------------  
+  def create_popup_confirm_window
+    @popup_confirm_window = Window_PopupConfirm.new
+    @popup_confirm_window.set_title(NWConst::Casino::CONFIRM_TEXT)
+    @popup_confirm_window.viewport = @viewport
+    @popup_confirm_window.hide
+    @popup_confirm_window.set_handler(:ok, method(:confirm_ok))
+    @popup_confirm_window.set_handler(:cancel, method(:confirm_cancel))
+  end
+  #--------------------------------------------------------------------------
+  # ● Confirmation: determination
+  #--------------------------------------------------------------------------  
+  def confirm_ok
+    item = @lineup_window.item
+    price = @lineup_window.price(item)
+    $game_party.lose_coin(price)
+    $game_party.gain_item(item, 1)
+    Sound.play_shop
+    @gold_window.refresh
+    @lineup_window.money = money
+    @lineup_window.refresh
+    @popup_confirm_window.hide
+    @lineup_window.activate
+  end
+  #--------------------------------------------------------------------------
+  # ● Confirmation: Cancel
+  #--------------------------------------------------------------------------  
+  def confirm_cancel
+    @popup_confirm_window.hide
+    @lineup_window.activate
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of possession money
+  #--------------------------------------------------------------------------
+  def money
+    @gold_window.value
+  end
+end
+
+

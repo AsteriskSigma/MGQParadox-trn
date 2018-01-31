@@ -1,0 +1,19 @@
+// EVENT 0946
+Name "Event: Merchants 3"
+
+PictureDisplay(5,"80_s_mermaid_st02",0,0,0,0,100,100,0,0)
+PictureMove(5,null,0,0,0,0,100,100,255,0,60,true)
+ShowMessageFace("s_mermaid_fc1",1,0,2,1)
+ShowMessage("\\n<Peddler Mermaid>Welcome to the Peddler Mermaid Shop.\nToday, I've put together a collection of equipment!")
+Shop(1,15,0,0,false)
+605(1,65,0,0)
+605(1,125,0,0)
+605(1,675,0,0)
+605(1,900,0,0)
+605(2,168,0,0)
+605(2,200,0,0)
+ShowMessageFace("s_mermaid_fc1",1,0,2,2)
+ShowMessage("\\n<Peddler Mermaid>Thank you, come back again!")
+PictureClear(5)
+EndEventProcessing()
+0()

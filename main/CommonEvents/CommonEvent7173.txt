@@ -1,0 +1,23 @@
+// EVENT 7173
+Name "Melody: Defeat"
+
+RunCommonEvent(7000)
+PictureDisplay(5,"80_mob_odoriko1_st01",0,0,0,0,100,100,255,0)
+PictureClear(6)
+ShowMessageFace("mob_odoriko1_fc1",0,0,2,1)
+ShowMessage("\\n<Melody>You couldn't hold on, so it's my win.\nI'll be taking the bet now.♪")
+125(1,0,300)
+ShowMessageFace("",0,0,2,2)
+ShowMessage("Luka hands over 300G")
+ShowMessageFace("mob_odoriko1_fc1",0,0,2,3)
+ShowMessage("\\n<Melody>Come back and try again.\nI'll let you taste my dance as much as you want.♪")
+If(0,2331,1)
+ PictureClear(5)
+ 281(1)
+ TeleportPlayer(0,337,78,109,2,0)
+ 216(0)
+ 0()
+EndIf()
+EndEventProcessing()
+0()
+

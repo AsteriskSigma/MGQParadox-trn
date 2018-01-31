@@ -1,0 +1,7 @@
+"【クィーンヴァンパイア】" -> "【Queen Vampire】"
+"吸血鬼の女王は、死をも制するのだ。" -> "The queen of the vampire also controls the death."
+"さあ、鎌技奥義「レクイエムリーパー」を伝授してくれる。" -> "Now, you will be teaching the squirrel mystery \"Requiem Leaper\"."
+"選択" -> "Choice"
+"選択" -> "Choice"
+"【クィーンヴァンパイア】" -> "【Queen Vampire】"
+"その技で、闇の連れを増やすが良い。" -> "Increase the dark companion with that technique."

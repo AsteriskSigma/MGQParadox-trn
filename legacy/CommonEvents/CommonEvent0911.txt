@@ -1,0 +1,5 @@
+// EVENT 0911
+Name "Boss Level Rare Treasure Chests"
+
+RunCommonEvent(914)
+0()

@@ -1,0 +1,3 @@
+"【モリガン】" -> "【Morrigan】"
+"ところであたしがここにいるの気付いてる？" -> "By the way, do you notice me that I am here?"
+"色々カオスっててスルーか？" -> "Do you go through various chaos?"

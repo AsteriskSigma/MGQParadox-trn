@@ -1,0 +1,398 @@
+#==============================================================================
+# ■ Scene_Enchantstone
+#==============================================================================
+
+class Scene_EquipStone < Scene_Item
+	#--------------------------------------------------------------------------
+	# ● 開始処理
+	#--------------------------------------------------------------------------
+	def start  
+		super
+		create_stone_list_window
+		create_equip_stone_window
+	end
+	#--------------------------------------------------------------------------
+	# ● 簡易操作説明テキスト
+	#--------------------------------------------------------------------------
+	def show_key_text
+		case
+		when @category_window.active
+			[ShowKey_Help.favorite_mode(@item_window.favorite_mode)]
+		when @item_window.active
+			[ShowKey_Help.stone_shift_all,
+				ShowKey_Help.equip_info,
+				ShowKey_Help.favorite_item(@item_window.get_favorite_item_state),
+				ShowKey_Help.favorite_mode(@item_window.favorite_mode),
+				ShowKey_Help.lr_scroll]
+		when @equip_stone_window && @equip_stone_window.active
+			[ShowKey_Help.stone_shift]
+		when @stone_list_window && @stone_list_window.active
+			[ShowKey_Help.lr_scroll]
+		end
+	end
+	#--------------------------------------------------------------------------
+	# ● 性能差比較ウィンドウを非表示にするか
+	#--------------------------------------------------------------------------
+	def equip_info_hide?
+		@item_window.active == false
+	end
+	#--------------------------------------------------------------------------
+	# ● カテゴリウィンドウの作成
+	#--------------------------------------------------------------------------
+	def create_category_window
+		@category_window = Window_EquipItemCategory.new
+		@category_window.viewport = @viewport
+		@category_window.help_window = @help_window
+		@category_window.y = @help_window.height
+		@category_window.set_handler(:ok,     method(:on_category_ok))
+		@category_window.set_handler(:cancel, method(:return_scene))
+	end
+	#--------------------------------------------------------------------------
+	# ● アイテムウィンドウの生成
+	#--------------------------------------------------------------------------
+	def create_item_window
+		@item_window = Window_EnchantItemList.new(0, @category_window.y + @category_window.height,Graphics.width,@category_window.fitting_height(5))
+		@item_window.help_window = @help_window
+		@item_window.set_handler(:ok,     method(:on_item_ok))
+		@item_window.set_handler(:cancel, method(:on_item_cancel))
+		@item_window.set_handler(:extra, method(:on_item_extra))
+		@category_window.item_window = @item_window
+	end
+	#--------------------------------------------------------------------------
+	# ● 秘石ウィンドウの生成
+	#--------------------------------------------------------------------------
+	def create_stone_list_window
+		@stone_list_window = Window_StoneList.new()
+		@stone_list_window.help_window = @help_window
+		@stone_list_window.set_handler(:ok,     method(:on_stone_list_ok))
+		@stone_list_window.set_handler(:cancel, method(:on_stone_list_cancel))
+		@item_window.stone_list_window = @stone_list_window
+		
+	end
+	#--------------------------------------------------------------------------
+	# ● 装備秘石ウィンドウの作成
+	#--------------------------------------------------------------------------
+	def create_equip_stone_window
+		@equip_stone_window = Window_EquipStone.new
+		@equip_stone_window.help_window = @help_window
+		@equip_stone_window.set_handler(:ok,     method(:on_equip_stone_ok))
+		@equip_stone_window.set_handler(:cancel, method(:on_equip_stone_cancel))
+		@equip_stone_window.set_handler(:extra, method(:on_equip_stone_extra))	
+		@item_window.equip_stone_window = @equip_stone_window
+	end
+	
+	#--------------------------------------------------------------------------
+	# ● itemハンドラ
+	#--------------------------------------------------------------------------
+	def on_item_ok
+		@item_window.deactivate
+		@equip_stone_window.activate
+		@equip_stone_window.select(0)
+	end
+	def on_item_extra
+		
+		@item_window.item.clear_stones
+		@item_window.refresh
+		@equip_stone_window.refresh
+		@stone_list_window.refresh
+		equip_info_refresh
+	end
+	#--------------------------------------------------------------------------
+	# ● stone_listハンドラ
+	#--------------------------------------------------------------------------
+	def on_stone_list_ok
+		Sound.play_equip
+		@item_window.item.change_stone(@equip_stone_window.index,@stone_list_window.item)
+		@item_window.refresh
+		@stone_list_window.unselect
+		@equip_stone_window.activate
+		@stone_list_window.refresh
+		@equip_stone_window.refresh
+		@equip_stone_window.update_help
+		equip_info_refresh
+	end
+	
+	def on_stone_list_cancel
+		@stone_list_window.deactivate
+		@stone_list_window.unselect
+		@equip_stone_window.activate
+	end
+	#--------------------------------------------------------------------------
+	# ● equip_stoneハンドラ
+	#--------------------------------------------------------------------------
+	def on_equip_stone_ok
+		@equip_stone_window.deactivate
+		@stone_list_window.activate
+		@stone_list_window.select(0)
+	end
+	
+	def on_equip_stone_cancel
+		@equip_stone_window.deactivate
+		@equip_stone_window.unselect
+		@item_window.activate
+	end
+	
+	def on_equip_stone_extra
+		@item_window.item.change_stone(@equip_stone_window.index,nil)
+		@item_window.refresh
+		@equip_stone_window.refresh
+		@equip_stone_window.update_help
+		@stone_list_window.refresh
+		equip_info_refresh
+	end
+	
+end
+
+class Window_EnchantItemList < Window_ItemList
+	attr_writer :stone_list_window ,:equip_stone_window 
+	def initialize(x,y,w,h)
+		super(x, y, w, h)
+		refresh
+	end
+	
+	#--------------------------------------------------------------------------
+	# ● 決定やキャンセルなどのハンドリング処理
+	#--------------------------------------------------------------------------
+	def process_handling
+		return unless open? && active
+		return process_ok       if ok_enabled?        && Input.trigger?(:C)
+		return process_cancel   if cancel_enabled?    && Input.trigger?(:B)
+		return process_extra    if handle?(:extra)    && Input.trigger?(:A)
+		return process_pagedown if handle?(:pagedown) && Input.trigger?(:R)
+		return process_pageup   if handle?(:pageup)   && Input.trigger?(:L)
+	end
+	#--------------------------------------------------------------------------
+	# ○ 項目の選択（オーバーライド）
+	#--------------------------------------------------------------------------
+	def select(index)
+		super
+		@equip_stone_window.item = item
+	end
+	#--------------------------------------------------------------------------
+	# ● アイテムリストの作成
+	#--------------------------------------------------------------------------
+	def make_item_list
+		@data = ($game_party.enchant_weapons_data+ $game_party.enchant_armors_data).compact
+		sort_item_list
+		@data.map!(&:item_object).select!{|item|include?(item)}
+		@data.reject! {|item| !$game_party.favorite_item?(item) } if @favorite_mode
+	end
+	
+	#--------------------------------------------------------------------------
+	# ● アイテムリストの表示順調整
+	#--------------------------------------------------------------------------
+	def sort_item_list
+		@data.sort!{|a,b|
+			(a.item_number <=> b.item_number).nonzero? ||
+			(b.storehouse_item_number <=> a.storehouse_item_number).nonzero? ||
+			(a.item_object.sort_id <=> a.item_object.sort_id)
+		}
+	end
+  #--------------------------------------------------------------------------
+  # ● アイテムを許可状態で表示するかどうか
+  #--------------------------------------------------------------------------
+  def enable?(item)
+    item && item.stones.size > 0
+  end
+	
+	#--------------------------------------------------------------------------
+	# ● 項目の描画
+	#--------------------------------------------------------------------------
+	def draw_item(index)
+		item = @data[index]
+		if item
+			rect = item_rect(index)
+			#rect.width -= 4
+			draw_item_name(item, rect.x, rect.y, enable?(item))
+		end
+	end
+	
+	#--------------------------------------------------------------------------
+	# ● サブボタンが押されたときの処理
+	#--------------------------------------------------------------------------
+	def process_extra
+		Input.update
+		NWConst::Ability::REMOVE_SE.play
+		call_handler(:extra)
+	end
+end
+
+
+#==============================================================================
+# ■ Window_StoneList
+#==============================================================================
+class Window_StoneList < Window_ItemList
+	def initialize()
+		super(Graphics.width / 2, fitting_height(2) +fitting_height(1) + fitting_height(5) , Graphics.width / 2, Graphics.height - (fitting_height(2) +fitting_height(1) + fitting_height(5)))
+		refresh	
+	end
+	
+	#--------------------------------------------------------------------------
+	# ● ウィンドウの非アクティブ化
+	#--------------------------------------------------------------------------
+	def deactive
+		unselect
+		super
+	end
+	
+	#--------------------------------------------------------------------------
+	# ● アイテムをリストに含めるかどうか
+	#--------------------------------------------------------------------------
+	def include?(item)
+		return true if item == nil
+		item.is_a?(RPG::Item) && item.enchant_stone?
+	end
+	
+	#--------------------------------------------------------------------------
+	# ● 桁数の取得
+	#--------------------------------------------------------------------------
+	def col_max
+		return 1
+	end
+	#--------------------------------------------------------------------------
+	# ● アイテムを許可状態で表示するかどうか
+	#--------------------------------------------------------------------------
+	def enable?(item)
+		true
+	end
+	
+end
+
+
+
+#==============================================================================
+# ■ Window_EquipStone
+#==============================================================================
+class Window_EquipStone < Window_Command
+	#--------------------------------------------------------------------------
+	# ● 公開インスタンス変数
+	#-------------------------------------------------------------------------
+	attr_accessor   :item
+	#--------------------------------------------------------------------------
+	# ● オブジェクト初期化
+	#--------------------------------------------------------------------------
+	def initialize()
+		@item = nil
+		super(0,  fitting_height(2) +fitting_height(1) + fitting_height(5))
+		deactivate
+		unselect
+	end
+	
+	#--------------------------------------------------------------------------
+	# ● ウィンドウ幅の取得
+	#--------------------------------------------------------------------------
+	def window_width
+		Graphics.width / 2
+	end
+	#--------------------------------------------------------------------------
+	# ● ウィンドウ高さの取得
+	#--------------------------------------------------------------------------
+	def window_height
+		Graphics.height - (fitting_height(2) +fitting_height(1) + fitting_height(5)) 
+	end
+	#--------------------------------------------------------------------------
+	# ● アイテムの設定
+	#--------------------------------------------------------------------------
+	def item=(item)
+		unless @item == item
+			@item = item
+			refresh
+		end
+	end
+	#--------------------------------------------------------------------------
+	# ● コマンドリストの作成
+	#--------------------------------------------------------------------------
+	def make_command_list
+		return unless @item
+		@item.stones.each{|stone|
+			add_command(stone, :ok, true)
+		}
+	end
+	#--------------------------------------------------------------------------
+	# ● 項目の描画
+	#--------------------------------------------------------------------------
+	def draw_item(index)
+		prefix_text = "E:"
+		rect = item_rect_for_text(index)
+		change_color(normal_color)
+		draw_text(rect, prefix_text)   
+		return unless command_name(index)
+		rect.x += text_size(prefix_text).width
+		rect.width -= text_size(prefix_text).width
+		draw_item_name(command_name(index), rect.x, rect.y, command_enabled?(index))
+		change_color(system_color)    
+	end
+	#--------------------------------------------------------------------------
+	# ● 決定やキャンセルなどのハンドリング処理
+	#--------------------------------------------------------------------------
+	def process_handling
+		return unless open? && active
+		return process_ok       if ok_enabled?        && Input.trigger?(:C)
+		return process_cancel   if cancel_enabled?    && Input.trigger?(:B)
+		return process_extra    if handle?(:extra)    && Input.trigger?(:A)
+		return process_pagedown if handle?(:pagedown) && Input.trigger?(:R)
+		return process_pageup   if handle?(:pageup)   && Input.trigger?(:L)
+	end
+	#--------------------------------------------------------------------------
+	# ● サブボタンが押されたときの処理
+	#--------------------------------------------------------------------------
+	def process_extra
+		Input.update
+		NWConst::Ability::REMOVE_SE.play
+		call_handler(:extra)
+	end
+	#--------------------------------------------------------------------------
+	# ● ヘルプウィンドウの更新
+	#--------------------------------------------------------------------------
+	def update_help
+		super
+		@help_window.set_item(command_name(index))
+	end
+	
+	#--------------------------------------------------------------------------
+	# ● リフレッシュ
+	#--------------------------------------------------------------------------
+	def refresh
+		super
+	end
+end
+#==============================================================================
+# ■ Window_EquipItemCategory
+#==============================================================================
+class Window_EquipItemCategory < Window_ItemCategory
+	#--------------------------------------------------------------------------
+	# ● 桁数の取得
+	#--------------------------------------------------------------------------
+	def col_max
+		return 2
+	end
+	
+	#--------------------------------------------------------------------------
+	# ● コマンドリストの作成
+	#--------------------------------------------------------------------------
+	def make_command_list
+		add_command(Vocab::weapon,   :weapon)
+		add_command(Vocab::armor,    :armor)
+	end
+end
+
+#==============================================================================
+# ■ ShowKey_Help
+#==============================================================================
+module ShowKey_Help; end
+class << ShowKey_Help
+	#--------------------------------------------------------------------------
+	# ● 秘石画面
+	#--------------------------------------------------------------------------
+	def stone_shift_all
+		"#{Vocab.key_a}:全ての秘石を外す"
+	end
+	#--------------------------------------------------------------------------
+	# ●  秘石画面
+	#--------------------------------------------------------------------------
+	def stone_shift
+		"#{Vocab.key_a}:秘石を外す"
+	end
+	
+end
+

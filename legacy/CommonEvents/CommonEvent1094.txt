@@ -1,0 +1,10 @@
+// EVENT 1094
+Name "Talk: Berserker Armor"
+
+ChangeVariable(25,25,0,0,0)
+ShowMessageFace("heinrich_fc2",0,0,2,1)
+ShowMessage("\\n<Armored Berserker>Angel... Angel... Angeeeeeeelll!!")
+ShowMessageFace("",0,0,2,2)
+ShowMessage("The Armored Berserker rejected your attempt at conversation!")
+EndEventProcessing()
+0()

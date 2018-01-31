@@ -1,0 +1,197 @@
+=begin
+=図鑑/実績取得
+
+
+
+
+==更新履歴
+  Date     Version Author Comment
+
+=end
+
+
+
+#==============================================================================
+# ■ Game_Library
+#==============================================================================
+class Game_Library
+  #--------------------------------------------------------------------------
+  # ○ 総購入金額を加算する
+  #--------------------------------------------------------------------------
+  alias nw_gain_medal_addition_purchase_gold addition_purchase_gold
+  def addition_purchase_gold(value)
+    nw_gain_medal_addition_purchase_gold(value)
+    values = [1, 30000, 300000, 3000000]
+    values.each_with_index{|value, i|
+      break unless value <= purchase_gold
+      gain_medal(1001 + i)
+    }    
+  end
+  #--------------------------------------------------------------------------
+  # ○ 合成回数をカウントアップ
+  #--------------------------------------------------------------------------
+  alias nw_gain_medal_count_up_party_synthesize count_up_party_synthesize
+  def count_up_party_synthesize
+    nw_gain_medal_count_up_party_synthesize
+    values = [1, 50, 200, 500]
+    values.each_with_index{|value, i|
+      break unless value <= party_synthesize
+      gain_medal(1011 + i)
+    }
+  end
+  #--------------------------------------------------------------------------
+  # ○ 転職回数をカウントアップ
+  #--------------------------------------------------------------------------
+  alias nw_gain_medal_count_up_party_class_change count_up_party_class_change
+  def count_up_party_class_change
+    nw_gain_medal_count_up_party_class_change
+    values = [1, 10, 100, 500]
+    values.each_with_index{|value, i|
+      break unless value <= party_class_change
+      gain_medal(1021 + i)
+    }    
+  end
+  #--------------------------------------------------------------------------
+  # ○ 転種回数をカウントアップ
+  #--------------------------------------------------------------------------
+  alias nw_gain_medal_count_up_party_tribe_change count_up_party_tribe_change
+  def count_up_party_tribe_change
+    nw_gain_medal_count_up_party_tribe_change
+    values = [1, 5, 50, 300]
+    values.each_with_index{|value, i|
+      break unless value <= party_tribe_change
+      gain_medal(1031 + i)
+    }    
+  end  
+  #--------------------------------------------------------------------------
+  # ○ パーティが戦闘した回数をカウントアップ
+  #--------------------------------------------------------------------------
+  alias nw_gain_medal_count_up_party_battle count_up_party_battle
+  def count_up_party_battle
+    nw_gain_medal_count_up_party_battle
+    values = [1, 300, 1000, 3000]
+    values.each_with_index{|value, i|
+      break unless value <= party_battle
+      gain_medal(1041 + i)
+    }        
+  end
+  #--------------------------------------------------------------------------
+  # ○ パーティが逃亡した回数をカウントアップ
+  #--------------------------------------------------------------------------
+  alias nw_gain_medal_count_up_party_escape count_up_party_escape
+  def count_up_party_escape
+    nw_gain_medal_count_up_party_escape
+    values = [1, 10, 50, 150]
+    values.each_with_index{|value, i|
+      break unless value <= party_escape
+      gain_medal(1051 + i)
+    }        
+  end
+  #--------------------------------------------------------------------------
+  # ○ パーティが全滅した回数をカウントアップ
+  #--------------------------------------------------------------------------
+  alias nw_gain_medal_count_up_party_lose count_up_party_lose
+  def count_up_party_lose
+    nw_gain_medal_count_up_party_lose
+    values = [1, 30, 100, 500]
+    values.each_with_index{|value, i|
+      break unless value <= party_lose
+      gain_medal(1061 + i)
+    }        
+  end  
+  #--------------------------------------------------------------------------
+  # ○ パーティが撃破した総数をカウントアップ
+  #--------------------------------------------------------------------------
+  alias nw_gain_medal_count_up_party_defeat count_up_party_defeat
+  def count_up_party_defeat
+    nw_gain_medal_count_up_party_defeat
+    values = [500, 3000, 10000]
+    values.each_with_index{|value, i|
+      break unless value <= party_defeat
+      gain_medal(1071 + i)
+    }        
+  end    
+  #--------------------------------------------------------------------------
+  # ○ 職業開示率をチェック
+  #--------------------------------------------------------------------------
+  alias nw_gain_medal_check_open_class check_open_class
+  def check_open_class(id)
+    nw_gain_medal_check_open_class(id)
+    gain_medal(1201) if party_open_class == 1.0
+  end
+  #--------------------------------------------------------------------------
+  # ○ 種族開示率をチェック
+  #--------------------------------------------------------------------------
+  alias nw_gain_medal_check_open_tribe check_open_tribe
+  def check_open_tribe(id)
+    nw_gain_medal_check_open_tribe(id)
+    gain_medal(1202) if party_open_tribe == 1.0
+  end  
+end
+
+#==============================================================================
+# ■ Data_Library
+#==============================================================================
+class Data_Library
+  #--------------------------------------------------------------------------
+  # ○ 図鑑のアクター項目の完成度取得
+  #--------------------------------------------------------------------------
+  alias nw_gain_medal_collect_per_actor collect_per_actor
+  def collect_per_actor
+    per = nw_gain_medal_collect_per_actor
+    gain_medal(1301) if per == 1.0
+    return per
+  end
+  #--------------------------------------------------------------------------
+  # ○ 図鑑のエネミー項目の完成度取得
+  #--------------------------------------------------------------------------
+  alias nw_gain_medal_collect_per_enemy collect_per_enemy
+  def collect_per_enemy
+    per = nw_gain_medal_collect_per_enemy
+    gain_medal(1311) if per == 1.0
+    return per
+  end
+  #--------------------------------------------------------------------------
+  # ○ 図鑑の武器項目の完成度取得
+  #--------------------------------------------------------------------------
+  alias nw_gain_medal_collect_per_weapon collect_per_weapon
+  def collect_per_weapon
+    per = nw_gain_medal_collect_per_weapon
+    gain_medal(1321) if per == 1.0
+    return per
+  end
+  #--------------------------------------------------------------------------
+  # ○ 図鑑の防具項目の完成度取得
+  #--------------------------------------------------------------------------
+  alias nw_gain_medal_collect_per_armor collect_per_armor
+  def collect_per_armor
+    per = nw_gain_medal_collect_per_armor
+    gain_medal(1331) if per == 1.0
+    return per
+  end
+  #--------------------------------------------------------------------------
+  # ○ 図鑑のアクセサリ項目の完成度取得
+  #--------------------------------------------------------------------------
+  alias nw_gain_medal_collect_per_accessory collect_per_accessory
+  def collect_per_accessory
+    per = nw_gain_medal_collect_per_accessory
+    gain_medal(1341) if per == 1.0
+    return per
+  end
+  #--------------------------------------------------------------------------
+  # ○ 図鑑のアイテム項目の完成度取得
+  #--------------------------------------------------------------------------
+  alias nw_gain_medal_collect_per_item collect_per_item
+  def collect_per_item
+    per = nw_gain_medal_collect_per_item
+    gain_medal(1351) if per == 1.0
+    return per
+  end
+end
+
+
+
+
+
+
+

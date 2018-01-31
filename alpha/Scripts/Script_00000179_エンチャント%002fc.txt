@@ -1,0 +1,362 @@
+
+
+
+class Game_Temp
+	attr_accessor :weapons_size
+	attr_accessor :armors_size
+	
+	alias hima_enchant_initialize initialize
+	def initialize
+		hima_enchant_initialize
+		@weapons_size = $data_weapons.size
+		@armors_size = $data_armors.size
+	end
+end
+
+class Game_Actors
+	attr_reader :data
+end
+
+class Game_Party < Game_Unit
+	attr_accessor :enchant_items
+	attr_accessor :enchant_weapons
+	attr_accessor :enchant_armors
+	#--------------------------------------------------------------------------
+	# ○ Delete unreferenced data
+	#--------------------------------------------------------------------------
+	def garbage_collection
+		nodata = (@enchant_weapons + @enchant_armors).select{|data| data.item_number == 0 && data.storehouse_item_number == 0}.map(&:item_object)
+		garbage_data = nodata.reject{|item|$game_actors.data.compact.any?{|actor|actor.equips.compact.any?{|equip|equip == item}}}
+		garbage_data.each{|item| p item ; delete_item_data(item,false)}
+	end
+	#--------------------------------------------------------------------------
+	# ○ Save data compatibility
+	#--------------------------------------------------------------------------
+	alias hima_enchant_update update
+	def update
+		hima_enchant_update
+		@enchant_weapons = Enchant_Item_List.new unless @enchant_weapons.is_a?(Enchant_Item_List)
+        @enchant_armors = Enchant_Item_List.new unless @enchant_armors.is_a?(Enchant_Item_List)
+		@enchant_weapons.map(&:item_object).each{|weapon| 
+			weapon.reset_data
+			$data_weapons[weapon.id] = weapon
+		}
+		@enchant_armors.map(&:item_object).each{|armor| 
+			armor.reset_data 
+			$data_armors[armor.id] = armor
+		}
+	end
+	#--------------------------------------------------------------------------
+	# ○ Initialize all item list
+	#--------------------------------------------------------------------------
+	alias hima_enchant_init_all_items init_all_items
+	def init_all_items
+		hima_enchant_init_all_items
+		@enchant_weapons = Enchant_Item_List.new
+		@enchant_armors = Enchant_Item_List.new
+	end
+	#--------------------------------------------------------------------------
+	# ○ Array of weapon objects
+	#--------------------------------------------------------------------------
+	alias hima_enchant_weapons weapons
+	def weapons
+		enchant_weapons + hima_enchant_weapons
+	end
+	#--------------------------------------------------------------------------
+	# ○ Array retrieval of Armor object
+	#--------------------------------------------------------------------------
+	alias hima_enchant_armors armors
+	def armors
+		enchant_armors + hima_enchant_armors
+	end
+	#--------------------------------------------------------------------------
+	# ● Get array of enchant weapon objects
+	#--------------------------------------------------------------------------
+	def enchant_weapons
+		@enchant_weapons.map{ |data| data.item_number > 0 ? data.item_object.id : nil if data }.compact.map{|id|$data_weapons[id]}.reverse
+	end
+	#--------------------------------------------------------------------------
+	# ● Get array of enchant armor objects
+	#--------------------------------------------------------------------------
+	def enchant_armors
+		@enchant_armors.map { |data| data.item_number > 0 ? data.item_object.id : nil if data }.compact.map{|id| $data_armors[id]}.reverse
+	end
+	
+	#--------------------------------------------------------------------------
+	# ○ Acquire container object corresponding to item class
+	#--------------------------------------------------------------------------
+	alias hima_enchant_item_container item_container
+	def item_container(item)
+		case item
+		when RPG::EnchantWeapon
+			@enchant_weapons
+		when RPG::EnchantArmor
+			@enchant_armors
+		else
+			hima_enchant_item_container(item)
+		end
+	end
+	#--------------------------------------------------------------------------
+	# ○ Acquire maximum number of possessed items
+	#--------------------------------------------------------------------------
+	alias hima_enchant_max_item_number max_item_number
+	def max_item_number(item)
+		return hima_enchant_max_item_number(item) unless item.enchant_item?
+		return 1
+	end
+	def enchant_item_max?(item)
+		case item
+		when RPG::EnchantWeapon
+			@enchant_weapons.size >= NWConst::Enchantment::WEAPON_MAX_ITEM_NUMBER
+		when RPG::EnchantArmor
+			@enchant_armors.size >= NWConst::Enchantment::ARMOR_MAX_ITEM_NUMBER
+		end
+	end
+	#--------------------------------------------------------------------------
+	# ○ Increase (decrease) of items
+	#		 keep_flag : enchantLeave equipment?
+	#--------------------------------------------------------------------------
+	def nw_count_gain_item(item, amount, include_equip= false ,keep_flag = false)
+		return unless item
+		if item.need_enchant? && amount > 0
+			amount.times{
+				nw_count_gain_item(item.get_enchant_item,1,include_equip,keep_flag)
+			}
+			return
+		end
+		container = item_container(item)
+		return unless container
+		last_number = item_number(item)
+		new_number = last_number + amount
+		new_number = [[new_number, 0].max,max_item_number(item)].min
+		container[item.index].item_number = new_number
+		if item.enchant_item?
+			if !keep_flag && new_number >= 1
+				add_item_data(item,new_number)
+			elsif !keep_flag && new_number <= 0 
+				delete_item_data(item)
+			end
+		end
+		$game_temp.get_item_data.push({:item=> item , :value => new_number - last_number})
+		$game_map.need_refresh = true
+	end
+	#--------------------------------------------------------------------------
+	# ○ Decrease items
+	#     keep_flag : enchantLeave equipment?
+	#--------------------------------------------------------------------------
+	def lose_item(item, amount, include_equip = false ,keep_flag = false)
+		gain_item(item, -amount, include_equip, keep_flag)
+	end
+	def item_data_container(item)
+		case item
+		when RPG::Weapon
+			$data_weapons
+		when RPG::Armor
+			$data_armors
+		when RPG::Item
+			$data_items
+		end
+	end
+	#--------------------------------------------------------------------------
+	# ● Add enchantment data
+	#--------------------------------------------------------------------------
+	def add_item_data(item,number)
+		container = item_container(item)
+		data_container = item_data_container(item)
+		container.add_item(item)
+		container[item.index].item_number = number	
+		data_container[item.id] = item
+	end
+	
+	#--------------------------------------------------------------------------
+	# ● Delete enchantment data
+	#--------------------------------------------------------------------------
+	def delete_item_data(item , stone_flag =true)
+		item.clear_stones if stone_flag
+		container = item_container(item)
+		data_container = item_data_container(item)
+		container.delete_at(item.index)
+		data_container.delete_at(item.id)
+		container.each{|data|
+			data.item_object.dec_id(item.index) if data.item_object
+		}
+
+		
+	end
+	
+	#--------------------------------------------------------------------------
+	# ● Enchant weapon data
+	#--------------------------------------------------------------------------
+	def enchant_weapons_data
+		@enchant_weapons.reverse
+	end
+	#--------------------------------------------------------------------------
+	# Enchant armor data
+	#--------------------------------------------------------------------------
+	def enchant_armors_data
+		@enchant_armors.reverse
+	end
+end
+module NWConst::LibraryManager
+	#--------------------------------------------------------------------------
+	# ● Acquire all valid Weapon ID
+	#--------------------------------------------------------------------------
+	def get_valid_weapons
+		$data_weapons.select {|item| !item.nil? && !item.name.empty? && !item.lib_exclude? && !item.need_enchant? && !item.enchant_item? }.collect {|item| item.id }
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire all valid armor ID
+	#--------------------------------------------------------------------------
+	def get_valid_armors
+		$data_armors.select {|item| !item.nil? && !item.name.empty? && !item.lib_exclude? && !item.is_accessory? && !item.need_enchant? && !item.enchant_item? }.collect {|item| item.id }
+	end
+	#--------------------------------------------------------------------------
+	# ● Get all valid accessory IDs
+	#--------------------------------------------------------------------------
+	def get_valid_accessories
+		$data_armors.select {|item| !item.nil? && !item.name.empty? && !item.lib_exclude? && item.is_accessory? && !item.need_enchant? && !item.enchant_item? }.collect {|item| item.id }
+	end
+	#--------------------------------------------------------------------------
+  # ● Get all valid item IDs
+  #--------------------------------------------------------------------------
+  def get_valid_items
+    $data_items.select {|item| !item.nil? && !item.name.empty? && !item.lib_exclude? && item.enchant_stone? }.collect {|item| item.id }
+  end
+end
+
+class RPG::BaseItem
+	attr_reader :data_ex
+	def sort_id
+		@id
+	end
+	#--------------------------------------------------------------------------
+	# ● Give enchantment?
+	#--------------------------------------------------------------------------
+	def need_enchant?
+		false
+	end
+	#--------------------------------------------------------------------------
+	# ● Is it equipped with enchantment?
+	#--------------------------------------------------------------------------
+	def enchant_item?
+		false
+	end
+	#--------------------------------------------------------------------------
+	# ● Array index
+	#--------------------------------------------------------------------------
+	def index
+		@id
+	end
+	#--------------------------------------------------------------------------
+	# ● Display color
+	#--------------------------------------------------------------------------
+	def display_color
+		0
+	end
+	
+end
+
+class RPG::EquipItem
+	def get_enchant_item
+		data = enchant_item
+		data.set_data
+		data
+	end
+end
+class RPG::Weapon
+	def need_enchant?
+		id >= NWConst::Enchant::WEAPON_ID_BASE
+	end
+	def enchant_item
+		RPG::EnchantWeapon.new(self)
+	end
+end
+
+class RPG::Armor
+	def need_enchant?
+		3799 >= id  && id >= NWConst::Enchant::ARMOR_ID_BASE
+	end
+	def enchant_item
+		RPG::EnchantArmor.new(self)
+	end
+end
+
+class Game_Actor < Game_Battler
+	#--------------------------------------------------------------------------
+	# ● Get the maximum value of TP
+	#--------------------------------------------------------------------------
+  def max_tp
+    [mtp_max, [((actor.base_tp + (actor.tp_level_revise * (base_level - 1)) + increase_tp_fix + plus_max_tp) * increase_tp_per).ceil, 1].max].min
+  end
+	
+	def plus_max_tp
+		equips.compact.select(&:enchant_item?).inject(0){|i,equip|i + equip.max_sp}
+	end
+	#--------------------------------------------------------------------------
+	# ● Exchange parties and items
+	#     new_item : Items to remove from the party
+	#     old_item : Items returned to the party
+	#--------------------------------------------------------------------------
+	def trade_item_with_party(new_item, old_item)
+		return false if new_item && !$game_party.has_item?(new_item)
+		$game_party.gain_item(old_item, 1, false, true)
+		$game_party.lose_item(new_item, 1, false, true)
+		return true
+	end
+	
+	#--------------------------------------------------------------------------
+	# Obtaining the array of all objects holding features
+	#--------------------------------------------------------------------------
+	alias base_feature_objects feature_objects
+	def feature_objects
+		boost = equip_ability_boost
+		super + [self.actor] + [self.class] + [self.tribe] + equips.compact.map{|equip|[equip] * boost[equip.etype_id]}.flatten + stones_armor_data + ability_feature_objects + human_add_features
+	end
+	
+	def stones_armor_data
+		equips.compact.select(&:enchant_item?).map{|equip| equip.stones_armor_data}.flatten
+	end
+	def base_all_features
+		base_feature_objects.inject([]) {|r, obj| r + obj.features}
+	end
+end
+
+class Game_BaseItem
+	#--------------------------------------------------------------------------
+	# ● Object initialization
+	#--------------------------------------------------------------------------
+	def initialize
+		@class = nil
+		@item_id = 0
+		@object = nil
+	end
+	#--------------------------------------------------------------------------
+	# ● Class determination
+	#--------------------------------------------------------------------------
+	def is_skill?;   @class == RPG::Skill;   end
+	def is_item?;    @class == RPG::Item;    end
+	def is_weapon?;  @class == RPG::Weapon  || @class == RPG::EnchantWeapon;  end
+	def is_armor?;   @class == RPG::Armor  || @class == RPG::EnchantArmor;   end
+	def is_nil?;     @class == nil;              end
+	#--------------------------------------------------------------------------
+	# ● Retrieve item objects
+	#--------------------------------------------------------------------------
+	def object
+		return @object if @object
+		return $data_skills[@item_id]  if is_skill?
+		return $data_items[@item_id]   if is_item?
+		return $data_weapons[@item_id] if is_weapon?
+		return $data_armors[@item_id]  if is_armor?
+		return nil
+	end
+	#--------------------------------------------------------------------------
+	# ● Setting item objects
+	#--------------------------------------------------------------------------
+	def object=(item)
+		@object = nil
+		@object = item if item && item.enchant_item?
+		@item_id = item ? item.id : 0
+		@class = item ? item.class : nil
+	end
+end
+

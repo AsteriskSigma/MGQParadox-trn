@@ -1,0 +1,2 @@
+"ジーナ：試合" -> "Gina: Match"
+"【Luka】" -> "【Luka】"

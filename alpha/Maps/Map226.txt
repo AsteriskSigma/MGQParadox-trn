@@ -1,0 +1,1082 @@
+
+
+
+EVENT   1
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,226,61,101,2,0)
+  0()
+
+
+
+EVENT   2
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,226,65,80,2,0)
+  0()
+
+
+
+EVENT   3
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,224,41,53,0,0)
+  0()
+
+
+
+EVENT   4
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,224,24,39,0,0)
+  0()
+
+
+
+EVENT   5
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,224,30,39,0,0)
+  0()
+
+
+
+EVENT   6
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Curio Dealer>This is the witch item shop. Be sure to give everything a look. We sell things you won't find anywhere else...")
+  Shop(0,2,0,0,false)
+  605(0,13,0,0)
+  605(0,17,0,0)
+  605(0,75,0,0)
+  605(0,79,0,0)
+  605(0,440,0,0)
+  605(2,1111,0,0)
+  605(2,1115,0,0)
+  605(2,1151,0,0)
+  If(1,1005,0,14,0)
+   If(4,66,0)
+    If(0,2065,0)
+     If(2,"A",1)
+      ChangeSelfSwitch("A",0)
+      ShowMessageFace("vgirl_fc1",0,0,2,2)
+      ShowMessage("\\n<Vanilla>Nice to meet you. I am Vanilla the merchant. I would like to sell Holy Stones and Dark Stones.")
+      ShowMessageFace("",0,0,2,3)
+      ShowMessage("\\n<Curio Dealer>Witches don't share for nothing, you know... Give me an Ugly Stone, and I'll think about it.")
+      ShowMessageFace("",0,0,2,4)
+      ShowMessage("\\n<Curio Dealer>We were supposed to receive one, but its transport was attacked by bandits. It seems to have been the work of the Scale Bandits that are infesting Saloon's surroundings.")
+      EndEventProcessing()
+      0()
+     Else()
+      If(8,526)
+       ChangeInventory_Item(526,1,0,1)
+       ShowMessageFace("",0,0,2,5)
+       ShowMessage("\\n<Curio Dealer>This is clearly an Ugly Stone... So, as promised, I will supply your shop as well.")
+       ShowMessageFace("vgirl_fc1",0,0,2,6)
+       ShowMessage("\\n<Vanilla>Thank you very much! I look forward to dealing with you more in the future!")
+       249(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0c,0x66,0x61,0x6e,0x66,0x61,0x6c,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69))
+       ShowMessageFace("",0,0,2,7)
+       ShowMessage("Vanilla can now sell Holy Stones and Dark Stones at her shop!")
+       ChangeVariable(1005,1005,0,0,15)
+       ChangeSwitch(2065,2065,1)
+       355("gain_medal(1503)")
+       Wait(60)
+       EndEventProcessing()
+       0()
+      Else()
+       ShowMessageFace("",0,0,2,8)
+       ShowMessage("\\n<Curio Dealer>Witches don't share for nothing, you know... Give me an Ugly Stone, and I'll think about it.")
+       ShowMessageFace("",0,0,2,9)
+       ShowMessage("\\n<Curio Dealer>We were supposed to receive one, but its transport was attacked by bandits. It seems to have been the work of the Scale Bandits that are infesting Saloon's surroundings.")
+       EndEventProcessing()
+       0()
+      EndIf()
+      0()
+     EndIf()
+     0()
+    EndIf()
+    0()
+   EndIf()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   7
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,224,79,28,0,0)
+  0()
+
+
+
+EVENT   8
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,224,46,34,0,0)
+  0()
+
+
+
+EVENT   9
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,224,22,62,0,0)
+  0()
+
+
+
+EVENT   10
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,224,56,64,0,0)
+  216(0)
+  0()
+
+
+
+EVENT   11
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,224,67,27,0,0)
+  0()
+
+
+
+EVENT   12
+ PAGE   1
+  If(1,819,0,2,1)
+   If(0,1561,1)
+    ShowMessageFace("mob_majyo1_fc1",0,0,2,1)
+    ShowMessage("\\n<Witchy>Feel like letting me join you? You'd soon see how helpful I can be...")
+    ShowChoices(strings("Let her join","Decline for now"),0)
+    IfPlayerPicksChoice(0,null)
+     ShowMessageFace("mob_majyo1_fc1",0,0,2,2)
+     ShowMessage("\\n<Witchy>Well then, shall we go?")
+     PictureClear(5)
+     205(0,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x09,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x2a,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x0f,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x2c,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+     355("add_actor_ex(561)")
+     249(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0c,0x66,0x61,0x6e,0x66,0x61,0x6c,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69))
+     ShowMessageFace("",0,0,2,3)
+     ShowMessage("Witchy joined the party!")
+     Wait(60)
+     EndEventProcessing()
+     0()
+    IfPlayerPicksChoice(1,null)
+     ShowMessageFace("mob_majyo1_fc1",0,0,2,4)
+     ShowMessage("\\n<Witchy>Well, I'm fine with that...")
+     0()
+    404()
+    0()
+   EndIf()
+   0()
+  EndIf()
+  RunCommonEvent(7181)
+  0()
+ PAGE   2
+  // condition: party contains actor #561
+  0()
+
+
+
+EVENT   13
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Village Woman>I used to be abused in this village... Back then, I had neither emotions nor human dignity.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Village Woman>Now that I have an inhuman body, I'm living a much more human life. Ironic, isn't it...")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("127")
+  ShowMessageFace("littlebug_fc1",2,0,2,3)
+  ShowMessage("\\n<Lippy>I don't understand difficult stuff...")
+  EndEventProcessing()
+  DefineLabel("163")
+  ShowMessageFace("lily_fc1",3,0,2,4)
+  ShowMessage("\\n<Lily>I'll crush all such pasts time after time, again and again... time after time... after time... again...")
+  EndEventProcessing()
+  DefineLabel("167")
+  ShowMessageFace("lusia_fc1",2,0,2,5)
+  ShowMessage("\\n<Lucia>Next time there will be no need to rely on the power of tentacle magic. I pray that you at least move forward with a heart that is still human...")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   14
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Mage>Tentacle organism-altered humans, and pseudo-monsters powered by magic... both of these are called 'magic monsters.'")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Mage>They have a high resistance to fire, ice, and lightning elements. In exchange, they are weak against wind, earth, and water, the natural elements.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("142")
+  ShowMessageFace("bander_fc1",0,0,2,3)
+  ShowMessage("\\n<Banachi>I have the same properties. I'd be happy if you remembered that...")
+  EndEventProcessing()
+  DefineLabel("182")
+  ShowMessageFace("c_homunculus_fc1",0,0,2,4)
+  ShowMessage("\\n<Crowley>We are weak to natural elements because we are artificial...")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   15
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Witch>Scythes are affected not only by Attack, but also by Magic. It's a fitting weapon for a witch, isn't it? Fufufu...")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("88")
+  ShowMessageFace("jack_fc1",1,0,2,2)
+  ShowMessage("\\n<Pumpkin>I feel like it matches me too... Although I can't actually wield one.")
+  EndEventProcessing()
+  DefineLabel("95")
+  ShowMessageFace("delh_a_fc1",0,0,2,3)
+  ShowMessage("\\n<Lona>But I feel like scythes are kinda half-assed...")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   16
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Village Woman>My father abused me for a long time. My mother pretended not to see it...")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Village Woman>I thought that it would be fine if I withstood it... but my father eventually directed his abuse towards my little sister.")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Village Woman>I received power from Lady Lily and killed my...")
+  ShowMessageFace("",0,0,2,4)
+  ShowMessage("\\n<Village Woman>If not for this power, my little sister would probably have died. It was this power that saved us sisters...")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("163")
+  ShowMessageFace("lily_fc1",3,0,2,5)
+  ShowMessage("\\n<Lily>It's all right now... No one will ever hurt you and your sister ever again.")
+  EndEventProcessing()
+  DefineLabel("167")
+  ShowMessageFace("lusia_fc1",2,0,2,6)
+  ShowMessage("\\n<Lucia>Without power, you couldn't save yourself... But next time, it'll be those with power that...")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   17
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Girl>......")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("163")
+  ShowMessageFace("lily_fc1",3,0,2,2)
+  ShowMessage("\\n<Lily>How pitiful. She's scared, even now... That man should have died by this girl's hands.")
+  EndEventProcessing()
+  DefineLabel("131")
+  ShowMessageFace("doll_fc1",2,0,2,3)
+  ShowMessage("\\n<Miyabi>Let's play together once you're better, okay...?")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   18
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Man>During the times of oppression, I tried to protect the village's women. You see, that's why I'm still here.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Man>Please, don't blame these women. You don't know how much suffering they have endured...")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Man>Why didn't we change before this happened... That is the regret that remains within me.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("105")
+  ShowMessageFace("mimic_fc1",2,0,2,4)
+  ShowMessage("\\n<Minelli>After hearing a story like that, I feel like closing forever...")
+  EndEventProcessing()
+  DefineLabel("119")
+  ShowMessageFace("page17_fc1",0,0,2,5)
+  ShowMessage("\\n<Annie>Humans are weak... If weakness is a sin, then humans are born sinful...")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   19
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Innkeeper>It'll cost 10G... Will you be staying?\\$")
+  ShowChoices(strings("Yes","No"),2)
+  IfPlayerPicksChoice(0,null)
+   If(7,10,0)
+    125(1,0,10)
+    221()
+    249(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x08,0x49,0x6e,0x6e,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69))
+    Wait(150)
+    314(0,0)
+    222()
+    0()
+   Else()
+    ShowMessageFace("",0,0,2,2)
+    ShowMessage("\\n<Innkeeper>You don't have enough money...")
+    0()
+   EndIf()
+   0()
+  IfPlayerPicksChoice(1,null)
+   0()
+  404()
+  0()
+
+
+
+EVENT   20
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Thief>Seems I've come to an absolutely outrageous village...")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Thief>...I'd better be nice to my wife.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("108")
+  ShowMessageFace("kai_fc1",0,0,2,3)
+  ShowMessage("\\n<Shelly>My, how admirable...")
+  EndEventProcessing()
+  DefineLabel("160")
+  ShowMessageFace("wormv_fc1",0,0,2,4)
+  ShowMessage("\\n<Julia>Learn from a bad example. That way you won't end up like the men of this village... Fufu.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   21
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Traveling Black Mage>Apparently the lord of this village grants arcane powers to travelers. I have come here seeking them.")
+  If(0,2097,0)
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Traveling Black Mage>But I can't meet her now...")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("163")
+   ShowMessageFace("lily_fc1",3,0,2,3)
+   ShowMessage("\\n<Lily>I'm busy journeying at the moment. I'll grant you power the next time I'm back here.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(0,2096,0)
+   ShowMessageFace("",0,0,2,4)
+   ShowMessage("\\n<Traveling Black Mage>But she's already been defeated...")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   22
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Mage>She granted the abused the power to break free, but there are those who oppose Lady Lily and forcibly resist her.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Mage>Arcane powers should not be spread, no matter what... That's what they think. The opposition has finally formed a rebel faction and made the tower to the south their headquarters.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("109")
+  ShowMessageFace("kani_fc1",2,0,2,3)
+  ShowMessage("\\n<Soapy>Is it really okay to spread such power...? I agree with the opposition.")
+  EndEventProcessing()
+  0()
+ PAGE   2
+  // condition: variable 1029 >= 5
+  If(0,2097,0)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Mage>She granted the abused the power to break free... but there were those who opposed Lady Lily and forcibly resisted her.")
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Mage>But they fell to Lady Lily. The remnants of their faction are in the tower to the south.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(0,2096,0)
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("\\n<Mage>She granted the abused the power to break free... but there were those who opposed Lady Lily and forcibly resisted her.")
+   ShowMessageFace("",0,0,2,4)
+   ShowMessage("\\n<Mage>Despite being indebted to Lady Lily, they defeated her... and trampled all over her ideals.")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("167")
+   ShowMessageFace("lusia_fc1",2,0,2,5)
+   ShowMessage("\\n<Lucia>I have no excuse... but do you really think the power of tentacle magic can remain regulated if given to all of humanity?")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   23
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Village Woman>Spreading a power all over the world that should remain hidden... It's not like I don't understand why people are anxious.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Village Woman>But when I think of how many people fell prey to violence... and how many this power can save...")
+  EndEventProcessing()
+  0()
+ PAGE   2
+  // condition: variable 1029 >= 5
+  If(0,2096,0)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Village Woman>This power should not be spread after all... Is what you're saying?")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("167")
+   ShowMessageFace("lusia_fc1",2,0,2,2)
+   ShowMessage("\\n<Lucia>Even if people freed themselves from violence with the power of tentacle magic... those people only gave birth to more violence.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(0,2097,0)
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("\\n<Village Woman>Spreading a power all over the world that should remain hidden... It's not like I don't understand why people are anxious.")
+   ShowMessageFace("",0,0,2,4)
+   ShowMessage("\\n<Village Woman>But when I think of how many people fell prey to cruelty... and how many this power can save...")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   24
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Mage>The opposition's claims are foolish. What good is power, if not for saving people?")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Mage>If we value tradition above human life, we'll be no different from those abusers.")
+  0()
+ PAGE   2
+  // condition: variable 1029 >= 5
+  If(0,2097,0)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Mage>That silly opposition has gone quiet now. They, too, should have been indebted to Lady Lily, and yet...")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(0,2096,0)
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Mage>The opposition's claims are foolish. What good is power, if not for saving people?")
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("\\n<Mage>Because they don't understand that, those traitors have...")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   25
+ PAGE   1
+  PictureDisplay(5,"80_lusia_st12",0,0,0,0,100,100,0,0)
+  PictureMove(5,null,0,0,0,0,100,100,255,0,30,true)
+  ChangeVariable(1029,1029,0,0,4)
+  ShowMessageFace("lusia_fc1",5,0,2,1)
+  ShowMessage("\\n<Lucia>It's a pleasure to meet you. I am the resistance's leader, Lucia.")
+  If(0,6,0)
+   ShowMessageFace("sonia_fc3",7,0,2,2)
+   ShowMessage("\\n<Sonya>I sense magic power from both your arms... Could it be that you, too, are...")
+   0()
+  Else()
+   ShowMessageFace("ruka_fc1",0,0,2,3)
+   ShowMessage("\\n<Luka>I can sense magic power from both of your arms... Can it be that Miss Lucia is also...")
+   0()
+  EndIf()
+  ShowMessageFace("lusia_fc1",5,0,2,4)
+  ShowMessage("\\n<Lucia>Yes... I assisted in Lily's research. When it comes to alchemy, I have even more experience than Lily herself.")
+  ShowMessageFace("lusia_fc1",5,0,2,5)
+  ShowMessage("\\n<Lucia>But, I have parted from her now... And, as the resistance's leader, I want to overthrow her.")
+  If(4,529,0)
+   ShowMessageFace("sara_fc1",4,0,2,6)
+   ShowMessage("\\n<Sara>So, you now stand in opposition to your former ally...")
+   0()
+  EndIf()
+  ShowMessageFace("ruka_fc1",0,0,2,7)
+  ShowMessage("\\n<Luka>Why do you want to overthrow Lily if you used to be comrades? I hear that you're against the spread of tentacle magic, but still...")
+  PictureDisplay(5,"80_lusia_st13",0,0,0,0,100,100,255,0)
+  ShowMessageFace("lusia_fc1",6,0,2,8)
+  ShowMessage("\\n<Lucia>If Lily spreads the power of tentacle magic to the entire world, society itself will fall into turmoil. This power should remain a secret.")
+  ShowMessageFace("lusia_fc1",6,0,2,9)
+  ShowMessage("\\n<Lucia>Certainly, it could give the weak the strength they need to overthrow their oppressors -- with violence and hatred.")
+  ShowMessageFace("lusia_fc1",6,0,2,10)
+  ShowMessage("\\n<Lucia>That is what has already happened in this village. A tragedy. You all probably already know how great of a cost it inflicted.")
+  ShowMessageFace("ruka_fc1",0,0,2,11)
+  ShowMessage("\\n<Luka>......")
+  If(4,531,0)
+   ShowMessageFace("saniria_fc2",0,0,2,12)
+   ShowMessage("\\n<King of San Ilia>Power is a source of avarice... especially when the weak acquire it for the first time.")
+   0()
+  EndIf()
+  ShowMessageFace("lusia_fc1",6,0,2,13)
+  ShowMessage("\\n<Lucia>I, too, was a victim of this village. I have not a speck of sympathy for the men who died.")
+  ShowMessageFace("lusia_fc1",6,0,2,14)
+  ShowMessage("\\n<Lucia>However, if tentacle magic techniques are spread, what happened in this village will likely happen elsewhere as well.")
+  ShowMessageFace("lusia_fc1",6,0,2,15)
+  ShowMessage("\\n<Lucia>Just like it happened here... or in even more horrifying forms. The feelings of hate that the weak have for the strong will erupt in the worst way possible...")
+  ShowMessageFace("lusia_fc1",6,0,2,16)
+  ShowMessage("\\n<Lucia>...Lily is in the wrong. The position of the weak and the strong can switch very easily.")
+  ShowMessageFace("lusia_fc1",6,0,2,17)
+  ShowMessage("\\n<Lucia>Those who acquire this power will simply become the strong. And, surely, the day will come when they persecute the weak.")
+  If(0,4,0)
+   ShowMessageFace("alice_fc5",0,0,2,18)
+   ShowMessage("\\n<Alice>...Well, you are mostly correct. The relationship between the oppressors and the oppressed often fluctuates.")
+   0()
+  EndIf()
+  If(0,5,0)
+   ShowMessageFace("iriasu_fc4",2,0,2,19)
+   ShowMessage("\\n<Ilias>I don't want to agree with someone inhuman, but... indeed, power has to be managed.")
+   0()
+  EndIf()
+  If(0,1529,0)
+   ShowMessageFace("sara_fc1",4,0,2,20)
+   ShowMessage("\\n<Sara>It appears we misunderstood the situation. The rebels aren't fighting for control over the village.")
+   ShowMessageFace("sara_fc1",4,0,2,21)
+   ShowMessage("\\n<Sara>It's more fundamental than that. Whether tentacle magic should be approved or rejected: that is the true root of this conflict.")
+   0()
+  EndIf()
+  PictureDisplay(5,"80_lusia_st12",0,0,0,0,100,100,255,0)
+  ShowMessageFace("lusia_fc1",5,0,2,22)
+  ShowMessage("\\n<Lucia>Now, here is my proposal. You've probably already guessed it, but I would like for you to defeat Lily.")
+  ShowMessageFace("lusia_fc1",5,0,2,23)
+  ShowMessage("\\n<Lucia>I don't want you to kill her, I just want you to seal her power. As soon as you do that, our resistance's mission will have been achieved.")
+  ShowMessageFace("lusia_fc1",5,0,2,24)
+  ShowMessage("\\n<Lucia>Once that happens, I'll be relieved of the burden of having to be a leader... In recompense, I'll lend you my strength by becoming your comrade.")
+  ShowMessageFace("lusia_fc1",5,0,2,25)
+  ShowMessage("\\n<Lucia>I've thought of traveling and observing the world. I will take this as a good opportunity to do that.")
+  If(4,64,0)
+   ShowMessageFace("pramia_fc1",0,0,2,26)
+   ShowMessage("\\n<Teeny>You'll join our party...?")
+   0()
+  EndIf()
+  ShowMessageFace("ruka_fc1",0,0,2,27)
+  ShowMessage("\\n<Luka>......")
+  ShowMessageFace("",0,0,2,28)
+  ShowMessage("If we defeat Lily, Lucia says she will join our party. Now, what do we do...")
+  ShowChoices(strings("Agree, defeat Lily","Don't agree, defeat Lucia","I'll think about it"),0)
+  IfPlayerPicksChoice(0,null)
+   ShowMessageFace("lusia_fc1",5,0,2,29)
+   ShowMessage("\\n<Lucia>Thank you very much for agreeing with me. Lily should be in her mansion.")
+   ShowMessageFace("lusia_fc1",5,0,2,30)
+   ShowMessage("\\n<Lucia>As thanks, once you defeat Lily... At that time, I shall join you as a comrade.")
+   PictureClear(5)
+   EndEventProcessing()
+   0()
+  IfPlayerPicksChoice(1,null)
+   PictureDisplay(5,"80_lusia_st13",0,0,0,0,100,100,255,0)
+   ShowMessageFace("lusia_fc1",6,0,2,31)
+   ShowMessage("\\n<Lucia>So, I did not obtain your agreement. The negotiations are off, aren't they...")
+   ShowMessageFace("lusia_fc1",6,0,2,32)
+   ShowMessage("\\n<Lucia>Then I shall await you in the Tower of Magic. Since you obey Lily, you will come to defeat me, won't you?")
+   250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0b,0x4d,0x61,0x67,0x69,0x63,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+   PictureClear(5)
+   ChangeSwitch(2092,2092,0)
+   ShowMessageFace("",0,0,2,33)
+   ShowMessage("Lucia uses teleportation magic and disappears.")
+   ShowMessageFace("ruka_fc1",0,0,2,34)
+   ShowMessage("\\n<Luka>...Let's go to the Tower of Magic.")
+   ShowMessageFace("",0,0,2,35)
+   ShowMessage("The rebels' headquarters are in the Tower of Magic to the south. I have resolved myself to fight Lucia...")
+   EndEventProcessing()
+   0()
+  IfPlayerPicksChoice(2,null)
+   ShowMessageFace("lusia_fc1",5,0,2,36)
+   ShowMessage("\\n<Lucia>Is that so... Please, consider it carefully. I'm sure you will realize how dangerous Lily is.")
+   ShowMessageFace("lusia_fc1",5,0,2,37)
+   ShowMessage("\\n<Lucia>I shall await the news of Lily's defeat at your hands. At that time, I shall become your comrade.")
+   PictureClear(5)
+   EndEventProcessing()
+   0()
+  404()
+  0()
+ PAGE   2
+  // condition: variable 1029 >= 4
+  PictureDisplay(5,"80_lusia_st12",0,0,0,0,100,100,0,0)
+  PictureMove(5,null,0,0,0,0,100,100,255,0,30,true)
+  ShowMessageFace("lusia_fc1",5,0,2,1)
+  ShowMessage("\\n<Lucia>I shall await news of your victory. Or, did you have a change of heart?")
+  ShowChoices(strings("Don't change anything","Defeat Lucia","Still thinking about it"),0)
+  IfPlayerPicksChoice(0,null)
+   ShowMessageFace("lusia_fc1",5,0,2,2)
+   ShowMessage("\\n<Lucia>As thanks, once you defeat Lily... At that time, I shall join you as a comrade.")
+   PictureClear(5)
+   EndEventProcessing()
+   0()
+  IfPlayerPicksChoice(1,null)
+   PictureDisplay(5,"80_lusia_st13",0,0,0,0,100,100,255,0)
+   ShowMessageFace("lusia_fc1",6,0,2,3)
+   ShowMessage("\\n<Lucia>So, I did not obtain your agreement. The negotiations are off, aren't they...")
+   ShowMessageFace("lusia_fc1",6,0,2,4)
+   ShowMessage("\\n<Lucia>Then I shall await you in the Tower of Magic. Since you obey Lily, you will come to defeat me, won't you?")
+   250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0b,0x4d,0x61,0x67,0x69,0x63,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+   PictureClear(5)
+   ChangeSwitch(2092,2092,0)
+   ShowMessageFace("",0,0,2,5)
+   ShowMessage("Lucia uses teleportation magic and disappears.")
+   ShowMessageFace("ruka_fc1",0,0,2,6)
+   ShowMessage("\\n<Luka>...Let's go to the Tower of Magic.")
+   ShowMessageFace("",0,0,2,7)
+   ShowMessage("The rebels' headquarters are in the Tower of Magic to the south. I have resolved myself to fight Lucia...")
+   EndEventProcessing()
+   0()
+  IfPlayerPicksChoice(2,null)
+   ShowMessageFace("lusia_fc1",5,0,2,8)
+   ShowMessage("\\n<Lucia>Is that so... Please, consider it carefully. I'm sure you will realize how dangerous Lily is.")
+   ShowMessageFace("lusia_fc1",5,0,2,9)
+   ShowMessage("\\n<Lucia>I shall await the news of Lily's defeat at your hands. At that time, I shall become your comrade.")
+   PictureClear(5)
+   EndEventProcessing()
+   0()
+  404()
+  0()
+ PAGE   3
+  // condition: switch 2092 is ON
+  0()
+ PAGE   4
+  // condition: switch 2096 is ON
+  PictureDisplay(5,"80_lusia_st12",0,0,0,0,100,100,0,0)
+  PictureMove(5,null,0,0,0,0,100,100,255,0,30,true)
+  ShowMessageFace("lusia_fc1",5,0,2,1)
+  ShowMessage("\\n<Lucia>So, you defeated Lily... I'm thankful to you from the bottom of my heart for listening to my request.")
+  PictureDisplay(5,"80_lusia_st13",0,0,0,0,100,100,255,0)
+  ShowMessageFace("lusia_fc1",6,0,2,2)
+  ShowMessage("\\n<Lucia>...Lily was too sincere. She saw herself in the weak people of the world, and couldn't look away...")
+  ShowMessageFace("lusia_fc1",6,0,2,3)
+  ShowMessage("\\n<Lucia>She often said that she heard the voices of the oppressed calling for help.")
+  ShowMessageFace("lusia_fc1",6,0,2,4)
+  ShowMessage("\\n<Lucia>It wasn't a metaphor. She truly heard them. Her mind was already on the brink of collapse.")
+  ShowMessageFace("lusia_fc1",6,0,2,5)
+  ShowMessage("\\n<Lucia>In the end, power did not truly save her... Taking her power away was the only true way to save her.")
+  ShowMessageFace("ruka_fc1",0,0,2,6)
+  ShowMessage("\\n<Luka>......")
+  If(4,64,0)
+   ShowMessageFace("pramia_fc1",0,0,2,7)
+   ShowMessage("\\n<Teeny>You still think of Lily as your friend, don't you...")
+   0()
+  EndIf()
+  PictureDisplay(5,"80_lusia_st12",0,0,0,0,100,100,255,0)
+  ShowMessageFace("lusia_fc1",0,0,2,8)
+  ShowMessage("\\n<Lucia>Well then, I shall keep my promise. I will accompany you on your journey as your comrade.")
+  ShowMessageFace("lusia_fc1",0,0,2,9)
+  ShowMessage("\\n<Lucia>I hope what I see on the road allows me to grow... I look forward to our adventures together.")
+  PictureClear(5)
+  205(0,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x09,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x2a,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x0f,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x2c,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  355("add_actor_ex(167)")
+  249(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0c,0x66,0x61,0x6e,0x66,0x61,0x6c,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69))
+  ShowMessageFace("",0,0,2,10)
+  ShowMessage("Lucia has joined the party!")
+  Wait(60)
+  ChangeSwitch(2138,2138,0)
+  ChangeVariable(1029,1029,0,0,6)
+  355("gain_medal(28)")
+  If(1,1001,0,18,1)
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(0,4,0)
+   ShowMessageFace("alice_fc5",0,0,2,11)
+   ShowMessage("\\n<Alice>Looks like this matter has been sorted out. It's about time we headed out to form a contract with Gnome.")
+   0()
+  EndIf()
+  If(0,5,0)
+   ShowMessageFace("iriasu_fc4",0,0,2,12)
+   ShowMessage("\\n<Ilias>With this, this matter has been settled. Although I'm reluctant to do so, isn't it about time we go find Gnome?")
+   0()
+  EndIf()
+  If(1,1031,0,2,2)
+   If(0,6,0)
+    ShowMessageFace("sonia_fc1",0,0,2,13)
+    ShowMessage("\\n<Sonya>Before that, how about we go to Saloon? We did hear about a blacksmith there who makes crystal equipment, didn't we?")
+    0()
+   Else()
+    ShowMessageFace("ruka_fc1",0,0,2,14)
+    ShowMessage("\\n<Luka>How about we visit Saloon before that? I heard that there's a blacksmith there who makes equipment out of crystal.")
+    0()
+   EndIf()
+   If(0,4,0)
+    ShowMessageFace("alice_fc5",0,0,2,15)
+    ShowMessage("\\n<Alice>Hmm, if we are to challenge Gnome to battle, it's better to be well equipped. I leave the decision to you.")
+    0()
+   EndIf()
+   If(0,5,0)
+    ShowMessageFace("iriasu_fc4",0,0,2,16)
+    ShowMessage("\\n<Ilias>Preparing for a battle by acquiring better equipment sounds good. I leave it to your judgment.")
+    0()
+   EndIf()
+   ShowMessageFace("",0,0,2,17)
+   ShowMessage("If I'm not wrong, Saloon is far north of Sabasa. There are ruins north of Grandeur, but Saloon is even further north than they are.")
+   ShowMessageFace("",0,0,2,18)
+   ShowMessage("In the break between the mountains, there's a point where the desert turns into wastelands. If you travel east from there, you reach Saloon... Or, so we've heard.")
+   ShowMessageFace("",0,0,2,19)
+   ShowMessage("They say that there's a blacksmith who makes crystal equipment in that town. We should prepare ourselves before going to see Gnome.")
+   ShowMessageFace("ruka_fc1",0,0,2,20)
+   ShowMessage("\\n<Luka>Well then, let's move on to our next goal!")
+   ShowMessageFace("",0,0,2,21)
+   ShowMessage("Magistea Village's turmoil has settled down, and we've acquired a new comrade. And so, we set out towards our next destination...")
+   If(1,1031,0,0,0)
+    ChangeVariable(1031,1031,0,0,1)
+    0()
+   EndIf()
+   EndEventProcessing()
+   0()
+  Else()
+   ShowMessageFace("ruka_fc1",0,0,2,22)
+   ShowMessage("\\n<Luka>The Safar Ruins where Gnome resides are north of Grandeur. Well then, let's go!")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+ PAGE   5
+  // condition: switch 2138 is ON
+  // condition: variable 1029 >= 6
+  0()
+
+
+
+EVENT   26
+ PAGE   1
+  If(0,2092,1)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Mage>Not even Lily has realized that we have a base right under her nose. Of course, we're using multiple seclusion techniques and have cast isolation spells.")
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Mage>Lady Lucia has come here and is waiting below. Would you please listen to her request?")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(0,2092,0)
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("\\n<Mage>Won't you reconsider? Lily's philosophy will bring chaos to the whole world.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+ PAGE   2
+  // condition: variable 1029 >= 5
+  If(0,2097,0)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Mage>Now that it has come to this, the resistance has been disbanded...")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(0,2096,0)
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Mage>This hideout has to be cleaned up. It'll take a while to finish everything, but...")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("167")
+   ShowMessageFace("lusia_fc1",0,0,2,3)
+   ShowMessage("\\n<Lucia>Cheers for your good work. I leave the rest to you.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   27
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Mage>We need to pay salaries to our mercenaries... Resistance sure is expensive.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Mage>But that's the price we have to pay to stop Lily. Her philosophy is too dangerous.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("134")
+  ShowMessageFace("chrom_fc2",5,0,2,3)
+  ShowMessage("\\n<Chrome>Whatever you do, it always costs money...")
+  EndEventProcessing()
+  0()
+ PAGE   2
+  // condition: variable 1029 >= 5
+  If(0,2097,0)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Mage>We no longer have to worry about our mercenaries' salaries. We're ending our resistance movement.")
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Mage>...I wanted us to end it by winning, though.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(0,2096,0)
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("\\n<Mage>We no longer have to worry about our mercenaries' salaries. We're ending our resistance movement.")
+   ShowMessageFace("",0,0,2,4)
+   ShowMessage("\\n<Mage>It's all thanks to you. I'm extremely grateful.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   28
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Village Woman>I was given power by Lady Lily. And I broke free from my daily abuse with that power.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Village Woman>Even now I am grateful to her. However, if this power is spread all over the world...")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Village Woman>It's because I've acquired the power of magic tentacles myself that I understand the implications. This power should remain a secret, and spreading it should be forbidden...")
+  0()
+ PAGE   2
+  // condition: variable 1029 >= 5
+  If(0,2097,0)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Village Woman>Lady Lucia is under our protection. Her life isn't in danger, but her magic power is...")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("163")
+   ShowMessageFace("lily_fc1",3,0,2,2)
+   ShowMessage("\\n<Lily>It's better this way, at least for Lucia. The power of magic tentacles was a burden to her...")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(0,2096,0)
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("\\n<Village Woman>Lady Lily is a strong person. She should be all right, even without magic tentacles...")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   29
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Mage>Tentacle magic is a technique where users summon magic tentacles into their own body. Or, rather, the tentacles become a part of their bodies.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Mage>Actually, tentacle magic isn't that mighty of a power. There are more powerful forbidden techniques out there in the world.")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Mage>What makes tentacle magic dangerous is that it's relatively easy to use. Even a young girl without any understanding of magic can use it.")
+  ShowMessageFace("",0,0,2,4)
+  ShowMessage("\\n<Mage>And, in exchange for having magic tentacles inside of you, there are side effects. Clouded consciousness, loss of morals... It has a large, adverse effect on one's mind.")
+  ShowMessageFace("",0,0,2,5)
+  ShowMessage("\\n<Mage>The joy from easily obtaining power, along with the reversal of the user and abuser's position, gives birth to sadism... That's the most dangerous part.")
+  ShowMessageFace("",0,0,2,6)
+  ShowMessage("\\n<Mage>There is nothing more dangerous than giving the oppressed the power of tentacle magic... That is what we think.")
+  0()
+ PAGE   2
+  // condition: variable 1029 >= 5
+  If(0,2097,0)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Mage>The resistance is over... It feels like it was all in vain.")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("163")
+   ShowMessageFace("lily_fc1",3,0,2,2)
+   ShowMessage("\\n<Lily>You are all now freed from Lucia. Don't cause any further trouble and I'll overlook your indiscretions.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(0,2096,0)
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("\\n<Mage>We won. I can't thank you enough.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   30
+ PAGE   1
+  ShowMessageFace("kooni_fc1",0,0,2,1)
+  ShowMessage("\\n<Oni>I'm an Oni bodyguard! I've been hired for money. ♪")
+  ShowMessageFace("kooni_fc1",3,0,2,2)
+  ShowMessage("\\n<Oni>But... I really am against what that Lily person does. Those kinds of arcane powers should remain hidden.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("103")
+  ShowMessageFace("kamuro_fc1",0,0,2,3)
+  ShowMessage("\\n<Kamuro>Agreed... Their secrecy is what makes arcane powers arcane.")
+  EndEventProcessing()
+  0()
+ PAGE   2
+  // condition: variable 1029 >= 5
+  If(0,2097,0)
+   ShowMessageFace("kooni_fc1",2,0,2,1)
+   ShowMessage("\\n<Oni>I've become unemployed... Now I need to look for another employer.")
+   355("actor_label_jump")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(0,2096,0)
+   ShowMessageFace("kooni_fc1",1,0,2,2)
+   ShowMessage("\\n<Oni>We wooon. ♪")
+   ShowMessageFace("kooni_fc1",2,0,2,3)
+   ShowMessage("\\n<Oni>...So, am I unemployed now?")
+   355("actor_label_jump")
+   EndEventProcessing()
+   0()
+  EndIf()
+  DefineLabel("62")
+  ShowMessageFace("gob_fc1",0,0,2,4)
+  ShowMessage("\\n<Gob>How about working with me in the Transport Guild?")
+  EndEventProcessing()
+  DefineLabel("143")
+  ShowMessageFace("eva_fc1",0,0,2,5)
+  ShowMessage("\\n<Eva>You're back to living in the wilds in a tent...")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   31
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Village Woman>Our actual base is inside the tower to the south. This is our reconnaissance hideout.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Village Woman>Our monster mercenaries weren't randomly recruited, by the way. We only recruited those who agree with our goal and mindset.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("80")
+  ShowMessageFace("orc_fc1",0,0,2,3)
+  ShowMessage("\\n<Hip>I see, so you chose carefully. No wonder you didn't pick a drove of orcs.")
+  EndEventProcessing()
+  0()
+ PAGE   2
+  // condition: variable 1029 >= 5
+  If(0,2097,0)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Village Woman>We will not move out of here. We will succeed Lady Lucia's philosophy...")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("163")
+   ShowMessageFace("lily_fc1",3,0,2,2)
+   ShowMessage("\\n<Lily>Do as you please. Now that you've lost Lucia's power, you can't do anything.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(0,2096,0)
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("\\n<Village Woman>We don't resent Lady Lily... We just think her way of thinking is too dangerous.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   32
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(28,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   33
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(32,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   34
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(385,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   35
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(342,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   36
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(195,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   37
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(380,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   38
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Village Woman>Power is a drug. If acquired too easily, it makes you drown in it...")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("82")
+  ShowMessageFace("suzume_fc1",0,0,2,2)
+  ShowMessage("\\n<Chirp>You're right... If I suddenly received great power, I would surely...")
+  EndEventProcessing()
+  0()
+ PAGE   2
+  // condition: variable 1029 >= 5
+  If(0,2097,0)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Village Woman>A tragedy happened in this village... Please, don't let it be repeated elsewhere.")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("163")
+   ShowMessageFace("lily_fc1",3,0,2,2)
+   ShowMessage("\\n<Lily>It's all right, be at ease... The ones who will eliminate it will be the weak who are oppressed by the strong.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(0,2096,0)
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("\\n<Village Woman>You've defeated Lily, haven't you? Thank you very much.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+

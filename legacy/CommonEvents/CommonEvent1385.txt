@@ -1,0 +1,5 @@
+﻿// EVENT 1385
+Name "会話：アルマエルマ"
+
+RunCommonEvent(1177)
+0()

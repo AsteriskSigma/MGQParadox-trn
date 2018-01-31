@@ -1,0 +1,4 @@
+"♪" -> "♪"
+"！　Tei！" -> "! Tei!"
+"♪" -> "♪"
+"　Push your fighting spirit to its limit" -> "Push your fighting spirit to its limit"

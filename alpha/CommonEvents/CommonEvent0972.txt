@@ -1,0 +1,8 @@
+// EVENT 0972
+Name "Event: Vampire Girl"
+
+ShowMessageFace("vgirl_fc1",0,0,2,1)
+ShowMessage("\\n<Vampire Girl>Welcome in the Labyrinth of Chaos branch of the Vanilla shop!\nBe sure to continue buying!")
+RunCommonEvent(106)
+0()
+

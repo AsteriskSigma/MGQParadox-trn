@@ -1,0 +1,6 @@
+"■ Scene" -> "■ Scene"
+"　セーブ画面の処理を行うクラスです。" -> "It is a class that performs save screen processing."
+"● ヘルプウィンドウのテキストを取得" -> "● Get help window text"
+"● 最初に選択状態にするファイルインデックスを取得" -> "● Get file index to be selected first"
+"● セーブファイルの決定" -> "● Determine Save File"
+"● セーブ成功時の処理" -> "● Processing upon successful save"

@@ -1,0 +1,7 @@
+"ララ：勝利" -> "Lara: Victory"
+"【Lara】" -> "【Lara】"
+"【Lara】" -> "【Lara】"
+"【Lara】" -> "【Lara】"
+"♪" -> "♪"
+"【Lara】" -> "【Lara】"
+"♪" -> "♪"

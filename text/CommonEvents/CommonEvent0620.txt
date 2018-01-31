@@ -1,0 +1,7 @@
+"イベント：魔力アップ" -> "Event: Magical power up"
+"【インプ】" -> "[Imp]"
+"あたしと一緒に、魔法の特訓しようよ♪" -> "Let me learn magic together with me ♪"
+"誰が特訓しますか？" -> "Who will take special training?"
+"インプと共に特訓し、魔力が2ポイントアップした！" -> "Special training with Imp, magical power increased by 2 points!"
+"【インプ】" -> "[Imp]"
+"もう疲れちゃった……" -> "I am already tired ..."

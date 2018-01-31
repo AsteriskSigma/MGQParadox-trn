@@ -1,0 +1,82 @@
+
+=begin
+
+Troublesome · ___ ___ 0 RPG
+Tris affiliation effect verification ver1 2016/04/19
+
+When setting USE to true, the following effect occurs
+
+① Ignoring the probability of making friends, it surely gets up
+When fighting victory,
+If an enemy group has an \"enemy that can be companied\", it surely gets up
+
+② Entered enemies also get up
+By joining a group at battle victory,
+Already subscribed (party/Even the enemies of the castle), \"treat as companionable enemy\"
+
+※ We do not guarantee play after joining
+To the end for the test of the joining effect
+
+③ You can specify the enemies that come out with variables
+At the start of battle,
+If the value of a specific variable is 1 or more, all enemy's enemy IDs are \"the value of that variable\"
+(All enemies change to the enemies designated by the variable)
+
+
+
+=end
+
+module FollowerTest
+  
+  # true:Valid false:Disabled
+  USE = false
+  
+  # ID of \"variable designating change destination enemy ID\"
+  # If \"this setting is 1 or more\" and \"the value of that variable is 1 or more\", replacement is performed
+  VAR_ID = 5000
+  
+end
+
+if FollowerTest::USE
+print "\n"
+print "※ The script \"Tris subscription effect confirmation\" is valid\n"
+print "  Please disable it after confirmation\n"
+print "\n"
+#==============================================================================
+# ■ Game_Troop
+#==============================================================================
+class Game_Troop < Game_Unit
+  #--------------------------------------------------------------------------
+  # ● draw for friendship
+  #--------------------------------------------------------------------------
+  def check_getup
+    e = @dead_enemies.reverse.uniq.select{|enemy|
+      enemy.follower?
+    }.sample
+    # Test application In progress display
+    if $TEST
+      print "ID#{e.id} #{e.name}\n"
+      print "Be sure to join(Script \"Tris subscription effect confirmation\")\n"
+    end
+    @follower_enemy = e
+  end  
+end
+#==============================================================================
+# ■ RPG::Troop::Member
+#==============================================================================
+class RPG::Troop::Member
+  #--------------------------------------------------------------------------
+  # ● Enemy ID
+  #--------------------------------------------------------------------------
+  def enemy_id
+    var_id = FollowerTest::VAR_ID
+    if var_id != 0
+      var_value = $game_variables[var_id]
+      return var_value if var_value > 0
+    end
+    return @enemy_id
+  end
+end
+
+end
+

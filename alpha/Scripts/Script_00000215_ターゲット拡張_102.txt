@@ -1,0 +1,286 @@
+=begin #=======================================================================
+
+◆ ◇ Target Expansion RGSS 3 ◇ ◆
+
+◆ Rene
+◆ Rene
+◆ http://blog.goo.ne.jp/exa_deicide_alma
+
+◆ Function/Caution
+Allows you to set skill and item range that can not be set in the database.
+You can also set limits on the number of duplicate attacks during random attacks.
+
+※ If the effect range is random or the whole
+Please set the effect range of the database to random or whole as a tagger not selectable.
+
+★ Write the following words in the memo field of the skill or item and use it.
+--------------------------------------------------------------------------------
+◆ Setting the number of duplication
+<Overlap limit:n> ⇒ Limit on the number of duplications to the same unit at random attack
+
+※ The limit exceeded does not spread out and disappears.
+  Assuming 4, 1, 3 hits when attacking 3 enemies randomly
+  <Overlap limit:2>If there is a notation, it will be 2, 1, 2 times.
+  
+◆ Setting of duplicate animation
+<Duplicate animation invalid> ⇒ Do not play animation once on the same target
+
+* In VXA, animations are played back many times to the same tagger when random n objects.
+(Only the central animation?)
+--------------------------------------------------------------------------------
+◆ Word for target extension(Do not write more than one)
+<Enemy unit continuous:n> ⇒ n times effect on enemy unit
+<Continuous all enemies:n> ⇒ Effects on enemies n times
+<Enemy random:n> ⇒ n times effect on enemy(Tagetoe falls apart once, there is overlap)
+<Enemy random succession:n> ⇒ n random effects against one random enemy(Enemy unable to select tagger Unit serial)
+
+<Ally single body continuation:n> ⇒ effect n times on ally singles
+<All ally successive:n> ⇒ Effects n times on all ally
+<Ally random:n> ⇒ Effect on ally n times(Tagetoe falls apart once, there is overlap)
+<Ally random sequence:n> ⇒ Taber non-selectable friendly ally single
+
+<Enemy ally>       ⇒ Effects on enemy allys as a whole
+<Enemy ally or random:n> ⇒ n times effect on enemy ally(Tagetoe falls apart once, there is overlap)
+--------------------------------------------------------------------------------
+◆ Word in combination with the word above(Can not be used alone)
+<Additional random:n> ⇒ Add effect 0 to n times
+
+<User exclusion:n> ※ n is 0 or 1
+
+0 ⇒ Finally exclude users
+In case(In the case of random range, the number of attacks decreases by the number of times the user has chosen)
+
+1 ⇒ Exclude users from the beginning
+     (Dedicated for random range, since users are never chosen, attack a few times)
+
+* Please set it to 0 when it is not a random range.
+--------------------------------------------------------------------------------
+■ Example 1: Ally other than yourself
+The memo field description
+<All ally successive:1>
+<User exclusion:0>
+
+■ Example 2: Enemy ally other than yourself Randomly attack 5-8 times
+The memo field description
+<Enemy ally or random:5>
+<Additional random:3>
+<User exclusion:1>    * 0, the number of attacks will be reduced by the number of times the user has been selected.
+
+--------------------------------------------------------------------------------
+※ When no target is gone, it will automatically be effective for the user.
+In this case, please review the setting since the effect range setting is wrong.
+In case(Ally random and excluding users)
+
+◆ Introduction place
+▼ material place, above main
+
+=end #=========================================================================
+module RENNE ; module Target_Exp
+  # Overlap limit
+  OVERLAP = /<Overlap limit[::](\d+)>/
+  
+  # Duplicate animation invalid
+  NON_OL_ANIMA = "<Duplicate animation invalid>"
+  
+  # Enemy's target extension
+  Reg1 = /<Enemy unit continuous:(\d+)>/
+  Reg2 = /<Continuous all enemies:(\d+)>/
+  Reg3 = /<Enemy random:(\d+)>/
+  
+  # Extended target of friend
+  Reg4 = /<Ally single body continuation:(\d+)>/
+  Reg5 = /<All ally successive:(\d+)>/
+  Reg6 = /<Ally random:(\d+)>/
+  
+  # Special target such as enemy ally
+  Reg7 = /<Enemy random succession:(\d+)>/
+  Reg8 = /<Ally random sequence:(\d+)>/
+  Reg9 = /<Enemy ally>/ 
+  Reg10 = /<Enemy ally or random:(\d+)>/
+  
+  # Combination word with above word(Can not be used alone)
+  Add1 = /<Additional random:(\d+)>/
+  Add2 = /<User exclusion>|<User exclusion:(\d+)>/
+  
+end ; end
+
+$renne_rgss3 = {} if $renne_rgss3.nil?
+$renne_rgss3[:target_exp] = true
+
+class RPG::UsableItem < RPG::BaseItem
+  #--------------------------------------------------------------------------
+  # ● Include
+  #--------------------------------------------------------------------------
+  include RENNE::Target_Exp
+  #--------------------------------------------------------------------------
+  # ● Acquire Extended Target
+  #--------------------------------------------------------------------------
+  def exp_target?
+    if @exp_target.nil?
+      @exp_target = []
+      @exp_target[2] = -1
+      note.each_line{|line|
+      case line
+      when Reg1 ; @exp_target[0] = [1,$1.to_i]
+      when Reg2 ; @exp_target[0] = [2,$1.to_i]
+      when Reg3 ; @exp_target[0] = [3,$1.to_i]
+      when Reg4 ; @exp_target[0] = [4,$1.to_i]
+      when Reg5 ; @exp_target[0] = [5,$1.to_i]
+      when Reg6 ; @exp_target[0] = [6,$1.to_i]
+      when Reg7 ; @exp_target[0] = [7,$1.to_i]
+      when Reg8 ; @exp_target[0] = [8,$1.to_i]
+      when Reg9 ; @exp_target[0] = [9, true]
+      when Reg10; @exp_target[0] = [10,$1.to_i]
+      when Add1 ; @exp_target[1] = $1.to_i + 1
+      when Add2 ; @exp_target[2] = $1.nil? ? 0 :$1.to_i
+      end
+      }
+      if @exp_target[0].nil?
+        @exp_target = false
+      end
+    end
+    return @exp_target
+  end
+  alias exp_target exp_target?
+  #--------------------------------------------------------------------------
+  # ● Acquire overlap limit skill setting
+  #--------------------------------------------------------------------------
+  def overlap_limit
+    if @overlap_limit.nil?
+      @overlap_limit = note[OVERLAP,1].to_i
+    end
+    return @overlap_limit
+  end
+  #--------------------------------------------------------------------------
+  # ● Obtaining invalidation flag of duplicate animation
+  #--------------------------------------------------------------------------
+  def non_overlap_anima?
+    if @non_overlap_anima.nil?
+      @non_overlap_anima = note.include?(NON_OL_ANIMA)
+    end
+    return @non_overlap_anima
+  end
+end
+
+class Game_Unit
+  #--------------------------------------------------------------------------
+  # ● Acquire extended random target
+  #--------------------------------------------------------------------------
+  def exp_ram_target(subject)
+    tgr_rand = rand * (tgr_sum - subject.tgr)
+    arr = alive_members - [subject]
+    arr.each do |member| 
+      tgr_rand -= member.tgr
+      return member if tgr_rand < 0
+    end
+    return arr[0]
+  end
+end
+
+class Game_Action
+  #--------------------------------------------------------------------------
+  # ● Creating restricted targets
+  #--------------------------------------------------------------------------
+  def limit_targets(arr, max)
+    result = []
+    temp = {}
+    arr.each{|obj|
+      temp[obj] = temp[obj].to_i + 1
+      result << obj unless temp[obj] > max
+    }
+    return result
+  end
+  #--------------------------------------------------------------------------
+  # ● Creating Extended Targets
+  #--------------------------------------------------------------------------
+  def make_exp_targets
+    arr = []
+    exp = item.exp_target
+    exp_id = exp[0][0]
+    num = exp[0][1]
+    ram = exp[1] ? rand(exp[1]) : 0
+    ex_remove = friends_unit.members.size == 1
+    case exp_id
+    when 1
+      arr << opponents_unit.smooth_target(@target_index)
+      arr *= (num + ram)
+    when 2
+      arr = opponents_unit.alive_members
+      arr *= (num + ram)
+    when 3
+      (num + ram).times do arr << opponents_unit.random_target end
+    when 4
+      arr << friends_unit.smooth_target(@target_index)
+      arr *= (num + ram)
+    when 5
+      arr = friends_unit.alive_members
+      arr *= (num + ram)
+			
+    when 6
+      if exp[2] == 1
+        (num + ram).times do arr << friends_unit.exp_ram_target(subject) end
+      else
+        (num + ram).times do arr << friends_unit.random_target end
+      end
+    when 7 
+      arr << opponents_unit.random_target
+      arr *= (num + ram)
+    when 8
+      arr << friends_unit.random_target
+      arr *= (num + ram)
+    when 9
+      arr = opponents_unit.alive_members + friends_unit.alive_members
+      arr *= (1 + ram)
+    when 10
+      if ex_remove
+        (num + ram).times do arr << opponents_unit.random_target end
+      else
+        (num + ram).times do
+          if rand(2).zero? 
+            arr << opponents_unit.random_target
+          else
+            if exp[2] == 1
+              arr << friends_unit.exp_ram_target(subject)
+            else
+              arr << friends_unit.random_target
+            end
+          end
+        end
+      end
+    end
+    arr.delete(subject) if exp[2].zero?
+    arr.compact!
+    arr = [subject] if arr.empty?
+    return arr
+  end
+  #--------------------------------------------------------------------------
+  # ● Arranging targets(alias)
+  #--------------------------------------------------------------------------
+  alias target_exp_make_targets make_targets
+  def make_targets
+    if !(!forcing && subject.confusion?) && item.exp_target?
+      targets = make_exp_targets
+    else
+      targets = target_exp_make_targets
+    end
+    if item.overlap_limit > 0
+      targets = limit_targets(targets, item.overlap_limit)
+    end
+    return targets
+  end
+end
+
+class Scene_Battle < Scene_Base
+  #--------------------------------------------------------------------------
+  # ● Display animation(alias)
+  #--------------------------------------------------------------------------
+  alias target_exp_show_animation show_animation
+  def show_animation(targets, animation_id)
+    item = @subject.current_action.item
+    if item.non_overlap_anima?
+      targets = targets.uniq
+    end
+    target_exp_show_animation(targets, animation_id)
+  end
+end
+

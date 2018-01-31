@@ -1,0 +1,2 @@
+"会話：クィーンラミア" -> "Conversation: Queen Lamia"
+"会話を拒絶している！" -> "I am rejecting the conversation!"

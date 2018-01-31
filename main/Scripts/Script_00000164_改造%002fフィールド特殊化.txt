@@ -1,0 +1,432 @@
+=begin
+=改造/フィールド特殊化
+
+
+
+
+==更新履歴
+  Date     Version Author Comment
+
+=end
+
+#==============================================================================
+# ■ Audio
+#==============================================================================
+class << Audio
+  #--------------------------------------------------------------------------
+  # ○ 更新処理
+  #--------------------------------------------------------------------------
+  alias nw_field_update update
+  def update
+    nw_field_update
+    if !$game_party.in_battle && $game_map.auto_bgm? && !$game_player.vehicle
+      update_field 
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● 更新処理（フィールド用）
+  #--------------------------------------------------------------------------
+  def update_field
+    @fiber_bgm = Fiber.new{ fiber_bgm_main } if bgm_change? && @fiber_bgm.nil?
+    @fiber_bgs = Fiber.new{ fiber_bgs_main } if bgs_change? && @fiber_bgs.nil?
+    @fiber_bgm.resume if @fiber_bgm
+    @fiber_bgs.resume if @fiber_bgs
+  end
+  #--------------------------------------------------------------------------
+  # ● ＢＧＭ処理
+  #--------------------------------------------------------------------------
+  def fiber_bgm_main
+    if @now_bgm.nil? || @now_bgm.name != ""
+      bgm_fade(NWConst::Field::FADEOUT_FRAME * 16.666)
+      NWConst::Field::FADEOUT_FRAME.times{ Fiber.yield }
+    end
+    bgm_stop
+    @now_bgm = @next_bgm
+    if @now_bgm.name != ""
+      NWConst::Field::FADEIN_FRAME.times{|i|
+        volume = @now_bgm.volume * (i / Float(NWConst::Field::FADEIN_FRAME))
+        bgm_play('Audio/BGM/' + @now_bgm.name, volume, @now_bgm.pitch)
+        Fiber.yield
+      }
+    end
+    @fiber_bgm = nil
+  end
+  #--------------------------------------------------------------------------
+  # ● ＢＧＳ処理
+  #--------------------------------------------------------------------------
+  def fiber_bgs_main
+    if @now_bgs.nil? || @now_bgs.name != ""
+      bgs_fade(NWConst::Field::FADEOUT_FRAME * 16.666)
+      NWConst::Field::FADEOUT_FRAME.times{ Fiber.yield }
+    end
+    bgs_stop
+    @now_bgs = @next_bgs
+    if @now_bgs.name != ""
+      NWConst::Field::FADEIN_FRAME.times{|i|
+        volume = @now_bgs.volume * (i / Float(NWConst::Field::FADEIN_FRAME))
+        bgs_play('Audio/BGS/' + @now_bgs.name, volume, @now_bgs.pitch)
+        Fiber.yield
+      }
+    end
+    @fiber_bgs = nil
+  end
+  #--------------------------------------------------------------------------
+  # ● 次のＢＧＭ
+  #--------------------------------------------------------------------------
+  def next_bgm(bgm)
+    return if bgm.name == @next_bgm.name
+    @next_bgm = bgm
+  end
+  #--------------------------------------------------------------------------
+  # ● 次のＢＧＳ
+  #--------------------------------------------------------------------------
+  def next_bgs(bgs)
+    return if bgs.name == @next_bgs.name
+    @next_bgs = bgs
+  end
+  #--------------------------------------------------------------------------
+  # ● ＢＧＭチェンジ？
+  #--------------------------------------------------------------------------
+  def bgm_change?
+    @now_bgm != @next_bgm
+  end
+  #--------------------------------------------------------------------------
+  # ● ＢＧＳチェンジ？
+  #--------------------------------------------------------------------------
+  def bgs_change?
+    @now_bgs != @next_bgs
+  end
+  #--------------------------------------------------------------------------
+  # ● ＢＧＭとＢＧＳのリセット
+  #--------------------------------------------------------------------------
+  def reset_sound
+    init_basic
+    @now_bgm  = RPG::BGM.new
+    @next_bgm = RPG::BGM.new
+    @now_bgs  = RPG::BGS.new
+    @next_bgs = RPG::BGS.new
+  end
+  #--------------------------------------------------------------------------
+  # ● 戦闘用準備
+  #--------------------------------------------------------------------------
+  def battle_prepare
+    init_basic
+    @next_bgm = RPG::BGM.new if @next_bgm.nil?
+    @next_bgs = RPG::BGS.new if @next_bgs.nil?
+    @now_bgm  = @next_bgm
+    @now_bgs  = @next_bgs
+  end
+  #--------------------------------------------------------------------------
+  # ● ロード用サウンドセット
+  #--------------------------------------------------------------------------
+  def load_sound(bgm, bgs)
+    @now_bgm  = bgm
+    @next_bgm = bgm
+    @now_bgs  = bgs
+    @next_bgs = bgs    
+  end
+end
+
+#==============================================================================
+# ■ BattleManager
+#==============================================================================
+class << BattleManager
+  #--------------------------------------------------------------------------
+  # ○ BGM と BGS の再開
+  #--------------------------------------------------------------------------
+  alias nw_field_replay_bgm_and_bgs replay_bgm_and_bgs
+  def replay_bgm_and_bgs
+    nw_field_replay_bgm_and_bgs
+    $game_map.autoplay_field if $game_map.auto_bgm?
+  end
+end
+
+#==============================================================================
+# ■ RPG::BGM
+#==============================================================================
+class RPG::BGM < RPG::AudioFile
+  #--------------------------------------------------------------------------
+  # ● ＢＧＭのリザーブ
+  #--------------------------------------------------------------------------
+  def reserve
+    Audio.next_bgm(self)
+    @@last = self.clone
+  end
+end
+
+#==============================================================================
+# ■ RPG::BGS
+#==============================================================================
+class RPG::BGS < RPG::AudioFile
+  #--------------------------------------------------------------------------
+  # ● ＢＧＳのリザーブ
+  #--------------------------------------------------------------------------
+  def reserve
+    Audio.next_bgs(self)
+    @@last = self.clone
+  end
+end
+
+#==============================================================================
+# ■ Game_System
+#==============================================================================
+class Game_System
+  #--------------------------------------------------------------------------
+  # ○ ロード後の処理
+  #--------------------------------------------------------------------------
+  alias nw_field_on_after_load on_after_load
+  def on_after_load
+    nw_field_on_after_load
+    Audio.load_sound(@bgm_on_save.clone, @bgs_on_save.clone)
+  end
+end
+
+#==============================================================================
+# ■ Game_Map
+#==============================================================================
+class Game_Map
+  #--------------------------------------------------------------------------
+  # ● フィールド？
+  #--------------------------------------------------------------------------
+  def field?
+    return NWConst::Field::FIELD_MAP_ID.include?(@map_id)
+  end
+  #--------------------------------------------------------------------------
+  # ● BGM自動切換マップ？
+  #--------------------------------------------------------------------------
+  def auto_bgm?
+    return NWConst::Field::AUTO_BGM_MAP_ID.include?(@map_id)
+  end
+  #--------------------------------------------------------------------------
+  # ○ BGM / BGS 自動切り替え
+  #--------------------------------------------------------------------------
+  alias nw_field_autoplay autoplay
+  def autoplay
+    auto_bgm? ? autoplay_field : nw_field_autoplay
+  end
+  #--------------------------------------------------------------------------
+  # ● BGM / BGS 自動切り替え
+  #--------------------------------------------------------------------------
+  def autoplay_field
+    bgm = NWConst::Field::BGM[map_id][$game_player.region_id]
+    bgs = NWConst::Field::BGS[map_id][$game_player.region_id]
+    bgm ||= RPG::BGM.new
+    bgs ||= RPG::BGS.new    
+    bgm.reserve
+    bgs.reserve    
+  end
+  #--------------------------------------------------------------------------
+  # ● BGM / BGS 自動切り替え（着岸用）
+  #--------------------------------------------------------------------------
+  def autoplay_landing
+    if $game_player.in_boat? || $game_player.in_ship?
+      x = round_x_with_direction($game_player.x, $game_player.direction)
+      y = round_y_with_direction($game_player.y, $game_player.direction)
+      id = region_id(x, y)
+      bgm = NWConst::Field::BGM[map_id][id]
+      bgs = NWConst::Field::BGS[map_id][id]
+      bgm ||= RPG::BGM.new
+      bgs ||= RPG::BGS.new    
+      bgm.reserve
+      bgs.reserve    
+    else
+      autoplay_field
+    end
+  end
+end
+
+#==============================================================================
+# ■ Game_Player
+#==============================================================================
+class Game_Player < Game_Character
+  #--------------------------------------------------------------------------
+  # ○ 非公開メンバ変数の初期化
+  #--------------------------------------------------------------------------
+  alias nw_field_init_private_members init_private_members
+  def init_private_members
+    nw_field_init_private_members
+    @old_region_id = 0
+  end
+  #--------------------------------------------------------------------------
+  # ○ 場所移動の実行
+  #--------------------------------------------------------------------------
+  alias nw_field_perform_transfer perform_transfer
+  def perform_transfer
+    nw_field_perform_transfer
+    if $game_map.auto_bgm?
+      Audio.reset_sound
+      $game_map.autoplay_field
+    end
+    @old_region_id = region_id
+  end
+  #--------------------------------------------------------------------------
+  # ○ 歩数増加
+  #--------------------------------------------------------------------------
+  alias nw_field_increase_steps increase_steps
+  def increase_steps
+    nw_field_increase_steps
+    $game_map.autoplay_field if $game_map.auto_bgm? && vehicle.nil? && (@old_region_id != region_id)
+    @old_region_id = region_id
+  end
+end
+
+#==============================================================================
+# ■ Game_Vehicle
+#==============================================================================
+class Game_Vehicle
+  #--------------------------------------------------------------------------
+  # ○ 乗り物に乗る
+  #--------------------------------------------------------------------------
+  alias nw_field_get_on get_on
+  def get_on
+    if $game_map.auto_bgm?
+      @driving = true
+      @walk_anime = true
+      @step_anime = true
+      Audio.reset_sound
+      system_vehicle.bgm.play
+    else
+      nw_field_get_on
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ○ 乗り物から降りる
+  #--------------------------------------------------------------------------
+  alias nw_field_get_off get_off
+  def get_off
+    if $game_map.auto_bgm?
+      @driving = false
+      @walk_anime = false
+      @step_anime = false
+      @direction = 4
+      Audio.reset_sound
+      $game_map.autoplay_landing 
+    else
+      nw_field_get_off
+    end
+  end
+end
+
+#==============================================================================
+# ■ Game_Event
+#==============================================================================
+class Game_Event < Game_Character
+  #--------------------------------------------------------------------------
+  # ● スプライトを使う？
+  #--------------------------------------------------------------------------
+  def use_sprite?
+    @event.pages.any?{|page|
+      !page.graphic.character_name.empty? || (0 < page.graphic.tile_id)
+    }
+  end
+end
+
+#==============================================================================
+# ■ Sprite_Character
+#==============================================================================
+class Sprite_Character < Sprite_Base
+  #--------------------------------------------------------------------------
+  # ● 可視範囲内？
+  #--------------------------------------------------------------------------
+  def is_visibility?
+    0 <= @character.screen_x + 100 && @character.screen_x - 100 <= Graphics.width &&
+    0 <= @character.screen_y + 100 && @character.screen_y - 100 <= Graphics.height
+  end
+end
+
+#==============================================================================
+# ■ Spriteset_Map
+#==============================================================================
+class Spriteset_Map  
+  #--------------------------------------------------------------------------
+  # ○ キャラクタースプライトの作成
+  #--------------------------------------------------------------------------
+  alias nw_field_create_characters create_characters
+  def create_characters
+    if $game_map.field?
+      @character_sprites = []
+      $game_map.events.values.select{ |event|
+        event.use_sprite?
+      }.each { |event|
+        @character_sprites.push(Sprite_Character.new(@viewport1, event))
+      }
+      $game_map.vehicles.each do |vehicle|
+        @character_sprites.push(Sprite_Character.new(@viewport1, vehicle))
+      end
+      $game_player.followers.reverse_each do |follower|
+        @character_sprites.push(Sprite_Character.new(@viewport1, follower))
+      end
+      @character_sprites.push(Sprite_Character.new(@viewport1, $game_player))
+      @map_id = $game_map.map_id
+    else
+      nw_field_create_characters
+    end
+  end  
+  #--------------------------------------------------------------------------
+  # ○ キャラクタースプライトの更新
+  #--------------------------------------------------------------------------
+  alias nw_field_update_characters update_characters
+  def update_characters
+    if $game_map.field?
+      @character_sprites.select{|s| s.is_visibility?}.each{|s| s.update}
+    else
+      nw_field_update_characters
+    end
+  end  
+end
+
+#==============================================================================
+# ■ Scene_Map
+#==============================================================================
+class Scene_Map < Scene_Base
+  #--------------------------------------------------------------------------
+  # ○ シーン遷移に関連する更新
+  #--------------------------------------------------------------------------
+  alias nw_field_update_scene update_scene
+  def update_scene
+    nw_field_update_scene
+    unless scene_changing?
+      update_draw_map
+      update_call_castle
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● 地図の表示
+  #--------------------------------------------------------------------------
+  def update_draw_map
+    return unless Input.trigger?(:L) || Input.trigger?(:R)
+    return unless $game_map.field?
+    return if $game_map.interpreter.running?
+    Input.update
+    $game_temp.reserve_common_event(NWConst::Common::MAP_DRAW)
+  end
+  #--------------------------------------------------------------------------
+  # ● ポケット魔王城のショートカット
+  #--------------------------------------------------------------------------
+  def update_call_castle
+    return unless Input.trigger?(:Y) || Input.trigger?(:Z)
+    return unless $game_map.field?
+    return unless $game_party.has_item?($data_items[NWConst::Item::POCKET_CASTLE])
+    return if $game_map.interpreter.running?
+    Input.update
+    $game_temp.reserve_common_event(NWConst::Common::CALL_CASTLE)
+  end
+  #--------------------------------------------------------------------------
+  # ○ 場所移動後の処理
+  #--------------------------------------------------------------------------
+  alias nw_field_post_transfer post_transfer
+  def post_transfer
+    @spriteset.refresh_characters if $game_map.field?
+    nw_field_post_transfer
+  end
+  #--------------------------------------------------------------------------
+  # ○ バトル画面遷移の前処理
+  #--------------------------------------------------------------------------
+  alias nw_field_pre_battle_scene pre_battle_scene
+  def pre_battle_scene
+    Audio.battle_prepare
+    nw_field_pre_battle_scene
+  end
+end
+
+

@@ -1,0 +1,6 @@
+"【カニ娘】" -> "【Crab Musume】"
+"究極のあわあわスキル、特別に教えてあげる！" -> "I will tell you the ultimate furious skills, special!"
+"選択" -> "Choice"
+"選択" -> "Choice"
+"【カニ娘】" -> "【Crab Musume】"
+"みんな、あわあわまみれになれば平和なのにね……" -> "Everyone is peaceful if it gets hurt ... ..."

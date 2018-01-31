@@ -1,0 +1,4 @@
+"反省会" -> "Evaluation meeting"
+"　No" -> "No"
+"　Stop moving" -> "Stop moving"
+"反省会" -> "Evaluation meeting"

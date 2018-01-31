@@ -1,0 +1,202 @@
+#==============================================================================
+# ★ RGSS 3_Visibility limit Ver1.2
+#==============================================================================
+=begin
+
+Author: tomoaky
+webSite: Tsukimoto(http://hikimoki.sakura.ne.jp/)
+
+Only the map with the set number will limit visibility.
+
+By writing a tag in the memo field such as actor, occupation, weapon (armor), state etc.
+You can correct the size of the visibility limits.
+  Example)<Visibility correction 32>
+The field of vision spreads by 32 dots.
+Combat members will only be calculating the visibility correction value.
+
+You can correct the size of the field of view using game variables (default 9).
+
+The actual view limit size is the sum of all the above set values.
+However, if the limit of view is not set on the map, it is invalid.
+
+In such a situation that the coordinates on the player's screen always change (such as a small map for one screen),
+In situations where the visibility correction value changes in real time, the sprite redrawing is frequently performed
+Processing becomes heavy for execution
+
+Image necessary for operation
+  Graphics/System/sight_shadow.png
+  
+Game variable to use (default setting)
+  0009
+
+2013.01.22  Ver1.2
+  · Improve processing which was redrawing every frame
+  - Correct the part that causes error drops depending on the environment
+  
+2012.03.07  Ver1.11
+- Fixed a bug in which visibility restriction was interrupted when returning from menu
+  
+2012.02.05  Ver1.1
+  · Adjust the Z coordinate so that the timer does not hide
+  - Added a function to correct visibility limit size using game variables
+  
+2012.01.20  Ver1.0
+  Release
+
+=end
+
+#==============================================================================
+# □ Setting item
+#==============================================================================
+module TMBLSIGHT
+  # How much field of view to limit visibility
+  # Example) SIGHT[3] = 128  # Restrict visibility of No. 3 map to 128 dots square
+  SIGHT = {}
+  SIGHT[234] = 350
+  SIGHT[236] = 350
+  SIGHT[265] = 350
+  SIGHT[258] = 350
+  SIGHT[259] = 350
+  SIGHT[261] = 350
+  SIGHT[263] = 350
+  SIGHT[239] = 350
+  SIGHT[175] = 350
+  SIGHT[241] = 350
+  SIGHT[243] = 350
+  SIGHT[245] = 350
+  SIGHT[247] = 350
+  
+  VN_SIGHT = 2    # Game variable number used for size correction of visibility
+end
+
+#==============================================================================
+# □ RPG::BaseItem
+#==============================================================================
+class RPG::BaseItem
+  #--------------------------------------------------------------------------
+  # ○ Correction value of limit of visibility
+  #--------------------------------------------------------------------------
+  def sight_power
+    unless @sight_power
+      @sight_power = /<Visibility correction\s*(\-*\d+)\s*>/ =~ @note ? $1.to_i : 0
+    end
+    @sight_power
+  end
+end
+
+#==============================================================================
+# ■ Game_Actor
+#==============================================================================
+class Game_Actor
+  #--------------------------------------------------------------------------
+  # ○ Correction value of limit of visibility
+  #--------------------------------------------------------------------------
+  def sight_power
+    feature_objects.inject(0) {|result, object| result + object.sight_power }
+  end
+end
+
+#==============================================================================
+# □ Sprite_SightShadow
+#==============================================================================
+class Sprite_SightShadow < Sprite
+  #--------------------------------------------------------------------------
+  # ● Object initialization
+  #--------------------------------------------------------------------------
+  def initialize(viewport = nil)
+    super(viewport)
+    self.z = 199
+    self.bitmap = Bitmap.new(Graphics.width, Graphics.height)
+    @bitmap_shadow = Bitmap.new("Graphics/System/sight_shadow")
+  end
+  #--------------------------------------------------------------------------
+  # ● Release
+  #--------------------------------------------------------------------------
+  def dispose
+    self.bitmap.dispose
+    @bitmap_shadow.dispose
+    super
+  end
+  #--------------------------------------------------------------------------
+  # ● Frame update
+  #--------------------------------------------------------------------------
+  def update
+    super
+    if TMBLSIGHT::SIGHT[$game_map.map_id]
+      self.visible = true
+      w = TMBLSIGHT::SIGHT[$game_map.map_id]      # Correction value set in the map
+      w += $game_variables[TMBLSIGHT::VN_SIGHT]   # Correction value by game variable
+      $game_party.battle_members.each do |actor|
+        w = [w + actor.sight_power, 48].max       # Correction value of battle member
+      end
+      x = $game_player.screen_x - w / 2
+      y = $game_player.screen_y - w / 2 - 16
+      if w != @last_w || x != @last_x || y != @last_y
+        @last_w = w
+        @last_x = x
+        @last_y = y
+        self.bitmap.clear
+        rect = Rect.new(x, y, w, w)
+        self.bitmap.stretch_blt(rect, @bitmap_shadow, @bitmap_shadow.rect)
+        color = Color.new(0, 0, 0)
+        self.bitmap.fill_rect(0, 0, Graphics.width, y, color)
+        self.bitmap.fill_rect(0, y + w, Graphics.width, Graphics.height - y - w, color)
+        self.bitmap.fill_rect(0, y, x, w, color)
+        self.bitmap.fill_rect(x + w, y, Graphics.width - x - w, w, color)
+      end
+    else
+      self.visible = false
+    end
+  end
+end
+
+#==============================================================================
+# ■ Spriteset_Map
+#==============================================================================
+class Spriteset_Map
+  #--------------------------------------------------------------------------
+  # ● Object initialization
+  #--------------------------------------------------------------------------
+  alias tmblsight_spriteset_map_initialize initialize
+  def initialize
+    tmblsight_spriteset_map_initialize
+    create_sight_shadow
+  end
+  #--------------------------------------------------------------------------
+  # ○ Creating visibility limiting sprite
+  #--------------------------------------------------------------------------
+  def create_sight_shadow
+    @sight_shadow_sprite = Sprite_SightShadow.new(@viewport2)
+    update_sight_shadow
+  end
+  #--------------------------------------------------------------------------
+  # ● Release
+  #--------------------------------------------------------------------------
+  alias tmblsight_spriteset_map_dispose dispose
+  def dispose
+    dispose_sight_shadow
+    tmblsight_spriteset_map_dispose
+  end
+  #--------------------------------------------------------------------------
+  # ○ Release visibility limit sprite
+  #--------------------------------------------------------------------------
+  def dispose_sight_shadow
+    @sight_shadow_sprite.dispose
+  end
+  #--------------------------------------------------------------------------
+  # ● Frame update
+  #--------------------------------------------------------------------------
+  alias tmblsight_spriteset_map_update update
+  def update
+    update_sight_shadow
+    tmblsight_spriteset_map_update
+  end
+  #--------------------------------------------------------------------------
+  # ○ Update field limit sprite
+  #--------------------------------------------------------------------------
+  def update_sight_shadow
+    @sight_shadow_sprite.update if @sight_shadow_sprite
+  end
+end
+
+

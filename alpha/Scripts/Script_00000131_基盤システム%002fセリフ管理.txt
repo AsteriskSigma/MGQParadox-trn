@@ -1,0 +1,281 @@
+=begin
+=Infrastructure system/Serif management
+
+
+
+
+==Change log
+  Date     Version Author Comment
+==17/09/21 2.2.0   Sunflower integration 1
+=end
+
+#==============================================================================
+# ■ CutIn
+#==============================================================================
+class CutIn
+	#--------------------------------------------------------------------------
+	# ● Object initialization
+	#--------------------------------------------------------------------------
+	def initialize(type, pic_name, se_name = nil)
+		@type     = type
+		@pic_name = pic_name
+		@se = RPG::SE.new(se_name) if se_name
+	end
+	#--------------------------------------------------------------------------
+	# ● Weight
+	#--------------------------------------------------------------------------
+	def wait(duration)
+		@wait_method.call(duration) if @wait_method
+	end
+	#--------------------------------------------------------------------------
+	# ● Execute effect sound
+	#--------------------------------------------------------------------------
+	def se_play
+		@se.play if @se
+	end
+	#--------------------------------------------------------------------------
+	# ● Obtain target of screen type commands
+	#--------------------------------------------------------------------------
+	def screen
+		if $game_party.in_battle
+			return $game_troop.screen
+		elsif $game_party.in_novel
+			return $game_novel.screen
+		else
+			return $game_map.screen
+		end
+	end
+	#--------------------------------------------------------------------------
+	# ● Display
+	#--------------------------------------------------------------------------
+	def show(num, x, y, ori = 0, zx = 100, zy = 100, op = 255, bl = 0)
+		screen.pictures[num].show(@pic_name, ori, x, y, zx, zy, op, bl)
+	end
+	#--------------------------------------------------------------------------
+	# ● Move
+	#--------------------------------------------------------------------------
+	def move(num, x, y, dur, ori = 0, zx = 100, zy = 100, op = 255, bl = 0, wait = false)
+		screen.pictures[num].move(ori, x, y, zx, zy, op, bl, dur)
+		wait(dur) if wait
+	end
+	#--------------------------------------------------------------------------
+	# Rotation
+	#--------------------------------------------------------------------------
+	def rotate(num, spd)
+		screen.pictures[num].rotate(spd)
+	end
+	#--------------------------------------------------------------------------
+	# ● Change color
+	#--------------------------------------------------------------------------
+	def tone_change(num, tone, dur, wait = false)
+		screen.pictures[num].start_tone_change(tone, dur)
+		wait(dur) if wait
+	end
+	#--------------------------------------------------------------------------
+	# ● Clear
+	#--------------------------------------------------------------------------
+	def erase(num)
+		screen.pictures[num].erase
+	end  
+	#--------------------------------------------------------------------------
+	# ● Execution
+	#--------------------------------------------------------------------------
+	def execute(wait_method)
+		@wait_method = wait_method
+		send("execute_#{@type}".to_sym)
+	end
+	#--------------------------------------------------------------------------
+	# ● Execution (Basic)
+	#--------------------------------------------------------------------------
+	def execute_basic
+		se_play
+		show(20, 0, 0, 0, 100, 100, 0)
+		move(20, 0, 0, 15, 0, 100, 100, 255, 0, true)
+		wait(30)
+		move(20, 0, 0, 15, 0, 100, 100, 0, 0, true)
+		erase(20)
+	end  
+	#--------------------------------------------------------------------------
+	# ● Execution (slide)
+	#--------------------------------------------------------------------------
+	def execute_slide
+		se_play
+		show(20, Graphics.width / 10, 0, 0, 100, 100, 0)
+		move(20, 0, 0, 15, 0, 100, 100, 255, 0, true)
+		wait(30)
+		move(20, Graphics.width / 10, 0, 15, 0, 100, 100, 0, 0, true)
+		erase(20)
+	end  
+	#--------------------------------------------------------------------------
+	# ● Execution (Focus)
+	#--------------------------------------------------------------------------
+	def execute_focus
+		se_play
+		show(20, 0, 0, 0, 110, 110, 64, 0)
+		show(19, 0, 0, 0, 120, 120, 32, 0)
+		show(18, 0, 0, 0, 130, 130, 0, 0)
+		move(20, 0, 0, 15, 0, 100, 100, 0, 0, false)
+		move(19, 0, 0, 15, 0, 100, 100, 0, 0, false)
+		move(18, 0, 0, 15, 0, 100, 100, 255, 0, true)
+		wait(30)
+		move(20, 0, 0, 15, 0, 110, 110, 64, 0, false)
+		move(19, 0, 0, 15, 0, 120, 120, 32, 0, false)
+		move(18, 0, 0, 15, 0, 130, 130, 0, 0, true)    
+		erase(20)
+		erase(19)
+		erase(18)
+	end  
+	#--------------------------------------------------------------------------
+	# ● Execution (Long)
+	#--------------------------------------------------------------------------
+	def execute_long
+		se_play
+		show(20, 0, 0, 0, 100, 100, 0, 0)
+		move(20, 0, 0, 15, 0, 100, 100, 255, 0, true)
+		wait(30)
+	end  
+end
+
+#==============================================================================
+# ■ Word
+#==============================================================================
+class Word
+	#--------------------------------------------------------------------------
+	# ● Object initialization
+	#--------------------------------------------------------------------------
+	def initialize(word_data, face_name, face_index)
+		@words = word_data.split("\\n")
+		@face_name = face_name
+		@face_index = face_index
+	end
+	#--------------------------------------------------------------------------
+	# ● Execution
+	#--------------------------------------------------------------------------
+	def execute
+		$game_message.face_name = @face_name
+		$game_message.face_index = @face_index
+		$game_message.background = 0
+		$game_message.position = 2
+		@words.each{|line| $game_message.add(line)}    
+	end  
+end
+
+#==============================================================================
+# ■ Game_Battler
+#==============================================================================
+class Game_Battler < Game_BattlerBase
+	#--------------------------------------------------------------------------
+	# ● Retrieve skill serif data storage hash
+	#--------------------------------------------------------------------------  
+	def skill_word_hash
+		if actor? 
+			data = NWConst::Actor::SKILL_WORDS
+			return data.key?(self.id) ? data[self.id] : nil
+		else
+			data = NWConst::Enemy::SKILL_WORDS
+			id = $data_enemies[self.id].ex_dungeon_enemy? ? self.id-1000 : self.id 
+			return data.key?(id) ? data[id] : nil
+		end
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire down-serif data storage hash
+	#--------------------------------------------------------------------------  
+	def down_word_hash
+		if actor? 
+			data = NWConst::Actor::DOWN_WORDS
+			return data.key?(self.id) ? data[self.id] : nil
+		else
+			data = NWConst::Enemy::DOWN_WORDS
+			id = $data_enemies[self.id].ex_dungeon_enemy? ? self.id-1000 : self.id 
+			return data.key?(id) ? data[id] : nil
+		end
+	end
+	#--------------------------------------------------------------------------
+	# ● Skill dialogue exists?
+	#--------------------------------------------------------------------------  
+	def exist_skill_word?(skill_id)
+		return false unless skill_word_hash
+		return skill_word_hash.keys.any?{|key| key.include?(skill_id)}
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquisition of skill words
+	#--------------------------------------------------------------------------  
+	def skill_words(skill_id)
+		skey = skill_word_hash.keys.select{|skey| skey.include?(skill_id)}.last
+		return skill_word_hash[skey]
+	end
+	#--------------------------------------------------------------------------
+	# ● Is there cut-in?
+	#--------------------------------------------------------------------------  
+	def exist_cutin?(skill_id)
+		skill_words(skill_id).key?(:ct_type)
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquisition of skill lines
+	#--------------------------------------------------------------------------  
+	def skill_word(skill_id)
+		(1..10).collect{|i| "word_#{i}".to_sym}.collect{|key|
+			skill_words(skill_id)[key]
+		}.compact.collect{|w|
+			Word.new(w[0], w[1], w[2])
+		}.sample
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquiring cut-in
+	#--------------------------------------------------------------------------  
+	def cutin(skill_id)
+		data = skill_words(skill_id)
+		return CutIn.new(data[:ct_type], data[:ct_pic], data[:ct_se])
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire down-serif data storage hash
+	#--------------------------------------------------------------------------  
+	def down_word_hash
+		data = actor? ? NWConst::Actor::DOWN_WORDS : NWConst::Enemy::DOWN_WORDS
+		return data.key?(self.id) ? data[self.id] : nil
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquisition of normal death serif
+	#--------------------------------------------------------------------------  
+	def dead_word
+		w = down_word_hash[:dead_word]
+		return w ? Word.new(w[0], w[1], w[2]) : nil
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquisition of pleasure death serif
+	#--------------------------------------------------------------------------  
+	def orgasm_word
+		w = down_word_hash[:orgasm_word]
+		return w ? Word.new(w[0], w[1], w[2]) : nil
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquisition of predation and death serif
+	#--------------------------------------------------------------------------  
+	def predation_word
+		w = down_word_hash[:predation_word]
+		return w ? Word.new(w[0], w[1], w[2]) : nil
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquisition of incontinence dialogue
+	#--------------------------------------------------------------------------  
+	def incontinence_word
+		w = down_word_hash[:incontinence_word]
+		return w ? Word.new(w[0], w[1], w[2]) : nil
+	end
+	#--------------------------------------------------------------------------
+	# ● Changing graphics before death
+	#--------------------------------------------------------------------------  
+	def premortal_change
+		return unless enemy? && down_word_hash.key?(:premortal_graphic)
+		@battler_name = down_word_hash[:premortal_graphic]
+	end
+end
+
+
+
+
+
+
+
+
+

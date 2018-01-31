@@ -1,0 +1,19 @@
+// EVENT 0945
+Name "Event: Merchants 2"
+
+PictureDisplay(5,"80_s_mermaid_st03",0,0,0,0,100,100,0,0)
+PictureMove(5,null,0,0,0,0,100,100,255,0,60,true)
+ShowMessageFace("s_mermaid_fc1",2,0,2,1)
+ShowMessage("\\n<Peddler Mermaid>まいど、うちは行商マーメイドや。\n今日は仕入れに失敗してしもたわ……")
+Shop(0,1,0,0,false)
+605(0,11,0,0)
+605(0,13,0,0)
+605(0,14,0,0)
+605(0,15,0,0)
+605(0,17,0,0)
+605(0,101,0,0)
+ShowMessageFace("s_mermaid_fc1",2,0,2,2)
+ShowMessage("\\n<Peddler Mermaid>次は本気見せるから、見捨てんといてな。")
+PictureClear(5)
+EndEventProcessing()
+0()

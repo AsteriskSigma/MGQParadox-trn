@@ -1,0 +1,50 @@
+COMMON EVENTS
+321 BAD, FIXED 0())
+
+001-319 ALL OK
+
+323-7366 ERR
+
+3040 BAD, FIXED 0())
+
+
+MAP 004, 009, 010, 020, 546 BAD, FIXED null\'
+
+MAP 022, 024, 515 BAD, FIXED \napon shop
+
+MAP 069, 110, 112, 113, 347, 348, 350, 352, 354, 545, 621 BAD, REVERT TO ENGLISH PATCH
+
+SCRIPTS
+FIXED ALL 4-BYTE 'null' files to be properly empty
+79 - fixed latin and japan tables
+
+REPLACE ALL occurances of 'endd' with 'end'
+
+
+INTERPRETER
+REVERT LibraryActor, LibraryEnemy, JobChange 		No fix
+REVERT SKillWordsActor, SkillWordsEnemy, DownWordsAction, DownWordsEnemy		No fix
+REVERT Follower, Present		
+
+Not an issue in scripts, damn
+
+Classes, Items, MapInfos, and Troops all okay
+Enemies, Skills, and States all okay
+Actors is BAD
+Skills and States break loaded games
+
+Full revert of base files fixes
+
+Enemies and Skills OK
+MapInfos and OK
+Classes and Items BROKEN
+Classes is BROKEN
+Items and Troops OK
+MapInfos and States OK
+Troops OK
+
+
+Copied new files back over: PResent, SkillWords*, DownWords*, Follower, Enemies
+Copied over Skills, Actors BREAKS
+
+Items is broken

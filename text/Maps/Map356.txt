@@ -1,0 +1,6 @@
+"【学者】" -> "[Scholar]"
+"精霊の森、立ち入り自粛要請だとさ……" -> "Forest of the spirit, it is said that it is an embarrassment request ... ..."
+"禁止じゃないけど、行けば村八分にするっていう意味だ。" -> "It's not a ban, but if you do go it means making it a village."
+"【学者】" -> "[Scholar]"
+"精霊信仰への弾圧が、また始まりそうな雰囲気だぜ。" -> "The crackdown on spiritual beliefs is about to start again."
+"次は例によって、書物まで燃やすのかね？" -> "Do you burn books as usual next?"

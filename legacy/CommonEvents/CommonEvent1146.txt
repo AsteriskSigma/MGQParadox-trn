@@ -1,0 +1,10 @@
+// EVENT 1146
+Name "Talk: Archangel Ranael"
+
+ChangeVariable(25,25,0,0,0)
+ShowMessageFace("ranael_fc1",0,0,2,1)
+ShowMessage("\\n<Ranael>I do not speak with sinners who have turned against the Goddess.")
+ShowMessageFace("",0,0,2,2)
+ShowMessage("Ranael refused to talk.")
+EndEventProcessing()
+0()

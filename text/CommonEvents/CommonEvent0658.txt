@@ -1,0 +1,7 @@
+"イベント：プリエステス" -> "Event: Priestess"
+"【プリエステス】" -> "【Priestes】"
+"村に帰りたくありません……" -> "I do not want to go back to the village ......"
+"【プリエステス】" -> "【Priestes】"
+"この、不思議な種を体に植えれば……" -> "If you plant this mysterious species in your body ......"
+"プリエステスから不思議な力が与えられた！" -> "The magical power was given from Priestes!"
+"次のボスフロアまで、植物技の威力が二倍になる！" -> "Up to the next boss floor, the power of plant technology doubles!"

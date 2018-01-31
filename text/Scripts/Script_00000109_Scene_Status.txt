@@ -1,0 +1,4 @@
+"■ Scene" -> "■ Scene"
+"　ステータス画面の処理を行うクラスです。" -> "It is a class that processes status screen."
+"● 開始処理" -> "● Start processing"
+"● アクターの切り替え" -> "● Switching actors"

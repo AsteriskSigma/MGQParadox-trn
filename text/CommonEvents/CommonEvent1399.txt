@@ -1,0 +1,2 @@
+"会話：ワールドブレイカー" -> "Conversation: World Breaker"
+"会話を拒絶している！" -> "I am rejecting the conversation!"

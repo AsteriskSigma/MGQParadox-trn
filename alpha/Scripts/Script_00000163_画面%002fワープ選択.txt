@@ -1,0 +1,475 @@
+=begin
+=warp
+
+
+
+
+==Change log
+  Date     Version Author Comment
+==15/09/03 2.0.2   Tris integration J ~ U N
+==17/09/21 2.2.0   Sunflower integration 2 X
+
+=end
+
+#==============================================================================
+# ■ NWConst::Warp
+#==============================================================================
+module NWConst::Warp
+  AREA_SELECT_TEXT  = "Please select a region."
+  PLACE_SELECT_TEXT = "Please select a location."
+  CONFIRM_TEXT      = "Warping to %s. Is that okay?"
+  MOVE_SE           = RPG::SE.new("Wind1")
+end
+
+# Duplication prevention namespace
+module Foo; module Warp; end; end
+
+#==============================================================================
+# ■ WarpManager
+#==============================================================================
+module WarpManager
+  #--------------------------------------------------------------------------
+  # ● Acquire all location information array
+  #--------------------------------------------------------------------------
+  def self.all_places
+    NWConst::Warp::Places
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquiring location information array during opening
+  #--------------------------------------------------------------------------
+  def self.opend_places
+    index = NWConst::Sw::WARP_OPEN_BASE
+    all_places.select{|place| result = $game_switches[index]; index += 1; result}
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquiring location information array during opening (Category aggregation)
+  #--------------------------------------------------------------------------
+  def self.opend_places_sort(category)
+    opend_places.select{|place| place[:category] == category}
+  end  
+  #--------------------------------------------------------------------------
+  # ● Warp available?
+  #--------------------------------------------------------------------------
+  def self.usable?
+    !($game_switches[NWConst::Sw::WARP_BAN] || opend_places.empty?)
+  end
+  #--------------------------------------------------------------------------
+  # ● Is the heavenly world open?
+  #--------------------------------------------------------------------------
+  def self.opend_heaven?
+    opend_places.any?{|place| place[:category] == :Heavenly world}
+  end
+  #--------------------------------------------------------------------------
+  # ● Is Makai released?
+  #--------------------------------------------------------------------------
+  def self.opend_hell?
+    opend_places.any?{|place| place[:category] == :Sakai}
+  end  
+  #--------------------------------------------------------------------------
+  # ● Is it only open to the ground?
+  #--------------------------------------------------------------------------
+  def self.ground_only?
+    !(opend_heaven? || opend_hell?)
+  end  
+end
+
+#==============================================================================
+# ■ Foo::Warp::Window_Help
+#==============================================================================
+class Foo::Warp::Window_Help < Window_Base
+  #--------------------------------------------------------------------------
+  # ● Object initialization
+  #--------------------------------------------------------------------------
+  def initialize
+    super(0, 0, 320, fitting_height(1))
+    @text = nil
+  end
+  #--------------------------------------------------------------------------
+  # ● Text setting
+  #--------------------------------------------------------------------------
+  def set_text(text)
+    if text != @text
+      @text = text
+      refresh
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Clear
+  #--------------------------------------------------------------------------
+  def clear
+    set_text("")
+  end
+  #--------------------------------------------------------------------------
+  # ● Refresh
+  #--------------------------------------------------------------------------
+  def refresh
+    contents.clear
+    draw_text_ex(4, 0, @text)
+  end  
+end
+
+#==============================================================================
+# ■ Foo::Warp::Window_SelectArea
+#==============================================================================
+class Foo::Warp::Window_SelectArea < Window_HorzCommand
+  #--------------------------------------------------------------------------
+  # ● Obtain window width
+  #--------------------------------------------------------------------------
+  def window_width
+    return 480
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of the number of digits
+  #--------------------------------------------------------------------------
+  def col_max
+    return @list.size
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of alignment
+  #--------------------------------------------------------------------------
+  def alignment
+    return 1
+  end
+  #--------------------------------------------------------------------------
+  # ● Create command list
+  #--------------------------------------------------------------------------
+  def make_command_list
+    add_command("On the ground", :ok, true, :On the ground)
+    add_command("Heavenly world", :ok, true, :Heavenly world) if WarpManager.opend_heaven?
+    add_command("Sakai", :ok, true, :Sakai) if WarpManager.opend_hell?
+  end  
+end
+
+#==============================================================================
+# ■ Foo::Warp::Window_SelectPlace
+#==============================================================================
+class Foo::Warp::Window_SelectPlace < Window_Command
+  #--------------------------------------------------------------------------
+  # ● Object initialization
+  #--------------------------------------------------------------------------
+  def initialize
+    @category = :On the ground
+    super(0, 0)
+  end
+  #--------------------------------------------------------------------------
+  # ● Obtain window width
+  #--------------------------------------------------------------------------
+  def window_width
+    return 480
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of the number of digits
+  #--------------------------------------------------------------------------
+  def col_max
+    return 2
+  end
+  #--------------------------------------------------------------------------
+  # ● Get the width of the blank when items are lined horizontally
+  #--------------------------------------------------------------------------
+  def spacing
+    return 8
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire number of display lines
+  #--------------------------------------------------------------------------
+  def visible_line_number
+    [15, (item_max + 1) / 2].min
+  end
+  #--------------------------------------------------------------------------
+  # ● Category settings
+  #--------------------------------------------------------------------------
+  def set_category(category)
+    @category   = category
+    refresh
+  end
+  #--------------------------------------------------------------------------
+  # ● Create command list
+  #--------------------------------------------------------------------------
+  def make_command_list
+    WarpManager.opend_places_sort(@category).each{|place|
+      add_command(place[:name], :ok, true, place)
+    }
+  end
+  #--------------------------------------------------------------------------
+  # ● Refresh
+  #--------------------------------------------------------------------------
+  def refresh
+    clear_command_list
+    make_command_list
+    self.height =  window_height
+    create_contents
+    contents.clear
+    draw_all_items
+  end  
+end
+
+#==============================================================================
+# ■ Window_ItemList
+#==============================================================================
+class Window_ItemList < Window_Selectable
+  #--------------------------------------------------------------------------
+  # ○ Whether items are displayed in the permit status
+  #--------------------------------------------------------------------------
+  alias nw_warp_enable? enable?
+  def enable?(item)
+    nw_warp_enable?(item) && warp_usable?(item)
+  end
+  #--------------------------------------------------------------------------
+  # ● Warp item availability determination
+  #--------------------------------------------------------------------------
+  def warp_usable?(item)
+    return true unless item.warp_item?
+    return true if WarpManager.usable?
+    return false
+  end  
+end
+
+#==============================================================================
+# ■ Window_SkillList
+#==============================================================================
+class Window_SkillList < Window_Selectable
+  #--------------------------------------------------------------------------
+  # ○ Whether to display skills in the allowed state
+  #--------------------------------------------------------------------------
+  alias nw_warp_enable? enable?
+  def enable?(item)
+    nw_warp_enable?(item) && warp_usable?(item)
+  end
+  #--------------------------------------------------------------------------
+  # ● Warp item availability determination
+  #--------------------------------------------------------------------------
+  def warp_usable?(item)
+    return true unless item.warp_item?
+    return true if WarpManager.usable?
+    return false
+  end
+end
+  
+#==============================================================================
+# ■ Scene_ItemBase
+#==============================================================================
+class Scene_ItemBase < Scene_MenuBase
+  #--------------------------------------------------------------------------
+  # ○ Use of items
+  #--------------------------------------------------------------------------
+  alias nw_warp_use_item use_item
+  def use_item
+    if item.warp_item?
+      SceneManager.goto(Scene_Warp)
+      SceneManager.scene.prepare(item)
+    else
+      nw_warp_use_item
+    end
+  end
+end
+
+#==============================================================================
+# ■ Scene_Warp
+#==============================================================================
+class Scene_Warp < Scene_MenuBase
+  #--------------------------------------------------------------------------
+  # ● Preparation
+  #--------------------------------------------------------------------------
+  def prepare(cost_item)
+    @cost_item = cost_item
+  end  
+  #--------------------------------------------------------------------------
+  # ● Start processing
+  #--------------------------------------------------------------------------
+  def start
+    super
+    create_help_window
+    create_select_area_window
+    create_select_place_window
+    create_popup_confirm_window
+  end
+  #--------------------------------------------------------------------------
+  # ● Create background
+  #--------------------------------------------------------------------------
+  def create_background
+    @background_sprite = Sprite.new
+    @background_sprite.bitmap = SceneManager.background_bitmap
+    @background_sprite.viewport = @viewport
+  end
+  #--------------------------------------------------------------------------
+  # ● Create a help window
+  #--------------------------------------------------------------------------
+  def create_help_window
+    @help_window = Foo::Warp::Window_Help.new
+    @help_window.viewport = @viewport
+  end
+  #--------------------------------------------------------------------------
+  # ● Create area selection window
+  #--------------------------------------------------------------------------
+  def create_select_area_window
+    @select_area_window = Foo::Warp::Window_SelectArea.new(0, @help_window.height)
+    @select_area_window.viewport = @viewport
+    @select_area_window.set_handler(:ok, method(:select_area_ok))
+    @select_area_window.set_handler(:cancel, method(:goto_map))
+    @help_window.set_text(NWConst::Warp::AREA_SELECT_TEXT)
+    return unless WarpManager.ground_only?
+    @select_area_window.hide.deactivate
+  end
+  #--------------------------------------------------------------------------
+  # Determination of area selection
+  #--------------------------------------------------------------------------
+  def select_area_ok
+    @select_place_window.set_category(@select_area_window.current_ext)
+    @select_place_window.select(0)
+    @select_place_window.show.activate
+    @select_area_window.deactivate
+    @help_window.set_text(NWConst::Warp::PLACE_SELECT_TEXT)
+  end
+  #--------------------------------------------------------------------------
+  # ● Create location selection window
+  #--------------------------------------------------------------------------
+  def create_select_place_window
+    @select_place_window = Foo::Warp::Window_SelectPlace.new
+    @select_place_window.viewport = @viewport
+    @select_place_window.set_handler(:ok, method(:select_place_ok))    
+    @select_place_window.set_handler(:cancel, method(:select_place_cancel))    
+    if WarpManager.ground_only?
+      @select_place_window.y = @help_window.height
+      @help_window.set_text(NWConst::Warp::PLACE_SELECT_TEXT)
+    else
+      @select_place_window.y = @help_window.height + @select_area_window.height
+      @select_place_window.hide.deactivate
+    end
+  end    
+  #--------------------------------------------------------------------------
+  # ● Determination of location selection
+  #--------------------------------------------------------------------------
+  def select_place_ok
+    @select_place_window.deactivate
+    @popup_confirm_window.refresh
+    @popup_confirm_window.show.activate
+    @popup_confirm_window.set_name(@select_place_window.current_ext[:name])
+    @popup_confirm_window.select(0)
+  end
+  #--------------------------------------------------------------------------
+  # ● Canceling location selection
+  #--------------------------------------------------------------------------
+  def select_place_cancel
+    if WarpManager.ground_only?
+      goto_map
+    else
+      @select_place_window.hide.deactivate
+      @select_area_window.activate
+      @help_window.set_text(NWConst::Warp::AREA_SELECT_TEXT)
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Create confirmation popup window
+  #--------------------------------------------------------------------------  
+  def create_popup_confirm_window
+    @popup_confirm_window = Window_PopupConfirm.new
+    @popup_confirm_window.set_title(NWConst::Warp::CONFIRM_TEXT)
+    @popup_confirm_window.viewport = @viewport
+    @popup_confirm_window.hide
+    @popup_confirm_window.set_handler(:ok, method(:confirm_ok))
+    @popup_confirm_window.set_handler(:cancel, method(:confirm_cancel))
+  end
+  #--------------------------------------------------------------------------
+  # ● Confirmation: determination
+  #--------------------------------------------------------------------------  
+  def confirm_ok
+		(31..39).each{|id|
+			$game_switches[id] = false
+		}
+    if @cost_item.is_a?(RPG::Item)
+      $game_party.consume_item(@cost_item)
+    else
+      @actor.pay_skill_cost(@cost_item)
+    end
+    NWConst::Warp::MOVE_SE.play
+    RPG::BGM.fade(500)
+    RPG::BGS.fade(500)
+    fadeout(30)
+    RPG::BGM.stop
+    RPG::BGS.stop
+    place = @select_place_window.current_ext
+    $game_player.forced_get_off_vehicle
+    $game_player.reserve_transfer(place[:map_id], place[:x], place[:y])
+    $game_player.perform_transfer
+    $game_map.autoplay
+    $game_player.followers.visible = true
+    $game_player.refresh
+    $game_map.screen.clear
+    # Vehicle movement
+    if $game_map.ship.exist? && place.key?(:v2location)
+      unless place[:v2location][0].kind_of?(Array)
+        map_id = place[:v2location][0]
+        x = place[:v2location][1]
+        y = place[:v2location][2]
+      else
+        s = $game_switches
+        v = $game_variables
+        use_location = nil
+        place[:v2location].each do |location|
+          if eval(location[3])
+            use_location = location
+            break
+          end
+        end
+        use_location ||= place[:v2location][-1]
+        map_id, x, y, * = use_location
+      end
+      $game_map.ship.set_location(map_id, x, y)
+    end
+    if $game_map.airship.exist? && place.key?(:v3location)
+      map_id = place[:v3location][0]
+      x = place[:v3location][1]
+      y = place[:v3location][2]        
+      $game_map.airship.set_location(map_id, x, y)
+    end
+    # Fixed exit of pocket demon castle
+    if place[:map_id] == 126
+      $game_variables[21] = 2
+      $game_variables[22] = 295
+      $game_variables[23] = 356
+    end
+    goto_map
+  end
+  #--------------------------------------------------------------------------
+  # ● Confirmation: Cancel
+  #--------------------------------------------------------------------------  
+  def confirm_cancel
+    @popup_confirm_window.hide
+    @select_place_window.activate
+  end
+  #--------------------------------------------------------------------------
+  # ● Transition to map
+  #--------------------------------------------------------------------------
+  def goto_map
+    SceneManager.clear
+    SceneManager.goto(Scene_Map)
+  end
+  #--------------------------------------------------------------------------
+  # ● Frame update (for fade)
+  #--------------------------------------------------------------------------
+  def update_for_fade
+    update_basic
+    $game_map.update(false)
+  end
+  #--------------------------------------------------------------------------
+  # ● General fade processing
+  #--------------------------------------------------------------------------
+  def fade_loop(duration)
+    duration.times do |i|
+      yield 255 * (i + 1) / duration
+      update_for_fade
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Screen fade out
+  #--------------------------------------------------------------------------
+  def fadeout(duration)
+    fade_loop(duration) {|v| Graphics.brightness = 255 - v }
+  end  
+end
+
+
+
+
+
+

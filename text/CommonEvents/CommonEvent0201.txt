@@ -1,0 +1,2 @@
+"「ルカが有効」と「敵が有効」は判定に使うステートが違うので注意" -> "Notice that \"Luca is valid\" and \"enemy is valid\" are different states for judgment"
+"このコモンの実行後にスイッチ11がオフなら、ルカは有効ではない" -> "If switch 11 is off after this common execution, Luca is not valid"

@@ -1,0 +1,1061 @@
+=begin
+=Party organization screen
+
+
+
+
+==Change log
+  Date     Version Author Comment
+==15/09/03 2.0.2   Tris integration J ~ U Q
+==17/05/16 2.0.4   Tris integrated V ~ W W
+
+=end
+
+
+#==============================================================================
+# ■ NWConst::PTEdit
+#==============================================================================
+module NWConst::PTEdit     
+    # Category priority
+    CATEGORY_PRIORITY = [
+      :Main,
+      :Devil,
+      :Evil spirit,
+      :goddess,
+      :A human,
+      :Demon,
+      :Fellow,
+      :Bad luck,
+      :vampire,
+      :mermaid,
+      :Elf,
+      :fairy,
+      :Slime,
+      :A monster,
+      :Fox,
+      :Lamia,
+      :Scura,
+      :bird,
+      :dragon,
+      :Terrestrial species,
+      :Marine species,
+      :insect,
+      :plant,
+      :zombie,
+      :ghost,
+      :Doll,
+      :Chimera,
+      :Lloyd,
+      :angel,
+      :Apoptosis,
+      :Other,
+    ]
+  CONFIRM_TEXT = "Teleport to %s?"
+end
+
+
+# Duplication prevention namespace
+module Foo; module PTEdit; end; end
+
+
+#==============================================================================
+# ■ NWConst::PartyManager(Nwapeg)
+#----------------------------------------------------------------------------
+# It is a collection of methods for managing parties.
+#==============================================================================
+module NWConst::PartyManager
+  #--------------------------------------------------------------------------
+  # ● Party member acquisition
+  #--------------------------------------------------------------------------
+  def party_members
+    $game_party.all_members
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of waiting members for castle
+  #--------------------------------------------------------------------------
+  def stand_members
+    $game_party.stand_members
+  end
+  #--------------------------------------------------------------------------
+  # ● Party member designation actor exists in any personality?
+  #--------------------------------------------------------------------------
+  def exist_party_actor_id?(actor_id)
+    $game_party.exist_party_actor_id?(actor_id)
+  end
+  #--------------------------------------------------------------------------
+  # ● Waiting for a castle Does a member designated actor exist in any personality?
+  #--------------------------------------------------------------------------
+  def exist_stand_actor_id?(actor_id)
+    $game_party.exist_stand_actor_id?(actor_id)
+  end
+  #--------------------------------------------------------------------------
+  # ● Do all members designated actors exist in any personality?
+  #--------------------------------------------------------------------------
+  def exist_all_actor_id?(actor_id)
+    $game_party.exist_all_actor_id?(actor_id)
+  end
+  #--------------------------------------------------------------------------
+  # ● Does the party member designated actor exist as a designated personality?
+  #--------------------------------------------------------------------------
+  def exist_party_persona_id?(persona_id)
+    $game_party.exist_party_persona_id?(persona_id)
+  end
+  #--------------------------------------------------------------------------
+  # ● Waiting for the castle Does the designated actor exist as a designated personality?
+  #--------------------------------------------------------------------------
+  def exist_stand_persona_id?(persona_id)
+    $game_party.exist_stand_persona_id?(persona_id)
+  end
+  #--------------------------------------------------------------------------
+  # ● Do all members designated actors exist as designated personality?
+  #--------------------------------------------------------------------------
+  def exist_all_persona_id?(persona_id)
+    $game_party.exist_all_persona_id?(persona_id)
+  end
+  #--------------------------------------------------------------------------
+  # ● Add a castle waiting member
+  #--------------------------------------------------------------------------
+  def add_stand_actor(actor_id)
+    $game_party.add_stand_actor(actor_id)
+  end
+  #--------------------------------------------------------------------------
+  # ● Remove castle standby actor
+  #--------------------------------------------------------------------------
+  def remove_stand_actor(actor_id)
+    $game_party.remove_stand_actor(actor_id)
+  end
+  #--------------------------------------------------------------------------
+  # ● Change actors from castle standby
+  #--------------------------------------------------------------------------
+  def move_actor(actor_id)
+    $game_party.move_actor(actor_id)
+  end
+  #--------------------------------------------------------------------------
+  # ● Change actors to castle standby
+  #--------------------------------------------------------------------------
+  def move_stand_actor(actor_id)
+    $game_party.move_stand_actor(actor_id)
+  end
+  #--------------------------------------------------------------------------
+  # ● Change members to castle wait
+  #--------------------------------------------------------------------------
+  def move_stand_member(index)
+    actor = $game_party.all_members[index]
+    $game_party.move_stand_actor(actor.id) unless actor.nil?
+  end
+end
+
+#==============================================================================
+# ■ Game_Party(Nwapeg)
+#==============================================================================
+class Game_Party < Game_Unit
+  #--------------------------------------------------------------------------
+  # ○ Object initialization
+  #--------------------------------------------------------------------------
+  alias nw_override_initialize initialize
+  def initialize
+    nw_override_initialize
+    @stand_actors = []
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of waiting members for castle
+  #--------------------------------------------------------------------------
+  def stand_members
+    @stand_actors.collect {|id| $game_actors[id]}
+  end
+  #--------------------------------------------------------------------------
+  # ● Does the party member designated actor exist as a designated personality?
+  #--------------------------------------------------------------------------
+  def exist_party_persona_id?(persona_id)
+    @actors.include?(persona_id)
+  end
+  #--------------------------------------------------------------------------
+  # ● Waiting for the castle Does the designated actor exist as a designated personality?
+  #--------------------------------------------------------------------------
+  def exist_stand_persona_id?(persona_id)
+    @stand_actors.include?(persona_id)
+  end
+  #--------------------------------------------------------------------------
+  # ● Do all members designated actors exist as designated personality?
+  #--------------------------------------------------------------------------
+  def exist_all_persona_id?(persona_id)
+    exist_party_persona_id?(persona_id) || exist_stand_persona_id?(persona_id)
+  end
+  #--------------------------------------------------------------------------
+  # ● Party member designation actor exists in any personality?
+  #--------------------------------------------------------------------------
+  def exist_party_actor_id?(actor_id)
+    exist_party_persona_id?($game_actors[actor_id].id)
+  end
+  #--------------------------------------------------------------------------
+  # ● Waiting for a castle Does a member designated actor exist in any personality?
+  #--------------------------------------------------------------------------
+  def exist_stand_actor_id?(actor_id)
+    exist_stand_persona_id?($game_actors[actor_id].id)
+  end
+  #--------------------------------------------------------------------------
+  # ● Do all members designated actors exist in any personality?
+  #--------------------------------------------------------------------------
+  def exist_all_actor_id?(actor_id)
+    exist_party_actor_id?(actor_id) || exist_stand_actor_id?(actor_id)
+  end
+  #--------------------------------------------------------------------------
+  # ○ Add an actor addStand/move/add
+  #--------------------------------------------------------------------------
+  alias nw_override_add_actor add_actor
+  def add_actor(actor_id)
+    if @actors.size >= party_member_max
+      add_stand_actor(actor_id)
+    elsif exist_stand_actor_id?(actor_id)
+      move_actor(actor_id)
+    else
+      nw_override_add_actor(actor_id)
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Add a castle waiting member
+  #--------------------------------------------------------------------------
+  def add_stand_actor(actor_id)
+    return if @actors.include?(actor_id) || @stand_actors.include?(actor_id)
+    @stand_actors.push(actor_id)
+    $game_player.refresh
+    $game_map.need_refresh = true
+  end
+  #--------------------------------------------------------------------------
+  # ○ Remove the actor
+  #--------------------------------------------------------------------------
+  alias nw_override_remove_actor remove_actor
+  def remove_actor(actor_id)
+    if @actors.include?(actor_id)
+      nw_override_remove_actor(actor_id)
+    else
+      remove_stand_actor(actor_id)
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Remove castle standby actor
+  #--------------------------------------------------------------------------
+  def remove_stand_actor(actor_id)
+    @stand_actors.delete(actor_id)
+    $game_player.refresh
+    $game_map.need_refresh = true
+  end
+  #--------------------------------------------------------------------------
+  # ● Change actors from castle standby
+  #--------------------------------------------------------------------------
+  def move_actor(actor_id)
+    return if !@stand_actors.include?(actor_id) || @actors.include?(actor_id)
+    remove_stand_actor(actor_id)
+    add_actor(actor_id)
+    $game_player.refresh
+    $game_map.need_refresh = true
+  end
+  #--------------------------------------------------------------------------
+  # ● Change actors to castle standby
+  #--------------------------------------------------------------------------
+  def move_stand_actor(actor_id)
+    return if @stand_actors.include?(actor_id) || !@actors.include?(actor_id)
+    remove_actor(actor_id)
+    add_stand_actor(actor_id)
+    $game_player.refresh
+    $game_map.need_refresh = true
+  end
+end
+
+#==============================================================================
+# ■ Game_Party
+#==============================================================================
+class Game_Party  
+  #--------------------------------------------------------------------------
+  # ○ Object initialization
+  #--------------------------------------------------------------------------
+  alias nw_pt_edit_initialize initialize
+  def initialize
+    nw_pt_edit_initialize
+    clear_menu_actors
+  end
+  #--------------------------------------------------------------------------
+  # ● Setting Actor Array for Menu (New)
+  #--------------------------------------------------------------------------
+  def set_menu_actors(actors)
+    @menu_actors = actors
+  end
+  #--------------------------------------------------------------------------
+  # ● Delete actor array for menu (new)
+  #--------------------------------------------------------------------------
+  def clear_menu_actors
+    @menu_actors = nil
+  end
+  #--------------------------------------------------------------------------
+  # ○ Select the next actor on the menu screen
+  #--------------------------------------------------------------------------
+  alias nw_pt_edit_menu_actor_next menu_actor_next
+  def menu_actor_next
+    unless @menu_actors.nil?
+      index = @menu_actors.index(menu_actor.id) || -1
+      index = (index + 1) % @menu_actors.size
+      self.menu_actor = $game_actors[@menu_actors[index]]
+    else
+      nw_pt_edit_menu_actor_next
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ○ Select the previous actor on the menu screen
+  #--------------------------------------------------------------------------
+  alias nw_pt_edit_menu_actor_prev menu_actor_prev
+  def menu_actor_prev
+    unless @menu_actors.nil?
+      index = @menu_actors.index(menu_actor.id) || 1
+      index = (index + @menu_actors.size - 1) % @menu_actors.size
+      self.menu_actor = $game_actors[@menu_actors[index]]
+    else
+      nw_pt_edit_menu_actor_prev
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Get the maximum number of party members (new)
+  #--------------------------------------------------------------------------
+  def party_member_max
+    8 + $game_variables[NWConst::Var::PARTY_MAX_PLUS]
+  end
+  #--------------------------------------------------------------------------
+  # ● whether the number of party members is the maximum number toris
+  #--------------------------------------------------------------------------
+  def party_member_full?
+    party_member_max <= all_members.size
+  end
+end
+
+#==============================================================================
+# ■ Game_Map
+#==============================================================================
+class Game_Map
+  #--------------------------------------------------------------------------
+  # ● Pocket Mafoujo Castle?
+  #--------------------------------------------------------------------------
+  def pocket_castle?
+    return @map_id == 126 || ($data_mapinfos[@map_id].parent_id == 126)
+  end
+end
+
+#==============================================================================
+# ■ Foo::PTEdit::Window_Information
+#==============================================================================
+class Foo::PTEdit::Window_Information < Window_Base
+  #--------------------------------------------------------------------------
+  # ● Object initialization
+  #--------------------------------------------------------------------------
+  def initialize
+    super(0, 480-fitting_height(4), 160, fitting_height(4))
+    refresh
+    activate
+  end
+  #--------------------------------------------------------------------------
+  # ● Refresh
+  #--------------------------------------------------------------------------
+  def refresh
+    contents.clear
+    draw_information
+  end  
+  #--------------------------------------------------------------------------
+  # ● Display information
+  #--------------------------------------------------------------------------
+  def draw_information
+    change_color(normal_color)
+    rect = Rect.new(0, 0, self.contents.width, line_height)
+    
+    texts = Help.party_edit
+    texts.pop unless $game_map.pocket_castle?
+    texts.each{|text|
+      draw_text(rect, text)
+      rect.y += line_height    
+    }
+  end
+end
+
+#==============================================================================
+# ■ Foo::PTEdit::Window_SortEval
+#==============================================================================
+class Foo::PTEdit::Window_SortEval < Window_Base
+  #--------------------------------------------------------------------------
+  # ● Object initialization
+  #--------------------------------------------------------------------------
+  def initialize
+    super(480, 0, 160, fitting_height(1))
+    self.z = 101
+    @eval_id = 0
+    @all_refresh_method = nil
+    make_actor_categories
+    refresh
+    activate
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of standard padding size
+  #--------------------------------------------------------------------------
+  def standard_padding
+    return 6
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of evaluation method
+  #--------------------------------------------------------------------------
+  def eval
+    return eval_array[@eval_id]
+  end
+  #--------------------------------------------------------------------------
+  # ● Evaluation method Acquisition of array
+  #--------------------------------------------------------------------------
+  def eval_array
+    default_eval_array + @actor_categories
+  end
+  #--------------------------------------------------------------------------
+  # ● Basic evaluation method Acquisition of array
+  #--------------------------------------------------------------------------
+  def default_eval_array
+    [:id, :name]
+  end
+  #--------------------------------------------------------------------------
+  # ● Basic evaluation method Acquisition of array
+  #--------------------------------------------------------------------------
+  def make_actor_categories
+    all_members = $game_party.members + $game_party.stand_members
+    @actor_categories = all_members.collect{|m|m.actor.actor_categories}.flatten.uniq
+    @actor_categories.sort!{|a,b|
+      NWConst::PTEdit::CATEGORY_PRIORITY.index(a) <=> NWConst::PTEdit::CATEGORY_PRIORITY.index(b)
+    }
+  end
+  #--------------------------------------------------------------------------
+  # Is the current evaluation value a category tag?
+  #--------------------------------------------------------------------------
+  def category_tag?
+    default_eval_array.size <= @eval_id
+  end
+  #--------------------------------------------------------------------------
+  # ● Setting of all refresh method
+  #--------------------------------------------------------------------------
+  def set_all_refresh_method(method)
+    @all_refresh_method = method
+  end
+  #--------------------------------------------------------------------------
+  # ● Frame update
+  #--------------------------------------------------------------------------
+  def update
+    super
+    process_eval
+  end
+  #--------------------------------------------------------------------------
+  # ● Invalid method setting
+  #--------------------------------------------------------------------------
+  def set_disable_method(method)
+    @disable_method = method
+  end
+  #--------------------------------------------------------------------------
+  # ● Switching the sorting method
+  #--------------------------------------------------------------------------
+  def process_eval
+    return unless Input.trigger?(:Y)
+    return if @disable_method.call
+    Input.update
+    Sound.play_ok
+    @eval_id = (@eval_id + 1) % eval_array.size
+    @all_refresh_method.call unless @all_refresh_method.nil?
+  end
+  #--------------------------------------------------------------------------
+  # ● Refresh
+  #--------------------------------------------------------------------------
+  def refresh
+    contents.clear
+    draw_eval
+  end
+  #--------------------------------------------------------------------------
+  # ● Display of sorting method
+  #--------------------------------------------------------------------------
+  def draw_eval
+    texts = {
+      :id => "IDorder",
+      :name => "By name"
+    }
+    text = texts.include?(eval) ? texts[eval] : eval.to_s
+    change_color(system_color)
+    rect = Rect.new(0, 0, self.contents.width, line_height)
+    draw_text(rect, text, 1)
+  end
+end
+
+
+#==============================================================================
+# ■ Foo::PTEdit::Window_PartyMember
+#==============================================================================
+class Foo::PTEdit::Window_PartyMember < Window_Command
+  #------------------------------------------------------------------------
+  # ● Public instance variables
+  #------------------------------------------------------------------------
+  attr_reader :actors
+  #--------------------------------------------------------------------------
+  # ● Object initialization
+  #--------------------------------------------------------------------------
+  def initialize
+    make_id_list
+    super(0, 0)
+  end
+  #--------------------------------------------------------------------------
+  # ● Obtain window width
+  #--------------------------------------------------------------------------
+  def window_width
+    160
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire number of display lines
+  #--------------------------------------------------------------------------
+  def visible_line_number
+    [8, $game_party.party_member_max].max
+  end
+  #--------------------------------------------------------------------------
+  # ● String representing no actor
+  #--------------------------------------------------------------------------
+  def no_actor_name
+    "[Empty]"
+  end
+  #--------------------------------------------------------------------------
+  # ● Which actor is selected?
+  #--------------------------------------------------------------------------
+  def no_actor?
+    @actors.size <= self.index
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire selected party actor
+  #--------------------------------------------------------------------------
+  def select_actor
+    no_actor? ? nil : $game_actors[@actors[self.index]]
+  end
+  #--------------------------------------------------------------------------
+  # ● Create command list
+  #--------------------------------------------------------------------------
+  def make_command_list
+    @actors.each{|id|add_command($game_actors[id].name, :ok)}
+    (visible_line_number - @actors.size).times{add_command(no_actor_name, :ok)}
+    # Luke's fixation
+    @actors.each_with_index{|id,i|
+      continue if id == nil
+      @list[i][:enabled] = false if $game_actors[id].luca?
+    } 
+  end
+  #--------------------------------------------------------------------------
+  # ● Create a party member ID list
+  #--------------------------------------------------------------------------
+  def make_id_list
+    @actors = $game_party.all_members.collect{|member|member.id}
+  end
+  #--------------------------------------------------------------------------
+  # ● Drawing items
+  #--------------------------------------------------------------------------
+  def draw_item(index)
+    color = (index < 4) ? normal_color : system_color
+    change_color(color, command_enabled?(index))
+    draw_text(item_rect_for_text(index), command_name(index), alignment)
+  end  
+  #--------------------------------------------------------------------------
+  # ● Frame update
+  #--------------------------------------------------------------------------
+  def update
+    super
+    process_call_status
+    process_move_member
+  end
+  #--------------------------------------------------------------------------
+  # ● Call up the status screen
+  #--------------------------------------------------------------------------
+  def process_call_status
+    return unless cursor_movable?
+    if Input.trigger?(:X)
+      Input.update
+      unless no_actor?
+        Sound.play_ok
+        call_handler(:call_status)
+      else
+        Sound.play_buzzer
+      end
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Members are placed in standby state
+  #--------------------------------------------------------------------------
+  def process_move_member
+    return unless cursor_movable?
+    if Input.trigger?(:A)
+      Input.update
+      if 1 < @actors.size && !no_actor? && !select_actor.luca?
+        Sound.play_cancel
+        call_handler(:move_member) 
+        select(0)
+      else
+        Sound.play_buzzer
+      end
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Refresh
+  #--------------------------------------------------------------------------
+  def refresh
+    super
+  end
+end
+
+#==============================================================================
+# ■ Foo::PTEdit::Window_WaitMember
+#==============================================================================
+class Foo::PTEdit::Window_WaitMember < Window_Command
+  #------------------------------------------------------------------------
+  # ● Public instance variables
+  #------------------------------------------------------------------------
+  attr_reader :actors
+  #--------------------------------------------------------------------------
+  # ● Object initialization
+  #--------------------------------------------------------------------------
+  def initialize(sort, party)
+    @sort = sort
+    @party = party
+    make_id_list
+    super(160, line_height)
+    unselect
+    deactivate
+  end
+  #--------------------------------------------------------------------------
+  # ● Obtain window width
+  #--------------------------------------------------------------------------
+  def window_width
+    480
+  end
+  #--------------------------------------------------------------------------
+  # ● Obtain window height
+  #--------------------------------------------------------------------------
+  def window_height
+    360 - line_height
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of the number of digits
+  #--------------------------------------------------------------------------
+  def col_max
+    return 3
+  end
+  #--------------------------------------------------------------------------
+  # ● Get the width of the blank when items are lined horizontally
+  #--------------------------------------------------------------------------
+  def spacing
+    return 8
+  end
+  #--------------------------------------------------------------------------
+  # ● Which actor is selected?
+  #--------------------------------------------------------------------------
+  def no_actor?
+    self.index == -1
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire standby actor selected
+  #--------------------------------------------------------------------------
+  def select_actor
+    no_actor? ? nil : $game_actors[@actors[self.index]]
+  end
+  #--------------------------------------------------------------------------
+  # ● Creating a command list 【override】
+  #--------------------------------------------------------------------------
+  def make_command_list
+    @actors.each{|id|
+      enabled = !@party.actors.include?(id)
+      add_command($game_actors[id].name, :ok, enabled)
+    }
+  end
+  #--------------------------------------------------------------------------
+  # ● Create waiting member ID list
+  #--------------------------------------------------------------------------
+  def make_id_list(category = :all_category)
+    if category == :all_category
+      @actors = ($game_party.all_members + $game_party.stand_members).collect{|a|a.id}
+    else
+      @actors = ($game_party.all_members + $game_party.stand_members).select{|a|
+        a.actor.actor_categories.include?(category)
+      }.collect{|a|
+        a.id
+      }
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Frame update 【override】
+  #--------------------------------------------------------------------------
+  def update
+    super
+    process_call_status
+    process_move_best_place
+  end
+  #--------------------------------------------------------------------------
+  # ● Call up the status screen
+  #--------------------------------------------------------------------------
+  def process_call_status
+    return unless cursor_movable?
+    if Input.trigger?(:X)
+      Input.update
+      Sound.play_ok
+      call_handler(:call_status)
+    end
+  end  
+  #--------------------------------------------------------------------------
+  # ● Move to fellow Nawabari
+  #--------------------------------------------------------------------------
+  def process_move_best_place
+    return unless cursor_movable?
+    if Input.trigger?(:Z) && $game_map.pocket_castle?
+      Input.update
+      if current_item_enabled? && select_actor.actor.best_place
+        Sound.play_ok
+        call_handler(:move_best_place)
+      else
+        Sound.play_buzzer
+      end
+    end
+  end  
+  #--------------------------------------------------------------------------
+  # ● Sort
+  #--------------------------------------------------------------------------
+  def sort
+    if @sort.category_tag?
+      make_id_list(@sort.eval)
+    else
+      make_id_list
+      method = "sort_by_#{@sort.eval.to_s}".to_sym
+      send(method)
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Sort (by ID)
+  #--------------------------------------------------------------------------
+  def sort_by_id
+    @actors.sort!
+  end
+  #--------------------------------------------------------------------------
+  # ● Sort (by name alphabet)
+  #--------------------------------------------------------------------------
+  def sort_by_name
+    @actors.sort!{|id1, id2| $game_actors[id1].name <=> $game_actors[id2].name}
+  end
+  #--------------------------------------------------------------------------
+  # ● Refresh
+  #--------------------------------------------------------------------------
+  def refresh
+    sort
+    super
+    select(0) unless self.index == -1
+  end
+end
+
+#==============================================================================
+# ■ Foo::PTEdit::Window_ActorStatus
+#==============================================================================
+class Foo::PTEdit::Window_ActorStatus < Window_Base
+  #--------------------------------------------------------------------------
+  # ● Object initialization
+  #--------------------------------------------------------------------------
+  def initialize(party, wait)
+    @party = party
+    @wait = wait
+    super(160, 360, 480, 120)
+    @old_party_member_id = @party.select_actor.id
+    @old_wait_member_id = nil
+    refresh
+  end
+  #--------------------------------------------------------------------------
+  # ● Frame update
+  #--------------------------------------------------------------------------
+  def update
+    super
+    if @party.no_actor?
+      unless @old_party_member_id.nil?
+        @old_party_member_id = nil
+        refresh
+      end      
+    else
+      if @old_party_member_id != @party.select_actor.id
+        @old_party_member_id = @party.select_actor.id
+        refresh
+      end
+    end
+    
+    if @wait.no_actor?
+      unless @old_wait_member_id.nil?
+        @old_wait_member_id = nil
+        refresh
+      end
+    else
+      if @old_wait_member_id != @wait.select_actor.id
+        @old_wait_member_id = @wait.select_actor.id
+        refresh
+      end
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Refresh
+  #--------------------------------------------------------------------------
+  def refresh
+    contents.clear
+    draw_party_actor_status unless @party.no_actor?
+    draw_wait_actor_status unless @wait.no_actor?
+  end
+  #--------------------------------------------------------------------------
+  # ● Status display of party actor
+  #--------------------------------------------------------------------------
+  def draw_party_actor_status
+    draw_actor_status(@party.select_actor, 0)
+  end
+  #--------------------------------------------------------------------------
+  # ● Status display of standby actor
+  #--------------------------------------------------------------------------
+  def draw_wait_actor_status
+    draw_actor_status(@wait.select_actor, 228)    
+  end
+  #--------------------------------------------------------------------------
+  # ● Actor status display
+  #--------------------------------------------------------------------------
+  def draw_actor_status(actor, x)
+    draw_actor_face(actor, x, 0)
+    
+    # The remaining WIDTH area 132
+    rect1 = Rect.new(x+96, 0, 84, line_height)
+    rect2 = Rect.new(rect1.x+rect1.width, rect1.y, 48, rect1.height)
+    lv_str = "Lv:%d"
+
+    change_color(normal_color)
+    draw_text(rect1, actor.name) # Name only a little bigger
+    temp_font_size = contents.font.size
+    contents.font.size = 22
+    draw_text(rect2, sprintf(lv_str, actor.base_level))
+    
+    rect1.y += line_height + 8
+    rect2.y += line_height + 8
+    change_color(tp_gauge_color2)
+    draw_text(rect1, actor.class.name)
+    draw_text(rect2, sprintf(lv_str, actor.class_level))
+    
+    rect1.y += line_height
+    rect2.y += line_height
+    change_color(mp_gauge_color2)
+    draw_text(rect1, actor.tribe.name)
+    draw_text(rect2, sprintf(lv_str, actor.tribe_level))
+
+    contents.font.size = temp_font_size
+  end
+end
+
+#==============================================================================
+# ■ Scene_PartyEdit
+#==============================================================================
+class Scene_PartyEdit < Scene_MenuBase
+  #--------------------------------------------------------------------------
+  # ● Start processing
+  #--------------------------------------------------------------------------
+  def start
+    super
+    create_all_window
+    $game_party.clear_menu_actors
+  end  
+  #--------------------------------------------------------------------------
+  # ● Create all windows
+  #--------------------------------------------------------------------------
+  def create_all_window
+    create_information_window
+    create_sort_eval_window
+    create_party_member_window
+    create_wait_member_window
+    create_actor_status_window
+    create_popup_confirm_window
+  end  
+  #--------------------------------------------------------------------------
+  # ● Create an information window
+  #--------------------------------------------------------------------------
+  def create_information_window
+    @information_window = Foo::PTEdit::Window_Information.new
+  end
+  #--------------------------------------------------------------------------
+  # ● Creating a sort display window
+  #--------------------------------------------------------------------------
+  def create_sort_eval_window
+    @sort_eval_window = Foo::PTEdit::Window_SortEval.new
+    @sort_eval_window.set_all_refresh_method(method(:refresh_windows))
+    @sort_eval_window.set_disable_method(method(:disable_sort?))
+  end
+  #--------------------------------------------------------------------------
+  # ● Create a party member window
+  #--------------------------------------------------------------------------
+  def create_party_member_window
+    @party_member_window = Foo::PTEdit::Window_PartyMember.new
+    @party_member_window.set_handler(:cancel, method(:return_scene))
+    @party_member_window.set_handler(:ok, method(:select_party_to_wait))
+    @party_member_window.set_handler(:call_status, method(:call_scene_status))
+    @party_member_window.set_handler(:move_member, method(:move_member))
+  end
+  #--------------------------------------------------------------------------
+  # ● Create waiting member window
+  #--------------------------------------------------------------------------
+  def create_wait_member_window
+    @wait_member_window = Foo::PTEdit::Window_WaitMember.new(@sort_eval_window, @party_member_window)
+    @wait_member_window.set_handler(:cancel, method(:select_wait_to_party))
+    @wait_member_window.set_handler(:ok, method(:swap_member))
+    @wait_member_window.set_handler(:call_status, method(:call_scene_status))
+    @wait_member_window.set_handler(:move_best_place, method(:move_best_place))
+  end
+  #--------------------------------------------------------------------------
+  # ● Create Actor Status Window
+  #--------------------------------------------------------------------------
+  def create_actor_status_window
+    @actor_status_window = Foo::PTEdit::Window_ActorStatus.new(@party_member_window, @wait_member_window)
+  end
+  #--------------------------------------------------------------------------
+  # ● Create confirmation popup window
+  #--------------------------------------------------------------------------  
+  def create_popup_confirm_window
+    @popup_confirm_window = Window_PopupConfirm.new
+    @popup_confirm_window.viewport = @viewport
+    @popup_confirm_window.hide
+    @popup_confirm_window.set_title(NWConst::PTEdit::CONFIRM_TEXT)
+    @popup_confirm_window.set_handler(:ok, method(:confirm_ok))
+    @popup_confirm_window.set_handler(:cancel, method(:confirm_cancel))
+  end
+  #--------------------------------------------------------------------------
+  # ● Selection from Party Member to Weight Member
+  #--------------------------------------------------------------------------
+  def select_party_to_wait
+    @party_member_window.deactivate
+    @wait_member_window.activate
+    @wait_member_window.select(0)
+  end
+  #--------------------------------------------------------------------------
+  # ● Selection from weight member to party member
+  #--------------------------------------------------------------------------
+  def select_wait_to_party
+    @party_member_window.activate
+    @wait_member_window.deactivate
+    @wait_member_window.unselect
+  end
+  #--------------------------------------------------------------------------
+  # ● Refresh all windows
+  #--------------------------------------------------------------------------
+  def refresh_windows
+    @information_window.refresh
+    @sort_eval_window.refresh
+    @party_member_window.refresh
+    @wait_member_window.refresh
+    @actor_status_window.refresh
+  end
+  #--------------------------------------------------------------------------
+  # ● Swap selected party members and party members
+  #--------------------------------------------------------------------------
+  def swap_member
+    party = @party_member_window
+    wait = @wait_member_window
+    unless party.no_actor?
+      party.actors[party.index] = wait.actors[wait.index]
+    else
+      party.actors.push(wait.actors[wait.index])
+    end
+    refresh_windows
+    select_wait_to_party
+  end
+  #--------------------------------------------------------------------------
+  # ● Move the selected party member to the waiting member
+  #--------------------------------------------------------------------------
+  def move_member
+    party = @party_member_window
+    party.actors.delete_at(party.index)
+    refresh_windows
+  end  
+  #--------------------------------------------------------------------------
+  # ● Party formation completed
+  #--------------------------------------------------------------------------  
+  def edit_completion
+    swap_id_list = $game_party.members.collect{|m|m.id}
+    swap_id_list.each{|id|$game_party.move_stand_actor(id)}
+    @party_member_window.actors.each{|id|$game_party.move_actor(id)}
+  end
+  #--------------------------------------------------------------------------
+  # ● Return to caller's scene (override)
+  #--------------------------------------------------------------------------
+  def return_scene
+    edit_completion
+    $game_party.clear_menu_actors
+    $game_player.refresh
+    super
+  end
+  #--------------------------------------------------------------------------
+  # ● Call up the status screen
+  #--------------------------------------------------------------------------  
+  def call_scene_status
+    edit_completion
+    $game_party.menu_actor = select_actor
+    $game_party.set_menu_actors(@wait_member_window.actors) if @wait_member_window.active
+    SceneManager.call(Scene_Status)
+  end  
+  #--------------------------------------------------------------------------
+  # ● Acquire the selected actor
+  #--------------------------------------------------------------------------  
+  def select_actor
+    @party_member_window.active ? @party_member_window.select_actor : @wait_member_window.select_actor
+  end
+  #--------------------------------------------------------------------------
+  # ● Move to the vicinity of the actor
+  #--------------------------------------------------------------------------  
+  def move_best_place
+    @wait_member_window.deactivate
+    @popup_confirm_window.refresh
+    @popup_confirm_window.show.activate
+    @popup_confirm_window.set_name(select_actor.name)
+    @popup_confirm_window.select(0)
+  end  
+  #--------------------------------------------------------------------------
+  # ● Creating a sort display window
+  #--------------------------------------------------------------------------
+  def disable_sort?
+    @popup_confirm_window.active
+  end
+  #--------------------------------------------------------------------------
+  # ● Confirmation: determination
+  #--------------------------------------------------------------------------  
+  def confirm_ok
+    NWConst::Warp::MOVE_SE.play
+    fadeout(30)
+    place = select_actor.actor.best_place
+    $game_player.reserve_transfer(place[:map_id], place[:x], place[:y])
+    $game_player.perform_transfer
+    $game_map.screen.clear
+    return_scene
+  end
+  #--------------------------------------------------------------------------
+  # ● Confirmation: Cancel
+  #--------------------------------------------------------------------------  
+  def confirm_cancel
+    @popup_confirm_window.hide
+    @wait_member_window.activate
+  end
+  #--------------------------------------------------------------------------
+  # ● Frame update (for fade)
+  #--------------------------------------------------------------------------
+  def update_for_fade
+    update_basic
+    $game_map.update(false)
+    $game_player.update
+  end
+  #--------------------------------------------------------------------------
+  # ● General fade processing
+  #--------------------------------------------------------------------------
+  def fade_loop(duration)
+    duration.times do |i|
+      yield 255 * (i + 1) / duration
+      update_for_fade
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Screen fade out
+  #--------------------------------------------------------------------------
+  def fadeout(duration)
+    fade_loop(duration) {|v| Graphics.brightness = 255 - v }
+  end  
+end
+
+
+

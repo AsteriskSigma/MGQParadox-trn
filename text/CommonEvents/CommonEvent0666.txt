@@ -1,0 +1,7 @@
+"【クィーンラミア】" -> "【Queen Lamia】"
+"全能力を高める白魔法……" -> "White magic that boosts all abilities ......"
+"「ジルオール」を、誰か一人に教えましょう。" -> "Let 's tell someone alone \"Jirou\"."
+"選択" -> "Choice"
+"選択" -> "Choice"
+"【クィーンラミア】" -> "【Queen Lamia】"
+"争いのない世界で、静かに暮らしたいものです……" -> "I want to live quietly in a world without conflict ......"

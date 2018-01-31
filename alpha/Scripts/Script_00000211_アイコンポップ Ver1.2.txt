@@ -1,0 +1,275 @@
+#==============================================================================
+# ★ RGSS 3_Icon Pop Ver1.2
+#==============================================================================
+=begin
+
+Author: tomoaky
+webSite: Tsukimoto(http://hikimoki.sakura.ne.jp/)
+
+You can display any icon above the event.
+
+Execute the following with the event command \"script\"
+  pop_icon(event_id, icon_id, duration)
+  
+  event_id Above the number's event icon_id The number icon is displayed.
+  event_id If 0 is specified for the event itself being executed,
+  -1 If you specify, the player is eligible.
+  duration You can omit it, in that case it will be 120.
+  
+  Example) pop_icon(-1, 17, 300)
+  Display a battle impossible icon for 5 seconds (300 frames) to the player
+  
+  While displaying the icon pop_icon Executing the command has no effect.
+  If you want to display the next icon immediately, delete_icon By command
+  Delete the icon and then pop_icon Execute the command.
+  
+  Example) delete_icon(-1)
+  Delete the icon currently displayed to the player
+  
+As an extra event command \"Increase or decrease items\" \"Increase or decrease of weapons\" \"Increase or decrease of armor\"
+When executed, it has a function to display icons automatically.
+  The target to display the icon can be changed by game variable (default is No. 6)
+  The value is pop_icon Event in command_id As with,-2 By specifying
+  You can turn off the function.
+  
+
+Game variable to use (default setting)
+  0006
+  
+2012.01.19  Ver1.2
+Delete icon pointing being displayed delete_icon Add command
+· Autonomous Movement 【Custom】 with script command
+Fixed a bug that the icon pop function does not work
+  
+2011.12.21  Ver1.11
+· In parallel processing event_id Fixed a bug that Icons are not displayed if 0 is specified
+  
+2011.12.17  Ver1.1
+· Added function to specify display time on command
+
+2011.12.15  Ver1.0
+  Release
+ 
+=end
+
+#==============================================================================
+# □ Setting item
+#==============================================================================
+module TMICPOP
+  GRAVITY = 24              # Gravity on the icon
+  SPEED   = -320            # Initial speed of icon (Y direction)
+  
+  VN_TARGET = 2             # Game variable number handled as automatic pop target setting
+end
+
+#==============================================================================
+# □ Command
+#==============================================================================
+module TMICPOP
+module Commands
+  #--------------------------------------------------------------------------
+  # ○ Start Icon Pop
+  #--------------------------------------------------------------------------
+  def pop_icon(event_id, icon_id, duration = 120)
+    target = get_character(event_id)
+    return unless target
+    target.icpop_id = icon_id
+    target.icpop_duration = duration
+  end
+  #--------------------------------------------------------------------------
+  # ○ Delete Icon Pop
+  #--------------------------------------------------------------------------
+  def delete_icon(event_id)
+    target = get_character(event_id)
+    return unless target
+    target.icpop_delete_flag = true
+  end
+end
+end # module TMICPOP
+
+#==============================================================================
+# ■ Game_CharacterBase
+#==============================================================================
+class Game_CharacterBase
+  #--------------------------------------------------------------------------
+  # ● Public instance variables
+  #--------------------------------------------------------------------------
+  attr_accessor :icpop_id                 # Icon pop ID
+  attr_accessor :icpop_duration           # Icon pop display time
+  attr_accessor :icpop_delete_flag        # Icon pop deletion flag
+  #--------------------------------------------------------------------------
+  # ● Initialization of public member variables
+  #--------------------------------------------------------------------------
+  alias tmicpop_game_characterbase_init_public_members init_public_members
+  def init_public_members
+    tmicpop_game_characterbase_init_public_members
+    @icpop_id = 0
+    @icpop_duration = 0
+    @icpop_delete_flag = false
+  end
+end
+
+#==============================================================================
+# ■ Sprite_Character
+#==============================================================================
+class Sprite_Character
+  #--------------------------------------------------------------------------
+  # ● Object initialization
+  #     character : Game_Character
+  #--------------------------------------------------------------------------
+  alias tmicpop_sprite_character_initialize initialize
+  def initialize(viewport, character = nil)
+    @icpop_duration = 0
+    tmicpop_sprite_character_initialize(viewport, character)
+  end
+  #--------------------------------------------------------------------------
+  # ● Release
+  #--------------------------------------------------------------------------
+  alias tmicpop_sprite_character_dispose dispose
+  def dispose
+    dispose_icpop
+    tmicpop_sprite_character_dispose
+  end
+  #--------------------------------------------------------------------------
+  # ● Frame update
+  #--------------------------------------------------------------------------
+  alias tmicpop_sprite_character_update update
+  def update
+    update_icpop
+    tmicpop_sprite_character_update
+  end
+  #--------------------------------------------------------------------------
+  # ● Setting new effects
+  #--------------------------------------------------------------------------
+  alias tmicpop_sprite_character_setup_new_effect setup_new_effect
+  def setup_new_effect
+    tmicpop_sprite_character_setup_new_effect
+    if !@icpop_sprite && @character.icpop_id > 0
+      @icpop_id = @character.icpop_id
+      @character.icpop_id = 0
+      start_icpop
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ○ Start icon pop display
+  #--------------------------------------------------------------------------
+  def start_icpop
+    dispose_icpop
+    @icpop_duration = @icpop_duration_max = @character.icpop_duration
+    @icpop_sprite = ::Sprite.new(viewport)
+    @icpop_sprite.bitmap = Cache.system("IconSet")
+    @icpop_sprite.src_rect.set(@icpop_id % 16 * 24, @icpop_id / 16 * 24, 24, 24)
+    @icpop_sprite.ox = 12
+    @icpop_sprite.oy = 24
+    @icpop_y_plus = 0
+    @icpop_y_speed = TMICPOP::SPEED
+    update_icpop
+  end
+  #--------------------------------------------------------------------------
+  # ○ Release of icon pop
+  #--------------------------------------------------------------------------
+  def dispose_icpop
+    @character.icpop_delete_flag = false
+    if @icpop_sprite
+      @icpop_sprite.dispose
+      @icpop_sprite = nil
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ○ Update icon pop
+  #--------------------------------------------------------------------------
+  def update_icpop
+    if @icpop_duration > 0
+      @icpop_duration -= 1
+      if @character.icpop_delete_flag
+        @icpop_duration = 0
+        dispose_icpop
+      elsif @icpop_duration > 0
+        @icpop_sprite.x = x
+        @icpop_y_plus += @icpop_y_speed
+        @icpop_y_speed += TMICPOP::GRAVITY
+        if @icpop_y_plus > 0
+          @icpop_y_plus = 0 - @icpop_y_plus
+          @icpop_y_speed = 0 - @icpop_y_speed / 2
+        end
+        @icpop_sprite.y = y - height + (@icpop_y_plus / 256)
+        @icpop_sprite.z = z + 200
+        @icpop_sprite.opacity = (@icpop_duration < 16 ? @icpop_duration * 16 :
+          (@icpop_duration_max - @icpop_duration) * 32)
+      else
+        dispose_icpop
+        @character.icpop_id = 0
+      end
+    end
+  end
+end
+
+#==============================================================================
+# ■ Game_Event
+#==============================================================================
+class Game_Event
+  include TMICPOP::Commands
+  #--------------------------------------------------------------------------
+  # ○ Acquisition of characters
+  #     param : -1 If this is the player, 0 this event, otherwise the event ID
+  #--------------------------------------------------------------------------
+  def get_character(param)
+    if param < 0
+      $game_player
+    else
+      $game_map.events[param > 0 ? param : @id]
+    end
+  end
+end
+
+#==============================================================================
+# ■ Game_Interpreter
+#==============================================================================
+class Game_Interpreter
+  include TMICPOP::Commands
+  #--------------------------------------------------------------------------
+  # ● Increase or decrease items
+  #--------------------------------------------------------------------------
+  alias tmicpop_game_interpreter_command_126 command_126
+  def command_126
+    tmicpop_game_interpreter_command_126
+    value = operate_value(@params[1], @params[2], @params[3])
+    if value > 0
+      if $game_variables[TMICPOP::VN_TARGET] >= -1 && !$game_party.in_battle
+        item = $data_items[@params[0]]
+        pop_icon($game_variables[TMICPOP::VN_TARGET], item.icon_index)
+      end
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Increase or decrease of weapons
+  #--------------------------------------------------------------------------
+  alias tmicpop_game_interpreter_command_127 command_127
+  def command_127
+    tmicpop_game_interpreter_command_127
+    value = operate_value(@params[1], @params[2], @params[3])
+    if value > 0
+      if $game_variables[TMICPOP::VN_TARGET] >= -1 && !$game_party.in_battle
+        item = $data_weapons[@params[0]]
+        pop_icon($game_variables[TMICPOP::VN_TARGET], item.icon_index)
+      end
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Increase or decrease armor
+  #--------------------------------------------------------------------------
+  alias tmicpop_game_interpreter_command_128 command_128
+  def command_128
+    tmicpop_game_interpreter_command_128
+    value = operate_value(@params[1], @params[2], @params[3])
+    if value > 0
+      if $game_variables[TMICPOP::VN_TARGET] >= -1 && !$game_party.in_battle
+        item = $data_armors[@params[0]]
+        pop_icon($game_variables[TMICPOP::VN_TARGET], item.icon_index)
+      end
+    end
+  end
+end
+
+
+

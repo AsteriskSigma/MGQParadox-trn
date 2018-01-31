@@ -1,0 +1,123 @@
+=begin
+=window/final confirmation
+
+
+
+
+==Change log
+  Date     Version Author Comment
+	2017/10/21  2.2.0 Support sunflower multi-line display
+=end
+
+#==============================================================================
+# ■ Window_PopupConfirm
+#==============================================================================
+class Window_PopupConfirm < Window_Selectable
+  #--------------------------------------------------------------------------
+  # ● Object initialization
+  #--------------------------------------------------------------------------
+  def initialize
+    @title = ""
+    @name  = ""
+    super(0,0,1,1)
+    self.z = 200
+  end
+  #--------------------------------------------------------------------------
+  # ● Obtain window width
+  #--------------------------------------------------------------------------
+  def window_width
+		data = @title.split("\\n").map{|line|
+			text_size(sprintf(line, @name)).width
+		}.max || 0
+		data + 20 + standard_padding * 2
+  end
+  #--------------------------------------------------------------------------
+  # ● Obtain window height
+  #--------------------------------------------------------------------------
+  def window_height
+    fitting_height(2 + title_line_size) 
+  end
+	
+	def title_line_size
+		@title ? @title.split("\\n").size : 1
+	end
+	
+  #--------------------------------------------------------------------------
+  # ● Acquisition of number of items
+  #--------------------------------------------------------------------------
+  def item_max
+    2
+  end
+  #--------------------------------------------------------------------------
+  # ● Get the item width
+  #--------------------------------------------------------------------------
+  def item_width
+    100
+  end
+  #--------------------------------------------------------------------------
+  # ● Get rectangle to draw item
+  #--------------------------------------------------------------------------
+  def item_rect(index)
+    rect = Rect.new
+    rect.width = item_width
+    rect.height = item_height
+    rect.x = (window_width / 2) - (item_width / 2)
+    rect.y = (index + title_line_size) / col_max * item_height
+    rect
+  end
+  #--------------------------------------------------------------------------
+  # ● Set the title
+  #--------------------------------------------------------------------------
+  def set_title(title)
+    @title = title
+  end
+  #--------------------------------------------------------------------------
+  # ● Set name
+  #--------------------------------------------------------------------------
+  def set_name(name)
+    @name = name
+   refresh
+  end
+  #--------------------------------------------------------------------------
+  # ● Processing when the enter button is pressed
+  #--------------------------------------------------------------------------
+  def process_ok
+    case self.index
+    when 0
+#      Sound.play_ok
+      Input.update
+      deactivate
+      call_ok_handler      
+    when 1
+      process_cancel      
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Drawing of the first line
+  #--------------------------------------------------------------------------
+  def draw_title
+    rect = Rect.new(0, 0, contents_width, line_height)
+		
+		@title.split("\\n").each{|line|
+			draw_text(rect, sprintf(line, @name), 1)
+			rect.y += line_height
+		}
+  end
+  #--------------------------------------------------------------------------
+  # ● Drawing items
+  #--------------------------------------------------------------------------
+  def draw_item(index)
+    draw_text(item_rect_for_text(index), ["Yes","No"][index], 1)
+  end
+  #--------------------------------------------------------------------------
+  # ● Refresh
+  #--------------------------------------------------------------------------
+  def refresh
+    move((Graphics.width/2) - (window_width/2), (Graphics.height/2) - (window_height/2), window_width, window_height)
+    update_padding
+    create_contents
+    draw_title
+    draw_all_items
+  end
+end
+

@@ -1,0 +1,5 @@
+// EVENT 3323
+Name "－－－－－"
+
+RunCommonEvent(3321)
+0()

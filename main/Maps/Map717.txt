@@ -1,0 +1,1552 @@
+
+
+
+EVENT   1
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Guards")
+  ShowMessage("To veteran of the victory ... ... salute!")
+  ShowMessage("May I tell you the personal thing?")
+  ShowChoices(strings("I do not care","It is useless."),2)
+  IfPlayerPicksChoice(0,null)
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("Guards")
+   ShowMessage("My brother went to the front line, but it came back safely.")
+   ShowMessage("But, what happens if the battle is prolonged ......")
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("Guards")
+   ShowMessage("I thank you from the heart for the hero who led the war to the end!")
+   0()
+  IfPlayerPicksChoice(1,null)
+   ShowMessageFace("",0,0,2,4)
+   ShowMessage("Guards")
+   ShowMessage("Haah, I'm sorry!")
+   0()
+  404()
+  0()
+
+
+
+EVENT   2
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Guards")
+  ShowMessage("To veteran of the victory ... ... salute!")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("Guards")
+  ShowMessage("Um ... ... Can I get a sign?")
+  0()
+
+
+
+EVENT   3
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("The party is still going on ......")
+  ShowMessage("Raise the feast and return to your room?")
+  ShowChoices(strings("Continue the feast","Return to your room"),0)
+  IfPlayerPicksChoice(0,null)
+   ShowMessageFace("ruka_fc1",0,0,2,2)
+   ShowMessage("【Luke】")
+   ShowMessage("I wonder if it will be a little more ... ....")
+   205(-1,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x07,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x09,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+   EndEventProcessing()
+   0()
+  IfPlayerPicksChoice(1,null)
+   ShowMessageFace("ruka_fc1",0,0,2,3)
+   ShowMessage("【Luke】")
+   ShowMessage("Take a day off today ...")
+   ScrollMap(8,6,5)
+   If(0,4,0)
+    ShowMessageFace("alice_fc5",1,0,2,4)
+    ShowMessage("【Alice】")
+    ShowMessage("What, are you able to escape already?")
+    ShowMessage("There are still more feasts left, a little more -")
+    0()
+   EndIf()
+   If(0,5,0)
+    ShowMessageFace("iriasu_fc4",0,0,2,5)
+    ShowMessage("【Iliad】")
+    ShowMessage("Do you return to the room any more?")
+    ShowMessage("A great opportunity, enjoy more -")
+    0()
+   EndIf()
+   241(bytes(0x04,0x08,0x6f,0x3a,0x0d,0x52,0x50,0x47,0x3a,0x3a,0x42,0x47,0x4d,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x6b,0x69,0x6b,0x69,0x32,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69))
+   ScrollMap(8,6,5)
+   ShowMessageFace("",0,0,2,6)
+   ShowMessage("【? What? What? 】")
+   ShowMessage("The world's leading people and one brave person ......")
+   ShowMessage("Excuse me, I will rude it.")
+   ShowMessageFace("grandnoa_fc1",0,0,2,7)
+   ShowMessage("【Queen of Grand Noah】")
+   ShowMessage("Who are you ...! What?")
+   250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0e,0x44,0x61,0x72,0x6b,0x6e,0x65,0x73,0x73,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+   PictureDisplay(1,"sys_black",0,0,0,0,100,100,0,0)
+   PictureMove(1,null,0,0,0,0,100,100,255,0,30,true)
+   TeleportEvent(4,0,14,4,2)
+   ChangeSwitch(32,32,0)
+   PictureMove(1,null,0,0,0,0,100,100,0,0,30,true)
+   ChangeSwitch(33,33,0)
+   205(-1,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x46,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x0a,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x09,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x09,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x09,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x09,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+   241(bytes(0x04,0x08,0x6f,0x3a,0x0d,0x52,0x50,0x47,0x3a,0x3a,0x42,0x47,0x4d,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0c,0x62,0x6f,0x73,0x73,0x30,0x2d,0x33,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69))
+   Wait(60)
+   PictureDisplay(5,"80_alice15th_st51b",0,0,0,0,100,100,0,0)
+   PictureMove(5,null,0,0,0,0,100,100,255,0,60,true)
+   ShowMessageFace("alice15th_fc1",4,0,2,8)
+   ShowMessage("【Alice Physa XVI】")
+   ShowMessage("Those who gather in this place ... ...")
+   ShowMessage("The rest is Maehiru, Alice Fize XV.")
+   If(0,4,0)
+    ShowMessageFace("alice_fc6",0,0,2,9)
+    ShowMessage("【Alice】")
+    ShowMessage("Or, Mother-sama! What?")
+    0()
+   EndIf()
+   If(0,5,0)
+    ShowMessageFace("iriasu_fc4",5,0,2,10)
+    ShowMessage("【Iliad】")
+    ShowMessage("Alice Feeds XVI ... ...! What?")
+    0()
+   EndIf()
+   ShowMessageFace("mefist_fc1",2,0,2,11)
+   ShowMessage("[Mephisto]")
+   ShowMessage("No ... ... this is a phantom!")
+   ShowMessageFace("alice15th_fc1",4,0,2,12)
+   ShowMessage("【Alice Physa XVI】")
+   ShowMessage("Let 's tell the words of celebration from the fact that the unrest among the human beings ceased.")
+   ShowMessage("... ... but I came to tell you more important things.")
+   ShowMessageFace("alice15th_fc1",4,0,2,13)
+   ShowMessage("【Alice Physa XVI】")
+   ShowMessage("...... The remainder here declares war on war against all mankind.")
+   ShowMessage("This is an extinction war and it does not allow any human beings to survive.")
+   ShowMessageFace("grandnoa_fc1",2,0,2,14)
+   ShowMessage("【Queen of Grand Noah】")
+   ShowMessage("Declaration of war……! What? Extinction war ...! What?")
+   ShowMessage("Demon King, is she sane?")
+   ShowMessageFace("alice15th_fc1",4,0,2,15)
+   ShowMessage("【Alice Physa XVI】")
+   ShowMessage("Of course, sane.")
+   ShowMessageFace("grangold_fc2",0,0,2,16)
+   ShowMessage("【King Grangold】")
+   ShowMessage("You tried the great war between human beings and robbed many lives ......")
+   ShowMessage("Is not it enough that sacrifice alone?")
+   ShowMessageFace("alice15th_fc1",4,0,2,17)
+   ShowMessage("【Alice Physa XVI】")
+   ShowMessage("It is not enough.")
+   ShowMessage("Know that the fire of the battle never stops until the person dies out.")
+   ShowMessageFace("saniria_fc2",0,0,2,18)
+   ShowMessage("【King of Saint Iria】")
+   ShowMessage("For what purpose, destroy people ...?")
+   ShowMessage("To hold this world in my hand?")
+   ShowMessageFace("alice15th_fc1",4,0,2,19)
+   ShowMessage("【Alice Physa XVI】")
+   ShowMessage("There is no meaning to people to know, such as my purpose.")
+   ShowMessage("However, you should only know that the struggle for the terminal has begun.")
+   ShowMessageFace("sara_fc2",3,0,2,20)
+   ShowMessage("【Sara】")
+   ShowMessage("There are a lot of monsters living in a human town ...")
+   ShowMessage("I'm gonna tear apart their bonds with them! What?")
+   ShowMessageFace("alice15th_fc1",4,0,2,21)
+   ShowMessage("【Alice Physa XVI】")
+   ShowMessage("Every monstrous sidebreaker will only be pursued.")
+   If(0,4,0)
+    ShowMessageFace("alice_fc6",1,0,2,22)
+    ShowMessage("【Alice】")
+    ShowMessage("... ... Do not be afraid, Alice Fishes XV!")
+    ShowMessage("What on earth are you--")
+    0()
+   EndIf()
+   If(0,5,0)
+    ShowMessageFace("iriasu_fc4",7,0,2,23)
+    ShowMessage("【Iliad】")
+    ShowMessage("What are you plotting, Alice Feeds XV ... ...! !")
+    ShowMessage("I destroy a person, for example -")
+    0()
+   EndIf()
+   ShowMessageFace("alice15th_fc1",4,0,2,24)
+   ShowMessage("【Alice Physa XVI】")
+   ShowMessage("Notice from others is over.")
+   ShowMessage("Every human being, please enjoy the few remaining life -")
+   PictureClear(5)
+   Wait(60)
+   250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0e,0x44,0x61,0x72,0x6b,0x6e,0x65,0x73,0x73,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+   PictureDisplay(1,"sys_black",0,0,0,0,100,100,0,0)
+   PictureMove(1,null,0,0,0,0,100,100,255,0,30,true)
+   ChangeSwitch(32,32,1)
+   PictureMove(1,null,0,0,0,0,100,100,0,0,30,true)
+   If(0,4,0)
+    ShowMessageFace("alice_fc6",1,0,2,25)
+    ShowMessage("【Alice】")
+    ShowMessage("Wait, hey ...!")
+    ShowMessage("...... Cut, has it disappeared?")
+    0()
+   EndIf()
+   If(0,5,0)
+    ShowMessageFace("iriasu_fc4",7,0,2,26)
+    ShowMessage("【Iliad】")
+    ShowMessage("Wait, demon king ......!")
+    ShowMessage("... ... Have you already disappeared?")
+    0()
+   EndIf()
+   0()
+  404()
+  241(bytes(0x04,0x08,0x6f,0x3a,0x0d,0x52,0x50,0x47,0x3a,0x3a,0x42,0x47,0x4d,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x6b,0x69,0x6b,0x69,0x32,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69))
+  205(6,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x07,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x16,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  ShowMessageFace("grandnoa_fc1",2,0,2,27)
+  ShowMessage("【Queen of Grand Noah】")
+  ShowMessage("Mephisto, prepare for all the soldiers to fight!")
+  ShowMessage("Please also notify border guards and everywhere!")
+  205(10,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x07,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x16,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  ShowMessageFace("sara_fc2",0,0,2,28)
+  ShowMessage("【Sara】")
+  ShowMessage("I'm sorry, I will return home soon.")
+  ShowMessage("I have to direct soldiers and take precautionary attitude ... ...")
+  205(24,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x07,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x16,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  ShowMessageFace("grangold_fc2",0,0,2,29)
+  ShowMessage("【King Grangold】")
+  ShowMessage("I have to go back to the Grangold.")
+  ShowMessage("To say that we do not even have a decent soldier in our country now ....")
+  205(9,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x07,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x16,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  ShowMessageFace("saniria_fc2",0,0,2,30)
+  ShowMessage("【King of Saint Iria】")
+  ShowMessage("Well ... ... each one, we have to consolidate our home country now.")
+  ShowMessage("Later, let's suppose that the heads of the countries will discuss the correspondence again.")
+  205(6,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x07,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x15,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  ShowMessageFace("grandnoa_fc1",2,0,2,31)
+  ShowMessage("【Queen of Grand Noah】")
+  ShowMessage("Luke, can you please stay at this castle?")
+  ShowMessage("I want them to move immediately as soon as the invasion of the Magus Army starts.")
+  ScrollMap(2,10,6)
+  ShowMessageFace("ruka_fc1",0,0,2,32)
+  ShowMessage("【Luke】")
+  ShowMessage("Yes, please leave it!")
+  If(0,6,0)
+   ShowMessageFace("sonia_fc3",7,0,2,33)
+   ShowMessage("【Sonia】")
+   ShowMessage("Well, what shall I do ......")
+   ShowMessage("I do not think it will be such a thing ......")
+   0()
+  EndIf()
+  If(0,4,0)
+   ShowMessageFace("alice_fc6",0,0,2,34)
+   ShowMessage("【Alice】")
+   ShowMessage("Mother-Mother ...... You, what on earth ......")
+   0()
+  EndIf()
+  If(0,5,0)
+   ShowMessageFace("iriasu_fc4",7,0,2,35)
+   ShowMessage("【Iliad】")
+   ShowMessage("Him, Satan, ... what on earth ......")
+   0()
+  EndIf()
+  221()
+  ShowMessageFace("",0,0,2,36)
+  ShowMessage("The declaration of declaration by Devil blew away the joy of victory.")
+  ShowMessage("The king of each country goes back to each country with moving magic.")
+  ShowMessageFace("",0,0,2,37)
+  ShowMessage("Luka waited at Grand Noah Castle and prepared for battle.")
+  ShowMessage("And the next day -")
+  Wait(60)
+  216(0)
+  TeleportPlayer(0,383,22,7,8,0)
+  222()
+  PictureDisplay(5,"80_grandnoa_st01",0,0,0,0,100,100,255,0)
+  ShowMessageFace("grandnoa_fc1",2,0,2,38)
+  ShowMessage("【Queen of Grand Noah】")
+  ShowMessage("One night has passed since then ... ...")
+  ShowMessage("In any country, invasion of the Magus army is not confirmed.")
+  If(0,4,0)
+   ShowMessageFace("alice_fc5",3,0,2,39)
+   ShowMessage("【Alice】")
+   ShowMessage("It is the theory of modern warfare to start invasion simultaneously with declaration of war.")
+   ShowMessage("But what does not mean there is no movement, what is it ...?")
+   0()
+  EndIf()
+  If(0,5,0)
+   ShowMessageFace("iriasu_fc4",2,0,2,40)
+   ShowMessage("【Iliad】")
+   ShowMessage("At the same time as the declaration of declaration of war, I thought that there was full invasion ... ...")
+   ShowMessage("What does it mean that there is nothing to move?")
+   0()
+  EndIf()
+  ShowMessageFace("grandnoa_fc1",2,0,2,41)
+  ShowMessage("【Queen of Grand Noah】")
+  ShowMessage("Luke asked us to wait in the castle ... ...")
+  ShowMessage("I will not let you do that forever forever.")
+  If(0,4,0)
+   ShowMessageFace("alice_fc5",0,0,2,42)
+   ShowMessage("【Alice】")
+   ShowMessage("I search for Tartarus and have a purpose to chase Luca's father.")
+   ShowMessage("However, it is not supposed to be able to leave the declaration of declaration of the demon king.")
+   0()
+  EndIf()
+  If(0,5,0)
+   ShowMessageFace("iriasu_fc4",2,0,2,43)
+   ShowMessage("【Iliad】")
+   ShowMessage("There is a purpose of exploring Tartarus and searching Marques ... ...")
+   ShowMessage("Of course, I will not let you leave the demon king.")
+   0()
+  EndIf()
+  ShowMessageFace("grandnoa_fc1",2,0,2,44)
+  ShowMessage("【Queen of Grand Noah】")
+  ShowMessage("Tartarus in our country is in the middle of the lake as you know.")
+  ShowMessage("In a method that is incompetent, you will not be able to enter inside.")
+  ShowMessageFace("grandnoa_fc1",2,0,2,45)
+  ShowMessage("【Queen of Grand Noah】")
+  ShowMessage("As long as you listen to your story, things are related to the existence of the world.")
+  ShowMessage("Even here, let's explore ways to enter Tartarus.")
+  If(0,4,0)
+   ShowMessageFace("alice_fc5",0,0,2,46)
+   ShowMessage("【Alice】")
+   ShowMessage("Hmm, I am saved a lot.")
+   0()
+  EndIf()
+  If(0,5,0)
+   ShowMessageFace("iriasu_fc4",0,0,2,47)
+   ShowMessage("【Iliad】")
+   ShowMessage("I expect good work.")
+   0()
+  EndIf()
+  ShowMessageFace("grandnoa_fc1",2,0,2,48)
+  ShowMessage("【Queen of Grand Noah】")
+  ShowMessage("Also, King Grangold wants to ask you.")
+  ShowMessage("Something, there seems to be a suspicious movement in the odds of the territory.")
+  If(0,6,0)
+   ShowMessageFace("sonia_fc2",2,0,2,49)
+   ShowMessage("【Sonia】")
+   ShowMessage("Suspicious demon movement ......")
+   ShowMessage("Is it related to the declaration of declaration of war?")
+   0()
+  Else()
+   ShowMessageFace("ruka_fc1",0,0,2,50)
+   ShowMessage("【Luke】")
+   ShowMessage("Suspicious demon movement ......")
+   ShowMessage("Is it related to the declaration of declaration of war?")
+   0()
+  EndIf()
+  If(0,4,0)
+   ShowMessageFace("alice_fc5",0,0,2,51)
+   ShowMessage("【Alice】")
+   ShowMessage("OK, let's suppose that we will head towards Grangold Castle.")
+   ShowMessage("Either way, we need a visit again in that place.")
+   ShowMessageFace("alice_fc5",0,0,2,52)
+   ShowMessage("【Alice】")
+   ShowMessage("Agreement with Salamander, and ... ...")
+   ShowMessage("There is Tartarus at the western end of the Gordes region.")
+   0()
+  EndIf()
+  If(0,5,0)
+   ShowMessageFace("iriasu_fc4",0,0,2,53)
+   ShowMessage("【Iliad】")
+   ShowMessage("All right, let's go to Grangold Castle.")
+   ShowMessage("Either way, we must visit that place again.")
+   ShowMessageFace("iriasu_fc4",0,0,2,54)
+   ShowMessage("【Iliad】")
+   ShowMessage("Tartarus is at the western end of the Gordes region.")
+   ShowMessage("Also ... I do not feel like going well, but also with a contract with Salamander.")
+   0()
+  EndIf()
+  ShowMessageFace("grandnoa_fc1",2,0,2,55)
+  ShowMessage("【Queen of Grand Noah】")
+  ShowMessage("Mephisto ... accompany you Luka, as you always do.")
+  ShowMessage("Because we will contact you as soon as there is something wrong here.")
+  ShowMessageFace("mefist_fc1",0,0,2,56)
+  ShowMessage("[Mephisto]")
+  ShowMessage("All right. His Majesty the Queen.")
+  ShowMessage("Let 's serve as a support and a liaison officer of the brave person.")
+  ShowMessageFace("ruka_fc1",0,0,2,57)
+  ShowMessage("【Luke】")
+  ShowMessage("Well then, the next destination is the Grangold Castle.")
+  ShowMessage("Let's go ask the king's request!")
+  ChangeSwitch(33,33,1)
+  ChangeSwitch(100,100,1)
+  PictureClear(5)
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   4
+ PAGE   1
+  // condition: switch 31 is ON
+  0()
+ PAGE   2
+  // condition: switch 32 is ON
+  0()
+
+
+
+EVENT   5
+ PAGE   1
+  355("gain_medal(44)")
+  Wait(60)
+  PictureDisplay(5,"80_grandnoa_st02",0,0,0,0,100,100,0,0)
+  PictureMove(5,null,0,0,0,0,100,100,255,0,30,true)
+  ShowMessageFace("grandnoa_fc1",1,0,2,1)
+  ShowMessage("【Queen of Grand Noah】")
+  ShowMessage("...... We are pleased to welcome the Peace Treaty.")
+  ShowMessage("Let's celebrate the coming of peace at this feast.")
+  ShowMessageFace("grandnoa_fc1",1,0,2,2)
+  ShowMessage("【Queen of Grand Noah】")
+  ShowMessage("Although it is awkward with a small feast ......")
+  ShowMessage("Immediately after the end of the war, many people still suffer from disaster.")
+  If(0,6,0)
+   ShowMessageFace("sonia_fc3",2,0,2,3)
+   ShowMessage("【Sonia】")
+   ShowMessage("It's whispering ... ...")
+   ShowMessage("It's more than a hundred years festival in the village ... ...")
+   0()
+  EndIf()
+  If(0,4,0)
+   ShowMessageFace("alice_fc5",7,0,2,4)
+   ShowMessage("【Alice】")
+   ShowMessage("A feast, plenty ... ... ♪")
+   0()
+  EndIf()
+  If(0,5,0)
+   ShowMessageFace("iriasu_fc4",1,0,2,5)
+   ShowMessage("【Iliad】")
+   ShowMessage("There are lots of food ... ... ♪")
+   0()
+  EndIf()
+  ShowMessageFace("grandnoa_fc1",1,0,2,6)
+  ShowMessage("【Queen of Grand Noah】")
+  ShowMessage("And this is an unusual thing ... ...")
+  ShowMessage("We have also come to the Grand Golde King.")
+  PictureDisplay(5,"80_grangold_st11b",0,0,0,0,100,100,255,0)
+  ShowMessageFace("grangold_fc2",0,0,2,7)
+  ShowMessage("【King Grangold】")
+  ShowMessage("What I will show up at this party ...... Even oneself, I was lost just before it.")
+  ShowMessage("Anyway, I am the other person you have brought in with me until the other day.")
+  ShowMessageFace("grangold_fc2",0,0,2,8)
+  ShowMessage("【King Grangold】")
+  ShowMessage("By my order, soldiers and civilians in this country lost their lives.")
+  ShowMessage("Also, there are many soldiers who myself took their lives ... ...")
+  ShowMessageFace("grangold_fc2",0,0,2,9)
+  ShowMessage("【King Grangold】")
+  ShowMessage("That's why I participated in this party ......")
+  ShowMessage("It is to appeal that our country will walk with the countries.")
+  ShowMessageFace("grangold_fc2",0,0,2,10)
+  ShowMessage("【King Grangold】")
+  ShowMessage("It may not be able to dissolve the feelings of your feelings now ......")
+  ShowMessage("However, I believe it is a problem to be solved in the near future.")
+  ShowMessageFace("grangold_fc2",0,0,2,11)
+  ShowMessage("【King Grangold】")
+  ShowMessage("... ... From me it is over.")
+  PictureDisplay(5,"80_grandnoa_st02",0,0,0,0,100,100,255,0)
+  ShowMessageFace("grandnoa_fc1",1,0,2,12)
+  ShowMessage("【Queen of Grand Noah】")
+  ShowMessage("If you can tell me a bit from me ......")
+  ShowMessage("The great war of this time was led to the original plan of the demon king.")
+  ShowMessageFace("grandnoa_fc1",1,0,2,13)
+  ShowMessage("【Queen of Grand Noah】")
+  ShowMessage("King Grangold and Queen Sabasa are manipulating the spirit ......")
+  ShowMessage("And also to Grand Noah, the Devil 's hands were entering.")
+  ShowMessageFace("mefist_fc1",0,0,2,14)
+  ShowMessage("[Mephisto]")
+  ShowMessage("Even in this banquet, I'm getting into it safely ....")
+  If(0,6,0)
+   ShowMessageFace("sonia_fc4",0,0,2,15)
+   ShowMessage("【Sonia】")
+   ShowMessage("What is dumbfound, fantastic ... ...")
+   0()
+  EndIf()
+  ShowMessageFace("grandnoa_fc1",1,0,2,16)
+  ShowMessage("【Queen of Grand Noah】")
+  ShowMessage("Therefore, in this great war, everyone is a victim.")
+  ShowMessage("The hatred is the demon king, and King Grangold has no responsibility.")
+  ShowMessageFace("grandnoa_fc1",1,0,2,17)
+  ShowMessage("【Queen of Grand Noah】")
+  ShowMessage("I hope that everyone can share this thought.")
+  ShowMessage("Well, it is also an idea that the speech will be too long.")
+  ShowMessageFace("grandnoa_fc1",1,0,2,18)
+  ShowMessage("【Queen of Grand Noah】")
+  ShowMessage("Well then, in the end ......")
+  ShowMessage("Let me ask Luke the hero, the hero who led this war to the end.")
+  ShowMessageFace("ruka_fc1",0,0,2,19)
+  ShowMessage("【Luke】")
+  ShowMessage("Er ... ... me! What?")
+  ShowChoices(strings("I thank everyone","Mourn for the victims","The world belongs to me"),0)
+  IfPlayerPicksChoice(0,null)
+   ShowMessageFace("ruka_fc1",0,0,2,20)
+   ShowMessage("【Luke】")
+   ShowMessage("I thank everyone who fought together!")
+   If(0,4,0)
+    ShowMessageFace("alice_fc5",1,0,2,21)
+    ShowMessage("【Alice】")
+    ShowMessage("Well, thanks to everyone's power, this is the victory!")
+    0()
+   EndIf()
+   If(0,5,0)
+    ShowMessageFace("iriasu_fc4",0,0,2,22)
+    ShowMessage("【Iliad】")
+    ShowMessage("Everyone often did it for me.")
+    ShowMessage("Unusually, let me thank you.")
+    0()
+   EndIf()
+   0()
+  IfPlayerPicksChoice(1,null)
+   ShowMessageFace("ruka_fc1",0,0,2,23)
+   ShowMessage("【Luke】")
+   ShowMessage("Many people were sacrificed in this battle.")
+   ShowMessage("People who lost their lives can rest in peace.")
+   ShowMessageFace("grandnoa_fc1",1,0,2,24)
+   ShowMessage("【Queen of Grand Noah】")
+   ShowMessage("Let's pray together, the repose of the sacrificed people ... ...")
+   ShowMessage("And let us walk forward as we survived.")
+   0()
+  IfPlayerPicksChoice(2,null)
+   ShowMessageFace("ruka_fc1",0,0,2,25)
+   ShowMessage("【Luke】")
+   ShowMessage("The world is mine.")
+   If(0,6,0)
+    ShowMessageFace("sonia_fc2",2,0,2,26)
+    ShowMessage("【Sonia】")
+    ShowMessage("Luca ... ... Oxygen, is it enough?")
+    0()
+   EndIf()
+   ShowMessageFace("grandnoa_fc1",1,0,2,27)
+   ShowMessage("【Queen of Grand Noah】")
+   ShowMessage("Harsh battles also undermine the spirit ... ...")
+   ShowMessage("I hope this banquet will make you feel comfortable.")
+   0()
+  404()
+  ShowMessageFace("grandnoa_fc1",1,0,2,28)
+  ShowMessage("【Queen of Grand Noah】")
+  ShowMessage("I thank you for your good fight.")
+  ShowMessage("Let's go to the nonsense class!")
+  PictureClear(5)
+  205(4,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x0c,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x08,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x08,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x06,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x06,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x06,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x16,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  ChangeSwitch(31,31,1)
+  ChangeSelfSwitch("A",0)
+  205(-1,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x09,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x2a,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x2b,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   6
+ PAGE   1
+  ShowMessageFace("grandnoa_fc1",1,0,2,1)
+  ShowMessage("【Queen of Grand Noah】")
+  ShowMessage("The brave Luca, you did it really.")
+  ShowMessage("I do not have your work or thanks.")
+  ShowMessageFace("grandnoa_fc1",1,0,2,2)
+  ShowMessage("【Queen of Grand Noah】")
+  ShowMessage("...... But the fight is not over with this.")
+  ShowMessage("Although it hindered the plan of the demon king, it was not a defeat.")
+  ShowMessageFace("grandnoa_fc1",1,0,2,3)
+  ShowMessage("【Queen of Grand Noah】")
+  ShowMessage("There is also a story saying that the four major powers have united and confront demonic king.")
+  ShowMessage("At that time, you will also borrow your power.")
+  ShowMessageFace("grandnoa_fc1",1,0,2,4)
+  ShowMessage("【Queen of Grand Noah】")
+  ShowMessage("...... However, now please enjoy the party.")
+  ShowMessage("If you do not have a break when you rest, your mind will come.")
+  0()
+ PAGE   2
+  // condition: switch 31 is ON
+  0()
+ PAGE   3
+  // condition: switch 33 is ON
+  0()
+
+
+
+EVENT   7
+ PAGE   1
+  // condition: switch 4 is ON
+  ShowMessageFace("alice_fc5",7,0,2,1)
+  ShowMessage("【Alice】")
+  ShowMessage("Mushrooms ...... Tasty ♪")
+  ShowMessageFace("ruka_fc1",0,0,2,2)
+  ShowMessage("【Luke】")
+  ShowMessage("It was worth the effort, Alice.")
+  ShowMessageFace("alice_fc5",7,0,2,3)
+  ShowMessage("【Alice】")
+  ShowMessage("Yeah ...... Tasty ♪")
+  ShowMessageFace("ruka_fc1",0,0,2,4)
+  ShowMessage("【Luke】")
+  ShowMessage("But the fundamental problem is not solved.")
+  ShowMessage("Demon King - What is Alice's mother planning?")
+  ShowMessageFace("alice_fc5",7,0,2,5)
+  ShowMessage("【Alice】")
+  ShowMessage("Mushy ... ... In that case, I bothered my head sparingly.")
+  ShowMessage("Baku ... ... I've decided to divide the topic I was troubled with.")
+  ShowMessageFace("alice_fc5",7,0,2,6)
+  ShowMessage("【Alice】")
+  ShowMessage("Munching ... ... There is still a fact that we do not know.")
+  ShowMessage("Mushy ... ... In the end it is a puzzle where the piece is missing.")
+  ShowMessageFace("alice_fc5",7,0,2,7)
+  ShowMessage("【Alice】")
+  ShowMessage("Muukumu ... ... so wasteful waste, collect information anyway.")
+  ShowMessage("Mushy ... ... So, I will only travel around the world.")
+  ShowMessageFace("alice_fc5",6,0,2,8)
+  ShowMessage("【Alice】")
+  ShowMessage("Hanging ... .... There was dishes.")
+  ShowMessageFace("ruka_fc1",0,0,2,9)
+  ShowMessage("【Luke】")
+  ShowMessage("Just calm down and eat ......")
+  ShowMessage("In any case, there is no use for sure if you are troubled.")
+  ShowMessageFace("alice_fc5",1,0,2,10)
+  ShowMessage("【Alice】")
+  ShowMessage("Tartarus and your father, there are still plenty of information.")
+  ShowMessage("If you investigate thoroughly, your mother's true intention will be visible as well.")
+  ShowMessageFace("alice_fc5",1,0,2,11)
+  ShowMessage("【Alice】")
+  ShowMessage("And if it is not convincing - to beat mother!")
+  ShowMessage("There is no more trouble anymore.")
+  ShowMessageFace("alice_fc5",7,0,2,12)
+  ShowMessage("【Alice】")
+  ShowMessage("I do not care, but ... it's delicious up to dishes and dishes here.")
+  ShowMessageFace("ruka_fc1",0,0,2,13)
+  ShowMessage("【Luke】")
+  ShowMessage("It really does not matter ...")
+  0()
+ PAGE   2
+  // condition: switch 5 is ON
+  ShowMessageFace("iriasu_fc4",1,0,2,1)
+  ShowMessage("【Iliad】")
+  ShowMessage("Even in the heavenly world, such a treat was immaterial.")
+  ShowMessage("Next time, would you like to make a culinary angel ......")
+  ShowMessageFace("iriasu_fc4",7,0,2,2)
+  ShowMessage("【Iliad】")
+  ShowMessage("...... and so on, it is not the case.")
+  ShowMessage("The algae of a different world was missing in this world.")
+  ShowMessageFace("iriasu_fc4",7,0,2,3)
+  ShowMessage("【Iliad】")
+  ShowMessage("Perhaps the three Lilith sisters also appeared from the same world.")
+  ShowMessage("And the different world group is collaborating with the demon king of this world -")
+  ShowMessageFace("iriasu_fc4",7,0,2,4)
+  ShowMessage("【Iliad】")
+  ShowMessage("It is not certain what they are planning.")
+  ShowMessage("However, it certainly is a bad plan.")
+  ShowMessageFace("ruka_fc1",0,0,2,5)
+  ShowMessage("【Luke】")
+  ShowMessage("Even so, we must stop it ... ...")
+  ShowMessageFace("iriasu_fc4",7,0,2,6)
+  ShowMessage("【Iliad】")
+  ShowMessage("It was not even in this group that I imposed the Roku Taikaki on me.")
+  ShowMessageFace("ruka_fc1",0,0,2,7)
+  ShowMessage("【Luke】")
+  ShowMessage("Do you still remember who it was doing?")
+  ShowMessageFace("iriasu_fc4",2,0,2,8)
+  ShowMessage("【Iliad】")
+  ShowMessage("It would rather be a physical absence rather than simply forgetting.")
+  ShowMessage("My body got smaller ... ...")
+  ShowMessageFace("iriasu_fc4",2,0,2,9)
+  ShowMessage("【Iliad】")
+  ShowMessage("30A year ago ... I remember most of things before major disasters.")
+  ShowMessage("But later than that, in a refreshing ......")
+  ShowMessageFace("iriasu_fc4",2,0,2,10)
+  ShowMessage("【Iliad】")
+  ShowMessage("Regarding the Rokuro Daikage curse, I remember being hanged by someone.")
+  ShowMessage("However, I can not remember the situation or opponent at all ...")
+  ShowMessageFace("ruka_fc1",0,0,2,11)
+  ShowMessage("【Luke】")
+  ShowMessage("Well, please do not push yourself.")
+  ShowMessage("In future trip, you may understand ......")
+  ShowMessageFace("iriasu_fc4",0,0,2,12)
+  ShowMessage("【Iliad】")
+  ShowMessage("I agree……")
+  ShowMessage("The mystery related to myself is surely to become clear on this trip.")
+  ShowMessageFace("iriasu_fc4",1,0,2,13)
+  ShowMessage("【Iliad】")
+  ShowMessage("Just now, let's enjoy this dish!")
+  0()
+ PAGE   3
+  // condition: switch 4 is ON
+  // condition: switch 33 is ON
+  0()
+ PAGE   4
+  // condition: switch 5 is ON
+  // condition: switch 33 is ON
+  0()
+
+
+
+EVENT   8
+ PAGE   1
+  // condition: switch 6 is ON
+  ShowMessageFace("sonia_fc1",0,0,2,1)
+  ShowMessage("【Sonia】")
+  ShowMessage("You did it, Luca!")
+  ShowMessage("We were a big success!")
+  ShowMessageFace("ruka_fc1",0,0,2,2)
+  ShowMessage("【Luke】")
+  ShowMessage("Yeah, Sonia did a lot of hard work, too.")
+  ShowMessageFace("sonia_fc2",2,0,2,3)
+  ShowMessage("【Sonia】")
+  ShowMessage("But in the end Nero and Yellow Nellis and Tamado algae are mixed up ... ...")
+  ShowMessage("There is no room for a bit of fight, such a different battle.")
+  ShowMessageFace("ruka_fc1",0,0,2,4)
+  ShowMessage("【Luke】")
+  ShowMessage("Oh, it was a great force ...")
+  ShowMessage("Are you guys in different worlds?")
+  ShowMessageFace("sonia_fc3",4,0,2,5)
+  ShowMessage("【Sonia】")
+  ShowMessage("It is strange that strange people will pass through from another world.")
+  ShowMessage("Everyone, you have to hit the original world ......")
+  ShowMessageFace("ruka_fc1",0,0,2,6)
+  ShowMessage("【Luke】")
+  ShowMessage("Yeah ... ... being ramped up this way is annoying.")
+  ShowMessage("Tamako something, it was all you wanted to take over the country ......")
+  ShowMessageFace("sonia_fc1",2,0,2,7)
+  ShowMessage("【Sonia】")
+  ShowMessage("Now I am eating Morimori and putting muscles on!")
+  ShowMessage("With enhanced power, confront the enemy!")
+  ShowMessageFace("ruka_fc1",0,0,2,8)
+  ShowMessage("【Luke】")
+  ShowMessage("I think I'm just fat.")
+  ShowMessageFace("",0,0,2,9)
+  ShowMessage("(Even now it's rude ... ....)")
+  ShowMessage("I also had the separation of just not saying that.")
+  ShowMessageFace("sonia_fc2",5,0,2,10)
+  ShowMessage("【Sonia】")
+  ShowMessage("Ah! What?")
+  ShowMessageFace("ruka_fc1",0,0,2,11)
+  ShowMessage("【Luke】")
+  ShowMessage("Wow! I took it without saying!")
+  ShowMessageFace("sonia_fc1",1,0,2,12)
+  ShowMessage("【Sonia】")
+  ShowMessage("Something like that, that's ...")
+  ShowMessageFace("ruka_fc1",0,0,2,13)
+  ShowMessage("【Luke】")
+  ShowMessage("Sonia, are you a bit tired?")
+  0()
+ PAGE   2
+  // condition: switch 6 is ON
+  // condition: switch 33 is ON
+  0()
+
+
+
+EVENT   9
+ PAGE   1
+  ShowMessageFace("saniria_fc2",0,0,2,1)
+  ShowMessage("【King of Saint Iria】")
+  ShowMessage("Well, it is said that the body is remodeled to King Grangold.")
+  ShowMessage("Sakame Next, is it about Sara Queen?")
+  ShowMessageFace("grangold_fc2",0,0,2,2)
+  ShowMessage("【King Grangold】")
+  ShowMessage("This is a joke ... .... Ahha.")
+  ShowMessageFace("saniria_fc2",0,0,2,3)
+  ShowMessage("【King of Saint Iria】")
+  ShowMessage("Ha ha ha ha")
+  ShowMessageFace("sara_fc2",5,0,2,4)
+  ShowMessage("【Sara】")
+  ShowMessage("Here, it is a good place to laugh ...")
+  0()
+ PAGE   2
+  // condition: switch 33 is ON
+  0()
+
+
+
+EVENT   10
+ PAGE   1
+  ShowMessageFace("sara_fc2",5,0,2,1)
+  ShowMessage("【Sara】")
+  ShowMessage("King Grangold was also being manipulated like me ...")
+  ShowMessage("But my sense of remorse is more than mine.")
+  ShowMessageFace("sara_fc2",1,0,2,2)
+  ShowMessage("【Sara】")
+  ShowMessage("I will never forgive what three Lilith sisters and demon kings did.")
+  ShowMessage("Even my father's enemy, I surely ... ...!")
+  ShowMessageFace("sara_fc2",1,0,2,3)
+  ShowMessage("【Sara】")
+  ShowMessage("Well ...... I always get tired even if I stretch my shoulders.")
+  ShowMessage("I was going to have you entertain me for a bit of tama.")
+  0()
+ PAGE   2
+  // condition: switch 33 is ON
+  ShowMessageFace("sara_fc1",4,0,2,1)
+  ShowMessage("【Sara】")
+  ShowMessage("I wonder if the King of Grangold is disturbed as well as I am.")
+  ShowMessage("If it is manipulated, it is more difficult situation than me ...")
+  0()
+
+
+
+EVENT   11
+ PAGE   1
+  // condition: switch 1079 is ON
+  ShowMessageFace("nuruko_fc1",1,0,2,1)
+  ShowMessage("【NURCO】")
+  ShowMessage("CURE ♪ CU")
+  ShowMessageFace("ruka_fc1",0,0,2,2)
+  ShowMessage("【Luke】")
+  ShowMessage("Is it delicious?")
+  ShowMessageFace("nuruko_fc1",1,0,2,3)
+  ShowMessage("【NURCO】")
+  ShowMessage("Cutie ♪")
+  0()
+ PAGE   2
+  // condition: switch 1079 is ON
+  // condition: switch 33 is ON
+  0()
+
+
+
+EVENT   12
+ PAGE   1
+  ShowMessageFace("mefist_fc1",0,0,2,1)
+  ShowMessage("[Mephisto]")
+  ShowMessage("This is the end of work ...")
+  ShowMessage("It is a feeling that the load of the shoulder has fallen.")
+  ShowMessageFace("ruka_fc1",0,0,2,2)
+  ShowMessage("【Luke】")
+  ShowMessage("Mephisto, what will you do now?")
+  ShowMessage("You were ordered from Maou, helping Grand Noah, right?")
+  ShowMessageFace("mefist_fc1",0,0,2,3)
+  ShowMessage("[Mephisto]")
+  ShowMessage("No matter what.")
+  ShowMessage("As before, I will support Grand Noah.")
+  ShowMessageFace("ruka_fc1",0,0,2,4)
+  ShowMessage("【Luke】")
+  ShowMessage("Because it is the command of the Devil?")
+  ShowMessage("Or, your own will ...?")
+  ShowMessageFace("mefist_fc1",0,0,2,5)
+  ShowMessage("[Mephisto]")
+  ShowMessage("It is my own will to protect the order of the Devil.")
+  ShowMessage("Did you satisfy with this answer?")
+  ShowMessageFace("ruka_fc1",0,0,2,6)
+  ShowMessage("【Luke】")
+  ShowMessage("........................")
+  0()
+ PAGE   2
+  // condition: switch 33 is ON
+  ShowMessageFace("mefist_fc1",0,0,2,1)
+  ShowMessage("[Mephisto]")
+  ShowMessage("The Grangold castle is also near.")
+  ShowMessage("I wonder if a helper has arrived by this time ......")
+  0()
+
+
+
+EVENT   13
+ PAGE   1
+  // condition: switch 1129 is ON
+  ShowMessageFace("brunhild_fc1",0,0,2,1)
+  ShowMessage("【Hilde】")
+  ShowMessage("Hilde, I love delicious food ......")
+  ShowMessage("Meal function, full operation.")
+  ShowMessageFace("brunhild_fc1",0,0,2,2)
+  ShowMessage("【Hilde】")
+  ShowMessage("...... Why is there such a function?")
+  ShowMessage("Hilde's body, there are lots of things I do not know ....")
+  0()
+ PAGE   2
+  // condition: switch 1129 is ON
+  // condition: switch 33 is ON
+  0()
+
+
+
+EVENT   14
+ PAGE   1
+  // condition: switch 1041 is ON
+  ShowMessageFace("stein_fc2",0,0,2,1)
+  ShowMessage("【Promotin】")
+  ShowMessage("........................")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("Prof Mestin has perused the example notebook while eating ......")
+  ShowMessageFace("ruka_fc1",0,0,2,3)
+  ShowMessage("【Luke】")
+  ShowMessage("Pro mestin, are you a bad man behind?")
+  ShowMessageFace("stein_fc2",2,0,2,4)
+  ShowMessage("【Promotin】")
+  ShowMessage("Excuse me, I'm not good at rice seats like this ... ...")
+  ShowMessage("Even in the heavenly banquet, I read books alone and made the field blur.")
+  ShowMessageFace("stein_fc2",1,0,2,5)
+  ShowMessage("【Promotin】")
+  ShowMessage("That kind of guys, I was about to die.")
+  ShowMessage("I wanted to believe it for a moment that there is truly punishment.")
+  ShowMessageFace("ruka_fc1",0,0,2,6)
+  ShowMessage("【Luke】")
+  ShowMessage("........................")
+  ShowMessageFace("stein_fc2",0,0,2,7)
+  ShowMessage("【Promotin】")
+  ShowMessage("...... So you can leave me alone?")
+  ShowMessageFace("ruka_fc1",0,0,2,8)
+  ShowMessage("【Luke】")
+  ShowMessage("(It's a cold gaze ... ___ ___ 0")
+  0()
+ PAGE   2
+  // condition: switch 1041 is ON
+  // condition: switch 33 is ON
+  0()
+
+
+
+EVENT   15
+ PAGE   1
+  ShowMessageFace("sylph_fc1",0,0,2,1)
+  ShowMessage("【Sylph】")
+  ShowMessage("Taste good")
+  ShowMessage("This is the first time I ate such a delicious feast!")
+  ShowMessageFace("sylph_fc1",1,0,2,2)
+  ShowMessage("【Sylph】")
+  ShowMessage("If you eat too much, it may become heavy and you can not fly ...")
+  ShowMessage("whatever.")
+  0()
+ PAGE   2
+  // condition: switch 33 is ON
+  0()
+
+
+
+EVENT   16
+ PAGE   1
+  ShowMessageFace("gnome_fc1",0,0,2,1)
+  ShowMessage("【Gnomes】")
+  ShowMessage("........................")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("Nome is having a meal with a mother tongue in silent ... ...")
+  ShowMessageFace("ruka_fc1",0,0,2,3)
+  ShowMessage("【Luke】")
+  ShowMessage("Gnome, are you tasty?")
+  ShowMessageFace("gnome_fc1",0,0,2,4)
+  ShowMessage("【Gnomes】")
+  ShowMessage("........................")
+  ShowMessageFace("",0,0,2,5)
+  ShowMessage("Nod nodded nice ... ...")
+  0()
+ PAGE   2
+  // condition: switch 33 is ON
+  ShowMessageFace("gnome_fc1",0,0,2,1)
+  ShowMessage("【Gnomes】")
+  ShowMessage("........................")
+  0()
+
+
+
+EVENT   17
+ PAGE   1
+  ShowMessageFace("undine_fc1",1,0,2,1)
+  ShowMessage("【Undine】")
+  ShowMessage("Of the four spirits, I got over the Salamander treat only ... ...")
+  ShowMessage("I'll fuzz it to you later ... ... Huhu.")
+  0()
+
+
+
+EVENT   18
+ PAGE   1
+  // condition: switch 1143 is ON
+  ShowMessageFace("eva_fc1",0,0,2,1)
+  ShowMessage("【Eva】")
+  ShowMessage("Will you bring Tappa for a moment?")
+  ShowMessage("Because I pack the dishes all at once.")
+  ShowMessageFace("eva_fc1",0,0,2,2)
+  ShowMessage("【Eva】")
+  ShowMessage("I have to bring fruits there as well ......")
+  ShowMessage("You can not tell me to take money later, are not you?")
+  If(0,1056,0)
+   ShowMessageFace("inp_fc1",3,0,2,3)
+   ShowMessage("【Rami】")
+   ShowMessage("(I do not want to be like this ... ...)")
+   ShowMessageFace("eva_fc1",2,0,2,4)
+   ShowMessage("【Eva】")
+   ShowMessage("Huh? I did not feel strange eyes now ... ....?")
+   0()
+  EndIf()
+  0()
+ PAGE   2
+  // condition: switch 1143 is ON
+  // condition: switch 33 is ON
+  0()
+
+
+
+EVENT   19
+ PAGE   1
+  ShowMessageFace("arumaeruma_fc2",0,0,2,1)
+  ShowMessage("【Almaelma】")
+  ShowMessage("At the time of a decisive battle, there was nothing like a good thing ....")
+  ShowMessage("I was locked in prison forever.")
+  ShowMessageFace("arumaeruma_fc2",0,0,2,2)
+  ShowMessage("【Almaelma】")
+  ShowMessage("Well, you can think Morrigan and Astaroto can not move for a while.")
+  ShowMessage("When I was caught, I got a reasonable price for payment ......")
+  ShowMessageFace("ruka_fc1",0,0,2,3)
+  ShowMessage("【Luke】")
+  ShowMessage("What are you going to do now?")
+  ShowMessage("If you do not mind, I would like you to be our friend ......")
+  ShowMessageFace("arumaeruma_fc2",3,0,2,4)
+  ShowMessage("【Almaelma】")
+  ShowMessage("I can not do that ...")
+  ShowMessage("From now on, I will chase Lilith three sisters.")
+  ShowMessageFace("arumaeruma_fc2",3,0,2,5)
+  ShowMessage("【Almaelma】")
+  ShowMessage("Even tracking the end of the earth, I have to lose it ... ...")
+  ShowMessage("That's why I will act alone for a while.")
+  0()
+ PAGE   2
+  // condition: switch 33 is ON
+  0()
+
+
+
+EVENT   20
+ PAGE   1
+  ShowMessageFace("tamamo_fc1",0,0,2,1)
+  ShowMessage("[Occasionally]")
+  ShowMessage("At the fox shrine, I showed a quite something like that ... ...")
+  ShowMessage("Well I helped out the dangerous place, so I do not borrow it.")
+  ShowMessageFace("tamamo_fc1",3,0,2,2)
+  ShowMessage("[Occasionally]")
+  ShowMessage("Even so, nevertheless it is another person who came from another world ... ...")
+  ShowMessage("That is Uchi itself when it was atrocious at the time of the Seika wars.")
+  ShowMessageFace("tamamo_fc1",3,0,2,3)
+  ShowMessage("[Occasionally]")
+  ShowMessage("Today, it is completely Uchiharu who became Mohumovu ... ...")
+  ShowMessage("I remember having been around like that.")
+  ShowMessageFace("ruka_fc1",0,0,2,4)
+  ShowMessage("【Luke】")
+  ShowMessage("What are you going to do now?")
+  ShowMessage("If you do not mind, I would like you to be our friend ......")
+  ShowMessageFace("tamamo_fc1",0,0,2,5)
+  ShowMessage("[Occasionally]")
+  ShowMessage("I'm sorry but I will chase another person for a while for a while.")
+  ShowMessage("If you leave me alone, I do not know what kind of disaster I will scatter in this world.")
+  ShowMessageFace("tamamo_fc1",0,0,2,6)
+  ShowMessage("[Occasionally]")
+  ShowMessage("That's why I will go on a long trip as well.")
+  ShowMessage("Make friends with each other.")
+  0()
+ PAGE   2
+  // condition: switch 33 is ON
+  0()
+
+
+
+EVENT   21
+ PAGE   1
+  // condition: switch 4 is ON
+  ShowMessageFace("iriasu_fc4",4,0,2,1)
+  ShowMessage("【Iliad】")
+  ShowMessage("Delicious……")
+  ShowMessage("Delicious……")
+  ShowMessageFace("ruka_fc1",0,0,2,2)
+  ShowMessage("【Luke】")
+  ShowMessage("that? Somehow I am eating sadly ...")
+  ShowMessageFace("iriasu_fc4",4,0,2,3)
+  ShowMessage("【Iliad】")
+  ShowMessage("How long was it hidden in that prison ...?!")
+  ShowMessage("I am hungry too much, I baked it to a rat and ate it ...!")
+  ShowMessageFace("iriasu_fc4",4,0,2,4)
+  ShowMessage("【Iliad】")
+  ShowMessage("It is a miracle that I did not eat my feathers or two of my friends ......")
+  ShowMessage("True, how much have you gotten awful ......")
+  ShowMessageFace("ruka_fc1",0,0,2,5)
+  ShowMessage("【Luke】")
+  ShowMessage("(I was serious and serious with dividing ... ....)")
+  0()
+ PAGE   2
+  // condition: switch 5 is ON
+  ShowMessageFace("alice_fc5",7,0,2,1)
+  ShowMessage("【Alice】")
+  ShowMessage("Mushrooms ...... Tasty ♪")
+  ShowMessageFace("alice_fc5",1,0,2,2)
+  ShowMessage("【Alice】")
+  ShowMessage("Oh, you guys.")
+  ShowMessage("From now on, are there other copies?")
+  ShowMessageFace("ruka_fc1",0,0,2,3)
+  ShowMessage("【Luke】")
+  ShowMessage("I will withhold ... ...")
+  ShowMessageFace("alice_fc5",1,0,2,4)
+  ShowMessage("【Alice】")
+  ShowMessage("That said, I talked to Almaelma for a while.")
+  ShowMessage("They seem to have left the mother's source.")
+  ShowMessageFace("alice_fc5",1,0,2,5)
+  ShowMessage("【Alice】")
+  ShowMessage("I do not know what my mother is planning on ......")
+  ShowMessage("That ambition, surplus will crush!")
+  ShowMessageFace("ruka_fc1",0,0,2,6)
+  ShowMessage("【Luke】")
+  ShowMessage("Do not get caught again ...")
+  ShowMessageFace("alice_fc5",6,0,2,7)
+  ShowMessage("【Alice】")
+  ShowMessage("That's a strategy!")
+  0()
+ PAGE   3
+  // condition: switch 4 is ON
+  // condition: switch 33 is ON
+  0()
+ PAGE   4
+  // condition: switch 5 is ON
+  // condition: switch 33 is ON
+  0()
+
+
+
+EVENT   22
+ PAGE   1
+  // condition: switch 4 is ON
+  ShowMessageFace("dog_fc1",4,0,2,1)
+  ShowMessage("【Puppy】")
+  ShowMessage("Wow ... ... muzzle ...")
+  ShowMessage("Tasty ...... ♪ Tasty ... ♪")
+  0()
+ PAGE   2
+  // condition: switch 5 is ON
+  ShowMessageFace("youko_fc1",2,0,2,1)
+  ShowMessage("【Move】")
+  ShowMessage("I was put into a group by the way to Tama. ......")
+  ShowMessage("Even so, I'm still getting behind ~! It's awkward ~!")
+  0()
+ PAGE   3
+  // condition: switch 4 is ON
+  // condition: switch 33 is ON
+  0()
+ PAGE   4
+  // condition: switch 5 is ON
+  // condition: switch 33 is ON
+  0()
+
+
+
+EVENT   23
+ PAGE   1
+  // condition: switch 4 is ON
+  ShowMessageFace("slime_fc1",0,0,2,1)
+  ShowMessage("【Puroko】")
+  ShowMessage("Purupuru Puru ♪")
+  ShowMessage("Feast it ♪ Feasts ♪")
+  0()
+ PAGE   2
+  // condition: switch 5 is ON
+  ShowMessageFace("bunnyslime_fc1",0,0,2,1)
+  ShowMessage("【Usako】")
+  ShowMessage("Usado ♪ Tasty ♪")
+  ShowMessage("It was worth confining, there ♪ ♪")
+  0()
+ PAGE   3
+  // condition: switch 4 is ON
+  // condition: switch 33 is ON
+  0()
+ PAGE   4
+  // condition: switch 5 is ON
+  // condition: switch 33 is ON
+  0()
+
+
+
+EVENT   24
+ PAGE   1
+  ShowMessageFace("grangold_fc2",0,0,2,1)
+  ShowMessage("【King Grangold】")
+  ShowMessage("Before you ask questions, I will answer your question.")
+  ShowMessage("Yeah, as you can see ... ... I can not return!")
+  ShowMessageFace("grangold_fc2",0,0,2,2)
+  ShowMessage("【King Grangold】")
+  ShowMessage("Those who have reason to go back with the power of Tamamo ....")
+  ShowMessage("The body of a person who has completely mutated, by all means.")
+  ShowMessageFace("mefist_fc1",0,0,2,3)
+  ShowMessage("[Mephisto]")
+  ShowMessage("Shall I teach the magic of change?")
+  ShowMessage("To the end, it is just a misunderstanding of appearance ... ...")
+  ShowMessageFace("grangold_fc2",0,0,2,4)
+  ShowMessage("【King Grangold】")
+  ShowMessage("Well then, I guess.")
+  ShowMessage("You can not afford to walk through your own territory in this form ... ...")
+  ShowMessageFace("grangold_fc2",0,0,2,5)
+  ShowMessage("【King Grangold】")
+  ShowMessage("Anyway, Luca, you bothered us.")
+  ShowMessage("I will have this blunder filled in some way.")
+  ShowMessageFace("grangold_fc2",0,0,2,6)
+  ShowMessage("【King Grangold】")
+  ShowMessage("As I said so, it is hard to cut out ... ...")
+  ShowMessage("Will not you accept a request just a little?")
+  ShowMessageFace("grangold_fc2",0,0,2,7)
+  ShowMessage("【King Grangold】")
+  ShowMessage("Of course, I will try a reasonable thanks.")
+  ShowMessage("Today is such a seat, so I will contact you again later.")
+  0()
+ PAGE   2
+  // condition: switch 33 is ON
+  0()
+
+
+
+EVENT   25
+ PAGE   1
+  ShowMessageFace("lazarus3_fc1",0,0,2,1)
+  ShowMessage("【Lazarus】")
+  ShowMessage("Oh, I did it.")
+  ShowMessage("From now on, do not engage in this.")
+  ShowMessageFace("ruka_fc1",0,0,2,2)
+  ShowMessage("【Luke】")
+  ShowMessage("Uncle Lazarus, moving with such injuries is okay ...?")
+  ShowMessageFace("lazarus3_fc1",0,0,2,3)
+  ShowMessage("【Lazarus】")
+  ShowMessage("I did not die this much.")
+  ShowMessage("There is calorie to injury, eat me.")
+  If(0,6,0)
+   ShowMessageFace("ruka_fc1",0,0,2,4)
+   ShowMessage("【Luke】")
+   ShowMessage("Also, although it is the case that Uncle Lazarus was Don of the back world ....")
+   ShowMessage("I have decided not to mind anymore, but Sonia is very angry.")
+   ShowMessageFace("lazarus3_fc1",0,0,2,5)
+   ShowMessage("【Lazarus】")
+   ShowMessage("While I am injured, can I apologize?")
+   ShowMessage("If the other person is injured, you will not be able to get stronger ... ...")
+   ShowMessageFace("merlin_fc1",0,0,2,6)
+   ShowMessage("【Merlin】")
+   ShowMessage("It is too personal, Mr. Lazarus ......")
+   ShowMessageFace("ruka_fc1",0,0,2,7)
+   ShowMessage("【Luke】")
+   ShowMessage("Sonia, Mr. Merlin was also angry.")
+   ShowMessageFace("merlin_fc1",0,0,2,8)
+   ShowMessage("【Merlin】")
+   ShowMessage("It is a good idea to apologize while you are injured ...")
+   0()
+  EndIf()
+  0()
+ PAGE   2
+  // condition: switch 33 is ON
+  0()
+
+
+
+EVENT   26
+ PAGE   1
+  ShowMessageFace("merlin_fc1",0,0,2,1)
+  ShowMessage("【Merlin】")
+  ShowMessage("Mr. Luca, you were a great fight.")
+  ShowMessage("Even as for me, my nose is high.")
+  ShowMessageFace("ruka_fc1",0,0,2,2)
+  ShowMessage("【Luke】")
+  ShowMessage("Mr. Merlin ... ... that injury, are you okay?")
+  ShowMessageFace("merlin_fc1",0,0,2,3)
+  ShowMessage("【Merlin】")
+  ShowMessage("I thought that I would die on a falling stone.")
+  ShowMessage("If Tamasumi did not rescue me, there was no life.")
+  ShowMessageFace("tamamo_fc1",3,0,2,4)
+  ShowMessage("[Occasionally]")
+  ShowMessage("(Everyone was a rogue face and I got lost as to whom to stumble ... ...")
+  ShowMessage("... ... is a word)")
+  ShowMessageFace("lazarus3_fc1",0,0,2,5)
+  ShowMessage("【Lazarus】")
+  ShowMessage("Okay, Luca ....")
+  ShowMessage("Because it's a dangerous situation, it's third-tier throwing out life easily.")
+  ShowMessageFace("lazarus3_fc1",0,0,2,6)
+  ShowMessage("【Lazarus】")
+  ShowMessage("Resist against the temptation of self-sacrifice. Even though it gets stuck in a stone, it survives.")
+  ShowMessage("If you are a man, think only about being alive.")
+  ShowMessageFace("merlin_fc1",0,0,2,7)
+  ShowMessage("【Merlin】")
+  ShowMessage("(I was seriously dying to say this ... ne.")
+  0()
+ PAGE   2
+  // condition: switch 33 is ON
+  0()
+
+
+
+EVENT   27
+ PAGE   1
+  // condition: switch 1062 is ON
+  ShowMessageFace("gob_fc1",0,0,2,1)
+  ShowMessage("【Gob】")
+  ShowMessage("You decorate your natives in your hometown.")
+  ShowMessage("Everyone in Yamathai village, too to be proud!")
+  0()
+ PAGE   2
+  // condition: switch 1062 is ON
+  // condition: switch 33 is ON
+  ShowMessageFace("gob_fc1",3,0,2,1)
+  ShowMessage("【Gob】")
+  ShowMessage("How about a demon like me being involved in human-to-human war ... ...")
+  ShowMessage("But the grand Gordol is also moving the uncanned from behind.")
+  0()
+
+
+
+EVENT   28
+ PAGE   1
+  // condition: switch 1064 is ON
+  ShowMessageFace("pramia_fc1",0,0,2,1)
+  ShowMessage("【Petit】")
+  ShowMessage("Everyone please eat more ... ...")
+  0()
+ PAGE   2
+  // condition: switch 1064 is ON
+  // condition: switch 33 is ON
+  ShowMessageFace("pramia_fc1",0,0,2,1)
+  ShowMessage("【Petit】")
+  ShowMessage("This tree is just right for hanging out the laundry.")
+  0()
+
+
+
+EVENT   29
+ PAGE   1
+  // condition: switch 1068 is ON
+  ShowMessageFace("dragonp_fc1",0,0,2,1)
+  ShowMessage("【Papi】")
+  ShowMessage("Mushy ... ... Hatsugashi ... ...")
+  ShowMessage("Eat until it gets hungry, refill!")
+  0()
+ PAGE   2
+  // condition: switch 1068 is ON
+  // condition: switch 33 is ON
+  ShowMessageFace("dragonp_fc1",0,0,2,1)
+  ShowMessage("【Papi】")
+  ShowMessage("Dragons can also vomit your ice breath!")
+  ShowMessage("Wow ... ...., Hie ...")
+  0()
+
+
+
+EVENT   30
+ PAGE   1
+  // condition: switch 1072 is ON
+  ShowMessageFace("phoenix_fc1",1,0,2,1)
+  ShowMessage("【mini】")
+  ShowMessage("It is very tasty!")
+  ShowMessage("Even at our castle, we only have a banquet every day!")
+  ShowMessageFace("ruka_fc1",0,0,2,2)
+  ShowMessage("【Luke】")
+  ShowMessage("Financial collapse in three days ... ...")
+  0()
+ PAGE   2
+  // condition: switch 1072 is ON
+  // condition: switch 33 is ON
+  0()
+
+
+
+EVENT   31
+ PAGE   1
+  // condition: switch 1066 is ON
+  ShowMessageFace("vgirl_fc1",2,0,2,1)
+  ShowMessage("【Vanilla】")
+  ShowMessage("Such a bright place ...")
+  ShowMessage("To me who lives in the shade ... ... for me ......")
+  ShowMessageFace("vgirl_fc1",2,0,2,2)
+  ShowMessage("【Vanilla】")
+  ShowMessage("I, Rear filling ......")
+  0()
+ PAGE   2
+  // condition: switch 1066 is ON
+  // condition: switch 33 is ON
+  ShowMessageFace("vgirl_fc1",2,0,2,1)
+  ShowMessage("【Vanilla】")
+  ShowMessage("This dreadfulness, the neck hurts ... ... Royalty is sensitive skin.")
+  ShowMessage("You envy insensitive gobs and papi.")
+  0()
+
+
+
+EVENT   32
+ PAGE   1
+  ShowMessageFace("durahan_fc1",1,0,2,1)
+  ShowMessage("【Arthur】")
+  ShowMessage("This is the first time for luxurious cuisine ... ...")
+  ShowMessage("I do not want more than one neck.")
+  0()
+ PAGE   2
+  // condition: switch 33 is ON
+  ShowMessageFace("durahan_fc1",0,0,2,1)
+  ShowMessage("【Arthur】")
+  ShowMessage("A little nice, Luke the brave.")
+  ShowMessage("I would like you to anticipate your skills and help with your duties ... ...")
+  0()
+
+
+
+EVENT   33
+ PAGE   1
+  ShowMessageFace("kerberos_fc1",0,0,2,1)
+  ShowMessage("【Caesar】")
+  ShowMessage("Since yesterday, I am helping with reconstruction work.")
+  ShowMessage("To work hard, I must eat Morimori!")
+  0()
+ PAGE   2
+  // condition: switch 33 is ON
+  ShowMessageFace("kerberos_fc1",0,0,2,1)
+  ShowMessage("【Caesar】")
+  ShowMessage("Hey, Hey!")
+  ShowMessage("Would you please listen to me for a moment! What?")
+  0()
+
+
+
+EVENT   34
+ PAGE   1
+  // condition: switch 2149 is ON
+  ShowMessageFace("ashel_fc1",1,0,2,1)
+  ShowMessage("[Asher]")
+  ShowMessage("I also wanted everyone of the Osaka Pirates to eat a treat ... ...")
+  ShowMessage("At best I will take home the delicious dishes.")
+  0()
+ PAGE   2
+  // condition: switch 2148 is ON
+  ShowMessageFace("umiusi_k_fc1",0,0,2,1)
+  ShowMessage("【Stacy】")
+  ShowMessage("I can invite you to such a seat ......")
+  ShowMessage("I was really pleased doing marines.")
+  0()
+ PAGE   3
+  // condition: switch 2149 is ON
+  // condition: switch 33 is ON
+  0()
+ PAGE   4
+  // condition: switch 2148 is ON
+  // condition: switch 33 is ON
+  0()
+
+
+
+EVENT   35
+ PAGE   1
+  // condition: switch 2149 is ON
+  ShowMessageFace("bonny_fc1",2,0,2,1)
+  ShowMessage("【Bonnie】")
+  ShowMessage("Phaphhe, Fufu ... ....")
+  ShowMessage("Actually I am a cat tongue, I can not eat it unless it is cool.")
+  ShowMessageFace("bonny_fc1",2,0,2,2)
+  ShowMessage("【Bonnie】")
+  ShowMessage("Fufu, Fufu ... ....")
+  ShowMessage("Phuffahufufu ...... ふ, ふ, ふ ......")
+  0()
+ PAGE   2
+  // condition: switch 2148 is ON
+  ShowMessageFace("tatunoko_k_fc1",1,0,2,1)
+  ShowMessage("【Tatsuko】")
+  ShowMessage("it's delicious! Mushyard ......")
+  0()
+ PAGE   3
+  // condition: switch 2149 is ON
+  // condition: switch 33 is ON
+  0()
+ PAGE   4
+  // condition: switch 2148 is ON
+  // condition: switch 33 is ON
+  0()
+
+
+
+EVENT   36
+ PAGE   1
+  // condition: switch 1118 is ON
+  ShowMessageFace("meia_fc1",0,0,2,1)
+  ShowMessage("[Meiah]")
+  ShowMessage("Oh, what a delicious dish.")
+  ShowMessage("I would like my husband to taste ......")
+  ShowMessageFace("meia_fc1",0,0,2,2)
+  ShowMessage("[Meiah]")
+  ShowMessage("In the next harem, please take this full course ......")
+  ShowMessage("No no, there is nothing.")
+  0()
+ PAGE   2
+  // condition: switch 1118 is ON
+  // condition: switch 33 is ON
+  0()
+
+
+
+EVENT   37
+ PAGE   1
+  ShowMessageFace("queenant_fc1",0,0,2,1)
+  ShowMessage("【Queen Ant】")
+  ShowMessage("As a queen of Ali's daughter, we have received national guest treatment.")
+  ShowMessage("The case that I was manipulating my girls as soldiers also received an apology.")
+  ShowMessageFace("queenant_fc1",0,0,2,2)
+  ShowMessage("【Queen Ant】")
+  ShowMessage("Originally, King Grangold was also being manipulated ... ...")
+  ShowMessage("Accept the apology, let's end this matter.")
+  ShowMessageFace("queenant_fc1",0,0,2,3)
+  ShowMessage("【Queen Ant】")
+  ShowMessage("Well ... ... You have taken care of me a long time.")
+  ShowMessage("Through its success, I was released.")
+  ShowMessageFace("queenant_fc1",0,0,2,4)
+  ShowMessage("【Queen Ant】")
+  ShowMessage("Now I am busy wrapping up food ......")
+  ShowMessage("Let's certainly thank you very soon.")
+  ShowMessageFace("queenant_fc1",0,0,2,5)
+  ShowMessage("【Queen Ant】")
+  ShowMessage("...... Wrapped food?")
+  ShowMessage("Would you take it home and let the girls eat it.")
+  0()
+ PAGE   2
+  // condition: switch 33 is ON
+  0()
+
+EVENT   38
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Shigeta Sabasa】")
+  ShowMessage("As a brave marriage partner, the market price has been determined with the royal daughter from the mythical era.")
+  ShowMessage("Oops, so to speak, my princess age is in Sabbatha!")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("[Ground Noah Shibata Opposite]")
+  ShowMessage("No matter what you say, Grand Noah also has a royal woman!")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("【Shigeta Sabasa】")
+  ShowMessage("But when I think of my age, I will be balanced with the hero ... ...")
+  ShowMessageFace("grandnoa_fc1",0,0,2,4)
+  ShowMessage("【Queen of Grand Noah】")
+  ShowMessage("Fighting off his head!")
+  ShowMessageFace("",0,0,2,5)
+  ShowMessage("【Shigeta Sabasa】")
+  ShowMessage("Wow! What a hell's eard!")
+  0()
+ PAGE   2
+  // condition: switch 33 is ON
+  0()
+
+
+
+EVENT   39
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Grand Noah Shigemitsu】")
+  ShowMessage("Are you sudden or senior women like you?")
+  ShowMessage("Oh, you do not have to ask the answer.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("【Grand Noah Shigemitsu】")
+  ShowMessage("This is a soliloquy ... ...")
+  ShowMessage("Queen of our country is just marriageable age ... ...")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("[Shibasa Shigemasa across the street]")
+  ShowMessage("No, it will be impossible ...")
+  ShowMessageFace("",0,0,2,4)
+  ShowMessage("【Grand Noah Shigemitsu】")
+  ShowMessage("Stop your silence.")
+  ShowMessage("This is a digression ... ... the hero in myths is the one who hails the royal daughter.")
+  ShowMessageFace("",0,0,2,5)
+  ShowMessage("【Grand Noah Shigemitsu】")
+  ShowMessage("Well, Queen Sabbatha etc ......")
+  ShowMessage("There are also rumors that a weapon and so on, as a bride of the brave ... ....")
+  ShowMessageFace("sara_fc2",1,0,2,6)
+  ShowMessage("【Sara】")
+  ShowMessage("I feel like dancing a bit ... ...")
+  ShowMessage("Will you put it on the person's neck, dish?")
+  ShowMessageFace("",0,0,2,7)
+  ShowMessage("【Grand Noah Shigemitsu】")
+  ShowMessage("Wow! What a hell's ear!")
+  0()
+ PAGE   2
+  // condition: switch 33 is ON
+  0()
+
+
+
+EVENT   40
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Gran Gordo Shigemitsu】")
+  ShowMessage("The brave-sama's companion ...")
+  ShowMessage("No, it is rich variety.")
+  0()
+ PAGE   2
+  // condition: switch 33 is ON
+  0()
+
+
+

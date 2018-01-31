@@ -1,0 +1,153 @@
+#==============================================================================
+# ■ Window_Command
+#------------------------------------------------------------------------------
+# This window is used for general command selection.
+#==============================================================================
+
+class Window_Command < Window_Selectable
+  #--------------------------------------------------------------------------
+  # ● Object initialization
+  #--------------------------------------------------------------------------
+  def initialize(x, y)
+    clear_command_list
+    make_command_list
+    super(x, y, window_width, window_height)
+    refresh
+    select(0)
+    activate
+  end
+  #--------------------------------------------------------------------------
+  # ● Obtain window width
+  #--------------------------------------------------------------------------
+  def window_width
+    return 160
+  end
+  #--------------------------------------------------------------------------
+  # ● Obtain window height
+  #--------------------------------------------------------------------------
+  def window_height
+    fitting_height(visible_line_number)
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire number of display lines
+  #--------------------------------------------------------------------------
+  def visible_line_number
+    item_max
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of number of items
+  #--------------------------------------------------------------------------
+  def item_max
+    @list.size
+  end
+  #--------------------------------------------------------------------------
+  # ● Clear command list
+  #--------------------------------------------------------------------------
+  def clear_command_list
+    @list = []
+  end
+  #--------------------------------------------------------------------------
+  # ● Create command list
+  #--------------------------------------------------------------------------
+  def make_command_list
+  end
+  #--------------------------------------------------------------------------
+  # ● Adding commands
+  #     name    : Command name
+  #     symbol  : Corresponding symbol
+  #     enabled : Valid state flag
+  #     ext     : Any extended data
+  #--------------------------------------------------------------------------
+  def add_command(name, symbol, enabled = true, ext = nil)
+    @list.push({:name=>name, :symbol=>symbol, :enabled=>enabled, :ext=>ext})
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire command name
+  #--------------------------------------------------------------------------
+  def command_name(index)
+    @list[index][:name]
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire command effective status
+  #--------------------------------------------------------------------------
+  def command_enabled?(index)
+    @list[index][:enabled]
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire command data of selected items
+  #--------------------------------------------------------------------------
+  def current_data
+    index >= 0 ? @list[index] : nil
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire the effective state of the selected item
+  #--------------------------------------------------------------------------
+  def current_item_enabled?
+    current_data ? current_data[:enabled] : false
+  end
+  #--------------------------------------------------------------------------
+  # ● Get the symbol of the selected item
+  #--------------------------------------------------------------------------
+  def current_symbol
+    current_data ? current_data[:symbol] : nil
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire extended data of selected items
+  #--------------------------------------------------------------------------
+  def current_ext
+    current_data ? current_data[:ext] : nil
+  end
+  #--------------------------------------------------------------------------
+  # ● Move the cursor to a command with the specified symbol
+  #--------------------------------------------------------------------------
+  def select_symbol(symbol)
+    @list.each_index {|i| select(i) if @list[i][:symbol] == symbol }
+  end
+  #--------------------------------------------------------------------------
+  # ● Move the cursor to a command with specified extension data
+  #--------------------------------------------------------------------------
+  def select_ext(ext)
+    @list.each_index {|i| select(i) if @list[i][:ext] == ext }
+  end
+  #--------------------------------------------------------------------------
+  # ● Drawing items
+  #--------------------------------------------------------------------------
+  def draw_item(index)
+    change_color(normal_color, command_enabled?(index))
+    draw_text(item_rect_for_text(index), command_name(index), alignment)
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of alignment
+  #--------------------------------------------------------------------------
+  def alignment
+    return 0
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire effective status of decision processing
+  #--------------------------------------------------------------------------
+  def ok_enabled?
+    return true
+  end
+  #--------------------------------------------------------------------------
+  # ● Calling a decision handler
+  #--------------------------------------------------------------------------
+  def call_ok_handler
+    if handle?(current_symbol)
+      call_handler(current_symbol)
+    elsif handle?(:ok)
+      super
+    else
+      activate
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Refresh
+  #--------------------------------------------------------------------------
+  def refresh
+    clear_command_list
+    make_command_list
+    create_contents
+    super
+  end
+end
+

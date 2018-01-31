@@ -1,0 +1,1782 @@
+
+
+
+EVENT   1
+ PAGE   1 
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,27,61,5,0,0)
+  0()
+
+
+
+EVENT   2
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,27,61,5,0,0)
+  0()
+
+
+
+EVENT   3
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,27,61,5,0,0)
+  0()
+
+
+
+EVENT   4
+ PAGE   1
+  0()
+
+
+
+EVENT   5
+ PAGE   1
+  0()
+
+
+
+EVENT   6
+ PAGE   1
+  0()
+
+
+
+EVENT   7
+ PAGE   1
+  0()
+
+
+
+EVENT   8
+ PAGE   1
+  0()
+
+
+
+EVENT   9
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,27,8,16,0,0)
+  216(0)
+  0()
+
+
+
+EVENT   10
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,27,21,25,0,0)
+  0()
+
+
+
+EVENT   11
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,27,16,53,0,0)
+  0()
+
+
+
+EVENT   12
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,27,56,23,0,0)
+  0()
+
+
+
+EVENT   13
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,27,70,29,0,0)
+  0()
+
+
+
+EVENT   14
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,27,61,40,0,0)
+  0()
+
+
+
+EVENT   15
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,27,31,54,0,0)
+  0()
+
+
+
+EVENT   16
+ PAGE   1
+  0()
+
+
+
+EVENT   17
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,28,57,51,0,0)
+  0()
+
+
+
+EVENT   18
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,28,58,51,0,0)
+  0()
+
+
+
+EVENT   19
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,27,48,54,0,0)
+  0()
+
+
+
+EVENT   20
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,28,57,73,0,0)
+  0()
+
+
+
+EVENT   21
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,28,58,73,0,0)
+  0()
+
+
+
+EVENT   22
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Armor Shop Woman>Our armor is the official equipment of the holy knights! I guarantee its toughness!")
+  Shop(2,7,0,0,false)
+  605(2,22,0,0)
+  605(2,71,0,0)
+  605(2,126,0,0)
+  605(2,185,0,0)
+  605(2,204,0,0)
+  605(2,261,0,0)
+  605(2,298,0,0)
+  If(8,153)
+   0()
+  Else()
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Armor Shop Woman>We don't deal in Mithril armor, by the way. If you want some, you should go to the blacksmith.")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   23
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Weapon Shop Man>Many o' our weapons are among the holy knights' favorites. I can guarantee their quality!")
+  Shop(1,11,0,0,false)
+  605(1,89,0,0)
+  605(1,211,0,0)
+  605(1,300,0,0)
+  605(1,369,0,0)
+  605(1,409,0,0)
+  605(1,481,0,0)
+  605(1,519,0,0)
+  605(1,558,0,0)
+  605(1,666,0,0)
+  605(1,800,0,0)
+  605(1,870,0,0)
+  605(1,892,0,0)
+  If(8,153)
+   0()
+  Else()
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Weapon Shop Man>We don't deal in Mithril weapons. If ya want those, how about goin' to the blacksmith?")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   24
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Shopkeeper>Welcome! Our latest shipment of ever-highly-sought Holy Water has just arrived. Make sure to buy lots of it if you're going to the extremely haunted manor north of here.")
+  Shop(0,2,0,0,false)
+  605(0,7,0,0)
+  605(0,11,0,0)
+  605(0,13,0,0)
+  605(0,14,0,0)
+  605(0,15,0,0)
+  605(0,16,0,0)
+  605(0,17,0,0)
+  605(0,18,0,0)
+  605(0,19,0,0)
+  605(0,23,0,0)
+  605(0,35,0,0)
+  605(0,101,0,0)
+  If(1,1005,0,12,0)
+   If(0,2065,0)
+    If(4,66,0)
+     ShowMessageFace("vgirl_fc1",0,0,2,2)
+     ShowMessage("\\n<Vanilla>Nice to meet you. I'm Vanilla the merchant. I'm looking for information on how to acquire high-class medicinal plants.")
+     ShowMessageFace("",0,0,2,3)
+     ShowMessage("\\n<Shopkeeper>Item distribution in Natalia Region is managed by the Elka Company. If you want to negotiate shipments, you'll wanna start with them.")
+     ShowMessageFace("",0,0,2,4)
+     ShowMessage("\\n<Shopkeeper>The Elka Company's headquarters are southwest of Monte Carlo. But without a recommendation they probably won't wanna talk with y-")
+     ShowMessageFace("vgirl_fc1",0,0,2,5)
+     ShowMessage("\\n<Vanilla>Thanks, that was a great help! Let's go check out the Elka Company!")
+     ChangeSwitch(2104,2104,0)
+     EndEventProcessing()
+     0()
+    EndIf()
+    0()
+   EndIf()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   25
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Saleswoman>They're all delicious. Here you go. ♪")
+  355("actor_label_jump")
+  JumpToLabel("shop")
+  DefineLabel("86")
+  ShowMessageFace("name_s_fc1",0,0,2,2)
+  ShowMessage("\\n<Rosary>So this is the holy city's food... Let's eat a lot and immerse ourselves in the divine aura.")
+  JumpToLabel("shop")
+  DefineLabel("115")
+  ShowMessageFace("kurage_fc1",0,0,2,3)
+  ShowMessage("\\n<Kurage>Do you sell any meat?")
+  JumpToLabel("shop")
+  DefineLabel("116")
+  ShowMessageFace("iso_fc1",0,0,2,4)
+  ShowMessage("\\n<Isabelle>This is all food that doesn't fight back. No wonder humans are so weak if this is the kind of thing they eat.")
+  JumpToLabel("shop")
+  DefineLabel("122")
+  ShowMessageFace("sisterlamia_fc1",0,0,2,5)
+  ShowMessage("\\n<Sofia>Garlic is a sacred vegetable. Let's stock up in here.")
+  JumpToLabel("shop")
+  DefineLabel("123")
+  ShowMessageFace("sisccubus_fc1",0,0,2,6)
+  ShowMessage("\\n<Christie>What cheap food... Wait, no, frugality is a virtue.")
+  JumpToLabel("shop")
+  DefineLabel("525")
+  ShowMessageFace("sonia_fc1",0,0,2,7)
+  ShowMessage("\\n<Sonya>Did you know that garlic repels evil? Although, its actual effect is basically negligible.")
+  JumpToLabel("shop")
+  DefineLabel("shop")
+  Shop(0,304,0,0,false)
+  605(0,316,0,0)
+  605(0,317,0,0)
+  605(0,342,0,0)
+  605(0,343,0,0)
+  0()
+
+
+
+EVENT   26
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Blacksmith>I'm a sanctified blacksmith. Let's make some armor filled with holy power!")
+  ShowChoices(strings("Synthesis","Make Mithril equipment","Let's talk"),5)
+  IfPlayerPicksChoice(0,null)
+   355("call_synthesize(9)")
+   EndEventProcessing()
+   0()
+  IfPlayerPicksChoice(1,null)
+   If(8,153)
+    Shop(1,12,0,0,false)
+    605(1,61,0,0)
+    605(1,151,0,0)
+    605(1,196,0,0)
+    605(1,302,0,0)
+    605(1,340,0,0)
+    605(1,371,0,0)
+    605(1,412,0,0)
+    605(1,448,0,0)
+    605(1,482,0,0)
+    605(1,520,0,0)
+    605(1,560,0,0)
+    605(1,597,0,0)
+    605(1,630,0,0)
+    605(1,669,0,0)
+    605(1,705,0,0)
+    605(1,733,0,0)
+    605(1,758,0,0)
+    605(1,779,0,0)
+    605(1,801,0,0)
+    605(1,827,0,0)
+    605(1,849,0,0)
+    605(2,37,0,0)
+    605(2,60,0,0)
+    605(2,108,0,0)
+    605(2,197,0,0)
+    605(2,241,0,0)
+    605(2,286,0,0)
+    EndEventProcessing()
+    0()
+   Else()
+    ShowMessageFace("",0,0,2,2)
+    ShowMessage("\\n<Blacksmith>I refrain from casting anything Mithril for my normal customers. I make it only for customers who bring in Mithril ore.")
+    ShowMessageFace("",0,0,2,3)
+    ShowMessage("\\n<Blacksmith>Where can you find Mithril ore? You can mine it in the upper part of Mt. Saint Amos.")
+    ShowMessageFace("",0,0,2,4)
+    ShowMessage("\\n<Blacksmith>However, it's a valuable ore, so you'll need to get a mining permit first. The red tape to get a permit is pretty troublesome, but you'll have no problems if you get permission from someone high-up.")
+    EndEventProcessing()
+    0()
+   EndIf()
+   0()
+  IfPlayerPicksChoice(2,null)
+   If(8,153)
+    If(1,1007,0,1,0)
+     If(4,68,0)
+      If(2,"A",1)
+       ChangeSelfSwitch("A",0)
+       ShowMessageFace("dragonp_fc1",0,0,2,5)
+       ShowMessage("\\n<Papi>I have a request. Please teach me how to forge Mithril!")
+       ShowMessageFace("",0,0,2,6)
+       ShowMessage("\\n<Blacksmith>The method to purify Mithril can't be taught to just anyone. You'll need a strong faith.")
+       ShowMessageFace("dragonp_fc1",2,0,2,7)
+       ShowMessage("\\n<Papi>I don't have much confidence in my faith...")
+       ShowMessageFace("",0,0,2,8)
+       ShowMessage("\\n<Blacksmith>Ahh, don't cry! Look, you just need an item called a [Proof of Faith].")
+       ShowMessageFace("",0,0,2,9)
+       ShowMessage("\\n<Blacksmith>If you have that, I'll consider you to be someone of strong faith, and I'll teach you how to work with Mithril.")
+       ShowMessageFace("dragonp_fc1",0,0,2,10)
+       ShowMessage("\\n<Papi>Then I'll go find it!")
+       ShowMessageFace("",0,0,2,11)
+       ShowMessage("\\n<Blacksmith>I hear that a Proof of Faith is often carried by pious monsters. If you befriend some of them, they might give you one.")
+       EndEventProcessing()
+       0()
+      Else()
+       If(8,524)
+        ShowMessageFace("",0,0,2,12)
+        ShowMessage("\\n<Blacksmith>That's certainly a Proof of Faith. Well then, I'll teach you how to work with Mithril.")
+        ShowMessageFace("dragonp_fc1",0,0,2,13)
+        ShowMessage("\\n<Papi>I'll do my best!")
+        221()
+        Wait(60)
+        250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0d,0x6d,0x6f,0x6e,0x5f,0x6b,0x61,0x7a,0x69,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69))
+        Wait(60)
+        250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0d,0x6d,0x6f,0x6e,0x5f,0x6b,0x61,0x7a,0x69,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69))
+        Wait(60)
+        222()
+        ShowMessageFace("dragonp_fc1",0,0,2,14)
+        ShowMessage("\\n<Papi>...I get it, like this, right?")
+        ShowMessageFace("",0,0,2,15)
+        ShowMessage("\\n<Blacksmith>That's... quite skillful. It took me years to learn all this...")
+        ShowMessageFace("dragonp_fc1",3,0,2,16)
+        ShowMessage("\\n<Papi>It's because of my master's training! Thank you very much! I'm in your debt!")
+        ShowMessageFace("",0,0,2,17)
+        ShowMessage("\\n<Blacksmith>Mithril's heart is always faithful. It shall serve you well. Please, go and do your best.")
+        249(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0c,0x66,0x61,0x6e,0x66,0x61,0x6c,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69))
+        ShowMessageFace("",0,0,2,18)
+        ShowMessage("Papi has become capable of making Mithril equipment!")
+        ChangeVariable(1007,1007,0,0,2)
+        Wait(60)
+        EndEventProcessing()
+        0()
+       Else()
+        ShowMessageFace("",0,0,2,19)
+        ShowMessage("\\n<Blacksmith>If you have a [Proof of Faith], I promise to teach you how to work with Mithril.")
+        ShowMessageFace("",0,0,2,20)
+        ShowMessage("\\n<Blacksmith>I hear that a Proof of Faith is often carried by pious monsters. If you befriend some of them, they might give you one.")
+        EndEventProcessing()
+        0()
+       EndIf()
+       0()
+      EndIf()
+      0()
+     EndIf()
+     0()
+    EndIf()
+    0()
+   EndIf()
+   ShowMessageFace("",0,0,2,21)
+   ShowMessage("\\n<Blacksmith>I'm really just working for my cat's sake.")
+   EndEventProcessing()
+   0()
+  IfPlayerCancelsChoice()
+   EndEventProcessing()
+   0()
+  404()
+  0()
+
+
+
+EVENT   27
+ PAGE   1
+  If(1,813,0,2,1)
+   If(0,1556,1)
+    ShowMessageFace("mob_sister1_fc1",0,0,2,1)
+    ShowMessage("\\n<Maria>I have seen that a great destiny lies before you. Could you let me join you?")
+    ShowChoices(strings("Let her join","Decline for now"),0)
+    IfPlayerPicksChoice(0,null)
+     ShowMessageFace("mob_sister1_fc1",0,0,2,2)
+     ShowMessage("\\n<Maria>Then let us go. For both the Goddess' sake, and for everyone else's.")
+     PictureClear(5)
+     205(0,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x09,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x2a,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x0f,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x2c,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+     355("add_actor_ex(556)")
+     249(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0c,0x66,0x61,0x6e,0x66,0x61,0x6c,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69))
+     ShowMessageFace("",0,0,2,3)
+     ShowMessage("Maria joined the party!")
+     Wait(60)
+     EndEventProcessing()
+     0()
+    IfPlayerPicksChoice(1,null)
+     ShowMessageFace("mob_sister1_fc1",0,0,2,4)
+     ShowMessage("\\n<Maria>I see... So my power isn't required, then.")
+     0()
+    404()
+    0()
+   EndIf()
+   0()
+  EndIf()
+  RunCommonEvent(7121)
+  0()
+ PAGE   2
+  // condition: party contains actor #556
+  0()
+
+
+
+EVENT   28
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Priest>Fire element attacks are highly effective against undead monsters. Of course, holy element attacks have an even more devastating effect on them.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("72")
+  ShowMessageFace("phoenix_fc1",1,0,2,2)
+  ShowMessage("\\n<Mini>In that case, I'll be able to do plenty!")
+  EndEventProcessing()
+  DefineLabel("91")
+  ShowMessageFace("candle_fc1",0,0,2,3)
+  ShowMessage("\\n<Chandra>I'm weak against fire... That's a bit troubling, isn't it.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   29
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Priest>Since ghosts have ethereal bodies, physical attacks hardly affect them. But they are weak against magic attacks.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("56")
+  ShowMessageFace("inp_fc1",1,0,2,2)
+  ShowMessage("\\n<Rami>Leave ghost extermination to meee. ♪")
+  ShowMessageFace("inp_fc1",2,0,2,3)
+  ShowMessage("\\n<Rami>...I lied, they're actually super scary. ♪")
+  EndEventProcessing()
+  DefineLabel("130")
+  ShowMessageFace("ghost_fc1",0,0,2,4)
+  ShowMessage("\\n<Carrie>Magic isn't scary at all... So don't use magic on ghosts... Please...")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   30
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Female Martial Artist>Our party specializes in offense. We focus on releasing a string of powerful attacks to overwhelm our enemies.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Female Martial Artist>Because of that, our defense is paper thin. If it's our turn to defend, we quickly get wiped out...")
+  0()
+
+
+
+EVENT   31
+ PAGE   1
+  ShowMessageFace("grizzly_fc1",0,0,2,1)
+  ShowMessage("\\n<Grizzly Bear Girl>Ugagaa! My martial arts are beastly! But, because I'm a beast-type, my defense is shabby!")
+  0()
+
+
+
+EVENT   32
+ PAGE   1
+  ShowMessageFace("cent2_fc1",0,0,2,1)
+  ShowMessage("\\n<Centaur Girl>I'll silence the enemy with my powerful and unmatchably quick spear skills! My motto is, \"Beat the enemy in one turn or lose\".")
+  0()
+
+
+
+EVENT   33
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Traveling Gambler>When you master the Fortune Teller job, you can change your job to Gambler. You'll learn a lot of skills there which depend on luck.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Traveling Gambler>Although... I think the party next door are bigger gamblers than I am.")
+  0()
+
+
+
+EVENT   34
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Traveling Dancer>There are a lot of dances that can inflict ailments on your enemies. If you use them well, they'll surely be useful. ♪")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("83")
+  ShowMessageFace("hapy_a_fc1",0,0,2,2)
+  ShowMessage("\\n<Reina>Ehehe, leave dancing to meee. ♪")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   35
+ PAGE   1
+  ShowMessageFace("scylla_fc1",0,0,2,1)
+  ShowMessage("\\n<Scylla>A scylla's continuous attacks are overwhelming! What's \"defense\"? We just die gracefully when we get hit.")
+  0()
+
+
+
+
+EVENT   36
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(27,0,0,1)
+  205(30,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x46,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x07,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x17,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  205(31,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x46,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x07,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x17,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  205(32,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x46,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x07,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x17,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  205(35,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x46,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x07,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x17,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  ShowSpeechBalloon(30,1,false)
+  ShowSpeechBalloon(31,1,false)
+  ShowSpeechBalloon(32,1,false)
+  ShowSpeechBalloon(35,1,false)
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Female Martial Artist>......?!")
+  ShowMessageFace("ruka_fc1",0,0,2,2)
+  ShowMessage("\\n<Luka>......")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("Will you give a Seed of Defense to this party?")
+  ShowChoices(strings("Yes","No"),2)
+  IfPlayerPicksChoice(0,null)
+   ShowMessageFace("",0,0,2,4)
+   ShowMessage("\\n<Female Martial Artist>N-no, that's yours. The one who finds it first is its owner. That's the adventurer's code.")
+   ShowMessageFace("",0,0,2,5)
+   ShowMessage("\\n<Female Martial Artist>I don't think one Seed of Defense could solve this party's structural issues anyway...")
+   ShowMessageFace("",0,0,2,6)
+   ShowMessage("The party didn't accept the Seed of Defense.")
+   0()
+  IfPlayerPicksChoice(1,null)
+   ShowMessageFace("",0,0,2,7)
+   ShowMessage("An awkward silence ensues.")
+   0()
+  404()
+  205(30,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x46,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x07,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x15,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  205(31,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x46,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x07,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x15,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  205(32,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x46,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x07,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x18,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  205(35,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x46,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x07,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x18,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   37
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Guard>The Zombie ailment is really troublesome. Your body becomes that of a zombie's, and you get damaged from healing.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Guard>True, bio element and instant death attacks can't hurt you anymore, but there's nothing more dangerous than not being able to heal yourself.")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Guard>What's even worse is that even after a battle ends, the Zombie ailment doesn't heal naturally. You need a holy item to cure it.")
+  0()
+
+
+
+EVENT   38
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Priest>This is the church-managed Pilgrimage Inn. Staying will cost you 20G. Do you want to stay?\\$")
+  ShowChoices(strings("Yes","No"),2)
+  IfPlayerPicksChoice(0,null)
+   If(7,20,0)
+    125(1,0,20)
+    221()
+    249(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x08,0x49,0x6e,0x6e,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69))
+    Wait(150)
+    314(0,0)
+    222()
+    0()
+   Else()
+    ShowMessageFace("",0,0,2,2)
+    ShowMessage("\\n<Priest>Oh, I'm afraid you don't have enough money.")
+    0()
+   EndIf()
+   0()
+  IfPlayerPicksChoice(1,null)
+   0()
+  404()
+  0()
+
+
+
+EVENT   39
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Priest>Welcome to the Hallowed Halls of the Goddess. What can I do for you?")
+  ShowChoices(strings("Pray","Never mind"),2)
+  IfPlayerPicksChoice(0,null)
+   ChangeVariable(1002,1002,0,0,13)
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Priest>Well then, let us pray to Ilias. ...There, you should feel a bond drawing you to this place.")
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("\\n<Priest>If something were to happen to you on your journey, the bond should lead you back here. May Ilias watch over you...")
+   0()
+  IfPlayerPicksChoice(1,null)
+   ShowMessageFace("",0,0,2,4)
+   ShowMessage("\\n<Priest>May Ilias watch over you...")
+   0()
+  404()
+  0()
+
+
+
+EVENT   40
+ PAGE   1
+  If(1,1001,0,28,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Guard>They say that some strange sorcerer settled in the manor to the north doing some kind of forbidden research...")
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Guard>I was offered a handsome reward to get rid of whatever was there, but I had to turn it down. I'm scared of being in a house with no light.")
+   If(1,1023,0,1,0)
+    ShowMessageFace("",0,0,2,3)
+    ShowMessage("\\n<Luka>A strange sorcerer? What's going on there...")
+    ShowMessageFace("",0,0,2,4)
+    ShowMessage("There are as many stories about the manor as there are people in this city...")
+    0()
+   EndIf()
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("88")
+   ShowMessageFace("jack_fc1",2,0,2,5)
+   ShowMessage("\\n<Pumpkin>A manor without any light? That's scary... *shivers*")
+   EndEventProcessing()
+   DefineLabel("134")
+   ShowMessageFace("chrom_fc2",5,0,2,6)
+   ShowMessage("\\n<Chrome>I'm not sorcerer, I'm a necromancer. Ugh, what a clueless bunch.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+ PAGE   2
+  // condition: variable 1001 >= 29
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Warrior")
+  ShowMessage("")
+  ShowMessage("")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("327")
+  ShowMessageFace("ningyohime_fc1",7,0,2,2)
+  ShowMessage("【El】")
+  ShowMessage("")
+  EndEventProcessing()
+  DefineLabel("328")
+  ShowMessageFace("queenmermaid_fc1",1,0,2,3)
+  ShowMessage("【roller】")
+  ShowMessage("")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   41
+ PAGE   1
+  If(1,1001,0,28,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Weapon Shop Employee>My friends from work went to the manor in the North on a dare. They came back after several days, broken down, and refusing to talk about what happened.")
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Weapon Shop Employee>They're so shaken up they can't even work. I wonder what happened in there...")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("58")
+   ShowMessageFace("inp_fc2",0,0,2,3)
+   ShowMessage("\\n<Remi>*shivers* How scary...")
+   EndEventProcessing()
+   DefineLabel("134")
+   ShowMessageFace("chrom_fc2",0,0,2,4)
+   ShowMessage("\\n<Chrome>They should be grateful that I released them. Chrome-chan is a necromancer who treats her territory magnanimously.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,29,1)
+   ShowMessageFace("",0,0,2,5)
+   ShowMessage("")
+   ShowMessage("")
+   ShowMessage("")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   42
+ PAGE   1
+  If(1,1001,0,28,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Girl>I've become friends with a fairy. We sneak out and play in the Forest of Spirits. It's a secret from Mom. ♪")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("139")
+   ShowMessageFace("fairys_fc1",3,0,2,2)
+   ShowMessage("\\n<Fairies>This time, we've come to play in here. ♪")
+   ShowMessageFace("",0,0,2,3)
+ 
+  ShowMessage("\\n<Girl>Yaaay. ♪")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+ PAGE   2
+  // condition: variable 1001 >= 29
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【girl】")
+  ShowMessage("")
+  ShowMessage("")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("327")
+  ShowMessageFace("ningyohime_fc1",7,0,2,2)
+  ShowMessage("【El】")
+  ShowMessage("")
+  EndEventProcessing()
+  DefineLabel("328")
+  ShowMessageFace("queenmermaid_fc1",1,0,2,3)
+  ShowMessage("【roller】")
+  ShowMessage("")
+  ShowMessage("")
+  EndEventProcessing()
+  0()
+ PAGE   3
+  // condition: variable 1093 >= 3
+  0()
+
+
+
+EVENT   43
+ PAGE   1
+  If(1,1093,0,2,2)
+   If(1,1001,0,28,2)
+    ShowMessageFace("",0,0,2,1)
+    ShowMessage("\\n<Woman>Across the bridge to the west, turn north at the sign, and you'll see a forest called the Forest of Spirits.")
+    ShowMessageFace("",0,0,2,2)
+    ShowMessage("\\n<Woman>Dangerous elves and fairies hang around there. I keep telling my daughter to stay away from it.")
+    355("actor_label_jump")
+    EndEventProcessing()
+    DefineLabel("97")
+    ShowMessageFace("fairy_fc1",2,0,2,3)
+    ShowMessage("\\n<Fell>Fairies do pranks, but they're not baaad!")
+    EndEventProcessing()
+    DefineLabel("136")
+    ShowMessageFace("elf_fc1",0,0,2,4)
+    ShowMessage("\\n<Claudia>How rude. We aren't dangerous. Humans are far more dangerous than we are.")
+    EndEventProcessing()
+    0()
+   EndIf()
+   If(1,1001,0,29,1)
+    ShowMessageFace("",0,0,2,5)
+    ShowMessage("")
+    ShowMessage("")
+    ShowMessage("")
+    EndEventProcessing()
+    0()
+   EndIf()
+   0()
+  EndIf()
+  If(1,1093,0,3,0)
+   ShowMessageFace("",0,0,2,6)
+   ShowMessage("")
+   ShowMessage("")
+   ShowMessage("")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1093,0,4,0)
+   ShowMessageFace("",0,0,2,7)
+   ShowMessage("")
+   ShowMessage("")
+   ShowMessage("")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   44
+ PAGE   1
+  If(1,1001,0,28,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<City Girl>I like that so many tourists and pilgrims visit this sacred city, but having too much sacred stuff can be a real hassle when you have to live here.")
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Man>Maybe we'd be more comfortable living in some ruins or something like that. Do you think we should move to a place where we can relax?")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("62")
+   ShowMessageFace("gob_fc1",3,0,2,3)
+   ShowMessage("\\n<Gob>This does seem like a hard place to live in.")
+   EndEventProcessing()
+   DefineLabel("120")
+   ShowMessageFace("page257_fc1",0,0,2,4)
+   ShowMessage("\\n<Yoko>But being solemn is a good thing...")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,29,1)
+   ShowMessageFace("",0,0,2,5)
+   ShowMessage("Town girl")
+   ShowMessage("")
+   ShowMessage("")
+   ShowMessageFace("",0,0,2,6)
+   ShowMessage("【Man】")
+   ShowMessage("")
+   ShowMessage("")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   45
+ PAGE   1
+  If(1,1001,0,28,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<City Girl>I like that so many tourists and pilgrims visit this sacred city, but having too much sacred stuff can be a real hassle when you have to live here.")
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Man>Maybe we'd be more comfortable living in some ruins or something like that. Do you think we should move to a place where we can relax?")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("62")
+   ShowMessageFace("gob_fc1",3,0,2,3)
+   ShowMessage("\\n<Gob>This does seem like a hard place to live in.")
+   EndEventProcessing()
+   DefineLabel("120")
+   ShowMessageFace("page257_fc1",0,0,2,4)
+   ShowMessage("\\n<Yoko>But being solemn is a good thing...")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,29,1)
+   ShowMessageFace("",0,0,2,5)
+   ShowMessage("Town girl")
+   ShowMessage("")
+   ShowMessage("")
+   ShowMessageFace("",0,0,2,6)
+   ShowMessage("【Man】")
+   ShowMessage("")
+   ShowMessage("")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   46
+ PAGE   1
+  If(1,1001,0,28,2)
+   If(1,1028,0,7,2)
+    ShowMessageFace("",0,0,2,1)
+    ShowMessage("\\n<Priest>That Luddite bunch is clearly perverting the Goddess' teachings. Make no mistake, living a primitive life in no way pleases her.")
+    ShowMessageFace("",0,0,2,2)
+    ShowMessage("\\n<Priest>Moreover, they curse and insult those who accept makina. Have they chosen to forget the teaching of \"love thy neighbor\"?")
+    0()
+   Else()
+    ShowMessageFace("",0,0,2,3)
+    ShowMessage("\\n<Priest>The Luddites did pervert the Goddess' teachings, but... did they truly deserve such a harsh judgment?")
+    0()
+   EndIf()
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,29,1)
+   ShowMessageFace("",0,0,2,4)
+   ShowMessage("Shinto priest")
+   ShowMessage("")
+   ShowMessage("")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   47
+ PAGE   1
+  If(1,1001,0,28,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Priest>This is something only church officials are supposed to know, but... once a year, His Holiness the Pope goes to the Ancient Temple's Ruins.")
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Priest>Apparently he performs a ritual there where he delivers his prayers to Ilias, or something along those lines. Since I'm told it's a wondrous ritual of holy supplication, I think it should be made public.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,29,1)
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("Shinto priest")
+   ShowMessage("")
+   ShowMessage("")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   48
+ PAGE   1
+  If(1,1001,0,28,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Nun>I was nearby when the assassination attempt on the Pope happened. When I saw how big the explosion was, I thought it was all over.")
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Nun>Once we found out that he was safe, I was so happy! As I thought, His Holiness the Pope has the blessings of the Goddess.")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("531")
+   ShowMessageFace("saniria_fc2",0,0,2,3)
+   ShowMessage("\\n<King of San Ilia>Blessings of the Goddess, eh...")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,29,1)
+   ShowMessageFace("",0,0,2,4)
+   ShowMessage("【Sister】")
+   ShowMessage("")
+   ShowMessage("")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   49
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Female Soldier>I went to Mt. Saint Amos to gather Mithril ore, but I had to turn back before I reached the mountainside.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Female Soldier>Strangely, I saw a lot priest-type monsters in the area. Although, maybe that's to be expected of a sacred mountain famous among pilgrims.")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Female Soldier>Mt. Saint Amos is north of here, but you'll need to bypass the mountain range by going east first if you want to go there.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("86")
+  ShowMessageFace("name_s_fc1",0,0,2,4)
+  ShowMessage("\\n<Rosary>Taking a pilgrimage to the sacred places all over the world. This, too, is my one of my dreams.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   50
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Female Priest>Mt. Saint Amos is said to be the closest place to heaven in the Natalia Region. Perhaps because of that, it seems to be filled with a mysterious force.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Female Priest>We tried to climb up to the summit, but our skills proved to be... insufficient.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("125")
+  ShowMessageFace("grizzly_fc1",0,0,2,3)
+  ShowMessage("\\n<Aisha>Did my comrades get in your way? Sorry 'bout that!")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   51
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Swordsman>Honestly, this inn's a bit too expensive.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("64")
+  ShowMessageFace("pramia_fc1",0,0,2,2)
+  ShowMessage("\\n<Teeny>The service isn't that good, it's expensive... Honestly, the only thing it has that's worth advertising is its cleanliness.")
+  EndEventProcessing()
+  DefineLabel("540")
+  ShowMessageFace("amira_fc1",0,0,2,3)
+  ShowMessage("\\n<Amira>It's managed by the church so I guess a tithe is included in the fee.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   52
+ PAGE   1
+  If(1,1001,0,28,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Minstrel>Whenever I'm in this sacred land, my poetry progresses apace. But, there are many who are weak against this austere atmosphere.")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("66")
+   ShowMessageFace("vgirl_fc1",2,0,2,2)
+   ShowMessage("\\n<Vanilla>I'm no good with it at all. I'm exhausted just by being here.")
+   EndEventProcessing()
+   DefineLabel("86")
+   ShowMessageFace("name_s_fc1",0,0,2,3)
+   ShowMessage("\\n<Rosary>The solemnity is wonderful. I'd like it if it were a bit more slippery, though...")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,29,1)
+   ShowMessageFace("",0,0,2,4)
+   ShowMessage("Bard")
+   ShowMessage("")
+   ShowMessage("")
+   ShowMessageFace("",0,0,2,5)
+   ShowMessage("Bard")
+   ShowMessage("")
+   ShowMessage("")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   53
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Cat>Meeeow.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("70")
+  ShowMessageFace("nezumi_fc1",2,0,2,2)
+  ShowMessage("\\n<Ratty>Kyah! It's a caaat!")
+  EndEventProcessing()
+  DefineLabel("103")
+  ShowMessageFace("kamuro_fc1",1,0,2,3)
+  ShowMessage("\\n<Kamuro>Ah, it's a kitten! Come here... *rub* *rub* *rub*")
+  EndEventProcessing()
+  DefineLabel("222")
+  ShowMessageFace("nekomata_fc1",2,0,2,4)
+  ShowMessage("【Tama】")
+  ShowMessage("Meow")
+  ShowMessageFace("",0,0,2,5)
+  ShowMessage("null")
+  ShowMessage("")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   54
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Old Man>......")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("The elder prays quietly.")
+  0()
+
+
+
+EVENT   55
+ PAGE   1
+  If(1,1001,0,28,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Boy>I pray that my family can live happily...")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,29,1)
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("【boy】")
+   ShowMessage("")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   56
+ PAGE   1
+  If(1,1001,0,28,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Man>Money... Please, more money...")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("143")
+   ShowMessageFace("eva_fc1",0,0,2,2)
+   ShowMessage("\\n<Eva>Please, money... and pleasure...")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,29,1)
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("【Uncle or Mister】")
+   ShowMessage("")
+   ShowMessage("")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   57
+ PAGE   1
+  If(1,1001,0,28,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Youth>......")
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("He's dozing off.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,29,1)
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("Youth")
+   ShowMessage("........................")
+   ShowMessageFace("",0,0,2,4)
+   ShowMessage("")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   58
+ PAGE   1
+  If(1,1001,0,28,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Youth>Honestly, I couldn't care less about Ilias. But, you see, you gotta keep up appearances when you live in a city like this, right?")
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Youth>So I need to pretend to pray at least once a week. Ahh, the Sylph festival sounds a lot more fuuun...")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("26")
+   ShowMessageFace("iriasu_fc4",7,0,2,3)
+   ShowMessage("\\n<Ilias>How sinful! I shall add your name to my Smite Note!")
+   EndEventProcessing()
+   DefineLabel("12")
+   ShowMessageFace("sylph_fc1",0,0,2,4)
+   ShowMessage("\\n<Sylph>It is fuuun. . ♪")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,29,1)
+   ShowMessageFace("",0,0,2,5)
+   ShowMessage("Youth")
+   ShowMessage("")
+   ShowMessage("")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   59
+ PAGE   1
+  If(1,1001,0,28,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Nun>Please, disperse my worldly desires... Ahh, please forgive me for having such obscene delusions...")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("123")
+   ShowMessageFace("sisccubus_fc1",1,0,2,2)
+   ShowMessage("\\n<Christie>It's all right! It happens to me all the time!")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,29,1)
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("【Sister】")
+   ShowMessage("")
+   ShowMessage("")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   60
+ PAGE   1
+  If(1,1001,0,28,2)
+   ShowMessageFace("sisterlamia_fc1",0,0,2,1)
+   ShowMessage("\\n<Nun>Actually, I'm not a human. I've taken human form, but I'm really a lamia.")
+   ShowMessageFace("sisterlamia_fc1",0,0,2,2)
+   ShowMessage("\\n<Nun>There are a few other monsters like me who believe in Ilias. The father knows who I am, but he keeps my secret.")
+   ShowMessageFace("sisterlamia_fc1",4,0,2,3)
+   ShowMessage("\\n<Nun>Ahh, what a kind priest he is... I want to wrap myself around him...")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("113")
+   ShowMessageFace("lamia_fc1",2,0,2,4)
+   ShowMessage("\\n<Anastasia>It seems some of my fellow lamias are a bit off...")
+   EndEventProcessing()
+   DefineLabel("123")
+   ShowMessageFace("sisccubus_fc1",2,0,2,5)
+   ShowMessage("\\n<Christie>As a follower of the Goddess, I'm not sure that's very pious...")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,29,1)
+   ShowMessageFace("sisterlamia_fc1",2,0,2,6)
+   ShowMessage("【Sister】")
+   ShowMessage("")
+   ShowMessage("")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   61
+ PAGE   1
+  If(1,1001,0,28,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Priest>...Mmm? I feel like someone who welcomes obscene delusions has entered this church.")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("56")
+   ShowMessageFace("inp_fc1",3,0,2,2)
+   ShowMessage("\\n<Rami>Is he sensing meee?")
+   EndEventProcessing()
+   DefineLabel("123")
+   ShowMessageFace("sisccubus_fc1",2,0,2,3)
+   ShowMessage("\\n<Christie>I-i-it's not me!")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,29,1)
+   ShowMessageFace("",0,0,2,4)
+   ShowMessage("Shinto priest")
+   ShowMessage("")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   62
+ PAGE   1
+  If(1,1001,0,28,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Traveling Warrior>San Ilia's church is far more gorgeous than any other. Furthermore, there's a massive cathedral inside the castle.")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("86")
+   ShowMessageFace("name_s_fc1",0,0,2,2)
+   ShowMessage("\\n<Rosary>My dream is to one day build a church. Maybe not one as big as the cathedral, but at least as big as this one.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,29,1)
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("【Travel warrior】")
+   ShowMessage("")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   63
+ PAGE   1
+  If(1,1001,0,28,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Woman>I pray in church every day, without skipping even once. Thanks to that, my home is safe, and we don't catch any illnesses.")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("41")
+   ShowMessageFace("stein_fc2",0,0,2,2)
+   ShowMessage("\\n<Promestein>Prayer, in church or otherwise, has no correlation to a family's health. Even the Goddess doesn't have time to listen to every prayer.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,29,1)
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("【Aunt】")
+   ShowMessage("")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   64
+ PAGE   1
+  If(1,1001,0,28,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Youth>*flirt*, *flirt*")
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Young Woman>*flirt*, *flirt*")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("26")
+   ShowMessageFace("iriasu_fc4",5,0,2,3)
+   ShowMessage("\\n<Ilias>What are you talking about in my sacred church?! I shall write your names down in my Smite Note!")
+   EndEventProcessing()
+   DefineLabel("163")
+   ShowMessageFace("lily_fc1",3,0,2,4)
+   ShowMessage("\\n<Lily>People enjoying their youth should all perish.")
+   ShowMessageFace("",0,0,2,5)
+   ShowMessage("\\n<Youth>Uwah, tentacles!")
+   ShowMessageFace("",0,0,2,6)
+   ShowMessage("\\n<Young Woman>Kyaahhhh!!")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,29,1)
+   ShowMessageFace("",0,0,2,7)
+   ShowMessage("【Young woman】")
+   ShowMessage("")
+   ShowMessageFace("",0,0,2,8)
+   ShowMessage("Youth")
+   ShowMessage("")
+   ShowMessage("")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   65
+ PAGE   1
+  If(1,1001,0,28,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Youth>*flirt*, *flirt*")
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Young Woman>*flirt*, *flirt*")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("26")
+   ShowMessageFace("iriasu_fc4",5,0,2,3)
+   ShowMessage("\\n<Ilias>What are you talking about in my sacred church?! I shall write your names down in my Smite Note!")
+   EndEventProcessing()
+   DefineLabel("163")
+   ShowMessageFace("lily_fc1",3,0,2,4)
+   ShowMessage("\\n<Lily>People enjoying their youth should all perish.")
+   ShowMessageFace("",0,0,2,5)
+   ShowMessage("\\n<Youth>Uwah, tentacles!")
+   ShowMessageFace("",0,0,2,6)
+   ShowMessage("\\n<Young Woman>Kyaahhhh!!")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,29,1)
+   ShowMessageFace("",0,0,2,7)
+   ShowMessage("【Young woman】")
+   ShowMessage("")
+   ShowMessageFace("",0,0,2,8)
+   ShowMessage("Youth")
+   ShowMessage("")
+   ShowMessage("")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   66
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Man>When you're hit by the Minimum ailment, your body turns small, significantly decreasing your attack and defense. You need a Lucky Mallet to cure it.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Man>Fairies often use attacks that cause Minimum. Before heading anywhere where fairies lurk, you should prepare several Lucky Mallets.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("88")
+  ShowMessageFace("jack_fc1",0,0,2,3)
+  ShowMessage("\\n<Pumpkin>It's called the [Turn Small] dance. It's something the winged ones are really good at, so be careful.")
+  EndEventProcessing()
+  DefineLabel("97")
+  ShowMessageFace("fairy_fc1",0,0,2,4)
+  ShowMessage("\\n<Fell>I'm really good at fairy daaances. ♪")
+  EndEventProcessing()
+  0()
+
+
+
+
+EVENT   67
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(427,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   68
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(342,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+
+EVENT   69
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(2,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   70
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(361,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+
+EVENT   71
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(32,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   72
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Armor Shop Retiree>Need an accessory? The ones which enhance the power of elemental skills are really great!")
+  Shop(2,1243,0,0,false)
+  605(2,1246,0,0)
+  605(2,1249,0,0)
+  605(2,1252,0,0)
+  605(2,1255,0,0)
+  605(2,1258,0,0)
+  605(2,1276,0,0)
+  0()
+
+
+
+EVENT   73
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Time Mage>Can you use Time Magic? Even among skilled parties, there are surprisingly few who have mastered it.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Time Mage>The [Slow] spell will slow enemy movements. This renders them almost completely unable to evade any attack, not to mention hinders the speed of their own offense.")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Time Mage>[Quick], on the other hand, will significantly enhance your allies' speed. They will enact their actions quicker, and will have increased evasion.")
+  ShowMessageFace("",0,0,2,4)
+  ShowMessage("\\n<Time Mage>[Stop] halts the enemy's time entirely for a few turns. It even works on a lot of bosses, so it's highly useful.")
+  ShowMessageFace("",0,0,2,5)
+  ShowMessage("\\n<Time Mage>Since it's mainly a support job it's often shunned, but, if you must ever fight an enemy stronger than you, a Time Mage will be an indispensable member of your party.")
+  0()
+
+
+
+EVENT   74
+ PAGE   1
+  // condition: variable 1093 >= 3
+  If(1,1093,0,3,0)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("")
+   ShowMessage("")
+   ShowMessage("")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1093,0,4,0)
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("")
+   ShowMessage("")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   75
+ PAGE   1
+  // condition: variable 1093 >= 3
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessageFace("sonia_fc3",2,0,2,2)
+  ShowMessage("【Sonia】")
+  ShowMessage("")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessage("")
+  If(4,124,0)
+   ShowMessageFace("arikui_fc1",0,0,2,4)
+   ShowMessage("Anna")
+   ShowMessage("")
+   0()
+  EndIf()
+  ShowMessageFace("",0,0,2,5)
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessageFace("sonia_fc2",2,0,2,6)
+  ShowMessage("【Sonia】")
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessageFace("",0,0,2,7)
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessageFace("sonia_fc4",0,0,2,8)
+  ShowMessage("【Sonia】")
+  ShowMessage("")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   76
+ PAGE   1
+  // condition: variable 1093 >= 3
+  ChangeSwitch(2334,2334,0)
+  0()
+ PAGE   2
+  // condition: switch 2334 is ON
+  // condition: variable 1093 >= 3
+  205(0,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x08,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x08,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x18,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  205(-1,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x07,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x18,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  ShowMessageFace("arikui_fc1",0,0,2,1)
+  ShowMessage("Anna")
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessage("")
+  If(0,4,0)
+   ShowMessageFace("alice_fc5",0,0,2,4)
+   ShowMessage("【Alice】")
+   ShowMessage("")
+   ShowMessage("")
+   0()
+  EndIf()
+  If(0,5,0)
+   ShowMessageFace("iriasu_fc4",2,0,2,5)
+   ShowMessage("【Iliad】")
+   ShowMessage("")
+   ShowMessage("")
+   0()
+  EndIf()
+  ShowMessageFace("",0,0,2,6)
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessageFace("",0,0,2,7)
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessageFace("",0,0,2,8)
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessageFace("arikui_fc1",2,0,2,9)
+  ShowMessage("Anna")
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessageFace("",0,0,2,10)
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessageFace("arikui_fc1",2,0,2,11)
+  ShowMessage("Anna")
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessageFace("",0,0,2,12)
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessageFace("arikui_fc1",2,0,2,13)
+  ShowMessage("Anna")
+  ShowMessage("")
+  ShowMessage("")
+  241(bytes(0x04,0x08,0x6f,0x3a,0x0d,0x52,0x50,0x47,0x3a,0x3a,0x42,0x47,0x4d,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x10,0x73,0x63,0x65,0x6e,0x65,0x5f,0x63,0x6f,0x6d,0x69,0x32,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69))
+  ShowMessageFace("",0,0,2,14)
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessageFace("arikui_fc1",0,0,2,15)
+  ShowMessage("Anna")
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessageFace("",0,0,2,16)
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessageFace("",0,0,2,17)
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessageFace("arikui_fc1",0,0,2,18)
+  ShowMessage("Anna")
+  ShowMessage("")
+  ShowMessageFace("",0,0,2,19)
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessageFace("arikui_fc1",0,0,2,20)
+  ShowMessage("Anna")
+  ShowMessage("")
+  ShowMessageFace("",0,0,2,21)
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessageFace("",0,0,2,22)
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessageFace("",0,0,2,23)
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessage("")
+  205(0,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x07,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x17,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  ShowMessageFace("arikui_fc1",0,0,2,24)
+  ShowMessage("Anna")
+  ShowMessage("")
+  ShowMessageFace("",0,0,2,25)
+  ShowMessage("")
+  ShowMessage("")
+  205(0,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x07,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x18,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  ShowMessageFace("arikui_fc1",0,0,2,26)
+  ShowMessage("Anna")
+  ShowMessage("")
+  ShowMessageFace("arikui_fc1",0,0,2,27)
+  ShowMessage("Anna")
+  ShowMessage("")
+  ShowMessageFace("",0,0,2,28)
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessageFace("",0,0,2,29)
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessage("")
+  221()
+  ShowMessageFace("",0,0,2,30)
+  ShowMessage("")
+  ShowMessage("")
+  222()
+  241(bytes(0x04,0x08,0x6f,0x3a,0x0d,0x52,0x50,0x47,0x3a,0x3a,0x42,0x47,0x4d,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x63,0x69,0x74,0x79,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69))
+  ShowMessageFace("",0,0,2,31)
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessageFace("arikui_fc1",0,0,2,32)
+  ShowMessage("Anna")
+  ShowMessage("")
+  ShowMessage("")
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x11,0x6d,0x6f,0x6e,0x5f,0x66,0x61,0x6e,0x66,0x61,0x6c,0x65,0x32,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69))
+  ShowMessageFace("",0,0,2,33)
+  ShowMessage("")
+  318(0,124,0,276)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ShowMessageFace("",0,0,2,34)
+  ShowMessage("null\\I[102]\\C[1]Quickness 40%up\\C[0]Learned!")
+  ShowMessageFace("",0,0,2,35)
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessageFace("",0,0,2,36)
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessage("")
+  If(4,268,0)
+   ShowMessageFace("queenant_fc1",0,0,2,37)
+   ShowMessage("【Antine Aun】")
+   ShowMessage("")
+   ShowMessage("")
+   0()
+  EndIf()
+  ShowMessageFace("sonia_fc4",0,0,2,38)
+  ShowMessage("【Sonia】")
+  ShowMessage("")
+  ShowMessageFace("arikui_fc1",0,0,2,39)
+  ShowMessage("Anna")
+  ShowMessage("")
+  221()
+  ChangeSwitch(2334,2334,1)
+  ChangeVariable(1093,1093,0,0,4)
+  Wait(60)
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,27,16,53,2,0)
+  222()
+  355("gain_medal(2117)")
+  ShowMessageFace("",0,0,2,40)
+  ShowMessage("")
+  ShowMessage("")
+  EndEventProcessing()
+  0()
+ PAGE   3
+  // condition: variable 1093 >= 4
+  0()
+

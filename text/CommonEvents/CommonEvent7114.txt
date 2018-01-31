@@ -1,0 +1,8 @@
+"……耐えちゃったね。" -> "...... I endured it."
+"あたしの負け……" -> "My defeat ......"
+"でも、賞品はもうないよ。" -> "But there are no prizes anymore."
+"前にあげたもんね……" -> "I gave it before ... ..."
+"それじゃあ、賞品をあげる……" -> "Well then, I'll give you a prize ..."
+"これで、どんな職業でも白魔法が使えるようになるよ。" -> "With this, white magic can be used in any occupation."
+"また、バトルファックしようね。" -> "Let's also battle fuck."
+"今度は負けないから……" -> "I will not lose this time ..."

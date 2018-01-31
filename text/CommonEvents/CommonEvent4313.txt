@@ -1,0 +1,3 @@
+"　I'm coming" -> "I'm coming"
+"♪" -> "♪"
+"……Ah" -> "...... Ah"

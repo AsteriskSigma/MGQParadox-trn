@@ -1,0 +1,8 @@
+"■ Window" -> "■ Window"
+"　スキルやアイテムの説明、アクターのステータスなどを表示するウィンドウです。" -> "A window that displays skills, item descriptions, actor status, etc."
+"● オブジェクト初期化" -> "● Object initialization"
+"● テキスト設定" -> "● Text setting"
+"● クリア" -> "● Clear"
+"● アイテム設定" -> "● Item setting"
+"スキル、アイテム等" -> "Skills, items etc."
+"● リフレッシュ" -> "● Refresh"

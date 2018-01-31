@@ -1,0 +1,6 @@
+// EVENT 3242
+Name "-----"
+
+RunCommonEvent(3241)
+0()
+

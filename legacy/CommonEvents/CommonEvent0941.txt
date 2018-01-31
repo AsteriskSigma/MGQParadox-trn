@@ -1,0 +1,8 @@
+// EVENT 0941
+Name "Event: White Rabbit"
+
+ShowMessageFace("sirousagi_fc1",0,0,2,1)
+ShowMessage("\\n<White Rabbit>あれっ？　こんなところで奇遇だね。\nせっかくだから、助けてあげるよ！")
+RunCommonEvent(912)
+EndEventProcessing()
+0()

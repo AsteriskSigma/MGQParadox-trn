@@ -1,0 +1,7 @@
+"【牛魔王】" -> "【Cow demon king】"
+"この妾が、巨体を活かした究極奥義を教えてやろう。" -> "Let this concubine teach me the ultimate mystery that made use of the giant."
+"「特技」ゆえ誰でも使えるが、巨体技が得意な者の方が得だぞ。" -> "Anyone can use it because of \"special skill\", but those who are good at giant skill are getting better."
+"選択" -> "Choice"
+"選択" -> "Choice"
+"【牛魔王】" -> "【Cow demon king】"
+"いっぱい食べて、大きくなるのだぞ！" -> "Eat a lot, it will be big!"

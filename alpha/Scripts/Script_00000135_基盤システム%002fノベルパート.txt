@@ -1,0 +1,856 @@
+=begin
+=Novel Part
+
+It is a screen specialized for Novell format
+
+
+==Change log
+  Date     Version Author Comment
+
+=end
+
+
+#==============================================================================
+# ■ Game_Novel
+#==============================================================================
+class Game_Novel
+  #--------------------------------------------------------------------------
+  # ● Public instance variables
+  #--------------------------------------------------------------------------
+  attr_reader   :screen
+  attr_reader   :interpreter
+  attr_reader   :event_id
+  attr_accessor :bg_data
+  #--------------------------------------------------------------------------
+  # ● Object initialization
+  #--------------------------------------------------------------------------
+  def initialize
+    @screen = Game_Screen.new
+    @interpreter = Game_Interpreter.new
+    clear
+  end  
+  #--------------------------------------------------------------------------
+  # ● Clear
+  #--------------------------------------------------------------------------
+  def clear
+    @screen.clear
+    @interpreter.clear
+    @event_id = 0
+    @bg_data = nil
+  end
+  #--------------------------------------------------------------------------
+  # ● Setup
+  #--------------------------------------------------------------------------
+  def setup(event_id)
+    @event_id = event_id
+    list = $data_common_events[@event_id].list
+    @interpreter.setup(list)
+  end
+  #--------------------------------------------------------------------------
+  # ● Frame update
+  #     main : Interpreter update flag
+  #--------------------------------------------------------------------------
+  def update(main = false)
+    @interpreter.update if main
+    @screen.update
+  end
+  #--------------------------------------------------------------------------
+  # ● Event driving?
+  #--------------------------------------------------------------------------  
+  def running?
+    @interpreter.running?
+  end
+  #--------------------------------------------------------------------------
+  # ● Weight per character
+  #--------------------------------------------------------------------------
+  def one_character_wait
+    $game_system.conf[:ls_wait]
+  end
+  #--------------------------------------------------------------------------
+  # ● Weight for each reading point
+  #--------------------------------------------------------------------------
+  def comma_wait
+    $game_system.conf[:ls_wait] * 5
+  end
+  #--------------------------------------------------------------------------
+  # ● Weight per punctuation
+  #--------------------------------------------------------------------------
+  def period_wait
+    $game_system.conf[:ls_wait] * 10
+  end
+  #--------------------------------------------------------------------------
+  # ● Wait for input wait
+  #--------------------------------------------------------------------------  
+  def input_pause_wait
+    $game_system.conf[:ls_wait] * 15
+  end
+  #--------------------------------------------------------------------------
+  # ● Advance to the \"reflection meeting\"
+  #--------------------------------------------------------------------------    
+  def skip_scene
+    return if @event_id == 0
+    
+  end
+end
+
+#==============================================================================
+# ■ Game_Enemy
+#==============================================================================
+class Game_Enemy < Game_Battler
+  #--------------------------------------------------------------------------
+  # ● Process at the end of battle action
+  #--------------------------------------------------------------------------
+  def on_action_end
+    super
+    $game_troop.lose_event_id = enemy.lose_event_id
+  end
+end
+
+#==============================================================================
+# ■ Game_Unit
+#==============================================================================
+class Game_Unit
+  #--------------------------------------------------------------------------
+  # ● Public instance variables
+  #--------------------------------------------------------------------------
+  attr_accessor :in_novel
+  #--------------------------------------------------------------------------
+  # ○ Object initialization
+  #--------------------------------------------------------------------------
+  def initialize
+    @in_battle = false
+    @in_novel  = false
+  end
+end
+
+#==============================================================================
+# ■ Game_Troop
+#==============================================================================
+class Game_Troop < Game_Unit
+  #--------------------------------------------------------------------------
+  # ● Public instance variables
+  #--------------------------------------------------------------------------
+  attr_accessor   :lose_event_id    # Common event ID at defeat
+  #--------------------------------------------------------------------------
+  # Battle start processing
+  #--------------------------------------------------------------------------
+  def on_battle_start
+    super
+    @lose_event_id = members.sample.enemy.lose_event_id
+  end
+end
+
+#==============================================================================
+# ■ Game_Interpreter
+#==============================================================================
+class Game_Interpreter
+  #--------------------------------------------------------------------------
+  # Obtain target of screen type commands
+  #--------------------------------------------------------------------------
+  def screen
+    if $game_party.in_battle
+      return $game_troop.screen
+    elsif $game_party.in_novel
+      return $game_novel.screen
+    else
+      return $game_map.screen
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Calling a Novell Part
+  #--------------------------------------------------------------------------
+  def call_novel_scene(event_id)
+    screen.clear_pictures # 
+    $game_novel.setup(event_id)
+    SceneManager.call(Scene_Novel)
+    Fiber.yield
+  end  
+  #--------------------------------------------------------------------------
+  # ● Background designation of the Novell part
+  # Search file name from picture folder
+  #--------------------------------------------------------------------------
+  def novel_background_name(name)
+    $game_novel.bg_data = {:pic => name}
+  end
+  #--------------------------------------------------------------------------
+  # ● Forced movement of player
+  #--------------------------------------------------------------------------
+  def forced_transfer(map_id, x, y)
+    $game_player.reserve_transfer(map_id, x, y)
+    $game_player.perform_transfer
+  end
+  #--------------------------------------------------------------------------
+  # ● Interruption if reminiscent
+  #--------------------------------------------------------------------------
+  def memory_interruption
+    return unless $game_temp.lib_enemy_index != -1
+    @index = @list.size
+  end
+  #--------------------------------------------------------------------------
+  # ● Advance events up to the \"reflection meeting\"
+  #--------------------------------------------------------------------------  
+  def goto_ilias
+    list = indirect_check(@list).dup
+    until list.empty?
+      command = list.shift
+      break if command.code == 355 && command.parameters[0] == "memory_interruption"
+    end    
+    return if list.empty?
+    # Screen fade out and weight 60
+    list.unshift(RPG::EventCommand.new(230, 0, [60]))
+    list.unshift(RPG::EventCommand.new(221))
+    @list = list
+  end
+  #--------------------------------------------------------------------------
+  # ● Check indirect call
+  #--------------------------------------------------------------------------  
+  def indirect_check(list)
+    list.each{|command|
+      next unless command.code == 117 && (3001...4000).include?(command.parameters[0])
+      return $data_common_events[command.parameters[0]].list
+    }    
+    return list
+  end
+end
+
+#==============================================================================
+# ■ Spriteset_Novel
+#==============================================================================
+class Spriteset_Novel
+  #--------------------------------------------------------------------------
+  # ● Object initialization
+  #--------------------------------------------------------------------------
+  def initialize
+    create_viewports
+    create_background
+    create_weather
+    create_pictures
+    create_timer
+    update
+  end
+  #--------------------------------------------------------------------------
+  # ● Create viewport
+  #--------------------------------------------------------------------------
+  def create_viewports
+    @viewport1 = Viewport.new
+    @viewport2 = Viewport.new
+    @viewport3 = Viewport.new
+    @viewport2.z = 50
+    @viewport3.z = 100
+  end
+  #--------------------------------------------------------------------------
+  # ● Create background
+  #--------------------------------------------------------------------------
+  def create_background
+    @background = Plane.new(@viewport1)
+    @background.z = -100
+    if $game_novel.bg_data.nil?
+      bitmap = Bitmap.new(Graphics.width, Graphics.height)
+      bitmap.blt(0, 0, SceneManager.background_bitmap, bitmap.rect) 
+      @background.bitmap = bitmap
+    else
+      bitmap = Bitmap.new(Graphics.width, Graphics.height)
+      if $game_novel.bg_data.key?(:bb1)
+        bb1 = Bitmap.new("Graphics/Battlebacks1/#{$game_novel.bg_data[:bb1]}")
+        bitmap.stretch_blt(bitmap.rect, bb1, bb1.rect)
+        bb1.dispose
+      end
+      if $game_novel.bg_data.key?(:bb2)
+        bb2 = Bitmap.new("Graphics/Battlebacks2/#{$game_novel.bg_data[:bb2]}")
+        bitmap.stretch_blt(bitmap.rect, bb2, bb2.rect)
+        bb2.dispose
+      end
+      if $game_novel.bg_data.key?(:pic)
+        pic = Bitmap.new("Graphics/Pictures/#{$game_novel.bg_data[:pic]}")
+        bitmap.stretch_blt(bitmap.rect, pic, pic.rect)
+        pic.dispose
+      end
+      @background.bitmap = bitmap
+    end
+    Graphics.frame_reset  
+  end
+  #--------------------------------------------------------------------------
+  # ● Create weather
+  #--------------------------------------------------------------------------
+  def create_weather
+    @weather = Spriteset_Weather.new(@viewport2)
+  end
+  #--------------------------------------------------------------------------
+  # ● Create a picture sprite
+  #--------------------------------------------------------------------------
+  def create_pictures
+    @picture_sprites = []
+  end
+  #--------------------------------------------------------------------------
+  # ● Creating a timer sprite
+  #--------------------------------------------------------------------------
+  def create_timer
+    @timer_sprite = Sprite_Timer.new(@viewport2)
+  end
+  #--------------------------------------------------------------------------
+  # ● Release
+  #--------------------------------------------------------------------------
+  def dispose
+    dispose_background
+    dispose_weather
+    dispose_pictures
+    dispose_timer
+    dispose_viewports
+  end
+  #--------------------------------------------------------------------------
+  # ● Release the background
+  #--------------------------------------------------------------------------
+  def dispose_background
+    @background.bitmap.dispose if @background.bitmap
+    @background.dispose
+  end
+  #--------------------------------------------------------------------------
+  # ● Weather release
+  #--------------------------------------------------------------------------
+  def dispose_weather
+    @weather.dispose
+  end
+  #--------------------------------------------------------------------------
+  # ● Release of Picture Sprite
+  #--------------------------------------------------------------------------
+  def dispose_pictures
+    @picture_sprites.compact.each {|sprite| sprite.dispose }
+  end
+  #--------------------------------------------------------------------------
+  # ● Release of timer sprite
+  #--------------------------------------------------------------------------
+  def dispose_timer
+    @timer_sprite.dispose
+  end
+  #--------------------------------------------------------------------------
+  # ● Release the viewport
+  #--------------------------------------------------------------------------
+  def dispose_viewports
+    @viewport1.dispose
+    @viewport2.dispose
+    @viewport3.dispose
+  end
+  #--------------------------------------------------------------------------
+  # ● Frame update
+  #--------------------------------------------------------------------------
+  def update
+    update_weather
+    update_pictures
+    update_timer
+    update_viewports
+  end
+  #--------------------------------------------------------------------------
+  # ● Weather update
+  #--------------------------------------------------------------------------
+  def update_weather
+    @weather.type = $game_novel.screen.weather_type
+    @weather.power = $game_novel.screen.weather_power
+    @weather.update
+  end
+  #--------------------------------------------------------------------------
+  # ● Update picture sprite
+  #--------------------------------------------------------------------------
+  def update_pictures
+    $game_novel.screen.pictures.each do |pic|
+      @picture_sprites[pic.number] ||= Sprite_Picture.new(@viewport2, pic)
+      @picture_sprites[pic.number].update
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Update Timer Sprite
+  #--------------------------------------------------------------------------
+  def update_timer
+    @timer_sprite.update
+  end
+  #--------------------------------------------------------------------------
+  # ● Update viewport
+  #--------------------------------------------------------------------------
+  def update_viewports
+    @viewport1.tone.set($game_novel.screen.tone)
+    @viewport1.ox = $game_novel.screen.shake
+    @viewport2.color.set($game_novel.screen.flash_color)
+    @viewport3.color.set(0, 0, 0, 255 - $game_novel.screen.brightness)
+    @viewport1.update
+    @viewport2.update
+    @viewport3.update
+  end
+end
+
+#==============================================================================
+# ■ Window_BackLog
+#==============================================================================
+class Window_BackLog < Window_Selectable
+  #--------------------------------------------------------------------------
+  # ● Object initialization
+  #--------------------------------------------------------------------------
+  def initialize(message_window)
+    @message_window = message_window
+    super(0, 0, Graphics.width, Graphics.height)
+    create_back_bitmap
+    create_back_sprite
+    create_contents_viewport
+    create_contents_sprite
+    self.opacity = 0
+    hide.deactivate
+    @first_check = false
+  end
+  #--------------------------------------------------------------------------
+  # ● Create background bitmap
+  #--------------------------------------------------------------------------
+  def create_back_bitmap
+    @back_bitmap = Bitmap.new(width, height)
+    rect1 = Rect.new(0, 0, width, 12)
+    rect2 = Rect.new(0, 12, width, height - 24)
+    rect3 = Rect.new(0, height - 12, width, 12)
+    @back_bitmap.gradient_fill_rect(rect1, back_color2, back_color1, true)
+    @back_bitmap.fill_rect(rect2, back_color1)
+    @back_bitmap.gradient_fill_rect(rect3, back_color1, back_color2, true)
+  end
+  #--------------------------------------------------------------------------
+  # ● Obtain background color 1
+  #--------------------------------------------------------------------------
+  def back_color1
+    Color.new(0, 0, 0, 160)
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of background color 2
+  #--------------------------------------------------------------------------
+  def back_color2
+    Color.new(0, 0, 0, 0)
+  end
+  #--------------------------------------------------------------------------
+  # ● Create background sprite
+  #--------------------------------------------------------------------------
+  def create_back_sprite
+    @back_sprite = Sprite.new
+    @back_sprite.bitmap = @back_bitmap
+    @back_sprite.z = z - 1
+    @back_sprite.visible = false
+  end  
+  #--------------------------------------------------------------------------
+  # ● Generate content viewport
+  #--------------------------------------------------------------------------
+  def create_contents_viewport
+    @contents_viewport = Viewport.new(12, 12, 616, 456)
+    @contents_viewport.z = z
+  end
+  #--------------------------------------------------------------------------
+  # ● Contents Sprite generation
+  #--------------------------------------------------------------------------
+  def create_contents_sprite
+    @contents_sprites = []
+  end
+  #--------------------------------------------------------------------------
+  # ● Release
+  #--------------------------------------------------------------------------
+  def dispose
+    super
+    dispose_contents_sprites
+    dispose_contents_viewport
+    dispose_back_bitmap
+    dispose_back_sprite
+  end
+  #--------------------------------------------------------------------------
+  # ● Content release of sprite
+  #--------------------------------------------------------------------------
+  def dispose_contents_sprites
+    @contents_sprites.each{|sprite|
+      sprite.bitmap.dispose
+      sprite.dispose
+    }
+  end
+  #--------------------------------------------------------------------------
+  # ● Release content viewport
+  #--------------------------------------------------------------------------
+  def dispose_contents_viewport
+    @contents_viewport.dispose
+  end
+  #--------------------------------------------------------------------------
+  # ● Release of background bitmap
+  #--------------------------------------------------------------------------
+  def dispose_back_bitmap
+    @back_bitmap.dispose
+  end
+  #--------------------------------------------------------------------------
+  # ● Release of background sprite
+  #--------------------------------------------------------------------------
+  def dispose_back_sprite
+    @back_sprite.dispose
+  end
+  #--------------------------------------------------------------------------
+  # ● Frame update
+  #--------------------------------------------------------------------------
+  def update
+    super
+    update_back_sprite
+    update_contents
+  end
+  #--------------------------------------------------------------------------
+  # ● Update the background sprite
+  #--------------------------------------------------------------------------
+  def update_back_sprite
+    @back_sprite.visible = self.visible
+    @back_sprite.update
+  end
+  #--------------------------------------------------------------------------
+  # ● Update content
+  #--------------------------------------------------------------------------
+  def update_contents
+    @contents_viewport.visible = self.visible
+    @contents_viewport.update
+    @contents_sprites.each{|sprite| sprite.update}
+  end
+  #--------------------------------------------------------------------------
+  # ● Export content
+  #--------------------------------------------------------------------------
+  def dup_contents
+    shift_contents if 100 < @contents_sprites.size
+    # To play the first sky picture. This should be enough if this is the current specification
+    unless @first_check
+      @first_check = true
+      return
+    end
+    push_contents
+  end
+  #--------------------------------------------------------------------------
+  # ● Add content
+  #--------------------------------------------------------------------------
+  def push_contents
+    src_bitmap = @message_window.contents
+    bitmap = Bitmap.new(src_bitmap.rect.width, src_bitmap.rect.height)
+    bitmap.blt(0, 0, src_bitmap, bitmap.rect)
+    sprite = Sprite.new(@contents_viewport)
+    sprite.bitmap = bitmap
+    @contents_sprites.push(sprite)
+  end
+  #--------------------------------------------------------------------------
+  # ● Contents extrusion
+  #--------------------------------------------------------------------------
+  def shift_contents
+    sprite = @contents_sprites.shift
+    sprite.bitmap.dispose
+    sprite.dispose
+  end
+  #--------------------------------------------------------------------------
+  # ● Refresh content
+  #--------------------------------------------------------------------------
+  def refresh_contents
+    @contents_sprites.each_with_index{|sprite, i|
+      sprite.y = i * sprite.height
+    }
+    @contents_viewport.oy = [(@contents_sprites.size * line_height * 4) - contents.height, 0].max
+  end
+  #--------------------------------------------------------------------------
+  # ● Starting backlog
+  #--------------------------------------------------------------------------
+  def start
+    show.activate
+    @message_window.hide
+    refresh_contents
+  end
+  #--------------------------------------------------------------------------
+  # ● Cursor movement processing
+  #--------------------------------------------------------------------------
+  def process_cursor_move
+    return unless open? && active
+    last_index = @index
+    cursor_down (Input.trigger?(:DOWN))  if Input.repeat?(:DOWN)
+    cursor_up   (Input.trigger?(:UP))    if Input.repeat?(:UP)
+    cursor_pagedown   if Input.trigger?(:R)
+    cursor_pageup     if Input.trigger?(:L)
+  end
+  #--------------------------------------------------------------------------
+  # ● Handling process such as decision and cancellation
+  #--------------------------------------------------------------------------
+  def process_handling
+    return unless open? && active
+    return process_cancel   if Input.trigger?(:B)
+  end
+  #--------------------------------------------------------------------------
+  # ● Move the cursor down
+  #--------------------------------------------------------------------------
+  def cursor_down(wrap = false)
+    @contents_viewport.oy = [
+      @contents_viewport.oy + line_height,
+      [(@contents_sprites.size * line_height * 4) - contents.height, 0].max
+    ].min
+  end
+  #--------------------------------------------------------------------------
+  # ● Move the cursor up
+  #--------------------------------------------------------------------------
+  def cursor_up(wrap = false)
+    @contents_viewport.oy = [@contents_viewport.oy - line_height, 0].max
+  end
+  #--------------------------------------------------------------------------
+  # ● Move the cursor one page backward
+  #--------------------------------------------------------------------------
+  def cursor_pagedown
+    @contents_viewport.oy = [
+      @contents_viewport.oy + line_height * 19,
+      [(@contents_sprites.size * line_height * 4) - contents.height, 0].max
+    ].min
+  end
+  #--------------------------------------------------------------------------
+  # ● Move cursor one page forward
+  #--------------------------------------------------------------------------
+  def cursor_pageup
+    @contents_viewport.oy = [@contents_viewport.oy - line_height * 19, 0].max
+  end
+  #--------------------------------------------------------------------------
+  # ● Processing when the cancel button is pressed
+  #--------------------------------------------------------------------------
+  def process_cancel
+    Input.update
+    hide.deactivate
+    @message_window.show
+  end
+end
+
+#==============================================================================
+# ■ Window_NovelMessage
+#==============================================================================
+class Window_NovelMessage < Window_Message
+  #--------------------------------------------------------------------------
+  # ● Clear instance variable
+  #--------------------------------------------------------------------------
+  def clear_instance_variables
+    super
+    @auto_mode = $game_system.conf[:ls_auto]
+  end  
+  #--------------------------------------------------------------------------
+  # ● Create all windows
+  #--------------------------------------------------------------------------
+  def create_all_windows
+    super
+    @backlog_window = Window_BackLog.new(self)
+  end  
+  #--------------------------------------------------------------------------
+  # ● Frame update
+  #--------------------------------------------------------------------------
+  def update
+    update_flip_hide
+    return unless active
+    super
+    update_flip_auto
+  end
+  #--------------------------------------------------------------------------
+  # ● Update all windows
+  #--------------------------------------------------------------------------
+  def update_all_windows
+    super
+    @backlog_window.update
+  end  
+  #--------------------------------------------------------------------------
+  # ● Update window hidden inversion
+  #--------------------------------------------------------------------------
+  def update_flip_hide
+    return unless Input.trigger?(:Y) || Input.trigger?(:Z)
+    return if @backlog_window.active
+    Input.update
+    self.active = !active
+    self.visible = !visible
+  end
+  #--------------------------------------------------------------------------
+  # ● Updating auto mode reversal
+  #--------------------------------------------------------------------------
+  def update_flip_auto
+    return unless Input.trigger?(:L) || Input.trigger?(:R)
+    return if @backlog_window.active
+    Input.update
+    Sound.play_ok
+    @auto_mode = !@auto_mode
+  end  
+  #--------------------------------------------------------------------------
+  # ● Weight after outputting one character
+  #--------------------------------------------------------------------------
+  def wait_for_one_character
+    unless @auto_mode
+      super
+    else
+      wait($game_novel.one_character_wait)
+    end    
+  end  
+  #--------------------------------------------------------------------------
+  # ● Normal character processing
+  #--------------------------------------------------------------------------
+  def process_normal_character(c, pos)
+    super
+    return unless @auto_mode
+    case c
+    when ","; wait($game_novel.comma_wait)
+    when "."; wait($game_novel.period_wait)
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Page break processing
+  #--------------------------------------------------------------------------
+  def new_page(text, pos)
+    @backlog_window.dup_contents
+    super
+  end
+  #--------------------------------------------------------------------------
+  # ● Input wait processing
+  # superNote that we are not using
+  #--------------------------------------------------------------------------
+  def input_pause    
+    return if Input.press?(:X)
+    self.pause = true
+    unless @auto_mode
+      wait(10)
+      until Input.trigger?(:B) || Input.trigger?(:C) || Input.trigger?(:X)
+        open_backlog   if Input.trigger?(:UP)
+        Fiber.yield 
+      end
+      Input.update
+    else
+      wait($game_novel.input_pause_wait)
+    end    
+    self.pause = false
+  end
+  #--------------------------------------------------------------------------
+  # ● Display backlog
+  #--------------------------------------------------------------------------
+  def open_backlog
+    @backlog_window.start
+    Fiber.yield while @backlog_window.active
+  end
+end
+
+#==============================================================================
+# ■ Scene_Novel
+#==============================================================================
+class Scene_Novel < Scene_Base
+  #--------------------------------------------------------------------------
+  # ● Start processing
+  #--------------------------------------------------------------------------
+  def start
+    super
+    $game_party.in_novel = true
+    $game_message.visible = false
+    create_spriteset
+    create_all_windows
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of transition speed
+  #--------------------------------------------------------------------------
+  def transition_speed
+    return 15
+  end
+  #--------------------------------------------------------------------------
+  # ● Termination processing
+  #--------------------------------------------------------------------------
+  def terminate
+    super
+    dispose_spriteset
+    $game_novel.clear
+    $game_party.in_novel = false
+  end
+  #--------------------------------------------------------------------------
+  # ● Frame update
+  #--------------------------------------------------------------------------
+  def update
+    super
+    $game_novel.update(true)
+    $game_timer.update
+    @spriteset.update
+    return_scene unless $game_novel.running?
+  end
+  #--------------------------------------------------------------------------
+  # ● Frame update (for fade)
+  #--------------------------------------------------------------------------
+  def update_for_fade
+    update_basic
+    $game_novel.update(false)
+    @spriteset.update
+  end
+  #--------------------------------------------------------------------------
+  # ● General fade processing
+  #--------------------------------------------------------------------------
+  def fade_loop(duration)
+    duration.times do |i|
+      yield 255 * (i + 1) / duration
+      update_for_fade
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Screen fade in
+  #--------------------------------------------------------------------------
+  def fadein(duration)
+    fade_loop(duration) {|v| Graphics.brightness = v }
+  end
+  #--------------------------------------------------------------------------
+  # ● Creating a sprite set
+  #--------------------------------------------------------------------------
+  def create_spriteset
+    @spriteset = Spriteset_Novel.new
+  end
+  #--------------------------------------------------------------------------
+  # ● Release Sprite Set
+  #--------------------------------------------------------------------------
+  def dispose_spriteset
+    @spriteset.dispose
+  end
+  #--------------------------------------------------------------------------
+  # ● Create all windows
+  #--------------------------------------------------------------------------
+  def create_all_windows
+    create_message_window
+    create_skillname_window
+  end
+  #--------------------------------------------------------------------------
+  # ● Create Message Window
+  #--------------------------------------------------------------------------
+  def create_message_window
+    @message_window = Window_NovelMessage.new
+  end
+  #--------------------------------------------------------------------------
+  # ● Create skill name window
+  #--------------------------------------------------------------------------
+  def create_skillname_window
+    @sname_window = Window_SkillName.new
+  end
+  #--------------------------------------------------------------------------
+  # ● Obtain fade-out speed
+  #--------------------------------------------------------------------------
+  def fadeout_speed
+    return 30
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire Fade In Speed
+  #--------------------------------------------------------------------------
+  def fadein_speed
+    return 30
+  end
+end
+
+#==============================================================================
+# ■ Scene_Battle
+#==============================================================================
+class Scene_Battle < Scene_Base
+  #--------------------------------------------------------------------------
+  # ○ Termination processing
+  #--------------------------------------------------------------------------
+  def terminate
+    super
+    @spriteset.dispose_enemies
+    SceneManager.snapshot_for_background
+    dispose_spriteset
+    @info_viewport.dispose
+    RPG::ME.stop
+  end
+end
+
+# Battle event: When it was annihilated with HP change ... Is it possible?
+
+
+
+
+
+
+
+
+
+
+
+
+

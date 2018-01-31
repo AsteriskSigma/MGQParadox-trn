@@ -1,0 +1,7 @@
+"【クィーンマーメイド】" -> "【Queen Mermaid】"
+"あらゆる攻撃を防ぐ防御秘術……" -> "Protective arcade to prevent any attack ......"
+"白魔法「アクアペンタゴン」を教えてあげるわ。" -> "I will tell you white magic \"Aqua Pentagon\"."
+"選択" -> "Choice"
+"選択" -> "Choice"
+"【クィーンマーメイド】" -> "【Queen Mermaid】"
+"エルにも教えてあげないと……" -> "I have to tell Ell ... ..."

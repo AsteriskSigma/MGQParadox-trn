@@ -1,0 +1,18 @@
+// EVENT 0002
+Name "Map Display"
+
+PictureDisplay(1,"sys_black",0,0,0,0,100,100,255,0)
+PictureDisplay(2,"sys_map",0,0,100,20,100,100,255,0)
+ChangeVariable(22,22,0,3,5,-1,0)
+ChangeVariable(22,22,1,0,95)
+ChangeVariable(23,23,0,3,5,-1,1)
+ChangeVariable(23,23,1,0,15)
+PictureDisplay(3,"sys_iti",0,1,22,23,100,100,255,0)
+ShowMessageFace("",0,2,2,1)
+ShowMessage("")
+PictureClear(1)
+PictureClear(2)
+PictureClear(3)
+EndEventProcessing()
+0()
+

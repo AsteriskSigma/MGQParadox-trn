@@ -1,0 +1,239 @@
+#~ =begin
+#~ =Infrastructure system/Screen orientation
+
+
+
+
+#~ ==Change log
+#~   Date     Version Author Comment
+
+#~ =end
+
+#~ #==============================================================================
+#~ # ■ Game_Screen
+#~ #==============================================================================
+#~ class Game_Screen
+#~   #--------------------------------------------------------------------------
+#~   # ● Public instance variables
+#~   #--------------------------------------------------------------------------
+#~   attr_reader   :processing_type
+#~   #--------------------------------------------------------------------------
+#~   # ○ Clear
+#~   #--------------------------------------------------------------------------
+#~   def clear
+#~     clear_fade
+#~     clear_tone
+#~     clear_flash
+#~     clear_shake
+#~     clear_weather
+#~     clear_pictures
+#~     idle_processing
+#~   end
+#~   #--------------------------------------------------------------------------
+#~   # Initialization of screen processing
+#~   #--------------------------------------------------------------------------
+#~   def idle_processing
+#~     @processing_type = :idle
+#~   end
+#~   #--------------------------------------------------------------------------
+#~   # ● Initiation of negative / positive reversal
+#~   #--------------------------------------------------------------------------
+#~   def start_reverse_processing
+#~     @processing_type = :reverse_fadein
+#~   end
+#~   #--------------------------------------------------------------------------
+#~   # ● Clear screen processing
+#~   #--------------------------------------------------------------------------
+#~   def fade_processing
+#~     @processing_type = :fadeout
+#~   end
+#~   #--------------------------------------------------------------------------
+#~   # ● Clear screen processing
+#~   #--------------------------------------------------------------------------
+#~   def clear_processing
+#~     @processing_type = :clear
+#~   end
+#~ end
+
+#~ #==============================================================================
+#~ # ■ Spriteset_Map
+#~ #==============================================================================
+#~ class Spriteset_Map
+#~   #--------------------------------------------------------------------------
+#~   # ○ Object initialization
+#~   #--------------------------------------------------------------------------
+#~   def initialize
+#~     create_viewports
+#~     create_tilemap
+#~     create_parallax
+#~     create_characters
+#~     create_shadow
+#~     create_processing
+#~     create_weather
+#~     create_pictures
+#~     create_timer
+#~     update
+#~   end
+#~   #--------------------------------------------------------------------------
+#~   # ○ Create viewport
+#~   #--------------------------------------------------------------------------
+#~   def create_viewports
+#~     @viewport1 = Viewport.new
+#~     @viewport2 = Viewport.new
+#~     @viewport3 = Viewport.new
+#~     @viewport4 = Viewport.new    
+#~     @viewport2.z = 50
+#~     @viewport3.z = 100
+#~     @viewport4.z = 10
+#~   end
+#~   #--------------------------------------------------------------------------
+#~   # ● Creating screen processing sprite
+#~   #--------------------------------------------------------------------------
+#~   def create_processing
+#~     @processing_sprite = Sprite.new(@viewport4)
+#~     @processing_sprite.bitmap = Bitmap.new(Graphics.width, Graphics.height)
+#~     @processing_fiber = nil
+#~   end
+#~   #--------------------------------------------------------------------------
+#~   # ○ Release
+#~   #--------------------------------------------------------------------------
+#~   def dispose
+#~     dispose_tilemap
+#~     dispose_parallax
+#~     dispose_characters
+#~     dispose_shadow
+#~     dispose_processing
+#~     dispose_weather
+#~     dispose_pictures
+#~     dispose_timer
+#~     dispose_viewports
+#~   end
+#~   #--------------------------------------------------------------------------
+#~   # ● Release of screen processing sprite
+#~   #--------------------------------------------------------------------------
+#~   def dispose_processing
+#~     @processing_sprite.bitmap.dispose
+#~     @processing_sprite.dispose
+#~   end
+#~   #--------------------------------------------------------------------------
+#~   # ○ Release viewport
+#~   #--------------------------------------------------------------------------
+#~   def dispose_viewports
+#~     @viewport1.dispose
+#~     @viewport2.dispose
+#~     @viewport3.dispose
+#~     @viewport4.dispose    
+#~   end
+#~   #--------------------------------------------------------------------------
+#~   # ○ Frame update
+#~   #--------------------------------------------------------------------------
+#~   def update
+#~     update_tileset
+#~     update_tilemap
+#~     update_parallax
+#~     update_characters
+#~     update_shadow
+#~     update_processing
+#~     update_weather
+#~     update_pictures
+#~     update_timer
+#~     update_viewports
+#~   end
+#~   #--------------------------------------------------------------------------
+#~   # ● Updating screen processing sprite
+#~   #--------------------------------------------------------------------------
+#~   def update_processing
+#~     case $game_map.screen.processing_type
+#~     when :reverse_fadein
+#~       $game_map.screen.idle_processing
+#~       blt_reverse_bitmap
+#~       @processing_fiber = Fiber.new{ fiber_processing_fadein }
+#~     when :fadeout
+#~       $game_map.screen.idle_processing
+#~       @processing_fiber = Fiber.new{ fiber_processing_fadeout }
+#~     when :clear
+#~       $game_map.screen.idle_processing
+#~       @processing_sprite.bitmap.clear    
+#~     end
+#~     @processing_fiber.resume if @processing_fiber
+#~     @processing_sprite.update
+#~   end
+#~   #--------------------------------------------------------------------------
+#~   # ● Screen processing (fade in)
+#~   #--------------------------------------------------------------------------
+#~   def fiber_processing_fadein    
+#~     (0..30).each{|i|
+#~       @processing_sprite.opacity = Integer(255 * (i / 30.0))
+#~       Fiber.yield
+#~     }
+#~     @processing_fiber = nil
+#~   end
+#~   #--------------------------------------------------------------------------
+#~   # ● Screen processing (fade out)
+#~   #--------------------------------------------------------------------------
+#~   def fiber_processing_fadeout
+#~     (0..15).reverse_each{|i|
+#~       @processing_sprite.opacity = Integer(255 * (i / 15.0))
+#~       Fiber.yield
+#~     }
+#~     @processing_sprite.bitmap.clear
+#~     @processing_fiber = nil    
+#~   end
+#~   #--------------------------------------------------------------------------
+#~   # ● Screen processing (negative / positive reversal)
+#~   #--------------------------------------------------------------------------
+#~   def blt_reverse_bitmap
+#~     bitmap = Graphics.snap_to_bitmap 
+#~     bitmap.width.times{|x|
+#~       bitmap.height.times{|y|
+#~         src_color = bitmap.get_pixel(x, y)
+#~         dst_color = Color.new(0,0,0,255)
+#~         bit  = 0x000000
+#~         bit |= Integer(src_color.red)   << 16
+#~         bit |= Integer(src_color.green) << 8
+#~         bit |= Integer(src_color.blue)  << 0
+#~         bit ^= 0xFFFFFF
+#~         dst_color.red   = (bit & 0xFF0000) >> 16
+#~         dst_color.green = (bit & 0x00FF00) >> 8
+#~         dst_color.blue  = (bit & 0x0000FF) >> 0
+#~         bitmap.set_pixel(x, y, dst_color)
+#~       }
+#~     }
+#~     @processing_sprite.bitmap.blt(0, 0, bitmap, @processing_sprite.src_rect) 
+#~     bitmap.dispose
+#~   end
+#~   #--------------------------------------------------------------------------
+#~   # ● Screen processing (negative / positive inversion fade-in)
+#~   #--------------------------------------------------------------------------
+#~ #  def blt_reverse_bitmap
+#~ #    bitmap = Graphics.snap_to_bitmap 
+#~ #    bitmap.invert
+#~ #    @processing_sprite.bitmap.blt(0, 0, bitmap, @processing_sprite.src_rect) 
+#~ #    bitmap.dispose
+#~ #  end
+#~   #--------------------------------------------------------------------------
+#~   # ○ Update viewport
+#~   #--------------------------------------------------------------------------
+#~   def update_viewports
+#~     @viewport1.tone.set($game_map.screen.tone)
+#~     @viewport1.ox = $game_map.screen.shake
+#~     @viewport2.color.set($game_map.screen.flash_color)
+#~     @viewport3.color.set(0, 0, 0, 255 - $game_map.screen.brightness)
+#~     @viewport1.update
+#~     @viewport2.update
+#~     @viewport3.update
+#~     @viewport4.update
+#~   end
+#~ end
+
+
+
+
+
+
+
+
+
+
+
+

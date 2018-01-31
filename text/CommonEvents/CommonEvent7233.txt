@@ -1,0 +1,3 @@
+"ジュリア：敗北" -> "Julia: Defeat"
+"【Julia】" -> "【Julia】"
+"【Julia】" -> "【Julia】"

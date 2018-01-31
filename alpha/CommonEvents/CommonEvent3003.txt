@@ -1,0 +1,6 @@
+// EVENT 3003
+Name "-----"
+
+RunCommonEvent(3002)
+0()
+

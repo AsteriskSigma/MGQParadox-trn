@@ -1,0 +1,6 @@
+// EVENT 1385
+Name "Conversation: Almaelma"
+
+RunCommonEvent(1177)
+0()
+

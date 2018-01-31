@@ -1,0 +1,1 @@
+"混沌迷宮イベント階" -> "Chaotic labyrinth event floor"

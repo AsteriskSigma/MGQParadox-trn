@@ -1,0 +1,7 @@
+"イベント：MP軽減" -> "Event: MP reduction"
+"【かむろ二尾】" -> "【Kanamero 2 tails】"
+"どうか、ご注意を……" -> "Please, be careful ......"
+"【かむろ二尾】" -> "【Kanamero 2 tails】"
+"至らない身ですが、お手伝いをさせて下さい……！" -> "I do not see it, but please let me help you ...!"
+"かむろ二尾から妖狐の加護が与えられた！" -> "Ginza protection was given from Kamuro two tails!"
+"次のボスフロアまで、戦闘中の消費MPが半減する！" -> "Consumption MP during battle will halve until the next boss floor!"

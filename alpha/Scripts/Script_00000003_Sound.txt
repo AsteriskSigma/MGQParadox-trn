@@ -1,0 +1,136 @@
+#==============================================================================
+# ■ Sound
+#------------------------------------------------------------------------------
+# It is a module that plays sound effects. Global variables$data_system From database
+# We will acquire and play the contents of SE set by.
+#==============================================================================
+
+module Sound
+
+  # System sound effect
+  def self.play_system_sound(n)
+    $data_system.sounds[n].play
+  end
+
+  # Move cursor
+  def self.play_cursor
+    play_system_sound(0)
+  end
+
+  # Decision
+  def self.play_ok
+    play_system_sound(1)
+  end
+
+  # Cancel
+  def self.play_cancel
+    play_system_sound(2)
+  end
+
+  # buzzer
+  def self.play_buzzer
+    play_system_sound(3)
+  end
+
+  # Equipment
+  def self.play_equip
+    play_system_sound(4)
+  end
+
+  # save
+  def self.play_save
+    play_system_sound(5)
+  end
+
+  # Load
+  def self.play_load
+    play_system_sound(6)
+  end
+
+  # Combat start
+  def self.play_battle_start
+    play_system_sound(7)
+  end
+
+  # Getaway
+  def self.play_escape
+    play_system_sound(8)
+  end
+
+  # Enemy's normal attack
+  def self.play_enemy_attack
+    play_system_sound(9)
+  end
+
+  # Enemy Damage
+  def self.play_enemy_damage
+    play_system_sound(10)
+  end
+
+  # Enemy extinction
+  def self.play_enemy_collapse
+    play_system_sound(11)
+  end
+
+  # Boss annihilation 1
+  def self.play_boss_collapse1
+    play_system_sound(12)
+  end
+
+  # Boss annihilation 2
+  def self.play_boss_collapse2
+    play_system_sound(13)
+  end
+
+  # Ally damage
+  def self.play_actor_damage
+    play_system_sound(14)
+  end
+
+  # Friend battle impossible
+  def self.play_actor_collapse
+    play_system_sound(15)
+  end
+
+  # recovery
+  def self.play_recovery
+    play_system_sound(16)
+  end
+
+  # Mistake
+  def self.play_miss
+    play_system_sound(17)
+  end
+
+  # Avoiding attack
+  def self.play_evasion
+    play_system_sound(18)
+  end
+
+  # Magic evasion
+  def self.play_magic_evasion
+    play_system_sound(19)
+  end
+
+  # Magic reflex
+  def self.play_reflection
+    play_system_sound(20)
+  end
+
+  # shop
+  def self.play_shop
+    play_system_sound(21)
+  end
+
+  # Use the item
+  def self.play_use_item
+    play_system_sound(22)
+  end
+
+  # Skill use
+  def self.play_use_skill
+    play_system_sound(23)
+  end
+
+end
+

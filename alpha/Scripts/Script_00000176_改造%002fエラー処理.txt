@@ -1,0 +1,104 @@
+=begin
+=Remodeling/Error handling
+
+
+
+
+==Change log
+  Date     Version Author Comment
+==15/09/03 2.0.2   Tris Integration J ~ U L Porting
+
+=end
+
+# ---------------------------------------------------------------------------
+# ◆ Module ErrorLogWriter
+# ---------------------------------------------------------------------------
+module ErrorLogWriter
+  # -------------------------------------------------------------------------
+  # ◆ Record error information( DEBUG Only ⇒ Other than debugging)
+  # -------------------------------------------------------------------------
+  def self.write( errobj )
+    begin
+      begin
+        Graphics.safe_update
+      rescue SecurityHazard
+      end
+      sleep(0.1)
+      File.open("errors.txt","a") do | file |
+        file.write("*Error - " + NWPatch.ver_str(" - ") +
+                  (Time.now).strftime("%Y-%m-%d %H:%M:%S (%A)") + "\n")
+        file.write( "Exception : #{errobj.class}\n" )
+        file.write( errobj.message )
+        unless $@.nil? and $@.empty?
+          backtrace = ""
+          for str in $@.dup
+            unless (str[ERROR_SECTION_NUM]).nil?
+              extra = $RGSS_SCRIPTS.at($1.to_i).at(1)
+              str.gsub!(ERROR_SECTION) { "( " + extra + " ):" } 
+            end
+            backtrace += str
+           end
+          file.write( "\ntrace:\n" + $@.inspect + "\n" )
+        end
+      end
+    rescue Exception => errs
+      raise( errs , 
+      errs.message + "\n (" + (errobj.class).to_s + " )\n" + errobj.message )
+    end
+  end
+end
+module MessageBox
+  # ---------------------------------------------------------------------------
+  # ◆ Format abnormal termination message
+  # ---------------------------------------------------------------------------
+  def self.error_message_setup( errobj )
+    Graphics.freeze
+    begin
+      Graphics.safe_update
+    rescue SecurityHazard
+    end
+    _message = ""
+    # Remember backtrace
+    unless $@.nil? or ($@.at(0)).nil?
+      tracer =  ($@.at(0)).dup
+      # Analyze backtrace
+      backtrace = ""
+      i = 0
+      for str in $@.dup
+        unless (str[ERROR_SECTION_NUM]).nil?
+          extra = $RGSS_SCRIPTS.at($1.to_i).at(1)
+          str.gsub!(ERROR_SECTION) { "( " + extra + " ):" } 
+        end
+        backtrace += str
+      end
+      unless errobj.is_a?(SystemStackError)
+        if rpgvxace?
+          _message = errobj.message.force_encoding("UTF-8") + 
+                     "\n** backtrace:\n" + backtrace
+        else
+          _message = errobj.message + "\n** backtrace:\n" + backtrace
+        end
+      end
+    else
+      tracer = "" # Failure to acquire backtrace
+      if rpgvxace?
+        _message = errobj.message.force_encoding("UTF-8")
+      else
+        _message = errobj.message
+      end
+    end    
+    until (_message[DOUBLE_CRLF]).nil?
+      _message.gsub!(DOUBLE_CRLF){ "\n" }
+    end
+    _message = NWPatch.ver_name("\n") + 
+               "Error" + (errobj.class).inspect +
+               " The processing could not be continued as it occurred.\n" +
+               "If there is no similar bug information in the official site \"patch support\"" + 
+               "Please report.\n" + 
+               "I'm sorry to trouble you.\n" +
+               "\n" + 
+               "Detailed information:\n" +
+               _message
+    return _message, tracer
+  end
+endd

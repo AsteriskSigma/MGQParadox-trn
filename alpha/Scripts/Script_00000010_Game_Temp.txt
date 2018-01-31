@@ -1,0 +1,46 @@
+#==============================================================================
+# ■ Game_Temp
+#------------------------------------------------------------------------------
+# It is a class that handles temporary data that is not included in save data. This class inn
+# Stance is$game_temp It is referred to.
+#==============================================================================
+
+class Game_Temp
+  #--------------------------------------------------------------------------
+  # ● Public instance variables
+  #--------------------------------------------------------------------------
+  attr_reader   :common_event_id          # Common event ID
+  attr_accessor :fade_type                # Fade type when moving to a place
+  #--------------------------------------------------------------------------
+  # ● Object initialization
+  #--------------------------------------------------------------------------
+  def initialize
+    @common_event_id = 0
+    @fade_type = 0
+  end
+  #--------------------------------------------------------------------------
+  # ● Reserve common event call
+  #--------------------------------------------------------------------------
+  def reserve_common_event(common_event_id)
+    @common_event_id = common_event_id
+  end
+  #--------------------------------------------------------------------------
+  # ● Clear common event call reservation
+  #--------------------------------------------------------------------------
+  def clear_common_event
+    @common_event_id = 0
+  end
+  #--------------------------------------------------------------------------
+  # ● Reserve judgment for common event call
+  #--------------------------------------------------------------------------
+  def common_event_reserved?
+    @common_event_id > 0
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire the reserved common event
+  #--------------------------------------------------------------------------
+  def reserved_common_event
+    $data_common_events[@common_event_id]
+  end
+end
+

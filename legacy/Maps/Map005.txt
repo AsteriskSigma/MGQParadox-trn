@@ -1,0 +1,1607 @@
+
+DisplayName "Ilias Temple 1F"
+
+
+
+EVENT   1
+ PAGE   1
+  281(0)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,8,13,9,0,0)
+  0()
+
+
+
+EVENT   2
+ PAGE   1
+  281(0)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,8,13,9,0,0)
+  0()
+
+
+
+EVENT   3
+ PAGE   1
+  281(0)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,8,13,9,0,0)
+  0()
+
+
+
+EVENT   4
+ PAGE   1
+  ShowMessageFace("Actor4",0,0,2,1)
+  ShowMessage("\\n<Eric>Yo, do you want to hear about the [\\nc[1]] job?")
+  ShowChoices(strings("Yes","No"),2)
+  IfPlayerPicksChoice(0,null)
+   ShowMessageFace("Actor4",0,0,2,2)
+   ShowMessage("\\n<Eric>[\\nc[1]] is the first step to all occupations in the warrior line. If you don't master this one first, you won't be able to access advanced ones.")
+   ShowMessageFace("Actor4",0,0,2,3)
+   ShowMessage("\\n<Eric>A \\nc[1] fights bravely in hand-to-hand combat using only their own skill. Magic doesn't play any part in it.")
+   ShowMessageFace("Actor4",0,0,2,4)
+   ShowMessage("\\n<Eric>[\\nc[1]s] learn a full set of basic sword skills. All are easy to use, and thus acquired quickly.")
+   ShowMessageFace("Actor4",0,0,2,5)
+   ShowMessage("\\n<Eric>In addition, sword skills only consume SP. Since \\nc[1]s don't use magic, MP is unnecessary. As for equipment, \\nc[1]s use swords and spears.")
+   ShowMessageFace("Actor4",0,0,2,6)
+   ShowMessage("\\n<Eric>We don't use heavy weapons, however. If you want to wield a knight sword or something like that, you'll have to advance to a higher-ranking job.")
+   ShowMessageFace("Actor4",0,0,2,7)
+   ShowMessage("\\n<Eric>However, keep in mind what I said earlier: the \\nc[1] is the first step to those jobs. If you  want to fight with a sword, start as a \\nc[1].")
+   0()
+  IfPlayerPicksChoice(1,null)
+   0()
+  404()
+  0()
+
+
+
+EVENT   5
+ PAGE   1
+  ShowMessageFace("Actor4",1,0,2,1)
+  ShowMessage("\\n<Natalie>I will teach you what it means to be a [Martial Artist].")
+  ShowChoices(strings("Okay","No thanks"),2)
+  IfPlayerPicksChoice(0,null)
+   ShowMessageFace("Actor4",1,0,2,2)
+   ShowMessage("\\n<Natalie>Martial artists fight to the bitter end with nothing more than our fists! ...And our legs too, I guess.")
+   ShowMessageFace("Actor4",1,0,2,3)
+   ShowMessage("\\n<Natalie>We can't equip weapons and our defense is low, but we're extremely fast, with good evasion and accuracy.")
+   ShowMessageFace("Actor4",1,0,2,4)
+   ShowMessage("\\n<Natalie>Above all, we train our bodies to excel in hand-to-hand fighting. If you reach our more advanced jobs, you can even learn skills to recover your HP.")
+   ShowMessageFace("Actor4",1,0,2,5)
+   ShowMessage("\\n<Natalie>Hand-to-hand skills use SP, by the way. Since we can't use magic, we don't need MP.")
+   ShowMessageFace("Actor4",1,0,2,6)
+   ShowMessage("\\n<Natalie>The light armor is a weak point, but we are still very reliable. If you need a cornerstone attacker, don't hesitate to give the job a try.")
+   0()
+  IfPlayerPicksChoice(1,null)
+   0()
+  404()
+  0()
+
+
+
+EVENT   6
+ PAGE   1
+  ShowMessageFace("Actor4",2,0,2,1)
+  ShowMessage("\\n<Terence>I offer you guidance on the [Holy Knight].")
+  ShowChoices(strings("Thank you","I'll pass"),2)
+  IfPlayerPicksChoice(0,null)
+   ShowMessageFace("Actor4",2,0,2,2)
+   ShowMessage("\\n<Terence>Once you master [\\nc[1]] and [\\nc[44]], you can change your job to [Holy Knight]. We are knights that serve Ilias.")
+   ShowMessageFace("Actor4",2,0,2,3)
+   ShowMessage("\\n<Terence>We can make use of spear skills, and white magic, too. Able to attack and heal, the Holy Knight is a reassuring presence on the battlefield.")
+   ShowMessageFace("Actor4",2,0,2,4)
+   ShowMessage("\\n<Terence>In addition, the only spear skills we learn are holy ones, which manifest awesome power against evil monsters.")
+   ShowMessageFace("Actor4",2,0,2,5)
+   ShowMessage("\\n<Terence>That's not all, though. We also learn simple healing skills that consume SP instead of MP.")
+   ShowMessageFace("Actor4",2,0,2,6)
+   ShowMessage("\\n<Terence>All in all, the [Holy Knight] plays an active role in both attacking and healing. Sounds like a job worth pursuing, doesn't it?")
+   0()
+  IfPlayerPicksChoice(1,null)
+   0()
+  404()
+  0()
+
+
+
+EVENT   7
+ PAGE   1
+  ShowMessageFace("Actor4",4,0,2,1)
+  ShowMessage("\\n<Ernest>Let me tell you all about the [Spellsword].")
+  ShowChoices(strings("Yes","No"),2)
+  IfPlayerPicksChoice(0,null)
+   ShowMessageFace("Actor4",4,0,2,2)
+   ShowMessage("\\n<Ernest>The [Spellsword] is a combo of both [\\nc[33]] and [\\nc[1]]. Master those, and you'll unlock this advanced job.")
+   ShowMessageFace("Actor4",4,0,2,3)
+   ShowMessage("\\n<Ernest>Thanks to its career path, the [Spellsword] can use both sword skills and black magic, but the coolest part of the job are the spellblade skills.")
+   ShowMessageFace("Actor4",4,0,2,4)
+   ShowMessage("\\n<Ernest>Just like it sounds, spellblade skills infuse magic into your sword. It's easy to create a flaming sword, sword of ice, or whatever.")
+   ShowMessageFace("Actor4",4,0,2,5)
+   ShowMessage("\\n<Ernest>Once the magic is imbued, the effect will persist for several turns. For example, if you use [Spellblade Fire], you can attack with a flaming sword for a while.")
+   ShowMessageFace("Actor4",4,0,2,6)
+   ShowMessage("\\n<Ernest>Also, if you imbue your sword to hit your enemy's weak point, you'll inflict a lot of damage, of course.")
+   ShowMessageFace("Actor4",4,0,2,7)
+   ShowMessage("\\n<Ernest>And that's how a [Spellsword] combines magic and swords. With one in your party, you can adapt to any encounter you face.")
+   0()
+  IfPlayerPicksChoice(1,null)
+   0()
+  404()
+  0()
+
+
+
+EVENT   8
+ PAGE   1
+  ShowMessageFace("Actor5",2,0,2,1)
+  ShowMessage("\\n<Rick>Wanna hear about being a [Thief]?")
+  ShowChoices(strings("Yes","No"),2)
+  IfPlayerPicksChoice(0,null)
+   ShowMessageFace("Actor5",2,0,2,2)
+   ShowMessage("\\n<Rick>The job of a [Thief] is pretty simple. Monsters have some nice stuff, and we steal it from 'em.")
+   ShowMessageFace("Actor5",2,0,2,3)
+   ShowMessage("\\n<Rick>Other than that, we learn some nifty adventuring skills too. We can crack open locked chests and avoid preemptive strikes from enemies.")
+   ShowMessageFace("Actor5",2,0,2,4)
+   ShowMessage("\\n<Rick>The downside is that our physical strength ain't the greatest. Our agility is top-notch, but power, defense, and magic leave something to be desired.")
+   ShowMessageFace("Actor5",2,0,2,5)
+   ShowMessage("\\n<Rick>So we're not good at the fighting part, but we do learn skills that support the party. If you bring a [Thief] along, you won't regret it.")
+   0()
+  IfPlayerPicksChoice(1,null)
+   0()
+  404()
+  0()
+
+
+
+EVENT   9
+ PAGE   1
+  ShowMessageFace("Actor5",1,0,2,1)
+  ShowMessage("\\n<Brenda>Would you like to learn about the [Hunter]?")
+  ShowChoices(strings("Yes","No"),2)
+  IfPlayerPicksChoice(0,null)
+   ShowMessageFace("Actor5",1,0,2,2)
+   ShowMessage("\\n<Brenda>The [Hunter] lives with nature, befriends nature, and fights with nature.")
+   ShowMessageFace("Actor5",1,0,2,3)
+   ShowMessage("\\n<Brenda>We use many types of weapons, but the bow makes the best use of our abilities. Be careful, though. Our defense is rather weak.")
+   ShowMessageFace("Actor5",1,0,2,4)
+   ShowMessage("\\n<Brenda>Hunters learn bow skills, which target specific races for big damage.")
+   ShowMessageFace("Actor5",1,0,2,5)
+   ShowMessage("\\n<Brenda>For example, [Beast Killer] does a large amount of damage to any monster in the beast family, and [Flower Hunt] is extra effective against plant monsters.")
+   ShowMessageFace("Actor5",1,0,2,6)
+   ShowMessage("\\n<Brenda>It's true that our offense and defense isn't as good as a warrior's, but if our unique traits are used properly, our damage is superior.")
+   ShowMessageFace("Actor5",1,0,2,7)
+   ShowMessage("\\n<Brenda>That does make hunters more technical to employ, though. But getting the party out of jams against tough enemies is where the [Hunter] really shines.")
+   0()
+  IfPlayerPicksChoice(1,null)
+   0()
+  404()
+  0()
+
+
+
+EVENT   10
+ PAGE   1
+  If(1,1005,0,11,0)
+   If(4,66,0)
+    If(0,2065,0)
+     If(0,2064,0)
+      ShowMessageFace("vgirl_fc1",0,0,2,1)
+      ShowMessage("\\n<Vanilla>Hello, my name is Vanilla. I'm a merchant, and I was wondering if you happened to know anyone who makes shurikens.")
+      ShowMessageFace("Actor4",6,0,2,2)
+      ShowMessage("\\n<Ryoma>It just so happens that shurikens are a hobby of mine. I make them whenever I have some free time. My house is littered with them, actually...")
+      ShowMessageFace("vgirl_fc1",0,0,2,3)
+      ShowMessage("\\n<Vanilla>It seems I'm in luck! How about we make a deal...")
+      ShowMessageFace("",0,0,2,4)
+      ShowMessage("Vanilla negotiates an arrangement with Ryoma. The business experience she's gained so far really shows.")
+      ShowMessageFace("Actor4",6,0,2,5)
+      ShowMessage("\\n<Ryoma>I believe those conditions are favorable. I shall supply you with the agreed-upon number of shurikens every week.")
+      ShowMessageFace("vgirl_fc1",0,0,2,6)
+      ShowMessage("\\n<Vanilla>Thank you very much! I look forward to dealing with you more in the future!")
+      249(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0c,0x66,0x61,0x6e,0x66,0x61,0x6c,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69))
+      ShowMessageFace("",0,0,2,7)
+      ShowMessage("Vanilla can now sell shurikens at her shop!")
+      355("gain_medal(1502)")
+      ChangeVariable(1005,1005,0,0,12)
+      ChangeSwitch(2065,2065,1)
+      Wait(60)
+      EndEventProcessing()
+      0()
+     EndIf()
+     0()
+    EndIf()
+    0()
+   EndIf()
+   0()
+  EndIf()
+  If(1,1005,0,13,0)
+   If(4,66,0)
+    If(0,2065,0)
+     ShowMessageFace("vgirl_fc1",0,0,2,8)
+     ShowMessage("\\n<Vanilla>Hi, it's me, Vanilla. Is it possible for you to make Fuma Shurikens?")
+     ShowMessageFace("Actor4",6,0,2,9)
+     ShowMessage("\\n<Ryoma>Those are rather elaborate weapons. It might be a bit difficult to make those as a hobby...")
+     ShowMessageFace("vgirl_fc1",0,0,2,10)
+     ShowMessage("\\n<Vanilla>I think we can work something out. Of course, I plan to make it worth your while...")
+     ShowMessageFace("",0,0,2,11)
+     ShowMessage("Vanilla negotiates an arrangement with Ryoma. The business experience she's gained so far really shows.")
+     ShowMessageFace("Actor4",6,0,2,12)
+     ShowMessage("\\n<Ryoma>Yes, then I accept. I will start making Fuma Shurikens for you.")
+     ShowMessageFace("vgirl_fc1",0,0,2,13)
+     ShowMessage("\\n<Vanilla>Thank you very much! I look forward to dealing with you more in the future!")
+     249(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0c,0x66,0x61,0x6e,0x66,0x61,0x6c,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69))
+     ShowMessageFace("",0,0,2,14)
+     ShowMessage("Vanilla can now sell Fuma Shurikens at her shop!")
+     ChangeVariable(1005,1005,0,0,14)
+     ChangeSwitch(2065,2065,1)
+     Wait(60)
+     EndEventProcessing()
+     0()
+    EndIf()
+    0()
+   EndIf()
+   0()
+  EndIf()
+  ShowMessageFace("Actor4",6,0,2,15)
+  ShowMessage("\\n<Ryoma>I will lecture you on the ways of the [Samurai].")
+  ShowChoices(strings("I would be honored","I must humbly decline"),2)
+  IfPlayerPicksChoice(0,null)
+   ShowMessageFace("Actor4",6,0,2,16)
+   ShowMessage("\\n<Ryoma>We [Samurai] are warriors who hail from the eastern region of Yamatai. Using special sword skills with the katana, we overwhelm our foes.")
+   ShowMessageFace("Actor4",6,0,2,17)
+   ShowMessage("\\n<Ryoma>To join the elite Samurai, one must first master the [\\nc[1]]. In addition, one must also acquire a copy of the [Eastern Book of Secrets].")
+   ShowMessageFace("Actor4",6,0,2,18)
+   ShowMessage("\\n<Ryoma>You should be able to find said book in my hometown, but, as it is a valuable tome, getting your hands on one is not easy.")
+   ShowMessageFace("Actor4",6,0,2,19)
+   ShowMessage("\\n<Ryoma>However, as you'd expect from a job with steep requirements, a Samurai's abilities are excellent. Katana skills are unmatched by any others.")
+   ShowMessageFace("Actor4",6,0,2,20)
+   ShowMessage("\\n<Ryoma>As an offshoot of the warrior line, we aren't good at magic, but when it comes to offense, we are the best. Our defense isn't quite as good, though.")
+   ShowMessageFace("Actor4",6,0,2,21)
+   ShowMessage("\\n<Ryoma>Since the item you need is rather far away, you probably won't become a [Samurai] any time soon. Please keep the job in mind for later.")
+   0()
+  IfPlayerPicksChoice(1,null)
+   0()
+  404()
+  0()
+
+
+
+EVENT   11
+ PAGE   1
+  ShowMessageFace("Actor5",5,0,2,1)
+  ShowMessage("\\n<Norris>Hello, allow me to enlighten you about the [\\nc[44]] job.")
+  ShowChoices(strings("Okay","No thanks"),2)
+  IfPlayerPicksChoice(0,null)
+   ShowMessageFace("Actor5",5,0,2,2)
+   ShowMessage("\\n<Norris>\\nc[44]s like me serve the Goddess herself and devote our training to healing magic that alleviates the wounds of others.")
+   ShowMessageFace("Actor5",5,0,2,3)
+   ShowMessage("\\n<Norris>The \\nc[44]'s spells are known as white magic and focus heavily on healing. However, we also learn spells that raise our allies' abilities.")
+   ShowMessageFace("Actor5",5,0,2,4)
+   ShowMessage("\\n<Norris>As you'd expect, white magic consumes MP. You must always be careful not to squander your \\nc[44]'s MP, lest they run out when you need healing the most.")
+   ShowMessageFace("Actor5",5,0,2,5)
+   ShowMessage("\\n<Norris>We aren't as physically weak as \\nc[33]s, but that doesn't mean we're front line fighters either. We have low offensive and defensive capabilities.")
+   ShowMessageFace("Actor5",5,0,2,6)
+   ShowMessage("\\n<Norris>When it comes to equipment, \\nc[44]s primarily wield staves. They're the best weapon for boosting magic, but not suited to direct combat.")
+   ShowMessageFace("Actor5",5,0,2,7)
+   ShowMessage("\\n<Norris>You're always going to want a healer in your party, so I'd strongly recommend making one of your allies a \\nc[44].")
+   0()
+  IfPlayerPicksChoice(1,null)
+   0()
+  404()
+  0()
+
+
+
+EVENT   12
+ PAGE   1
+  ShowMessageFace("Actor5",7,0,2,1)
+  ShowMessage("\\n<Isabelle>Hey, let me tell you all about being a [\\nc[33]]!")
+  ShowChoices(strings("Sure","No thanks"),2)
+  IfPlayerPicksChoice(0,null)
+   ShowMessageFace("Actor5",7,0,2,2)
+   ShowMessage("\\n<Isabelle>So I'm a \\nc[33], right? We're the basic magical attack job. I guess you could say it's the first step in the magical attacker line.")
+   ShowMessageFace("Actor5",7,0,2,3)
+   ShowMessage("\\n<Isabelle>We're super squishy and awful in a straight-up fight, but obviously we make up for it in magical power.")
+   ShowMessageFace("Actor5",7,0,2,4)
+   ShowMessage("\\n<Isabelle>As for equipment, we use rods to boost our magic, but keep in mind that they aren't very good as melee weapons.")
+   ShowMessageFace("Actor5",7,0,2,5)
+   ShowMessage("\\n<Isabelle>[\\nc[33]s] focus on learning black magic, but, since it's only a basic job, we only get the simplest spells.")
+   ShowMessageFace("Actor5",7,0,2,6)
+   ShowMessage("\\n<Isabelle>Fire, ice, and lightning single target spells, and some status effect ones. That's about it, I guess.")
+   ShowMessageFace("Actor5",7,0,2,7)
+   ShowMessage("\\n<Isabelle>Magic uses MP of course, but, since we don't learn any skills, SP isn't used at all.")
+   ShowMessageFace("Actor5",7,0,2,8)
+   ShowMessage("\\n<Isabelle>Despite all that, you can't advance to later mage-type jobs unless you master this one first! So get to it!")
+   0()
+  IfPlayerPicksChoice(1,null)
+   0()
+  404()
+  0()
+
+
+
+EVENT   13
+ PAGE   1
+  ShowMessageFace("Actor5",6,0,2,1)
+  ShowMessage("\\n<Bob>Let me teach you about the [Sage].")
+  ShowChoices(strings("Yes","No"),2)
+  IfPlayerPicksChoice(0,null)
+   ShowMessageFace("Actor5",6,0,2,2)
+   ShowMessage("\\n<Bob>Once you master the [\\nc[33]] and [\\nc[44]] jobs, you can access the advanced [Sage] job.")
+   ShowMessageFace("Actor5",6,0,2,3)
+   ShowMessage("\\n<Bob>Just being able to use both white and black magic should make the job sound appealing.")
+   ShowMessageFace("Actor5",6,0,2,4)
+   ShowMessage("\\n<Bob>In addition, sages also learn other useful skills, such as enhancing your attributes and reducing MP consumption.")
+   ShowMessageFace("Actor5",6,0,2,5)
+   ShowMessage("\\n<Bob>Black magic, white magic, and useful abilities on top! Sages really are the experts when it comes to magic.")
+   ShowMessageFace("Actor5",6,0,2,6)
+   ShowMessage("\\n<Bob>Aah, what an amazing level of magical ability... I wish... Huh? Of course I'm a sage!")
+   0()
+  IfPlayerPicksChoice(1,null)
+   0()
+  404()
+  0()
+
+
+
+EVENT   14
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Young Noble>Everyone you'll encounter will have both a job and a race associated with them. Human Warrior, Slime Thief, etc.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Young Noble>There isn't anyone without a job and race. Even [Unemployed] is a job of sorts.")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Young Noble>If you talk to the Head Priest, you can change your job and even your race, although the latter requires you to satisfy certain conditions.")
+  ShowMessageFace("",0,0,2,4)
+  ShowMessage("\\n<Young Noble>Obviously I've never heard of a human changing their race, but monsters with enough experience can become higher-ranking types of monsters.")
+  ShowMessageFace("",0,0,2,5)
+  ShowMessage("\\n<Young Noble>Naturally a Slime isn't going to become a Beast, but there are monsters out there with the characteristics of multiple races.")
+  If(0,4,0)
+   ShowMessageFace("alice_fc5",1,0,2,6)
+   ShowMessage("\\n<Alice>As the Monster Lord, I possess the genes of many kinds of monsters, which lets me change between Beast, Lamia, and others at any time.")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   15
+ PAGE   1
+  ChangeSwitch(100,100,1)
+  ChangeSwitch(94,94,1)
+  355("$data_actors.each{|actor|")
+  655(" begin")
+  655("   v1 = actor.nil? || actor.name.empty?")
+  655("   v2 = (actor.name == \"***dummy\")")
+  655("   next if v1 || v2")
+  655("   v3 = $data_actors[actor.id].name")
+  655("   $game_actors[actor.id].name = v3")
+  655(" rescue")
+  655("  next")
+  655(" end")
+  655("}")
+  If(1,1003,0,6,0)
+   ShowMessageFace("People4",0,0,2,1)
+   ShowMessage("\\n<Head Priest>Glad to have you back, Unblessed Hero Luka. Amira? Sorry, no one by that name has been here.")
+   ShowMessageFace("People4",0,0,2,2)
+   ShowMessage("\\n<Head Priest>Perhaps you should check the town she was in once more? Anyway, do you require my services?")
+   ChangeVariable(1003,1003,0,0,7)
+   355("SceneManager.call(Scene_JobChange)")
+   ShowMessageFace("People4",0,0,2,3)
+   ShowMessage("\\n<Head Priest>When you change jobs, any equipment your new job can't use will be removed. Don't forget to check the status of your equipment after changing your job.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(4,531,0)
+   ShowMessageFace("People4",0,0,2,4)
+   ShowMessage("\\n<Head Priest>Well met... Who are you? Wait, it can't be! Is that really you?")
+   ShowMessageFace("saniria_fc2",0,0,2,5)
+   ShowMessage("\\n<King of San Ilia>No matter who I am, your job is still the same. Perform your duties as the head of this temple.")
+   ShowMessageFace("People4",0,0,2,6)
+   ShowMessage("\\n<Head Priest>Ah, yes... As you say. I shall carry them out as always.")
+   0()
+  Else()
+   ShowMessageFace("People4",0,0,2,7)
+   ShowMessage("\\n<Head Priest>Well met, Unblessed Hero Luka. Are you here to change jobs?")
+   0()
+  EndIf()
+  If(0,2312,1)
+   If(0,2311,0)
+    ChangeSwitch(2312,2312,0)
+    ShowMessageFace("People4",0,0,2,8)
+    ShowMessage("【Great priestess】")
+    ShowMessage("Mu, I do not have items that can change jobs to the top job.")
+    ShowMessage("No way, there is a person who will get it ... ...")
+    ShowMessageFace("People4",0,0,2,9)
+    ShowMessage("【Great priestess】")
+    ShowMessage("Then, you have to explain \"Mastery\".")
+    ShowMessage("Mastery is a professional abilities incidental to some top senior positions.")
+    ShowMessageFace("People4",0,0,2,10)
+    ShowMessage("【Great priestess】")
+    ShowMessage("A weapon that is good at that occupation ...")
+    ShowMessage("For example, \"Sword Saint\", \"Sword Mastery\" is attached.")
+    ShowMessageFace("People4",0,0,2,11)
+    ShowMessage("【Great priestess】")
+    ShowMessage("If you have a mastery, you can live with that weapon.")
+    ShowMessage("Therefore, when equipped with that weapon, the rise value is much higher than usual.")
+    ShowMessageFace("People4",0,0,2,12)
+    ShowMessage("【Great priestess】")
+    ShowMessage("When you change jobs to top jobs, check your job abilities.")
+    ShowMessage("If you have a mastery, it is a good idea to equip that weapon.")
+    0()
+   EndIf()
+   0()
+  EndIf()
+  355("SceneManager.call(Scene_JobChange)")
+  314(0,0)
+  ShowMessageFace("People4",0,0,2,13)
+  ShowMessage("\\n<Head Priest>When you change jobs, any equipment your new job can't use will be removed. Don't forget to rearrange your abilities afterward too.")
+  0()
+
+
+EVENT   16
+ PAGE   1
+  ShowMessageFace("Actor1",0,0,2,1)
+  ShowMessage("\\n<Ralph>I'll take time from my busy schedule to teach you about the job of a [Flirt].")
+  ShowChoices(strings("Thanks","No thanks"),2)
+  IfPlayerPicksChoice(0,null)
+   ShowMessageFace("Actor1",0,0,2,2)
+   ShowMessage("\\n<Ralph>When you hear [Flirt], you probably think all we do is play around, right? Well, you're correct. It isn't much of a job, but it counts anyway.")
+   ShowMessageFace("Actor1",0,0,2,3)
+   ShowMessage("\\n<Ralph>As you'd expect, we're not any good at attacking, defending, or magic either. Other than a high evasion rate, we aren't very useful in a fight.")
+   ShowMessageFace("Actor1",0,0,2,4)
+   ShowMessage("\\n<Ralph>However, we are crucial to unlocking other jobs. If you don't first master the art of the Flirt, you can't access the higher ranked jobs.")
+   ShowMessageFace("Actor1",0,0,2,5)
+   ShowMessage("\\n<Ralph>[Dancer], [Bard], [Harlot]... You can't become any of those without [Flirt] as your foundation.")
+   ShowMessageFace("Actor1",0,0,2,6)
+   ShowMessage("\\n<Ralph>Therefore, if you're interested in being an entertainer, you can't avoid first being a flirt. Persevere and your efforts will be rewarded.")
+   0()
+  IfPlayerPicksChoice(1,null)
+   0()
+  404()
+  0()
+
+
+
+EVENT   17
+ PAGE   1
+  ShowMessageFace("Actor1",3,0,2,1)
+  ShowMessage("\\n<Ulrika>All right, let me tell you about the [Informant] job.")
+  ShowChoices(strings("Sure","No thanks"),2)
+  IfPlayerPicksChoice(0,null)
+   ShowMessageFace("Actor1",3,0,2,2)
+   ShowMessage("\\n<Ulrika>The job of an [Informant] is to manipulate information. It's a cerebral job that uses knowledge and the art of conversation as weapons.")
+   ShowMessageFace("Actor1",3,0,2,3)
+   ShowMessage("\\n<Ulrika>Naturally, our skills fall under the conversation branch. You can do things like persuade enemies, praise them, threaten them, and more.")
+   ShowMessageFace("Actor1",3,0,2,4)
+   ShowMessage("\\n<Ulrika>Our specialty is getting items from enemies and convincing them to leave us alone. With enough skill, you can travel the world with nothing but words.")
+   ShowMessageFace("Actor1",3,0,2,5)
+   ShowMessage("\\n<Ulrika>We're weak when it comes to battle, but we can still provide valuable support through the use of conversation skills.")
+   ShowMessageFace("Actor1",3,0,2,6)
+   ShowMessage("\\n<Ulrika>If you want to negotiate with monsters, you should definitely bring an [Informant] along.")
+   If(8,615)
+    0()
+   Else()
+    ShowMessageFace("Actor1",3,0,2,7)
+    ShowMessage("\\n<Ulrika>Oh, but if you want to become an [Informant] you'll have to first join the Guild, and you can't do that without a referral from a guild member...")
+    0()
+   EndIf()
+   0()
+  IfPlayerPicksChoice(1,null)
+   0()
+  404()
+  0()
+
+
+
+EVENT   18
+ PAGE   1
+  ShowMessageFace("Actor2",2,0,2,1)
+  ShowMessage("\\n<Bennett>Are you familiar with the [Scholar] job? If not, I'd be glad to tell you about it.")
+  ShowChoices(strings("Do tell","No thanks"),2)
+  IfPlayerPicksChoice(0,null)
+   ShowMessageFace("Actor2",2,0,2,2)
+   ShowMessage("\\n<Bennett>[Scholars] are people who research the new field of magical science, which is not quite the same as magic itself.")
+   ShowMessageFace("Actor2",2,0,2,3)
+   ShowMessage("\\n<Bennett>Through Magic Science, scholars can call down fire and lightning, but, unlike magic, these skills consume SP instead of MP.")
+   ShowMessageFace("Actor2",2,0,2,4)
+   ShowMessage("\\n<Bennett>In other words, they're like \\nc[33]s who fight with SP. Of course, they aren't good in direct combat either.")
+   ShowMessageFace("Actor2",2,0,2,5)
+   ShowMessage("\\n<Bennett>They're nothing but a variation of a [\\nc[33]] to me. If that strikes your fancy, why not give the job a try?")
+   ShowMessageFace("Actor2",2,0,2,6)
+   ShowMessage("\\n<Bennett>...That made them sound kind of bad, didn't it? I'm a \\nc[44], so those scientists who refuse to honor Ilias don't sit well with me...")
+   ShowMessageFace("Actor2",2,0,2,7)
+   ShowMessage("\\n<Bennett>There are plenty of them that will tell you all about the potential for magical science, but don't you think they'll exaggerate its benefit?")
+   If(8,612)
+    0()
+   Else()
+    ShowMessageFace("Actor2",2,0,2,8)
+    ShowMessage("\\n<Bennett>Oh, you also need a doctorate to become a [Scholar]. There's only one university on this continent that awards those...")
+    0()
+   EndIf()
+   0()
+  IfPlayerPicksChoice(1,null)
+   0()
+  404()
+  0()
+
+
+
+EVENT   19
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Fortune Teller>Do you want to hear about the [Fortune Teller] job?")
+  ShowChoices(strings("Yes","No"),2)
+  IfPlayerPicksChoice(0,null)
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Fortune Teller>Fortune tellers are adept at telling fortunes. Is that it, you ask? Yes, that's it.")
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("\\n<Fortune Teller>We don't project an image of strength, and, indeed, we aren't strong. Since we're so weak, we aren't suited for direct combat.")
+   ShowMessageFace("",0,0,2,4)
+   ShowMessage("\\n<Fortune Teller>Our special weapon are cards, but those aren't strong either. Our defense is low, so we also aren't good at taking hits.")
+   ShowMessageFace("",0,0,2,5)
+   ShowMessage("\\n<Fortune Teller>The fortune teller's distinguishing characteristic are the Oracle skills. Their effects are random, so you never know what will happen.")
+   ShowMessageFace("",0,0,2,6)
+   ShowMessage("\\n<Fortune Teller>For example, the [Tarot] skill's effect depends on the card drawn. You could get lucky, or you could pull a dangerous card instead...")
+   ShowMessageFace("",0,0,2,7)
+   ShowMessage("\\n<Fortune Teller>Due to this, the fortune teller adds an element of luck and unpredictability to your battles. If that sounds fun to you, try bringing one of us along.")
+   If(8,610)
+    0()
+   Else()
+    ShowMessageFace("",0,0,2,8)
+    ShowMessage("\\n<Fortune Teller>By the way, a permit is required in order to change your job to [Fortune Teller]. There were too many charlatans giving us a bad name, so we formed a union.")
+    0()
+   EndIf()
+   0()
+  IfPlayerPicksChoice(1,null)
+   0()
+  404()
+  0()
+
+
+
+EVENT   20
+ PAGE   1
+  ShowMessageFace("Actor1",4,0,2,1)
+  ShowMessage("\\n<Lawrence>Ask nicely, and I'll teach you commoners about the [Noble].")
+  ShowChoices(strings("Please","No thanks"),2)
+  IfPlayerPicksChoice(0,null)
+   ShowMessageFace("Actor1",4,0,2,2)
+   ShowMessage("\\n<Lawrence>Nobles are those of us born to high class families. True nobles are superior in both mind and lineage.")
+   ShowMessageFace("Actor1",4,0,2,3)
+   ShowMessage("\\n<Lawrence>For this reason, nobles must fight to protect the weak and helpless. We fight with a rapier in one hand, using stylish thrusting sword skills.")
+   ShowMessageFace("Actor1",4,0,2,4)
+   ShowMessage("\\n<Lawrence>Our attributes are all higher than average, but we don't excel in any one category. Rather, our abilities are well balanced.")
+   ShowMessageFace("Actor1",4,0,2,5)
+   ShowMessage("\\n<Lawrence>If you master the [Noble], you will go places in life. It's your ticket to further greatness.")
+   0()
+  IfPlayerPicksChoice(1,null)
+   0()
+  404()
+  0()
+
+
+
+EVENT   21
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Guard>Do you know what the numbers after your skills mean? They represent the amount of MP or SP the skill consumes.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Guard>Blue numbers are for spells that require MP. Green numbers are for skills that require SP.")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Guard>They're the same colors as your MP and SP display bars, which makes them easy to remember. There are also skills that use both MP and SP.")
+  0()
+
+
+
+EVENT   22
+ PAGE   1
+  ShowMessageFace("Actor3",1,0,2,1)
+  ShowMessage("\\n<Vera>Let me teach you about the [Nurse].")
+  ShowChoices(strings("Yes","No"),2)
+  IfPlayerPicksChoice(0,null)
+   ShowMessageFace("Actor3",1,0,2,2)
+   ShowMessage("\\n<Vera>[Nurses] are those of us who study the art of medicine.")
+   ShowMessageFace("Actor3",1,0,2,3)
+   ShowMessage("\\n<Vera>Nurses can use the Medicine skills, which are focused on healing. However, they're different from white magic in that they requires no MP.")
+   ShowMessageFace("Actor3",1,0,2,4)
+   ShowMessage("\\n<Vera>With no MP consumption, you can always count on being able to use it. In addition, nurses learn skills not available to white magic.")
+   ShowMessageFace("Actor3",1,0,2,5)
+   ShowMessage("\\n<Vera>Nurses wield scalpels and learn a few combat skills, too. Since we're very familiar with the bodies of living things, we're quite powerful.")
+   ShowMessageFace("Actor3",1,0,2,6)
+   ShowMessage("\\n<Vera>Our defense isn't great, and our speed is so-so. Please, don't hesitate to try having a combat nurse in your party.")
+   If(8,617)
+    0()
+   Else()
+    ShowMessageFace("Actor3",1,0,2,7)
+    ShowMessage("\\n<Vera>...I completely forgot, but you need a license to become a [Nurse]. You can't become licensed to practice medicine unless you went to college.")
+    0()
+   EndIf()
+   0()
+  IfPlayerPicksChoice(1,null)
+   0()
+  404()
+  0()
+
+
+
+EVENT   23
+ PAGE   1
+  ShowMessageFace("Actor3",2,0,2,1)
+  ShowMessage("\\n<Elmer>Uhh, I'm so hungry... Who better than me, with my passion of food, to teach you about the [Chef] job?")
+  ShowChoices(strings("Okay","No thanks"),2)
+  IfPlayerPicksChoice(0,null)
+   ShowMessageFace("Actor3",2,0,2,2)
+   ShowMessage("\\n<Elmer>A [Chef] is someone who dedicates their life to food, wandering around the world in search of the ultimate flavor.")
+   ShowMessageFace("Actor3",2,0,2,3)
+   ShowMessage("\\n<Elmer>If you travel, you should be able to obtain many kinds of ingredients that can be used to cook during battle.")
+   ShowMessageFace("Actor3",2,0,2,4)
+   ShowMessage("\\n<Elmer>Cooking unleashes powerful skills while treating everyone to a meal at the same time. What other job can claim to do that?")
+   ShowMessageFace("Actor3",2,0,2,5)
+   ShowMessage("\\n<Elmer>You might have what it takes to walk the road of the chef. Now, go and find the ultimate flavor!")
+   If(8,616)
+    0()
+   Else()
+    ShowMessageFace("Actor3",2,0,2,6)
+    ShowMessage("\\n<Elmer>You need a cooking license to become a [Chef], though. You'll need to complete an apprenticeship, which makes obtaining the license somewhat difficult...")
+    0()
+   EndIf()
+   0()
+  IfPlayerPicksChoice(1,null)
+   0()
+  404()
+  0()
+
+
+
+EVENT   24
+ PAGE   1
+  281(0)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,251,30,8,2,0)
+  0()
+
+
+
+EVENT   25
+ PAGE   1
+  281(0)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,252,13,11,2,0)
+  0()
+
+
+
+EVENT   26
+ PAGE   1
+  281(0)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,252,41,11,2,0)
+  0()
+
+
+
+EVENT   27
+ PAGE   1
+  // condition: switch 2018 is ON
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Guard>Hey, it's me, the guard you saved from the poison marsh. Would you like me to explain the [Guard] job?")
+  ShowChoices(strings("Yes","No"),2)
+  IfPlayerPicksChoice(0,null)
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Guard>[Guards] are combat types focused on direct attacks. We wield swords and spears, but can't equip heavier weapons.")
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("\\n<Guard>However, the duty of a Guard is to avoid needless bloodshed. To do this, we focus on skills that weaken and otherwise impede the ability of our opponents to fight.")
+   ShowMessageFace("",0,0,2,4)
+   ShowMessage("\\n<Guard>Take [Power Break], for example, which lowers an enemy's attack power. Along the same lines, [Secure Hold] can bind an enemy for a short period of time.")
+   ShowMessageFace("",0,0,2,5)
+   ShowMessage("\\n<Guard>Through the use of these simple techniques, we can ensure that battles proceed smoothly and safely. Nothing makes a Guard happier than that.")
+   0()
+  IfPlayerPicksChoice(1,null)
+   0()
+  404()
+  If(0,1563,1)
+   ShowMessageFace("",0,0,2,6)
+   ShowMessage("\\n<Guard>Well, that's all I've got...  Honestly, I'd love to travel and train more.")
+   ShowMessageFace("",0,0,2,7)
+   ShowMessage("\\n<Guard>Hey, Luka, would it be all right if I tagged along?")
+   ShowChoices(strings("Let him join","Decline for now"),0)
+   IfPlayerPicksChoice(0,null)
+    ShowMessageFace("",0,0,2,8)
+    ShowMessage("\\n<Guard>Thanks, buddy!\nLooks like I'm the senior adventurer in this crew now...")
+    ShowMessageFace("",0,0,2,9)
+    ShowMessage("\\n<Guard>I suppose that means I have to start acting like it and be a good influence! I look forward to helping us succeed!")
+    PictureClear(5)
+    205(0,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x09,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x2a,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x0f,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x2c,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+    355("add_actor_ex(563)")
+    249(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0c,0x66,0x61,0x6e,0x66,0x61,0x6c,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69))
+    ShowMessageFace("",0,0,2,10)
+    ShowMessage("Pilate joined the party!")
+    Wait(60)
+    EndEventProcessing()
+    0()
+   IfPlayerPicksChoice(1,null)
+    ShowMessageFace("",0,0,2,11)
+    ShowMessage("\\n<Guard>Oh... I guess I'll have to find someone else. You can't just go traveling by yourself...")
+    0()
+   404()
+   0()
+  EndIf()
+  0()
+ PAGE   2
+  // condition: switch 2018 is ON
+  // condition: switch 1563 is ON
+  ShowMessageFace("People4",7,0,2,1)
+  ShowMessage("\\n<Pilate>When not in your party, I'll stay here and offer job guidance. I can't imagine you do, but would you like to hear about the [Guard] job again?")
+  ShowChoices(strings("Yes","No"),2)
+  IfPlayerPicksChoice(0,null)
+   ShowMessageFace("People4",7,0,2,2)
+   ShowMessage("\\n<Pilate>[Guards] are combat types focused on direct attacks. We wield swords and spears, but can't equip heavier weapons.")
+   ShowMessageFace("People4",7,0,2,3)
+   ShowMessage("\\n<Pilate>However, the duty of a Guard is to avoid needless bloodshed. To do this, we focus on skills that weaken and otherwise impede the ability of our opponents to fight.")
+   ShowMessageFace("People4",7,0,2,4)
+   ShowMessage("\\n<Pilate>Take [Power Break], for example, which lowers an enemy's attack power. Along the same lines, [Secure Hold] can bind an enemy for a short period of time.")
+   ShowMessageFace("People4",7,0,2,5)
+   ShowMessage("\\n<Pilate>Through the use of these simple techniques, we can ensure that battles proceed smoothly and safely. Nothing makes a Guard happier than that.")
+   0()
+  IfPlayerPicksChoice(1,null)
+   0()
+  404()
+  0()
+ PAGE   3
+  // condition: party contains actor #563
+  0()
+
+
+
+EVENT   28
+ PAGE   1
+  // condition: player has item #601
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Merchant>Shall I explain the [Merchant] job to you? Free of charge, of course.")
+  ShowChoices(strings("Yes","No"),2)
+  IfPlayerPicksChoice(0,null)
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Merchant>[Merchants] travel all over the world to peddle goods and earn money. As you'd expect, we're not especially useful when it comes to fighting.")
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("\\n<Merchant>However, merchants are experts at acquiring gold, and just having one in your party can increase how much you earn after every battle.")
+   ShowMessageFace("",0,0,2,4)
+   ShowMessage("\\n<Merchant>In addition, merchant skills can put that gold to work for you, allowing you to bribe enemies or teleport home, for example. Money makes the world go 'round.")
+   ShowMessageFace("",0,0,2,5)
+   ShowMessage("\\n<Merchant>The ability to buy items during battle is especially useful. That can be a real life-saver in an emergency.")
+   ShowMessageFace("",0,0,2,6)
+   ShowMessage("\\n<Merchant>We merchants wield an abacus in battle. They aren't too good for bashing monsters over the head, but the better ones will reduce how much gold our skills cost.")
+   ShowMessageFace("",0,0,2,7)
+   ShowMessage("\\n<Merchant>There may be times when you wish you had a different job in battle, but at least your purse will never be light.")
+   0()
+  IfPlayerPicksChoice(1,null)
+   0()
+  404()
+  0()
+
+
+
+EVENT   29
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Maid>I am delighted to make your acquaintance. Would you like me to explain a maid's duties?")
+  ShowChoices(strings("Yes","No"),2)
+  IfPlayerPicksChoice(0,null)
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Maid>Then please allow me a minute of your time. The [Maid] is in the business of serving others.")
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("\\n<Maid>Therefore, the skills we learn are geared towards performing various services for other party members. Healing, curing, enhancing... All sorts of things.")
+   ShowMessageFace("",0,0,2,4)
+   ShowMessage("\\n<Maid>Our services aren't limited to allies either. The services we can perform for our enemies will leave them quivering on the ground, unable to fight.")
+   ShowMessageFace("",0,0,2,5)
+   ShowMessage("\\n<Maid>As you can see, a maid's services are very versatile. While not as good as a specialist at any one role, maids are useful as support.")
+   ShowMessageFace("",0,0,2,6)
+   ShowMessage("\\n<Maid>As for weapons, maids use plates. Are you wondering if we throw them? Hit enemies with them, perhaps? Sorry, it's a trade secret.")
+   ShowMessageFace("",0,0,2,7)
+   ShowMessage("\\n<Maid>In summary, a maid's duty is to serve allies and enemies. Please invite one into your party today.")
+   If(8,618)
+    0()
+   Else()
+    ShowMessageFace("",0,0,2,8)
+    ShowMessage("\\n<Maid>Forgive me for failing to mention this earlier, but you will need a license to become a [Maid].")
+    0()
+   EndIf()
+   0()
+  IfPlayerPicksChoice(1,null)
+   0()
+  404()
+  0()
+
+
+
+EVENT   30
+ PAGE   1
+  // condition: variable 1001 >= 5
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Guard>Get a move on, the Head Priest is getting tired of waiting. Sonya is too, for that matter...")
+  0()
+ PAGE   2
+  // condition: variable 1001 >= 6
+  0()
+
+
+
+EVENT   31
+ PAGE   1
+  // condition: variable 1001 >= 5
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Guard>You're kind of late... Well, no matter. I heard how you saved Hans and everything.")
+  0()
+ PAGE   2
+  // condition: variable 1001 >= 6
+  0()
+
+
+
+EVENT   32
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Sister>Depending on your job, the types of skills you can use will be different. Even if you know a skill, you won't be able to use it if its incompatible with your job.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Sister>For example, when you're a [\\nc[1]], you won't be able to use magic. When you're a [\\nc[44]], you won't be able to use any sword skills or black magic.")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Sister>A [Sage] can use both white and black magic, however. Keep all this in mind when choosing your jobs.")
+  ShowMessageFace("",0,0,2,4)
+  ShowMessage("\\n<Sister>You can always change your job whenever you like, so don't stress out about it. Give lots of jobs a try and see which ones suit you the best.")
+  0()
+
+
+
+EVENT   33
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Poet>Once you obtain a new job level, you'll keep it even after you change jobs. Don't worry, you won't forget your skills from that job either.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Poet>As long as you satisfy the conditions, you can freely change between jobs. Once you change back, you'll resume your previous level in that job.")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Poet>Let's say you dabble as a [\\nc[1]], then switch to [\\nc[44]]. If you get bored and switch back to [\\nc[1]], you'll keep everything you learned.")
+  ShowMessageFace("",0,0,2,4)
+  ShowMessage("\\n<Poet>Thus you can continue to acquire experience for various jobs without hassle. Sounds pretty good, doesn't it?")
+  0()
+
+
+
+EVENT   34
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Woman>You can learn new skills when you gain job levels. For the most part, these skills can be used even after you change jobs.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Woman>That said, there are many exceptions. For example, \\nc[1]s can't use magic even if they know some spells.")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Woman>There are many skills you can't use depending on your job, so don't freak out when you change jobs and can't use some old skills in your new job.")
+  0()
+
+
+
+EVENT   35
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Guard>You must never give in to the temptations of those unsavory monsters. If they make you come, you'll lose all your will to fight.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Guard>You've heard of the phenomenon called [Critical Ecstasy], right? According to scholars, the act of ejaculation allows the monsters' inherent dark energy to seep into your body.")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Guard>A simple soldier like me can't fully understand the theory, but I do know that if you get raped by a monster, you'll submit in both mind and body.")
+  ShowMessageFace("",0,0,2,4)
+  ShowMessage("\\n<Guard>Suffice to say, you'll be doomed at that point. Unable to fight back, you'll become nothing but the monster's prey...")
+  ShowMessageFace("",0,0,2,5)
+  ShowMessage("\\n<Guard>Nevertheless, there's no shortage of heretics in the world who actually go looking for that. What a sad state of affairs we live in these days...")
+  ShowMessageFace("",0,0,2,6)
+  ShowMessage("\\n<Guard>Oh Goddess Ilias, please strike down those corrupted fools with your divine judgment...")
+  If(0,5,0)
+   ShowMessageFace("iriasu_fc4",0,0,2,7)
+   ShowMessage("\\n<Ilias>Very well, I'll pass judgment all right. I've seen you secretly desiring to be raped by monsters yourself!")
+   355("display_skill_name(\"Thunder of Judgment\")")
+   250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0f,0x6d,0x6f,0x6e,0x5f,0x64,0x65,0x6e,0x70,0x61,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+   225(5,5,30,true)
+   ShowMessageFace("",0,0,2,8)
+   ShowMessage("Ilias releases the power of Heaven!")
+   355("clear_skill_name")
+   ShowMessageFace("",0,0,2,9)
+   ShowMessage("\\n<Guard>Whoa, you shocked me!")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   36
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Guard>The Goddess Ilias hasn't been seen since the Great Disaster thirty years ago. There are already people who say she's dead.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Guard>Sadly, faith in Ilias has declined, with many giving up hope in her entirely. Nevertheless, there are still many of us who hold fast to our beliefs.")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Guard>Ilias will come back to us, I just know it. I believe that today, and I'll believe it tomorrow, too.")
+  If(0,5,0)
+   ShowMessageFace("iriasu_fc4",0,0,2,4)
+   ShowMessage("\\n<Ilias>I applaud your dedication. Never stop serving me.")
+   ShowMessageFace("",0,0,2,5)
+   ShowMessage("\\n<Guard>Um, sure...?")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   37
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Guard>Strangers aren't allowed to enter the temple's basement, but you're more than welcome, Luka.")
+  0()
+
+
+
+EVENT   38
+ PAGE   1
+  // condition: variable 1001 >= 5
+  ChangeSwitch(31,31,1)
+  314(0,0)
+  205(-1,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x1a,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x22,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x06,0x69,0x0a,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x23,0x3b,0x0c,0x5b,0x06,0x69,0x09,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x09,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x09,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x09,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x09,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x09,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x09,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x09,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x09,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x09,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x09,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x09,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x09,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x09,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x09,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x09,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x09,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x09,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x09,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  ShowMessageFace("ruka_fc1",0,0,2,1)
+  ShowMessage("\\n<Luka>Sorry! I know I'm late!")
+  ShowMessageFace("People4",0,0,2,2)
+  ShowMessage("\\n<Head Priest>I heard how you went alone into the mountains and rescued a villager. You may be a tad late, but I'm sure Ilias would overlook it given the situation.")
+  ShowMessageFace("People4",0,0,2,3)
+  ShowMessage("\\n<Head Priest>Without further ado, let's begin the ceremony. ...Sonya, the holy water, please.")
+  ShowMessageFace("sonia_fc7",4,0,2,4)
+  ShowMessage("\\n<Sonya>...Oh, right.")
+  205(39,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x08,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x09,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x17,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  ShowMessageFace("sonia_fc7",5,0,2,5)
+  ShowMessage("\\n<Sonya>Here you are, Your Grace.")
+  ShowMessageFace("People4",0,0,2,6)
+  ShowMessage("\\n<Head Priest>Thank you.")
+  205(39,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x08,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x06,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x17,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  ShowMessageFace("People4",0,0,2,7)
+  ShowMessage("\\n<Head Priest>Luka, I will now pour the holy water over you...")
+  ShowMessageFace("",0,0,2,8)
+  ShowMessage("The Head Priest pours water onto Luka's head.")
+  ShowMessageFace("ruka_fc1",0,0,2,9)
+  ShowMessage("\\n<Luka>......")
+  ShowMessageFace("People4",0,0,2,10)
+  ShowMessage("\\n<Head Priest>That's it. Hope it wasn't too much of a let-down. In the old days, this would be when the Goddess herself would descend from Heaven to meet you.")
+  241(bytes(0x04,0x08,0x6f,0x3a,0x0d,0x52,0x50,0x47,0x3a,0x3a,0x42,0x47,0x4d,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x00,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69))
+  Wait(30)
+  ShowMessageFace("",0,0,2,11)
+  ShowMessage("\\n<???>Luka... Hero Luka... Can you hear my voice?")
+  ShowSpeechBalloon(-1,1,false)
+  ShowSpeechBalloon(15,1,false)
+  ShowSpeechBalloon(39,1,false)
+  205(15,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x46,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x07,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x18,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  205(39,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x46,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x07,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x18,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  ShowMessageFace("ruka_fc1",0,0,2,12)
+  ShowMessage("\\n<Luka>...Wha!?")
+  ShowMessageFace("People4",0,0,2,13)
+  ShowMessage("\\n<Head Priest>It can't be! That voice...")
+  Wait(60)
+  241(bytes(0x04,0x08,0x6f,0x3a,0x0d,0x52,0x50,0x47,0x3a,0x3a,0x42,0x47,0x4d,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x69,0x72,0x69,0x61,0x73,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69))
+  PictureDisplay(5,"80_iriasu_st04",0,0,0,0,100,100,0,0)
+  PictureMove(5,null,0,0,0,0,100,100,255,0,60,true)
+  ShowMessageFace("ruka_fc1",0,0,2,14)
+  ShowMessage("\\n<Luka>Ilias!")
+  ShowMessageFace("People4",0,0,2,15)
+  ShowMessage("\\n<Head Priest>I can't believe it. After all this time...")
+  ShowMessageFace("sonia_fc7",7,0,2,16)
+  ShowMessage("\\n<Sonya>No way... That's the real Ilias?")
+  ShowMessageFace("iriasu_fc1",3,0,2,17)
+  ShowMessage("\\n<Ilias>Luka, the world is teetering on the edge of ruin. Even as we speak, the darkness covering it is spreading faster and faster.")
+  ShowMessageFace("iriasu_fc1",3,0,2,18)
+  ShowMessage("\\n<Ilias>The only one who can thwart it is you, Luka. You're the very last hope this world has.")
+  ShowMessageFace("iriasu_fc1",3,0,2,19)
+  ShowMessage("\\n<Ilias>As I am now, I don't have enough power to baptize you. It's taking everything I have left just to get you this message.")
+  ShowMessageFace("iriasu_fc1",3,0,2,20)
+  ShowMessage("\\n<Ilias>But, even without a baptism or blessing, you're a true hero in my eyes. Yes, an unblessed hero...")
+  ShowMessageFace("iriasu_fc1",3,0,2,21)
+  ShowMessage("\\n<Ilias>Unblessed Hero Luka, please... Please save...")
+  ShowMessageFace("iriasu_fc1",3,0,2,22)
+  ShowMessage("\\n<Ilias>This world...")
+  PictureMove(5,null,0,0,0,0,100,100,0,0,60,true)
+  PictureClear(5)
+  Wait(60)
+  241(bytes(0x04,0x08,0x6f,0x3a,0x0d,0x52,0x50,0x47,0x3a,0x3a,0x42,0x47,0x4d,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0b,0x73,0x69,0x6e,0x64,0x65,0x6e,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69))
+  ShowMessageFace("ruka_fc1",0,0,2,23)
+  ShowMessage("\\n<Luka>......")
+  ShowMessageFace("sonia_fc7",7,0,2,24)
+  ShowMessage("\\n<Sonya>......")
+  ShowMessageFace("People4",0,0,2,25)
+  ShowMessage("\\n<Head Priest>Ilias, I never lost faith in you. I knew your holiness could never be destroyed...")
+  355("gain_medal(2)")
+  205(15,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x46,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x07,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x15,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  205(39,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x46,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x07,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x18,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  ShowMessageFace("People4",0,0,2,26)
+  ShowMessage("\\n<Head Priest>Luka, it appears you've been burdened with a great destiny. You must save the world, Unblessed Hero.")
+  ShowMessageFace("ruka_fc1",0,0,2,27)
+  ShowMessage("\\n<Luka>Me? Save the world?")
+  ShowMessageFace("People4",0,0,2,28)
+  ShowMessage("\\n<Head Priest>It may be prudent to keep the nature of your quest a secret, however.")
+  ShowMessageFace("People4",0,0,2,29)
+  ShowMessage("\\n<Head Priest>The Goddess told us that the world is being covered in darkness. If the masses learned of this, it could cause a great deal of panic and strife.")
+  ShowMessageFace("sonia_fc6",2,0,2,30)
+  ShowMessage("\\n<Sonya>This seems like a lot of pressure to put on Luka. He's reckless under the best of circumstances, but if he's treated like some legendary hero...")
+  ShowMessageFace("People4",0,0,2,31)
+  ShowMessage("\\n<Head Priest>That is why we must keep this between ourselves.")
+  ShowMessageFace("sonia_fc7",5,0,2,32)
+  ShowMessage("\\n<Sonya>I understand, Your Grace.")
+  ShowMessageFace("People4",0,0,2,33)
+  ShowMessage("\\n<Head Priest>You must remain discreet on your journey as well, Luka. I know you may be excited, but strange things are afoot.")
+  ShowMessageFace("ruka_fc1",0,0,2,34)
+  ShowMessage("\\n<Luka>I... I understand.")
+  ShowMessageFace("People4",0,0,2,35)
+  ShowMessage("\\n<Head Priest>Sonya, please don't mention this to anyone.")
+  ShowMessageFace("sonia_fc6",2,0,2,36)
+  ShowMessage("\\n<Sonya>I won't...\\! Wait, why am I the only one who has to be told that twice?")
+  ShowMessageFace("People4",0,0,2,37)
+  ShowMessage("\\n<Head Priest>Go Luka, unblessed hero that you are! Do everything in your power to obey Ilias.")
+  ShowMessageFace("sonia_fc6",3,0,2,38)
+  ShowMessage("\\n<Sonya>Your Grace, not so loud...")
+  ShowMessageFace("People4",0,0,2,39)
+  ShowMessage("\\n<Head Priest>...Ahem. Anyway, do your best, and do not waver. Come talk to me whenever you want to change jobs.")
+  205(-1,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x46,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x07,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x16,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  205(39,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x46,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x07,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x17,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  ShowMessageFace("sonia_fc5",0,0,2,40)
+  ShowMessage("\\n<Sonya>Later, Luka. I'll be waiting in the village.")
+  205(-1,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x46,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x07,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x15,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  205(39,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x14,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x22,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x06,0x69,0x0b,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x23,0x3b,0x0c,0x5b,0x06,0x69,0x09,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x2a,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x06,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x06,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x06,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x06,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x06,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x06,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x06,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x06,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x06,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x06,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x06,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  PictureDisplay(5,"iv_sonia_bousi1",1,0,300,200,100,100,255,0)
+  Wait(15)
+  PictureDisplay(5,"iv_sonia_bousi2",1,0,300,200,100,100,255,0)
+  ShowMessageFace("ruka_fc1",0,0,2,41)
+  ShowMessage("\\n<Luka>Sonya, you dropped...")
+  PictureDisplay(5,"iv_sonia_bousi3",1,0,300,250,100,100,255,0)
+  ShowMessageFace("ruka_fc1",0,0,2,42)
+  ShowMessage("\\n<Luka>Your hat...")
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeInventoryArmor(234,0,0,1,false)
+  PictureClear(5)
+  ShowMessageFace("People4",0,0,2,43)
+  ShowMessage("\\n<Head Priest>No running in the temple! I swear...")
+  Wait(60)
+  ShowMessageFace("sonia_fc2",0,0,2,44)
+  ShowMessage("\\n<Sonya>Luka, we have a problem! Come quick!")
+  ChangeSwitch(31,31,0)
+  205(39,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x15,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x22,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x06,0x69,0x0b,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x23,0x3b,0x0c,0x5b,0x06,0x69,0x09,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x2a,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x09,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x09,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x09,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x09,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x09,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x09,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x09,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x09,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x09,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x09,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x09,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x17,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  205(-1,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x46,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x07,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x16,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  ShowMessageFace("ruka_fc1",0,0,2,45)
+  ShowMessage("\\n<Luka>What is it this time? Calm down a second and just tell me!")
+  ShowMessageFace("sonia_fc2",0,0,2,46)
+  ShowMessage("\\n<Sonya>No time to talk about it! Your house, lots of trouble!")
+  ShowMessageFace("sonia_fc2",0,0,2,47)
+  ShowMessage("\\n<Sonya>There's a pair of children fighting in there, a monster and an angel! They're beating each other up and making a mess of the place!")
+  ShowMessageFace("ruka_fc1",0,0,2,48)
+  ShowMessage("\\n<Luka>Children? A monster and an angel...? The two I met on the mountain, perhaps...")
+  ShowMessageFace("ruka_fc1",0,0,2,49)
+  ShowMessage("\\n<Luka>What are they doing in my house... Crap, I better go see!")
+  205(-1,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x1f,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x22,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x06,0x69,0x0a,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x23,0x3b,0x0c,0x5b,0x06,0x69,0x09,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x06,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x06,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x06,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x06,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x06,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x06,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x06,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x06,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x06,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x06,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x06,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x06,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x06,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x06,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x06,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x06,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x06,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x06,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x06,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x06,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x06,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x22,0x3b,0x0c,0x5b,0x06,0x69,0x09,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x23,0x3b,0x0c,0x5b,0x06,0x69,0x08,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  211(0)
+  ShowMessageFace("People4",0,0,2,50)
+  ShowMessage("\\n<Head Priest>No running in the temple! I swear...")
+  TeleportPlayer(0,7,19,1,0,0)
+  211(1)
+  ChangeVariable(1001,1001,0,0,6)
+  ChangeSwitch(31,31,1)
+  0()
+ PAGE   2
+  // condition: variable 1001 >= 6
+  0()
+
+
+
+EVENT   39
+ PAGE   1
+  // condition: variable 1001 >= 5
+  0()
+ PAGE   2
+  // condition: switch 31 is ON
+  // condition: variable 1001 >= 5
+  0()
+ PAGE   3
+  // condition: variable 1001 >= 6
+  0()
+
+
+
+EVENT   40
+ PAGE   1
+  ShowMessageFace("",1,0,2,1)
+  ShowMessage("\\n<Scholar>In the beginning you'll only have access to the most basic jobs. However, once you've mastered those, you'll be able to change to the advanced ones.")
+  ShowMessageFace("",1,0,2,2)
+  ShowMessage("\\n<Scholar>For example, if you master the basic [\\nc[1]] job, you can then become the higher-ranked [\\nc[2]].")
+  ShowMessageFace("",1,0,2,3)
+  ShowMessage("\\n<Scholar>In addition, if you master multiple basic jobs, you can unlock advanced jobs that require such combinations.")
+  ShowMessageFace("",1,0,2,4)
+  ShowMessage("\\n<Scholar>For example, mastering both [\\nc[33]] and [\\nc[44]] will unlock the [Sage] job.")
+  ShowMessageFace("",0,0,2,5)
+  ShowMessage("\\n<Scholar>That said, the majority of adventurers never advance beyond the basic jobs. It takes real diligence to join the elite few in the advanced ranks.")
+  ShowMessageFace("",0,0,2,6)
+  ShowMessage("\\n<Scholar>The highest ranked jobs narrow the field even further. Most of them only have a few members in the entire world...")
+  0()
+
+
+
+EVENT   41
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Guard>This is weird. I feel like my Gale Thrust isn't nearly as powerful as it used to be.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Warrior>That's probably because you have a boomerang equipped. Using sword skills with a boomerang isn't nearly as effective as using them with an actual sword.")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Warrior>If you want to maximize your damage, you need the right weapon. Use a sword for sword skills, and a shield for shield skills, etc.")
+  ShowMessageFace("",0,0,2,4)
+  ShowMessage("\\n<Guard>Oh, that makes sense!")
+  ShowMessageFace("",0,0,2,5)
+  ShowMessage("\\n<Warrior>That said, weapons have differing affinities with skills. For example, using axe skills with a club is still fairly effective.")
+  ShowMessageFace("",0,0,2,6)
+  ShowMessage("\\n<Warrior>Using sword skills with a boomerang, though? That's stupid. You won't get any damage boost at all. Your Gale Thrust will do 50% more damage with a sword equipped instead.")
+  ShowMessageFace("",0,0,2,7)
+  ShowMessage("\\n<Guard>I see. So it's important to match your equipment with the skills you're using! Otherwise you won't be able to fight at your full strength!")
+  ShowMessageFace("",0,0,2,8)
+  ShowMessage("\\n<Warrior>How can you even be a soldier without already knowing this... I guess this is why the soldiers of Ilias Temple are known for being the worst in the world.")
+  0()
+
+
+
+EVENT   42
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Guard>This is weird. I feel like my Gale Thrust isn't nearly as powerful as it used to be.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Warrior>That's probably because you have a boomerang equipped. Using sword skills with a boomerang isn't nearly as effective as using them with an actual sword.")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Warrior>If you want to maximize your damage, you need the right weapon. Use a sword for sword skills, and a shield for shield skills, etc.")
+  ShowMessageFace("",0,0,2,4)
+  ShowMessage("\\n<Guard>Oh, that makes sense!")
+  ShowMessageFace("",0,0,2,5)
+  ShowMessage("\\n<Warrior>That said, weapons have differing affinities with skills. For example, using axe skills with a club is still fairly effective.")
+  ShowMessageFace("",0,0,2,6)
+  ShowMessage("\\n<Warrior>Using sword skills with a boomerang, though? That's stupid. You won't get any damage boost at all. Your Gale Thrust will do 50% more damage with a sword equipped instead.")
+  ShowMessageFace("",0,0,2,7)
+  ShowMessage("\\n<Guard>I see. So it's important to match your equipment with the skills you're using! Otherwise you won't be able to fight at your full strength!")
+  ShowMessageFace("",0,0,2,8)
+  ShowMessage("\\n<Warrior>How can you even be a soldier without already knowing this... I guess this is why the soldiers of Ilias Temple are known for being the worst in the world.")
+  0()
+
+
+
+EVENT   43
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Guard>The soldiers of Ilias Temple are famous for being incompetent, but that's only because we never get into any real combat.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Guard>Sure, the slime girls make a ruckus every now and then, but once we surround them, they break down crying.")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Guard>If you ask me, the soldiers of the four major powers are all superhuman. They have to contend with magical dolls, fight huge numbers of ant girls, and worse...")
+  ShowMessageFace("",0,0,2,4)
+  ShowMessage("\\n<Guard>How are we supposed to match up to those guys? It's so peaceful around here in comparison.")
+  0()
+
+
+
+EVENT   44
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Guard>This is a lounge for the soldiers of Ilias Temple. Anyone can feel free to use it, though.")
+  0()
+
+
+
+EVENT   45
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("The soldier looks extremely drunk...")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Guard>Oh little Sonya... Our little temple idol...")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Guard>Waa, waa... You left us... Little Sonya grew up and left us...")
+  ShowMessageFace("",0,0,2,4)
+  ShowMessage("\\n<Guard>Damn it alllllllll! Luuuukaaaaa!!")
+  ShowMessageFace("",0,0,2,5)
+  ShowMessage("\\n<Guard>Heyyy, your father is a legend! Your mother was so hot too!")
+  ShowMessageFace("",0,0,2,6)
+  ShowMessage("\\n<Guard>But your father left to save the world... And your mother died...")
+  ShowMessageFace("",0,0,2,7)
+  ShowMessage("\\n<Guard>Leaving you all alone... But still, you trained hard, and now you're going to find him!")
+  ShowMessageFace("",0,0,2,8)
+  ShowMessage("\\n<Guard>Damn good job, man! Luuukaaaaa!!")
+  ShowMessageFace("",0,0,2,9)
+  ShowMessage("\\n<Guard>Oh little Sonya... Our little temple idol...")
+  ShowMessageFace("",0,0,2,10)
+  ShowMessage("\\n<Guard>Waa, waa... You left us... Little Sonya grew up and left us...")
+  ShowMessageFace("",0,0,2,11)
+  ShowMessage("\\n<Guard>Damn it alllllllll! Luuuukaaaaa!!")
+  ShowMessageFace("",0,0,2,12)
+  ShowMessage("Yeah, he's drunk all right.")
+  0()
+
+
+
+EVENT   46
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Guard>Sheesh, Jim's been like that for a while now. You guys better watch your back around him.")
+  0()
+
+
+
+EVENT   47
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Guard>This is a room for travelers to rest in. At present there are some named NPCs in here.")
+  ShowMessageFace("ruka_fc1",0,0,2,2)
+  ShowMessage("\\n<Luka>NPCs?")
+  If(0,4,0)
+   ShowMessageFace("alice_fc5",0,0,2,3)
+   ShowMessage("\\n<Alice>They're minor characters who don't have anything to do with our objectives. I doubt they'll even join us.")
+   0()
+  EndIf()
+  If(0,5,0)
+   ShowMessageFace("iriasu_fc4",0,0,2,4)
+   ShowMessage("\\n<Ilias>They're simply minor characters who provide some explanations or exposition. Aside from that, they aren't important to our journey.")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   48
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Scholar>There are many more jobs in the world than just the ones you can learn about here. I wonder how many there really are...")
+  0()
+
+
+
+EVENT   49
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Young Noble>The weapons you can equip depend on the job you currently have. If you're a warrior-type, you'll be able to use all sorts of weapons. A healer, however, is kind of stuck with staves.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Young Noble>Armor, on the other hand, is job independent. Instead, armor relies completely on your race.")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Young Noble>Weapons relate to job, armor relates to race. Never forget that.")
+  ShowMessageFace("",0,0,2,4)
+  ShowMessage("\\n<Young Noble>Humans are a notable exception, though. The armor a person can wear depends on his or her physique.")
+  0()
+
+
+
+EVENT   50
+ PAGE   1
+  // condition: variable 1001 >= 6
+  If(1,1001,0,12,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Guard>This temple houses many resources for fledgling adventurers like yourself. I'd suggest talking with everyone and learning what they know.")
+   0()
+  EndIf()
+  If(1,1001,0,13,1)
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Guard>This temple houses many resources for fledgling adventurers. You're a veteran by now, but you still might learn something new.")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   51
+ PAGE   1
+  // condition: variable 1001 >= 6
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Guard>You can change your job here at Ilias Temple. Luka, you should regularly change jobs to meet the current needs of your adventure.")
+  0()
+
+
+
+EVENT   52
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Official>There used to be three continents in our world. The southern Ilias continent, the central Sentora continent, and the northern continent of Hellgondo.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Official>However, in the Great Disaster thirty years ago, a fourth continent appeared. Would you like to hear about the continents?")
+  DefineLabel("1")
+  StartLoop()
+   355("unlimited_choices(11,")
+   655("[\"Ilias\", \"Sentora\",")
+   655("\"Hellgondo\",\"Snow Continent\",\"I've heard enough\"])")
+   If(1,11,0,0,0)
+    ShowMessageFace("",0,0,2,3)
+    ShowMessage("\\n<Official>The Ilias continent, as you know, is the one we're on right now. It's neither a large continent, nor one with any major countries.")
+    ShowMessageFace("",0,0,2,4)
+    ShowMessage("\\n<Official>Its largest city is Iliasburg to the north of here, which is governed not by a king, but by a commune of citizens.")
+    ShowMessageFace("",0,0,2,5)
+    ShowMessage("\\n<Official>To leave this continent, you'll need to go to Iliasport, which is on the continent's northern end. From there you should be able to board a ship to Sentora.")
+    ShowMessageFace("",0,0,2,6)
+    ShowMessage("\\n<Official>The monsters that appear on this continent aren't as strong as those to the north. So before you head to Sentora, you should polish your skills here.")
+    ShowMessageFace("",0,0,2,7)
+    ShowMessage("\\n<Official>Which continent would you like to hear about next?")
+    0()
+   EndIf()
+   If(1,11,0,1,0)
+    ShowMessageFace("",0,0,2,8)
+    ShowMessage("\\n<Official>Sentora is the largest continent on the planet. It's actually bigger than the Ilias continent and Hellgondo put together.")
+    ShowMessageFace("",0,0,2,9)
+    ShowMessage("\\n<Official>Although, strictly speaking, it hasn't truly been one continent since the Great Disaster split it into multiple pieces.")
+    ShowMessageFace("",0,0,2,10)
+    ShowMessage("\\n<Official>Sentora is home to four major countries: San Ilia, Sabasa, Grand Noah, and Grangold.")
+    ShowMessageFace("",0,0,2,11)
+    ShowMessage("\\n<Official>San Ilia is extremely well known for being the nation of the church, with its king, the Pope, acting as the church's religious leader.")
+    If(1,1028,0,7,2)
+     ShowMessageFace("",0,0,2,12)
+     ShowMessage("\\n<Official>Sabasa is a desert kingdom excelling in trade and military might. However, little is known about its current queen...")
+     0()
+    Else()
+     ShowMessageFace("",0,0,2,13)
+     ShowMessage("\\n<Official>Sabasa is a desert kingdom excelling in trade and military might. Their queen was misled by monsters, which made their government be badly mismanaged until recently.")
+     0()
+    EndIf()
+    ShowMessageFace("",0,0,2,14)
+    ShowMessage("\\n<Official>Grand Noah is a peaceful nation living in harmony with nature. Its current queen has a strong reputation for being a wise ruler, but it faces threats from its neighbors.")
+    ShowMessageFace("",0,0,2,15)
+    ShowMessage("\\n<Official>Lastly is the magic country of Grangold... At present, it's in a state of war against the other three countries.")
+    ShowMessageFace("",0,0,2,16)
+    ShowMessage("\\n<Official>I'm not an expert when it comes to war, though. Perhaps you can ask Saron on the second floor about it?")
+    ShowMessageFace("",0,0,2,17)
+    ShowMessage("\\n<Official>Suffice to say, Sentora is embroiled in conflict. Combined with the strength of the monsters there, you must exercise extreme caution on the continent.")
+    ShowMessageFace("",0,0,2,18)
+    ShowMessage("\\n<Official>Which continent would you like to hear about next?")
+    0()
+   EndIf()
+   If(1,11,0,2,0)
+    ShowMessageFace("",0,0,2,19)
+    ShowMessage("\\n<Official>Hellgondo is the northernmost continent and the site of the Monster Lord's castle. Because of that, it's also known as the Monster Continent.")
+    ShowMessageFace("",0,0,2,20)
+    ShowMessage("\\n<Official>It's completely ringed by mountains, meaning the only way to get there is by air. That's not so hard for monsters, but it's quite a hurdle for us humans.")
+    ShowMessageFace("",0,0,2,21)
+    ShowMessage("\\n<Official>The Monster Lord, unsurprisingly, rules from her castle on this continent. Prior to the Great Disaster, relations with that Monster Lord weren't exactly great...")
+    ShowMessageFace("",0,0,2,22)
+    ShowMessage("\\n<Official>However, the current Monster Lord hasn't been interfering with humanity. Instead, she has apparently been restraining any reckless monsters who get out of line.")
+    ShowMessageFace("",0,0,2,23)
+    ShowMessage("\\n<Official>Things are quite different now compared to the era of Heinrich and the Great Monster War. Today the wars among ourselves are the more pressing concerns.")
+    ShowMessageFace("",0,0,2,24)
+    ShowMessage("\\n<Official>At any rate, there aren't any humans living near the Monster Lord's castle. The monsters there used to be too hostile, and the terrain is inhospitable.")
+    ShowMessageFace("",0,0,2,25)
+    ShowMessage("\\n<Official>There once was a town on Hellgondo named Remina, actually. But when the Great Disaster struck, its citizens all vanished.")
+    ShowMessageFace("",0,0,2,26)
+    ShowMessage("\\n<Official>Now all that remains where Remina once stood is a giant Tartarus. Honestly, though, I doubt there's any connection between Remina and the Great Disaster.")
+    ShowMessageFace("",0,0,2,27)
+    ShowMessage("\\n<Official>Naturally the strongest monsters in the world roam the lands of Hellgondo, most of which remain completely uncharted by man.")
+    ShowMessageFace("",0,0,2,28)
+    ShowMessage("\\n<Official>Which continent would you like to hear about next?")
+    0()
+   EndIf()
+   If(1,11,0,3,0)
+    ShowMessageFace("",0,0,2,29)
+    ShowMessage("\\n<Official>During the calamity thirty years ago, a new continent appeared northwest of Sentora. The most commonly accepted theory is that it rose from the ocean.")
+    ShowMessageFace("",0,0,2,30)
+    ShowMessage("\\n<Official>Similar to Hellgondo, this new continent is ringed by an impassable mountain range. Many adventurers have tried to penetrate it, but all attempts have ended in failure so far.")
+    ShowMessageFace("",0,0,2,31)
+    ShowMessage("\\n<Official>All we know about the place is what we've learned from flying monsters, and according to them, the whole area is covered in ice and snow.")
+    ShowMessageFace("",0,0,2,32)
+    ShowMessage("\\n<Official>More surprisingly, they've even seen something that looks like a town. On top of that, there are apparently ruins and other structures...")
+    ShowMessageFace("",0,0,2,33)
+    ShowMessage("\\n<Official>If there really is a town, who in the world is living there? All we know for sure is that that continent is a big mystery.")
+    ShowMessageFace("",0,0,2,34)
+    ShowMessage("\\n<Official>Which continent would you like to hear about next?")
+    0()
+   EndIf()
+   If(1,11,0,4,1)
+    Break()
+    0()
+   EndIf()
+   0()
+  EndLoop()
+  0()
+
+
+
+EVENT   53
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Guard>When you stay at an inn, you recover all your HP and MP. It also removes all status effects, including incapacitation.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Guard>Therefore, you should rest at inns frequently. ...Wait, why I am explaining this to someone who owns an inn?")
+  0()
+
+
+
+EVENT   54
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Guard>When you lose your last bit of strength during your adventure, legend has it that your soul will return to the last church where you prayed.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Guard>In reality, that's nothing but a fairy tale. No matter who you are, once you're dead, that's it.")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Guard>Even assuming the resurrection legend is true, that guy would have to be seriously favored by Ilias...")
+  If(0,5,0)
+   ShowMessageFace("iriasu_fc4",2,0,2,4)
+   ShowMessage("\\n<Ilias>Luka, have you ever had an evaluation meeting?")
+   ShowChoices(strings("Never heard of it","It sounds familiar...","I'm always in your debt"),1)
+   IfPlayerPicksChoice(0,null)
+    ShowMessageFace("iriasu_fc4",0,0,2,5)
+    ShowMessage("\\n<Ilias>I see... Never mind, then.")
+    0()
+   IfPlayerPicksChoice(1,null)
+    ShowMessageFace("iriasu_fc4",2,0,2,6)
+    ShowMessage("\\n<Ilias>You vaguely recall having one...? Despite my condition, the soul return network is still operational...")
+    ShowMessageFace("iriasu_fc4",2,0,2,7)
+    ShowMessage("\\n<Ilias>How in the world... Is a fragment of the spell still barely working, or...")
+    0()
+   IfPlayerPicksChoice(2,null)
+    ShowMessageFace("iriasu_fc4",5,0,2,8)
+    ShowMessage("\\n<Ilias>Wait, you're having them regularly!? Then the soul return network is still operational!?")
+    ShowMessageFace("iriasu_fc4",2,0,2,9)
+    ShowMessage("\\n<Ilias>How can that be when I'm like this... Is a fragment of the spell still barely working, or...")
+    0()
+   404()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   55
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Guard>Hey Luka, do you know about Remina? It was the only city on the continent of Hellgondo.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Guard>Thirty years ago, Remina was wiped off the map in the Great Disaster, and now all that's there is a giant hole...")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Guard>There's a theory that Remina is the origin of the disaster itself. The magical scholars calculated that it was at the center of the dispersal of mana, or something like that.")
+  ShowMessageFace("",0,0,2,4)
+  ShowMessage("\\n<Guard>The science is beyond my understanding... Regardless, just what the hell happened there?")
+  0()
+
+
+
+EVENT   56
+ PAGE   1
+  // condition: player has item #613
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Engineer>Oi, it's you again? Do ya need me to tell ya about the [Engineer] a second time?")
+  ShowChoices(strings("Yes","No"),2)
+  IfPlayerPicksChoice(0,null)
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Engineer>The [Engineer] is a job that utilizes advanced technology. Our dexterity is high, and we pack quite a punch, too.")
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("\\n<Engineer>During battle, we use Makina as weapons. They're extremely powerful and can be used over and over.")
+   ShowMessageFace("",0,0,2,4)
+   ShowMessage("\\n<Engineer>A few things to keep in mind, though. First, ya have to learn how to use each Makina.")
+   ShowMessageFace("",0,0,2,5)
+   ShowMessage("\\n<Engineer>Just 'cause ya have one doesn't mean ya can put it to use. You'll need to raise your job level in order to master them.")
+   ShowMessageFace("",0,0,2,6)
+   ShowMessage("\\n<Engineer>It should go without sayin' that you also can't use any Makina ya don't have, even if you know how to use 'em.")
+   ShowMessageFace("",0,0,2,7)
+   ShowMessage("\\n<Engineer>Engineers can use guns, too. The higher your dexterity, the more damage you'll do with a gun.")
+   ShowMessageFace("",0,0,2,8)
+   ShowMessage("\\n<Engineer>Makina depend on your dexterity too, by the way. So obviously people with good dexterity make good engineers.")
+   ShowMessageFace("",0,0,2,9)
+   ShowMessage("\\n<Engineer>Get yerself a few Makina, learn how to use 'em, and blow the hell outta anything in your way!")
+   0()
+  IfPlayerPicksChoice(1,null)
+   0()
+  404()
+  0()
+
+
+
+EVENT   57
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Guard>Try pressing Q or W when you're outside. It should display the world map and your current location.")
+  0()
+
+
+
+EVENT   58
+ PAGE   1
+  // condition: switch 3 is ON
+  // condition: variable 1001 >= 10
+  ShowMessageFace("People3",5,0,2,1)
+  ShowMessage("\\n<Maid>My services are at your disposal.")
+  ShowChoices(strings("Change party members","Unequip all non-party members","Never mind"),3)
+  IfPlayerPicksChoice(0,null)
+   217()
+   313(0,1,1,1)
+   355("call_party_edit")
+   0()
+  IfPlayerPicksChoice(1,null)
+   250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x53,0x61,0x6e,0x64,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+   355("stand_members.each{|m|")
+   655("  m.clear_equipments")
+   655("}")
+   0()
+  IfPlayerPicksChoice(2,null)
+   0()
+  404()
+  0()
+
+
+
+EVENT   59
+ PAGE   1
+  // condition: player has item #614
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Magicraft Apprentice>Magicrafts are a type of magic art passed down among monsters. They include zombie and ghost summoning, along with puppetry skills, which summon dolls.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Magicraft Apprentice>Mastering the [Spiritualist] job is the first step towards mastering the magicrafts. In it you'll learn the basic techniques.")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Magicraft Apprentice>In zombie summoning, the practitioner uses their own life force, which means the skills consume HP.")
+  ShowMessageFace("",0,0,2,4)
+  ShowMessage("\\n<Magicraft Apprentice>Similarly, ghost summoning requires MP, and puppetry takes SP.")
+  ShowMessageFace("",0,0,2,5)
+  ShowMessage("\\n<Magicraft Apprentice>Also, each branch relies on different parameters. Magic for ghosts, dexterity for dolls, and a combination of both for zombies.")
+  ShowMessageFace("",0,0,2,6)
+  ShowMessage("\\n<Magicraft Apprentice>They're all very strong disciplines capable of versatility useful in both short and long battles.")
+  0()
+
+
+
+EVENT   60
+ PAGE   1
+  // condition: player has item #608
+  ShowMessageFace("k_mermaid_fc1",0,0,2,1)
+  ShowMessage("\\n<Mermaid Pirate>Do you want to hear about [Pirate]s?")
+  ShowChoices(strings("Aye","Nay"),2)
+  IfPlayerPicksChoice(0,null)
+   ShowMessageFace("k_mermaid_fc1",0,0,2,2)
+   ShowMessage("\\n<Mermaid Pirate>The occupation [Pirate] is a profession for battle.")
+   ShowMessage("We have high attack and defense and are good at fist fighting!")
+   ShowMessageFace("k_mermaid_fc1",0,0,2,3)
+   ShowMessage("\\n<Mermaid Pirate>We are also adept at using swords and guns.")
+   ShowMessage("Also, [Pirating] has many powerful attack skills.")
+   ShowMessageFace("k_mermaid_fc1",0,0,2,4)
+   ShowMessage("\\n<Mermaid Pirate>We also have access to a special ability that reduces the SP consumption of our skills.")
+   ShowMessage("With it, we can use a lot of powerful warfare skills♪")
+   ShowMessageFace("k_mermaid_fc1",0,0,2,5)
+   ShowMessage("\\n<Mermaid Pirate>We are not damaged by water attacks and also have high resistances to other elements.")
+   ShowMessage("When fighting on the ocean, our abilities increase, making us perfect for maritime warfare.")
+   ShowMessageFace("k_mermaid_fc1",0,0,2,6)
+   ShowMessage("\\n<Mermaid Pirate>Because we have the same roots, our performance is quite similar to Marines.")
+   ShowMessage("But pirates also learn some techniques for stealing♪")
+   ShowMessageFace("k_mermaid_fc1",0,0,2,7)
+   ShowMessage("\\n<Mermaid Pirate>In order to change to this job, you need an [Oceanic Business Permit]...")
+   ShowMessage("And you'll also have to master being a [Thief].")
+   EndEventProcessing()
+   0()
+  IfPlayerPicksChoice(1,null)
+   EndEventProcessing()
+   0()
+  404()
+  0()
+
+
+
+EVENT   61
+ PAGE   1
+  // condition: player has item #608
+  ShowMessageFace("tatunoko_k_fc1",0,0,2,1)
+  ShowMessage("\\n<Sea Horse Marine>Do do want to know more about [Marine]s?")
+  ShowChoices(strings("Aye","Nay"),2)
+  IfPlayerPicksChoice(0,null)
+   ShowMessageFace("tatunoko_k_fc1",0,0,2,2)
+   ShowMessage("\\n<Sea Horse Marine>The occupation [Marine] is a profession for battle.")
+   ShowMessage("With high attack and defense, we are though and strong!")
+   ShowMessageFace("tatunoko_k_fc1",0,0,2,3)
+   ShowMessage("\\n<Sea Horse Marine>We can equip swords and guns and use them in battle.")
+   ShowMessage("With [Pirating] skills, we have a lot of attack powers.")
+   ShowMessageFace("tatunoko_k_fc1",0,0,2,4)
+   ShowMessage("\\n<Sea Horse Marine>We also have access to a special ability that grants us more starting SP in a battle.")
+   ShowMessage("With those, we can use many war skills.")
+   ShowMessageFace("tatunoko_k_fc1",0,0,2,5)
+   ShowMessage("\\n<Sea Horse Marine>We don't take damage from water attacks and our other elemental resistances are high.")
+   ShowMessage("Furthermore, we are stronger when fighting at sea, since we are naval experts.")
+   ShowMessageFace("tatunoko_k_fc1",0,0,2,6)
+   ShowMessage("\\n<Sea Horse Marine>We are strong on the land, and even stronger at sea...")
+   ShowMessage("For a though fight, you'd do well to bring the Marines.")
+   ShowMessageFace("tatunoko_k_fc1",0,0,2,7)
+   ShowMessage("\\n<Sea Horse Marine>In order to change to this job, you need a [Oceanic Business Permit]...")
+   ShowMessage("In addition, you'll have to master the [Guard] profession.")
+   EndEventProcessing()
+   0()
+  IfPlayerPicksChoice(1,null)
+   EndEventProcessing()
+   0()
+  404()
+  0()
+

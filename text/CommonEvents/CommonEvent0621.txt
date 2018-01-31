@@ -1,0 +1,7 @@
+"イベント：精神力アップ" -> "Event: up spiritual power"
+"【シスターラミア】" -> "【Sister Lamia】"
+"私と共に、静かに瞑想しませんか……？" -> "Why do not you meditate quietly with me ...?"
+"誰が瞑想しますか？" -> "Who will meditate?"
+"シスターラミアと共に瞑想し、精神力が2ポイントアップした！" -> "Meditated with Sister Lamia, the mental power increased by 2 points!"
+"【シスターラミア】" -> "【Sister Lamia】"
+"また、お会いしましょう。" -> "Let's meet again."

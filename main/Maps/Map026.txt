@@ -1,0 +1,871 @@
+
+
+
+EVENT   1
+ PAGE   1
+  0()
+
+
+
+EVENT   2
+ PAGE   1
+  0()
+
+
+
+EVENT   3
+ PAGE   1
+  0()
+
+
+
+EVENT   4
+ PAGE   1
+  0()
+
+
+
+EVENT   5
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,25,6,11,0,0)
+  0()
+
+
+
+EVENT   6
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,25,18,7,0,0)
+  0()
+
+
+
+EVENT   7
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,25,26,8,0,0)
+  0()
+
+
+
+EVENT   8
+ PAGE   1
+  0()
+
+
+
+EVENT   9
+ PAGE   1
+  0()
+
+
+
+EVENT   10
+ PAGE   1
+  0()
+
+
+
+EVENT   11
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,26,16,27,0,0)
+  0()
+
+
+
+EVENT   12
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,26,17,27,0,0)
+  0()
+
+
+
+EVENT   13
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,26,16,49,0,0)
+  0()
+
+
+
+EVENT   14
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,26,17,49,0,0)
+  0()
+
+
+
+EVENT   15
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,25,14,25,0,0)
+  0()
+
+
+
+EVENT   16
+ PAGE   1
+  0()
+
+
+
+EVENT   17
+ PAGE   1
+  0()
+
+
+
+EVENT   18
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,25,23,22,0,0)
+  0()
+
+
+
+EVENT   19
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,25,23,30,0,0)
+  0()
+
+
+
+EVENT   20
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,25,37,19,0,0)
+  216(0)
+  0()
+
+
+
+EVENT   21
+ PAGE   1
+  0()
+
+
+
+EVENT   22
+ PAGE   1
+  0()
+
+
+
+EVENT   23
+ PAGE   1
+  0()
+
+
+
+EVENT   24
+ PAGE   1
+  0()
+
+
+
+EVENT   25
+ PAGE   1
+  0()
+
+
+
+EVENT   26
+ PAGE   1
+  0()
+
+
+
+EVENT   27
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Tool store】")
+  ShowMessage("Arlaune in this province, state abnormal attacks are good at large.")
+  ShowMessage("Do not forget the poisoning grass and the remedy for care!")
+  Shop(0,2,0,0,false)
+  605(0,7,0,0)
+  605(0,11,0,0)
+  605(0,13,0,0)
+  605(0,14,0,0)
+  605(0,15,0,0)
+  605(0,16,0,0)
+  605(0,17,0,0)
+  605(0,18,0,0)
+  605(0,19,0,0)
+  605(0,23,0,0)
+  605(0,35,0,0)
+  0()
+
+
+
+EVENT   28
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Accessory store】")
+  ShowMessage("Do you need an accessory?")
+  ShowMessage("Let's change the state of the demon with our accessory.")
+  Shop(2,1118,0,0,false)
+  605(2,1154,0,0)
+  605(2,1422,0,0)
+  605(2,1425,0,0)
+  605(2,1428,0,0)
+  605(2,1431,0,0)
+  605(2,1434,0,0)
+  605(2,1437,0,0)
+  0()
+
+
+
+EVENT   29
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Village girl】")
+  ShowMessage("How about Finoa special product, delicious vegetables?")
+  355("actor_label_jump")
+  JumpToLabel("shop")
+  DefineLabel("201")
+  DefineLabel("202")
+  ShowMessageFace("ashel_fc1",0,0,2,2)
+  ShowMessage("[Asher]")
+  ShowMessage("Miss your daughter and vegetables properly.")
+  ShowMessageFace("bonny_fc1",0,0,2,3)
+  ShowMessage("【Bonnie】")
+  ShowMessage("I will eat properly ......")
+  ShowMessage("Indeed, Asher is noisy.")
+  JumpToLabel("shop")
+  DefineLabel("shop")
+  Shop(0,308,0,0,false)
+  605(0,311,0,0)
+  605(0,312,0,0)
+  605(0,313,0,0)
+  605(0,314,0,0)
+  605(0,320,0,0)
+  605(0,343,0,0)
+  0()
+
+
+
+EVENT   30
+ PAGE   1
+  If(1,1001,0,25,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("【Aunt】")
+   ShowMessage("It is nice to see the grandchild's face ......")
+   ShowMessage("Given the future of this country, I am worried.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,26,1)
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("【Aunt】")
+   ShowMessage("Recently, more people are afraid of monsters.")
+   ShowMessage("Even the monsters who lived in the village for a long time, they looked with white eyes ......")
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("【Aunt】")
+   ShowMessage("But I can understand that feeling.")
+   ShowMessage("To be honest, I do not want my grandchildren to approach monsters.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   31
+ PAGE   1
+  If(1,1001,0,25,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("【Uncle or Mister】")
+   ShowMessage("Kami says that ... ah ....")
+   ShowMessage("Indeed, the magic adviser is stinky.")
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("【Uncle or Mister】")
+   ShowMessage("Her Majesty the Queen should also rely on magical advisers ... ...")
+   ShowMessage("Somehow, I do not feel so good.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,26,1)
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("【Uncle or Mister】")
+   ShowMessage("It is a story of Mephisto's strategy that made the Grangolde fall.")
+   ShowMessage("I thought it was a shady odor but it was a true loyalty.")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("233")
+   ShowMessageFace("mefist_fc1",0,0,2,4)
+   ShowMessage("[Mephisto]")
+   ShowMessage("Regardless whether it is Chusa or not, the contract will be fulfilled ... ...")
+   EndEventProcessing()
+   DefineLabel("391")
+   ShowMessageFace("mefist_fc2",0,0,2,5)
+   ShowMessage("[Mephisto]")
+   ShowMessage("Regardless whether it is Chusa or not, the contract will be fulfilled ... ...")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   32
+ PAGE   1
+  If(1,823,0,2,1)
+   If(0,1572,1)
+    ShowMessageFace("mob_murabito3_fc1",0,0,2,1)
+    ShowMessage("【Lara】")
+    ShowMessage("Um ... ... will you take me as well?")
+    ShowChoices(strings("To make friends","Do not companion"),0)
+    IfPlayerPicksChoice(0,null)
+     ShowMessageFace("mob_murabito3_fc1",5,0,2,2)
+     ShowMessage("【Lara】")
+     ShowMessage("Thank you!")
+     ShowMessage("I will do my best ♪")
+     PictureClear(5)
+     205(0,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x09,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x2a,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x0f,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x2c,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+     355("add_actor_ex(572)")
+     249(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0c,0x66,0x61,0x6e,0x66,0x61,0x6c,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69))
+     ShowMessageFace("",0,0,2,3)
+     ShowMessage("Lara joined the group!")
+     Wait(60)
+     EndEventProcessing()
+     0()
+    IfPlayerPicksChoice(1,null)
+     ShowMessageFace("mob_murabito3_fc1",1,0,2,4)
+     ShowMessage("【Lara】")
+     ShowMessage("Is that so? ... Please invite me again.")
+     0()
+    404()
+    0()
+   EndIf()
+   0()
+  EndIf()
+  RunCommonEvent(7221)
+  0()
+ PAGE   2
+  // condition: party contains actor #572
+  0()
+
+
+
+EVENT   33
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Youth")
+  ShowMessage("The emergence of Tartarus made a big lake in northern Esta.")
+  ShowMessage("Esta from then will flourish on the fishing in the lake ... ...")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("Youth")
+  ShowMessage("In that lake, it began to catch unnatural fish.")
+  ShowMessage("But there are many people that you can not eat fish caught near Tartarus.")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("Youth")
+  ShowMessage("Besides .... In the rumor, it seems that many malformation fish caught.")
+  ShowMessage("It is a story that there are some new kinds of fish that I have never seen before.")
+  ShowMessageFace("",0,0,2,4)
+  ShowMessage("Youth")
+  ShowMessage("Even so, up to the disappearance of all residents two years ago.")
+  ShowMessage("Now Esta is completely blocked.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("41")
+  ShowMessageFace("stein_fc2",0,0,2,5)
+  ShowMessage("【Promotin】")
+  ShowMessage("It seems that genetic abnormality occurs in many organisms around Tartarus.")
+  ShowMessage("Is it due to the apoptosis phenomenon ...?")
+  ShowMessageFace("stein_fc2",0,0,2,6)
+  ShowMessage("【Promotin】")
+  ShowMessage("And if it would extend beyond Tartarus ... ...")
+  ShowMessage("This world is destroyed and the same way as the world ... ...")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   34
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Warrior")
+  ShowMessage("I came here to participate in the Coliseum.")
+  ShowMessage("The Coliseum of Grand Noah is exactly the sacred place of a warrior.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("Warrior")
+  ShowMessage("The problem is a journey from here to Grand Noah ... ...")
+  ShowMessage("The demon is strong, I am not confident that I can reach ... ...")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("171")
+  ShowMessageFace("lizardboss_fc1",3,0,2,3)
+  ShowMessage("【Miranda】")
+  ShowMessage("With that kind of arm, you just lose if you go into the game.")
+  EndEventProcessing()
+  DefineLabel("197")
+  ShowMessageFace("k_mermaid_fc1",0,0,2,4)
+  ShowMessage("【Lolita】")
+  ShowMessage("Well then, are you going to lose if you go to the Coliseum?")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   35
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【old woman】")
+  ShowMessage("It will be a long journey to Grand Noah.")
+  ShowMessage("10GWould you like to take a break?\\$")
+  ShowChoices(strings("Yes","No"),2)
+  IfPlayerPicksChoice(0,null)
+   If(7,10,0)
+    125(1,0,10)
+    221()
+    249(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x08,0x49,0x6e,0x6e,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69))
+    Wait(150)
+    314(0,0)
+    222()
+    0()
+   Else()
+    ShowMessageFace("",0,0,2,2)
+    ShowMessage("【old woman】")
+    ShowMessage("It looks like I do not have enough money.")
+    0()
+   EndIf()
+   0()
+  IfPlayerPicksChoice(1,null)
+   0()
+  404()
+  0()
+
+
+
+EVENT   36
+ PAGE   1
+  If(1,1001,0,25,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("【Young husband】")
+   ShowMessage("I have evacuated to this village from a town close to the front line.")
+   ShowMessage("After all, when there are small children ......")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,26,1)
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("【Young husband】")
+   ShowMessage("War after war ... ...")
+   ShowMessage("When will it be peace?")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   37
+ PAGE   1
+  If(1,1001,0,25,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("【Young wife】")
+   ShowMessage("I have seen Ali's soldier at hand.")
+   ShowMessage("That is exactly a machine that kills enemies without emotion ......")
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("【Young wife】")
+   ShowMessage("Oh, what a terrible ... ...")
+   ShowMessage("I still dream about that time ... ....")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("128")
+   ShowMessageFace("kaniloid_fc1",0,0,2,3)
+   ShowMessage("【Gillian】")
+   ShowMessage("A slaughter machine is noisy ... ...")
+   ShowMessageFace("",0,0,2,4)
+   ShowMessage("【Young wife】")
+   ShowMessage("Hi! Also here!")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,26,1)
+   ShowMessageFace("",0,0,2,5)
+   ShowMessage("【Young wife】")
+   ShowMessage("Will every monster change to a slaughter machine if there is only a command of the demon king?")
+   ShowMessage("Even monsters in this village ......")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   38
+ PAGE   1
+  If(1,1001,0,25,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("【Aunt】")
+   ShowMessage("This war is also over before it is too far.")
+   ShowMessage("Here is a magic adviser Mephisto.")
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("【Aunt】")
+   ShowMessage("Mephisto is a demon ... ...")
+   ShowMessage("In the middle of war, I can not say that it is a human being 's demon.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,26,1)
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("【Aunt】")
+   ShowMessage("The war with the Magus Army is also over before it is too far.")
+   ShowMessage("Here is a magic adviser Mephisto.")
+   ShowMessageFace("",0,0,2,4)
+   ShowMessage("【Aunt】")
+   ShowMessage("Mephisto is a demon ... ...")
+   ShowMessage("In the middle of war, I can not say that it is a human being 's demon.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   39
+ PAGE   1
+  If(1,1001,0,25,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("【old man】")
+   ShowMessage("Those who can use thoroughly, the spirit of those who stand on people.")
+   ShowMessage("Unless you use it as a monster, the role of the Queen will not serve.")
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("【old man】")
+   ShowMessage("Well, the opponent is unarmed grand Gordol army.")
+   ShowMessage("If you do not mobilize everything even a demon, it is this place to lose.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,26,1)
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("【old man】")
+   ShowMessage("What a success of Mephisto 's strategy is also the success of Luca brave.")
+   ShowMessage("The sword of the brave Luca will make up the ambition of the demon king.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   40
+ PAGE   1
+  If(1,1001,0,25,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("【Uncle or Mister】")
+   ShowMessage("My son and his husband have come to evacuation with my grandchild.")
+   ShowMessage("Their houses are close to the front ...")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,26,1)
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("【Uncle or Mister】")
+   ShowMessage("War with the Devil or not ... ...")
+   ShowMessage("Well, my grandchild is unlikely to return to the city.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   41
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【children】")
+  ShowMessage("I played a soldier!")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("203")
+  ShowMessageFace("tatunoko_k_fc1",0,0,2,2)
+  ShowMessage("【Tatsuko】")
+  ShowMessage("If it is a marine, I will go out with you!")
+  EndEventProcessing()
+  DefineLabel("204")
+  ShowMessageFace("umiusi_k_fc1",0,0,2,3)
+  ShowMessage("【Stacy】")
+  ShowMessage("Do you marry with me ... ....?")
+  EndEventProcessing()
+  DefineLabel("201")
+  DefineLabel("202")
+  ShowMessageFace("bonny_fc1",1,0,2,4)
+  ShowMessage("【Bonnie】")
+  ShowMessage("Then you are a Marine, I am a pirate queen!")
+  ShowMessage("Now, I will play mocking!")
+  ShowMessageFace("",0,0,2,5)
+  ShowMessage("【children】")
+  ShowMessage("Wow, let's go! Pirate Queen!")
+  ShowMessageFace("ashel_fc1",1,0,2,6)
+  ShowMessage("[Asher]")
+  ShowMessage("It can not be helped, I will go out a little ......")
+  ShowMessage("I am the deputy headman Asher!")
+  ShowMessageFace("",0,0,2,7)
+  ShowMessage("【children】")
+  ShowMessage("Pirate over!")
+  ShowMessage("Two-to-one is Hikyo!")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   42
+ PAGE   1
+  If(1,1052,0,5,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("Warrior")
+   ShowMessage("Soon the traditional tournament, the Queen Cup, begins at the Coliseum of Grand Noah.")
+   ShowMessage("Of course I am going to participate.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1052,0,6,1)
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("Warrior")
+   ShowMessage("I went to the queen cup, but I lost to the devil team led by Kerberos.")
+   ShowMessage("It was still good if you committed it, but it's going down and it's going down.")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("213")
+   ShowMessageFace("kerberos_fc1",0,0,2,3)
+   ShowMessage("【Caesar】")
+   ShowMessage("It's bad, but weak seeds are irritating ... ...")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   43
+ PAGE   1
+  ShowMessageFace("slime_fc1",0,0,2,1)
+  ShowMessage("【Slime girl】")
+  ShowMessage("I'm looking forward to Coliseum, ♪")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("53")
+  ShowMessageFace("slime_fc1",0,0,2,2)
+  ShowMessage("【lime】")
+  ShowMessage("I am also looking forward to it, ♪")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   44
+ PAGE   1
+  ShowMessageFace("slime_fc1",0,0,2,1)
+  ShowMessage("【Slime girl】")
+  ShowMessage("I want to win the championship at the Coliseum ~ ♪")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("110")
+  ShowMessageFace("slimelord_fc1",3,0,2,2)
+  ShowMessage("【Beth】")
+  ShowMessage("That ... .... a little stuffy?")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   45
+ PAGE   1
+  If(1,1001,0,25,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("【Aunt】")
+   ShowMessage("Can you truly win the next war?")
+   ShowMessage("Up to this village, the army of Grangold can not rush ... ...?")
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("【Aunt】")
+   ShowMessage("I am anxious and worried, I can not sleep at night.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,26,1)
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("【Aunt】")
+   ShowMessage("I hope Grandval will say that Luca bravesto will defeat the demon king ... ...")
+   ShowMessage("Are they really going well?")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   46
+ PAGE   1
+  If(1,1001,0,25,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("[Old Man]")
+   ShowMessage("Even in this village, there was recruitment of volunteers.")
+   ShowMessage("Furthermore, if the battle situation gets worse, there may be forced collection of soldiers ... ...")
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("[Old Man]")
+   ShowMessage("I do not want to think that my grandchild is taken to a soldier ... ...")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,26,1)
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("[Old Man]")
+   ShowMessage("Our brave Luca, our hope.")
+   ShowMessage("儂 Every day I pray to Mr. Iliy that Luca can defeat the demon king.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   47
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Clerk】")
+  ShowMessage("There are many voices that you would like to handle weapons and armor at this shop.")
+  ShowMessage("In preparation for warfare, you must be under armed condition ... ...")
+  0()
+
+
+
+EVENT   48
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("[Adventurer]")
+  ShowMessage("There is a tunnel to Yamathi on the way to Grand Noah.")
+  ShowMessage("I got inadvertently, it suits me terrible ... ...")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("[Adventurer]")
+  ShowMessage("The demon that comes out in the tunnel is stronger than this one.")
+  ShowMessage("You also should be careful ... ...")
+  If(1,1001,0,23,2)
+   If(0,4,0)
+    ShowMessageFace("alice_fc5",0,0,2,3)
+    ShowMessage("【Alice】")
+    ShowMessage("Yamathai village ... ... There is no errand now.")
+    ShowMessage("The next destination is Grangolde Castle.")
+    0()
+   EndIf()
+   If(0,5,0)
+    ShowMessageFace("iriasu_fc4",0,0,2,4)
+    ShowMessage("【Iliad】")
+    ShowMessage("In any case, I do not plan to head to Yamathai Village.")
+    ShowMessage("Let 's head for Grand Noah now.")
+    0()
+   EndIf()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   49
+ PAGE   1
+  If(1,1001,0,25,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("Youth")
+   ShowMessage("Next, if there are recruitment volunteers, I am going to apply for a soldier.")
+   ShowMessage("You can not leave the crisis of your country alone.")
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("Youth")
+   ShowMessage("That's why I have to arrange the items.")
+   ShowMessage("Well, how many medicinal herbs should I have ... ....")
+   355("actor_label_jump")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,26,1)
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("Youth")
+   ShowMessage("Next, if there are recruitment volunteers, I am going to apply for a soldier.")
+   ShowMessage("You have to defend your country from the hands of the Satan army.")
+   ShowMessageFace("",0,0,2,4)
+   ShowMessage("Youth")
+   ShowMessage("That's why I have to arrange the items.")
+   ShowMessage("Well, how many medicinal herbs should I have ... ....")
+   355("actor_label_jump")
+   EndEventProcessing()
+   0()
+  EndIf()
+  DefineLabel("196")
+  ShowMessageFace("s_mermaid_fc1",1,0,2,5)
+  ShowMessage("【mink】")
+  ShowMessage("Of course, I should have as much as I can.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   50
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(32,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   51
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(16,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   52
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(352,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   53
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(332,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   54
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(23,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+

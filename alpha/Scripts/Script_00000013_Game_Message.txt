@@ -1,0 +1,102 @@
+#==============================================================================
+# ■ Game_Message
+#------------------------------------------------------------------------------
+# This class handles the state of the message window that displays sentences and choices. this
+# An instance of the class$game_message It is referred to.
+#==============================================================================
+
+class Game_Message
+  #--------------------------------------------------------------------------
+  # ● Public instance variables
+  #--------------------------------------------------------------------------
+  attr_reader   :texts                    # Arrangement of sentences (line units)
+  attr_reader   :choices                  # Array of choices
+  attr_accessor :face_name                # Face graphic file name
+  attr_accessor :face_index               # Facial graphic index
+  attr_accessor :background               # Background type
+  attr_accessor :position                 # Display position
+  attr_accessor :choice_proc              # Option callback (Proc)
+  attr_accessor :choice_cancel_type       # In case of option cancellation
+  attr_accessor :num_input_variable_id    # Numeric input variable ID
+  attr_accessor :num_input_digits_max     # Numeric input digits
+  attr_accessor :item_choice_variable_id  # Item selection variable ID
+  attr_accessor :scroll_mode              # Scrolling text flag
+  attr_accessor :scroll_speed             # Scrolling text: Speed
+  attr_accessor :scroll_no_fast           # Scroll Text: Fast Forward Disable
+  attr_accessor :visible                  # Displaying message
+  #--------------------------------------------------------------------------
+  # ● Object initialization
+  #--------------------------------------------------------------------------
+  def initialize
+    clear
+    @visible = false
+  end
+  #--------------------------------------------------------------------------
+  # ● Clear
+  #--------------------------------------------------------------------------
+  def clear
+    @texts = []
+    @choices = []
+    @face_name = ""
+    @face_index = 0
+    @background = 0
+    @position = 2
+    @choice_cancel_type = 0
+    @choice_proc = nil
+    @num_input_variable_id = 0
+    @num_input_digits_max = 0
+    @item_choice_variable_id = 0
+    @scroll_mode = false
+    @scroll_speed = 2
+    @scroll_no_fast = false
+  end
+  #--------------------------------------------------------------------------
+  # ● Add text
+  #--------------------------------------------------------------------------
+  def add(text)
+    @texts.push(text)
+  end
+  #--------------------------------------------------------------------------
+  # ● Determining the existence of text
+  #--------------------------------------------------------------------------
+  def has_text?
+    @texts.size > 0
+  end
+  #--------------------------------------------------------------------------
+  # ● Option mode determination
+  #--------------------------------------------------------------------------
+  def choice?
+    @choices.size > 0
+  end
+  #--------------------------------------------------------------------------
+  # ● Numeric input mode determination
+  #--------------------------------------------------------------------------
+  def num_input?
+    @num_input_variable_id > 0
+  end
+  #--------------------------------------------------------------------------
+  # ● Item selection mode determination
+  #--------------------------------------------------------------------------
+  def item_choice?
+    @item_choice_variable_id > 0
+  end
+  #--------------------------------------------------------------------------
+  # ● Busy judgment
+  #--------------------------------------------------------------------------
+  def busy?
+    has_text? || choice? || num_input? || item_choice?
+  end
+  #--------------------------------------------------------------------------
+  # ● Page break
+  #--------------------------------------------------------------------------
+  def new_page
+    @texts[-1] += "\f" if @texts.size > 0
+  end
+  #--------------------------------------------------------------------------
+  # ● Retrieve all text with line breaks
+  #--------------------------------------------------------------------------
+  def all_text
+    @texts.inject("") {|r, text| r += text + "\n" }
+  end
+end
+

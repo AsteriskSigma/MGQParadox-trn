@@ -1,0 +1,21 @@
+// EVENT 0113
+Name "Book Of Job Change"
+
+ShowChoices(strings("Change Jobs and Races","Organize Party","Never Mind"),3)
+IfPlayerPicksChoice(0,"Change in job / change")
+ 355("SceneManager.call(Scene_JobChange)")
+ 314(0,0)
+ EndEventProcessing()
+ 0()
+IfPlayerPicksChoice(1,"Party organization")
+ 217()
+ 313(0,1,1,1)
+ 355("call_party_edit")
+ EndEventProcessing()
+ 0()
+IfPlayerPicksChoice(2,"do nothing")
+ EndEventProcessing()
+ 0()
+404()
+0()
+

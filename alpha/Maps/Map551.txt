@@ -1,0 +1,842 @@
+
+
+
+EVENT   1
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,551,54,8,2,0)
+  0()
+
+
+
+EVENT   2
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,551,30,8,2,0)
+  0()
+
+
+
+EVENT   3
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,551,11,56,2,0)
+  0()
+
+
+
+EVENT   4
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,551,25,56,2,0)
+  0()
+
+
+
+EVENT   5
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,551,12,24,2,0)
+  0()
+
+
+
+EVENT   6
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,551,24,24,2,0)
+  0()
+
+
+
+EVENT   7
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,551,18,48,0,0)
+  0()
+
+
+
+EVENT   8
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,551,18,48,0,0)
+  0()
+
+
+
+EVENT   9
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,551,18,48,0,0)
+  0()
+
+
+
+EVENT   10
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,551,18,16,0,0)
+  0()
+
+
+
+EVENT   11
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,551,18,16,0,0)
+  0()
+
+
+
+EVENT   12
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,551,18,16,0,0)
+  0()
+
+
+
+EVENT   13
+ PAGE   1
+  281(0)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,188,12,13,0,0)
+  0()
+
+
+
+EVENT   14
+ PAGE   1
+  281(0)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,188,12,13,0,0)
+  0()
+
+
+
+EVENT   15
+ PAGE   1
+  281(0)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,188,12,13,0,0)
+  0()
+
+
+
+EVENT   16
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("[Edina]")
+  ShowMessage("Oh, Heinrich-sama.")
+  ShowMessage("I wonder if he is now in the place ...")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("[Edina]")
+  ShowMessage("...... I'm sorry for this.")
+  ShowMessage("My name is Edina, Princess of Remina.")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("[Edina]")
+  ShowMessage("You have the same color as your eyes, Heinrich.")
+  ShowMessage("Like a very magical, deep lake ......")
+  ShowMessageFace("",0,0,2,4)
+  ShowMessage("[Edina]")
+  ShowMessage("But why?")
+  ShowMessage("You ought to be a fine person, but my heart will not stop at my heart.")
+  ShowMessageFace("",0,0,2,5)
+  ShowMessage("[Edina]")
+  ShowMessage("Oh, excuse me ...!")
+  ShowMessage("What a terrible thing ... ...!")
+  If(0,4,0)
+   ShowMessageFace("alice_fc5",0,0,2,6)
+   ShowMessage("【Alice】")
+   ShowMessage("...... Somewhere, I feel like Luca and smell are similar.")
+   ShowMessage("Perhaps, is it kinship?")
+   ShowMessageFace("alice_fc5",3,0,2,7)
+   ShowMessage("【Alice】")
+   ShowMessage("Then Luca is the royal family who draws blood of the remnant royal family ... ...")
+   ShowMessage("No, nothing.")
+   0()
+  EndIf()
+  If(0,5,0)
+   ShowMessageFace("iriasu_fc4",0,0,2,8)
+   ShowMessage("【Iliad】")
+   ShowMessage("That would be natural ...... To prevent incest,")
+   ShowMessage("An organism instinctively excludes genetic neighbors from sexual subjects.")
+   ShowMessageFace("iriasu_fc4",0,0,2,9)
+   ShowMessage("【Iliad】")
+   ShowMessage("The son who was formed between the brave Heinrich and Princess Edina was the ancestor of Luca.")
+   ShowMessage("Certainly you were an ancestor before 25's?")
+   If(0,6,0)
+    ShowMessageFace("sonia_fc3",2,0,2,10)
+    ShowMessage("【Sonia】")
+    ShowMessage("eh! What? Then Luke draws blood of the royalty of Remina! What?")
+    ShowMessageFace("ruka_fc1",0,0,2,11)
+    ShowMessage("【Luke】")
+    ShowMessage("Well, that was right! What?")
+    ShowMessageFace("iriasu_fc4",0,0,2,12)
+    ShowMessage("【Iliad】")
+    ShowMessage("Yeah ...... It is the descendant of the remnant royal family, which remains the only on the ground.")
+    ShowMessage("Those who know about it are no longer on the ground.")
+    ShowMessageFace("sonia_fc2",0,0,2,13)
+    ShowMessage("【Sonia】")
+    ShowMessage("The paternal side is the descendant of the royal family who has perished in the legendary brave ......")
+    ShowMessage("Maternal is the highest angel ......")
+    ShowMessageFace("sonia_fc1",7,0,2,14)
+    ShowMessage("【Sonia】")
+    ShowMessage("...... Luca, is it a wonderful pedigree?")
+    ShowMessageFace("iriasu_fc4",1,0,2,15)
+    ShowMessage("【Iliad】")
+    ShowMessage("Yes, of course.")
+    0()
+   EndIf()
+   0()
+  EndIf()
+  If(2,"A",1)
+   If(0,5,0)
+    ChangeSelfSwitch("A",0)
+    ShowMessageFace("heinrich_fc1",7,0,2,16)
+    ShowMessage("【Heinrich】")
+    ShowMessage("...... I am cheerful, Princess.")
+    ShowMessageFace("",0,0,2,17)
+    ShowMessage("[Edina]")
+    ShowMessage("Ha, Heinrich-sama ...! What?")
+    ShowMessage("Good, you are okay ......")
+    ShowMessageFace("heinrich_fc1",7,0,2,18)
+    ShowMessage("【Heinrich】")
+    ShowMessage("Yes, as you can see, it is safe.")
+    If(0,6,0)
+     ShowMessageFace("sonia_fc2",2,0,2,19)
+     ShowMessage("【Sonia】")
+     ShowMessage("A bit more, what I should say ....")
+     ShowMessage("I think there is something to say.")
+     0()
+    EndIf()
+    ShowMessageFace("",0,0,2,20)
+    ShowMessage("[Edina]")
+    ShowMessage("I wish for the safety of Mr. Heinrich, I will give you this Aokoku.")
+    ShowMessage("This is a jewel that passes to the royal family for generations ......")
+    ShowMessageFace("heinrich_fc1",7,0,2,21)
+    ShowMessage("【Heinrich】")
+    ShowMessage("I can not receive such an important thing.")
+    ShowMessage("I am a brave man, a person I do not know when and where he will run out.")
+    If(0,6,0)
+     ShowMessageFace("sonia_fc2",3,0,2,22)
+     ShowMessage("【Sonia】")
+     ShowMessage("Wow, it is ...")
+     0()
+    EndIf()
+    ShowMessageFace("",0,0,2,23)
+    ShowMessage("[Edina]")
+    ShowMessage("So, be sure to return this back to me ......")
+    ShowMessageFace("heinrich_fc1",1,0,2,24)
+    ShowMessage("【Heinrich】")
+    ShowMessage("Then, you do not need to give it to me from the beginning.")
+    ShowMessage("Please, that golden age is at hand of the princess ......")
+    If(0,6,0)
+     ShowMessageFace("sonia_fc4",0,0,2,25)
+     ShowMessage("【Sonia】")
+     ShowMessage("Love love light, irregular reflection ... ...")
+     ShowMessage("This ability also has Luca, too.")
+     0()
+    EndIf()
+    ShowMessageFace("",0,0,2,26)
+    ShowMessage("[Edina]")
+    ShowMessage("Please have this Goko Akira, the brave Heinrich!")
+    ShowMessage("If there are things that will not come back, I will chase the end of hell!")
+    ShowMessageFace("heinrich_fc1",2,0,2,27)
+    ShowMessage("【Heinrich】")
+    ShowMessage("It certainly said it to me ......")
+    If(0,6,0)
+     ShowMessageFace("sonia_fc3",2,0,2,28)
+     ShowMessage("【Sonia】")
+     ShowMessage("Princess, strong!")
+     0()
+    EndIf()
+    EndEventProcessing()
+    0()
+   EndIf()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   17
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【King of Remina】")
+  ShowMessage("A brave ... well, I often came to the continent of demons.")
+  ShowMessage("Are you going to get into Satan's castle from now on?")
+  ShowChoices(strings("Yes","No"),2)
+  IfPlayerPicksChoice(0,null)
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("【King of Remina】")
+   ShowMessage("All the braves answer so, but ...")
+   ShowMessage("Most people are already giving up on going ahead.")
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("【King of Remina】")
+   ShowMessage("Faced with a mighty monster on this devil continent, many lose fighting intent.")
+   ShowMessage("But your eyes that fight fighting spirit ... ... It seems to be different from such a brave man.")
+   ShowMessageFace("",0,0,2,4)
+   ShowMessage("【King of Remina】")
+   ShowMessage("Besides, somewhere ......")
+   ShowMessage("Your eyes are like the one of my daughter.")
+   If(2,"B",1)
+    ChangeSelfSwitch("B",0)
+    ShowMessageFace("",0,0,2,5)
+    ShowMessage("【King of Remina】")
+    ShowMessage("........................")
+    ShowMessageFace("",0,0,2,6)
+    ShowMessage("【King of Remina】")
+    ShowMessage("A brave, let's give it.")
+    ShowMessage("It will be of help to your journey.")
+    250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+    ChangeInventory_Item(622,0,0,1)
+    ChangeSwitch(2311,2311,0)
+    If(0,4,0)
+     ShowMessageFace("alice_fc5",1,0,2,7)
+     ShowMessage("【Alice】")
+     ShowMessage("This is one of the job change jobs to the top-ranking worker who is transferred to the royal family ... ...")
+     ShowMessage("Do not go to the top position of the warrior system with this.")
+     0()
+    EndIf()
+    If(0,5,0)
+     ShowMessageFace("iriasu_fc4",1,0,2,8)
+     ShowMessage("【Iliad】")
+     ShowMessage("This is one of the job change jobs to the top-ranking worker who is transferred to the royal family ... ...")
+     ShowMessage("With this you can get a warrior's highest ranking job.")
+     0()
+    EndIf()
+    ShowMessageFace("ruka_fc1",0,0,2,9)
+    ShowMessage("【Luke】")
+    ShowMessage("But is it okay?")
+    ShowMessage("Those who handed over to Heinrich than me ...")
+    ShowMessageFace("",0,0,2,10)
+    ShowMessage("【King of Remina】")
+    ShowMessage("This is just a premonition ... ...")
+    ShowMessage("I feel that your lord carries a bigger fate than Heinrich.")
+    ShowMessageFace("",0,0,2,11)
+    ShowMessage("【King of Remina】")
+    ShowMessage("Well, go ahead, a brave who looked much like a daughter.")
+    ShowMessage("Mainly Irias' s protection.")
+    0()
+   EndIf()
+   0()
+  IfPlayerPicksChoice(1,null)
+   ShowMessageFace("",0,0,2,12)
+   ShowMessage("【King of Remina】")
+   ShowMessage("I see ... honestly told you so.")
+   ShowMessage("It does not have to be depressed, even coming so far is a great accomplishment.")
+   ShowMessageFace("",0,0,2,13)
+   ShowMessage("【King of Remina】")
+   ShowMessage("Put the sword here and send a quiet rest of your life ... ...")
+   ShowMessage("... ... Strange, your eyes do not say so.")
+   0()
+  404()
+  If(2,"A",1)
+   If(0,5,0)
+    ChangeSelfSwitch("A",0)
+    ShowMessageFace("heinrich_fc1",7,0,2,14)
+    ShowMessage("【Heinrich】")
+    ShowMessage("...... I am in a good mood, Majesty.")
+    ShowMessageFace("",0,0,2,15)
+    ShowMessage("【King of Remina】")
+    ShowMessage("Oh, is not Heinrich!")
+    ShowMessage("Apparently, adventure seems to be going well.")
+    ShowMessageFace("heinrich_fc1",7,0,2,16)
+    ShowMessage("【Heinrich】")
+    ShowMessage("Yeah, thanks to you ....")
+    ShowMessage("We are approaching one step further to Maou Dynasty.")
+    ShowMessageFace("",0,0,2,17)
+    ShowMessage("【King of Remina】")
+    ShowMessage("Akatsuki when the Lord got the Devil King ... ...")
+    ShowMessage("I will welcome you as my son Edina's son-in-law!")
+    ShowMessageFace("heinrich_fc1",0,0,2,18)
+    ShowMessage("【Heinrich】")
+    ShowMessage("You must not, Majesty.")
+    ShowMessage("Ignoring Princess Edina's mind and advancing such a story ......")
+    ShowMessageFace("",0,0,2,19)
+    ShowMessage("【King of Remina】")
+    ShowMessage("Mum, ...")
+    ShowMessageFace("heinrich_fc1",0,0,2,20)
+    ShowMessage("【Heinrich】")
+    ShowMessage("Princess Edina is not a prize.")
+    ShowMessage("I think that you should be connected with the man you saw himself.")
+    ShowMessageFace("",0,0,2,21)
+    ShowMessage("【King of Remina】")
+    ShowMessage("I'm sorry, ...")
+    ShowMessage("Sorry Edina ...... This brave person seems to be too dull ......")
+    If(0,6,0)
+     ShowMessageFace("sonia_fc1",2,0,2,22)
+     ShowMessage("【Sonia】")
+     ShowMessage("You can not fill the outside moat here.")
+     0()
+    EndIf()
+    0()
+   EndIf()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   18
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Guards")
+  ShowMessage("If you are to be audited by the king, please go up the stairs in the front.")
+  0()
+
+
+
+EVENT   19
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Guards")
+  ShowMessage("The king always meets the hero of his journey.")
+  ShowMessage("Many of them are those who put the sword after watching the face of the king in commemoration ... ...")
+  0()
+
+
+
+EVENT   20
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Soldiers】")
+  ShowMessage("It is a stubborn story ... ... Do you have fighting spirits?")
+  ShowMessage("Or is it a retired group?")
+  ShowChoices(strings("Continue fighting","It is a retired group."),0)
+  IfPlayerPicksChoice(0,null)
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("【Soldiers】")
+   ShowMessage("Hmm ... ... It is certainly an eye full of fighting spirit.")
+   ShowMessage("Do not remember the eyes of that Heinrich.")
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("【Soldiers】")
+   ShowMessage("Actually I am meeting with Heinrich in San Iria.")
+   ShowMessage("When I went to the World Summit Conference as my companion.")
+   ShowMessageFace("",0,0,2,4)
+   ShowMessage("【Soldiers】")
+   ShowMessage("Black rice which is one of Sanyo in black who attacked there.")
+   ShowMessage("To meet me, Heinrich, an anonymous brave who happened to be on the spot -")
+   ShowMessageFace("",0,0,2,5)
+   ShowMessage("【Soldiers】")
+   ShowMessage("Let's not talk after that.")
+   ShowMessage("In that fight, Heinrich was able to make the world famous.")
+   ShowMessageFace("",0,0,2,6)
+   ShowMessage("【Soldiers】")
+   ShowMessage("Muuta, what was that story ......")
+   ShowMessage("Yes, your eyes are exactly like the eyes of Heinrich at that time.")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("538")
+   ShowMessageFace("heinrich_fc1",7,0,2,7)
+   ShowMessage("【Heinrich】")
+   ShowMessage("It is somehow hard to get out ...")
+   ShowMessageFace("",0,0,2,8)
+   ShowMessage("【Soldiers】")
+   ShowMessage("Oh, this is embarrassing ......")
+   ShowMessage("You were accompanying, were not you?")
+   EndEventProcessing()
+   0()
+  IfPlayerPicksChoice(1,null)
+   ShowMessageFace("",0,0,2,9)
+   ShowMessage("【Soldiers】")
+   ShowMessage("That's right ... I do not need to be ashamed, I fought well over the long journey.")
+   ShowMessage("Well, as it is, is there any future for me?")
+   ShowMessageFace("",0,0,2,10)
+   ShowMessage("【Soldiers】")
+   ShowMessage("In our castle, we are always recruiting soldiers.")
+   ShowMessage("More than half of the Remina soldiers are adventurers who retired from the journey.")
+   ShowMessageFace("",0,0,2,11)
+   ShowMessage("【Soldiers】")
+   ShowMessage("It would be nice if there was a place to go back ... ... There are many travelers who can not afford it.")
+   ShowMessage("When in trouble, rely on Remina.")
+   0()
+  404()
+  0()
+
+
+
+EVENT   21
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Guards")
+  ShowMessage("Princess Edina who was our goddess is obsessed with Heinrich ......")
+  ShowMessage("Well, it can not be helped if I can show such an activity.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("Guards")
+  ShowMessage("Even me who was in the meeting raid place, heart pounding heartless in Heinrich's musou.")
+  ShowMessage("If it's OK with my butt, you can lend me.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("538")
+  ShowMessageFace("heinrich_fc1",7,0,2,3)
+  ShowMessage("【Heinrich】")
+  ShowMessage("Butt ...?")
+  ShowMessage("Separately, I do not want you to lend it ... ...")
+  ShowMessageFace("",0,0,2,4)
+  ShowMessage("Guards")
+  ShowMessage("Hono himself! What? That's it!")
+  ShowMessageFace("",0,0,2,5)
+  ShowMessage("Guards")
+  ShowMessage("...... ぽ っ.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   22
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Guards")
+  ShowMessage("Princess Edina ...... Oh Edina Princess, Princess Edina ......")
+  0()
+
+
+
+EVENT   23
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Guards")
+  ShowMessage("This town is now peaceful, but there is no grief if it is prepared.")
+  ShowMessage("I do not forget that all the countries of the world are hit by the Satan army 's attack.")
+  0()
+
+
+
+EVENT   24
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Guards")
+  ShowMessage("There are many monsters living in this town, but there is no one who wants to become a soldier.")
+  ShowMessage("I guess they are free-lance guys, so they dislike discipline ... ...")
+  0()
+
+
+
+EVENT   25
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Minister】")
+  ShowMessage("King Remam also supports the retirement of the brave man's life.")
+  ShowMessage("If you are having trouble by any chance, please visit our Procedure Office.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("538")
+  ShowMessageFace("heinrich_fc1",7,0,2,2)
+  ShowMessage("【Heinrich】")
+  ShowMessage("It's a story to us.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   26
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Minister】")
+  ShowMessage("Princess Edina is the only daughter of the King.")
+  ShowMessage("It is the only throne to succeed to the throne, a cute and gentle personality is very popular among citizens.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("【Minister】")
+  ShowMessage("I wonder what kind of man will shoot that mind, it is interesting ...")
+  ShowMessage("Citizens will not be convinced if it's not a very male guy.")
+  0()
+
+
+
+EVENT   27
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Minister】")
+  ShowMessage("If there are many monsters in the city, there are also many troubles.")
+  ShowMessage("There are not so serious things, but trivial interdiction is constantly occurring ... ...")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("529")
+  ShowMessageFace("sara_fc1",0,0,2,2)
+  ShowMessage("【Sara】")
+  ShowMessage("It can not be helped more than people and demons live together.")
+  ShowMessage("What matters is that it can not lead to definitive confrontation.")
+  EndEventProcessing()
+  DefineLabel("530")
+  ShowMessageFace("sara_fc4",0,0,2,3)
+  ShowMessage("【Sara】")
+  ShowMessage("It's no use any more than people and demons live together ... ...")
+  ShowMessage("What matters is that you do not lead to definitive conflicts.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   28
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Guards")
+  ShowMessage("This is a prison.")
+  ShowMessage("The visit is free, but it is not fun to watch.")
+  0()
+
+
+
+EVENT   29
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Minister】")
+  ShowMessage("It is not surprising that there will be a massive attack by the Satan Army at this next moment.")
+  ShowMessage("We are preparing for everything including evacuation plans in the city.")
+  0()
+
+
+
+EVENT   30
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Hey, the brave Heinrich ... ....")
+  ShowMessage("Your eyes ... that atmosphere ...")
+  ShowMessage("Are you a Rena king?")
+  ShowChoices(strings("That's right","wrong"),2)
+  IfPlayerPicksChoice(0,null)
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("Hey, the brave Heinrich ... ....")
+   ShowMessage("No, there is nothing like that.")
+   ShowMessage("There are few people attracting the blood of REMINA 's royal family, and hence he / she knows everything.")
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("Hey, the brave Heinrich ... ....")
+   ShowMessage("Well, somewhere dropped seed ... ...")
+   ShowMessage("No, it was an unexpected investigation. Let's forget.")
+   0()
+  IfPlayerPicksChoice(1,null)
+   ShowMessageFace("",0,0,2,4)
+   ShowMessage("Hey, the brave Heinrich ... ....")
+   ShowMessage("Of course it is.")
+   ShowMessage("It seems I was out of my mind.")
+   0()
+  404()
+  If(2,"A",1)
+   If(0,5,0)
+    ChangeSelfSwitch("A",0)
+    ShowMessageFace("heinrich_fc1",7,0,2,5)
+    ShowMessage("【Heinrich】")
+    ShowMessage("...... I am very happy, queen.")
+    ShowMessage("It is after one case at that meeting that you can see.")
+    ShowMessageFace("",0,0,2,6)
+    ShowMessage("Hey, the brave Heinrich ... ....")
+    ShowMessage("Hey, the brave Heinrich ... ....")
+    ShowMessage("Rather than show your face to me, please go to show my face to my daughter.")
+    ShowMessageFace("heinrich_fc1",7,0,2,7)
+    ShowMessage("【Heinrich】")
+    ShowMessage("That's right ... ...")
+    ShowMessage("Because I want to refrain from rumors that will not be needed by the princess.")
+    ShowMessageFace("",0,0,2,8)
+    ShowMessage("Hey, the brave Heinrich ... ....")
+    ShowMessage("Completely, Park ...")
+    ShowMessage("Edina seems to have trouble too.")
+    0()
+   EndIf()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   31
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Prison】")
+  ShowMessage("This is a prison.")
+  ShowMessage("Either way, I am somewhat able to scrape a few days.")
+  0()
+
+
+
+EVENT   32
+ PAGE   1
+  0()
+
+
+
+EVENT   33
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Brave of the journey】")
+  ShowMessage("I got drunk and rampaged, it was awkward for me to continue embarrassing ......")
+  0()
+
+
+
+EVENT   34
+ PAGE   1
+  0()
+
+
+
+EVENT   35
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Underwear thief】")
+  ShowMessage("It's lucky to steal Succubus underwear ... ...")
+  ShowMessage("It smells inadvertently, it is a rope with a tranquil trance.")
+  0()
+
+
+
+EVENT   36
+ PAGE   1
+  ShowMessageFace("succubuses_fc2",2,0,2,1)
+  ShowMessage("【Succubus】")
+  ShowMessage("Just a little committing, I just got a wallet!")
+  ShowMessage("Why are you locking in, human being ~!")
+  0()
+
+
+
+EVENT   37
+ PAGE   1
+  0()
+
+
+
+EVENT   38
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Minister】")
+  ShowMessage("Princess Edina is the only daughter of the King.")
+  ShowMessage("It is the only throne to succeed to the throne, a cute and gentle personality is very popular among citizens.")
+  0()
+
+
+
+EVENT   39
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Guards")
+  ShowMessage("It is during the audience, be rude.")
+  0()
+
+
+
+EVENT   40
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Guards")
+  ShowMessage("It is during the audience, be rude.")
+  0()
+
+
+
+EVENT   41
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Minister】")
+  ShowMessage("Four royal houses exist in this world ......")
+  ShowMessage("Gordo royal family, Noah royal family, Sabaza royal family, and Remina king.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("【Minister】")
+  ShowMessage("Because the king that governs Saint-Iria is the faith ally ... ...")
+  ShowMessage("It is not a certain royal family.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("531")
+  ShowMessageFace("saniria_fc2",0,0,2,3)
+  ShowMessage("【King of Saint Iria】")
+  ShowMessage("Well ...")
+  ShowMessage("King San Ilia is elected by voting among the Archbishop.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   42
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Minister】")
+  ShowMessage("Black Alice says she has a sister.")
+  ShowMessage("I am repelling to my sister's ambition to rule the world ... ...")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("45")
+  ShowMessageFace("alicetromeria_fc1",4,0,2,2)
+  ShowMessage("【Aristo Romelia】")
+  ShowMessage("Uhufu ...")
+  EndEventProcessing()
+  DefineLabel("538")
+  ShowMessageFace("heinrich_fc1",7,0,2,3)
+  ShowMessage("【Heinrich】")
+  ShowMessage("I have heard the story.")
+  ShowMessage("Some of the devils who support the Satan's sister have been helped several times.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   43
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Minister】")
+  ShowMessage("There is no brave who went to Satan's castle and came back.")
+  ShowMessage("We can not obtain information from friendly demons, and the inside of the castle is enveloped in mystery.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("538")
+  ShowMessageFace("heinrich_fc1",7,0,2,2)
+  ShowMessage("【Heinrich】")
+  ShowMessage("I have to put in a spirit ...")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   44
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Guards")
+  ShowMessage("Princess Edina, have a good smell ......")
+  0()
+
+
+
+EVENT   45
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Guards")
+  ShowMessage("There is no abnormality!")
+  0()
+
+
+
+EVENT   46
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventoryArmor(168,0,0,1,false)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   47
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(4,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+

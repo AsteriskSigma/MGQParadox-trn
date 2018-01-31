@@ -1,0 +1,8 @@
+"まりん：敗北" -> "Marin: Defeat"
+"【マジカルまりんちゃん】" -> "【Magical Marikan】"
+"はい、あたしの勝ちだね♪" -> "Yes, my win is ♪"
+"それじゃあ、払うものは払ってもらうよ。" -> "Well then, I will pay what I pay."
+"ルカは 900G 支払った！" -> "Luke paid 900 G!"
+"【マジカルまりんちゃん】" -> "【Magical Marikan】"
+"それじゃあ、また来てね。" -> "Well then, please come back."
+"次の勝負でも、い～っぱい甘やかしてあげちゃうから♪" -> "Even with the next game, I will spoil it a lot ♪"

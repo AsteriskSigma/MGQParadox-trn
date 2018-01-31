@@ -1,0 +1,4 @@
+"会話：黒のアリス" -> "Conversation: Black Alice"
+"【黒のアリス】" -> "【Black Alice】"
+"お話よりも、戦いを楽しみましょう……" -> "Let's enjoy fighting than talking ... ..."
+"黒のアリスは会話を拒絶している！" -> "Black Alice is rejecting the conversation!"

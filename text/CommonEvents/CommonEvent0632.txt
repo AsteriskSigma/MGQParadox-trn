@@ -1,0 +1,3 @@
+"イベント：ドラゴンパピー" -> "Event: Dragon Puppy"
+"【ドラゴンパピー】" -> "【Dragon Puppy】"
+"うが！　パピの鍛冶屋さんなのだ！" -> "Hello! It is Papi's blacksmith!"

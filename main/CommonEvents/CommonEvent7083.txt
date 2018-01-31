@@ -1,0 +1,23 @@
+// EVENT 7083
+Name "Elissa: Defeat"
+
+RunCommonEvent(7000)
+PictureDisplay(5,"80_mob_elf1_st01",0,0,0,0,100,100,255,0)
+PictureClear(6)
+ShowMessageFace("mob_elf1_fc1",0,0,2,1)
+ShowMessage("\\n<Elise>Alright, that's 150G.\nMy win, of course.")
+125(1,0,150)
+ShowMessageFace("",0,0,2,2)
+ShowMessage("Luka hands over 150G!")
+ShowMessageFace("mob_elf1_fc1",0,0,2,3)
+ShowMessage("\\n<Elise>Come back again.\nI can make you come over and over, of course.")
+If(0,2331,1)
+ PictureClear(5)
+ 281(1)
+ TeleportPlayer(0,35,20,30,2,0)
+ 216(0)
+ 0()
+EndIf()
+EndEventProcessing()
+0()
+

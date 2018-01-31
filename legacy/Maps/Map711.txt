@@ -1,0 +1,628 @@
+
+
+
+EVENT   1
+ PAGE   1
+  // condition: switch 1053 is ON
+  ShowMessageFace("slime_fc1",0,0,2,1)
+  ShowMessage("\\n<Lime>We're going to Undine's spring...\nIt's full of my slime friends! ♪")
+  ShowMessageFace("slime_fc1",0,0,2,2)
+  ShowMessage("\\n<Lime>So happy! ♪ Gonna be so fun! ♪")
+  ShowMessage("Yaaaaaay! ♪ Yaaaaaaaaay! ♪")
+  0()
+
+
+
+EVENT   2
+ PAGE   1
+  // condition: switch 4 is ON
+  If(2,"A",1)
+   ChangeSelfSwitch("A",0)
+   ShowMessageFace("alice_fc5",3,0,2,1)
+   ShowMessage("\\n<Alice>Just what is my mother thinking...\nWhy in the world would she depose me and retake the throne?")
+   ShowMessageFace("ruka_fc1",0,0,2,2)
+   ShowMessage("\\n<Luka>Based on what Astaroth said, it sounds like those three succubus sisters have joined forces with your mother.")
+   ShowMessageFace("alice_fc5",2,0,2,3)
+   ShowMessage("\\n<Alice>...yeah, no doubt.\nWhat could they possibly be scheming together?")
+   ShowMessageFace("alice_fc5",0,0,2,4)
+   ShowMessage("\\n<Alice>Meddling with human royal families and destabilizing their kingdoms... Annihilating entire villages...\nMy mother is complicit in their actions.")
+   ShowMessageFace("alice_fc5",3,0,2,5)
+   ShowMessage("\\n<Alice>She hated barbaric acts like that most of all, though. She loved peace so much, so why...")
+   ShowMessageFace("ruka_fc1",0,0,2,6)
+   ShowMessage("\\n<Luka>Astaroth did claim that they were trying to save the world...")
+   ShowMessageFace("alice_fc5",0,0,2,7)
+   ShowMessage("\\n<Alice>It doesn't look like they're doing anything but pushing the world off the rails. But if even my mother is taking part...")
+   ShowMessageFace("alice_fc5",3,0,2,8)
+   ShowMessage("\\n<Alice>...there has to be some reason for it. My mother would never condone such brutality without sufficient cause.")
+   ShowMessageFace("ruka_fc1",0,0,2,9)
+   ShowMessage("\\n<Luka>Perhaps the succubus sisters are just acting in accordance with this correct history we keep hearing about? Or at least as close as they can get or something...")
+   ShowMessageFace("alice_fc5",2,0,2,10)
+   ShowMessage("\\n<Alice>I've considered that, but I still think their level of violence is going too far. I can't imagine the correct history involves destruction of this magnitude.")
+   ShowMessageFace("alice_fc5",3,0,2,11)
+   ShowMessage("\\n<Alice>At any rate, something's missing. We don't have enough information yet...")
+   ShowMessageFace("ruka_fc1",0,0,2,12)
+   ShowMessage("\\n<Luka>We should learn more as our adventure continues, at least.")
+   ShowMessageFace("alice_fc5",1,0,2,13)
+   ShowMessage("\\n<Alice>You're certainly right. By the end of this journey, we'll get all the answers!")
+   ShowMessageFace("alice_fc5",1,0,2,14)
+   ShowMessage("\\n<Alice>I pursue my mother while you pursue your father... It's a queer twist of fate that we find ourselves together, now that I think about it.")
+   ShowMessageFace("ruka_fc1",0,0,2,15)
+   ShowMessage("\\n<Luka>We're both being manipulated by our parents with practically no explanations.")
+   ShowMessageFace("alice_fc5",1,0,2,16)
+   ShowMessage("\\n<Alice>Let's stick together, Luka.\nWe'll figure this all out, save the world, and smack our parents in the face!")
+   ShowMessageFace("ruka_fc1",0,0,2,17)
+   ShowMessage("\\n<Luka>All right!\n...Wait, I don't actually want to smack my father in the face, though.")
+   ShowMessageFace("",0,0,2,18)
+   ShowMessage("The mystery behind my father, and the crisis our world faces--\nWe should find the answers to our questions if we continue on.")
+   ChangeSwitch(2153,2153,0)
+   0()
+  Else()
+   ShowMessageFace("alice_fc5",1,0,2,19)
+   ShowMessage("\\n<Alice>You and I are both stuck chasing after our parents. What a strange journey this has become...")
+   0()
+  EndIf()
+  0()
+ PAGE   2
+  // condition: switch 5 is ON
+  If(2,"B",1)
+   ChangeSelfSwitch("B",0)
+   ShowMessageFace("iriasu_fc4",0,0,2,1)
+   ShowMessage("\\n<Ilias>You know, adventuring is actually rather fun. It's quite a different experience compared to looking down from above.")
+   ShowMessageFace("iriasu_fc4",0,0,2,2)
+   ShowMessage("\\n<Ilias>Walking the earth on my own feet, smiting monsters with my own hands, stuffing my empty belly with food, resting my weary body--")
+   ShowMessageFace("iriasu_fc4",0,0,2,3)
+   ShowMessage("\\n<Ilias>...to be honest, this isn't bad at all.")
+   ShowMessageFace("ruka_fc1",0,0,2,4)
+   ShowMessage("\\n<Luka>Yeah, I noticed you haven't been whining as much.")
+   ShowMessageFace("iriasu_fc5",0,0,2,5)
+   ShowMessage("\\n<Ilias>I never whine!")
+   ShowMessageFace("ruka_fc1",0,0,2,6)
+   ShowMessage("\\n<Luka>S-sorry...")
+   ShowMessageFace("iriasu_fc4",2,0,2,7)
+   ShowMessage("\\n<Ilias>Looking back, it's possible that I was being too impatient.")
+   ShowMessageFace("ruka_fc1",0,0,2,8)
+   ShowMessage("\\n<Luka>Too impatient? About what?")
+   ShowMessageFace("iriasu_fc4",2,0,2,9)
+   ShowMessage("\\n<Ilias>Never mind, just talking to myself.\nAnyway, when you change your viewpoint, you can see things you couldn't previously. It seems so obvious now.")
+   ShowMessageFace("iriasu_fc4",0,0,2,10)
+   ShowMessage("\\n<Ilias>...all right, creatures of this planet! I shall permit you all to live your lives to their fullest.")
+   ShowMessageFace("ruka_fc1",0,0,2,11)
+   ShowMessage("\\n<Luka>(How magnanimous of her...)")
+   ShowMessageFace("iriasu_fc4",2,0,2,12)
+   ShowMessage("\\n<Ilias>It has supposedly been 30 years since I was last seen, and yet humanity is doing well, are they not?")
+   ShowMessageFace("iriasu_fc4",2,0,2,13)
+   ShowMessage("\\n<Ilias>Even without their Goddess, people continue to thrive. That makes me happy, but sad at the same time.")
+   ShowMessageFace("iriasu_fc4",2,0,2,14)
+   ShowMessage("\\n<Ilias>And here I am, the people's forgotten Goddess, eating with my companions and camping out, looking up at the starry sky.")
+   ShowMessageFace("iriasu_fc4",0,0,2,15)
+   ShowMessage("\\n<Ilias>...but I'm not despondent about that at all. Perhaps this is what it means to be alive.")
+   ShowMessageFace("ruka_fc1",0,0,2,16)
+   ShowMessage("\\n<Luka>I'm not sure either, but I think you're right. I feel like you're much more full of life now than when we first met.")
+   ShowMessageFace("iriasu_fc4",1,0,2,17)
+   ShowMessage("\\n<Ilias>I've come to realize a great many things since I stepped down from my seat in Heaven...\nLuka, please continue to enlighten me.")
+   ShowMessageFace("ruka_fc1",0,0,2,18)
+   ShowMessage("\\n<Luka>It's a deal. Let's stick together!")
+   ShowMessageFace("",0,0,2,19)
+   ShowMessage("It's an odd journey, traveling the world with a fallen goddess. What could possibly await us at the end of it?")
+   ChangeSwitch(2153,2153,0)
+   0()
+  Else()
+   ShowMessageFace("iriasu_fc4",2,0,2,20)
+   ShowMessage("\\n<Ilias>My sleeping bag is so sandy and rough.\nOh, how I miss my soft bed in Heaven...")
+   ShowMessageFace("ruka_fc1",0,0,2,21)
+   ShowMessage("\\n<Luka>(Maybe she hasn't changed that much, after all...)")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   3
+ PAGE   1
+  // condition: switch 6 is ON
+  If(2,"A",1)
+   ChangeSelfSwitch("A",0)
+   ShowMessageFace("sonia_fc1",4,0,2,1)
+   ShowMessage("\\n<Sonya>I wonder if my mother traveled this very road with your father and Uncle Lazarus...")
+   ShowMessageFace("ruka_fc1",0,0,2,2)
+   ShowMessage("\\n<Luka>If they came to Grand Noah, then they probably did. It's possible they made camp in this exact spot.")
+   ShowMessageFace("sonia_fc1",4,0,2,3)
+   ShowMessage("\\n<Sonya>I don't actually know how far their party made it. I'm pretty sure they reached Gold Port...")
+   ShowMessageFace("ruka_fc1",0,0,2,4)
+   ShowMessage("\\n<Luka>Lazarus wouldn't ever tell me much of anything about their travels. What it was like, where they went, nothing...")
+   ShowMessageFace("sonia_fc1",5,0,2,5)
+   ShowMessage("\\n<Sonya>Why was he so stubborn about opening up? I don't think he was keeping secrets, was he?")
+   ShowMessageFace("ruka_fc1",0,0,2,6)
+   ShowMessage("\\n<Luka>It must have been a rough adventure considering what happened to his arm. Maybe he just didn't want to rehash bad memories?")
+   ShowMessageFace("sonia_fc1",5,0,2,7)
+   ShowMessage("\\n<Sonya>As if Uncle Lazarus is that emotional!")
+   ShowMessageFace("ruka_fc1",0,0,2,8)
+   ShowMessage("\\n<Luka>He seems pretty emotional to me...")
+   ShowMessageFace("sonia_fc2",2,0,2,9)
+   ShowMessage("\\n<Sonya>Hey, so about that assassination attempt on His Highness the Pope...\nDo you think Uncle was the ringleader?")
+   ShowMessageFace("ruka_fc1",0,0,2,10)
+   ShowMessage("\\n<Luka>You denied it yourself, didn't you? He's not the nicest guy, but I doubt he'd go that far...")
+   ShowMessageFace("sonia_fc2",2,0,2,11)
+   ShowMessage("\\n<Sonya>I want to believe him, but there's so much he's hiding. He seems pretty well connected to the underworld, too.")
+   ShowMessageFace("ruka_fc1",0,0,2,12)
+   ShowMessage("\\n<Luka>......")
+   ShowChoices(strings("I believe Lazarus","Honestly, it is suspicious"),0)
+   IfPlayerPicksChoice(0,null)
+    ShowMessageFace("sonia_fc1",4,0,2,13)
+    ShowMessage("\\n<Sonya>Right? We've got to believe him! Uncle looks like a bad guy so it's easy to misunderstand him!")
+    0()
+   IfPlayerPicksChoice(1,null)
+    ShowMessageFace("sonia_fc2",2,0,2,14)
+    ShowMessage("\\n<Sonya>Don't say that...\nIt does make me worry, though...")
+    0()
+   404()
+   ShowMessageFace("sonia_fc1",0,0,2,15)
+   ShowMessage("\\n<Sonya>If we get a break, let's go talk to him together. Even if he wasn't connected with the assassination attempt, he might know something.")
+   ShowMessageFace("ruka_fc1",0,0,2,16)
+   ShowMessage("\\n<Luka>All right. When the time comes, my father can come with us!")
+   ShowMessageFace("",0,0,2,17)
+   ShowMessage("After this is all over, my father should return home. With him at our side, even Lazarus should open up to us.")
+   ShowMessageFace("sonia_fc1",1,0,2,18)
+   ShowMessage("\\n<Sonya>Luka... let's save the world together. And when this is all over, let's return to Iliasville, okay?")
+   ShowMessageFace("ruka_fc1",0,0,2,19)
+   ShowMessage("\\n<Luka>Of course!")
+   0()
+  Else()
+   ShowMessageFace("sonia_fc1",0,0,2,20)
+   ShowMessage("\\n<Sonya>Let's keep pressing on! Tomorrow, the day after, and the day after that! My club doesn't know how to remain idle!")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   4
+ PAGE   1
+  // condition: switch 1056 is ON
+  ShowMessageFace("inp_fc1",0,0,2,1)
+  ShowMessage("\\n<Rami>I'm going to soar through the clouds one day, I swear!")
+  0()
+
+
+
+EVENT   5
+ PAGE   1
+  // condition: switch 1057 is ON
+  ShowMessageFace("inp_fc3",0,0,2,1)
+  ShowMessage("\\n<null>*Yawwwwwn*.")
+  0()
+
+
+
+EVENT   6
+ PAGE   1
+  // condition: switch 1058 is ON
+  ShowMessageFace("inp_fc2",0,0,2,1)
+  ShowMessage("\\n<Remi>*Shiver*")
+  If(2,"A",1)
+   ChangeSelfSwitch("A",0)
+   ShowMessageFace("inp_fc2",0,0,2,2)
+   ShowMessage("\\n<Remi>...I found this.")
+   250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+   ChangeInventory_Item(303,0,0,1)
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   7
+ PAGE   1
+  ShowMessageFace("ruka_fc1",0,0,2,1)
+  ShowMessage("\\n<Luka>It's still a bit early to sleep...")
+  205(-1,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x07,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x06,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  0()
+ PAGE   2
+  // condition: switch 2153 is ON
+  // condition: switch 4 is ON
+  ShowMessageFace("ruka_fc1",0,0,2,1)
+  ShowMessage("\\n<Luka>It's still a bit early to sleep...")
+  205(-1,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x07,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x06,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  205(2,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x07,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x18,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  ShowMessageFace("alice_fc5",1,0,2,2)
+  ShowMessage("\\n<Alice>If you're looking for something to do, I can instruct you on a new sword skill that should let you put the power of wind to use.")
+  ShowMessageFace("ruka_fc1",0,0,2,3)
+  ShowMessage("\\n<Luka>A wind element sword skill? Yes, please!")
+  ShowMessageFace("",0,0,2,4)
+  ShowMessage("Thus, we begin a special training session--")
+  221()
+  Wait(120)
+  222()
+  ShowMessageFace("ruka_fc1",0,0,2,5)
+  ShowMessage("\\n<Luka>I see...\nSo it goes like this!")
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0d,0x6d,0x6f,0x6e,0x5f,0x74,0x75,0x6b,0x69,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  Wait(60)
+  ShowMessageFace("alice_fc5",1,0,2,6)
+  ShowMessage("\\n<Alice>Hmm, pretty good.\nIt's a quick, powerful skill against a single foe, but it does consume both SP and MP.")
+  318(0,1,0,950)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ShowMessageFace("",0,0,2,7)
+  ShowMessage("Luka learned \\I[463]\\C[1]Lightning Sword Flash\\C[0]!")
+  ShowMessageFace("alice_fc5",1,0,2,8)
+  ShowMessage("\\n<Alice>You have quite the aptitude for monster skills considering how easily you pick them up. Are you considering becoming a Monster Swordsman?")
+  ShowMessageFace("ruka_fc1",0,0,2,9)
+  ShowMessage("\\n<Luka>That might not be a bad idea...\nHow can I become a Monster Swordsman, though?")
+  ShowMessageFace("alice_fc5",0,0,2,10)
+  ShowMessage("\\n<Alice>Becoming a Monster Swordsman requires monster power, which only the Monster Lord can grant...")
+  ShowMessageFace("alice_fc5",3,0,2,11)
+  ShowMessage("\\n<Alice>I could have done it before, but as I am now...")
+  ShowMessageFace("ruka_fc1",0,0,2,12)
+  ShowMessage("\\n<Luka>Oh, sorry...")
+  ShowMessageFace("",0,0,2,13)
+  ShowMessage("I didn't mean to bring that up. I better change the subject...")
+  ShowMessageFace("ruka_fc1",0,0,2,14)
+  ShowMessage("\\n<Luka>Speaking of Monster Swordsmen, Granberia was one of your lieutenants, wasn't she?")
+  ShowMessageFace("alice_fc5",0,0,2,15)
+  ShowMessage("\\n<Alice>Granberia was one of my Four Heavenly Knights from the outset. They're the Monster Lord's most trusted vassals, but she's loyal to my mother now.")
+  ShowMessageFace("alice_fc5",0,0,2,16)
+  ShowMessage("\\n<Alice>Granberia appears to have fought with Alipheese the 17th at my mother's command. That makes me think she's being used to take out any powerful opposition.")
+  ShowMessageFace("alice_fc5",3,0,2,17)
+  ShowMessage("\\n<Alice>She's a soldier who would never betray her master. If she considered the succession of the title of Monster Lord to be legitimate, she'd offer her loyalty to mother...")
+  ShowMessageFace("ruka_fc1",0,0,2,18)
+  ShowMessage("\\n<Luka>So that means she probably has no idea that you're still alive?")
+  ShowMessageFace("alice_fc5",2,0,2,19)
+  ShowMessage("\\n<Alice>That's a very likely possibility. If she learns I'm alive, she might come over to our side.")
+  ShowMessageFace("alice_fc5",3,0,2,20)
+  ShowMessage("\\n<Alice>No, that's just wishful thinking.")
+  ShowMessageFace("ruka_fc1",0,0,2,21)
+  ShowMessage("\\n<Luka>Well, what about the other three knights?")
+  ShowMessageFace("alice_fc5",0,0,2,22)
+  ShowMessage("\\n<Alice>Alma Elma is too unpredictable, so I can't even guess what she's up to. I doubt even my mother has her in line.")
+  ShowMessageFace("alice_fc5",0,0,2,23)
+  ShowMessage("\\n<Alice>Erubetie has a rational way of thinking. As long as it isn't against the interests of the slime race, she'll obey the Monster Lord.")
+  If(1,1058,0,0,0)
+   ShowMessageFace("alice_fc5",0,0,2,24)
+   ShowMessage("\\n<Alice>Tamamo...\nShe was in charge of my mother's education.")
+   ShowMessageFace("ruka_fc1",0,0,2,25)
+   ShowMessage("\\n<Luka>So she's older than your mother?")
+   ShowMessageFace("alice_fc5",0,0,2,26)
+   ShowMessage("\\n<Alice>Myself included, she's been in charge of educating Monster Lords for generations. Even I don't really know how old she is.")
+   ShowMessageFace("alice_fc5",2,0,2,27)
+   ShowMessage("\\n<Alice>Anyway, this is mere conjecture, but I have a hunch she's involved in my mother retaking the throne.")
+   ShowMessageFace("alice_fc5",3,0,2,28)
+   ShowMessage("\\n<Alice>I think I'm right, but I don't know for sure. What the hell is that kitsune planning...")
+   0()
+  Else()
+   ShowMessageFace("alice_fc5",0,0,2,29)
+   ShowMessage("\\n<Alice>We met Tamamo in Yamatai.\nShe's holed up in her shrine for some reason.")
+   0()
+  EndIf()
+  ShowMessageFace("ruka_fc1",0,0,2,30)
+  ShowMessage("\\n<Luka>As our adventure continues, it's possible that we'll eventually have to fight them.")
+  ShowMessageFace("alice_fc5",2,0,2,31)
+  ShowMessage("\\n<Alice>Yeah, we probably won't be able to avoid a fight... They aren't opponents to be taken lightly, so we better train hard.")
+  ShowMessageFace("alice_fc5",3,0,2,32)
+  ShowMessage("\\n<Alice>That goes for me too. This isn't the time to act self-important. I need to find a way to return to my normal self as soon as possible.")
+  ShowMessageFace("ruka_fc1",0,0,2,33)
+  ShowMessage("\\n<Luka>We have to find the white rabbit...\nWell, I'm sure she'll end up appearing for us even if we can't find her.")
+  ShowMessageFace("alice_fc5",1,0,2,34)
+  ShowMessage("\\n<Alice>Indeed. Her role is to guide me, after all. We'll eventually catch her and make her cough up everything she knows.")
+  ShowMessageFace("alice_fc5",1,0,2,35)
+  ShowMessage("\\n<Alice>It's getting late. We should get some sleep for tomorrow.")
+  ShowMessageFace("ruka_fc1",0,0,2,36)
+  ShowMessage("\\n<Luka>Oh, you're right. It'll be another long day of adventuring. Good night.")
+  ShowMessageFace("",0,0,2,37)
+  ShowMessage("Time got away from me while we were talking. Thus, we all head to bed.")
+  221()
+  249(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x08,0x49,0x6e,0x6e,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69))
+  Wait(180)
+  314(0,0)
+  223(bytes(0x04,0x08,0x75,0x3a,0x09,0x54,0x6f,0x6e,0x65,0x25,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00),1,true)
+  216(0)
+  TeleportPlayer(0,2,345,174,4,2)
+  222()
+  ChangeSwitch(100,100,1)
+  0()
+ PAGE   3
+  // condition: switch 2153 is ON
+  // condition: switch 5 is ON
+  ShowMessageFace("ruka_fc1",0,0,2,1)
+  ShowMessage("\\n<Luka>It's still a bit early to sleep...")
+  205(-1,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x07,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x06,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  205(2,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x07,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x18,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  ShowMessageFace("iriasu_fc4",0,0,2,2)
+  ShowMessage("\\n<Ilias>If you cannot sleep yet, then I shall bestow a new skill upon you.")
+  ShowMessageFace("ruka_fc1",0,0,2,3)
+  ShowMessage("\\n<Luka>Awesome! Thank you!")
+  ShowMessageFace("iriasu_fc4",0,0,2,4)
+  ShowMessage("\\n<Ilias>I'll teach you a high-ranking angel skill this time. Given your lineage, it should be possible for you.")
+  ShowMessageFace("ruka_fc1",0,0,2,5)
+  ShowMessage("\\n<Luka>Okay! I'll work hard at it!")
+  ShowMessageFace("",0,0,2,6)
+  ShowMessage("Thus, we begin a special training session--")
+  221()
+  Wait(120)
+  222()
+  ShowMessageFace("ruka_fc1",0,0,2,7)
+  ShowMessage("\\n<Luka>Focus my clear mind on my chest... Haa!")
+  ShowMessageFace("iriasu_fc4",0,0,2,8)
+  ShowMessage("\\n<Ilias>That's it... Release the holy power all at once. Purifying light should mow down the evil that lurks around you.")
+  318(0,1,0,1637)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ShowMessageFace("",0,0,2,9)
+  ShowMessage("Luka learned \\I[171]\\C[1]Purifying Light\\C[0]!")
+  ShowMessageFace("ruka_fc1",0,0,2,10)
+  ShowMessage("\\n<Luka>But how can I use these holy skills so easily? My mother was an angel, right?")
+  ShowMessageFace("iriasu_fc4",2,0,2,11)
+  ShowMessage("\\n<Ilias>Yes, it's about time I told you...\nIt's true that your mother was an angel, but she wasn't some mere cherub.")
+  ShowMessageFace("iriasu_fc4",0,0,2,12)
+  ShowMessage("\\n<Ilias>She was one of the original and strongest angels. The Seraph Lucifina herself was your mother.")
+  ShowMessageFace("ruka_fc1",0,0,2,13)
+  ShowMessage("\\n<Luka>My mother was one of the original angels!?")
+  ShowMessageFace("iriasu_fc4",0,0,2,14)
+  ShowMessage("\\n<Ilias>That's right. Micaela and Lucifina were sisters created as copies of myself.")
+  ShowMessageFace("iriasu_fc4",0,0,2,15)
+  ShowMessage("\\n<Ilias>From the third on, I diverted and projected energy and resources from this planet to increase the production of angels.")
+  ShowMessageFace("iriasu_fc4",0,0,2,16)
+  ShowMessage("\\n<Ilias>Micaela and Lucifina are therefore different from the third and later angels. Just having a small portion of myself made them the strongest of all angels.")
+  ShowMessageFace("ruka_fc1",0,0,2,17)
+  ShowMessage("\\n<Luka>It's hard to believe my mother was such an amazing angel...")
+  If(4,41,0)
+   ShowMessageFace("iriasu_fc4",0,0,2,18)
+   ShowMessage("\\n<Ilias>By the way, Promestein...\nYou said there are seven archangels in the world you're from, right?")
+   ShowMessageFace("stein_fc2",0,0,2,19)
+   ShowMessage("\\n<Promestein>That's right. Micaela leads six others with power close to her own, enough to prevail against the Dark Goddess's Six Ancestors.")
+   ShowMessageFace("iriasu_fc4",2,0,2,20)
+   ShowMessage("\\n<Ilias>So I've been wondering...\nWasn't Eden angry that six angels were added above her in the hierarchy?")
+   ShowMessageFace("stein_fc2",0,0,2,21)
+   ShowMessage("\\n<Promestein>Once Heaven and Earth were unified, each of the archangels were given their own territory.")
+   ShowMessageFace("stein_fc2",0,0,2,22)
+   ShowMessage("\\n<Promestein>It's essentially a feudal system with each of them having independent control. Of course, they're still subject to Ilias's rule.")
+   ShowMessageFace("stein_fc2",0,0,2,23)
+   ShowMessage("\\n<Promestein>Under this system, Eden became the highest ranking aide to report directly to Ilias. She never stops smiling at the thought of being number one to the Goddess.")
+   ShowMessageFace("iriasu_fc4",0,0,2,24)
+   ShowMessage("\\n<Ilias>Impressive... That version of me was very clever. That sounds like the perfect way to handle Eden.")
+   ShowMessageFace("iriasu_fc4",0,0,2,25)
+   ShowMessage("\\n<Ilias>Two more seraphs were added, right?\nIf I recall correctly, Zion and Gnosis are also my aides?")
+   ShowMessageFace("stein_fc2",0,0,2,26)
+   ShowMessage("\\n<Promestein>Yes, those three occupy the top of the angel hierarchy and report directly to Ilias.")
+   ShowMessageFace("stein_fc2",0,0,2,27)
+   ShowMessage("\\n<Promestein>The Seven Archangels normally govern their own territories, but if Ilias calls a general assembly, they take direct control over the armies.")
+   ShowMessageFace("stein_fc2",0,0,2,28)
+   ShowMessage("\\n<Promestein>Also, Lucifina isn't included in the Seven Archangels. I get the impression that she's allowed to do whatever she pleases because she's so fickle and moody.")
+   ShowMessageFace("iriasu_fc4",2,0,2,29)
+   ShowMessage("\\n<Ilias>Yes, I can picture that...\nIt's quite a surprise compared to the mellow Lucifina of this world, though.")
+   ShowMessageFace("ruka_fc1",0,0,2,30)
+   ShowMessage("\\n<Luka>My mother was that difficult to deal with!?")
+   ShowMessageFace("stein_fc2",2,0,2,31)
+   ShowMessage("\\n<Promestein>I was shocked to hear that your Lucifina came to the surface and became a housewife. Well done, surface-dwellers...")
+   ShowMessageFace("ruka_fc1",0,0,2,32)
+   ShowMessage("\\n<Luka>......")
+   0()
+  EndIf()
+  ShowMessageFace("iriasu_fc4",2,0,2,33)
+  ShowMessage("\\n<Ilias>At any rate, those two seraphs are already deceased, and as I am now, I lack the power to create new angels.")
+  ShowMessageFace("iriasu_fc4",2,0,2,34)
+  ShowMessage("\\n<Ilias>...I'm getting tired...")
+  ShowMessageFace("ruka_fc1",0,0,2,35)
+  ShowMessage("\\n<Luka>All right, time for bed then.")
+  ShowMessageFace("",0,0,2,36)
+  ShowMessage("Time got away from me while we were talking. Thus, we all head to bed.")
+  221()
+  249(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x08,0x49,0x6e,0x6e,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69))
+  Wait(180)
+  314(0,0)
+  223(bytes(0x04,0x08,0x75,0x3a,0x09,0x54,0x6f,0x6e,0x65,0x25,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00),1,true)
+  216(0)
+  TeleportPlayer(0,2,345,174,4,2)
+  222()
+  ChangeSwitch(100,100,1)
+  0()
+
+
+
+EVENT   8
+ PAGE   1
+  // condition: switch 1062 is ON
+  ShowMessageFace("gob_fc1",0,0,2,1)
+  ShowMessage("\\n<A gob>I want to go to Yamatai Village! I haven't been home in a long time!")
+  ShowMessageFace("gob_fc1",0,0,2,2)
+  ShowMessage("\\n<A gob>Hey, after we take care of business, can we pay a visit? It's a really great place!")
+  0()
+
+
+
+EVENT   9
+ PAGE   1
+  // condition: switch 1079 is ON
+  ShowMessageFace("nuruko_fc1",0,0,2,1)
+  ShowMessage("\\n<Nuruko>Kyuu! Kyuu!")
+  ShowChoices(strings("Do nothing","Push"),1)
+  IfPlayerPicksChoice(0,null)
+   EndEventProcessing()
+   0()
+  IfPlayerPicksChoice(1,null)
+   205(0,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x54,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x46,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x0e,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x28,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x22,0x3b,0x0c,0x5b,0x06,0x69,0x0b,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x23,0x3b,0x0c,0x5b,0x06,0x69,0x0a,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x10,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x10,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x29,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x22,0x3b,0x0c,0x5b,0x06,0x69,0x09,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x23,0x3b,0x0c,0x5b,0x06,0x69,0x08,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+   0()
+  404()
+  0()
+
+
+
+EVENT   10
+ PAGE   1
+  // condition: switch 1041 is ON
+  ShowMessageFace("stein_fc2",1,0,2,1)
+  ShowMessage("\\n<Promestein>I wonder what became of the angels in this world. Were most of them caught up in the annihilation of Heaven and destroyed?")
+  ShowMessageFace("ruka_fc1",0,0,2,2)
+  ShowMessage("\\n<Luka>You have a smile on your face...")
+  If(0,4,0)
+   ShowMessageFace("stein_fc2",0,0,2,3)
+   ShowMessage("\\n<Promestein>That aside, the Seven Archangels don't appear to exist in this world. That makes me wonder if they exist in the original history.")
+   0()
+  EndIf()
+  If(0,5,0)
+   ShowMessageFace("stein_fc2",0,0,2,4)
+   ShowMessage("\\n<Promestein>According to Ilias, the Seven Archangels don't exist in this world. That makes me wonder if they exist in the original history.")
+   0()
+  EndIf()
+  ShowMessageFace("stein_fc2",0,0,2,5)
+  ShowMessage("\\n<Promestein>If not, then the world I'm from would also be a parallel world that deviated from the original history... Yes, that would seem to be the case.")
+  0()
+
+
+
+EVENT   11
+ PAGE   1
+  // condition: switch 1064 is ON
+  ShowMessageFace("pramia_fc1",0,0,2,1)
+  ShowMessage("\\n<null>Noah's water is so clean...\nIt's perfect for doing laundry. ♪")
+  0()
+
+
+
+EVENT   12
+ PAGE   1
+  // condition: switch 1072 is ON
+  ShowMessageFace("phoenix_fc1",3,0,2,1)
+  ShowMessage("\\n<mini>Noah's pots are very nice.\nI wonder if the clay they use here is different?")
+  0()
+
+
+
+EVENT   13
+ PAGE   1
+  // condition: switch 1066 is ON
+  ShowMessageFace("vgirl_fc1",0,0,2,1)
+  ShowMessage("\\n<Vanilla>Grand Noah might be a good place to open my own store. Networking among monsters is popular, and the infrastructure here is excellent.")
+  0()
+
+
+
+EVENT   14
+ PAGE   1
+  // condition: switch 1068 is ON
+  ShowMessageFace("dragonp_fc1",0,0,2,1)
+  ShowMessage("\\n<null>I need much, much more practice to become one of the world's leading smiths! I'll make an awesome sword for you too, Luka!")
+  ShowMessageFace("ruka_fc1",0,0,2,2)
+  ShowMessage("\\n<Luka>Thanks. I'll look forward to it.")
+  0()
+
+
+
+EVENT   15
+ PAGE   1
+  // condition: switch 1054 is ON
+  ShowMessageFace("bunnyslime_fc1",0,0,2,1)
+  ShowMessage("\\n<Cow>Hop hop hop hop!")
+  0()
+
+
+
+EVENT   16
+ PAGE   1
+  // condition: switch 1118 is ON
+  ShowMessageFace("meia_fc1",3,0,2,1)
+  ShowMessage("\\n<Meia>It pains me to see children fleeing the horrors of war and becoming refugees. I would love to save them all somehow...")
+  0()
+
+EVENT   17
+ PAGE   1
+  // condition: switch 1103 is ON
+  If(0,1102,0)
+   ShowMessageFace("kamuro_fc1",0,0,2,1)
+   ShowMessage("\\n<Kamuro>Kitsu-nee, why are there so many trees in the Noah region?")
+   ShowMessageFace("youko_fc1",0,0,2,2)
+   ShowMessage("\\n<Kitsu>Well, you see...\nIt's because the Goddess of the Land in the Noah region loves climbing trees.")
+   ShowMessageFace("kamuro_fc1",0,0,2,3)
+   ShowMessage("\\n<Kamuro>You're so smart, Kitsu-nee! You know everything!")
+   0()
+  Else()
+   ShowMessageFace("kamuro_fc1",0,0,2,4)
+   ShowMessage("\\n<Kamuro>I wonder why there are so many trees in the Noah region. I should ask Kitsu-nee about it...")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   18
+ PAGE   1
+  // condition: switch 1102 is ON
+  If(0,1103,0)
+   ShowMessageFace("kamuro_fc1",0,0,2,1)
+   ShowMessage("\\n<Kamuro>Kitsu-nee, why are there so many trees in the Noah region?")
+   ShowMessageFace("youko_fc1",0,0,2,2)
+   ShowMessage("\\n<Kitsu>Well, you see...\nIt's because the Goddess of the Land in the Noah region loves climbing trees.")
+   ShowMessageFace("kamuro_fc1",0,0,2,3)
+   ShowMessage("\\n<Kamuro>You're so smart, Kitsu-nee! You know everything!")
+   0()
+  Else()
+   ShowMessageFace("youko_fc1",0,0,2,4)
+   ShowMessage("\\n<Kamuro>I wonder why there are so many trees in the Noah region. Maybe I should ask Tamamo next chance I get.")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   19
+ PAGE   1
+  ShowMessageFace("sylph_fc1",0,0,2,1)
+  ShowMessage("\\n<Sylph>I get to see Undine-chaaaaan! ♪\nYaaay! ♪\nThis'll be so fun! ♪")
+  0()
+
+
+
+EVENT   20
+ PAGE   1
+  // condition: switch 1531 is ON
+  ShowMessageFace("saniria_fc2",0,0,2,1)
+  ShowMessage("\\n<King Saint Iria>Hero Luka, have you given any thoughts to your future after this journey? Have you considered become a cog--I mean, a knight of the temple?")
+  ShowMessageFace("ruka_fc1",0,0,2,2)
+  ShowMessage("\\n<Luka>Me? A knight?")
+  ShowMessageFace("saniria_fc2",0,0,2,3)
+  ShowMessage("\\n<King Saint Iria>With your talent, I bet you could even make Knight Commander. Just something to keep in mind.")
+  ShowMessageFace("ruka_fc1",0,0,2,4)
+  ShowMessage("\\n<Luka>After this adventure, eh...\nI haven't ever imagined that.")
+  0()
+
+
+
+EVENT   21
+ PAGE   1
+  // condition: switch 1129 is ON
+  ShowMessageFace("brunhild_fc1",0,0,2,1)
+  ShowMessage("\\n<Hild>For what purpose was Hild created...?\nWill I learn the answer on this adventure...?")
+  ShowMessageFace("brunhild_fc1",0,0,2,2)
+  ShowMessage("\\n<Hild>No matter why Hild was created...\nHild is greatly enjoying traveling with Luka.")
+  0()
+
+
+
+EVENT   22
+ PAGE   1
+  // condition: switch 1143 is ON
+  ShowMessageFace("eva_fc1",0,0,2,1)
+  ShowMessage("\\n<Eva>I actually used to live in Grand Noah. The Colosseum was so much fun!")
+  ShowMessageFace("eva_fc1",0,0,2,2)
+  ShowMessage("\\n<Eva>Naturally, I placed bets on who would win, but I went on a cold streak, couldn't pay up, and had to skip town.")
+  0()
+
+
+
+EVENT   23
+ PAGE   1
+  ShowMessageFace("gnome_fc1",0,0,2,1)
+  ShowMessage("\\n<Gnome>......")
+  0()
+
+
+
+EVENT   24
+ PAGE   1
+  // condition: switch 1529 is ON
+  ShowMessageFace("sara_fc1",1,0,2,1)
+  ShowMessage("\\n<Sara>This is the kind of adventure I've always dreamed of. ♪")
+  ShowMessageFace("sara_fc1",4,0,2,2)
+  ShowMessage("\\n<Sara>...though, heading into Grand Noah, this is no time to be cheery. They're at war so we better be ready to fight!")
+  0()
+
+
+

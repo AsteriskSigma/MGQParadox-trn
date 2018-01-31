@@ -1,0 +1,119 @@
+#==============================================================================
+# ■ Window_ItemList
+#------------------------------------------------------------------------------
+# On the item screen, it is a window that displays a list of possessed items.
+#==============================================================================
+
+class Window_ItemList < Window_Selectable
+  #--------------------------------------------------------------------------
+  # ● Object initialization
+  #--------------------------------------------------------------------------
+  def initialize(x, y, width, height)
+    super
+    @category = :none
+    @data = []
+  end
+  #--------------------------------------------------------------------------
+  # ● Category setting
+  #--------------------------------------------------------------------------
+  def category=(category)
+    return if @category == category
+    @category = category
+    refresh
+    self.oy = 0
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of the number of digits
+  #--------------------------------------------------------------------------
+  def col_max
+    return 2
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of number of items
+  #--------------------------------------------------------------------------
+  def item_max
+    @data ? @data.size : 1
+  end
+  #--------------------------------------------------------------------------
+  # ● Item acquisition
+  #--------------------------------------------------------------------------
+  def item
+    @data && index >= 0 ? @data[index] : nil
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire the effective state of the selected item
+  #--------------------------------------------------------------------------
+  def current_item_enabled?
+    enable?(@data[index])
+  end
+  #--------------------------------------------------------------------------
+  # ● Whether to include items in the list
+  #--------------------------------------------------------------------------
+  def include?(item)
+    case @category
+    when :item
+      item.is_a?(RPG::Item) && !item.key_item?
+    when :weapon
+      item.is_a?(RPG::Weapon)
+    when :armor
+      item.is_a?(RPG::Armor)
+    when :key_item
+      item.is_a?(RPG::Item) && item.key_item?
+    else
+      false
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Whether items are displayed in the permitted state
+  #--------------------------------------------------------------------------
+  def enable?(item)
+    $game_party.usable?(item)
+  end
+  #--------------------------------------------------------------------------
+  # ● Create item list
+  #--------------------------------------------------------------------------
+  def make_item_list
+    @data = $game_party.all_items.select {|item| include?(item) }
+    @data.push(nil) if include?(nil)
+  end
+  #--------------------------------------------------------------------------
+  # ● Return the last selected position
+  #--------------------------------------------------------------------------
+  def select_last
+    select(@data.index($game_party.last_item.object) || 0)
+  end
+  #--------------------------------------------------------------------------
+  # ● Drawing items
+  #--------------------------------------------------------------------------
+  def draw_item(index)
+    item = @data[index]
+    if item
+      rect = item_rect(index)
+      rect.width -= 4
+      draw_item_name(item, rect.x, rect.y, enable?(item))
+      draw_item_number(rect, item)
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Draw the number of items
+  #--------------------------------------------------------------------------
+  def draw_item_number(rect, item)
+    draw_text(rect, sprintf(":%2d", $game_party.item_number(item)), 2)
+  end
+
+  #--------------------------------------------------------------------------
+  # ● Help text update
+  #--------------------------------------------------------------------------
+  def update_help
+    @help_window.set_item(item)
+  end
+  #--------------------------------------------------------------------------
+  # ● Refresh
+  #--------------------------------------------------------------------------
+  def refresh
+    make_item_list
+    create_contents
+    draw_all_items
+  end
+end
+

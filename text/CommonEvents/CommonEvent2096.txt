@@ -1,0 +1,8 @@
+"もがく" -> "Struggle"
+"なすがまま" -> "Nameless"
+"射精1" -> "Ejaculation 1"
+"もがく" -> "Struggle"
+"なすがまま" -> "Nameless"
+"射精2" -> "Ejaculation 2"
+"射精1" -> "Ejaculation 1"
+"射精2" -> "Ejaculation 2"

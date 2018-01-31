@@ -1,0 +1,137 @@
+#==============================================================================
+# ■ Window_ShopNumber
+#------------------------------------------------------------------------------
+# On the shop screen, you can enter the number of items to purchase or sell.
+#==============================================================================
+
+class Window_ShopNumber < Window_Selectable
+  #--------------------------------------------------------------------------
+  # ● Public instance variables
+  #--------------------------------------------------------------------------
+  attr_reader   :number                   # Number entered
+  #--------------------------------------------------------------------------
+  # ● Object initialization
+  #--------------------------------------------------------------------------
+  def initialize(x, y, height)
+    super(x, y, window_width, height)
+    @item = nil
+    @max = 1
+    @price = 0
+    @number = 1
+    @currency_unit = Vocab::currency_unit
+  end
+  #--------------------------------------------------------------------------
+  # ● Obtain window width
+  #--------------------------------------------------------------------------
+  def window_width
+    return 304
+  end
+  #--------------------------------------------------------------------------
+  # ● Item, Maximum quantity, Price, Currency unit setting
+  #--------------------------------------------------------------------------
+  def set(item, max, price, currency_unit = nil)
+    @item = item
+    @max = max
+    @price = price
+    @currency_unit = currency_unit if currency_unit
+    @number = 1
+    refresh
+  end
+  #--------------------------------------------------------------------------
+  # ● Set currency unit
+  #--------------------------------------------------------------------------
+  def currency_unit=(currency_unit)
+    @currency_unit = currency_unit
+    refresh
+  end
+  #--------------------------------------------------------------------------
+  # ● Refresh
+  #--------------------------------------------------------------------------
+  def refresh
+    contents.clear
+    draw_item_name(@item, 0, item_y)
+    draw_number
+    draw_total_price
+  end
+  #--------------------------------------------------------------------------
+  # ● Draw number
+  #--------------------------------------------------------------------------
+  def draw_number
+    change_color(normal_color)
+    draw_text(cursor_x - 28, item_y, 22, line_height, "×")
+    draw_text(cursor_x, item_y, cursor_width - 4, line_height, @number, 2)
+  end
+  #--------------------------------------------------------------------------
+  # ● Drawing the total amount
+  #--------------------------------------------------------------------------
+  def draw_total_price
+    width = contents_width - 8
+    draw_currency_value(@price * @number, @currency_unit, 4, price_y, width)
+  end
+  #--------------------------------------------------------------------------
+  # Y coordinate of the item name display line
+  #--------------------------------------------------------------------------
+  def item_y
+    contents_height / 2 - line_height * 3 / 2
+  end
+  #--------------------------------------------------------------------------
+  # Y coordinate of price display row
+  #--------------------------------------------------------------------------
+  def price_y
+    contents_height / 2 + line_height / 2
+  end
+  #--------------------------------------------------------------------------
+  # ● Get cursor width
+  #--------------------------------------------------------------------------
+  def cursor_width
+    figures * 10 + 12
+  end
+  #--------------------------------------------------------------------------
+  # ● Get the X coordinate of the cursor
+  #--------------------------------------------------------------------------
+  def cursor_x
+    contents_width - cursor_width - 4
+  end
+  #--------------------------------------------------------------------------
+  # ● Get the maximum number of digits in the number display
+  #--------------------------------------------------------------------------
+  def figures
+    return 2
+  end
+  #--------------------------------------------------------------------------
+  # ● Frame update
+  #--------------------------------------------------------------------------
+  def update
+    super
+    if active
+      last_number = @number
+      update_number
+      if @number != last_number
+        Sound.play_cursor
+        refresh
+      end
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Number update
+  #--------------------------------------------------------------------------
+  def update_number
+    change_number(1)   if Input.repeat?(:RIGHT)
+    change_number(-1)  if Input.repeat?(:LEFT)
+    change_number(10)  if Input.repeat?(:UP)
+    change_number(-10) if Input.repeat?(:DOWN)
+  end
+  #--------------------------------------------------------------------------
+  # ● Change number
+  #--------------------------------------------------------------------------
+  def change_number(amount)
+    @number = [[@number + amount, @max].min, 1].max
+  end
+  #--------------------------------------------------------------------------
+  # ● Updating the cursor
+  #--------------------------------------------------------------------------
+  def update_cursor
+    cursor_rect.set(cursor_x, item_y, cursor_width, line_height)
+  end
+end
+

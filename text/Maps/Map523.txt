@@ -1,0 +1,6 @@
+"♪　Boomerang ♪" -> "♪ Boomerang ♪"
+"♪" -> "♪"
+"♪" -> "♪"
+"♪" -> "♪"
+"何もしない" -> "do nothing"
+"押す" -> "Push"

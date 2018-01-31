@@ -1,0 +1,912 @@
+
+=begin
+
+Troublesome · ___ ___ 0 RPG
+Tris information display related ver 8 2017/05/16
+
+2017/10/21 Display method adjustment
+
+
+For the function list explanation below, what newly added with this ver is ● What you changed is ○
+- Equipment information added to each screen Equipment Switching with 4 buttons during selection
+· Add occupation and tribal information to \"Basic information\" of status
+· Add favorable item to \"Basic information\" of status
+· Add favorability to mini status of castle party screen
+· Keep the cursor position of the lower window by switching the actor of 78 button on the status screen
+· Actor changeover of 78 buttons on the status screen is possible even while lower window is selected
+· Actor switching of 78 buttons on the equipment screen, even during slot selection
+· In slot selection on the equipment screen, use 1 button to unlock the slot
+· Looping the warp destination selection window such as Harpie's feather at the upper and lower ends
+· Looping party command and actor command in battle at the upper and lower ends
+● Tris integrated V ~ W V
+
+
+Feature Description
+- Equipment information added to each screen Equipment Switching with 4 buttons during selection
+An illustration, item, equipment, status, shop sale
+Every time you press the 4 button \"Equipment comparison information → Basic performance and special effects(→ Page switching)→ Erase \"
+\"Basic performance and special effects\"
+· If there is no information, display \"no effect\" for 1 page instead
+· Otherwise, display the same information as the equipment information on the right window of the shop
+
+=end
+
+#==============================================================================
+# ■ EquipInfoWindows
+#==============================================================================
+module EquipInfoWindows
+  #--------------------------------------------------------------------------
+  # ● Start processing
+  #--------------------------------------------------------------------------
+  def start
+    super
+    create_equip_info_window
+  end
+  #--------------------------------------------------------------------------
+  # ● Frame update
+  #--------------------------------------------------------------------------
+  def update
+    super
+    return equip_info_hide if equip_info_hide?
+    equip_info_set_item(equip_info_select_item)
+    
+  end
+  #--------------------------------------------------------------------------
+  # ● Frame update
+  #--------------------------------------------------------------------------
+  def update_all_windows
+    if Input.trigger?(:B) and
+       ([@compare_ex_window.visible, @equip_info_window.visible] != [false, false])
+      equip_info_hide
+			Input.update
+    end
+		equip_info_change_visible if Input.trigger?(:X)
+		
+    super
+  end
+  #--------------------------------------------------------------------------
+  # ● Creating performance difference comparison window
+  #--------------------------------------------------------------------------
+  def create_equip_info_window
+    @compare_ex_window = Window_ShopCompareEx.new
+    @equip_info_window = Window_ShopStatusEx.new(0, 56, 336, 424)
+    @compare_ex_window.z = 1000
+    @equip_info_window.z = 1000
+    @compare_ex_window.viewport = @viewport
+    @equip_info_window.viewport = @viewport
+  end
+  #--------------------------------------------------------------------------
+  # ● Set item of performance difference window
+  #--------------------------------------------------------------------------
+  def equip_info_set_item(select_item)
+    @compare_ex_window.item = select_item
+    @equip_info_window.item = select_item
+  end
+  #--------------------------------------------------------------------------
+  # Switching the display state of the performance difference comparison window
+  #--------------------------------------------------------------------------
+  def equip_info_change_visible
+    case [@compare_ex_window.visible, @equip_info_window.visible]
+    when [false, false]
+      @compare_ex_window.show
+    when [ true, false]
+      @compare_ex_window.hide
+      @equip_info_window.show
+    when [false,  true]
+      @equip_info_window.hide if @equip_info_window.next_page
+    end
+  end
+  #--------------------------------------------------------------------------
+  # Hide the performance difference comparison window
+  #--------------------------------------------------------------------------
+  def equip_info_hide
+    @compare_ex_window.hide
+    @equip_info_window.hide
+  end
+  #--------------------------------------------------------------------------
+  # ● Hide the performance difference comparison window
+  #--------------------------------------------------------------------------
+  def equip_info_hide?
+    return true if equip_info_select_item.is_a?(RPG::Item)
+  end
+  #--------------------------------------------------------------------------
+  # ● Difference in Performance Whether to lighten the text color of the item name
+  #--------------------------------------------------------------------------
+  def equip_info_enable
+    true
+  end
+end
+#==============================================================================
+# ■ Scene_Status
+#==============================================================================
+class Scene_Status < Scene_MenuBase
+  include EquipInfoWindows
+  #--------------------------------------------------------------------------
+  # ● Hide the performance difference comparison window
+  #--------------------------------------------------------------------------
+  def equip_info_hide?
+    return true if super
+    @main_status_window.active == false or
+    @main_status_window.root_index != 1
+  end
+  #--------------------------------------------------------------------------
+  # ● Performance difference comparison item
+  #--------------------------------------------------------------------------
+  def equip_info_select_item
+    @actor.equips[@main_status_window.index]
+  end
+end
+#==============================================================================
+# ■ Scene_Item
+#==============================================================================
+class Scene_Item < Scene_ItemBase
+  include EquipInfoWindows
+  #--------------------------------------------------------------------------
+  # ● Hide the performance difference comparison window
+  #--------------------------------------------------------------------------
+  def equip_info_hide?
+    return true if super
+    return true if ![1, 2].include?(@category_window.index)
+    @item_window.active == false
+  end
+  #--------------------------------------------------------------------------
+  # ● Performance difference comparison item
+  #--------------------------------------------------------------------------
+  def equip_info_select_item
+    @item_window.item
+  end
+end
+#==============================================================================
+# ■ Scene_Equip
+#==============================================================================
+class Scene_Equip < Scene_MenuBase
+  include EquipInfoWindows
+  #--------------------------------------------------------------------------
+  # ● Hide the performance difference comparison window
+  #--------------------------------------------------------------------------
+  def equip_info_hide?
+    return true if super
+    @item_window.active == false and @slot_window.active == false
+  end
+  #--------------------------------------------------------------------------
+  # ● Performance difference comparison item
+  #--------------------------------------------------------------------------
+  def equip_info_select_item
+    @item_window.active ? @item_window.item : @slot_window.item
+  end
+  #--------------------------------------------------------------------------
+  # ● Item [decision]
+  #--------------------------------------------------------------------------
+  alias :nw_equip_info_on_item_ok :on_item_ok
+  def on_item_ok
+    nw_equip_info_on_item_ok
+    equip_info_set_item(nil)
+  end
+end
+#==============================================================================
+# ■ Scene_Shop
+#==============================================================================
+class Scene_Shop < Scene_MenuBase
+  include EquipInfoWindows
+  #--------------------------------------------------------------------------
+  # ● Hide the performance difference comparison window
+  #--------------------------------------------------------------------------
+  def equip_info_hide?
+    return true if super
+    @sell_window.active == false
+  end
+  #--------------------------------------------------------------------------
+  # ● Performance difference comparison item
+  #--------------------------------------------------------------------------
+  def equip_info_select_item
+    @sell_window.item
+  end
+end
+#==============================================================================
+# ■ Scene_Library
+#==============================================================================
+class Scene_Library < Scene_MenuBase
+  include EquipInfoWindows
+  #--------------------------------------------------------------------------
+  # ● Hide the performance difference comparison window
+  #--------------------------------------------------------------------------
+  def equip_info_hide?
+    return true if super
+    return true if @main_command_window.active == false
+    return true if ![3, 4, 5].include?(@main_command_window.category)
+    return false
+  end
+  #--------------------------------------------------------------------------
+  # ● Performance difference comparison item
+  #--------------------------------------------------------------------------
+  def equip_info_select_item
+    ext = @main_command_window.current_ext[1] % 10000
+    case @main_command_window.category
+    when 3
+      $data_weapons[ext]
+    when 4, 5
+      $data_armors[ext]
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Difference in Performance Whether to lighten the text color of the item name
+  #--------------------------------------------------------------------------
+  def equip_info_enable
+    ext = @main_command_window.current_ext[1] % 10000
+    case @main_command_window.category
+    when 3
+      $data_library.weapon_had?(ext)
+    when 4
+      $data_library.armor_had?(ext)
+    when 5
+      $data_library.accessory_had?(ext)
+    end
+  end
+end
+#==============================================================================
+# ■ Scene_Synthesize
+#==============================================================================
+class Scene_Synthesize < Scene_MenuBase
+  include EquipInfoWindows
+  #--------------------------------------------------------------------------
+  # ● Hide the performance difference comparison window
+  #--------------------------------------------------------------------------
+  def equip_info_hide?
+    return true if super
+    return false
+  end
+  #--------------------------------------------------------------------------
+  # ● Performance difference comparison item
+  #--------------------------------------------------------------------------
+  def equip_info_select_item
+    @lineup_window.item
+  end
+end
+#==============================================================================
+# ■ Scene_CasinoPrize
+#==============================================================================
+class Scene_CasinoPrize < Scene_MenuBase
+  include EquipInfoWindows
+  #--------------------------------------------------------------------------
+  # ● Hide the performance difference comparison window
+  #--------------------------------------------------------------------------
+  def equip_info_hide?
+    return true if super
+    return false
+  end
+  #--------------------------------------------------------------------------
+  # ● Performance difference comparison item
+  #--------------------------------------------------------------------------
+  def equip_info_select_item
+    @lineup_window.item
+  end
+end
+
+#==============================================================================
+# ■ Window_ShopCompareEx
+#==============================================================================
+class Window_ShopCompareEx < Window_ShopCompare
+  #--------------------------------------------------------------------------
+  # ● Public instance variables
+  #--------------------------------------------------------------------------
+  attr_accessor :status_window
+  #--------------------------------------------------------------------------
+  # ● Item settings
+  #--------------------------------------------------------------------------
+  def item=(item)
+    return if @item == item
+    super(item)
+  end
+  #--------------------------------------------------------------------------
+  # ● Update processing
+  #--------------------------------------------------------------------------
+  def update
+    last_active = self.active
+    self.active = false
+    super
+    self.active = last_active
+  end
+  #--------------------------------------------------------------------------
+  # ● Refresh
+  #--------------------------------------------------------------------------
+  def refresh
+    contents.clear
+    if @item.nil?
+      change_color(normal_color, false)
+      draw_text(0, 0, contents_width, line_height, "Nothing selected")
+      return
+    end
+    rect = Rect.new(0, 0, 304, line_height)
+    enable = SceneManager.scene.equip_info_enable
+    change_color(normal_color)
+    draw_item_name(@item, rect.x, rect.y, enable)
+    change_color(normal_color, enable)
+    draw_text(rect, sprintf(":%2d", $game_party.item_number(@item)), 2)
+    return if @item.is_a?(RPG::Item)
+    
+    $game_party.all_members.each_with_index{|actor, i|
+      x = (contents.width / 2) * (i % 2)
+      y = line_height + 92 * (i / 2)
+      draw_actor_equip_info(x, y, actor)
+    }
+  end
+end
+#==============================================================================
+# ■ Window_ShopStatusEx
+#==============================================================================
+class Window_ShopStatusEx < Window_ShopStatus
+  #--------------------------------------------------------------------------
+  # ● Object initialization
+  #--------------------------------------------------------------------------
+  def initialize(x, y, width, height)
+    super(x, y, width, height)
+    hide
+  end
+  #--------------------------------------------------------------------------
+  # ● Item settings
+  #--------------------------------------------------------------------------
+  def item=(item)
+    return if @item == item
+    super(item)
+  end
+  #--------------------------------------------------------------------------
+  # ● Update color tone
+  #--------------------------------------------------------------------------
+  def update_tone
+    self.tone.set(-255, -255, -255)
+  end
+  #--------------------------------------------------------------------------
+  # ○ Updating pages
+  #--------------------------------------------------------------------------
+  def update_page
+    return
+  end
+  #--------------------------------------------------------------------------
+  # ○ Acquire the maximum number of pages
+  #--------------------------------------------------------------------------
+  def page_max
+    return 0 if @item.nil?
+    return 0 if @item.is_a?(RPG::Item)
+    return [param_page_max + enchant_page_max, 1].max
+  end
+  #--------------------------------------------------------------------------
+  # ○ Updating pages
+  #--------------------------------------------------------------------------
+  def next_page
+    return true if page_max == 0
+    @page_index = (@page_index + 1) % page_max
+    refresh
+    return @page_index == 0
+  end
+  #--------------------------------------------------------------------------
+  # ● Hide Window
+  #--------------------------------------------------------------------------
+  def show
+    @page_index = 0
+    super
+  end
+  #--------------------------------------------------------------------------
+  # ● Drawing number of possession
+  #--------------------------------------------------------------------------
+  def draw_possession(x, y)
+    rect = Rect.new(0, 0, 304, line_height)
+    enable = SceneManager.scene.equip_info_enable
+    change_color(normal_color)
+    draw_item_name(@item, rect.x, rect.y, enable)
+    change_color(normal_color, enable)
+    draw_text(rect, sprintf(":%2d", $game_party.item_number(@item)), 2)
+  end
+  #--------------------------------------------------------------------------
+  # ● Drawing a button description
+  #--------------------------------------------------------------------------
+  def draw_button(x, y)
+    rect = Rect.new(x, y, contents.width, line_height)
+    change_color(system_color)
+    draw_text(rect, @page_index + 1 == page_max ? Help.item_info_exit : Help.item_info_change)
+    draw_text(rect, "#{@page_index + 1}/#{page_max}", 2)
+  end
+  #--------------------------------------------------------------------------
+  # ● Drawing instruction method array acquisition
+  #--------------------------------------------------------------------------
+  def draw_methods
+    methods = []
+    param_page_max.times{|i| methods.push({:name => :draw_params, :index => i})}
+    enchant_page_max.times{|i| methods.push({:name => :draw_enchants, :index => i})}
+    methods.push({:name => :draw_empty}) if methods.empty?
+    return methods
+  end
+  #--------------------------------------------------------------------------
+  # ● Drawing without effect
+  #--------------------------------------------------------------------------
+  def draw_empty(x, y, index)
+    rect = Rect.new(x, y, contents.width, line_height)
+    change_color(system_color)
+    draw_text(rect, "Effect")
+    rect.y += line_height + 2
+    change_color(normal_color)
+    draw_text(rect, "None")
+  end
+end
+
+#==============================================================================
+# Help
+#==============================================================================
+class << Help
+  #--------------------------------------------------------------------------
+  # ● Performance Difference Comparison Equipment Information Window Button Description 1
+  #--------------------------------------------------------------------------  
+  def item_info_change
+    "#{Vocab.key_x}:Next Page"
+  end
+  #--------------------------------------------------------------------------
+  # ● Performance Difference Comparison Equipment Information Window Button Description 2
+  #--------------------------------------------------------------------------  
+  def item_info_exit
+    "#{Vocab.key_x}:Close"
+  end
+  #--------------------------------------------------------------------------
+  # ● Help message on the picture book screen
+  #--------------------------------------------------------------------------
+  def library
+    {
+      :blank      => "This entry is blank.",
+      :discovery  => "This entry's details are unknown.",
+      :return_top => "Return to top.",
+      :close_lib  => "Close and return to last screen.",
+      :btn_detail => "#{Vocab.key_c}:Inspect Details",
+      :btn_column => "↑/↓:Select",
+      :btn_jump   => "#{Vocab.key_l}/#{Vocab.key_r}:Jump",
+      :btn_page   => "←/→:Page",
+      :btn_scroll => "#{Vocab.key_y}/#{Vocab.key_z}:Scroll Text",
+      :btn_equip  => "#{Vocab.key_x}:Display Details"
+    }
+  end
+end
+#==============================================================================
+# ■ Window_Library_MainCommand
+#==============================================================================
+class Window_Library_MainCommand < Window_Command
+  #--------------------------------------------------------------------------
+  # ● Update Help Window 【Override】
+  #--------------------------------------------------------------------------
+  def update_help
+    ct = current_ext[1] / 10000
+    id = current_ext[1] % 10000
+    
+    str  = Help.library[:btn_column]
+    str += "In case" + Help.library[:btn_page] if (id != 0) && (2..6).include?(ct)
+    if (ct == 2) && (@contents_window.page == 3)
+      str += "In case" + Help.library[:btn_scroll]
+    else
+      str += "In case" + Help.library[:btn_jump]
+    end    
+    if (id != 0) &&
+        (
+        (ct == 1 && !actor_had?(id))     ||
+        (ct == 2 && !enemy_had?(id))     ||
+        (ct == 3 && !weapon_had?(id))    ||
+        (ct == 4 && !armor_had?(id))     ||
+        (ct == 5 && !accessory_had?(id)) ||
+        (ct == 6 && !item_had?(id))
+        )
+      str = Help.library[:discovery]
+    end
+    if @category > 0 and [3, 4, 5].include?(ct)
+      str += "In case" + Help.library[:btn_equip]
+    end
+    @help_window.set_text(str)
+  end
+end
+
+
+#==============================================================================
+# ■ NWConst::Status
+#==============================================================================
+module NWConst::Status
+  # item name
+  BASIC_COMMAND         = ["Stats", "Adv. Stats", "Resists", "Status Resists",
+                           "Job", "Race", "Affection"]
+end
+#==============================================================================
+# ■ Scene_Status
+#==============================================================================
+class Scene_Status < Scene_MenuBase
+  #--------------------------------------------------------------------------
+  # ○ Start processing
+  #--------------------------------------------------------------------------
+  def start
+    super
+    create_main_status_window
+    create_simple_status_window
+    create_root_command_window
+    create_now_class_window
+  end
+  #--------------------------------------------------------------------------
+  # ○ Creation of occupation tribal window
+  #--------------------------------------------------------------------------
+  def create_now_class_window
+    @now_class_window = Foo::JobChange::Window_ClassStatusEx.new
+    @main_status_window.now_class_window = @now_class_window
+  end
+  #--------------------------------------------------------------------------
+  # ○ Frame update
+  #--------------------------------------------------------------------------
+  def update
+    super
+    if @main_status_window.active and @root_command_window.index == 0 and
+       [1, 2].include?(@main_status_window.now_class_state)
+      @now_class_window.show
+    else
+      @now_class_window.hide
+    end
+  end
+end
+#==============================================================================
+# ■ Foo::JobChange::Window_ClassStatusEx
+#==============================================================================
+class Foo::JobChange::Window_ClassStatusEx < Foo::JobChange::Window_ClassStatus
+  #--------------------------------------------------------------------------
+  # ● Object initialization
+  #--------------------------------------------------------------------------
+  def initialize
+    super
+    self.back_opacity  = 224
+    self.z = 1000
+  end
+  #--------------------------------------------------------------------------
+  # ● Update color tone
+  #--------------------------------------------------------------------------
+  def update_tone
+    self.tone.set(-255, -255, -255)
+  end
+end
+#==============================================================================
+# ■ Foo::Status::Window_MainStatus
+#==============================================================================
+class Foo::Status::Window_MainStatus < Window_Selectable
+  #--------------------------------------------------------------------------
+  # ● Public instance variables
+  #--------------------------------------------------------------------------
+  attr_writer   :now_class_window
+  attr_reader   :now_class_state
+  #--------------------------------------------------------------------------
+  # ● Refresh 【Override】
+  #--------------------------------------------------------------------------
+  def refresh
+    now_class_tribe_hide
+    super
+    draw_headword
+    return unless @actor
+    x = index == -1 ? 0 : 160
+    y = line_height
+    refresh_symbol = []
+    refresh_symbol[0] = [:basic_param_refresh, :special_param_refresh,
+                         :element_resist_refresh, :state_resist_refresh,
+                         :now_class_refresh, :now_tribe_refresh, :friend_refresh]
+    refresh_symbol[1] = [:equips_refresh] * data[1].size
+    refresh_symbol[2] = [:class_history_refresh, :class_history_refresh]
+    refresh_symbol[3] = [:fix_ability_refresh]
+    method(refresh_symbol[root_index][index]).call(x, y)
+  end
+  #--------------------------------------------------------------------------
+  # ● Hide occupation tribes
+  #--------------------------------------------------------------------------
+  def now_class_tribe_hide
+    return unless @now_class_window
+    @now_class_state = 0
+    @now_class_window.actor_id = -1
+    @now_class_window.class_id = -1
+  end
+  #--------------------------------------------------------------------------
+  # ● Display of occupation
+  #--------------------------------------------------------------------------
+  def now_class_refresh(x, y)
+    return unless @now_class_window
+    @now_class_state = 1
+    @now_class_window.actor_id = @actor.id
+    @now_class_window.class_id = @actor.class_id
+    @now_class_window.refresh
+  end
+  #--------------------------------------------------------------------------
+  # ● Display of tribes
+  #--------------------------------------------------------------------------
+  def now_tribe_refresh(x, y)
+    return unless @now_class_window
+    @now_class_state = 2
+    @now_class_window.actor_id = @actor.id
+    @now_class_window.class_id = @actor.tribe_id
+    @now_class_window.refresh
+  end
+  #--------------------------------------------------------------------------
+  # ● Drawing popularity
+  #--------------------------------------------------------------------------
+  def friend_refresh(x, y)
+    rect = Rect.new(x, y, 220, line_height)
+    text = @actor.luca? ? "-----" : "#{@actor.love}"
+    draw_text(rect, "Affection: #{text}")
+  end
+end
+#==============================================================================
+# ■ Window_Selectable
+#==============================================================================
+class Window_Selectable < Window_Base
+  #--------------------------------------------------------------------------
+  # ● Processing when the L button (Page Up) is pressed
+  #--------------------------------------------------------------------------
+  def process_pageup
+    Sound.play_cursor
+    Input.update
+    deactivate unless handle?(:keep_on_actor_change)
+    call_handler(:pageup)
+  end
+  #--------------------------------------------------------------------------
+  # ● Processing when R button (Page Down) is pressed
+  #--------------------------------------------------------------------------
+  def process_pagedown
+    Sound.play_cursor
+    Input.update
+    deactivate unless handle?(:keep_on_actor_change)
+    call_handler(:pagedown)
+  end
+end
+#==============================================================================
+# ■ Scene_Status
+#==============================================================================
+class Scene_Status < Scene_MenuBase
+  #--------------------------------------------------------------------------
+  # ● Generate main status window
+  #--------------------------------------------------------------------------
+  def create_main_status_window
+    @main_status_window = Foo::Status::Window_MainStatus.new
+    @main_status_window.set_handler(:cancel, method(:process_main_status_cancel))
+    @main_status_window.set_handler(:pagedown, method(:next_actor))
+    @main_status_window.set_handler(:pageup, method(:prev_actor))
+    @main_status_window.set_handler(:keep_on_actor_change, nil)
+    @main_status_window.actor = @actor
+  end
+  #--------------------------------------------------------------------------
+  # ● Generate route command window
+  #--------------------------------------------------------------------------
+  def create_root_command_window
+    @root_command_window = Foo::Status::Window_RootCommand.new(@main_status_window)
+    @root_command_window.set_handler(:ok, method(:process_root_command_ok))
+    @root_command_window.set_handler(:cancel, method(:return_scene))
+    @root_command_window.set_handler(:pagedown, method(:next_actor))
+    @root_command_window.set_handler(:pageup, method(:prev_actor))
+    @root_command_window.set_handler(:keep_on_actor_change, nil)
+  end
+  #--------------------------------------------------------------------------
+  # ● Switch to the next actor
+  #--------------------------------------------------------------------------
+  def next_actor
+    on_actor_change_before
+    @actor = $game_party.menu_actor_next
+    on_actor_change_after
+  end
+  #--------------------------------------------------------------------------
+  # ● Switch to the previous actor
+  #--------------------------------------------------------------------------
+  def prev_actor
+    on_actor_change_before
+    @actor = $game_party.menu_actor_prev
+    on_actor_change_after
+  end
+  #--------------------------------------------------------------------------
+  # ● Just before switching actors
+  #--------------------------------------------------------------------------
+  def on_actor_change_before
+    @root_index = @root_command_window.index
+    @main_index = @main_status_window.index
+  end
+  #--------------------------------------------------------------------------
+  # ● Immediately after switching actors
+  #--------------------------------------------------------------------------
+  def on_actor_change_after
+    @main_status_window.actor   = @actor
+    @simple_status_window.actor = @actor
+    @root_command_window.index  = @root_index
+    @main_status_window.root_index = @root_command_window.index
+    @main_status_window.index   = @main_index
+    @main_status_window.refresh
+    @simple_status_window.refresh
+  end
+end
+#==============================================================================
+# ■ Scene_Equip
+#==============================================================================
+class Scene_Equip < Scene_MenuBase
+  #--------------------------------------------------------------------------
+  # ● Create Command Window
+  #--------------------------------------------------------------------------
+  def create_command_window
+    wx = @status_window.width
+    wy = @help_window.height
+    ww = Graphics.width - @status_window.width
+    @command_window = Window_EquipCommand.new(wx, wy, ww)
+    @command_window.viewport = @viewport
+    @command_window.help_window = @help_window
+    @command_window.set_handler(:equip,    method(:command_equip))
+    @command_window.set_handler(:optimize, method(:command_optimize))
+    @command_window.set_handler(:clear,    method(:command_clear))
+    @command_window.set_handler(:cancel,   method(:return_scene))
+    @command_window.set_handler(:pagedown, method(:next_actor))
+    @command_window.set_handler(:pageup,   method(:prev_actor))
+    @command_window.set_handler(:keep_on_actor_change, nil)
+  end
+  #--------------------------------------------------------------------------
+  # ● Creating a slot window
+  #--------------------------------------------------------------------------
+  def create_slot_window
+    wx = @status_window.width
+    wy = @command_window.y + @command_window.height
+    ww = Graphics.width - @status_window.width
+    @slot_window = Window_EquipSlot.new(wx, wy, ww)
+    @slot_window.viewport = @viewport
+    @slot_window.help_window = @help_window
+    @slot_window.status_window = @status_window
+    @slot_window.actor = @actor
+    @slot_window.set_handler(:ok,       method(:on_slot_ok))
+    @slot_window.set_handler(:cancel,   method(:on_slot_cancel))
+    @slot_window.set_handler(:pagedown, method(:next_actor))
+    @slot_window.set_handler(:pageup,   method(:prev_actor))
+    @slot_window.set_handler(:keep_on_actor_change, nil)
+    @slot_window.set_handler(:A, method(:on_slot_A))
+  end
+  #--------------------------------------------------------------------------
+  # ● Switching actors
+  #--------------------------------------------------------------------------
+  def on_actor_change
+    @status_window.actor = @actor
+    @slot_window.actor = @actor
+    @item_window.actor = @actor
+		@status_window.refresh
+		@slot_window.call_update_help
+  end
+  #--------------------------------------------------------------------------
+  # ● Remove equipment
+  #--------------------------------------------------------------------------
+  def on_slot_A
+    Sound.play_equip
+    @actor.change_equip(@slot_window.index, nil)
+    @slot_window.refresh
+    @item_window.refresh
+		@status_window.refresh
+		@slot_window.call_update_help
+  end
+end
+#==============================================================================
+# ■ Window_EquipSlot
+#==============================================================================
+class Window_EquipSlot < Window_Selectable
+  #--------------------------------------------------------------------------
+  # ● Handling process such as decision and cancellation
+  #--------------------------------------------------------------------------
+  def process_handling
+    return unless open? && active
+    return process_ok       if ok_enabled?        && Input.trigger?(:C)
+    return process_cancel   if cancel_enabled?    && Input.trigger?(:B)
+    return process_pagedown if handle?(:pagedown) && Input.trigger?(:R)
+    return process_pageup   if handle?(:pageup)   && Input.trigger?(:L)
+    return process_sub      if handle?(:A)        && Input.trigger?(:A)
+  end
+  #--------------------------------------------------------------------------
+  # ● Subkey(Abutton)Processing when pressed
+  #--------------------------------------------------------------------------
+  def process_sub
+    Input.update
+    call_handler(:A)
+  end
+end
+
+#==============================================================================
+# ■ Foo::PTEdit::Window_ActorStatus
+#==============================================================================
+class Foo::PTEdit::Window_ActorStatus < Window_Base
+  #--------------------------------------------------------------------------
+  # ● Actor status display
+  #--------------------------------------------------------------------------
+  def draw_actor_status(actor, x)
+    draw_actor_face(actor, x, 0)
+    
+    # The remaining WIDTH area 132
+    rect1 = Rect.new(x+96, 0, 84, line_height)
+    rect2 = Rect.new(rect1.x+rect1.width, rect1.y, 48, rect1.height)
+    lv_str = "Lv:%d"
+
+    change_color(normal_color)
+    draw_text(rect1, actor.name) # Name only a little bigger
+    temp_font_size = contents.font.size
+    contents.font.size = 22
+    draw_text(rect2, sprintf(lv_str, actor.base_level))
+    
+    rect1.y += line_height + 4
+    rect2.y += line_height + 4
+    change_color(tp_gauge_color2)
+    draw_text(rect1, actor.class.name)
+    draw_text(rect2, sprintf(lv_str, actor.class_level))
+    
+    rect1.y += line_height
+    rect2.y += line_height
+    change_color(mp_gauge_color2)
+    draw_text(rect1, actor.tribe.name)
+    draw_text(rect2, sprintf(lv_str, actor.tribe_level))
+
+    rect1.y += line_height
+    rect2.y += line_height
+    change_color(normal_color)
+    draw_text(rect1, "Affection")
+    draw_text(rect2, actor.luca? ? "-----" : "#{actor.love}")
+    
+    contents.font.size = temp_font_size
+  end
+end
+
+#==============================================================================
+# ■ Foo::Warp::Window_SelectPlace
+#==============================================================================
+module WindowSelect_Loop
+  #--------------------------------------------------------------------------
+  # ● Move the cursor to the right
+  #--------------------------------------------------------------------------
+  def cursor_right(wrap = false)
+    if index < item_max - 1 || wrap
+      select((index + 1) % item_max)
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Move the cursor to the left
+  #--------------------------------------------------------------------------
+  def cursor_left(wrap = false)
+    if index > 0 || wrap
+      select((index - 1 + item_max) % item_max)
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Move the cursor down
+  #--------------------------------------------------------------------------
+  def cursor_down(wrap = false)
+    if index < item_max - col_max
+      select((index + col_max) % item_max)
+    elsif wrap || [index % 2, (item_max - 1) % 2] == [1, 0]
+      case [index % 2, (item_max - 1) % 2]
+      when [0, 0] then select(index % 2)
+      when [0, 1] then select(index % 2)
+      when [1, 0] then select(index + 1)
+      when [1, 1] then select(index % 2)
+      end
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Move the cursor up
+  #--------------------------------------------------------------------------
+  def cursor_up(wrap = false)
+    if index >= col_max
+      select((index - col_max + item_max) % item_max)
+    elsif wrap
+      case [index % 2, (item_max - 1) % 2]
+      when [0, 0] then select(item_max - 1)
+      when [0, 1] then select(item_max - 2)
+      when [1, 0] then select(item_max - 1)
+      when [1, 1] then select(item_max - 1)
+      end
+    end
+  end
+end
+#==============================================================================
+# ■ Foo::Warp::Window_SelectPlace
+#==============================================================================
+class Foo::Warp::Window_SelectPlace < Window_Command
+  include WindowSelect_Loop
+end
+#==============================================================================
+# ■ Window_ActorCommand
+#==============================================================================
+class Window_ActorCommand < Window_Command
+  include WindowSelect_Loop
+end
+#==============================================================================
+# ■ Window_PartyCommand
+#==============================================================================
+class Window_PartyCommand < Window_Command
+  include WindowSelect_Loop
+endd

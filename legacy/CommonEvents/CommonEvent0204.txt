@@ -1,0 +1,21 @@
+// EVENT 0204
+Name "Talk Seduction 4 Seduction Of Each Enemy"
+
+If(5,0,0,1)
+ RunCommonEvent(202)
+ 108("スイッチ11がオフなら、敵が有効ではないので中断")
+ If(0,11,1)
+  EndEventProcessing()
+  0()
+ EndIf()
+ 108("スイッチ12をオフにすることで、この後の誘惑と会話をキャンセル")
+ ChangeSwitch(12,12,1)
+ ShowMessageFace("",0,0,2,1)
+ ShowMessage("The enemy politely opens a conversation!")
+ RunCommonEvent(205)
+ ChangeVariable(12,12,0,1,14)
+ RunCommonEvent(1000)
+ EndEventProcessing()
+ 0()
+EndIf()
+0()

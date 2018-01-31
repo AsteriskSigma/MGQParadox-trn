@@ -1,0 +1,74 @@
+#==============================================================================
+# ■ Window_ItemCategory
+#------------------------------------------------------------------------------
+# On the item screen or shop screen, select the classification of ordinary items and accessories
+# It is a monkey.
+#==============================================================================
+class Window_ItemCategory < Window_HorzCommand
+  def col_max
+		return 5 if display_stone?
+    return 4
+  end
+  #--------------------------------------------------------------------------
+  # ● Create command list
+  #--------------------------------------------------------------------------
+  def make_command_list
+    add_command(Vocab::item,     :item)
+    add_command(Vocab::weapon,   :weapon)
+    add_command(Vocab::armor,    :armor)
+		add_command("Secret stone",          :enchant_stone) if display_stone?
+    add_command(Vocab::key_item, :key_item)
+  end
+	def display_stone?
+		$game_party.display_stone_flag
+	end
+end
+
+
+class Game_Party < Game_Unit
+	attr_reader :display_stone_flag
+	alias hima_enchant_stone_gain_item nw_count_gain_item
+	def gain_item(item,amount,include_equip = false,keep_flag = false)
+		hima_enchant_stone_gain_item(item, amount, include_equip,keep_flag)
+		@display_stone_flag = true if amount > 0 && item.is_a?(RPG::Item) && item.enchant_stone?
+	end
+end
+
+class Window_ItemList < Window_Selectable
+  #--------------------------------------------------------------------------
+  # ● Acquisition of number of items
+  #--------------------------------------------------------------------------
+  def item_max
+    @data ? @data.size : 1
+  end
+  #--------------------------------------------------------------------------
+  # ● Item acquisition
+  #--------------------------------------------------------------------------
+  def item
+    @data && index >= 0 ? @data[index] : nil
+  end
+  #--------------------------------------------------------------------------
+  # ● Whether to include items in the list
+  #--------------------------------------------------------------------------
+  def include?(item)
+    case @category
+    when :item
+      item.is_a?(RPG::Item) && !item.key_item? && !item.enchant_stone?
+    when :weapon
+      item.is_a?(RPG::Weapon)
+    when :armor
+      item.is_a?(RPG::Armor)
+    when :key_item
+      item.is_a?(RPG::Item) && item.key_item? && !item.enchant_stone?
+		when :enchant_stone
+			item.is_a?(RPG::Item) && item.enchant_stone?
+    else
+      false
+    end
+  end
+	
+end
+
+
+
+

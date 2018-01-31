@@ -1,0 +1,27 @@
+// EVENT 7303
+Name "Alleria: Defeat"
+
+RunCommonEvent(7000)
+PictureDisplay(5,"80_mob_ozyou_st01",0,0,0,0,100,100,255,0)
+PictureClear(6)
+ShowMessageFace("mob_ozyou_fc1",0,0,2,1)
+ShowMessage("【Alleria】")
+ShowMessage("I am the winner ... ...")
+ShowMessage("Well then, I will get a stake.")
+125(1,0,1200)
+ShowMessageFace("",0,0,2,2)
+ShowMessage("Luke paid 1200 G!")
+ShowMessageFace("mob_ozyou_fc1",0,0,2,3)
+ShowMessage("【Alleria】")
+ShowMessage("If you want to challenge me again, please come any time.")
+ShowMessage("I will squeeze that sperm many times.")
+If(0,2331,1)
+ PictureClear(5)
+ 281(1)
+ TeleportPlayer(0,45,39,11,2,0)
+ 216(0)
+ 0()
+EndIf()
+EndEventProcessing()
+0()
+

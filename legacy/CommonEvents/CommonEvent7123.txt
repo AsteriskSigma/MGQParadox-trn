@@ -1,0 +1,21 @@
+﻿// EVENT 7123
+Name "Maria: Defeat"
+
+RunCommonEvent(7000)
+PictureClear(6)
+ShowMessageFace("mob_sister1_fc1",0,0,2,1)
+ShowMessage("\\n<Maria>It's my win.\nI'm sorry, but I'd like the wager we agreed on...")
+125(1,0,230)
+ShowMessageFace("",0,0,2,2)
+ShowMessage("Luka hands over 230G!")
+ShowMessageFace("mob_sister1_fc1",0,0,2,3)
+ShowMessage("\\n<Maria>How did heaven feel?\nI'll show it to you as many times as you want...")
+If(0,2331,1)
+ PictureClear(5)
+ 281(1)
+ TeleportPlayer(0,27,8,16,2,0)
+ 216(0)
+ 0()
+EndIf()
+EndEventProcessing()
+0()

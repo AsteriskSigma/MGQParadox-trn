@@ -1,0 +1,7 @@
+"イベント：エル" -> "Event: Elle"
+"【エル】" -> "【El】"
+"カニさんと遊びに行こうっと♪" -> "Let's go go play with crab ♪"
+"【エル】" -> "【El】"
+"海の力、貸してあげる～♪" -> "I will lend you the power of the sea ~ ♪"
+"エルから不思議な力が与えられた！" -> "Ell gave magical power!"
+"次のボスフロアまで、海技の威力が二倍になる！" -> "The power of maritime skill doubles until the next boss floor!"

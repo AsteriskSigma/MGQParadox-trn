@@ -1,0 +1,37 @@
+#==============================================================================
+# ■ Window_ShopCommand
+#------------------------------------------------------------------------------
+# On the shop screen, you can select purchase / sell window.
+#==============================================================================
+
+class Window_ShopCommand < Window_HorzCommand
+  #--------------------------------------------------------------------------
+  # ● Object initialization
+  #--------------------------------------------------------------------------
+  def initialize(window_width, purchase_only)
+    @window_width = window_width
+    @purchase_only = purchase_only
+    super(0, 0)
+  end
+  #--------------------------------------------------------------------------
+  # ● Obtain window width
+  #--------------------------------------------------------------------------
+  def window_width
+    @window_width
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of the number of digits
+  #--------------------------------------------------------------------------
+  def col_max
+    return 3
+  end
+  #--------------------------------------------------------------------------
+  # ● Create command list
+  #--------------------------------------------------------------------------
+  def make_command_list
+    add_command(Vocab::ShopBuy,    :buy)
+    add_command(Vocab::ShopSell,   :sell,   !@purchase_only)
+    add_command(Vocab::ShopCancel, :cancel)
+  end
+end
+

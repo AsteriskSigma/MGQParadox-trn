@@ -1,0 +1,639 @@
+
+DisplayName "MS Fish Main Deck"
+
+
+
+EVENT   1
+ PAGE   1
+  0()
+
+
+
+EVENT   2
+ PAGE   1
+  0()
+
+
+
+EVENT   3
+ PAGE   1
+  0()
+
+
+
+EVENT   4
+ PAGE   1
+  0()
+
+
+
+EVENT   5
+ PAGE   1
+  0()
+
+
+
+EVENT   6
+ PAGE   1
+  0()
+
+
+
+EVENT   7
+ PAGE   1
+  0()
+
+
+
+EVENT   8
+ PAGE   1
+  0()
+
+
+
+EVENT   9
+ PAGE   1
+  0()
+
+
+
+EVENT   10
+ PAGE   1
+  0()
+
+
+
+EVENT   11
+ PAGE   1
+  0()
+
+
+
+EVENT   12
+ PAGE   1
+  0()
+
+
+
+EVENT   13
+ PAGE   1
+  0()
+
+
+
+EVENT   14
+ PAGE   1
+  0()
+
+
+
+EVENT   15
+ PAGE   1
+  0()
+
+
+
+EVENT   16
+ PAGE   1
+  0()
+
+
+
+EVENT   17
+ PAGE   1
+  0()
+
+
+
+EVENT   18
+ PAGE   1
+  0()
+
+
+
+EVENT   19
+ PAGE   1
+  0()
+
+
+
+EVENT   20
+ PAGE   1
+  0()
+
+
+
+EVENT   21
+ PAGE   1
+  0()
+
+
+
+EVENT   22
+ PAGE   1
+  0()
+
+
+
+EVENT   23
+ PAGE   1
+  0()
+
+
+
+EVENT   24
+ PAGE   1
+  0()
+
+
+
+EVENT   25
+ PAGE   1
+  0()
+
+
+
+EVENT   26
+ PAGE   1
+  0()
+
+
+
+EVENT   27
+ PAGE   1
+  0()
+
+
+
+EVENT   28
+ PAGE   1
+  0()
+
+
+
+EVENT   29
+ PAGE   1
+  0()
+
+
+
+EVENT   30
+ PAGE   1
+  0()
+
+
+
+EVENT   31
+ PAGE   1
+  0()
+
+
+
+EVENT   32
+ PAGE   1
+  0()
+
+
+
+EVENT   33
+ PAGE   1
+  0()
+
+
+
+EVENT   34
+ PAGE   1
+  0()
+
+
+
+EVENT   35
+ PAGE   1
+  0()
+
+
+
+EVENT   36
+ PAGE   1
+  0()
+
+
+
+EVENT   37
+ PAGE   1
+  0()
+
+
+
+EVENT   38
+ PAGE   1
+  0()
+
+
+
+EVENT   39
+ PAGE   1
+  0()
+
+
+
+EVENT   40
+ PAGE   1
+  0()
+
+
+
+EVENT   41
+ PAGE   1
+  0()
+
+
+
+EVENT   42
+ PAGE   1
+  0()
+
+
+
+EVENT   43
+ PAGE   1
+  0()
+
+
+
+EVENT   44
+ PAGE   1
+  0()
+
+
+
+EVENT   45
+ PAGE   1
+  0()
+
+
+
+EVENT   46
+ PAGE   1
+  0()
+
+
+
+EVENT   47
+ PAGE   1
+  0()
+
+
+
+EVENT   48
+ PAGE   1
+  0()
+
+
+
+EVENT   49
+ PAGE   1
+  0()
+
+
+
+EVENT   50
+ PAGE   1
+  0()
+
+
+
+EVENT   51
+ PAGE   1
+  281(0)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,478,12,32,0,0)
+  0()
+
+
+
+EVENT   52
+ PAGE   1
+  281(0)
+  If(6,-1,2)
+   250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+   TeleportPlayer(0,478,20,16,0,0)
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   53
+ PAGE   1
+  Wait(60)
+  205(-1,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x07,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x16,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  PictureDisplay(5,"80_ashel_st01",0,0,0,0,100,100,0,0)
+  PictureMove(5,null,0,0,0,0,100,100,255,0,30,true)
+  ShowMessageFace("ashel_fc1",0,0,2,1)
+  ShowMessage("\\n<Ashel>Welcome abroad the MS Fish. I am Ashel, second-in-command of the Fishy Pirates.")
+  If(0,6,0)
+   ShowMessageFace("sonia_fc2",3,0,2,2)
+   ShowMessage("\\n<Sonya>The Fishy Pirates!? You're the ones we were hired to take out! Wait, don't tell me we've been taken hostage...")
+   0()
+  Else()
+   ShowMessageFace("ruka_fc1",0,0,2,3)
+   ShowMessage("\\n<Luka>The navy asked us to eliminate the Fishy Pirates... Did you decide to take the initiative and kidnap us!?")
+   0()
+  EndIf()
+  If(4,129,0)
+   ShowMessageFace("brunhild_fc1",0,0,2,4)
+   ShowMessage("\\n<Hild>Hostile activity...?\nShould Hild eradicate all enemy sailors at once...?")
+   0()
+  EndIf()
+  ShowMessageFace("ashel_fc1",1,0,2,5)
+  ShowMessage("\\n<Ashel>No, we asked you here to propose a deal since there seem to be some special circumstances as to why you were chosen for that operation...")
+  If(0,4,0)
+   ShowMessageFace("alice_fc5",0,0,2,6)
+   ShowMessage("\\n<Alice>Hmm... So that dog was one of your spies? And now you mean to try and win us over to your side?")
+   ShowMessageFace("ashel_fc1",0,0,2,7)
+   ShowMessage("\\n<Ashel>That's the gist of it.\nAnyway, come and meet our captain, milady.")
+   0()
+  EndIf()
+  If(0,5,0)
+   ShowMessageFace("iriasu_fc4",0,0,2,8)
+   ShowMessage("\\n<Ilias>I see... So that dog was one of your spies? And now you're prepared to kneel at our feet?")
+   ShowMessageFace("ashel_fc1",0,0,2,9)
+   ShowMessage("\\n<Ashel>What are you talking about?\nAnyway, come and meet our captain, milady.")
+   0()
+  EndIf()
+  ShowMessageFace("ruka_fc1",0,0,2,10)
+  ShowMessage("\\n<Luka>Look, there's no way we can cooperate with evil-doing pirates...")
+  ShowMessageFace("ashel_fc1",0,0,2,11)
+  ShowMessage("\\n<Ashel>You should know that we don't attack innocent civilian ships. We only rob criminals like other pirates and smugglers.")
+  ShowMessageFace("ashel_fc1",1,0,2,12)
+  ShowMessage("\\n<Ashel>I won't pretend that we're pirates of justice, but it's our law to never turn our backs on the path of light.")
+  If(4,68,0)
+   ShowMessageFace("dragonp_fc1",0,0,2,13)
+   ShowMessage("\\n<Papi>Awesome! That's so cool!")
+   0()
+  EndIf()
+  If(4,66,0)
+   ShowMessageFace("vgirl_fc1",0,0,2,14)
+   ShowMessage("\\n<Vanilla>As much as I hate the sunlight, I admire your conviction!")
+   0()
+  EndIf()
+  If(0,4,0)
+   ShowMessageFace("alice_fc5",0,0,2,15)
+   ShowMessage("\\n<Alice>A pirate band that only attacks other lawbreakers? Well, we can't just take your word for it.")
+   0()
+  EndIf()
+  If(0,5,0)
+   ShowMessageFace("iriasu_fc4",7,0,2,16)
+   ShowMessage("\\n<Ilias>A pirate band that only attacks other ruffians? No matter how you try to justify it, breaking the law is immoral.")
+   0()
+  EndIf()
+  ShowMessageFace("ashel_fc1",0,0,2,17)
+  ShowMessage("\\n<Ashel>Feel free to look around the ship while you're on board. I'll let you judge for yourself whether you really have to fight us...")
+  If(4,144,0)
+   ShowMessageFace("saboresu_fc1",1,0,2,18)
+   ShowMessage("\\n<Sunny>Yay! Field trip on a pirate ship!")
+   0()
+  EndIf()
+  PictureClear(5)
+  205(0,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x08,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x2a,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x08,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  ChangeSelfSwitch("A",0)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+ PAGE   3
+  // condition: switch 2149 is ON
+  Wait(60)
+  205(-1,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x07,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x16,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  PictureDisplay(5,"80_ashel_st02",0,0,0,0,100,100,0,0)
+  PictureMove(5,null,0,0,0,0,100,100,255,0,30,true)
+  ShowMessageFace("ashel_fc1",1,0,2,1)
+  ShowMessage("\\n<Ashel>...so you came.\nLet me welcome you as partners in the Fishy Pirates.")
+  If(4,53,0)
+   ShowMessageFace("slime_fc1",0,0,2,2)
+   ShowMessage("\\n<Lime>Thaaaaanks! ♪")
+   0()
+  EndIf()
+  If(4,144,0)
+   ShowMessageFace("saboresu_fc1",1,0,2,3)
+   ShowMessage("\\n<Sunny>Woohoo! It's my pirate debut!")
+   0()
+  EndIf()
+  ShowMessageFace("ashel_fc1",1,0,2,4)
+  ShowMessage("\\n<Ashel>All right, we'll be heading to the Grand Pirates' Cave. Before that, we need to report to the captain.")
+  PictureClear(5)
+  205(0,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x09,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x2a,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x0f,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x2c,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  355("add_actor_ex(201)")
+  249(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0c,0x66,0x61,0x6e,0x66,0x61,0x6c,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69))
+  ShowMessageFace("",0,0,2,5)
+  ShowMessage("Ashel joined the party!")
+  Wait(60)
+  ChangeSelfSwitch("B",0)
+  ShowMessageFace("ashel_fc1",1,0,2,6)
+  ShowMessage("\\n<Ashel>Okay, let's go tell the captain. To the command room!")
+  If(4,62,0)
+   ShowMessageFace("gob_fc1",0,0,2,7)
+   ShowMessage("\\n<Gob>Let's do it!")
+   0()
+  EndIf()
+  0()
+ PAGE   4
+  // condition: self-switch B is ON
+  0()
+
+
+
+EVENT   55
+ PAGE   1
+  // condition: variable 1051 >= 4
+  0()
+
+
+
+EVENT   56
+ PAGE   1
+  // condition: variable 1051 >= 4
+  0()
+
+
+
+EVENT   57
+ PAGE   1
+  ShowMessageFace("k_mermaid_fc1",0,0,2,1)
+  ShowMessage("\\n<Mermaid Pirate>Use this staircase to get to the lower levels of the ship.")
+  0()
+
+
+
+EVENT   58
+ PAGE   1
+  ShowMessageFace("k_mermaid_fc1",0,0,2,1)
+  ShowMessage("\\n<Mermaid Pirate>Actually, this cannon is little more than a decoration.")
+  ShowMessage("Only 1 of the 4 cannons on this deck can actually shoot...")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("134")
+  ShowMessageFace("chrom_fc2",2,0,2,2)
+  ShowMessage("\\n<Chrom>If you leave it to me, I'll install a zombie cannon.")
+  ShowMessageFace("k_mermaid_fc1",0,0,2,3)
+  ShowMessage("\\n<Mermaid Pirate>It's kind ...")
+  EndEventProcessing()
+  DefineLabel("178")
+  ShowMessageFace("valt_fc1",0,0,2,4)
+  ShowMessage("\\n<Valto>This ship is weaker than my weapon...")
+  EndEventProcessing()
+  DefineLabel("185")
+  ShowMessageFace("radio_fc1",0,0,2,5)
+  ShowMessage("\\n<Radio>I have a shortage of goods ...")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   59
+ PAGE   1
+  ShowMessageFace("k_mermaid_fc1",0,0,2,1)
+  ShowMessage("\\n<Mermaid Pirate>Because this is our only workable cannon, we have to maintain it carefully...")
+  ShowMessage("Otherwise we won't be able to shoot it in case of emergency.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("88")
+  ShowMessageFace("jack_fc1",1,0,2,2)
+  ShowMessage("\\n<Pumpkin>I want to shoot it...")
+  ShowMessageFace("k_mermaid_fc1",0,0,2,3)
+  ShowMessage("\\n<Mermaid Pirate>It's not a toy, you can't!")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   60
+ PAGE   1
+  ShowMessageFace("k_mermaid_fc1",0,0,2,1)
+  ShowMessage("\\n<Mermaid Pirate>We are anchored in the waters near the navy headquarters.\nIt's okay though, they haven't seen us yet.")
+  0()
+
+
+
+EVENT   61
+ PAGE   1
+  ShowMessageFace("dog_fc1",0,0,2,1)
+  ShowMessage("\\n<Wow>Woof!Doggie!")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("60")
+  ShowMessageFace("dog_fc1",0,0,2,2)
+  ShowMessage("\\n<Pochi>A pirate dog! Amazing!")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   62
+ PAGE   1
+  ShowMessageFace("k_mermaid_fc1",0,0,2,1)
+  ShowMessage("\\n<Mermaid Pirate>No problems on starbord!")
+  0()
+
+
+
+EVENT   63
+ PAGE   1
+  ShowMessageFace("k_mermaid_fc1",0,0,2,1)
+  ShowMessage("\\n<Mermaid Pirate>Tool check, good!")
+  ShowMessage("Funny favorite floating rings are also abnormal!")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("41")
+  ShowMessageFace("stein_fc2",2,0,2,2)
+  ShowMessage("\\n<Promestein>Even though he is the head coach of a pirate group, can not you swim ...?")
+  EndEventProcessing()
+  DefineLabel("62")
+  ShowMessageFace("gob_fc1",3,0,2,3)
+  ShowMessage("\\n<Gob>Even though he is the head of a pirate group, I can not swim ... ...! What?")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   64
+ PAGE   1
+  ShowMessageFace("k_mermaid_fc1",0,0,2,1)
+  ShowMessage("\\n<Mermaid Pirate>Wow is a member of the Fishy Pirates.")
+  ShowMessage("She's a latent dog who has mastered the special skills of a spy.")
+  If(0,6,0)
+   ShowMessageFace("sonia_fc1",0,0,2,2)
+   ShowMessage("\\n<Sonya>So what can she do with thoose special spy skills?")
+   0()
+  Else()
+   ShowMessageFace("ruka_fc1",0,0,2,3)
+   ShowMessage("\\n<Luka>So what can she do with thoose special spy skills?")
+   0()
+  EndIf()
+  ShowMessageFace("k_mermaid_fc1",0,0,2,4)
+  ShowMessage("\\n<Mermaid Pirate>Err...\nBribe someone with food to get what we need...")
+  0()
+
+
+
+EVENT   65
+ PAGE   1
+  If(0,2149,1)
+   ShowMessageFace("k_mermaid_fc1",0,0,2,1)
+   ShowMessage("\\n<Mermaid Pirate>We are the Fishy Pirates!")
+   If(4,53,0)
+    ShowMessageFace("slime_fc1",0,0,2,2)
+    ShowMessage("\\n<Lime>Wow, fish~♪")
+    ShowMessageFace("k_mermaid_fc1",0,0,2,3)
+    ShowMessage("\\n<Mermaid Pirate>The trademark of the fish pirates is the fly's fly!")
+    ShowMessageFace("slime_fc1",2,0,2,4)
+    ShowMessage("\\n<Lime>Hone ha ... ... It is better to have fruit.")
+    0()
+   EndIf()
+   EndEventProcessing()
+   0()
+  Else()
+   ShowMessageFace("k_mermaid_fc1",0,0,2,5)
+   ShowMessage("\\n<Mermaid Pirate>We are the fish pirates!")
+   ShowMessage("From today too, the fish pirates!")
+   If(4,144,0)
+    ShowMessageFace("saboresu_fc1",1,0,2,6)
+    ShowMessage("\\n<Sunny>I did it! At last I am also a pirate ♪")
+    0()
+   EndIf()
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   66
+ PAGE   1
+  ShowMessageFace("k_mermaid_fc1",0,0,2,1)
+  ShowMessage("\\n<Mermaid Pirate>Without Ashel, this ship would sink...")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("41")
+  ShowMessageFace("stein_fc2",0,0,2,2)
+  ShowMessage("\\n<Promestein>Number 2 of the organization is a pattern that is essentially required.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   67
+ PAGE   1
+  ShowMessageFace("k_mermaid_fc1",0,0,2,1)
+  ShowMessage("\\n<Mermaid Pirate>When I was cleaning the deck before, the mast was broken.")
+  ShowMessage("Since then, sweeping is forbidden.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("64")
+  ShowMessageFace("pramia_fc1",0,0,2,2)
+  ShowMessage("\\n<Teeny>How clumsy it is ......")
+  ShowMessage("Papi seems to do the same thing, though.")
+  EndEventProcessing()
+  0()
+

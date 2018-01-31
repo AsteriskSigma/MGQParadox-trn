@@ -1,0 +1,361 @@
+
+
+
+class Game_Temp
+	attr_accessor :weapons_size
+	attr_accessor :armors_size
+	
+	alias hima_enchant_initialize initialize
+	def initialize
+		hima_enchant_initialize
+		@weapons_size = $data_weapons.size
+		@armors_size = $data_armors.size
+	end
+end
+
+class Game_Actors
+	attr_reader :data
+end
+
+class Game_Party < Game_Unit
+	attr_accessor :enchant_items
+	attr_accessor :enchant_weapons
+	attr_accessor :enchant_armors
+	#--------------------------------------------------------------------------
+	# ○ 参照されてないデータを削除する
+	#--------------------------------------------------------------------------
+	def garbage_collection
+		nodata = (@enchant_weapons + @enchant_armors).select{|data| data.item_number == 0 && data.storehouse_item_number == 0}.map(&:item_object)
+		garbage_data = nodata.reject{|item|$game_actors.data.compact.any?{|actor|actor.equips.compact.any?{|equip|equip == item}}}
+		garbage_data.each{|item| p item ; delete_item_data(item,false)}
+	end
+	#--------------------------------------------------------------------------
+	# ○ セーブデータ互換
+	#--------------------------------------------------------------------------
+	alias hima_enchant_update update
+	def update
+		hima_enchant_update
+		@enchant_weapons = Enchant_Item_List.new unless @enchant_weapons.is_a?(Enchant_Item_List)
+        @enchant_armors = Enchant_Item_List.new unless @enchant_armors.is_a?(Enchant_Item_List)
+		@enchant_weapons.map(&:item_object).each{|weapon| 
+			weapon.reset_data
+			$data_weapons[weapon.id] = weapon
+		}
+		@enchant_armors.map(&:item_object).each{|armor| 
+			armor.reset_data 
+			$data_armors[armor.id] = armor
+		}
+	end
+	#--------------------------------------------------------------------------
+	# ○ 全アイテムリストの初期化
+	#--------------------------------------------------------------------------
+	alias hima_enchant_init_all_items init_all_items
+	def init_all_items
+		hima_enchant_init_all_items
+		@enchant_weapons = Enchant_Item_List.new
+		@enchant_armors = Enchant_Item_List.new
+	end
+	#--------------------------------------------------------------------------
+	# ○ 武器オブジェクトの配列取得
+	#--------------------------------------------------------------------------
+	alias hima_enchant_weapons weapons
+	def weapons
+		enchant_weapons + hima_enchant_weapons
+	end
+	#--------------------------------------------------------------------------
+	# ○ 防具オブジェクトの配列取得
+	#--------------------------------------------------------------------------
+	alias hima_enchant_armors armors
+	def armors
+		enchant_armors + hima_enchant_armors
+	end
+	#--------------------------------------------------------------------------
+	# ● エンチャント武器オブジェクトの配列取得
+	#--------------------------------------------------------------------------
+	def enchant_weapons
+		@enchant_weapons.map{ |data| data.item_number > 0 ? data.item_object.id : nil if data }.compact.map{|id|$data_weapons[id]}.reverse
+	end
+	#--------------------------------------------------------------------------
+	# ● エンチャント防具オブジェクトの配列取得
+	#--------------------------------------------------------------------------
+	def enchant_armors
+		@enchant_armors.map { |data| data.item_number > 0 ? data.item_object.id : nil if data }.compact.map{|id| $data_armors[id]}.reverse
+	end
+	
+	#--------------------------------------------------------------------------
+	# ○ アイテムのクラスに対応するコンテナオブジェクトを取得
+	#--------------------------------------------------------------------------
+	alias hima_enchant_item_container item_container
+	def item_container(item)
+		case item
+		when RPG::EnchantWeapon
+			@enchant_weapons
+		when RPG::EnchantArmor
+			@enchant_armors
+		else
+			hima_enchant_item_container(item)
+		end
+	end
+	#--------------------------------------------------------------------------
+	# ○ アイテムの最大所持数取得
+	#--------------------------------------------------------------------------
+	alias hima_enchant_max_item_number max_item_number
+	def max_item_number(item)
+		return hima_enchant_max_item_number(item) unless item.enchant_item?
+		return 1
+	end
+	def enchant_item_max?(item)
+		case item
+		when RPG::EnchantWeapon
+			@enchant_weapons.size >= NWConst::Enchantment::WEAPON_MAX_ITEM_NUMBER
+		when RPG::EnchantArmor
+			@enchant_armors.size >= NWConst::Enchantment::ARMOR_MAX_ITEM_NUMBER
+		end
+	end
+	#--------------------------------------------------------------------------
+	# ○ アイテムの増加（減少）
+	#		 keep_flag : enchant装備を残す？
+	#--------------------------------------------------------------------------
+	def nw_count_gain_item(item, amount, include_equip= false ,keep_flag = false)
+		return unless item
+		if item.need_enchant? && amount > 0
+			amount.times{
+				nw_count_gain_item(item.get_enchant_item,1,include_equip,keep_flag)
+			}
+			return
+		end
+		container = item_container(item)
+		return unless container
+		last_number = item_number(item)
+		new_number = last_number + amount
+		new_number = [[new_number, 0].max,max_item_number(item)].min
+		container[item.index].item_number = new_number
+		if item.enchant_item?
+			if !keep_flag && new_number >= 1
+				add_item_data(item,new_number)
+			elsif !keep_flag && new_number <= 0 
+				delete_item_data(item)
+			end
+		end
+		$game_temp.get_item_data.push({:item=> item , :value => new_number - last_number})
+		$game_map.need_refresh = true
+	end
+	#--------------------------------------------------------------------------
+	# ○ アイテムの減少
+	#     keep_flag : enchant装備を残す？
+	#--------------------------------------------------------------------------
+	def lose_item(item, amount, include_equip = false ,keep_flag = false)
+		gain_item(item, -amount, include_equip, keep_flag)
+	end
+	def item_data_container(item)
+		case item
+		when RPG::Weapon
+			$data_weapons
+		when RPG::Armor
+			$data_armors
+		when RPG::Item
+			$data_items
+		end
+	end
+	#--------------------------------------------------------------------------
+	# ● エンチャントデータの追加
+	#--------------------------------------------------------------------------
+	def add_item_data(item,number)
+		container = item_container(item)
+		data_container = item_data_container(item)
+		container.add_item(item)
+		container[item.index].item_number = number	
+		data_container[item.id] = item
+	end
+	
+	#--------------------------------------------------------------------------
+	# ● エンチャントデータの削除
+	#--------------------------------------------------------------------------
+	def delete_item_data(item , stone_flag =true)
+		item.clear_stones if stone_flag
+		container = item_container(item)
+		data_container = item_data_container(item)
+		container.delete_at(item.index)
+		data_container.delete_at(item.id)
+		container.each{|data|
+			data.item_object.dec_id(item.index) if data.item_object
+		}
+
+		
+	end
+	
+	#--------------------------------------------------------------------------
+	# ● エンチャント武器データ
+	#--------------------------------------------------------------------------
+	def enchant_weapons_data
+		@enchant_weapons.reverse
+	end
+	#--------------------------------------------------------------------------
+	# ● エンチャント防具データ
+	#--------------------------------------------------------------------------
+	def enchant_armors_data
+		@enchant_armors.reverse
+	end
+end
+module NWConst::LibraryManager
+	#--------------------------------------------------------------------------
+	# ● 有効なウェポンIDを全取得
+	#--------------------------------------------------------------------------
+	def get_valid_weapons
+		$data_weapons.select {|item| !item.nil? && !item.name.empty? && !item.lib_exclude? && !item.need_enchant? && !item.enchant_item? }.collect {|item| item.id }
+	end
+	#--------------------------------------------------------------------------
+	# ● 有効なアーマーIDを全取得
+	#--------------------------------------------------------------------------
+	def get_valid_armors
+		$data_armors.select {|item| !item.nil? && !item.name.empty? && !item.lib_exclude? && !item.is_accessory? && !item.need_enchant? && !item.enchant_item? }.collect {|item| item.id }
+	end
+	#--------------------------------------------------------------------------
+	# ● 有効なアクセサリIDを全取得
+	#--------------------------------------------------------------------------
+	def get_valid_accessories
+		$data_armors.select {|item| !item.nil? && !item.name.empty? && !item.lib_exclude? && item.is_accessory? && !item.need_enchant? && !item.enchant_item? }.collect {|item| item.id }
+	end
+	#--------------------------------------------------------------------------
+  # ● 有効なアイテムIDを全取得
+  #--------------------------------------------------------------------------
+  def get_valid_items
+    $data_items.select {|item| !item.nil? && !item.name.empty? && !item.lib_exclude? && item.enchant_stone? }.collect {|item| item.id }
+  end
+end
+
+class RPG::BaseItem
+	attr_reader :data_ex
+	def sort_id
+		@id
+	end
+	#--------------------------------------------------------------------------
+	# ● エンチャントを付与する？
+	#--------------------------------------------------------------------------
+	def need_enchant?
+		false
+	end
+	#--------------------------------------------------------------------------
+	# ● エンチャントが付与された装備かどうか
+	#--------------------------------------------------------------------------
+	def enchant_item?
+		false
+	end
+	#--------------------------------------------------------------------------
+	# ● 配列index
+	#--------------------------------------------------------------------------
+	def index
+		@id
+	end
+	#--------------------------------------------------------------------------
+	# ● 表示色
+	#--------------------------------------------------------------------------
+	def display_color
+		0
+	end
+	
+end
+
+class RPG::EquipItem
+	def get_enchant_item
+		data = enchant_item
+		data.set_data
+		data
+	end
+end
+class RPG::Weapon
+	def need_enchant?
+		id >= NWConst::Enchant::WEAPON_ID_BASE
+	end
+	def enchant_item
+		RPG::EnchantWeapon.new(self)
+	end
+end
+
+class RPG::Armor
+	def need_enchant?
+		3799 >= id  && id >= NWConst::Enchant::ARMOR_ID_BASE
+	end
+	def enchant_item
+		RPG::EnchantArmor.new(self)
+	end
+end
+
+class Game_Actor < Game_Battler
+	#--------------------------------------------------------------------------
+	# ● TP の最大値を取得
+	#--------------------------------------------------------------------------
+  def max_tp
+    [mtp_max, [((actor.base_tp + (actor.tp_level_revise * (base_level - 1)) + increase_tp_fix + plus_max_tp) * increase_tp_per).ceil, 1].max].min
+  end
+	
+	def plus_max_tp
+		equips.compact.select(&:enchant_item?).inject(0){|i,equip|i + equip.max_sp}
+	end
+	#--------------------------------------------------------------------------
+	# ● パーティとアイテムを交換する
+	#     new_item : パーティから取り出すアイテム
+	#     old_item : パーティに返すアイテム
+	#--------------------------------------------------------------------------
+	def trade_item_with_party(new_item, old_item)
+		return false if new_item && !$game_party.has_item?(new_item)
+		$game_party.gain_item(old_item, 1, false, true)
+		$game_party.lose_item(new_item, 1, false, true)
+		return true
+	end
+	
+	#--------------------------------------------------------------------------
+	# ○ 特徴を保持する全オブジェクトの配列取得
+	#--------------------------------------------------------------------------
+	alias base_feature_objects feature_objects
+	def feature_objects
+		boost = equip_ability_boost
+		super + [self.actor] + [self.class] + [self.tribe] + equips.compact.map{|equip|[equip] * boost[equip.etype_id]}.flatten + stones_armor_data + ability_feature_objects + human_add_features
+	end
+	
+	def stones_armor_data
+		equips.compact.select(&:enchant_item?).map{|equip| equip.stones_armor_data}.flatten
+	end
+	def base_all_features
+		base_feature_objects.inject([]) {|r, obj| r + obj.features}
+	end
+end
+
+class Game_BaseItem
+	#--------------------------------------------------------------------------
+	# ● オブジェクト初期化
+	#--------------------------------------------------------------------------
+	def initialize
+		@class = nil
+		@item_id = 0
+		@object = nil
+	end
+	#--------------------------------------------------------------------------
+	# ● クラス判定
+	#--------------------------------------------------------------------------
+	def is_skill?;   @class == RPG::Skill;   end
+	def is_item?;    @class == RPG::Item;    end
+	def is_weapon?;  @class == RPG::Weapon  || @class == RPG::EnchantWeapon;  end
+	def is_armor?;   @class == RPG::Armor  || @class == RPG::EnchantArmor;   end
+	def is_nil?;     @class == nil;              end
+	#--------------------------------------------------------------------------
+	# ● アイテムオブジェクトの取得
+	#--------------------------------------------------------------------------
+	def object
+		return @object if @object
+		return $data_skills[@item_id]  if is_skill?
+		return $data_items[@item_id]   if is_item?
+		return $data_weapons[@item_id] if is_weapon?
+		return $data_armors[@item_id]  if is_armor?
+		return nil
+	end
+	#--------------------------------------------------------------------------
+	# ● アイテムオブジェクトの設定
+	#--------------------------------------------------------------------------
+	def object=(item)
+		@object = nil
+		@object = item if item && item.enchant_item?
+		@item_id = item ? item.id : 0
+		@class = item ? item.class : nil
+	end
+end

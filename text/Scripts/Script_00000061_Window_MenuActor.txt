@@ -1,0 +1,6 @@
+"■ Window" -> "■ Window"
+"　アイテムやスキルの使用対象となるアクターを選択するウィンドウです。" -> "This window is used to select actors to use items and skills."
+"● オブジェクト初期化" -> "● Object initialization"
+"● 決定ボタンが押されたときの処理" -> "● Processing when the enter button is pressed"
+"● 前回の選択位置を復帰" -> "● Return the last selected position"
+"● アイテムのためのカーソル位置設定" -> "● Cursor position setting for items"

@@ -1,0 +1,6 @@
+"「すずめのおどり」、教えます。" -> "\"Sparrow's dance\", I will teach."
+"でも、ちゃんと「踊る」が使える方にして下さいね。" -> "But please be sure to properly use \"dancing\"."
+"誰が「すずめのおどり」を修得しますか？" -> "Who will acquire \"sparrow's dance\"?"
+"すずめのおどり" -> "Sparrow's dance"
+"を修得した！" -> "Learned!"
+"また今度にしましょう……" -> "Let's do it again next time ......"

@@ -1,0 +1,271 @@
+# -*- encoding: utf-8 -*-
+=begin
+= IDReservation
+
+=end
+
+#==============================================================================
+# ■ NWConst::Sw
+#==============================================================================
+module NWConst::Sw
+  # Switch used as automatic message use flag (Material: used for message control character extension)
+  AUTO_MESSAGE = 2
+  # Fellow subscription refusal switch(FOLLOWER_DISABLE_2Same as)
+  FOLLOWER_DISABLE_1 = 3
+  # Switch to turn on at the time of new game and loading
+  ON_GAME_START = 24
+  # When on,<Halves encounter/Disabled>Disabling and Skilling/Invalidation of item effect \"escape\"
+  STRICT_ENCOUNT = 52
+  # Senior official / advanced class release switch
+  OPEN_CLASS_LANK2 = 90
+  # Superlative job · Superlative release switch
+  OPEN_CLASS_LANK3 = 91
+  # Liberation switch for seal seals and seals
+  OPEN_CLASS_LANK4 = 92
+  # Predatory scene cut switch
+  CUT_PREDATION = 95
+  # Non-destructible switch
+  ALL_DEAD_DISABLE = 96
+  # Experience value at battle victory and drop item unavailable switch
+  GET_DISABLE_EXP_DROP = 97
+  # Switch displaying simplified status
+  SIMPLE_STATUS = 98
+  # Pseudo-defeat event in progress flag
+  LOSE_EVENT = 99  
+  # Warp inhibit switch ID
+  WARP_BAN = 100
+  # Base value of warp release flag
+  # The actual value to access is the base value+NWConst::Warp::PlacesIt will be the index value of
+  WARP_OPEN_BASE = 101
+  # Place name for catalog switch number Base value
+  # The actual value to access is the base value+PLACEIndex value of
+  PLACE_FLAG_BASE = 201    
+  # Base value for storing actor ID who became a friend
+  # The actual value to access is the base value+Actor ID
+  ADD_ACTOR_BASE = 1000
+  
+  # A switch that prohibits the \"swap\" command during battle
+  FORBID_BATTLE_SHIFT_CHANGE = 27
+  # Fellow subscription refusal switch ID(FOLLOWER_DISABLE_1Same as)
+  FOLLOWER_DISABLE_2 = 81
+  # Experience value at battle victory Unavailable switch
+  GET_DISABLE_EXP = 82
+  # Money acquisition impossible switch at battle victory
+  GET_DISABLE_GOLD = 83
+  # Drop item unavailable switch at battle victory
+  GET_DISABLE_DROP = 84
+  # Steal Forced Fail Switch
+  STEAL_FAIL = 85
+  
+end
+
+#==============================================================================
+# ■ NWConst::Var
+#==============================================================================
+module NWConst::Var
+  # If the value of this variable is 1 or more, the specific event command(Tris correction Q reference)Forcibly convert the enemy number of that number to that value
+  EVENT_ENEMY_ID = 112
+  # Variable to give enemy parameter correction
+  PARAM1 = 41 # MHP
+  PARAM2 = 42 # ATK, MAG, DEX
+  PARAM3 = 43 # DEF, MDF
+  PARAM4 = 44 # AGI
+  PARAM_STATE_RATE = {
+    # State Effectiveness To state enemy's state effectiveness[Value of variable]% Multiply
+    # However, if the value of the variable is 0, 100%(No change), if it is minus 0%To
+    #   State ID=> Variable ID,
+    230 => 45,
+    231 => 45,
+    232 => 45,
+  }
+  # Numbers of variables that store the likelihood that rises at the end of battle
+  BATTLE_END_GAIN_LOVE = 52  
+  # Number of the variable storing the ID of the skill user
+  ACTION_USER = 100
+  # The number of the variable storing the ID of the skill target person
+  ACTION_TARGET = 101
+  # The number of the variable that stores the current step count
+  STEPS = 102
+  # The number of the variable that stores the current possessed money
+  GOLD = 103
+  # Number of variable storing usage skill ID
+  USED_SKILL_ID = 104
+  # The number of the variable storing the skill success / failure judgment
+  ACTION_HIT = 105
+  # The number of the variable that stores the friendship degree of the target person
+  ACTION_TARGET_FRIEND = 106  
+  # The number of the variable that stores the ID of the enemy that started up
+  GET_UP = 107
+  # The number of the variable that stores the skill user's base level
+  ACTION_USER_LEVEL = 108
+  # Numbers of variables that store escape levels of subjects of skill
+  ACTION_TARGET_LEVEL = 109  
+  # The number of the variable that stores the current owning coin
+  COIN = 110  
+  # The number of the variable storing the lap number
+  TRACK = 901
+  # The number of the variable storing the current difficulty level
+  CURRENT_DIFFICULTY = 902
+  # Number of variable storing the highest difficulty level at the time of clearing
+  CLEAR_DIFFICULTY = 903
+  # Numbers of variables that store battle fucker kills
+  BATTLEFUCKER_DEFEAT = 907
+  # Number base value of variables that store friendship for enemy
+  # The actual value to access is the base value+Enemy ID
+  ENEMY_REL_BASE = 2000
+  # Number base value of variable that stores positivity for actor
+  # The actual value to access is the base value+Actor ID
+  ACTOR_REL_BASE = 3000
+  # Setting shared variable IDs Use for sharing friendship[]Specify the ID you want to share in
+  COMMON_VARIABLE = [
+    [2002, 2003],
+    [2078, 2079, 2080, 2081],
+    [2087, 2088, 2089, 2090, 2091, 2092],
+    [2158, 2159, 2160],
+    [2168, 2169],
+    [2197, 2198, 2199],
+    [2200, 2201, 2202],
+    [2206, 2207],
+    [2208, 2209, 2210, 2211],
+    [2216, 2217, 2218],
+    [2227, 2228, 2229, 2230],
+    [2241, 2242, 2243],
+    [2268, 2269, 2270, 2271],
+    [2312, 2313],
+    [2321, 2322, 2323],
+    [2348, 2349, 2350],
+    [2353, 2354, 2355, 2356, 2357],
+    [2358, 2359, 2360],
+  ]
+  # Numbers of variables that store the results of extended choices
+  EX_CHOICE_RESULT = 9
+  # If the number value of the variable storing the arrival hierarchy of the chaotic labyrinth is 1 or more, it is displayed in \"this adventure\"
+  EX_DUNGEON_REACH = 122
+  # The number of the variable to which the value added to the party number upper limit is substituted
+  PARTY_MAX_PLUS = 56
+  # The number of the variable that acquires the number of enchant weapons
+  ENCHANT_WEAPON_ITEM_NUMBER =200
+  # Numbers of variables to obtain the number of enchant armor
+  ENCHANT_ARMOR_ITEM_NUMBER = 201
+
+end
+
+#==============================================================================
+# ■ NWConst::Actor
+#==============================================================================
+module NWConst::Actor
+  # Luca's Actor ID
+  LUCA = 1
+  # Individual level maximum value
+  MAX_BASE_LEVEL = 60
+  # <Mastered>ID of actor unable to master skill
+  NOT_LEARN_ACTORS = [1,2,3,4,518,520,522,531,532,535,538,539,540,541,542,543,563,564,565,566,567,568,569,701]
+
+end
+
+#==============================================================================
+# ■ NWConst::Class
+#==============================================================================
+module NWConst::Class
+  # Occupation · Range of tribes
+  JOB_RANGE   = (1..149)
+  TRIBE_RANGE = (151..374)
+  # Occupational base value for actor's basic status
+  # The actual value to access is the base value+Actor ID
+  BASE_PARAM_BASE = 400
+  # ID of the race \"human\"
+  HUMANS = [151]
+end
+
+#==============================================================================
+# ■ NWConst::Item
+#==============================================================================
+module NWConst::Item
+  # Pocket Magus Castle Item ID
+  POCKET_CASTLE = 501
+  # Gift item ID range
+  PRESENT_RANGE = (301..450)  
+end
+ 
+#==============================================================================
+# ■ NWConst::Skill
+#==============================================================================
+module NWConst::Skill
+  BIND_RESIST = 52        # Skill ID of \"Mogaku\"
+  MERCY = 51              # Skill ID of \"Nasu-imama\"
+  DEFAULT_TEMPTATION = 31 # Temporary skill applied when individual skills are not set
+  NO_VALID_ACTION  = 4241 # Substitution skills when enemies have no selectable action
+end 
+ 
+#==============================================================================
+# ■ NWConst::Common
+#==============================================================================
+module NWConst::Common
+  MAP_DRAW     = 2 # Common event for map display
+  CALL_CASTLE  = 3 # Pocket Mafu Castle call common event
+  BATTLE_START = 4 # Common event to reserve at the start of battle
+  BATTLE_END   = 5 # Common event to reserve at the end of battle
+  GIVEUP_START = 9 # Common event to reserve at the time of surrender
+  LOSE_EVENT_BASE = 3000 # Common event base value activated at defeat
+end
+ 
+#==============================================================================
+# ■ NWConst::State
+#==============================================================================
+module NWConst::State
+  UBIND   = 3  # Restraint user state ID
+  TBIND   = 4  # Constraint target state ID
+  EUBIND  = 5  # Permanently constrained user state ID
+  ETBIND  = 6  # Permanently constrained state ID
+  TEMPTATION = 26 # Temptation state ID
+  INCONTINENCE = 27 # Incontinence state ID
+end
+
+#==============================================================================
+# ■ NWConst::WType
+#==============================================================================
+module NWConst::WType
+  # Enemy's basic weapon type
+  DEFAULT_ENEMY = 0  
+end
+
+#==============================================================================
+# ■ NWConst::SType
+#==============================================================================
+module NWConst::SType
+  BIND     = 65 # Constraining skill type ID
+  EBIND    = 66 # Permanently constraining skill type ID
+end
+
+#==============================================================================
+# ■ NWConst::Elem
+#==============================================================================
+module NWConst::Elem
+  # ID of pleasure attribute
+  # Necessary for specialization of speech · count
+  PLEASURE = 2
+end
+
+module  NWConst::Actor
+
+  #Maximum HP upper limit
+  MAX_MHP = 99999999
+  #Other capability value ceiling
+  MAX_PARAM = 9999999
+
+  #Maximum HP additional growth limit upper limit
+  MAX_MHP_PLUS = 99999
+  #Additional capacity value upper limit on other capacity values
+  MAX_PARAM_PLUS = 9999
+
+end
+
+#==============================================================================
+# ■ NWConst::Party
+#==============================================================================
+module NWConst::Party
+  #Possession upper limit
+  MAX_MONEY = 999999999
+end
+
+

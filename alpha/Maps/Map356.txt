@@ -1,0 +1,412 @@
+
+DisplayName "Underground Library Area 1"
+
+
+
+EVENT   1
+ PAGE   1
+  0()
+
+
+
+EVENT   2
+ PAGE   1
+  0()
+
+
+
+EVENT   3
+ PAGE   1
+  0()
+
+
+
+EVENT   4
+ PAGE   1
+  0()
+
+
+
+EVENT   5
+ PAGE   1
+  281(0)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,355,40,56,0,0)
+  0()
+
+
+
+EVENT   6
+ PAGE   1
+  281(0)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,355,40,56,0,0)
+  0()
+
+
+
+EVENT   7
+ PAGE   1
+  281(0)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,355,40,56,0,0)
+  0()
+
+
+
+EVENT   8
+ PAGE   1
+  281(0)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,355,40,56,0,0)
+  0()
+
+
+
+EVENT   9
+ PAGE   1
+  281(0)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,355,40,56,0,0)
+  0()
+
+
+
+
+EVENT   10
+ PAGE   1
+  ChangeSwitch(215,215,0)
+  ChangeSwitch(100,100,0)
+  281(0)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,164,28,44,0,0)
+  0()
+
+
+
+EVENT   11
+ PAGE   1
+  ChangeSwitch(215,215,0)
+  ChangeSwitch(100,100,0)
+  281(0)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,164,29,44,0,0)
+  0()
+
+
+
+EVENT   12
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Guard>[Cursed God Slash] is a sword skill that delivers a brutal strike that ignores the enemy's Defense. It misses half the time, though.")
+  0()
+
+
+
+EVENT   13
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Scholar>According to these records, the [Hero] job could automatically recover SP every turn. As expected, a job acknowledged by the Goddess herself sure was something else.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Scholar>But, now that Goddess Ilias has disappeared, it's basically an extinct job. I wish I could have see the real thing even once, but...")
+  0()
+
+
+
+EVENT   14
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Scholar>I wonder why monsters suddenly took over the Underground Library. There's nothing down there that's of any worth to them.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Scholar>Unless... Could they be interested in the books?")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("119")
+  ShowMessageFace("page17_fc1",0,0,2,3)
+  ShowMessage("\\n<Annie>No, we are the books...")
+  EndEventProcessing()
+  DefineLabel("120")
+  ShowMessageFace("page257_fc1",0,0,2,4)
+  ShowMessage("\\n<Yoko>Well, he's not wrong, per se.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   15
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Spiritualism Apprentice>Summoning a zombie requires the caster to sacrifice some of their own life force. In other words, you need to consume your own HP in order to use that skill.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Spiritualism Apprentice>Similarly, summoning ghosts requires MP, and summoning mechanical dolls requires SP.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("134")
+  ShowMessageFace("chrom_fc2",0,0,2,3)
+  ShowMessage("\\n<Chrome>If you learn the various spiritualism skills, you can use them in a lot of different situations. Amazing right? Eh-hen!")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   16
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Guard>This is the library's first level. The monsters don't come up this far, thankfully.")
+  0()
+
+
+
+EVENT   17
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Guard>This passage leads to the library's deeper levels. Monsters have invaded them so be careful down there.")
+  0()
+
+
+
+EVENT   18
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Scholar>Spiritualism is a form of magic that is handed down among monsters. It allows one to create and control zombies, ghosts, and mechanical dolls.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Scholar>The [Spiritualist] job learns the elementary skills of spiritualism. Once one has mastered being a [Spiritualist] one can specialize in one of its aspects.")
+  If(8,614)
+   EndEventProcessing()
+   0()
+  Else()
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("\\n<Scholar>However, you cannot become a Spiritualist without the right job change item, and I don't know where one could obtain it.")
+   ShowMessageFace("",0,0,2,4)
+   ShowMessage("\\n<Scholar>A Spiritualist should have one, but most of them are monsters. I doubt they'd be willing to give it to anyone...")
+   ShowMessageFace("",0,0,2,5)
+   ShowMessage("\\n<Scholar>Speaking of Spiritualists, though, I heard that there's an inhuman mage living in the manor to the north. If, as rumor says, they are researching zombies, then they must be a Spiritualist.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   19
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Scholar>Nobody's in the second level or lower. Those levels have been turned into a dungeon so I guess that's not too surprising.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Scholar>If you want a book from down there, you'll have to look for it alone. The catalog is a mess, too, so there's no use relying on it.")
+  0()
+
+
+
+EVENT   20
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Scholar>I need a book from the third level, but since monsters are lurking down there, I can't get it.")
+  ShowChoices(strings("We'll get it for you","Ignore him"),2)
+  IfPlayerPicksChoice(0,null)
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Scholar>Ah?! No, it's fine! It's not the kind of book I should ask other people people to get... Ahaha...")
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("...Yeah, I get it.")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("5")
+   ShowMessageFace("alice_fc5",3,0,2,4)
+   ShowMessage("\\n<Alice>...Pervert.")
+   EndEventProcessing()
+   DefineLabel("121")
+   ShowMessageFace("page65537_fc1",2,0,2,5)
+   ShowMessage("\\n<Cornelia>I am a Magical Librarian, so I can sense what you seek. The book you desire is... this one, [Entirety of the Female Body].")
+   ShowMessageFace("",0,0,2,6)
+   ShowMessage("\\n<Scholar>AAAaaaAAaAA!!")
+   EndEventProcessing()
+   0()
+  IfPlayerPicksChoice(1,null)
+   EndEventProcessing()
+   0()
+  404()
+  0()
+
+
+
+EVENT   21
+ PAGE   1
+  If(1,1001,0,28,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Scholar>The worship of Sylph originated in the Forest of Spirits, northwest of here. I'd love to visit the forest and study it, but I'm scared of elves.")
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Scholar>Regardless, it seems the Sylph faith has experienced a revival of sorts in recent years. It must be the Renaissance's influence. Truly, a fascinating phenomenon.")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("12")
+   ShowMessageFace("sylph_fc1",0,0,2,3)
+   ShowMessage("\\n<Sylph>Will everyone start worshiping me again?")
+   EndEventProcessing()
+   DefineLabel("136")
+   ShowMessageFace("elf_fc1",0,0,2,4)
+   ShowMessage("\\n<Claudia>In these turbulent times, everyone's really on edge. I understand that you just want to do some research, but I don't want you entering the forest.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,29,1)
+   ShowMessageFace(binary"",0,0,2,5)
+   ShowMessage("[Scholar]")
+   ShowMessage("Forest of the spirit, it is said that it is an embarrassment request ... ...")
+   ShowMessage("It's not a ban, but if you do go it means making it a village.")
+   ShowMessageFace(binary"",0,0,2,6)
+   ShowMessage("[Scholar]")
+   ShowMessage("The crackdown on spiritual beliefs is about to start again.")
+   ShowMessage("Do you burn books as usual next?")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   22
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Scholar>It said that every book ever published is in this library. Of course, that assumption requires one ignore any books right by non-humans.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Scholar>I've heard that the Monster Lord's castle also has a great library. It must be amazing... I wonder if Heaven has a library, too. I wish I could see it.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("41")
+  ShowMessageFace("stein_fc2",0,0,2,3)
+  ShowMessage("\\n<Promestein>The Heavenly Library only has theological treatises. It's not worth going there just to read those.")
+  EndEventProcessing()
+  DefineLabel("121")
+  ShowMessageFace("page65537_fc1",1,0,2,4)
+  ShowMessage("\\n<Cornelia>I often visit the Monster Lord's library. Actually, I think I've spent most of my life in there.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   23
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Magic Scholar>The fusion of dark and holy energy creates a tremendous reaction. Could we not make a new power reactor utilizing that energy?")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Magic Scholar>However, I've encountered a whole host of technological issues while trying to make one. Its commercialization remains a dream within a dream...")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("26")
+  ShowMessageFace("iriasu_fc4",2,0,2,3)
+  ShowMessage("\\n<Ilias>That energy is the very core of the plan to recreate the world. For some reason, though, I have this inescapably ominous feeling of dread about it...")
+  EndEventProcessing()
+  DefineLabel("41")
+  ShowMessageFace("stein_fc2",0,0,2,4)
+  ShowMessage("\\n<Promestein>Yes, the power generated by the fusion of holy and dark energy has been known of since ancient times. However, the hurdle of granting it a practical application remains quite high...")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   24
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Scholar>Gnome was once worshiped in the Sabasa region. As expected, the Spirit of Earth has a deep bond with the desert.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Scholar>Ever since the Renaissance began, Sabasa had become very tolerant to monsters, in part because Sabasa's royal family bloodline has some monster blood mixed in it.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("13")
+  ShowMessageFace("gnome_fc1",0,0,2,3)
+  ShowMessage("\\n<Gnome>......")
+  ShowMessageFace("",0,0,2,4)
+  ShowMessage("\\n<Scholar>Are you cosplaying as Gnome? That outfit is only depicted in very old books. Well done on replicating it.")
+  EndEventProcessing()
+  DefineLabel("529")
+  ShowMessageFace("sara_fc1",4,0,2,5)
+  ShowMessage("\\n<Sara>That bloodline caused me quite the ordeal...")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   25
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Scholar>It's just a rumor, but... San Ilia Castle supposedly has a secret research laboratory.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Scholar>It might just be a false rumor spread by the anti-makina sect, but there is a strange, unlabeled room in the castle's architectural schematics.")
+  0()
+
+
+
+EVENT   26
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Scholar>Are you surprised that the church's higher-ups tolerate makina? Well, the priesthood is actually pretty dedicated to keeping up with the current trends.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Scholar>Also, our reigning Pope used to be a clockmaker, so not only is he not prejudiced against cutting edge technology, he actually supports it.")
+  0()
+
+
+
+EVENT   27
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Noble's Daughter>This library also has novels and epics. I love killing time in here above anything else.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("120")
+  ShowMessageFace("page257_fc1",0,0,2,2)
+  ShowMessage("\\n<Yoko>Ufufu, I think we would get along.")
+  EndEventProcessing()
+  DefineLabel("147")
+  ShowMessageFace("saboten_fc1",0,0,2,3)
+  ShowMessage("\\n<Casta>I also read novels. If you know of any good ones, please introduce me to them.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   28
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Youth>A girl I like recommended this novel to me, but it's really philosophical and dense.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Youth>However, my ulterior motives won't let me fail. I'll read this whole thing, and use our discussion of it to make my move!")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("74")
+  ShowMessageFace("usagi_fc1",0,0,2,3)
+  ShowMessage("\\n<Barbun>My, what a naughty kid.")
+  EndEventProcessing()
+  DefineLabel("120")
+  ShowMessageFace("page257_fc1",0,0,2,4)
+  ShowMessage("\\n<Yoko>Ufufu, this kind of thing is wonderful too... I hope his plot develops like those in a romance novel.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   29
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Old Noble>If one wishes to be a King, one must first possess a noble pedigree. Therefore, to change one's job to King, one first needs to master the [Noble] job.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Old Noble>Furthermore, a King must be a warrior without peer. Therefore, to change one's job to King, one must also master the [Warrior] job.")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Old Noble>Once one has mastered Noble and Warrior, one can become a King. Or, so one would think.")
+  ShowMessageFace("",0,0,2,4)
+  ShowMessage("\\n<Old Noble>Unless one is in possession of an item called the King's Proof, one can't change one's job to King, and I haven't a clue where one could acquire such a thing.")
+  If(0,4,0)
+   If(12,"actor_class_level_over?(5, 135, 1)")
+    EndEventProcessing()
+    0()
+   Else()
+    ShowMessageFace("alice_fc5",0,0,2,5)
+    ShowMessage("\\n<Alice>I need to become a King, so it seems I need to master Noble and Warrior.")
+    ShowMessageFace("alice_fc5",3,0,2,6)
+    ShowMessage("\\n<Alice>Geez... To think the Monster Lord has to start her training from scratch...")
+    0()
+   EndIf()
+   0()
+  EndIf()
+  0()
+
+

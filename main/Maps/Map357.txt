@@ -1,0 +1,520 @@
+
+DisplayName "San Ilia Castle Barracks"
+
+
+
+EVENT   1
+ PAGE   1
+  281(0)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,355,3,35,0,0)
+  0()
+
+
+
+EVENT   2
+ PAGE   1
+  281(0)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,355,3,35,0,0)
+  0()
+
+
+
+EVENT   3
+ PAGE   1
+  281(0)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,355,3,35,0,0)
+  0()
+
+
+
+EVENT   4
+ PAGE   1
+  281(0)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,355,3,35,0,0)
+  0()
+
+
+
+EVENT   5
+ PAGE   1
+  281(0)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,355,3,35,0,0)
+  0()
+
+
+
+EVENT   6
+ PAGE   1
+  281(0)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,355,3,35,0,0)
+  0()
+
+
+
+EVENT   7
+ PAGE   1
+  281(0)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,355,3,35,0,0)
+  0()
+
+
+
+EVENT   8
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Guard A>Ahhhh. That's some good coffee.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Guard B>It's important to stay awake for this work. When on duty, work hard. When on break, rest hard.")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Guard B>So by no means are we slacking off right now.")
+  0()
+
+
+
+EVENT   9
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Guard A>Ahhhh. That's some good coffee.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Guard B>It's important to stay awake for this work. When on duty, work hard. When on break, rest hard.")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Guard B>So by no means are we slacking off right now.")
+  0()
+
+
+
+EVENT   10
+ PAGE   1
+  If(1,1001,0,25,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Guard>San Ilia's expeditionary forces are fighting along Grand Noah's border now. I wonder if my best friend is all right...")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,26,1)
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("Guards")
+   ShowMessage("If you think that you came back from the expedition destination, the days of security in the territory ... ...")
+   ShowMessage("I do not have time to spare my heart.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   11
+ PAGE   1
+  If(1,1001,0,25,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Knight>I'm scheduled to join the next expeditionary force so I need to train my skills while I can.")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("75")
+   ShowMessageFace("hituzi_fc1",3,0,2,2)
+   ShowMessage("\\n<Mary>Better drink plenty of liquor.")
+   EndEventProcessing()
+   DefineLabel("100")
+   ShowMessageFace("rahure_fc1",1,0,2,3)
+   ShowMessage("\\n<Fleesia>Well then, as a gift I shall grant you a scent that will rouse your fighting spirit.")
+   ShowMessageFace("",0,0,2,4)
+   ShowMessage("\\n<Knight>I-it stinks! GUAAAaaaaahh!")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,26,1)
+   ShowMessageFace("",0,0,2,5)
+   ShowMessage("[Knight]")
+   ShowMessage("For the time being there are no holidays ...")
+   ShowMessage("However, now the crisis since 500 years ago, there is no way to do it.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   12
+ PAGE   1
+  If(1,1001,0,25,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Guard>Grangold's tyranny cannot be forgiven! ")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("71")
+   ShowMessageFace("okami_fc1",0,0,2,2)
+   ShowMessage("\\n<Amara>Smash iiit!")
+   EndEventProcessing()
+   DefineLabel("74")
+   ShowMessageFace("usagi_fc1",2,0,2,3)
+   ShowMessage("\\n<Barbun>If he gets all gung-ho to the battlefield, he'll quickly get worn out. What a reckless kid.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,26,1)
+   ShowMessageFace("",0,0,2,4)
+   ShowMessage("Guards")
+   ShowMessage("Invasion of the Satan army, I can not forgive!")
+   ShowMessage("It will be a shield to stop a bad invasion! Oh my!")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   13
+ PAGE   1
+  If(1,1001,0,25,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Guard>I shouldn't say it out loud, but... I don't want to be in the expeditionary forces.")
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Guard>Grangold has a massive army of mechanical dolls and Ant Girls! That's way too scary! I don't want to fight them!")
+   355("actor_label_jump")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,26,1)
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("Guards")
+   ShowMessage("I can not say it with a loud voice ....")
+   ShowMessage("I do not want to fight with the Satan army.")
+   ShowMessageFace("",0,0,2,4)
+   ShowMessage("Guards")
+   ShowMessage("Is it something I can win against a higher-ranking demon?")
+   ShowMessage("Even if there are many lives there is not enough ... ...")
+   355("actor_label_jump")
+   EndEventProcessing()
+   0()
+  EndIf()
+  DefineLabel("75")
+  ShowMessageFace("hituzi_fc1",3,0,2,5)
+  ShowMessage("\\n<Mary>At times like these, you should drink!")
+  EndEventProcessing()
+  DefineLabel("114")
+  ShowMessageFace("wakame_fc1",1,0,2,6)
+  ShowMessage("\\n<Wakame>That's all right. Scary things are scary... *sway* *sway*")
+  EndEventProcessing()
+  DefineLabel("143")
+  ShowMessageFace("eva_fc1",2,0,2,7)
+  ShowMessage("\\n<Eva>If you don't want to go, why don't you skip out on it?")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   14
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Knight>Haa! Rah!")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Knight>Stamina is important on the battlefield. If you spend your energy showing off with flashy moves, you'll get struck down the moment you tire.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("103")
+  ShowMessageFace("kamuro_fc1",0,0,2,3)
+  ShowMessage("\\n<Kamuro>I see. I shall have to remember that.")
+  EndEventProcessing()
+  DefineLabel("141")
+  ShowMessageFace("mino_fc1",0,0,2,4)
+  ShowMessage("\\n<Mina>In other words, eating hearty beef is very important!")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   15
+ PAGE   1
+  If(1,1001,0,25,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Guard>As I thought, I need to look cool in armor if I don't want people to look down on me.")
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Guard>But if I look too cool, the enemy soldiers will target me... Hmmm, this is a real dilemma.")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("113")
+   ShowMessageFace("lamia_fc1",0,0,2,3)
+   ShowMessage("\\n<Anastasia>My, choosing armor sure is tough. To be unable to be as fashionable as you desire... I pity him.")
+   EndEventProcessing()
+   DefineLabel("156")
+   ShowMessageFace("d_fighter_fc1",0,0,2,4)
+   ShowMessage("\\n<Regina>It's better to be targeted than to be stared at...")
+   ShowMessageFace("",0,0,2,5)
+   ShowMessage("\\n<Guard>Wah! What's with that outfit?!")
+   ShowMessageFace("d_fighter_fc1",0,0,2,6)
+   ShowMessage("\\n<Regina>......")
+   EndEventProcessing()
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,26,1)
+   ShowMessageFace("",0,0,2,7)
+   ShowMessage("Guards")
+   ShowMessage("Fight the Magus Army, you should have armor like armor.")
+   ShowMessage("Well, I'm lost ...")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   16
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Youth>This week is my first vacation in a while. I should go back home and take it easy.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("59")
+  ShowMessageFace("mdg_fc1",0,0,2,2)
+  ShowMessage("\\n<Ragora>I'm always on vacation.")
+  EndEventProcessing()
+  DefineLabel("109")
+  ShowMessageFace("kani_fc1",0,0,2,3)
+  ShowMessage("\\n<Soapy>Make sure to thoroughly wash yourself.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   17
+ PAGE   1
+  If(1,1001,0,19,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Guard>It's so annoying that the cave tunnel to Port Marle has been sealed. Hey, do you know about the cave north of Luddite Village?")
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Guard>The cave connects to a port city north of here named Port Marle, but it's been blocked due to the war.")
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("\\n<Guard>It's now impossible to get to Port Marle by land. I wonder when they'll lift the blockade...")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("62")
+   ShowMessageFace("gob_fc1",3,0,2,4)
+   ShowMessage("\\n<Gob>Even I can't run on top of the sea.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,20,1)
+   If(1,1001,0,25,2)
+    ShowMessageFace("",0,0,2,5)
+    ShowMessage("Guards")
+    ShowMessage("It is a cave to Marport, but it seems that the road closure has been lifted.")
+    ShowMessage("But the sea blockade is severe, and there are no cruise ships to Grand Noah ... ...")
+    EndEventProcessing()
+    0()
+   EndIf()
+   0()
+  EndIf()
+  If(1,1001,0,26,1)
+   ShowMessageFace("",0,0,2,6)
+   ShowMessage("Guards")
+   ShowMessage("Until the King of Grangold, that he was manipulated by the demon's hands ......")
+   ShowMessage("To brainwash the kings of each country, the King of the Maou, the owner ...")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   18
+ PAGE   1
+  If(1,1001,0,25,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Guard>My friend was killed in the war. I've volunteered to join the next expeditionary force to get revenge!")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("93")
+   ShowMessageFace("liot_fc1",0,0,2,2)
+   ShowMessage("\\n<Riot>Fight to the bitter end for your friend's sake.")
+   EndEventProcessing()
+   DefineLabel("109")
+   ShowMessageFace("kani_fc1",0,0,2,3)
+   ShowMessage("\\n<Soapy>Hey, cool your head or you'll die too. How about I give you a nice, relaxing wash?")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,26,1)
+   ShowMessageFace("",0,0,2,4)
+   ShowMessage("Guards")
+   ShowMessage("The war with the Grand Gord is over but ... ...")
+   ShowMessage("Still, I will continue fighting for the dead comrade.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   19
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Nun>Men training, covered in sweat... Wonderful... Haa, haa...")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("82")
+  ShowMessageFace("suzume_fc1",3,0,2,2)
+  ShowMessage("\\n<Chirp>I don't like the smell of sweat...")
+  EndEventProcessing()
+  DefineLabel("107")
+  ShowMessageFace("namako_fc1",0,0,2,3)
+  ShowMessage("\\n<Yume>I want to slowly squeeze all that sweat out of them...")
+  EndEventProcessing()
+  DefineLabel("108")
+  ShowMessageFace("kai_fc1",0,0,2,4)
+  ShowMessage("\\n<Shelly>Yes, truly wonderful. Could any of them become your husband?")
+  EndEventProcessing()
+  DefineLabel("120")
+  ShowMessageFace("page257_fc1",0,0,2,5)
+  ShowMessage("\\n<Yoko>This isn't my thing at all. Does there happen to be any intellectual gentlemen around?")
+  EndEventProcessing()
+  0()
+
+EVENT   20
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Guard>Zzz, ZzZz...")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("He's fast asleep. He seems to have fallen out of his bed.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("56")
+  ShowMessageFace("inp_fc1",0,0,2,3)
+  ShowMessage("\\n<Rami>Sometimes I fall out of bed from my boobs' weight...")
+  EndEventProcessing()
+  DefineLabel("99")
+  ShowMessageFace("namazu_fc1",0,0,2,4)
+  ShowMessage("\\n<Gigi>What a terrible place to sleep! Wake up, or you're gonna catch a cold.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   21
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Guard>WAAah!")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("120")
+  ShowMessageFace("page257_fc1",0,0,2,2)
+  ShowMessage("\\n<Yoko>...♪")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   22
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Guard>Our reserves are really getting depleted. To be honest, San Ilia doesn't have that strong of a military.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Guard>Our elite knights are extremely talented, but, compared to other countries' forces, there are very few of them.")
+  0()
+
+
+
+EVENT   23
+ PAGE   1
+  If(1,1001,0,25,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Guard>I need to tell Maria my real feelings before I get shipped out to the war. With a little luck, we might even get engaged before I leave.")
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Guard>...Wait, that's a death flag, isn't it?!")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("83")
+   ShowMessageFace("hapy_a_fc1",0,0,2,3)
+   ShowMessage("\\n<Reina>But you should still tell her your feelings, riiight? ♪")
+   EndEventProcessing()
+   DefineLabel("122")
+   ShowMessageFace("sisterlamia_fc1",0,0,2,4)
+   ShowMessage("\\n<Sofia>Calm yourself. These days, death flags that blatant are, in fact, survival flags.")
+   EndEventProcessing()
+   DefineLabel("152")
+   ShowMessageFace("lamias_fc2",4,0,2,5)
+   ShowMessage("\\n<Nefertiti Lamias>Hurry up and do it! And tell us what happened!")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,26,1)
+   ShowMessageFace("",0,0,2,6)
+   ShowMessage("Guards")
+   ShowMessage("I propose to Mr. Maria, but it was honolessed.")
+   ShowMessage("Since it was not a lover or anything in the first place, it is natural as well.")
+   ShowMessageFace("",0,0,2,7)
+   ShowMessage("Guards")
+   ShowMessage("How come the devil trying to destroy mankind?")
+   ShowMessage("That is nice, it can come to be.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   24
+ PAGE   1
+  If(1,1001,0,25,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Knight>I wish this war would end. Why did Grangold suddenly try to expand?")
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Knight>They used to have such a good relationship with Grand Noah. This must be because that Magic King took over.")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("103")
+   ShowMessageFace("kamuro_fc1",0,0,2,3)
+   ShowMessage("\\n<Kamuro>So even humans fight wars against one another. I thought it was just monsters who did that...")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,26,1)
+   ShowMessageFace("",0,0,2,4)
+   ShowMessage("[Knight]")
+   ShowMessage("If you think that you defeated the Grand Gould, the next is the demon king ......")
+   ShowMessage("I have no choice but to ask Ruka, the brave hero.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   25
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Dog>Woof! Woof!")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("60")
+  ShowMessageFace("dog_fc1",4,0,2,2)
+  ShowMessage("\\n<Pochi>Woofie. ♪")
+  EndEventProcessing()
+  DefineLabel("525")
+  ShowMessageFace("sonia_fc1",0,0,2,3)
+  ShowMessage("\\n<Sonya>Looks like this dog is being kept in the barracks. Is it their mascot?")
+  EndEventProcessing()
+  0()
+
+
+
+
+EVENT   26
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(40,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+

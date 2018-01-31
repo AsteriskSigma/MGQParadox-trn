@@ -1,0 +1,5 @@
+"反省会" -> "Evaluation meeting"
+"♥" -> "♥"
+"♥" -> "♥"
+"♥" -> "♥"
+"反省会" -> "Evaluation meeting"

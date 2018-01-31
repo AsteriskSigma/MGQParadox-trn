@@ -1,0 +1,22 @@
+// EVENT 0204
+Name "Talk Seduction 4 Seduction Of Each Enemy"
+
+If(5,0,0,1)
+ RunCommonEvent(202)
+ 108("If the switch 11 is off, the enemy is not effective so it is interrupted")
+ If(0,11,1)
+  EndEventProcessing()
+  0()
+ EndIf()
+ 108("Cancel temptation and conversation after this by turning off switch 12")
+ ChangeSwitch(12,12,1)
+ ShowMessageFace("",0,0,2,1)
+ ShowMessage("The enemy politely opens a conversation!")
+ RunCommonEvent(205)
+ ChangeVariable(12,12,0,1,14)
+ RunCommonEvent(1000)
+ EndEventProcessing()
+ 0()
+EndIf()
+0()
+

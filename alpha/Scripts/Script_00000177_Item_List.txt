@@ -1,0 +1,133 @@
+
+#==============================================================================
+# ■ Item_Data
+#------------------------------------------------------------------------------
+# Item_ListData group attached to items to be used in
+#==============================================================================
+class Item_Data
+	attr_accessor :item_number, :favorite_flag, :item_object
+	def initialize
+		@item_number = 0
+		@favorite_flag = false
+		@item_object = nil
+	end
+end
+
+#==============================================================================
+# ■ Item_List
+#------------------------------------------------------------------------------
+# Game_PartyClass for all item lists
+#==============================================================================
+class Item_List < Array
+	def [](index)
+		data = super
+		return data if data
+		self[index] = Item_Data.new
+		super
+	end
+end
+
+#Item_ListCorresponding to change of
+class Game_Party < Game_Unit
+	#--------------------------------------------------------------------------
+	# ● save data compatibility
+	#--------------------------------------------------------------------------
+	def update
+		@items = reset_item_list(@items) if @items.is_a?(Hash)
+		@weapons = reset_item_list(@weapons) if @weapons.is_a?(Hash)
+		@armors = reset_item_list(@armors) if @armors.is_a?(Hash)
+		
+		set_favorite_data unless @favorite_item.nil?
+	end
+	
+	def reset_item_list(hash)
+		hash.inject(Item_List.new){|array,(key,value)|
+			array[key].item_number = value ; array
+		}
+	end
+	
+	def set_favorite_data
+		@favorite_item[:item].map.with_index {|data,index| data ? index : nil}.compact.each{|index| @items[index].favorite_flag=true} if @favorite_item[:item]
+		@favorite_item[:weapon].map.with_index {|data,index| data ? index : nil}.compact.each{|index| @weapons[index].favorite_flag=true} if @favorite_item[:weapon]
+		@favorite_item[:armor].map.with_index {|data,index| data ? index : nil}.compact.each{|index| @armors[index].favorite_flag=true} if @favorite_item[:armor]
+		@favorite_item =nil
+	end
+	#--------------------------------------------------------------------------
+	# ○ Initialize all item list
+	#--------------------------------------------------------------------------
+	def init_all_items
+		@items = Item_List.new
+		@weapons = Item_List.new
+		@armors = Item_List.new
+	end
+	#--------------------------------------------------------------------------
+	# ○ Get the array of item objects
+	#--------------------------------------------------------------------------
+	def items
+		@items.map.with_index { |data,index| data.item_number > 0 ? index : nil if data }.compact.map{|id| $data_items[id]}
+	end
+	#--------------------------------------------------------------------------
+	# ○ Array of weapon objects
+	#--------------------------------------------------------------------------
+	def weapons
+		@weapons.map.with_index { |data,index| data.item_number > 0 ? index : nil if data }.compact.map{|id| $data_weapons[id] }
+	end
+	#--------------------------------------------------------------------------
+	# ○ Array retrieval of Armor object
+	#--------------------------------------------------------------------------
+	def armors
+		@armors.map.with_index { |data,index| data.item_number > 0 ? index : nil if data }.compact.map{|id| $data_armors[id] }
+	end
+	
+	#--------------------------------------------------------------------------
+  #○ Increase (decrease) of items
+  #     include_equip : Include equipment as well
+  #--------------------------------------------------------------------------
+  def nw_count_gain_item(item, amount, include_equip = false)
+    container = item_container(item)
+    return unless container
+    last_number = item_number(item)
+    new_number = last_number + amount
+    container[item.id].item_number = [[new_number, 0].max, max_item_number(item)].min
+    if include_equip && new_number < 0
+      discard_members_equip(item, -new_number)
+    end
+    $game_map.need_refresh = true
+  end
+	
+	#--------------------------------------------------------------------------
+	# ○ Acquire container object corresponding to item class
+	#--------------------------------------------------------------------------
+	def item_container(item)
+		return @items   if item.is_a?(RPG::Item)
+		return @weapons if item.is_a?(RPG::Weapon)
+		return @armors  if item.is_a?(RPG::Armor)
+		return nil
+	end
+	
+	#--------------------------------------------------------------------------
+  # ○ Acquire possession of items
+  #--------------------------------------------------------------------------
+  def item_number(item)
+    container = item_container(item)
+    container ? container[item.index].item_number : 0   
+  end
+	#--------------------------------------------------------------------------
+	# ○ Change the item's favorite state
+	#--------------------------------------------------------------------------
+	def set_favorite_item(item)
+		return nil if item.nil?
+		container = item_container(item)
+		container[item.index].favorite_flag = !container[item.index].favorite_flag
+	end
+	
+	#--------------------------------------------------------------------------
+	# ○ Whether it is favorites or not
+	#--------------------------------------------------------------------------
+	def favorite_item?(item)
+		return nil if item.nil?
+		container = item_container(item)
+		return container[item.index].favorite_flag
+	end
+	
+endd

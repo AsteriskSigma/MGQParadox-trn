@@ -1,0 +1,1 @@
+"● ロードの実行（例外処理なし）" -> "● Execute load (no exception handling)"

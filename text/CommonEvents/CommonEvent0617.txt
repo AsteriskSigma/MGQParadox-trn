@@ -1,0 +1,8 @@
+"イベント：MPアップ" -> "Event: MP up"
+"【ジャックオーランタン】" -> "【Jack O Lantern】"
+"あたし、強くなりたいな。" -> "I want to be strong."
+"ねぇ、魔法をいっぱい使う特訓しようよ……" -> "Hey, let's have special training to use magic ... ..."
+"誰が特訓しますか？" -> "Who will take special training?"
+"ジャックオーランタンと特訓し、最大MPが3ポイントアップした！" -> "Special training with Jack O'Lantern, maximum MP up 3 points!"
+"【ジャックオーランタン】" -> "【Jack O Lantern】"
+"疲れたから、お家に帰るね……" -> "I got tired, so I will go home ..."

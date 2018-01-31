@@ -1,0 +1,1 @@
+"魔法武器レア" -> "Magical weapon rare"

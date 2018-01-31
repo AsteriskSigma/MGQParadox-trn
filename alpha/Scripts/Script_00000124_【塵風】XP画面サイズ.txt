@@ -1,0 +1,351 @@
+#--------------------------------------------------------------------------
+# ■ WindMesser resolution 640 x 480 compatible project(VX AceVersion) ver1.00
+#--------------------------------------------------------------------------
+#   Creator: dusty wind
+#      URL: Http://windmesser.tm.land.to/index.html
+#     MAIL: Windmesser 4913@yahoo.co.jp
+#--------------------------------------------------------------------------
+#     Summary: Change the resolution of RPG Menu VX Ace to 640 x 480.
+#     Specifications: Automatically enlarges the title, game over, background image at battle.
+#           The battle background should be 672 x 512,
+#           Otherwise it expands to be 640 x 480.
+#           Also, fix the initial position of the enemy at battle according to the resolution.
+#           A slight layout adjustment has been added for window display.
+#
+# Usage conditions: The recommended image size of each material is below.
+#           * Transition material is mandatory.
+#
+#           ·title(Graphics/System/Titles1, Graphics/System/Titles2)
+#               640x480
+#           ·Game over(Graphics/System/GameOver.png)
+#               640x480
+#           · Battle background(Graphics/BattleBacks1, Graphics/BattleBacks2)
+#               672x512
+#           · Transition(Graphics/System/BattleStart.png)
+#               640x480
+#           
+# Usage: Please insert it in \"▼ material\" of script editor
+#--------------------------------------------------------------------------
+#  ver1.00: Layout adjustment around window display
+#           HPExpand gauges and item name display area,
+#           I try to prevent the window from being seen as much as possible.
+#  ver0.91: Enlarged to make it bigger size around the battle background
+#           To avoid enlarging, set the image size to 676 x 512.
+#  ver0.90: Simple version of only enlargement adjustment of background images etc.
+#--------------------------------------------------------------------------
+
+#==============================================================================
+# ▼ internal specification constant
+#==============================================================================
+
+# Resolution 640 x 480 Project use flag
+# ※ This flag variable for judgment for other script material distributor
+#   (Graphics.width, Graphics.height You can also judge by)
+$VXA_640x480 = true
+
+# VX Ace Default resolution
+$VXA_O_WIDTH = 544
+$VXA_O_HEIGHT = 416
+
+# Change the resolution to 640 x 480
+Graphics.resize_screen(640, 480)
+
+#==============================================================================
+# ▼ Additional method
+#==============================================================================
+
+class Sprite
+  
+  #--------------------------------------------------------------------------
+  # Sprite extension method
+  #    Expanded if material width conforms to default resolution
+  #--------------------------------------------------------------------------
+  def vxa_640x480_zoom(add_w = 0, add_h = 0)
+    
+    self.zoom_x = (Graphics.width + add_w) * 1.0 / width
+    self.zoom_y = (Graphics.height + add_h) * 1.0 / height
+
+  end
+  
+end
+
+#==============================================================================
+# ▼ Preset script redefinition 1: Image enlargement etc.
+#==============================================================================
+
+#==============================================================================
+# ■ Scene_Title
+#------------------------------------------------------------------------------
+# It is the class which performs the processing of the title screen.
+#==============================================================================
+
+class Scene_Title < Scene_Base
+  
+  if !method_defined?(:create_background_vga)
+    alias create_background_vga create_background
+  end
+  
+  #--------------------------------------------------------------------------
+  # ● Create background
+  #--------------------------------------------------------------------------
+  def create_background
+    create_background_vga
+    
+    # Expansion of title image
+    @sprite1.vxa_640x480_zoom
+    @sprite2.vxa_640x480_zoom
+
+  end
+  
+end
+
+#==============================================================================
+# ■ Scene_Gameover
+#------------------------------------------------------------------------------
+# It is a class that handles the game over screen.
+#==============================================================================
+
+class Scene_Gameover < Scene_Base
+  
+  if !method_defined?(:create_background_vga)
+    alias create_background_vga create_background
+  end
+
+  #--------------------------------------------------------------------------
+  # ● Create background
+  #--------------------------------------------------------------------------
+  def create_background
+    create_background_vga
+    
+    # Expansion of game over image
+    @sprite.vxa_640x480_zoom
+    
+  end
+
+end
+
+#==============================================================================
+# ■ Spriteset_Battle
+#------------------------------------------------------------------------------
+# It is a class that summarizes sprites of battle screen. This class is Scene_Battle Kula
+# It is used internally.
+#==============================================================================
+
+class Spriteset_Battle
+  
+  if !method_defined?(:create_battleback1_vga)
+    alias create_battleback1_vga create_battleback1
+    alias create_battleback2_vga create_battleback2
+    alias create_enemies_vga create_enemies
+  end
+ 
+  #--------------------------------------------------------------------------
+  # ● Battle background (floor) creation of sprite
+  #--------------------------------------------------------------------------
+  def create_battleback1
+    create_battleback1_vga
+    
+    # Enlarging the battle background
+    @back1_sprite.vxa_640x480_zoom(36, 32)
+    
+  end
+  #--------------------------------------------------------------------------
+  # ● Battle Background (Wall) Creating Sprites
+  #--------------------------------------------------------------------------
+  def create_battleback2
+    create_battleback2_vga
+    
+    # Enlarging the battle background
+    @back2_sprite.vxa_640x480_zoom(36, 32)
+    
+  end
+  
+end
+
+#==============================================================================
+# ■ Game_Troop
+#------------------------------------------------------------------------------
+# It deals with enemy group and battle data. Battle event processing also
+# I will do. An instance of this class$game_troop It is referred to.
+#==============================================================================
+
+class Game_Troop < Game_Unit
+  
+  if !method_defined?(:setup_vga)
+    alias setup_vga setup
+  end
+  
+  #--------------------------------------------------------------------------
+  # ● Setup
+  #--------------------------------------------------------------------------
+  def setup(troop_id)
+    setup_vga(troop_id)
+    
+    # Modifying the torpedo coordinates
+    @enemies.each do |enemy|
+      enemy.screen_x = (enemy.screen_x * (Graphics.width * 1.0 / $VXA_O_WIDTH)).to_i
+      enemy.screen_y = (enemy.screen_y * (Graphics.height * 1.0 / $VXA_O_HEIGHT)).to_i
+    end
+    
+  end
+  
+end
+
+#==============================================================================
+# ▼ Preset script redefinition 2: Window layout adjustment etc.
+#==============================================================================
+
+#==============================================================================
+# ■ Window_Base
+#------------------------------------------------------------------------------
+# Super class of all windows in game.
+#==============================================================================
+
+class Window_Base < Window
+  if !method_defined?(:draw_actor_name_vga)
+    alias draw_actor_name_vga draw_actor_name
+    alias draw_actor_class_vga draw_actor_class
+    alias draw_actor_hp_vga draw_actor_hp
+    alias draw_actor_mp_vga draw_actor_mp
+    alias draw_actor_tp_vga draw_actor_tp
+    alias draw_item_name_vga draw_item_name
+  end
+  
+  #--------------------------------------------------------------------------
+  # ● Drawing names
+  #--------------------------------------------------------------------------
+  def draw_actor_name(actor, x, y, width = 144)
+    draw_actor_name_vga(actor, x, y, width)
+  end
+  #--------------------------------------------------------------------------
+  # ● Drawing of occupation
+  #--------------------------------------------------------------------------
+  def draw_actor_class(actor, x, y, width = 144)
+    draw_actor_class_vga(actor, x, y, width)
+  end
+  #--------------------------------------------------------------------------
+  # ● HP drawing
+  #--------------------------------------------------------------------------
+  def draw_actor_hp(actor, x, y, width = 188)
+    draw_actor_hp_vga(actor, x, y, width)
+  end
+  #--------------------------------------------------------------------------
+  # ● MP drawing
+  #--------------------------------------------------------------------------
+  def draw_actor_mp(actor, x, y, width = 188)
+    draw_actor_mp_vga(actor, x, y, width)
+  end
+  #--------------------------------------------------------------------------
+  # ● Drawing of TP
+  #--------------------------------------------------------------------------
+  def draw_actor_tp(actor, x, y, width = 188)
+    draw_actor_tp_vga(actor, x, y, width)
+  end
+  #--------------------------------------------------------------------------
+  # ● Draw a simple status
+  #--------------------------------------------------------------------------
+  def draw_actor_simple_status(actor, x, y)
+    draw_actor_name(actor, x, y)
+    draw_actor_level(actor, x, y + line_height * 1)
+    draw_actor_icons(actor, x, y + line_height * 2)
+    draw_actor_class(actor, x + 152, y)
+    draw_actor_hp(actor, x + 152, y + line_height * 1)
+    draw_actor_mp(actor, x + 152, y + line_height * 2)
+  end
+  #--------------------------------------------------------------------------
+  # ● Draw ability score
+  #--------------------------------------------------------------------------
+  def draw_actor_param(actor, x, y, param_id)
+    change_color(system_color)
+    draw_text(x, y, 152, line_height, Vocab::param(param_id))
+    change_color(normal_color)
+    draw_text(x + 152, y, 36, line_height, actor.param(param_id), 2)
+  end
+  #--------------------------------------------------------------------------
+  # ● Draw item name
+  #     enabled : Valid flag. Draw semi-transparent when false
+  #--------------------------------------------------------------------------
+  def draw_item_name(item, x, y, enabled = true, width = 236)
+    draw_item_name_vga(item, x, y, enabled, width)
+  end
+  
+end
+
+#==============================================================================
+# ■ Window_Status
+#------------------------------------------------------------------------------
+# It is a full specification status window displayed on the status screen.
+#==============================================================================
+
+class Window_Status < Window_Selectable
+  
+  #--------------------------------------------------------------------------
+  # ● Draw Block 1
+  #--------------------------------------------------------------------------
+  def draw_block1(y)
+    draw_actor_name(@actor, 4, y)
+    draw_actor_class(@actor, 128, y)
+    draw_actor_nickname(@actor, 336, y)
+  end
+  #--------------------------------------------------------------------------
+  # ● Drawing block 2
+  #--------------------------------------------------------------------------
+  def draw_block2(y)
+    draw_actor_face(@actor, 8, y)
+    draw_basic_info(136, y)
+    draw_exp_info(336, y)
+  end
+  #--------------------------------------------------------------------------
+  # ● Drawing block 3
+  #--------------------------------------------------------------------------
+  def draw_block3(y)
+    draw_parameters(32, y)
+    draw_equipments(336, y)
+  end
+  #--------------------------------------------------------------------------
+  # ● Drawing experience value information
+  #--------------------------------------------------------------------------
+  def draw_exp_info(x, y)
+    s1 = @actor.max_level? ? "-------" : @actor.exp
+    s2 = @actor.max_level? ? "-------" : @actor.next_level_exp - @actor.exp
+    s_next = sprintf(Vocab::ExpNext, Vocab::level)
+    change_color(system_color)
+    draw_text(x, y + line_height * 0, 180, line_height, Vocab::ExpTotal)
+    draw_text(x, y + line_height * 2, 180, line_height, s_next)
+    change_color(normal_color)
+    draw_text(x, y + line_height * 1, 180, line_height, s1, 2)
+    draw_text(x, y + line_height * 3, 180, line_height, s2, 2)
+  end
+  
+end
+
+#==============================================================================
+# ■ Window_BattleStatus
+#------------------------------------------------------------------------------
+# In the battle screen, this window displays the status of party members.
+#==============================================================================
+
+class Window_BattleStatus < Window_Selectable
+  #--------------------------------------------------------------------------
+  # ● Get the width of gauge area
+  #--------------------------------------------------------------------------
+  def gauge_area_width
+    return 284
+  end
+  #--------------------------------------------------------------------------
+  # ● Drawing gauge area (with TP)
+  #--------------------------------------------------------------------------
+  def draw_gauge_area_with_tp(rect, actor)
+    draw_actor_hp(actor, rect.x + 0, rect.y, 136)
+    draw_actor_mp(actor, rect.x + 146, rect.y, 64)
+    draw_actor_tp(actor, rect.x + 220, rect.y, 64)
+  end
+  #--------------------------------------------------------------------------
+  # ● Drawing gauge area (without TP)
+  #--------------------------------------------------------------------------
+  def draw_gauge_area_without_tp(rect, actor)
+    draw_actor_hp(actor, rect.x + 0, rect.y, 166)
+    draw_actor_mp(actor, rect.x + 176,  rect.y, 108)
+  end
+end
+

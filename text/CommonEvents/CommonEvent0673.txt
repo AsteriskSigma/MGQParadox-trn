@@ -1,0 +1,7 @@
+"【ヴァルキリー】" -> "【Valkyrie】"
+"戦乙女の最終奥義……" -> "Final mystery of war maiden ... ..."
+"「ニーベルンヴァレスティ」を覚えたいの？" -> "Do you want to memorize 'Niberne Valesti'?"
+"選択" -> "Choice"
+"選択" -> "Choice"
+"【ヴァルキリー】" -> "【Valkyrie】"
+"ぬくぬくしたいわ……" -> "I want to get warm ..."

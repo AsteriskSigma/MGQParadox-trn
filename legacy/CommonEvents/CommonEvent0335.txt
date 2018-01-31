@@ -1,0 +1,18 @@
+// EVENT 0335
+Name "レド山戦闘封鎖"
+
+If(0,4,0)
+ ShowMessageFace("alice_fc5",2,0,2,1)
+ ShowMessage("【アリス】")
+ ShowMessage("下手に近付いたら、戦闘に巻き込まれるな……")
+ ShowMessage("長居は無用だぞ、ルカ。")
+ 0()
+EndIf()
+If(0,5,0)
+ ShowMessageFace("iriasu_fc4",2,0,2,2)
+ ShowMessage("【イリアス】")
+ ShowMessage("こんなところで、魔物同士が小競り合いを……")
+ ShowMessage("関わらない方が良いですよ、ルカ。")
+ 0()
+EndIf()
+0()

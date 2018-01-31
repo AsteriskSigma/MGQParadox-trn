@@ -1,0 +1,5 @@
+"【アークジェリー】" -> "【Ark Jelly】"
+"ゆらゆら……あたしは、くらげの運び屋さん。" -> "Yurayura ...... I am a jellyfish carrier."
+"海底神殿の奥まで、運んでほしい？" -> "Do you want me to carry it to the bottom of the undersea temple?"
+"運んでもらう" -> "Have it carried"
+"断る" -> "turn down"

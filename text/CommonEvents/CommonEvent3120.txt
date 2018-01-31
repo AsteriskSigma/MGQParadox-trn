@@ -1,0 +1,7 @@
+"反省会" -> "Evaluation meeting"
+"　What is this" -> "What is this"
+"　Ahhh" -> "Ahhh"
+"　no more" -> "No more"
+"　If you keep doing" -> "If you keep doing"
+"　I'm coming again" -> "I'm coming again"
+"反省会" -> "Evaluation meeting"

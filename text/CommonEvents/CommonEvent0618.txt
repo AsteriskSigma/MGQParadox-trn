@@ -1,0 +1,7 @@
+"イベント：力アップ" -> "Event: Power up"
+"【デビルファイター】" -> "【Devil Fighter】"
+"ねぇ、私と一緒に修行しない？" -> "Hey, why do not you train with me?"
+"誰が修行しますか？" -> "Who will be training?"
+"デビルファイターと共に修行し、攻撃力が2ポイントアップした！" -> "Training with devil fighter, attack power increased by 2 points!"
+"【デビルファイター】" -> "【Devil Fighter】"
+"今日は疲れちゃったから、また今度ね。" -> "Today I got tired, so next time."

@@ -1,0 +1,6 @@
+// EVENT 0086
+Name "Skill: Play 461-470"
+
+ChangeVariable(11,11,0,2,1,5)
+0()
+

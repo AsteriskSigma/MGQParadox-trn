@@ -1,0 +1,3 @@
+"賭け金を支払ってもらおうか。" -> "Would you like me to pay the stake?"
+"また挑むがいい……" -> "Please challenge again ..."
+"そのたびに、無様に果てる事になっても良いならばな。" -> "I wish it would not be possible for me to end up indefinitely."

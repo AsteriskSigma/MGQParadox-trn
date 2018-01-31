@@ -1,0 +1,4 @@
+"←：とべるよ～" -> "←: I will tell you ~"
+"【ソニア】" -> "【Sonia】"
+"この立て札を立ててるのって……ひょっとして白兎！？" -> "To make up this stand-up ... ... maybe Hakuba! What?"
+"→：もうちょっと……かな？" -> "→: A bit more ..."

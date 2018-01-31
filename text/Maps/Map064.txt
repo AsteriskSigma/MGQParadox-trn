@@ -1,0 +1,2 @@
+"↑North" -> "↑ North"
+"←West：Cave B1F" -> "← West: Cave B1F"

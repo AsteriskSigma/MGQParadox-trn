@@ -1,0 +1,449 @@
+
+=begin
+
+もんむす・くえすと！ＲＰＧ
+　セーブ不具合対処 ver7  2015/07/11
+
+
+用語
+　通常セーブデータ　　　　　Save01.rvdata2など
+　　　　　　　　　　　　　　　ゲーム内のセーブで保存
+　バックアップセーブデータ　SaveBackup.rvdata2　　中身は通常セーブデータと同じ
+　　　　　　　　　　　　　　　ゲーム内のセーブを一定回数すると保存
+　オートセーブデータ　　　　AutoSave01.rvdata2　　中身は通常セーブデータと同じ
+　　　　　　　　　　　　　　　特定のタイミングで保存
+
+機能一覧　説明は下　このverで新規追加したものは●　変更したものは○
+・通常セーブ失敗時、失敗原因のデータを表示
+・通常セーブ失敗時、通常セーブデータが消失しないように
+・通常セーブのバックアップ間隔を変更
+○特定タイミングでのオートセーブ
+
+機能説明
+○特定タイミングでのオートセーブ
+　①ランダムエンカウントの戦闘に勝利
+　②メニューを開く
+　のたび毎回オートセーブし、その成否をコンソールに表示する
+　ただしセーブ禁止中ならオートセーブせず、その旨をコンソールに表示する
+
+=end
+
+module SaveData
+  
+  # セーブ失敗時にメッセージボックスで表示されるメッセージ
+  # 先頭に【通常】【オート】【バックアップ】が入るので、冒頭は「セーブ」で
+  # <1>の部分がバックアップセーブ失敗時のみ FailireMesBackUp に変換される
+  # <2>の部分が「セーブ失敗原因: ○○」に変換される
+  FailureMes1 = [
+    "セーブに失敗しました",
+    "ただちにゲームを閉じて、ＰＣを再起動してください<1>",
+    "",
+    "<2>",
+    "",
+    "この上の「セーブ失敗原因」が「不明」の場合は",
+    "ＰＣの環境が原因であり、再起動すればしばらく発生しなくなると思われます",
+    "",
+    "「不明」以外の場合は、以下の3点を報告してください",
+    "①「セーブ失敗原因: ○○」の内容",
+    "②前回の『「メニュー開く」か「エンカウント戦闘勝利」』から現時点までに行った行為",
+    "③現在のだいたいのストーリー進行状況",
+  ]
+  
+  # サムネイルの保存失敗時にメッセージボックスに表示されるメッセージ
+  # 先頭に【通常】【オート】【バックアップ】が入るので、冒頭は「セーブ」で
+  # <1>の部分がバックアップセーブ失敗時のみ FailireMesBackUp に変換される
+  FailureMes2 = [
+    "セーブ時のサムネイル画像の作成に失敗しました",
+    "ただちにゲームを閉じて、ＰＣを再起動してください<1>",
+    "",
+    "セーブ画面/ロード画面で表示するサムネイル画像が更新されていないだけで",
+    "セーブ自体は正常に行われました",
+    "",
+    "ＰＣの環境が原因であり、再起動すればしばらく発生しなくなると思われます",
+  ]
+  
+  # バックアップの失敗時に追加されるメッセージ
+  FailureMesBackUp = "（バックアップに失敗しただけなので、本来のセーブデータには問題ありません）"
+  
+  # バックアップセーブデータの保存間隔を変更　以前は5
+  # 通常セーブ時に「セーブ回数 ÷ この値」の余りが0ならばバックアップを作成する
+  BackUpNum = 1
+  
+  # オートセーブ読込コマンドの名前
+  AutoCommandName = "Load Autosave"
+  
+  # タイトル画面のコマンドウインドウ横幅　デフォルト:160
+  TitleCommandWidth = 180
+  
+end
+
+#==============================================================================
+# ■ DataManager
+#==============================================================================
+class << DataManager
+  #--------------------------------------------------------------------------
+  # ● セーブファイルの存在判定
+  #--------------------------------------------------------------------------
+  def save_file_exists?
+    !Dir.glob('Save/Save*.rvdata2').empty?
+  end
+  #--------------------------------------------------------------------------
+  # ● セーブファイルの存在判定
+  #--------------------------------------------------------------------------
+  def auto_save_file_exists?
+    return false if Dir.glob('Save/AutoSave*.rvdata2').empty?
+    return false unless load_header("01")[:save_index].is_a?(Integer)
+    return true
+    !Dir.glob('Save/AutoSave*.rvdata2').empty?
+  end
+  #--------------------------------------------------------------------------
+  # ● セーブ試行ファイル名の作成
+  #--------------------------------------------------------------------------
+  def make_temp_filename
+    sprintf("Save/SaveTemp.rvdata2")
+  end
+  #--------------------------------------------------------------------------
+  # ● セーブ試行ファイルの削除
+  #--------------------------------------------------------------------------
+  def delete_temp_file
+    File.delete(make_temp_filename) if File.exist?(make_temp_filename)
+  end
+  #--------------------------------------------------------------------------
+  # ● ファイル名の作成
+  #     index : ファイルインデックス
+  #--------------------------------------------------------------------------
+  def make_filename(index)
+    if index.is_a?(Integer)
+      sprintf("Save/Save%02d.rvdata2", index + 1)
+    else
+      sprintf("Save/AutoSave%s.rvdata2", index)
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ○ オートセーブヘッダの作成
+  #--------------------------------------------------------------------------
+  def make_auto_save_header
+    header = make_save_header
+    header[:save_index] = DataManager.last_savefile_index
+    return header
+  end
+  
+  #--------------------------------------------------------------------------
+  # ○ セーブの実行
+  #--------------------------------------------------------------------------
+  def save_game(index)
+    begin
+      Dir.mkdir("Save") unless Dir.exist?("Save")
+      save_game_without_rescue(index)
+      begin;  save_thumbnail(sprintf("Save/Save%02d", index + 1))
+      rescue; process_save_failure2("通常")
+      end
+      if $game_system.save_count % SaveData::BackUpNum == 0
+        begin
+          save_game_backup_without_rescue
+          begin;  save_thumbnail("Save/SaveBackup")
+          rescue; process_save_failure2("バックアップ")
+          end
+        rescue; process_save_failure1("バックアップ")
+        end
+      end
+      delete_temp_file
+      true
+    rescue
+      process_save_failure1("通常")
+      delete_temp_file
+      false
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● セーブの実行（例外処理なし）
+  #--------------------------------------------------------------------------
+  def save_game_without_rescue(index)
+    File.open(make_temp_filename, "wb") do |file|
+      $game_system.on_before_save
+      Marshal.dump(make_save_header, file)
+      Marshal.dump(make_save_contents, file)
+      @last_savefile_index = index
+    end
+    File.rename(make_temp_filename, make_filename(index))
+    return true
+  end
+  #--------------------------------------------------------------------------
+  # ● バックアップセーブの実行（例外処理なし）
+  #--------------------------------------------------------------------------
+  def save_game_backup_without_rescue
+    File.open(make_temp_filename, "wb") do |file|
+      Marshal.dump(make_save_header, file)
+      Marshal.dump(make_save_contents, file)
+    end
+    File.rename(make_temp_filename, "Save/SaveBackup.rvdata2")
+    return true
+  end
+  
+  #--------------------------------------------------------------------------
+  # ● セーブ失敗時の表示名の作成
+  #--------------------------------------------------------------------------
+  def save_failure_word(text)
+    return NWPatch.ver_name(" - セーブ失敗メッセージ\n\n") + "【" + text + "】"
+  end
+  #--------------------------------------------------------------------------
+  # ● セーブ失敗時の処理
+  #--------------------------------------------------------------------------
+  def process_save_failure1(text)
+    text = save_failure_word(text)
+    m1 = text + SaveData::FailureMes1.inject("") { |r, text| r += text + "\n" }
+    m2 = "不明"
+    begin
+      File.open(make_temp_filename, "wb") do |file|
+        make_save_header.each do |key, value|
+          m2 = "header " + key.to_s
+          Marshal.dump(value, file)
+        end
+        make_save_contents.each do |key, value|
+          m2 = "contents " + key.to_s
+          Marshal.dump(value, file)
+        end
+      end
+      m2 = "不明"
+    rescue
+    end
+    backup = text.include?("バックアップ")
+    m1.gsub!("<1>") { backup ? "\n" + SaveData::FailureMesBackUp : "" }
+    m1.gsub!("<2>") { sprintf("セーブ失敗原因: %s", m2) }
+    msgbox m1
+  end
+  #--------------------------------------------------------------------------
+  # ● サムネイル失敗時の処理
+  #--------------------------------------------------------------------------
+  def process_save_failure2(text)
+    text = save_failure_word(text)
+    m1 = text + SaveData::FailureMes2.inject("") { |r, text| r += text + "\n" }
+    backup = text.include?("バックアップ")
+    m1.gsub!("<1>") { backup ? "\n" + SaveData::FailureMesBackUp : "" }
+    msgbox m1
+  end
+  
+  #--------------------------------------------------------------------------
+  # ● ロードの実行（例外処理なし）
+  #--------------------------------------------------------------------------
+  def load_game_without_rescue(index)
+    File.open(make_filename(index), "rb") do |file|
+      Marshal.load(file)
+      extract_save_contents(Marshal.load(file))
+      reload_map_if_updated
+      @last_savefile_index = load_header(index)[:save_index]
+      @last_savefile_index ||= index
+    end
+    return true
+  end
+  
+  #--------------------------------------------------------------------------
+  # ○ オートセーブの実行
+  #--------------------------------------------------------------------------
+  def auto_save_game
+    if $game_system.save_disabled
+      puts "★オートセーブを実行しようとしたが、セーブ不能のため無効"
+      return
+    end
+    puts "★オートセーブを実行"
+    index = "01"
+    begin
+      Dir.mkdir("Save") unless Dir.exist?("Save")
+      auto_save_game_without_rescue(index)
+      delete_temp_file
+      true
+    rescue
+      delete_temp_file
+      process_save_failure1("オート")
+      false
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ○ オートセーブの実行（例外処理なし）
+  #--------------------------------------------------------------------------
+  def auto_save_game_without_rescue(index)
+    File.open(make_temp_filename, "wb") do |file|
+      $game_system.on_before_save
+      $game_system.on_before_auto_save
+      Marshal.dump(make_auto_save_header, file)
+      Marshal.dump(make_save_contents, file)
+    end
+    File.rename(make_temp_filename, make_filename(index))
+    return true
+  end
+end
+#==============================================================================
+# ■ Game_System
+#==============================================================================
+class Game_System
+  #--------------------------------------------------------------------------
+  # ● セーブ前の処理
+  #--------------------------------------------------------------------------
+  def on_before_auto_save
+    @save_count -= 1
+  end
+end
+
+#==============================================================================
+# ■ BattleManager
+#==============================================================================
+class << BattleManager
+  #--------------------------------------------------------------------------
+  # ○ 勝利の処理 
+  #--------------------------------------------------------------------------
+  alias :savedata_process_victory :process_victory
+  def process_victory
+    result = savedata_process_victory
+    DataManager.auto_save_game unless @event_proc
+    return result
+  end
+end
+#==============================================================================
+# ■ Scene_Map
+#==============================================================================
+class Scene_Map < Scene_Base
+  #--------------------------------------------------------------------------
+  # ● メニュー画面の呼び出し
+  #--------------------------------------------------------------------------
+  def call_menu
+    DataManager.auto_save_game
+    Sound.play_ok
+    SceneManager.call(Scene_Menu)
+    Window_MenuCommand::init_command_position
+  end
+end
+#==============================================================================
+# ■ Window_TitleCommand
+#==============================================================================
+class Window_TitleCommand < Window_Command
+  #--------------------------------------------------------------------------
+  # ● コマンドリストの作成
+  #--------------------------------------------------------------------------
+  def make_command_list
+    add_command(Vocab::new_game, :new_game)
+    add_command(Vocab::continue, :continue, continue_enabled)
+    add_command(SaveData::AutoCommandName, :auto_continue, auto_continue_enabled)
+    add_command(Vocab::shutdown, :shutdown)
+  end
+  #--------------------------------------------------------------------------
+  # ● オートセーブ読み込みの有効状態を取得
+  #--------------------------------------------------------------------------
+  def auto_continue_enabled
+    DataManager.auto_save_file_exists?
+  end
+  #--------------------------------------------------------------------------
+  # ● ウィンドウ幅の取得
+  #--------------------------------------------------------------------------
+  def window_width
+    return SaveData::TitleCommandWidth
+  end
+end
+#==============================================================================
+# ■ Scene_Title
+#==============================================================================
+class Scene_Title < Scene_Base
+  #--------------------------------------------------------------------------
+  # ● コマンドウィンドウの作成
+  #--------------------------------------------------------------------------
+  def create_command_window
+    @command_window = Window_TitleCommand.new
+    @command_window.set_handler(:new_game, method(:command_new_game))
+    @command_window.set_handler(:continue, method(:command_continue))
+    @command_window.set_handler(:auto_continue, method(:command_auto_continue))
+    @command_window.set_handler(:shutdown, method(:command_shutdown))
+  end
+  #--------------------------------------------------------------------------
+  # ● コマンド［オートセーブから開始］
+  #--------------------------------------------------------------------------
+  def command_auto_continue
+    close_command_window
+    SceneManager.call(Scene_AutoSave_Load)
+  end
+end
+#==============================================================================
+# ■ Scene_AutoSave_Load
+#==============================================================================
+class Scene_AutoSave_Load < Scene_Load
+  #--------------------------------------------------------------------------
+  # ● ヘルプウィンドウのテキストを取得
+  #--------------------------------------------------------------------------
+  def help_window_text
+    "Choose an autosave to load"
+  end
+  #--------------------------------------------------------------------------
+  # ● 最初に選択状態にするファイルインデックスを取得
+  #--------------------------------------------------------------------------
+  def first_savefile_index
+    0
+  end
+  #--------------------------------------------------------------------------
+  # ● 項目数の取得
+  #--------------------------------------------------------------------------
+  def item_max
+    3
+  end
+  #--------------------------------------------------------------------------
+  # ● セーブファイルの決定
+  #--------------------------------------------------------------------------
+  def on_savefile_ok
+    super
+    if DataManager.load_game("01")
+      on_load_success
+    else
+      Sound.play_buzzer
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● セーブファイルウィンドウの作成
+  #--------------------------------------------------------------------------
+  def create_savefile_windows
+    @savefile_windows = Array.new(item_max) do |i|
+      Window_AutoSaveFile.new(savefile_height, i)
+    end
+    @savefile_windows.each {|window| window.viewport = @savefile_viewport }
+  end
+  #--------------------------------------------------------------------------
+  # ● カーソルの更新
+  #--------------------------------------------------------------------------
+  def update_cursor
+  end
+end
+#==============================================================================
+# ■ Window_AutoSaveFile
+#==============================================================================
+class Window_AutoSaveFile < Window_SaveFile
+  #--------------------------------------------------------------------------
+  # ● オブジェクト初期化
+  #--------------------------------------------------------------------------
+  def initialize(height, index_num)
+    @file_index_num = index_num
+    super(height, index_num)
+    @file_index = sprintf("%02d", index_num + 1)
+    refresh
+    contents.clear if index_num != 0
+    @selected = false
+  end
+  #--------------------------------------------------------------------------
+  # ● ファイル名の描画
+  #--------------------------------------------------------------------------
+  def draw_filename(x, y)
+    change_color(normal_color)
+    name = Vocab::File + " #{@file_index_num + 1}"
+    draw_text(x, y, 200, line_height, name)
+    @name_width = text_size(name).width
+  end
+  #--------------------------------------------------------------------------
+  # ● サムネイルの描画
+  #--------------------------------------------------------------------------
+  def draw_thumbnail(x, y)
+    thumbnail = DataManager.get_thumbnail(@file_index)
+    thumbnail ||= DataManager.get_dummy_thumbnail
+    contents.blt(x, y, thumbnail, thumbnail.rect)
+    draw_text(x + 4, y, 200, line_height, "Autosave")
+    return unless DataManager.load_header(@file_index)
+    save_index = DataManager.load_header(@file_index)[:save_index]
+    return unless save_index.is_a?(Integer)
+    t = "File #{save_index + 1}"
+    draw_text(x + 4, y + line_height, 200, line_height, t) 
+  end
+end

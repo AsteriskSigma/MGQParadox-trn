@@ -1,0 +1,5 @@
+"■ Scene" -> "■ Scene"
+"　名前入力画面の処理を行うクラスです。" -> "This is a class that processes names input screen."
+"● 準備" -> "● Preparation"
+"● 開始処理" -> "● Start processing"
+"● 入力［決定］" -> "● Input [Decision]"

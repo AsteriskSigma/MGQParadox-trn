@@ -1,0 +1,8 @@
+"【カサンドラ】" -> "【Cassandra】"
+"闇の魔導、「ダークネス」と「ダークエターナル」……" -> "Magic magic, \"Darkness\" and \"Dark Eternal\" ..."
+"闇技を使える者になら、教えてあげても良いですよ。" -> "If you are a person who can use dark skills, you may tell me."
+"選択" -> "Choice"
+"選択" -> "Choice"
+"【カサンドラ】" -> "【Cassandra】"
+"私は栄えあるネーレイド家の末裔……" -> "I descend from the prosperous Nereid family ......"
+"闇の魔導にも通暁しているのです。" -> "I am amazed at the magic of the dark."

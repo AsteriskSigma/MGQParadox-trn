@@ -1,0 +1,5 @@
+"これで、My win……" -> "With this, My win ......"
+"お金、払ってね。" -> "Pay with me money."
+"ルカは 200G 支払った！" -> "Luke paid 200G!"
+"また、バトルファックしようね。" -> "Let's also battle fuck."
+"いっぱい気持ちよくしてあげるから……" -> "I will make you feel comfortable a lot ......"

@@ -1,0 +1,467 @@
+#******************************************************************************
+#
+#    * Image saving
+#
+#  --------------------------------------------------------------------------
+#    Version: 1.0.2
+#    Action: RPG Maker VX Ace: RGSS3
+#    Producer: CACAO
+#    Distribution source: http://cacaosoft.web.fc2.com/
+#  --------------------------------------------------------------------------
+#   == Overview ==
+#
+#    : Add a function to save the Bitmap object as an image file.
+#
+#  --------------------------------------------------------------------------
+#   == how to use ==
+#
+#    ★ Bitmap#save(filename, type, back = nil)
+#     Save a bitmap object
+#
+#    ★ Graphics.save_screen(filename, type)
+#     Save game screen
+#
+#     filename : Save file name
+#     type     : Save form(:BMP, :PNG, :JPG, :GIF)
+#     back     : Background color (Color.new(0,0,0), [0,0,0], :white)
+#
+#    * If the file name extension is omitted, it will be added automatically.
+#
+#
+#******************************************************************************
+
+
+#/////////////////////////////////////////////////////////////////////////////#
+#                                                                             #
+#                  There is no setting item in this script.#
+#                                                                             #
+#/////////////////////////////////////////////////////////////////////////////#
+
+
+module GDIP
+  #--------------------------------------------------------------------------
+  # ● Constants
+  #--------------------------------------------------------------------------
+  CLSID_BMP     = '557CF400-1A04-11D3-9A73-0000F81EF32E'
+  CLSID_JPEG    = '557CF401-1A04-11D3-9A73-0000F81EF32E'
+  CLSID_GIF     = '557CF402-1A04-11D3-9A73-0000F81EF32E'
+  CLSID_TIFF    = '557CF405-1A04-11D3-9A73-0000F81EF32E'
+  CLSID_PNG     = '557CF406-1A04-11D3-9A73-0000F81EF32E'
+  
+  CLSID_QUALITY = '1D5BE4B5-FA4A-452D-9CDD-5DB35105E7EB'
+  
+  CP_ACP   = 0x0000
+  CP_UTF8  = 0xFDE9
+  
+  #--------------------------------------------------------------------------
+  # ● Win32 API
+  #--------------------------------------------------------------------------
+  @@MultiByteToWideChar =
+    Win32API.new('kernel32', 'MultiByteToWideChar', 'iipipi', 'i')
+  
+  @@FindWindow =
+    Win32API.new('user32', 'FindWindow', 'pp', 'l')
+  @@GetDC =
+    Win32API.new('user32', 'GetDC', 'i', 'i')
+  @@ReleaseDC =
+    Win32API.new('user32', 'ReleaseDC', 'ii', 'i')
+  
+  @@BitBlt =
+    Win32API.new('gdi32', 'BitBlt', 'iiiiiiiii', 'i')
+  @@CreateCompatibleDC =
+    Win32API.new('gdi32', 'CreateCompatibleDC', 'i', 'i')
+  @@CreateCompatibleBitmap =
+    Win32API.new('gdi32', 'CreateCompatibleBitmap', 'iii', 'i')
+  @@SelectObject =
+    Win32API.new('gdi32', 'SelectObject', 'ii', 'i')
+  @@DeleteDC =
+    Win32API.new('gdi32', 'DeleteDC', 'i', 'i')
+  @@DeleteObject =
+    Win32API.new('gdi32', 'DeleteObject', 'i', 'i')
+  
+  @@GdiplusStartup =
+    Win32API.new('gdiplus', 'GdiplusStartup', 'ppi', 'i')
+  @@GdipCreateBitmapFromScan0 =
+    Win32API.new('gdiplus', 'GdipCreateBitmapFromScan0', 'iiiipp', 'i')
+  @@GdipCreateBitmapFromHBITMAP =
+    Win32API.new('gdiplus', 'GdipCreateBitmapFromHBITMAP', 'iip', 'i')
+  @@GdipBitmapConvertFormat =
+    Win32API.new('gdiplus', 'GdipBitmapConvertFormat', 'piiipi', 'i') rescue nil
+  @@GdipSaveImageToFile =
+    Win32API.new('gdiplus', 'GdipSaveImageToFile', 'pppp', 'i')
+  @@GdipDisposeImage =
+    Win32API.new('gdiplus', 'GdipDisposeImage', 'p', 'i')
+  @@GdiplusShutdown =
+    Win32API.new('gdiplus', 'GdiplusShutdown', 'p', 'v')
+
+  @@UuidFromString =
+    Win32API.new('rpcrt4', 'UuidFromString', 'pp', 'i')
+    
+  @@GdipBitmapLockBits =
+    Win32API.new('gdiplus', 'GdipBitmapLockBits', 'ppiip', 'i')
+  @@GdipBitmapUnlockBits =
+    Win32API.new('gdiplus', 'GdipBitmapUnlockBits', 'pp', 'i')
+  
+  @@RtlMoveMemory =
+    Win32API.new('kernel32', 'RtlMoveMemory', 'ppi', 'v')
+    
+  PF_RGB  = 0x00021808
+  PF_ARGB = 0x0026200A
+
+  #--------------------------------------------------------------------------
+  # ● Window information
+  #--------------------------------------------------------------------------
+  GAME_TITLE  = load_data("Data/System.rvdata2").game_title.encode('SHIFT_JIS')
+  GAME_HANDLE = @@FindWindow.call("RGSS Player", GAME_TITLE)
+  
+module_function
+  #--------------------------------------------------------------------------
+  # ●
+  #--------------------------------------------------------------------------
+  def MultiByteToWideChar(str)
+    buffer = [""].pack('Z256')
+    @@MultiByteToWideChar.call(CP_UTF8, 0, str, -1, buffer, buffer.size)
+    return buffer
+  end
+  #--------------------------------------------------------------------------
+  # ●
+  #--------------------------------------------------------------------------
+  def GetDC(hwnd)
+    return @@GetDC.call(GAME_HANDLE)
+  end
+  #--------------------------------------------------------------------------
+  # ●
+  #--------------------------------------------------------------------------
+  def ReleaseDC(hwnd, hdc)
+    @@ReleaseDC.call(hwnd, hdc)
+  end
+  #--------------------------------------------------------------------------
+  # ●
+  #--------------------------------------------------------------------------
+  def CopyDC(dest, src, width, height)
+    @@BitBlt.call(dest, 0, 0, width, height, src, 0, 0, 0xCC0020)
+  end
+  #--------------------------------------------------------------------------
+  # ●
+  #--------------------------------------------------------------------------
+  def CreateCompatibleDC(hdc)
+    return @@CreateCompatibleDC.call(hdc)
+  end
+  #--------------------------------------------------------------------------
+  # ●
+  #--------------------------------------------------------------------------
+  def CreateCompatibleBitmap(hdc, width, height)
+    return @@CreateCompatibleBitmap.call(hdc, width, height)
+  end
+  #--------------------------------------------------------------------------
+  # ●
+  #--------------------------------------------------------------------------
+  def SelectObject(hdc, obj)
+    return @@SelectObject.call(hdc, obj) != 0
+  end
+  #--------------------------------------------------------------------------
+  # ●
+  #--------------------------------------------------------------------------
+  def DeleteDC(hdc)
+    @@DeleteObject.call(hdc)
+  end
+  #--------------------------------------------------------------------------
+  # ●
+  #--------------------------------------------------------------------------
+  def DeleteObject(obj)
+    @@DeleteObject.call(obj)
+  end
+  #--------------------------------------------------------------------------
+  # ●
+  #--------------------------------------------------------------------------
+  def GdiplusStartup(token)
+    ret = @@GdiplusStartup.call(token, [1, 0, 0, 0].pack("i4"), 0) == 0
+    unless ret
+      msgbox "GDI+ Failed to initialize."
+    end
+    return ret
+  end
+  #--------------------------------------------------------------------------
+  # ●
+  #--------------------------------------------------------------------------
+  def GdipCreateImageFromBitmap(bitmap)
+    gpbmp = [0].pack("i")
+    if @@GdipCreateBitmapFromScan0.call(
+      bitmap.width, bitmap.height, 0, PF_ARGB, 0, gpbmp) == 0
+      
+      image = gpbmp.unpack("i")[0]
+      r = [0, 0, bitmap.width, bitmap.height].pack("i4")
+      bd = [0, 0, 0, 0, 0, 0].pack("i6")
+      @@GdipBitmapLockBits.call(image, r, 3, PF_ARGB, bd)
+      @@GdipBitmapUnlockBits.call(image, bd)
+      bd = bd.unpack("i*")
+      data = Array.new(bitmap.width * bitmap.height * 4, 0).pack("C*")
+      @@RtlMoveMemory.call(data, bitmap.data, data.size)
+      data = data.unpack("C*")
+      data = Array.new(bitmap.height) do |i|
+        data[data.size - bitmap.width * 4 * (i + 1), bitmap.width * 4]
+      end.flatten!.pack("C*")
+      @@RtlMoveMemory.call(bd[4], data, bitmap.width * bitmap.height * 4)
+      
+      return image
+    else
+      return nil
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ●
+  #--------------------------------------------------------------------------
+  def GdipCreateImageFromHBITMAP(hbm)
+    gpbmp = [0].pack("i")
+    if @@GdipCreateBitmapFromHBITMAP.call(hbm, 0, gpbmp) == 0
+      return gpbmp.unpack("i")[0]
+    else
+      return nil
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ●
+  #--------------------------------------------------------------------------
+  def GdipSaveImageToFile(image, filename, clsid)
+    ret = @@GdipSaveImageToFile.call(image, filename, UuidFromString(clsid), 0)
+    msgbox "Saving failed." if ret != 0
+  end
+  #--------------------------------------------------------------------------
+  # ●
+  #--------------------------------------------------------------------------
+  def GdipImageConvertPixelFormat(image, pixel_format)
+    return unless @@GdipBitmapConvertFormat
+    @@GdipBitmapConvertFormat.call(image, pixel_format, 0, 0, 0, 0)
+  end
+  #--------------------------------------------------------------------------
+  # ●
+  #--------------------------------------------------------------------------
+  def GdipDisposeImage(image)
+    @@GdipDisposeImage.call(image)
+  end
+  #--------------------------------------------------------------------------
+  # ●
+  #--------------------------------------------------------------------------
+  def GdiplusShutdown(token)
+    @@GdiplusShutdown.call(token)
+  end
+  #--------------------------------------------------------------------------
+  # ●
+  #--------------------------------------------------------------------------
+  def UuidFromString(clsid)
+    uuid = [0].pack("i")
+    @@UuidFromString.call(clsid, uuid)
+    return uuid
+  end
+end
+
+# PNG Saver v2
+# Credits: Woratanaite, omega7 & yami
+# Modified by steveju
+module Zlib
+  class PngFile
+    def self.make_png(bitmap, mode = 0)
+      @bitmap, @mode = bitmap, mode
+      return make_header + make_ihdr + make_idat_and_png_data + make_iend
+    end
+    def self.make_header
+      # (HTJ)PNG(CR)(LF)(SUB)(LF), the common PNG header
+      return [0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a].pack('C*')
+    end
+    def self.make_ihdr
+      ih_size               = [13].pack('N')
+      ih_sign               = 'IHDR'
+      ih_width              = [@bitmap.width].pack('N')
+      ih_height             = [@bitmap.height].pack('N')
+      ih_bit_depth          = [8].pack('C')
+      ih_color_type         = [6].pack('C')
+      ih_compression_method = [0].pack('C')
+      ih_filter_method      = [0].pack('C')
+      ih_interlace_method   = [0].pack('C')
+      string = ih_sign + ih_width + ih_height + ih_bit_depth + ih_color_type +
+               ih_compression_method + ih_filter_method + ih_interlace_method
+      ih_crc = [Zlib.crc32(string)].pack('N')
+      return ih_size + string + ih_crc
+    end
+    def self.make_idat_and_png_data
+      # IDAT, part of the header data
+      header  = "\x49\x44\x41\x54"
+      # Convert bitmap to PNG data
+      data    = @mode == 0 ? make_bitmap_data0 : make_bitmap_data1
+      # Compress the data
+      data    = Zlib::Deflate.deflate(data, 8)
+      # CRC32 hash for IDAT and image data
+      crc     = [Zlib.crc32(header + data)].pack('N')
+      # Size of image data
+      size    = [data.length].pack('N')
+      return size + header + data + crc
+    end
+    def self.make_bitmap_data0
+      t_Fx = 0
+      w = @bitmap.width
+      h = @bitmap.height
+      data = []
+      s = []
+      for y in 0...h
+        data.push(0)
+        for x in 0...w
+          t_Fx += 1
+          if t_Fx % 10000 == 0
+            # for every 10k pixels processed
+            Graphics.update
+            if t_Fx % 100000 == 0
+              # for every 100k pixels processed
+              s += data
+              data.clear
+            end
+          end
+          color = @bitmap.get_pixel(x, y)
+          data.push(color.red, color.green, color.blue, color.alpha)
+        end
+      end
+      s = (s+data).pack('C*')
+      data.clear
+      return s
+    end
+    def self.make_bitmap_data1
+      w = @bitmap.width
+      h = @bitmap.height
+      data = []
+      for y in 0...h
+        data.push(0)
+        for x in 0...w
+          color = @bitmap.get_pixel(x, y)
+          data.push(color.red, color.green, color.blue, color.alpha)
+        end
+      end
+      return data.pack('C*')
+    end
+    def self.make_iend
+      ie_size = [0].pack('N')
+      ie_sign = 'IEND'
+      ie_crc  = [Zlib.crc32(ie_sign)].pack('N')
+      return ie_size + ie_sign + ie_crc
+    end
+  end
+end
+
+class Bitmap
+  #--------------------------------------------------------------------------
+  # ● Functions for memory transfer
+  #--------------------------------------------------------------------------
+  RtlMoveMemory_pi = Win32API.new('kernel32', 'RtlMoveMemory', 'pii', 'i')
+  RtlMoveMemory_ip = Win32API.new('kernel32', 'RtlMoveMemory', 'ipi', 'i')
+  #--------------------------------------------------------------------------
+  # ● BITMAPINFOHEADER
+  #--------------------------------------------------------------------------
+  def info
+    dib = [40, self.width, self.height, 1, 32, 0, 0, 0, 0, 0, 0].pack("i3s2i6")
+    return [dib].pack("P").unpack("i")[0]
+  end
+  #--------------------------------------------------------------------------
+  # ● BITMAPDATA(RPGTKOOLXP/RGSS Wiki reference)
+  #--------------------------------------------------------------------------
+  def data
+    buffer = [0].pack('L')
+    RtlMoveMemory_pi.call(buffer, object_id * 2 + 16, 4)
+    RtlMoveMemory_pi.call(buffer, buffer.unpack("L")[0] + 8, 4)
+    RtlMoveMemory_pi.call(buffer, buffer.unpack("L")[0] + 16, 4)
+    return buffer.unpack("L")[0]
+  end
+  #--------------------------------------------------------------------------
+  # ●
+  #--------------------------------------------------------------------------
+  def save(fn, type, back = nil)
+    bitmap = Bitmap.new(self.width, self.height)
+    case back
+    when Color;       bitmap.fill_rect(self.rect, back)
+    when Array;       bitmap.fill_rect(self.rect, Color.new(*back))
+    when /^white$/i;  bitmap.fill_rect(self.rect, Color.new(255, 255, 255))
+    end
+    bitmap.blt(0, 0, self, self.rect)
+    
+    case type
+    when /^BMP$/i;    clsid, ext = GDIP::CLSID_BMP,   ".bmp"
+    when /^PNG$/i;    clsid, ext = GDIP::CLSID_PNG,   ".png"
+    when /^JPE?G$/i;  clsid, ext = GDIP::CLSID_JPEG,  ".jpg"
+    when /^GIF$/i;    clsid, ext = GDIP::CLSID_GIF,   ".gif"
+    else;             raise ""
+    end
+    fn += ext if File.extname(fn).empty?
+    filename = GDIP::MultiByteToWideChar(fn)
+    
+    token = [0].pack("i")
+    if GDIP::GdiplusStartup(token)
+      image = GDIP::GdipCreateImageFromBitmap(bitmap)
+      if image
+        GDIP::GdipSaveImageToFile(image, filename, clsid)
+        GDIP::GdipDisposeImage(image)
+      end
+      GDIP::GdiplusShutdown(token)
+    end
+    
+    bitmap.dispose
+  end
+  #--------------------------------------------------------------------------
+  # ●
+  #--------------------------------------------------------------------------
+  def save_png(filename, alpha = false)
+    save(filename, :PNG, alpha ? nil : :white)
+  end
+  
+  def make_png(name = 'like', path = '', mode = 0)
+    filepath = path + name + '.png'
+    # initialize array
+    pngdata = []
+    # get image data
+    pngdata = Zlib::PngFile.make_png(self, mode)
+    # if the thumbnail exists, delete it first
+    File.delete(filepath) unless !File.file?(filepath)
+    # create a new file, write-only and binary
+    f = File.open(filepath, 'wb')
+    # write image data to file
+    f.write(pngdata)
+    # close file writer handle
+    f.close
+    # cleanup
+    pngdata.clear
+  end
+end
+
+module Graphics
+  #--------------------------------------------------------------------------
+  # ●
+  #--------------------------------------------------------------------------
+  def self.save_screen(fn, type)
+    case type
+    when /^BMP$/i;    clsid, ext = GDIP::CLSID_BMP,   ".bmp"
+    when /^PNG$/i;    clsid, ext = GDIP::CLSID_PNG,   ".png"
+    when /^JPE?G$/i;  clsid, ext = GDIP::CLSID_JPEG,  ".jpg"
+    when /^GIF$/i;    clsid, ext = GDIP::CLSID_GIF,   ".gif"
+    else;             raise ""
+    end
+    fn += ext if File.extname(fn).empty?
+    filename = GDIP::MultiByteToWideChar(fn)
+    
+    wnddc = GDIP::GetDC(GDIP::GAME_HANDLE)
+    memdc = GDIP::CreateCompatibleDC(wnddc)
+    hbm = GDIP::CreateCompatibleBitmap(wnddc, Graphics.width, Graphics.height)
+    if GDIP::SelectObject(memdc, hbm)
+      GDIP::CopyDC(memdc, wnddc, Graphics.width, Graphics.height)
+      token = [0].pack("i")
+      if GDIP::GdiplusStartup(token)
+        image = GDIP::GdipCreateImageFromHBITMAP(hbm)
+        GDIP::GdipImageConvertPixelFormat(image, GDIP::PF_ARGB)
+        if image
+          GDIP::GdipSaveImageToFile(image, filename, clsid)
+          GDIP::GdipDisposeImage(image)
+        end
+        GDIP::GdiplusShutdown(token)
+      end
+    end
+    GDIP::ReleaseDC(GDIP::GAME_HANDLE, wnddc)
+    GDIP::DeleteDC(memdc)
+    GDIP::DeleteObject(hbm)
+  end
+end
+

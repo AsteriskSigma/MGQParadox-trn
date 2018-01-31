@@ -1,0 +1,5 @@
+"神に祈り、職業経験を高めようぞ。" -> "Let's pray to God and enhance your professional experience."
+"さて、誰が神の恵みを授かりたい……？" -> "Well, who wants to give God's grace ...?"
+"サン・イリア王の祈りによって、職業経験値が与えられた！" -> "By the prayers of King Saint-Iria, work experience was given!"
+"何度も神を煩わせる訳にはいくまい。" -> "It is not going to bother God over and over again."
+"また時をおいてから、祈って差し上げようぞ。" -> "Let 's keep on time and pray."

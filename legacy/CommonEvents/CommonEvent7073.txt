@@ -1,0 +1,23 @@
+﻿// EVENT 7073
+Name "Kate: Defeat"
+
+RunCommonEvent(7000)
+PictureClear(6)
+PictureDisplay(5,"80_mob_maid1_st04",0,0,0,0,100,100,255,0)
+ShowMessageFace("mob_maid1_fc1",3,0,2,1)
+ShowMessage("\\n<Kate>Now, hand over the bet.\nYou felt good, right? So pay the price.")
+125(1,0,120)
+ShowMessageFace("",0,0,2,2)
+ShowMessage("Luka handed over 120G.")
+PictureDisplay(5,"80_mob_maid1_st01",0,0,0,0,100,100,255,0)
+ShowMessageFace("mob_maid1_fc1",0,0,2,3)
+ShowMessage("\\n<Kate>Come again, please.\nIf you're upset at losing, I'll make you come over and over again...")
+If(0,2331,1)
+ PictureClear(5)
+ 281(1)
+ TeleportPlayer(0,31,30,7,2,0)
+ 216(0)
+ 0()
+EndIf()
+EndEventProcessing()
+0()

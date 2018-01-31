@@ -1,0 +1,362 @@
+
+=begin
+
+Troublesome · ___ ___ 0 RPG
+Tris party number search ver1 2016/01/05
+
+
+
+When starting the game in the test play,
+Search for the following and display it on the console
+· Each line of the specific command of all common events and all map events
+From those who are using party number
+Also search the displayed content_party_size.txt Save to
+
+Event Search
+· Event command ↓ \"Type\" name of console display
+Variable operation Game data Other Party number Manipulate variable
+Variable manipulation script string(STRING_LIST)Variable script
+Script string(STRING_LIST)Script
+
+
+○ Disable setting
+Partial setting is at the left end of the line \"#Can be invalidated by attaching
+Hover over the line and press Ctrl+ Q When you press# Can turn on / off
+Select multiple lines by dragging and press Ctrl+ Q Pressing, all lines are effective
+Settings that can be invalidated
+USE
+STRING_LIST
+BY_EVENT
+(USE and BY_EVENT, The invalidated row is the same as false)
+
+
+=end
+
+module PartySize_Search
+  
+  # Whether to use this function or not:Use false:do not use
+  USE_ALL = false
+  
+  # Enable setting true:Search false:do not do
+  USE = {
+    :common    =>  true,  # Common event
+    :map       =>  true,  # Map Event
+  }
+  
+  # Search range of common event ID and map ID \"a..bSpecified in the format of
+  #   11 if you want to search only one ID..1 To
+  COMMON_ID  = 1..9999  # Common event ID
+  MAP_ID     = 1..999   # Map ID
+  
+  
+  
+  # Search pattern of event string//Alone(Described later)Also available
+  STRING_LIST = [
+    /members\.size/ # In the regular expression \". Is an arbitrary character \"\. Is.Represents
+  ]
+  
+  
+  # Event switch ID/Console display of variable ID
+  EVENT_VAR_PUT_IF   = 0  # Conditional branch(variable/switch)Comparative expression
+                          #   0:"Equivalent to" "Less than"1:"==" "<="
+  EVENT_VAR_PUT_SET  = 0  # Operation formula of variable manipulation
+                          #   0:"Substitution" "Addition"1:"=" "+="
+  EVENT_VAR_NAME = 3  # \"variable/Whether or not to display the name on the switch
+                          # 1~ 3 differ only in \"bulk operation by manipulating variables\"
+                          #   0:Bulk"[0006~ 0008"]"Alone"[0001]"  
+                          #   1:Bulk"[0006~ 0008"]"Alone"[0001:Mistake! Fix it!]"
+                          #   2:Bulk"[0006:Item Generic 1 to 0008"]"
+                          #   3:Bulk"[0006:Item Generic 1 to 0008:Item Generic 3"]"
+  EVENT_VAR_PUT_PLUS = ["{", "}"]   # EVENT_VAR_PUT_IF And EVENT_VAR_PUT_SET But
+                                    # 0In case of letters before and after
+                                    # ["{", "}"]  According to"{that's all}"become that way
+                                    
+  # Enable setting for each type of event related information true:Include in search target false:exclude
+  BY_EVENT = {
+    :script   =>  true,   # command:script
+    :var_set  =>  true,   # command:Manipulating Variables
+  }
+  
+  
+end
+
+=begin
+
+Regular expression: \"Numeric character(0~ 9)Any expression \"which of\"
+By specifying this in the search pattern, flexible search is possible
+  \d : Numeric characters
+  \S : Non-blank character
+  .  : Every character
+  +  : One or more repetitions of the previous one (\"character\d \S .Immediately after)
+  *  : 0 or more repetitions of the previous one (\"character\d \S .Immediately after)
+  
+  The following symbols are not \"ordinary letters\" but \"characters with special meaning of regular expressions\"
+    ( ) [ ] { } . ? + * | \ /
+  When you want to search these symbols as \"ordinary letters\" from the character string,
+  Within the search pattern\\ \+ \] like\"\It matches that character by attaching \"
+  Example:/1\+2/ And"1+2" To be consistent with
+  Example:/\\V\[\d+\]/ And"\V[1]" "\V[10]" Match with
+  
+    
+For example, x is a character string that does not match the search pattern, o is a character string that matches the search pattern
+· Search pattern/Ah+There/
+×"xxxYes xxx"
+○"xxxDa xxx"
+○"xxxOh ah yes xxx"
+· Search pattern/Ah\dThere/
+×"Love"
+○"Aomori"
+×"あ あ"
+· Search pattern/Ah\d\S\d\dThere/
+×"あ あ 123"
+○"あ あ 1234"
+○"Ah 41"
+×"Ah 12345"
+· Search pattern/Ah\d+There/
+×"Love"
+○"Aomori"
+○"Ah 123456"
+· Search pattern/Ah\d*There/
+○"Love"
+○"Aomori"
+○"Ah 123456"
+· Search pattern/all_\S+_had/
+×"all__had/"
+×"all_ _had/"
+○"all_actor_had"
+○"all_clear_actor_had"
+· Search pattern/all_.+_had
+×"all__had/"
+○"all_ _had/"
+○"all_actor_had"
+○"all_clear_actor_had"
+
+=end
+
+#==============================================================================
+# ■ USE_SEARCH
+#==============================================================================
+module PartySize_Search
+  
+  def self.search
+    @data_system = load_data("Data/System.rvdata2")
+    clear_text
+    hit1 = 0
+    hit2 = 0
+    hit3 = 0
+    hit4 = 0
+    hit5 = 0
+    hit6 = 0
+    putex ""
+    putex "★ \"Tris party number search\" start search"
+    putex ""
+    if USE[:common]
+      putex "Common event search start"
+      puts "<Start of loading common event data>"
+      commondata = load_data("Data/CommonEvents.rvdata2")
+      puts "<Completion of loading of common event data>"
+      search_report_flag = false
+      for event_index in COMMON_ID
+        if (event_index - 1) % 2000 == 0 and search_report_flag
+          puts sprintf("<Common%dSearch finished>", event_index - 1)
+          search_report_flag = false
+        end
+        event = commondata[event_index]
+        next unless event
+        search_report_flag = true
+        f = "○ Common Event%d"
+        m = sprintf(f, event_index)
+        hit1 += self.event_page_list_search(m, event.list)
+      end
+      putex ""
+    end
+    if USE[:map]
+      putex "☆ Start map event search"
+      mapinfodata = load_data("Data/MapInfos.rvdata2")
+      search_report_flag = false
+      for map_id in MAP_ID
+        if (map_id - 1) % 100 == 0 and search_report_flag
+          puts sprintf("<Map%dSearch finished>", map_id - 1)
+          search_report_flag = false
+        end
+        filename = sprintf("Data/Map%03d.rvdata2", map_id)
+        next unless File.exist?(filename)
+        search_report_flag = true
+        mapdata = load_data(filename)
+        mapname = mapinfodata[map_id].name
+        mapdata.events.each_value do |event|
+          next unless event
+          event.pages.each_with_index do |page, page_index|
+            f = "○ Map%d(%s)\nEvent%d(x%d y%d) page number%d"
+            m = sprintf(f, map_id, mapname, event.id, event.x, event.y, page_index+1)
+            hit2 += self.event_page_list_search(m, page.list)
+          end
+        end
+      end
+      putex ""
+    end
+    putex "★ \"Tris party number search\" Search done"
+    putex sprintf("Number of hits for common event command:%d", hit1) if USE[:common]
+    putex sprintf("Hit count of map event command:%d", hit2) if USE[:map]
+    save_text
+    putex ""
+  end
+  
+  def self.event_page_list_search(message, list)
+    hit = 0
+    list.each_with_index do |command, command_index|
+      if search_codes.include?(command.code)
+        param = command.parameters
+        kind = code_kind(command.code)
+        f = " line number#{command_index+1} type:#{kind[0]}\nIn case%s: %s"
+        case kind[2]
+        when :string
+          STRING_LIST.each do |pattern|
+            if param[kind[3]] =~ pattern
+              str = param[kind[3]]
+              hit += 1
+              putex message + sprintf(f, kind[1], str)
+              break
+            end
+          end
+        when :variable
+          if param[3] == 4
+            kind_s = "Variable script"
+            f = " line number#{command_index+1} type:#{kind_s}\nIn case%s: %s"
+            STRING_LIST.each do |pattern|
+              if param[4] =~ pattern
+                str = param[4]
+                hit += 1
+                putex message + sprintf(f, "A sentence", str)
+                break
+              end
+            end
+          end
+          if [param[3], param[4], param[5]] == [3, 7, 1]
+            kind_s = "Manipulating Variables"
+            f = " line number#{command_index+1} type:#{kind_s}\nIn case%s: %s"
+            k = var_set_type(param)
+            if param[0] == param[1]
+              str = sprintf("variable[%s]  #{k}", var_name(param[0]))
+            else
+              case EVENT_VAR_NAME
+              when 0..1
+                str = sprintf("variable[%04d~%04d]  #{k}", param[0], param[1])
+              when 2
+                str = sprintf("variable[%s~%04d]  #{k}", var_name(param[0]), param[1])
+              when 3
+                str = sprintf("variable[%s~%s]  #{k}", var_name(param[0]), var_name(param[1]))
+              end
+              str.gsub!("<<<<<<>>>>>>=") { "%=" }
+            end
+            hit += 1
+            putex message + sprintf(f, "operation", str)
+          end
+        end
+      end
+    end
+    return hit
+  end
+  
+
+
+  DATA_EVENT_SYMBOL = {
+    :script   =>  [[355, 655], ["script", "A sentence",  :string, 0]],
+    :var_set  =>  [[122     ], ["error",      "error", :variable]],
+  }
+  DATA_EVENT_KIND = {}
+  DATA_EVENT_CODE = []
+  DATA_EVENT_SYMBOL.each do |key, data|
+    next unless BY_EVENT[key]
+    DATA_EVENT_CODE += data[0]
+    data[0].each do |code|
+      DATA_EVENT_KIND[code] = data[1]
+    end
+  end
+  def self.search_codes
+    return DATA_EVENT_CODE
+  end
+  def self.code_kind(code)
+    return DATA_EVENT_KIND[code]
+  end
+  def self.var_id_include?(d)
+    true
+  end
+  def self.var_name(id)
+    if EVENT_VAR_NAME == 0
+      sprintf("%04d", id)
+    else
+      sprintf("%04d:%s", id, @data_system.variables[id])
+    end
+  end
+  
+  def self.var_plus(s)
+    return "#{EVENT_VAR_PUT_PLUS[0]}#{s}#{EVENT_VAR_PUT_PLUS[1]}"
+  end
+  def self.var_if_type(param4)
+    if EVENT_VAR_PUT_IF == 1
+      case param4
+      when 0; c = "=="
+      when 1; c = ">="
+      when 2; c = "<="
+      when 3; c = ">"
+      when 4; c = "<"
+      when 5; c = "!="
+      end
+    else
+      case param4
+      when 0; c = var_plus("Equivalent to")
+      when 1; c = var_plus("that's all")
+      when 2; c = var_plus("Less than")
+      when 3; c = var_plus("Super")
+      when 4; c = var_plus("Less than")
+      when 5; c = var_plus("Other than")
+      end
+    end
+    return c
+  end
+  def self.var_set_type(params)
+    if EVENT_VAR_PUT_SET == 1
+      case params[2]
+      when 0; c = "="
+      when 1; c = "+="
+      when 2; c = "-="
+      when 3; c = "*="
+      when 4; c = "/="
+      when 5; c = "<<<<<<>>>>>>="
+      end
+    else
+      case params[2]
+      when 0; c = var_plus("Substitution")
+      when 1; c = var_plus("Addition")
+      when 2; c = var_plus("Subtraction")
+      when 3; c = var_plus("Multiplication")
+      when 4; c = var_plus("division")
+      when 5; c = var_plus("Remainder")
+      end
+    end
+    case params[3]
+    when 0; t = "constant#{params[4]}"
+    when 1; t = "variable[%s]" % var_name(params[4])
+    when 2; t = "random number#{params[4]}~#{params[5]}"
+    when 3; t = [params[4], params[5]] == [7, 1] ? "Party number of people" : "Game data"
+    when 4; t = "script:#{params[4]}"
+    end
+    return "#{c}  #{t}"
+  end
+  
+  def self.putex(mes)
+    puts(mes)
+    @@text += mes.gsub(/\n$/) { "" }
+    @@text += "\n"
+  end
+  def self.clear_text
+    @@text = ""
+  end
+  def self.save_text
+    File.open("search_party_size.txt", "w") {|f| f.write @@text }
+  end
+  
+end
+
+PartySize_Search.search if $TEST and !$BTEST and PartySize_Search::USE_ALLL

@@ -1,0 +1,6 @@
+// EVENT 2003
+Name "-----"
+
+RunCommonEvent(2002)
+0()
+

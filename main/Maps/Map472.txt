@@ -1,0 +1,675 @@
+
+DisplayName "Colosseum"
+
+
+
+EVENT   1
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0b,0x45,0x61,0x72,0x74,0x68,0x34,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  205(2,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x0c,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x16,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x14,0x3b,0x0c,0x5b,0x06,0x69,0x08,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x17,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x14,0x3b,0x0c,0x5b,0x06,0x69,0x08,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x18,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x2a,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  205(-1,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x54,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x07,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x11,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,484,16,15,0,0)
+  0()
+
+
+
+EVENT   2
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0b,0x45,0x61,0x72,0x74,0x68,0x34,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  205(0,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x0c,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x16,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x14,0x3b,0x0c,0x5b,0x06,0x69,0x08,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x17,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x14,0x3b,0x0c,0x5b,0x06,0x69,0x08,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x18,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x2a,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  205(-1,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x54,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x07,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x11,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,484,16,15,0,0)
+  0()
+
+
+
+EVENT   3
+ PAGE   1
+  281(0)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,21,1,28,6,0)
+  0()
+
+
+
+EVENT   4
+ PAGE   1
+  281(0)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,21,1,28,6,0)
+  0()
+
+
+
+EVENT   5
+ PAGE   1
+  281(0)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,21,1,28,6,0)
+  0()
+
+
+
+EVENT   6
+ PAGE   1
+  281(0)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,21,1,28,6,0)
+  0()
+
+
+
+EVENT   7
+ PAGE   1
+  If(1,1001,0,25,2)
+   If(1,1052,0,5,2)
+    ShowMessageFace("",0,0,2,1)
+    ShowMessage("\\n<Man>A bizarre incident in the Great War, a variety of difficult times ... ...")
+    ShowMessage("Because of this kind of occasion, the Queen's Majesty will hold a fighting competition properly.")
+    ShowMessageFace("",0,0,2,2)
+    ShowMessage("\\n<Man>Grand Noah has to shake, I have to appeal to the world.")
+    ShowMessage("Now, I'm looking forward to the tournament!")
+    EndEventProcessing()
+    0()
+   EndIf()
+   If(1,1052,0,6,1)
+    ShowMessageFace("",0,0,2,3)
+    ShowMessage("\\n<Man>Oh, the brave Luca!")
+    ShowMessage("I had the Queen Cup excite me!")
+    EndEventProcessing()
+    0()
+   EndIf()
+   0()
+  EndIf()
+  If(1,1001,0,26,1)
+   ShowMessageFace("",0,0,2,4)
+   ShowMessage("\\n<Man>A strange incident in the war with Maou, a variety of difficult times ... ...")
+   ShowMessage("Colosseum is exciting because it is such a time.")
+   ShowMessageFace("",0,0,2,5)
+   ShowMessage("\\n<Man>As long as there are Colosseums, Grand Noah will not shake.")
+   ShowMessage("If the situation is canceled, that is the end of the world.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   8
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Man>True, lately I do not have any rumor news.")
+  ShowMessage("This time is limited to burning up at the Coliseum.")
+  0()
+
+
+
+EVENT   9
+ PAGE   1
+  ShowMessageFace("slime_fc1",0,0,2,1)
+  ShowMessage("\\n<Slime girl>I will participate in the competition ~ ♪")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("53")
+  ShowMessageFace("slime_fc1",0,0,2,2)
+  ShowMessage("\\n<lime>Do your best ~ ♪")
+  EndEventProcessing()
+  DefineLabel("110")
+  ShowMessageFace("slimelord_fc1",3,0,2,3)
+  ShowMessage("\\n<Beth>I wonder if it's a bit unreasonable ...")
+  EndEventProcessing()
+  0()
+ PAGE   2
+  // condition: variable 1052 >= 6
+  0()
+
+
+
+EVENT   10
+ PAGE   1
+  ShowMessageFace("slime_fc1",0,0,2,1)
+  ShowMessage("\\n<Slime girl>I want to win the ♪ ~ ♪")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("53")
+  ShowMessageFace("slime_fc1",0,0,2,2)
+  ShowMessage("\\n<lime>Do your best ~ ♪")
+  EndEventProcessing()
+  DefineLabel("110")
+  ShowMessageFace("slimelord_fc1",3,0,2,3)
+  ShowMessage("\\n<Beth>I wonder if it's a bit unreasonable ...")
+  EndEventProcessing()
+  0()
+ PAGE   2
+  // condition: variable 1052 >= 6
+  0()
+
+
+
+EVENT   11
+ PAGE   1
+  If(1,1001,0,25,2)
+   If(1,1052,0,5,2)
+    ShowMessageFace("",0,0,2,1)
+    ShowMessage("\\n<Colosseum>Although I only know quite a few colosseum mania ... ...")
+    ShowMessage("To tell the truth, there are ridiculous people.")
+    ShowMessageFace("",0,0,2,2)
+    ShowMessage("\\n<Colosseum>Succubus called cuba ... ...")
+    ShowMessage("If it appears occasionally, it will win over the victory.")
+    ShowMessageFace("",0,0,2,3)
+    ShowMessage("\\n<Colosseum>Sometimes I went to the tournament, I abandoned if I got bored with the second round.")
+    ShowMessage("Too fancy, it is a tremendous masterpiece.")
+    EndEventProcessing()
+    0()
+   EndIf()
+   If(1,1052,0,6,1)
+    ShowMessageFace("",0,0,2,4)
+    ShowMessage("\\n<Colosseum>It is the identity of cuba ... ...")
+    ShowMessage("Actually, it seems there is a rumor that one of the four Devil King of the Devil.")
+    If(4,19,0)
+     ShowMessageFace("arumaeruma_fc2",0,0,2,5)
+     ShowMessage("\\n<Almaelma>Heh, I wonder what he is ...?")
+     0()
+    EndIf()
+    EndEventProcessing()
+    0()
+   EndIf()
+   0()
+  EndIf()
+  If(1,1001,0,26,1)
+   ShowMessageFace("",0,0,2,6)
+   ShowMessage("\\n<Colosseum>Assuming that the identity of cuba is one of the four Devil King of the Devil's Army ......")
+   ShowMessage("Even if Grand Noah is crushed, the Coliseum may leave.")
+   If(4,19,0)
+    ShowMessageFace("arumaeruma_fc2",0,0,2,7)
+    ShowMessage("\\n<Almaelma>I have no authority to do that ... ...")
+    ShowMessage("I am in trouble if the Coliseum collapses.")
+    0()
+   EndIf()
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   12
+ PAGE   1
+  If(1,1052,0,5,2)
+   ShowMessageFace("tatunoko_k_fc1",2,0,2,1)
+   ShowMessage("\\n<Sea Horse Marine>I was nervous ...")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1052,0,6,1)
+   ShowMessageFace("tatunoko_k_fc1",1,0,2,2)
+   ShowMessage("\\n<Sea Horse Marine>After continuing training at the Coliseum, it is becoming a strong trader!")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   13
+ PAGE   1
+  If(1,1052,0,5,2)
+   ShowMessageFace("tatunoko_k_fc1",1,0,2,1)
+   ShowMessage("\\n<Sea Horse Marine>Once you win, you get a green orb!")
+   ShowMessage("You can brag about the other sutra!")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1052,0,6,1)
+   ShowMessageFace("tatunoko_k_fc1",1,0,2,2)
+   ShowMessage("\\n<Sea Horse Marine>I won the semifinals!")
+   ShowMessage("I lost to cuba, but I got confidence!")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   14
+ PAGE   1
+  If(1,1052,0,5,2)
+   ShowMessageFace("tatunoko_k_fc1",0,0,2,1)
+   ShowMessage("\\n<Sea Horse Marine>The Tatsukino team won the championship!")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1052,0,6,1)
+   ShowMessageFace("tatunoko_k_fc1",1,0,2,2)
+   ShowMessage("\\n<Sea Horse Marine>The Tatsunoiko team went to the semifinals!")
+   ShowMessage("The surrounding eyes have changed too!")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   15
+ PAGE   1
+  ShowMessageFace("ghost2_fc1",1,0,2,1)
+  ShowMessage("\\n<Ghost daughter>It is not a dead case!")
+  ShowMessage("We have to watch the tournament!")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("130")
+  ShowMessageFace("ghost_fc1",0,0,2,2)
+  ShowMessage("\\n<carry>Should I also revive ...?")
+  EndEventProcessing()
+  DefineLabel("134")
+  ShowMessageFace("chrom_fc2",5,0,2,3)
+  ShowMessage("\\n<chromium>Necromancer is also surprised!")
+  EndEventProcessing()
+  DefineLabel("210")
+  ShowMessageFace("ghost2_fc1",2,0,2,4)
+  ShowMessage("\\n<Button>Aggressive brotherhood ...")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   16
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Competitor>I hope I get to fight a mermaid...\nI want to fall victim to her temptations and get raped nice and slowly.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("5")
+  ShowMessageFace("alice_fc5",0,0,2,2)
+  ShowMessage("\\n<Alice>Damn pervert.")
+  EndEventProcessing()
+  DefineLabel("26")
+  ShowMessageFace("iriasu_fc4",2,0,2,3)
+  ShowMessage("\\n<Iliad>Deplorable.")
+  EndEventProcessing()
+  DefineLabel("525")
+  ShowMessageFace("sonia_fc1",5,0,2,4)
+  ShowMessage("\\n<Sonia>Perv...")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   17
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Competitor>I want a lamia to wrap herself around me.\nBeing squeezed within an inch of my life really turns me on.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("5")
+  ShowMessageFace("alice_fc5",0,0,2,2)
+  ShowMessage("\\n<Alice>Damn pervert.")
+  EndEventProcessing()
+  DefineLabel("26")
+  ShowMessageFace("iriasu_fc4",2,0,2,3)
+  ShowMessage("\\n<Iliad>Deplorable.")
+  EndEventProcessing()
+  DefineLabel("525")
+  ShowMessageFace("sonia_fc1",5,0,2,4)
+  ShowMessage("\\n<Sonia>Perv...")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   18
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Competitor>I want to be wildly raped by a beast monster. The idea of mating in front of all those people sends shivers of excitement down my spine.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("5")
+  ShowMessageFace("alice_fc5",0,0,2,2)
+  ShowMessage("\\n<Alice>Damn pervert.")
+  EndEventProcessing()
+  DefineLabel("26")
+  ShowMessageFace("iriasu_fc4",2,0,2,3)
+  ShowMessage("\\n<Iliad>Deplorable.")
+  EndEventProcessing()
+  DefineLabel("525")
+  ShowMessageFace("sonia_fc1",5,0,2,4)
+  ShowMessage("\\n<Sonia>Perv...")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   19
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Competitor>I definitely want to be raped by a scylla. Her slimy tentacles rubbing all over my body while I pitifully scream out...")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("5")
+  ShowMessageFace("alice_fc5",0,0,2,2)
+  ShowMessage("\\n<Alice>Damn pervert.")
+  EndEventProcessing()
+  DefineLabel("26")
+  ShowMessageFace("iriasu_fc4",2,0,2,3)
+  ShowMessage("\\n<Iliad>Deplorable.")
+  EndEventProcessing()
+  DefineLabel("525")
+  ShowMessageFace("sonia_fc1",5,0,2,4)
+  ShowMessage("\\n<Sonia>Perv...")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   20
+ PAGE   1
+  If(1,1052,0,5,2)
+   ShowMessageFace("usagi_fc1",0,0,2,1)
+   ShowMessage("\\n<Rabbit girl>My older sister will do my best.")
+   ShowMessage("If there is a thing to fight at the tournament, I'll be pretty ... ... ♪")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1052,0,6,1)
+   ShowMessageFace("usagi_fc1",0,0,2,2)
+   ShowMessage("\\n<Rabbit girl>I got caught in the Colosseum.")
+   ShowMessage("It is fun to watch and go out.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   21
+ PAGE   1
+  If(1,1052,0,5,2)
+   ShowMessageFace("delh_a_fc1",1,0,2,1)
+   ShowMessage("\\n<Dark Elf>I have continued my training for this competition.")
+   ShowMessage("To listen to the sound of the first regiment, to defeat Durahan 's Arthur!")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1052,0,6,1)
+   ShowMessageFace("delh_a_fc1",1,0,2,2)
+   ShowMessage("\\n<Dark Elf>You are amazing.")
+   ShowMessage("Can not you be my friend? ... ... Why not?")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   22
+ PAGE   1
+  ShowMessageFace("mimic_fc1",2,0,2,1)
+  ShowMessage("\\n<Mimic girl>I'm pretty confident in my fighting ability, but maybe I shouldn't have come to a place with so many people around...")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("105")
+  ShowMessageFace("mimic_fc1",1,0,2,2)
+  ShowMessage("\\n<Mineri>Look what I'm doing...")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   23
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Competitor>...???")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Competitor>What is a treasure chest doing here, of all places...?")
+  0()
+
+
+
+EVENT   24
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Sister>Oh ... I'm excited!")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("316")
+  ShowMessageFace("queenelf_fc1",1,0,2,2)
+  ShowMessage("\\n<Freya>me too!")
+  ShowMessageFace("queenelf_fc1",2,0,2,3)
+  ShowMessage("\\n<Freya>...... No, a false statement.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   25
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<merchant>Are you going to the game?")
+  ShowMessage("Then, I have to arrange the items!")
+  Shop(0,2,0,0,false)
+  605(0,7,0,0)
+  605(0,11,0,0)
+  605(0,13,0,0)
+  605(0,14,0,0)
+  605(0,15,0,0)
+  605(0,16,0,0)
+  605(0,17,0,0)
+  605(0,18,0,0)
+  605(0,19,0,0)
+  605(0,20,0,0)
+  605(0,23,0,0)
+  605(0,35,0,0)
+  605(0,102,0,0)
+  605(0,109,0,0)
+  0()
+
+
+
+EVENT   26
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Arms shop>Win a match with a certain weapon!")
+  Shop(1,20,0,0,false)
+  605(1,98,0,0)
+  605(1,200,0,0)
+  605(1,379,0,0)
+  605(1,451,0,0)
+  605(1,488,0,0)
+  605(1,602,0,0)
+  605(1,736,0,0)
+  605(1,876,0,0)
+  605(1,901,0,0)
+  0()
+
+
+
+EVENT   27
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Armor>It was nice to have, strong armor!")
+  Shop(2,7,0,0,false)
+  605(2,24,0,0)
+  605(2,64,0,0)
+  605(2,80,0,0)
+  605(2,135,0,0)
+  605(2,210,0,0)
+  605(2,306,0,0)
+  0()
+
+
+
+EVENT   28
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Travel warrior>For example, \"Power / Speed\" is written in the explanation of skills.")
+  ShowMessage("It goes without saying that both the attack power and the quickness influence the power of the technique.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Travel warrior>However, there are notation such as \"force or speed\" inside.")
+  ShowMessage("In this case, the greater of the attack power and the quickness affects the power.")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Travel warrior>Even though one is low, if one is higher, there is no problem.")
+  ShowMessage("When choosing equipment, be careful not to use skills.")
+  0()
+
+EVENT   29
+ PAGE   1
+  If(1,1001,0,25,2)
+   If(1,1052,0,5,2)
+    ShowMessageFace("",0,0,2,1)
+    ShowMessage("\\n<Warrior>The winning prize for the Queen Cup this year is Green Orb.")
+    ShowMessage("It is a famous jewel as a hidden treasure transmitted to Grand Noah.")
+    ShowMessageFace("",0,0,2,2)
+    ShowMessage("\\n<Warrior>But the problem is that the value is too high ...")
+    ShowMessage("There will probably not be a shop that will buy it.")
+    ShowMessageFace("",0,0,2,3)
+    ShowMessage("\\n<Warrior>To put such a treasure as a prize, the Queen Cup of this time is enthralled.")
+    ShowMessage("I wonder what I'm doing as my best as a prestigious event ......")
+    EndEventProcessing()
+    0()
+   EndIf()
+   If(1,1052,0,6,1)
+    ShowMessageFace("",0,0,2,4)
+    ShowMessage("\\n<Warrior>Is Green Orb beautiful?")
+    ShowMessage("Oh, it's so envious to envy ... ...")
+    EndEventProcessing()
+    0()
+   EndIf()
+   0()
+  EndIf()
+  If(1,1001,0,26,1)
+   ShowMessageFace("",0,0,2,5)
+   ShowMessage("\\n<Warrior>The declaration of declaration of the Devil is not related to me.")
+   ShowMessage("I will just do my best at the Coliseum here.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   30
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Scout soldiers>Are you going to enter the Grand Noah army there?")
+  ShowMessage("Even foreigners do not have a problem, if it is wartime it will be promotion sooner and it is a great opportunity?")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("201")
+  ShowMessageFace("ashel_fc1",0,0,2,2)
+  ShowMessage("\\n<Asher>Even if a pirate is invited by the regular army ...")
+  EndEventProcessing()
+  DefineLabel("202")
+  ShowMessageFace("bonny_fc1",0,0,2,3)
+  ShowMessage("\\n<Bonnie>turn down! I am the headmaster!")
+  EndEventProcessing()
+  DefineLabel("203")
+  ShowMessageFace("tatunoko_k_fc1",1,0,2,4)
+  ShowMessage("\\n<Tatsuko>We are already in the navy!")
+  EndEventProcessing()
+  DefineLabel("204")
+  ShowMessageFace("umiusi_k_fc1",0,0,2,5)
+  ShowMessage("\\n<Stacy>Because I am a marine ... ....")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   31
+ PAGE   1
+  If(1,1001,0,25,2)
+   If(1,1052,0,5,2)
+    ShowMessageFace("",0,0,2,1)
+    ShowMessage("\\n<Rough>This one gets me winning the Green Orb of the winning prize!")
+    EndEventProcessing()
+    0()
+   EndIf()
+   If(1,1052,0,6,1)
+    ShowMessageFace("",0,0,2,2)
+    ShowMessage("\\n<Rough>To lose it in the first round ... ...")
+    ShowMessage("I was at Colosseum for the first time but it is high level ......")
+    EndEventProcessing()
+    0()
+   EndIf()
+   0()
+  EndIf()
+  If(1,1001,0,26,1)
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("\\n<Rough>You mean the devil, Ruka brave defeat it, do not you?")
+   ShowMessage("Oh dear, is that so?")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   32
+ PAGE   1
+  If(1,1052,0,5,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Noble women>Tomorrow's game can be seen in the special seats.")
+   ShowMessage("Huh, I'm looking forward to it ....")
+   ShowMessageFace("ruka_fc1",0,0,2,2)
+   ShowMessage("\\n<Luke>Are you interested in fighting?")
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("\\n<Noble women>Huh, I do not want to see something like that.")
+   ShowMessage("There are more and more nice fun.")
+   ShowMessageFace("ruka_fc1",0,0,2,4)
+   ShowMessage("\\n<Luke>............?")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1052,0,6,1)
+   ShowMessageFace("",0,0,2,5)
+   ShowMessage("\\n<Noble women>I became your fan.")
+   ShowMessage("It is a beautiful figure that I can fly with the Coliseum and I want to see it again.")
+   ShowMessageFace("",0,0,2,6)
+   ShowMessage("\\n<Noble women>...... I also want to see the way you are caught by demons though.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   33
+ PAGE   1
+  If(1,1052,0,5,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<A soldier>To participate in the Coliseum, ...")
+   ShowMessage("I have to save money ... ....")
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<A soldier>Well, I want to go ...")
+   ShowMessage("Ayah ...... Early, I went to the Coliseum ... ...!")
+   ShowMessageFace("ruka_fc1",0,0,2,3)
+   ShowMessage("\\n<Luke>That is the man who lives on the sword and is hungry for fighting.")
+   ShowMessage("This is the figure of a warrior who dedicates himself to the Coliseum!")
+   If(0,4,0)
+    ShowMessageFace("alice_fc5",0,0,2,4)
+    ShowMessage("\\n<Alice>……Is it so?")
+    ShowMessage("Something smells like something ... ...")
+    0()
+   EndIf()
+   If(0,5,0)
+    ShowMessageFace("iriasu_fc4",2,0,2,5)
+    ShowMessage("\\n<Iliad>It's just annoying, deplorable ......")
+    0()
+   EndIf()
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1052,0,6,1)
+   ShowMessageFace("",0,0,2,6)
+   ShowMessage("\\n<A soldier>Yesterday, at the Coliseum I was fucked by Kerberos daughter ... ...")
+   ShowMessage("I've been squeezed out to make no more drops ... ...")
+   ShowMessageFace("",0,0,2,7)
+   ShowMessage("\\n<A soldier>Who will be caught by this time ......")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+

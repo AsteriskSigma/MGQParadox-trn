@@ -1,0 +1,89 @@
+
+=begin
+
+Troublesome · ___ ___ 0 RPG
+Tris ability magnification display ver1 2017/03/24
+
+
+
+For the function list explanation below, what newly added with this ver is ● What you changed is ○
+● Press the CTRL key on the equipment screen to display the capacity magnification of the actor on the console
+
+
+Feature Description
+● Press the CTRL key on the equipment screen to display the capacity magnification of the actor on the console
+For the normal ability value (max HP to dexterity), the following magnifications are displayed
+For each feature object, the characteristic \"normal ability value* 0%If there is, its magnification
+Feature object(Differentiation display):
+State(State),actor(Actor),Profession,Race(Class),Equipment(Weapon,Armor)
+Human hour addition feature(Class),ability(Armor ※ Passive ability armor)
+· Capacity building/If there is a weak body, the magnification
+The magnification by the following is not displayed
+· Only apply to the amount of change of equipment<Weapon Mastery><Armor Mastery>
+· Only valid during battle<HPStrengthened upon decrease><Overseas soul><Terrain enhancement>
+In case
+
+=end
+
+#==============================================================================
+# ■ Scene_Equip
+#==============================================================================
+class Scene_Equip < Scene_MenuBase
+  #--------------------------------------------------------------------------
+  # ● Frame update
+  #--------------------------------------------------------------------------
+  alias :param_rate_update :update
+  def update
+    param_rate_update
+    if Input.trigger?(:CTRL)
+      @actor.show_param_rate_all
+    end
+  end
+end
+#==============================================================================
+# ■ Game_Actor
+#==============================================================================
+class Game_Actor < Game_Battler
+  #--------------------------------------------------------------------------
+  # ● Capacity display magnification
+  #--------------------------------------------------------------------------
+  def show_param_rate_all
+    puts ""
+    puts "#{self.name}Ability value magnification list"
+    (0..7).each do |param_id|
+      show_param_rate_id_result(param_id)
+      show_param_rate_id_normal(param_id)
+      show_param_rate_id_buff(param_id)
+    end
+    puts ""
+  end
+  #--------------------------------------------------------------------------
+  # ● Capacity value magnification display: Result
+  #--------------------------------------------------------------------------
+  def show_param_rate_id_result(param_id)
+    result = param_rate(param_id) * param_buff_rate(param_id)
+    puts "#{Vocab::param(param_id)} total:#{result}"
+  end
+  #--------------------------------------------------------------------------
+  # ● Capacity Display of magnification:
+  #--------------------------------------------------------------------------
+  def show_param_rate_id_normal(param_id)
+    feature_objects.each do |obj|
+      obj.features.each do |ft|
+        next unless (ft.code == FEATURE_PARAM && ft.data_id == param_id)
+        print "  "
+        p [obj.class, obj.name, ft.value]
+      end
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Capacity Display of magnification:
+  #--------------------------------------------------------------------------
+  def show_param_rate_id_buff(param_id)
+    buff_rate = param_buff_rate(param_id)
+    if buff_rate != 1.0
+      print "  "
+      p ["Capacity building/Weak body", buff_rate]
+    end
+  end
+endd

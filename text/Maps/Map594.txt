@@ -1,0 +1,4 @@
+"【ソニア】" -> "【Sonia】"
+"ちょ、ちょっと……何なの、ここ？" -> "Wait a minute ... what the heck?"
+"【白兎】" -> "【White rabbit】"
+"おいてくよー！" -> "Okuuuyo!"

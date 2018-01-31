@@ -1,0 +1,6 @@
+"消費アイテム" -> "Consumption items"
+"素材アイテム" -> "Material item"
+"アクセサリ" -> "accessory"
+"消費アイテム" -> "Consumption items"
+"素材アイテム" -> "Material item"
+"アクセサリ" -> "accessory"

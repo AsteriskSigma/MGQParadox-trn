@@ -1,0 +1,11 @@
+// EVENT 1370
+Name "会話：ソニアカオス"
+
+ChangeVariable(25,25,0,0,0)
+ShowMessageFace("soniachaos_fc1",0,0,2,1)
+ShowMessage("【ソニアカオス】")
+ShowMessage("■■■■■■■■■■■■■■■■……")
+ShowMessageFace("",0,0,2,2)
+ShowMessage("ソニアカオスは会話を拒絶している！")
+EndEventProcessing()
+0()

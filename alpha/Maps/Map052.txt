@@ -1,0 +1,1182 @@
+
+
+
+EVENT   1
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,51,10,16,0,0)
+  0()
+
+
+
+EVENT   2
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,51,20,11,0,0)
+  0()
+
+
+
+EVENT   3
+ PAGE   1
+  ChangeSwitch(100,100,1)
+  If(1,1038,0,1,0)
+   ChangeVariable(1038,1038,0,0,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Scat Captain>Aaah! Scat Captain gonna come!")
+   281(1)
+   250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+   TeleportPlayer(0,51,9,25,0,0)
+   250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0e,0x6d,0x6f,0x6e,0x5f,0x61,0x71,0x75,0x61,0x32,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Scat Captain>Comiiiiiiiing!!")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1038,0,3,0)
+   ChangeVariable(1038,1038,0,0,4)
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("\\n<Scat Captain>Aaah! Scat Captain gonna come!")
+   281(1)
+   250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+   TeleportPlayer(0,51,9,25,0,0)
+   250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x63,0x65,0x31,0x30,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+   ShowMessageFace("",0,0,2,4)
+   ShowMessage("\\n<Scat Captain>Is this... youth?")
+   355("gain_medal(2016)")
+   EndEventProcessing()
+   0()
+  EndIf()
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,51,9,25,0,0)
+  0()
+
+
+
+EVENT   4
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,51,25,22,0,0)
+  0()
+
+
+
+EVENT   5
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,51,44,24,0,0)
+  0()
+
+
+
+EVENT   6
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Panties Manager>Welcome, would you like to purchase some weapons?")
+  Shop(1,190,0,0,false)
+  605(1,402,0,0)
+  605(1,441,0,0)
+  605(1,589,0,0)
+  605(1,699,0,0)
+  605(1,821,0,0)
+  605(1,919,0,0)
+  0()
+
+
+
+EVENT   7
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Panties Salesman>Welcome, would you like to purchase some armor?")
+  Shop(2,3,0,0,false)
+  605(2,19,0,0)
+  605(2,53,0,0)
+  605(2,104,0,0)
+  605(2,163,0,0)
+  605(2,177,0,0)
+  605(2,272,0,0)
+  605(2,1145,0,0)
+  605(2,1171,0,0)
+  0()
+
+
+
+EVENT   8
+ PAGE   1
+  ShowMessageFace(binary"",0,0,2,1)
+  ShowMessage("\\n<Panties Manager>Welcome, would you like to purchase some items?")
+  Shop(0,1,0,0,false)
+  605(0,11,0,0)
+  605(0,13,0,0)
+  605(0,14,0,0)
+  605(0,17,0,0)
+  605(0,23,0,0)
+  605(0,35,0,0)
+  0()
+
+
+
+EVENT   9
+ PAGE   1
+  If(8,151)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Blacksmith>Welcome, what can I do for you? I can forge iron equipment for you out of that lump of iron you've got.")
+   ShowChoices(strings("Synthesize","Buy Iron Equipment"),0)
+   IfPlayerPicksChoice(0,null)
+    355("call_synthesize(4)")
+    0()
+   IfPlayerPicksChoice(1,null)
+    ShowMessageFace("",0,0,2,2)
+    ShowMessage("\\n<Blacksmith>The equipment is a bit expensive, but you don't have to worry about ever running out of iron to forge more of it.")
+    Shop(1,3,0,0,false)
+    605(1,51,0,0)
+    605(1,145,0,0)
+    605(1,192,0,0)
+    605(1,292,0,0)
+    605(1,335,0,0)
+    605(1,364,0,0)
+    605(1,403,0,0)
+    605(1,443,0,0)
+    605(1,473,0,0)
+    605(1,511,0,0)
+    605(1,550,0,0)
+    605(1,591,0,0)
+    605(1,623,0,0)
+    605(1,660,0,0)
+    605(1,700,0,0)
+    605(1,726,0,0)
+    605(1,755,0,0)
+    605(1,775,0,0)
+    605(1,797,0,0)
+    605(1,822,0,0)
+    605(1,844,0,0)
+    605(2,31,0,0)
+    605(2,55,0,0)
+    605(2,105,0,0)
+    605(2,194,0,0)
+    605(2,235,0,0)
+    605(2,282,0,0)
+    0()
+   404()
+   0()
+  Else()
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("\\n<Blacksmith>This town was originally an ironworks. With some high quality iron ore, I could make iron equipment for you...")
+   355("call_synthesize(4)")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   10
+ PAGE   1
+  If(1,1038,0,0,0)
+   ChangeVariable(1038,1038,0,0,1)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Scat Captain>I'm the Scat Captain. Anything I can do for you?")
+   ShowChoices(strings("Nothing","Stay silent","Leave"),1)
+   IfPlayerPicksChoice(0,null)
+    0()
+   IfPlayerPicksChoice(1,null)
+    0()
+   IfPlayerPicksChoice(2,null)
+    0()
+   404()
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Scat Captain>You better not tease adults.")
+   250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x63,0x65,0x31,0x30,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69))
+   Wait(30)
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("\\n<Scat Captain>...This sensation is...? Hey you, wait.")
+   ShowMessageFace("sonia_fc2",2,0,2,4)
+   ShowMessage("\\n<Sonya>Huh...? What is it...?")
+   ShowMessageFace("",0,0,2,5)
+   ShowMessage("\\n<Scat Captain>Since you're here, how about a cup of tea? I can't let such an opportunity pass me by.")
+   ShowMessageFace("",0,0,2,6)
+   ShowMessage("\\n<Scat Captain>By the way, do you know what my fetish is?")
+   DefineLabel("0")
+   ShowChoices(strings("Lolicon","Siscon","Mothercon","A Scatologist"),0)
+   IfPlayerPicksChoice(0,null)
+    ShowMessageFace("",0,0,2,7)
+    ShowMessage("\\n<Scat Captain>Some people ridicule me as such. However, that doesn't exactly describe me correctly.")
+    JumpToLabel("0")
+    0()
+   IfPlayerPicksChoice(1,null)
+    ShowMessageFace("",0,0,2,8)
+    ShowMessage("\\n<Scat Captain>As expected of you, is what I want to say... but you're wrong.")
+    JumpToLabel("0")
+    0()
+   IfPlayerPicksChoice(2,null)
+    ShowMessageFace("",0,0,2,9)
+    ShowMessage("\\n<Scat Captain>It's almost as if you've seen it yourself... Unfortunately, you're wrong.")
+    JumpToLabel("0")
+    0()
+   IfPlayerPicksChoice(3,null)
+    JumpToLabel("1")
+    0()
+   404()
+   DefineLabel("1")
+   ShowMessageFace("",0,0,2,10)
+   ShowMessage("\\n<Scat Captain>Yeah, I have a lot of trouble because of it, too. With this fetish, I'll never find a wife.")
+   ShowMessageFace("",0,0,2,11)
+   ShowMessage("\\n<Scat Captain>What's the matter? I didn't do anything to that tea... Come on, drink it all at once.")
+   ShowMessageFace("",0,0,2,12)
+   ShowMessage("\\n<Scat Captain>By the way, that pot is my toilet. I don't really have any ill intent. Just felt like telling you that.")
+   ShowMessageFace("sonia_fc3",4,0,2,13)
+   ShowMessage("\\n<Sonya>...Maybe you should drink this tea yourself.")
+   ShowMessageFace("",0,0,2,14)
+   ShowMessage("\\n<Scat Captain>The cactus is blooming...")
+   ShowMessageFace("sonia_fc2",5,0,2,15)
+   ShowMessage("\\n<Sonya>Drink it yourself, you perverted criminal! I'll force you to drink this, dammit!")
+   ShowMessageFace("",0,0,2,16)
+   ShowMessage("\\n<Scat Captain>Nghh...! Stop it...! Stop it, you hear me?!")
+   ShowMessageFace("",0,0,2,17)
+   ShowMessage("Sonya forced Scat Captain to drink the suspicious tea!")
+   ShowMessageFace("",0,0,2,18)
+   ShowMessage("\\n<Scat Captain>Ghh... not bad!")
+   ShowMessageFace("sonia_fc3",5,0,2,19)
+   ShowMessage("\\n<Sonya>We have nothing to do here. Let's go, Luka.")
+   0()
+  EndIf()
+  If(1,1038,0,1,0)
+   ShowMessageFace("",0,0,2,20)
+   ShowMessage("\\n<Scat Captain>Haa, haa... ghh...")
+   0()
+  EndIf()
+  If(1,1038,0,2,0)
+   ChangeVariable(1038,1038,0,0,3)
+   ShowMessageFace("",0,0,2,21)
+   ShowMessage("\\n<Scat Captain>Go home. I'm busy here...")
+   ShowMessageFace("kamuro_fc1",0,0,2,22)
+   ShowMessage("\\n<Kamuro>Uh... excuse us.")
+   250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x63,0x65,0x31,0x30,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69))
+   Wait(30)
+   ShowMessageFace("",0,0,2,23)
+   ShowMessage("\\n<Scat Captain>This feeling... is it Kamuro?!")
+   ShowMessageFace("kamuro_fc1",2,0,2,24)
+   ShowMessage("\\n<Kamuro>I-indeed... What is it?")
+   ShowMessageFace("sonia_fc3",2,0,2,25)
+   ShowMessage("\\n<Sonya>Kamuro-chan, don't get involved with him!")
+   ShowMessageFace("",0,0,2,26)
+   ShowMessage("\\n<Scat Captain>Do you know of a person called ○ ha ○ A ○ na ○ l ○?")
+   ShowMessageFace("kamuro_fc1",2,0,2,27)
+   ShowMessage("\\n<Kamuro>Umm, there are too many hidden letters...")
+   ShowMessageFace("",0,0,2,28)
+   ShowMessage("\\n<Scat Captain>I am the man who used to be called by the name of ○ ha ○ A ○ na ○ l ○! I shall say it again, ○ ha ○ A ○ na ○ l ○!")
+   ShowMessageFace("sonia_fc2",6,0,2,29)
+   ShowMessage("\\n<Sonya>Stop hiding the letters to shout indecent words!")
+   ShowMessageFace("",0,0,2,30)
+   ShowMessage("\\n<Scat Captain>I project motherly feelings towards younger girls and extort scat out of them... I'm scum like that.")
+   ShowMessageFace("kamuro_fc1",2,0,2,31)
+   ShowMessage("\\n<Kamuro>You really are scum...")
+   ShowMessageFace("",0,0,2,32)
+   ShowMessage("\\n<Scat Captain>But even a person full of warmth like me destroys mons pubis! Do you understand, Kamuro?!")
+   ShowMessageFace("kamuro_fc1",2,0,2,33)
+   ShowMessage("\\n<Kamuro>Not at all!")
+   ShowMessageFace("sonia_fc2",5,0,2,34)
+   ShowMessage("\\n<Sonya>Don't talk with him, let's run!")
+   ShowMessageFace("",0,0,2,35)
+   ShowMessage("\\n<Scat Captain>Not yet, it's not over yet! Kamuro! Drink this tea!")
+   ShowMessageFace("kamuro_fc1",2,0,2,36)
+   ShowMessage("\\n<Kamuro>I-if you do anything strange... I'll use Taoism!")
+   ShowMessageFace("",0,0,2,37)
+   ShowMessage("Suddenly Scat Captain threw his arms around Kamuro!")
+   ShowMessageFace("",0,0,2,38)
+   ShowMessage("\\n<Scat Captain>You can't use your weapon now!")
+   ShowMessageFace("kamuro_fc1",2,0,2,39)
+   ShowMessage("\\n<Kamuro>KYAAAaa!!")
+   250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0e,0x6d,0x6f,0x6e,0x5f,0x73,0x70,0x61,0x6e,0x6b,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69))
+   Wait(10)
+   250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0e,0x6d,0x6f,0x6e,0x5f,0x73,0x70,0x61,0x6e,0x6b,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69))
+   Wait(10)
+   250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0e,0x6d,0x6f,0x6e,0x5f,0x73,0x70,0x61,0x6e,0x6b,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69))
+   ShowMessageFace("",0,0,2,40)
+   ShowMessage("Kamuro repeatedly slaps Scat Captain!")
+   ShowMessageFace("",0,0,2,41)
+   ShowMessage("\\n<Scat Captain>My monitor is failing! Ugh!")
+   ShowMessageFace("sonia_fc2",5,0,2,42)
+   ShowMessage("\\n<Sonya>Now! Let's force him to drink this tea!")
+   ShowMessageFace("",0,0,2,43)
+   ShowMessage("\\n<Scat Captain>Nghh...! Stop it...! Stop it, you hear me?!")
+   ShowMessageFace("",0,0,2,44)
+   ShowMessage("Sonya forced Scat Captain to drink the suspicious tea!")
+   ShowMessageFace("",0,0,2,45)
+   ShowMessage("\\n<Scat Captain>Ghh... not bad!")
+   ShowMessageFace("sonia_fc3",5,0,2,46)
+   ShowMessage("\\n<Sonya>We have nothing to do here. Let's go, Luka.")
+   0()
+  EndIf()
+  If(1,1038,0,3,0)
+   ShowMessageFace("",0,0,2,47)
+   ShowMessage("\\n<Scat Captain>Haa, haa... ghh...")
+   0()
+  EndIf()
+  If(1,1038,0,4,0)
+   ShowMessageFace("",0,0,2,48)
+   ShowMessage("\\n<Scat Captain>Remember that a bird in a cage is nothing but a plaything for others.")
+   If(0,1566,1)
+    ShowMessageFace("",0,0,2,49)
+    ShowMessage("\\n<Scat Captain>I am and always have been a man alone. Would you become my comrade?")
+    ShowChoices(strings("Let him join","Decline for now"),0)
+    IfPlayerPicksChoice(0,null)
+     ShowMessageFace("",0,0,2,50)
+     ShowMessage("\\n<Scat Captain>May the glory of victory be yours!")
+     PictureClear(5)
+     205(0,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x09,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x2a,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x0f,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x2c,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+     355("add_actor_ex(566)")
+     249(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0c,0x66,0x61,0x6e,0x66,0x61,0x6c,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69))
+     ShowMessageFace("",0,0,2,51)
+     ShowMessage("Scat Captain joins the party!")
+     Wait(60)
+     EndEventProcessing()
+     0()
+    IfPlayerPicksChoice(1,null)
+     ShowMessageFace("",0,0,2,52)
+     ShowMessage("\\n<Scat Captain>Do you have the right to decide that?")
+     0()
+    404()
+    0()
+   EndIf()
+   0()
+  EndIf()
+  0()
+ PAGE   2
+  // condition: party contains actor #566
+  0()
+
+
+
+EVENT   11
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Penis>Hello, I am penis.")
+  If(0,6,0)
+   ShowMessageFace("sonia_fc1",5,0,2,2)
+   ShowMessage("\\n<Sonya>Is anyone in this town NOT a pervert!?")
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("\\n<Penis>Wow, how rude! That's my real name. Do you know how hard it is to live with a name like this?")
+   ShowMessageFace("",0,0,2,4)
+   ShowMessage("\\n<Penis>A man named Penis can't live a normal life in any other town. This is the only place that will accept me!")
+   ShowMessageFace("sonia_fc2",3,0,2,5)
+   ShowMessage("\\n<Sonya>I, I'm so sorry...")
+   ShowMessageFace("",0,0,2,6)
+   ShowMessage("\\n<Penis>That said... It turns me on so much to hear the embarrassment in their voices when girls say my name.")
+   ShowMessageFace("sonia_fc2",5,0,2,7)
+   ShowMessage("\\n<Sonya>I knew you were a pervert!")
+   0()
+  Else()
+   ShowMessageFace("",0,0,2,8)
+   ShowMessage("\\n<Penis>Yes, this really is my name. I'm not trying to screw with you.")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   12
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Mister Condom>My name is Mister Condom. Young man, do you always remember to wear a condom?")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Mister Condom>Women alone bear the risk of pregnancy when you have sex without contraception. Only by wearing a condom can men take their fair share of responsibility.")
+  If(0,6,0)
+   ShowMessageFace("sonia_fc3",2,0,2,3)
+   ShowMessage("\\n<Sonya>What a perv-- wait, that was actually educational!")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   13
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Panties Man>It's 10G a night. Will you be staying with us?")
+  ShowChoices(strings("Yes","No"),2)
+  IfPlayerPicksChoice(0,null)
+   If(7,10,0)
+    125(1,0,10)
+    221()
+    249(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x08,0x49,0x6e,0x6e,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69))
+    Wait(150)
+    314(0,0)
+    222()
+    0()
+   Else()
+    ShowMessageFace("",0,0,2,2)
+    ShowMessage("\\n<Panties Man>You're short on cash.")
+    0()
+   EndIf()
+   0()
+  IfPlayerPicksChoice(1,null)
+   0()
+  404()
+  0()
+
+
+
+EVENT   14
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Guard>This place may be a den of perverts now, but it used to be an iron-working town. The old man here supposedly inherited that knowledge.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Guard>He says he can craft high-quality iron goods if you bring him the raw iron, but the easy pickings were mined out long ago. The good stuff can only be found deep in the mine.")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Guard>Where's the mine? It's directly northeast of town. As long as you keep a Lump of Iron on you, you can make as much iron equipment as you like.")
+  0()
+
+
+
+EVENT   15
+ PAGE   1
+  // condition: variable 1009 >= 1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Panties Man>Miss Rabbit is right on the other side of this wall... Haaa, haaa, haaa... Miss Rabbit...")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("54")
+  ShowMessageFace("bunnyslime_fc1",0,0,2,2)
+  ShowMessage("\\n<Bunni>Hop hop! There's a rabbit right here!")
+  EndEventProcessing()
+  DefineLabel("74")
+  ShowMessageFace("usagi_fc1",2,0,2,3)
+  ShowMessage("\\n<Barbun>Sigh, not this guy again...")
+  EndEventProcessing()
+  DefineLabel("75")
+  ShowMessageFace("hituzi_fc1",3,0,2,4)
+  ShowMessage("\\n<Mary>Rabbits are such annoying naggers though...")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   16
+ PAGE   1
+  If(1,1048,0,5,1)
+   If(0,1567,1)
+    ShowMessageFace("",0,0,2,1)
+    ShowMessage("\\n<Panty Sensei>I'd love to travel the world... and see all the kinds of panties there are.")
+    ShowMessageFace("",0,0,2,2)
+    ShowMessage("\\n<Panty Sensei>Would you please let me accompany you?")
+    ShowChoices(strings("Let him join","Decline for now"),0)
+    IfPlayerPicksChoice(0,null)
+     ShowMessageFace("",0,0,2,3)
+     ShowMessage("\\n<Panty Sensei>I'm in your debt. Aaah, what kinds of panties await me...")
+     PictureClear(5)
+     205(0,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x09,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x2a,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x0f,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x2c,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+     355("add_actor_ex(567)")
+     249(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0c,0x66,0x61,0x6e,0x66,0x61,0x6c,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69))
+     ShowMessageFace("",0,0,2,4)
+     ShowMessage("Panty Sensei joins the party!")
+     Wait(60)
+     EndEventProcessing()
+     0()
+    IfPlayerPicksChoice(1,null)
+     ShowMessageFace("",0,0,2,5)
+     ShowMessage("\\n<Panty Sensei>Is that so? I suppose I'll just keep working here...")
+     0()
+    404()
+    0()
+   EndIf()
+   0()
+  EndIf()
+  If(0,2044,1)
+   ShowMessageFace("",0,0,2,6)
+   ShowMessage("\\n<Panty Sensei>I am the Panty Sensei. I live for panties. Do you like worn women's undergarments?")
+   ShowChoices(strings("Yes","No"),2)
+   IfPlayerPicksChoice(0,null)
+    ShowMessageFace("",0,0,2,7)
+    ShowMessage("\\n<Panty Sensei>Good, you're an honest man. I'll let you in on a secret then.")
+    ShowMessageFace("",0,0,2,8)
+    ShowMessage("\\n<Panty Sensei>With enough experience, the [Gadabout] job can learn the [Shameless Theft] skill. With it, you can steal the panties right off a monster girl.")
+    ShowMessageFace("",0,0,2,9)
+    ShowMessage("\\n<Panty Sensei>Each species of monster girl has her own type of panties, although some don't wear any at all, of course...")
+    ShowMessageFace("",0,0,2,10)
+    ShowMessage("\\n<Panty Sensei>Try to collect panties from lots of monsters, and if you steal any rare ones, please let me have a look at them.")
+    ChangeSwitch(2044,2044,0)
+    EndEventProcessing()
+    0()
+   IfPlayerPicksChoice(1,null)
+    ShowMessageFace("",0,0,2,11)
+    ShowMessage("\\n<Panty Sensei>I have nothing to say to a man who lies to himself.")
+    EndEventProcessing()
+    0()
+   404()
+   0()
+  EndIf()
+  If(0,2044,0)
+   RunCommonEvent(118)
+   0()
+  Else()
+   0()
+  EndIf()
+  0()
+ PAGE   2
+  // condition: party contains actor #567
+  0()
+
+
+
+EVENT   17
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Perverted Old Man>The Panty Sensei has a marvelous collection. I can't help but admire it.")
+  If(0,6,0)
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Perverted Old Man>By the way, young lady, would you be willing to sell the panties you're wearing for 200G?")
+   If(0,2043,1)
+    ShowMessageFace("sonia_fc3",2,0,2,3)
+    ShowMessage("\\n<Sonya>Excuse me?!")
+    ShowChoices(strings("Sell them for 200G","Refuse"),2)
+    IfPlayerPicksChoice(0,null)
+     ChangeSwitch(2043,2043,0)
+     ShowMessageFace("ruka_fc1",0,0,2,4)
+     ShowMessage("\\n<Luka>If you please, Sonya...")
+     ShowMessageFace("sonia_fc1",7,0,2,5)
+     ShowMessage("\\n<Sonya>I can't believe I'm doing this.")
+     125(0,0,200)
+     ShowMessageFace("",0,0,2,6)
+     ShowMessage("Sonya takes off her panties and hands them to the Perverted Old man! You receive 200G!")
+     ShowMessageFace("",0,0,2,7)
+     ShowMessage("\\n<Perverted Old Man>Woo hoo! It actually worked! You're such a nice guy, and wow these are some top-notch panties!")
+     ShowMessageFace("",0,0,2,8)
+     ShowMessage("\\n<Perverted Old Man>Sensei, what's the proper protocol? Sniff them? Wear them on my head? Eat them?")
+     If(0,2121,1)
+      ShowMessageFace("",0,0,2,9)
+      ShowMessage("\\n<Panty Sensei>Enjoy their fragrance for awhile before putting them on your head. Only then should you eat them.")
+      ShowMessageFace("sonia_fc3",0,0,2,10)
+      ShowMessage("\\n<Sonya>It sure would be nice for a meteor to fall from the sky and wipe this entire town off the map.")
+      0()
+     Else()
+      ShowMessageFace("",0,0,2,11)
+      ShowMessage("\\n<Perverted Old Man>Oh, I forgot he isn't here anymore.")
+      ShowMessageFace("sonia_fc3",0,0,2,12)
+      ShowMessage("\\n<Sonya>......")
+      0()
+     EndIf()
+     EndEventProcessing()
+     0()
+    IfPlayerPicksChoice(1,null)
+     ShowMessageFace("",0,0,2,13)
+     ShowMessage("\\n<Perverted Old Man>Oh, that's a shame...")
+     EndEventProcessing()
+     0()
+    404()
+    0()
+   Else()
+    ShowMessageFace("sonia_fc2",5,0,2,14)
+    ShowMessage("\\n<Sonya>Once was too many times!")
+    EndEventProcessing()
+    0()
+   EndIf()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   18
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Panties Man>Look! I managed to steal the panties off an imp! I will treasure these forever!")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Gruff Man>Holy crap! Those are the hottest things in the world!")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("56")
+  ShowMessageFace("inp_fc1",3,0,2,3)
+  ShowMessage("\\n<Rami>Um, those aren't mine, are they?")
+  EndEventProcessing()
+  DefineLabel("57")
+  ShowMessageFace("inp_fc3",0,0,2,4)
+  ShowMessage("\\n<Rumi>Sigh...")
+  EndEventProcessing()
+  DefineLabel("58")
+  ShowMessageFace("inp_fc2",0,0,2,5)
+  ShowMessage("\\n<Remi>Those aren't mine, are they? ...Still on... Phew...")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   19
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Panties Man>Look! I managed to steal the panties off an imp! I will treasure these forever!")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Gruff Man>Holy crap! Those are the hottest things in the world!")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("56")
+  ShowMessageFace("inp_fc1",3,0,2,3)
+  ShowMessage("\\n<Rami>Um, those aren't mine, are they?")
+  EndEventProcessing()
+  DefineLabel("57")
+  ShowMessageFace("inp_fc3",0,0,2,4)
+  ShowMessage("\\n<Rumi>Sigh...")
+  EndEventProcessing()
+  DefineLabel("58")
+  ShowMessageFace("inp_fc2",0,0,2,5)
+  ShowMessage("\\n<Remi>Those aren't mine, are they? ...Still on... Phew...")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   20
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Perverted Young Man>'Eating' panties is a code word for masturbating with them. Although to a master like the Panty Sensei, he might actually be devouring them.")
+  If(0,6,0)
+   If(0,4,0)
+    ShowMessageFace("sonia_fc3",0,0,2,2)
+    ShowMessage("\\n<Sonya>I wish this town were destroyed with every pervert in it...")
+    0()
+   EndIf()
+   If(0,5,0)
+    ShowMessageFace("sonia_fc3",4,0,2,3)
+    ShowMessage("\\n<Sonya>I can't take this depravity any longer. Luka, please burn this place to the ground.")
+    ShowMessageFace("iriasu_fc4",2,0,2,4)
+    ShowMessage("\\n<Ilias>Are you trying to imitate me? I wholeheartedly agree though...")
+    0()
+   EndIf()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   21
+ PAGE   1
+  If(0,6,0)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Perverted Old Man>Hoho! That's quite the erotic look you've got, young lady!")
+   ShowMessageFace("sonia_fc1",5,0,2,2)
+   ShowMessage("\\n<Sonya>I'm really getting sick of these perverted old men.")
+   ShowMessageFace("ruka_fc1",0,0,2,3)
+   ShowMessage("\\n<Luka>Actually, that's been on my mind for awhile now. That outfit of yours IS rather indecent... ish...")
+   ShowMessageFace("sonia_fc2",6,0,2,4)
+   ShowMessage("\\n<Sonya>...WHAT!?")
+   ShowMessageFace("ruka_fc1",0,0,2,5)
+   ShowMessage("\\n<Luka>Eeek!")
+   0()
+  Else()
+   ShowMessageFace("",0,0,2,6)
+   ShowMessage("\\n<Perverted Old Man>It's weird. Why don't any women settle down and live in this town?")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   22
+ PAGE   1
+  // condition: variable 1009 >= 1
+  PictureDisplay(5,"80_usagi_st01",0,0,0,0,100,100,0,0)
+  PictureMove(5,null,0,0,0,0,100,100,255,0,30,true)
+  If(1,1009,0,1,0)
+   ChangeVariable(1009,1009,0,0,2)
+   ShowMessageFace("usagi_fc1",0,0,2,1)
+   ShowMessage("\\n<Rabbit Girl>Oh hi, can I help you?")
+   If(0,4,0)
+    ShowMessageFace("alice_fc5",6,0,2,2)
+    ShowMessage("\\n<Alice>Damn, it's a completely different rabbit! She doesn't look anything like the one we're looking for!")
+    0()
+   EndIf()
+   If(0,5,0)
+    ShowMessageFace("iriasu_fc4",5,0,2,3)
+    ShowMessage("\\n<Ilias>I can't believe it! She's the wrong rabbit! How could I have been so easily manipulated by false rumors...")
+    0()
+   EndIf()
+   ShowMessageFace("usagi_fc1",0,0,2,4)
+   ShowMessage("\\n<Rabbit Girl>Oh my, it appears I'm not who you thought I was. What does the rabbit you're searching for look like?")
+   ShowMessageFace("ruka_fc1",0,0,2,5)
+   ShowMessage("\\n<Luka>Hmmm... She has white fur and blue hair, wearing a cloak and a watch... She kind of acts like she's in a rush, too.")
+   ShowMessageFace("usagi_fc1",0,0,2,6)
+   ShowMessage("\\n<Rabbit Girl>I think I know who you're talking about. I remember hearing about her because she seemed strange for a Rabbit Girl.")
+   ShowMessageFace("usagi_fc1",0,0,2,7)
+   ShowMessage("\\n<Rabbit Girl>Supposedly she's been hanging around the South Tartarus. The investigators there have reported seeing her, at least.")
+   If(0,6,0)
+    ShowMessageFace("sonia_fc3",7,0,2,8)
+    ShowMessage("\\n<Sonya>Tartarus? You mean the mysterious holes that opened up in the ground in the Great Disaster 30 years ago...")
+    0()
+   EndIf()
+   If(0,4,0)
+    ShowMessageFace("alice_fc5",0,0,2,9)
+    ShowMessage("\\n<Alice>Tartarus? That seems like an appropriate place for someone so mysterious.")
+    0()
+   EndIf()
+   If(0,5,0)
+    ShowMessageFace("iriasu_fc4",2,0,2,10)
+    ShowMessage("\\n<Ilias>Tartarus? I cannot say I am surprised given how strange this rabbit is.")
+    0()
+   EndIf()
+   ShowMessageFace("ruka_fc1",0,0,2,11)
+   ShowMessage("\\n<Luka>All right, let's go! South Tartarus here we come!")
+   ShowMessageFace("usagi_fc1",0,0,2,12)
+   ShowMessage("\\n<Rabbit Girl>Just so we're clear, it's the one south of Iliasville, not the other Tartarus east of here.")
+   If(0,4,0)
+    ShowMessageFace("alice_fc5",2,0,2,13)
+    ShowMessage("\\n<Alice>Let's not forget that Amira's intel was wrong. I won't be satisfied until I give her a piece of my mind.")
+    0()
+   EndIf()
+   If(0,5,0)
+    ShowMessageFace("iriasu_fc4",7,0,2,14)
+    ShowMessage("\\n<Ilias>Hold on, Luka. The information Amira gave us was clearly false. We should go teach her what happens to those who deceive a goddess.")
+    0()
+   EndIf()
+   ShowMessageFace("ruka_fc1",0,0,2,15)
+   ShowMessage("\\n<Luka>I suppose, but it did lead us in the right direction. I guess we should at least tell her that she was mistaken.")
+   If(4,62,0)
+    ShowMessageFace("gob_fc1",0,0,2,16)
+    ShowMessage("\\n<Gob>Let's complain next time we're in Iliasburg. She might make it up to us somehow.")
+    0()
+   EndIf()
+   PictureClear(5)
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1009,0,2,0)
+   ShowMessageFace("usagi_fc1",0,0,2,17)
+   ShowMessage("\\n<Rabbit Girl>The rabbit you're looking for has been hanging around the South Tartarus. The investigators there have reported seeing her, at least.")
+   ShowMessageFace("usagi_fc1",0,0,2,18)
+   ShowMessage("\\n<Rabbit Girl>Just so we're clear, it's the one south of Iliasville, not the other Tartarus east of here.")
+   PictureClear(5)
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1009,0,3,1)
+   ShowMessageFace("usagi_fc1",0,0,2,19)
+   ShowMessage("\\n<Rabbit Girl>I'm going to stick around here for a while. The people in this town do... things for me... yeah.")
+   355("actor_label_jump")
+   PictureClear(5)
+   EndEventProcessing()
+   DefineLabel("54")
+   ShowMessageFace("bunnyslime_fc1",2,0,2,20)
+   ShowMessage("\\n<Bunni>I want to be pampered too...")
+   PictureClear(5)
+   EndEventProcessing()
+   DefineLabel("70")
+   ShowMessageFace("nezumi_fc1",0,0,2,21)
+   ShowMessage("\\n<Ratty>It must be nice to be a rabbit and have everyone pamper you...")
+   PictureClear(5)
+   EndEventProcessing()
+   DefineLabel("74")
+   ShowMessageFace("usagi_fc1",0,0,2,22)
+   ShowMessage("\\n<Barbun>Ooh, that sounds nice. Could I impose on you for awhile?")
+   PictureClear(5)
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   23
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(165,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   24
+ PAGE   1
+  If(1,805,0,2,1)
+   If(0,1548,1)
+    ShowMessageFace("mob_bunny1_fc1",0,0,2,1)
+    ShowMessage("\\n<Bunny-Chan>It sure would be nice if someone would invite me on their adventure...")
+    ShowChoices(strings("Let her join","Decline for now"),0)
+    IfPlayerPicksChoice(0,null)
+     ShowMessageFace("mob_bunny1_fc1",0,0,2,2)
+     ShowMessage("\\n<Bunny-Chan>Yay! Thanks a lot! ♪")
+     PictureClear(5)
+     205(0,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x09,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x2a,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x0f,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x2c,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+     355("add_actor_ex(548)")
+     249(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0c,0x66,0x61,0x6e,0x66,0x61,0x6c,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69))
+     ShowMessageFace("",0,0,2,3)
+     ShowMessage("Bunny-chan joined the party!")
+     Wait(60)
+     EndEventProcessing()
+     0()
+    IfPlayerPicksChoice(1,null)
+     ShowMessageFace("mob_bunny1_fc1",0,0,2,4)
+     ShowMessage("\\n<Bunny-Chan>Sad times.")
+     0()
+    404()
+    0()
+   EndIf()
+   0()
+  EndIf()
+  RunCommonEvent(7041)
+  0()
+ PAGE   2
+  // condition: party contains actor #548
+  0()
+
+
+
+EVENT   25
+ PAGE   1
+  If(6,-1,8)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("1 coin per pull. Play?")
+   ShowChoices(strings("Yes","No"),2)
+   IfPlayerPicksChoice(0,null)
+    241(bytes(0x04,0x08,0x6f,0x3a,0x0d,0x52,0x50,0x47,0x3a,0x3a,0x42,0x47,0x4d,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0c,0x63,0x61,0x73,0x69,0x6e,0x6f,0x32,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69))
+    355("call_slot_scene(1)")
+    241(bytes(0x04,0x08,0x6f,0x3a,0x0d,0x52,0x50,0x47,0x3a,0x3a,0x42,0x47,0x4d,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x63,0x69,0x74,0x79,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69))
+    0()
+   IfPlayerPicksChoice(1,null)
+    0()
+   404()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   26
+ PAGE   1
+  0()
+
+
+
+EVENT   27
+ PAGE   1
+  0()
+
+
+
+EVENT   28
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,52,31,58,2,0)
+  0()
+
+
+
+EVENT   29
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,52,3,55,2,0)
+  0()
+
+
+
+EVENT   30
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Dealer>How about a hand of poker?")
+  ShowChoices(strings("Yes","No"),2)
+  IfPlayerPicksChoice(0,null)
+   241(bytes(0x04,0x08,0x6f,0x3a,0x0d,0x52,0x50,0x47,0x3a,0x3a,0x42,0x47,0x4d,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0c,0x63,0x61,0x73,0x69,0x6e,0x6f,0x32,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69))
+   355("start_poker(10, 1, 1)")
+   241(bytes(0x04,0x08,0x6f,0x3a,0x0d,0x52,0x50,0x47,0x3a,0x3a,0x42,0x47,0x4d,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x63,0x69,0x74,0x79,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69))
+   0()
+  IfPlayerPicksChoice(1,null)
+   0()
+  404()
+  0()
+
+
+
+EVENT   31
+ PAGE   1
+  0()
+
+
+
+EVENT   32
+ PAGE   1
+  0()
+
+
+
+EVENT   33
+ PAGE   1
+  0()
+
+
+
+EVENT   34
+ PAGE   1
+  If(1,110,0,0,0)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Bunny>You currently have no coins. Would you like to purchase some? Or perhaps view the prizes?")
+   0()
+  Else()
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Bunny>You currently have \\V[110] coins. Would you like to purchase more? Or perhaps exchange the ones you have for a prize?")
+   0()
+  EndIf()
+  ShowChoices(strings("Buy coins","View prizes","Never mind"),3)
+  IfPlayerPicksChoice(0,null)
+   ShowChoices(strings("15 coins (300G)","60 coins (1000G)","350 coins (5000G)","Never mind"),4)
+   IfPlayerPicksChoice(0,null)
+    If(7,300,0)
+     250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x43,0x6f,0x69,0x6e,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+     355("gain_coin(15)")
+     125(1,0,300)
+     ShowMessageFace("",0,0,2,3)
+     ShowMessage("15 coins purchased! (Have: \\V[110])")
+     0()
+    Else()
+     ShowMessageFace("",0,0,2,4)
+     ShowMessage("\\n<Bunny>You don't have that much money.")
+     0()
+    EndIf()
+    0()
+   IfPlayerPicksChoice(1,null)
+    If(7,1000,0)
+     250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x43,0x6f,0x69,0x6e,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+     355("gain_coin(60)")
+     125(1,0,1000)
+     ShowMessageFace("",0,0,2,5)
+     ShowMessage("60 coins purchased! (Have: \\V[110])")
+     0()
+    Else()
+     ShowMessageFace("",0,0,2,6)
+     ShowMessage("\\n<Bunny>You don't have that much money.")
+     0()
+    EndIf()
+    0()
+   IfPlayerPicksChoice(2,null)
+    If(7,5000,0)
+     250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x43,0x6f,0x69,0x6e,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+     355("gain_coin(350)")
+     125(1,0,5000)
+     ShowMessageFace("",0,0,2,7)
+     ShowMessage("350 coins purchased! (Have: \\V[110])")
+     0()
+    Else()
+     ShowMessageFace("",0,0,2,8)
+     ShowMessage("\\n<Bunny>You don't have that much money.")
+     0()
+    EndIf()
+    0()
+   IfPlayerPicksChoice(3,null)
+    0()
+   404()
+   0()
+  IfPlayerPicksChoice(1,null)
+   355("goods = []")
+   655("goods.push [100, :I, 4]")
+   655("goods.push [150, :A, 163]")
+   655("goods.push [200, :I, 22]")
+   655("goods.push [250, :A, 164]")
+   655("goods.push [300, :A, 259]")
+   655("goods.push [400, :A, 1733]")
+   655("goods.push [400, :A, 1735]")
+   655("goods.push [750, :W, 703]")
+   655("goods.push [1500, :A, 1115]")
+   655("goods.push [2500, :A, 1703]")
+   655("call_casino_prize(goods)")
+   0()
+  IfPlayerPicksChoice(2,null)
+   0()
+  404()
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   35
+ PAGE   1
+  0()
+
+
+
+EVENT   36
+ PAGE   1
+  0()
+
+
+
+EVENT   37
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Gruff Man>Aaaah, I was so close! One more try!")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("60")
+  ShowMessageFace("dog_fc1",2,0,2,2)
+  ShowMessage("\\n<Pochi>The refrain of a man on the road to ruin. Before long he'll be nothing more than a pile of meaty bones for me to chew on...")
+  ShowMessageFace("dog_fc1",4,0,2,3)
+  ShowMessage("\\n<Pochi>......kidding!")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   38
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Youth>What am I doing wrong... I KNOW this is my ticket to success! If I turn the slots just like this, my luck has to turn around.")
+  0()
+
+
+
+EVENT   39
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Man>Stop! Stooooop!")
+  0()
+
+
+
+EVENT   40
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Ilias Temple Soldier>This is the only casino on the Ilias Continent. I spend most of my holidays here.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Ilias Temple Soldier>Whoa, it's Luka! Please don't tell anyone you saw me here...")
+  0()
+
+
+
+EVENT   41
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Man>Oh no oh no oh no, what am I going to do!? All of it... I lost every bit of gold the shop had...")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("66")
+  ShowMessageFace("vgirl_fc1",0,0,2,2)
+  ShowMessage("\\n<Vanilla>Now that's a terrible merchant. An excellent example of what not to do.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   42
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Old Man>When gambling, you're ruined if you let your emotions get out of control. You'll do a lot better if you just enjoy yourself.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("62")
+  ShowMessageFace("gob_fc1",0,0,2,2)
+  ShowMessage("\\n<Gob>It's best to decide how much you're willing to lose beforehand and then never, ever go past that limit.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   43
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(67,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   44
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Man>Down these stairs is Pornof's infamous spot! Go and enjoy yourselves!")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("71")
+  ShowMessageFace("okami_fc1",0,0,2,2)
+  ShowMessage("\\n<Amara>Ooh an infamous spot! ...Never heard of it.")
+  EndEventProcessing()
+  DefineLabel("73")
+  ShowMessageFace("hiru_fc1",1,0,2,3)
+  ShowMessage("\\n<Hiru>Uhuhu, I can't wait...")
+  EndEventProcessing()
+  DefineLabel("540")
+  ShowMessageFace("amira_fc1",0,0,2,4)
+  ShowMessage("\\n<Amira>Hoho, now what do we have here...")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   45
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Traveling Warrior>Insect monsters have extremely high defenses to both physical and magic. Their elemental defenses are almost all high as well, which makes them formidable enemies.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Traveling Warrior>Fortunately, they're pretty weak to bad status effects. If you're having a tough time beating them head-on, try inflicting a few status effects.")
+  0()
+
+
+
+EVENT   46
+ PAGE   1
+  0()
+
+
+
+EVENT   47
+ PAGE   1
+  0()
+
+
+
+EVENT   48
+ PAGE   1
+  // condition: variable 1038 >= 5
+  // condition: party contains actor #566
+  ShowMessageFace("sonia_fc1",5,0,2,1)
+  ShowMessage("【Sonia】")
+  ShowMessage("I came out! A new pervert!")
+  ShowMessageFace("kakyouin_fc1",0,0,2,2)
+  ShowMessage("【? What? What? 】")
+  ShowMessage("After all it is Satan's castle ... When will you depart?")
+  ShowMessage("I will accompany as well.")
+  ShowMessageFace("sukatoro_fc1",0,0,2,3)
+  ShowMessage("[Captain Scatro]")
+  ShowMessage("Hanadōkyo.")
+  ShowMessageFace("kakyouin_fc1",0,0,2,4)
+  ShowMessage("【Kanji】")
+  ShowMessage("Well then, thanks.")
+  PictureClear(5)
+  205(49,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x09,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x2a,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x0f,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x2c,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  355("add_actor_ex(569)")
+  249(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0c,0x66,0x61,0x6e,0x66,0x61,0x6c,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69))
+  ShowMessageFace("",0,0,2,5)
+  ShowMessage("Flower Kyo is part of a group!")
+  Wait(60)
+  ChangeVariable(1038,1038,0,0,6)
+  ShowMessageFace("sonia_fc2",2,0,2,6)
+  ShowMessage("【Sonia】")
+  ShowMessage("I feel like a decent person ...")
+  ShowMessageFace("kakyouin_fc1",0,0,2,7)
+  ShowMessage("【Kanji】")
+  ShowMessage("Lerolero.")
+  ShowMessageFace("sonia_fc3",2,0,2,8)
+  ShowMessage("【Sonia】")
+  ShowMessage("After all it is not a pervert!")
+  EndEventProcessing()
+  0()
+ PAGE   2
+  // condition: variable 1038 >= 6
+  0()
+
+
+
+EVENT   49
+ PAGE   1
+  // condition: variable 1038 >= 5
+  // condition: party contains actor #566
+  0()
+ PAGE   2
+  // condition: variable 1038 >= 6
+  0()
+

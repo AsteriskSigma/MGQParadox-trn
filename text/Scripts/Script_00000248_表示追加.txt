@@ -1,0 +1,2 @@
+"秘石装備アイテムにアイコン表示" -> "Icon display on secret equipment item"
+"一部装備中エンチャント装備が表示される箇所で装備中アイコン表示" -> "On Equipment While Equipping Equipment Is Displayed Equipment In-Equipment Icon Display"

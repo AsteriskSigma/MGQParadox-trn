@@ -1,0 +1,8 @@
+"ステージ8" -> "Stage 8"
+"吸血鬼の夜会" -> "Vampire nightclub"
+"巨人達の黄昏" -> "The dusk of the giants"
+"ぬくぬく" -> "Warmth"
+"ネクロマンサーの矜持" -> "Holding of necromancer"
+"ざわざわ" -> "noisy"
+"アミラの人生相談・鎮魂" -> "Amira's life consultation · spirit"
+"やめる" -> "quit"

@@ -1,0 +1,1183 @@
+# -*- encoding: utf-8 -*-
+=begin
+=実績設定
+
+=end
+
+#==============================================================================
+# ■ NWConst::Library
+#==============================================================================
+module NWConst::Library  
+  # メダル獲得時の効果音
+  SE_GAIN_MEDAL = RPG::SE.new("Powerup", 90, 140)
+  
+  # メダル獲得時の効果音ID
+  NO_USE_MEDAL = [
+    1003,1004,1013,1014,1023,1024,1033,1034,1043,1044,
+    1053,1054,1063,1064,1072,1073
+  ]
+  
+  MEDAL_DATA = {
+    # 例
+#   メダルID => { ※メダルIDは1~9999に収めてください
+#      :icon_id => アイコンID,
+#      :title => "タイトル",
+#      :description => "解説",
+#      :priority => :,
+#    },
+    1 => {
+      :icon_id => 193,
+      :title => "The rescue of Hans",
+      :description => "You saved the kidnapped villager",
+      :priority => 1,
+    },
+    2 => {
+      :icon_id => 193,
+      :title => "Descent of Goddess Ilias",
+      :description => "You have been recognized as an unblessed hero",
+      :priority => 2,
+    },
+    3 => {
+      :icon_id => 191,
+      :title => "The Monster Lord's slave",
+      :description => "Monster Lord Alice added to the party... or perhaps you were added to hers",
+      :priority => 3,
+    },
+    4 => {
+      :icon_id => 191,
+      :title => "The Goddess's slave",
+      :description => "Goddess Ilias added to the party... or perhaps you were added to hers",
+      :priority => 4,
+    },
+    5 => {
+      :icon_id => 193,
+      :title => "Childhood tag-along",
+      :description => "Sonya forced her way into the party...",
+      :priority => 5,
+    },
+    6 => {
+      :icon_id => 193,
+      :title => "A Proof of Bravery",
+      :description => "You've been recognized by a guard for the discovery of the [Proof of Bravery]",
+      :priority => 6,
+    },
+    7 => {
+      :icon_id => 193,
+      :title => "Merchant rescue",
+      :description => "You brought the lost merchant to safety",
+      :priority => 7,
+    },
+    8 => {
+      :icon_id => 193,
+      :title => "Bandit annihilation",
+      :description => "You won against the monster bandits and rehabilitated the girls",
+      :priority => 8,
+    },
+    9 => {
+      :icon_id => 193,
+      :title => "Resolved Phoenix Tail trade",
+      :description => "You liberated the deceived Phoenix Girl",
+      :priority => 9,
+    },
+    10 => {
+      :icon_id => 192,
+      :title => "Traveler from another world",
+      :description => "You continue your adventure in a parallel world",
+      :priority => 10,
+    },
+    11 => {
+      :icon_id => 193,
+      :title => "Catching harpies",
+      :description => "You cured the harpies of the epidemic",
+      :priority => 11,
+    },
+    12 => {
+      :icon_id => 193,
+      :title => "Mysterious Medal Queen",
+      :description => "You received your first audience with the Medal Queen",
+      :priority => 12,
+    },
+    13 => {
+      :icon_id => 193,
+      :title => "Slug extermination",
+      :description => "You triumphed over the slug boss in Slug Tower",
+      :priority => 13,
+    },
+    15 => {
+      :icon_id => 192,
+      :title => "Chasing your father",
+      :description => "One day, you will catch up to him",
+      :priority => 15,
+    },
+    16 => {
+      :icon_id => 193,
+      :title => "Disappearance of Micaela",
+      :description => "Where did she go...",
+      :priority => 16,
+    },
+    17 => {
+      :icon_id => 192,
+      :title => "Welcome to Sentora",
+      :description => "Your first visit to the continent of Sentora",
+      :priority => 17,
+    },
+    18 => {
+      :icon_id => 193,
+      :title => "Collapse of a shota-harem",
+      :description => "You defeated the brainwashed Meia",
+      :priority => 18,
+    },
+    19 => {
+      :icon_id => 193,
+      :title => "Chasing the Four Spirits",
+      :description => "You seek the strength to walk a righteous path from history",
+      :priority => 19,
+    },
+    20 => {
+      :icon_id => 192,
+      :title => "As a hero...",
+      :description => "The last wish of Micaela, engraved upon your heart",
+      :priority => 20,
+    },
+    21 => {
+      :icon_id => 193,
+      :title => "Mechanized Pope No. 7",
+      :description => "You discovered the secret of the church...",
+      :priority => 21,
+    },
+    22 => {
+      :icon_id => 193,
+      :title => "Haunted mansion curtain call",
+      :description => "You put an end to the disturbance at the haunted mansion and delivered punishment to Chrome",
+      :priority => 22,
+    },
+    23 => {
+      :icon_id => 192,
+      :title => "The spirit of the wind",
+      :description => "You acquired the power of Sylph",
+      :priority => 23,
+    },
+    24 => {
+      :icon_id => 193,
+      :title => "A soul of burning justice",
+      :description => "Destined to be a hero after all",
+      :priority => 24,
+    },
+    25 => {
+      :icon_id => 193,
+      :title => "Black Alice's Counterattack",
+      :description => "The devilish tea party never ends",
+      :priority => 25,
+    },
+    26 => {
+      :icon_id => 193,
+      :title => "Tomboy princess honor restored",
+      :description => "Secretly saved Sabasa",
+      :priority => 26,
+    },
+    27 => {
+      :icon_id => 193,
+      :title => "The idol's curtain call",
+      :description => "Saki, flash!☆",
+      :priority => 27,
+    },
+    28 => {
+      :icon_id => 193,
+      :title => "The witch's dinner",
+      :description => "You have settled the troubles in Witch Hunt Village",
+      :priority => 28,
+    },
+    29 => {
+      :icon_id => 192,
+      :title => "The spirit of the earth",
+      :description => "You acquired the power of Gnome",
+      :priority => 29,
+    },
+    30 => {
+      :icon_id => 191,
+      :title => "Wish from a ruined world",
+      :description => "You engraved the desires of La Croix upon your heart",
+      :priority => 30,
+    },
+    31 => {
+      :icon_id => 193,
+      :title => "Fishy Pirate Debut",
+      :description => "You became a member of the Fishy Pirates",
+      :priority => 31,
+    },
+    32 => {
+      :icon_id => 193,
+      :title => "Navy's Pride",
+      :description => "You became an officer for the Navy.",
+      :priority => 32,
+    },
+    33 => {
+      :icon_id => 193,
+      :title => "Queen Cup Champion",
+      :description => "The crowd goes wild at the name of the champion.",
+      :priority => 33,
+    },
+    34 => {
+      :icon_id => 193,
+      :title => "すきやきの黄昏",
+      :description => "Solved the case of the Minotaur disappearances.",
+      :priority => 34,
+    },
+    35 => {
+      :icon_id => 193,
+      :title => "Shrine Pilgrimage",
+      :description => "Settled the riots in Yamatai Village",
+      :priority => 35,
+    },
+    36 => {
+      :icon_id => 193,
+      :title => "彼女は裁かれた",
+      :description => "魔導顧問メフィストの裏の顔を暴いた",
+      :priority => 36,
+    },
+    37 => {
+      :icon_id => 192,
+      :title => "For Whom the Bell Tolls",
+      :description => "この世は素晴らしい。戦う価値がある",
+      :priority => 37,
+    },
+    38 => {
+      :icon_id => 193,
+      :title => "For Whom the Bell Tolls",
+      :description => "この世は素晴らしい。戦う価値がある",
+      :priority => 39,
+    },
+    39 => {
+      :icon_id => 193,
+      :title => "Bugs and flowers and birds and cats (oh my!)",
+      :description => "Subdue the civil war in Plansect Vlilage",
+      :priority => 38,
+    },
+    40 => {
+      :icon_id => 192,
+      :title => "Spirit of Water",
+      :description => "You acquired the power of Undine",
+      :priority => 40,
+    },
+    41 => {
+      :icon_id => 193,
+      :title => "作戦開始",
+      :description => "心強い助っ人を迎え、いよいよ作戦が始まる",
+      :priority => 41,
+    },
+    42 => {
+      :icon_id => 193,
+      :title => "Fort Gold Breakthrough",
+      :description => "まだ作戦は始まったばかりだ",
+      :priority => 42,
+    },
+    43 => {
+      :icon_id => 193,
+      :title => "進軍の丘突破",
+      :description => "いよいよグランゴルド城は目前だ",
+      :priority => 43,
+    },
+    44 => {
+      :icon_id => 192,
+      :title => "Victory Feast",
+      :description => "You liberated Grangold, ending the Great War",
+      :priority => 44,
+    },
+    45 => {
+      :icon_id => 193,
+      :title => "Queen of the Flies",
+      :description => "Ousted the Beelzebubs from the Ghost Ship",
+      :priority => 45,
+    },
+    46 => {
+      :icon_id => 193,
+      :title => "From the Northern Sea",
+      :description => "Proved yourself to Poseidoness and received the Silver Orb.",
+      :priority => 46,
+    },
+    47 => {
+      :icon_id => 193,
+      :title => "Succubi's Wild Feast",
+      :description => "Resolved the conflict in Succubus Village",
+      :priority => 47,
+    },
+    48 => {
+      :icon_id => 193,
+      :title => "Young Unison",
+      :description => "Restored Emily and Cassandra to their original forms",
+      :priority => 48,
+    },
+    49 => {
+      :icon_id => 193,
+      :title => "Magical Girl Gran☆Beria",
+      :description => "見なかった事にしてあげよう",
+      :priority => 49,
+    },
+    50 => {
+      :icon_id => 192,
+      :title => "Spirit of Fire",
+      :description => "You acquired the power of Salamander",
+      :priority => 50,
+    },
+    51 => {
+      :icon_id => 193,
+      :title => "In the Flesh",
+      :description => "Met the legendary Hero Heinrich from 500 years ago",
+      :priority => 51,
+    },
+    52 => {
+      :icon_id => 193,
+      :title => "Salvation of the Four Kingdoms",
+      :description => "各国に押し寄せる魔王軍の先兵を破った",
+      :priority => 52,
+    },
+    53 => {
+      :icon_id => 193,
+      :title => "エルフと妖精の午後",
+      :description => "クィーンエルフを倒した",
+      :priority => 53,
+    },
+    54 => {
+      :icon_id => 193,
+      :title => "Name of the Rose",
+      :description => "Snapped the Queen Alraune back to sanity",
+      :priority => 54,
+    },
+    55 => {
+      :icon_id => 193,
+      :title => "人魚との和解",
+      :description => "クィーンマーメイドを倒した",
+      :priority => 55,
+    },
+    56 => {
+      :icon_id => 193,
+      :title => "Spider's Sunset",
+      :description => "You defeated the Spider Princess",
+      :priority => 56,
+    },
+    57 => {
+      :icon_id => 193,
+      :title => "Hundred Year Solitude",
+      :description => "You defeated the Queen Vampire",
+      :priority => 57,
+    },
+    58 => {
+      :icon_id => 193,
+      :title => "まずは文通から",
+      :description => "エルフ姫からオーブを受け取った",
+      :priority => 58,
+    },
+    59 => {
+      :icon_id => 193,
+      :title => "時を超えて",
+      :description => "五百年前の魔王城からオーブを入手した",
+      :priority => 59,
+    },
+    60 => {
+      :icon_id => 193,
+      :title => "To the Snow Continent",
+      :description => "You embark on the mysterious continent at long last",
+      :priority => 60,
+    },
+    61 => {
+      :icon_id => 193,
+      :title => "The Third Seraph",
+      :description => "You obtained Eden's help at the Snow Shrine",
+      :priority => 61,
+    },
+    62 => {
+      :icon_id => 193,
+      :title => "Itty Bitty Squishy Angels",
+      :description => "You revived the two Seraphs",
+      :priority => 62,
+    },
+    63 => {
+      :icon_id => 191,
+      :title => "交わり離れる剣と闇",
+      :description => "勇者の父と魔王の母、その息子とその娘のこれから",
+      :priority => 63,
+    },
+    64 => {
+      :icon_id => 191,
+      :title => "わたしを離さないで",
+      :description => "誰も知らず少女は戦い、世界を救った",
+      :priority => 64,
+    },
+    65 => {
+      :icon_id => 191,
+      :title => "受け継がれる希望",
+      :description => "滅びし世界の希望を胸に、求道者は叡智の戦いに赴く",
+      :priority => 65,
+    },
+    66 => {
+      :icon_id => 191,
+      :title => "ソニアの奇妙な冒険",
+      :description => "ソニアも長い冒険を乗り越えてきたようだ",
+      :priority => 66,
+    },
+
+#==============================================================================
+    # 買い物金額
+    1001 => {
+      :icon_id => 193,
+      :title => "First time shopper",
+      :description => "You bought your first item at a shop",
+      :priority => 1001,    
+    },
+    1002 => {
+      :icon_id => 193,
+      :title => "Regular shopper",
+      :description => "You bought 30,000G worth of goods; you really like your shops",
+      :priority => 1002,    
+    },
+    1003 => {
+      :icon_id => 192,
+      :title => "Shopping King",
+      :description => "You bought 300,000G worth of goods; you're quite the heavy spender",
+      :priority => 1003,    
+    },
+#    1004 => {
+#      :icon_id => 191,
+#      :title => "Shopping Addict",
+#      :description => "You bought 3,000,000G worth of goods; ...what do you do for a living?",
+#      :priority => 1004,    
+#    },
+    # 鍛冶利用数
+    1011 => {
+      :icon_id => 193,
+      :title => "Your first synthesis",
+      :description => "You commissioned your first synthesis to a blacksmith",
+      :priority => 1011,    
+    },
+    1012 => {
+      :icon_id => 193,
+      :title => "Blacksmith Binger",
+      :description => "You commissioned 50 blacksmith syntheses; kind of a habit now",
+      :priority => 1012,    
+    },
+    1013 => {
+      :icon_id => 192,
+      :title => "Blacksmith Maniac",
+      :description => "You commissioned 50 blacksmith syntheses; what else can you make?",
+      :priority => 1013,    
+    },
+#    1014 => {
+#      :icon_id => 191,
+#      :title => "Blacksmith Fanatic",
+#      :description => "You commissioned 500 blacksmith syntheses; ",
+#      :priority => 1014,    
+#    },
+    # 転職回数
+    1021 => {
+      :icon_id => 193,
+      :title => "Your first job change",
+      :description => "You made your first job change in Ilias Temple",
+      :priority => 1021,    
+    },
+    1022 => {
+      :icon_id => 193,
+      :title => "Job hopper",
+      :description => "You changed jobs 10 times; looks bad on your resume",
+      :priority => 1022,    
+    },
+    1023 => {
+      :icon_id => 192,
+      :title => "100 jobs changed",
+      :description => "You changed jobs 100 times; you'll find one you like eventually",
+      :priority => 1023,    
+    },
+#    1024 => {
+#      :icon_id => 191,
+#      :title => "500 jobs changed",
+#      :description => "You changed jobs 500 times; ",
+#      :priority => 1024,    
+#    },
+    # 転種回数
+    1031 => {
+      :icon_id => 193,
+      :title => "Your first race change",
+      :description => "You changed races for the first time in Ilias Temple",
+      :priority => 1031,    
+    },
+    1032 => {
+      :icon_id => 193,
+      :title => "Habitual race changer",
+      :description => "You changed races 5 times now; you start to understand different species",
+      :priority => 1032,    
+    },
+    1033 => {
+      :icon_id => 192,
+      :title => "Shapeshifter",
+      :description => "You changed races 50 times; you're excited to see what's next",
+      :priority => 1033,    
+    },
+#    1034 => {
+#      :icon_id => 191,
+#      :title => "転種回数300回達成",
+#      :description => "You changed races 300 times; ",
+#      :priority => 1034,    
+#    },
+    # 戦闘回数
+    1041 => {
+      :icon_id => 193,
+      :title => "Your first battle!",
+      :description => "You fought an opponent for the first time, an unforgettable event",
+      :priority => 1041,    
+    },
+    1042 => {
+      :icon_id => 193,
+      :title => "Seasoned Adventurer",
+      :description => "You've made it through 300 battles; you're quite the adventurer",
+      :priority => 1042,    
+    },
+    1043 => {
+      :icon_id => 192,
+      :title => "Polished Hero",
+      :description => "After 2000 battles, you are a hero with no equal.",
+      :priority => 1043,    
+    },
+#    1044 => {
+#      :icon_id => 191,
+#      :title => "Well-worn Veteran",
+#      :description => "5,000 battles later, fights are second nature to you",
+#      :priority => 1044,    
+#    },
+    # 逃亡回数
+    1051 => {
+      :icon_id => 193,
+      :title => "Your first escape",
+      :description => "You've committed your first act of cowardice by running away",
+      :priority => 1051,    
+    },
+    1052 => {
+      :icon_id => 193,
+      :title => "Keep Running",
+      :description => "You've escaped 10 times; running away just feels natural at this point",
+      :priority => 1052,    
+    },
+    1053 => {
+      :icon_id => 192,
+      :title => "Life On The Run",
+      :description => "You ran away 50 times; you're getting used to leaving your enemies in the dust",
+      :priority => 1053,    
+    },
+#    1054 => {
+#      :icon_id => 191,
+#      :title => "Eternal Shirker",
+#      :description => "You ran away 150 times; there's this thing called a Demon Ward Bracelet...",
+#      :priority => 1054,    
+#    },
+    # 敗北回数
+    1061 => {
+      :icon_id => 193,
+      :title => "Your first defeat",
+      :description => "You have been defeated by your opponent, receiving your rewar- No, your disgrace",
+      :priority => 1061,    
+    },
+    1062 => {
+      :icon_id => 193,
+      :title => "Adventurer Bait",
+      :description => "You have been defeated 30 times; that just makes you prey",
+      :priority => 1062,    
+    },
+    1063 => {
+      :icon_id => 192,
+      :title => "Dried Fish",
+      :description => "You have been defeated 100 times, hopefully not on purpose",
+      :priority => 1063,    
+    },
+#    1064 => {
+#      :icon_id => 191,
+#      :title => "敗北500回達成",
+#      :description => "You have been defeated 500 times; ...you're enjoying this, aren't you?",
+#      :priority => 1064,    
+#    },
+    # 総撃破数
+    1071 => {
+      :icon_id => 193,
+      :title => "Monster Killer",
+      :description => "You've turned the tables on 500 monsters",
+      :priority => 1071,    
+    },
+    1072 => {
+      :icon_id => 192,
+      :title => "Monster Buster",
+      :description => "You've crushed 5000 opponents; hopefully there's no monster buster buster",
+      :priority => 1072,    
+    },
+#    1073 => {
+#      :icon_id => 191,
+#      :title => "敵10000体撃破",
+#      :description => "You've crushed 10,000 opponents; how you still have monster companions is a mystery",
+#      :priority => 1073,    
+#    },
+    # 職業公開率
+    1201 => {
+      :icon_id => 191,
+      :title => "Jobs mastered: 100%",
+      :description => "You've mastered every job",
+      :priority => 1201,    
+    },
+    # 種族公開率
+    1202 => {
+      :icon_id => 191,
+      :title => "Races mastered: 100%",
+      :description => "You've mastered every race",
+      :priority => 1202,    
+    },
+    # キャラ図鑑コンプ率
+    1301 => {
+      :icon_id => 191,
+      :title => "Character book: 100%",
+      :description => "You've filled out all entries in the character book",
+      :priority => 1301,    
+    },
+    # 魔物図鑑コンプ率
+    1311 => {
+      :icon_id => 191,
+      :title => "Monster book: 100%",
+      :description => "You've filled out all entries in the monster book",
+      :priority => 1311,    
+    },
+    # 武器図鑑コンプ率
+    1321 => {
+      :icon_id => 191,
+      :title => "Weapon book: 100%",
+      :description => "You've filled out all entries in the weapon book",
+      :priority => 1321,    
+    },
+    # 防具図鑑コンプ率
+    1331 => {
+      :icon_id => 191,
+      :title => "Armor book: 100%",
+      :description => "You've filled out all entries in the armor book",
+      :priority => 1331,    
+    },
+    # アクセサリ図鑑コンプ率
+    1341 => {
+      :icon_id => 191,
+      :title => "Accessory book: 100%",
+      :description => "You've filled out all entries in the accessory book",
+      :priority => 1341,    
+    },
+    # アイテム図鑑コンプ率
+    1351 => {
+      :icon_id => 191,
+      :title => "Item book: 100%",
+      :description => "You've filled out all entries in the item book",
+      :priority => 1351,    
+    },
+#==============================================================================
+    1401 => {
+      :icon_id => 193,
+      :title => "Medal beginner",
+      :description => "You've started a small medal collection",
+      :priority => 1401,    
+    },
+    1402 => {
+      :icon_id => 193,
+      :title => "Medal Collector",
+      :description => "You learned the name of the Medal Queen",
+      :priority => 1402,    
+    },
+    1403 => {
+      :icon_id => 192,
+      :title => "Medal Mania",
+      :description => "You're impris--captivated by medal trading",
+      :priority => 1403,    
+    },
+    1411 => {
+      :icon_id => 193,
+      :title => "First BF victory",
+      :description => "You got your first victory in a Battle Fuck",
+      :priority => 1411,    
+    },
+    1412 => {
+      :icon_id => 193,
+      :title => "Accomplished Battle Fucker",
+      :description => "You defeated 15 Battle Fuckers",
+      :priority => 1412,    
+    },
+    1413 => {
+      :icon_id => 192,
+      :title => "Veteran Battle Fucker",
+      :description => "You defeated 30 Battle Fuckers",
+      :priority => 1413,    
+    },
+    1421 => {
+      :icon_id => 193,
+      :title => "First BF defeat",
+      :description => "You received your first defeat in a Battle Fuck",
+      :priority => 1421,    
+    },
+    1422 => {
+      :icon_id => 193,
+      :title => "Shameful loser",
+      :description => "You have lost 30 Battle Fucks",
+      :priority => 1422,    
+    },
+    1423 => {
+      :icon_id => 192,
+      :title => "The Taste of Defeat",
+      :description => "You have lost 50 Battle Fucks; ",
+      :priority => 1423,    
+    },
+    1501 => {
+      :icon_id => 193,
+      :title => "Little shop of horas",
+      :description => "The beginning of the item shop: dealing herb",
+      :priority => 1501,    
+    },
+    1502 => {
+      :icon_id => 193,
+      :title => "A nice shop",
+      :description => "A satisfying personal item shop",
+      :priority => 1502,    
+    },
+    1503 => {
+      :icon_id => 192,
+      :title => "A fully-stocked shop",
+      :description => "Displaying all the goods Sentora continent has to offer",
+      :priority => 1503,    
+    },
+    1504 => {
+      :icon_id => 192,
+      :title => "Vanilla's Megamart",
+      :description => "世界でも指折りの大商店だ",
+      :priority => 1504,    
+    },
+    1511 => {
+      :icon_id => 193,
+      :title => "Papi the blacksmith",
+      :description => "A good first step towards being a master blacksmith",
+      :priority => 1511,    
+    },
+    1512 => {
+      :icon_id => 192,
+      :title => "First class blacksmith",
+      :description => "You even get clients coming from the other side of the world",
+      :priority => 1512,    
+    },
+    1513 => {
+      :icon_id => 192,
+      :title => "鍛冶屋五本の指",
+      :description => "世界でも五本の指の数えられる腕前だ",
+      :priority => 1513,    
+    },
+    1601 => {
+      :icon_id => 193,
+      :title => "Beginner's Victory",
+      :description => "コロシアムでビギナー級を制覇した",
+      :priority => 1601,    
+    },
+    1602 => {
+      :icon_id => 193,
+      :title => "Professional Victory",
+      :description => "コロシアムでプロフェッショナル級を制覇した",
+      :priority => 1602,    
+    },
+    1603 => {
+      :icon_id => 192,
+      :title => "Champion's Conquest",
+      :description => "コロシアムでチャンピオン級を制覇した",
+      :priority => 1603,    
+    },
+    1604 => {
+      :icon_id => 191,
+      :title => "アンリミテッド級制覇",
+      :description => "コロシアムでアンリミテッド級を制覇した",
+      :priority => 1604,    
+    },
+    1611 => {
+      :icon_id => 193,
+      :title => "種族別通常杯制覇",
+      :description => "コロシアムで種族別通常タイトルひとつを制覇した",
+      :priority => 1611,    
+    },
+    1612 => {
+      :icon_id => 192,
+      :title => "種族別上級杯制覇",
+      :description => "コロシアムで種族別上級タイトルひとつを制覇した",
+      :priority => 1612,    
+    },
+    1613 => {
+      :icon_id => 191,
+      :title => "種族別最上級杯制覇",
+      :description => "コロシアムで種族別最上級タイトルひとつを制覇した",
+      :priority => 1613,    
+    },
+#==============================================================================
+    2000 => {
+      :icon_id => 193,
+      :title => "Freedom",
+      :description => "Adventure is a matter of liberty",
+      :priority => 2000,
+    },
+    2001 => {
+      :icon_id => 192,
+      :title => "Strike freedom",
+      :description => "Luka, loyal to himself",
+      :priority => 2001,
+    },
+    2005 => {
+      :icon_id => 192,
+      :title => "A desperate Nero",
+      :description => "The ordinary traveler seems to have royally screwed up",
+      :priority => 2005,
+    },
+    2006 => {
+      :icon_id => 193,
+      :title => "The murder of Amira",
+      :description => "She'll just come back as if nothing even happened",
+      :priority => 2006,
+    },
+    2007 => {
+      :icon_id => 191,
+      :title => "Bourgeoisie",
+      :description => "You learn how the other half lives while staying at an ultra-luxurious inn",
+      :priority => 2007,
+    },
+    2008 => {
+      :icon_id => 193,
+      :title => "The bats of Witch Hunt",
+      :description => "You kept your eyes peeled",
+      :priority => 2008,
+    },
+    2009 => {
+      :icon_id => 193,
+      :title => "Enlightened Dog Girl",
+      :description => "Although she's enlighted, she still loves meaty bones",
+      :priority => 2009,
+    },
+    2010 => {
+      :icon_id => 193,
+      :title => "Sheep's world tour",
+      :description => "Spot the drunk sheep in bars around the world",
+      :priority => 2010,
+    },
+    2011 => {
+      :icon_id => 193,
+      :title => "Best friends",
+      :description => "Nuruko and Gnome feel a bond joining them...",
+      :priority => 2011,
+    },
+    2012 => {
+      :icon_id => 191,
+      :title => "Slot master",
+      :description => "You got 777 in the slot machine",
+      :priority => 2012,
+    },
+    2013 => {
+      :icon_id => 191,
+      :title => "In-battle 777",
+      :description => "You got 777 while fighting",
+      :priority => 2013,
+    },
+    2014 => {
+      :icon_id => 191,
+      :title => "Poker master",
+      :description => "You were dealt a Royal Flush while playing poker",
+      :priority => 2014,
+    },
+    2015 => {
+      :icon_id => 191,
+      :title => "In-battle Royal Flush",
+      :description => "You were dealt a Royal Flush while fighting",
+      :priority => 2015,
+    },
+    2016 => {
+      :icon_id => 193,
+      :title => "Universe in conflict",
+      :description => "You will see the tears of the stars",
+      :priority => 2016,
+    },
+    2017 => {
+      :icon_id => 193,
+      :title => "Gravity-defying imp",
+      :description => "We heard rumours about a suicidal imp...",
+      :priority => 2017,
+    },
+    2018 => {
+      :icon_id => 193,
+      :title => "Chi pa pa",
+      :description => "The flower on your head goes chi pa pa",
+      :priority => 2018,
+    },
+    2020 => {
+      :icon_id => 193,
+      :title => "Find me...",
+      :description => "You found Amira hiding in a town",
+      :priority => 2020,
+    },
+    2021 => {
+      :icon_id => 192,
+      :title => "The 15th Amira",
+      :description => "You found Amira hiding in a town 15 times",
+      :priority => 2021,
+    },
+    2022 => {
+      :icon_id => 192,
+      :title => "The 25th Amira",
+      :description => "You found Amira hiding in a town 25 times",
+      :priority => 2022,
+    },
+    2031 => {
+      :icon_id => 193,
+      :title => "The first sniff",
+      :description => "You showed your first panty to Panty Sensei",
+      :priority => 2031,
+    },
+    2032 => {
+      :icon_id => 192,
+      :title => "Panty Collector",
+      :description => "You showed 50 panties to Panty Sensei",
+      :priority => 2032,
+    },
+    2033 => {
+      :icon_id => 192,
+      :title => "Panty Master",
+      :description => "You showed 120 panties to Panty Sensei",
+      :priority => 2033,
+    },
+    2039 => {
+      :icon_id => 191,
+      :title => "The Death of Panty Sensei",
+      :description => "All the perverts of the world cry over his disappearance",
+      :priority => 2039,
+    },
+    2101 => {
+      :icon_id => 193,
+      :title => "グリーンな職場",
+      :description => "新たなクィーンアルラウネが誕生した",
+      :priority => 2101,
+    },
+    2102 => {
+      :icon_id => 193,
+      :title => "エルの社会勉強",
+      :description => "クィーンマーメイドに一歩近付いたかもしれない",
+      :priority => 2102,
+    },
+    2103 => {
+      :icon_id => 193,
+      :title => "Queen Insect",
+      :description => "めでたくクィーンインセクトが決定した",
+      :priority => 2103,
+    },
+    2104 => {
+      :icon_id => 193,
+      :title => "真名ゲレゲレ",
+      :description => "吸血鬼パブの成功を祝し、ヴァニラは真名を授かった",
+      :priority => 2104,
+    },
+    2105 => {
+      :icon_id => 193,
+      :title => "魔導王の決意",
+      :description => "グランゴルド王は迷いを克服した",
+      :priority => 2105,
+    },
+    2106 => {
+      :icon_id => 193,
+      :title => "美しき世界",
+      :description => "二人の熾天使は自然の素晴らしさを知った",
+      :priority => 2106,
+    },
+    2107 => {
+      :icon_id => 193,
+      :title => "霊化ルシア",
+      :description => "人体をエレメンタル化する秘技を開発した",
+      :priority => 2107,
+    },
+    2108 => {
+      :icon_id => 193,
+      :title => "グロリア海賊団壊滅",
+      :description => "グロリア海賊団をバトルファックで撃退した",
+      :priority => 2108,
+    },
+    2109 => {
+      :icon_id => 193,
+      :title => "正体不明のメダル王",
+      :description => "初代メダル王を発見した",
+      :priority => 2109,
+    },
+    2110 => {
+      :icon_id => 193,
+      :title => "シロクマヘルパーズ",
+      :description => "迷子のシロクマ娘を里に送ってあげた",
+      :priority => 2110,
+    },
+    2111 => {
+      :icon_id => 193,
+      :title => "値切られ三姉妹",
+      :description => "カナン三姉妹を値切り、おまけまでもらった",
+      :priority => 2111,
+    },
+    2112 => {
+      :icon_id => 193,
+      :title => "自分を抹消",
+      :description => "死神に抹消されてしまった",
+      :priority => 2112,
+    },
+    2113 => {
+      :icon_id => 193,
+      :title => "やっと分かった？",
+      :description => "エデンはようやく過ちを知った",
+      :priority => 2113,
+    },
+    2114 => {
+      :icon_id => 192,
+      :title => "拳と淫魔",
+      :description => "アルマエルマに力を認められた",
+      :priority => 2114,
+    },
+    2115 => {
+      :icon_id => 192,
+      :title => "種族の垣根を越えて",
+      :description => "異種への転種が可能になった",
+      :priority => 2115,
+    },
+    2116 => {
+      :icon_id => 193,
+      :title => "こっ！　これは！",
+      :description => "エッチな本を読んだ",
+      :priority => 2116,
+    },
+    2117 => {
+      :icon_id => 193,
+      :title => "アリよさらば",
+      :description => "アリクイ娘は過去の罪と向き合った",
+      :priority => 2117,
+    },
+    2118 => {
+      :icon_id => 193,
+      :title => "うさうさアロー",
+      :description => "ウサギ娘はエルフの秘技を身につけた",
+      :priority => 2118,
+    },
+    2119 => {
+      :icon_id => 193,
+      :title => "竜宮ダンス☆",
+      :description => "サキ達は海に伝わる踊りを習得した",
+      :priority => 2119,
+    },
+
+
+#==============================================================================
+    3001 => {
+      :icon_id => 191,
+      :title => "Angel, kill! Kill!",
+      :description => "You defeated the Armored Berserker",
+      :priority => 3001,
+    },
+    3002 => {
+      :icon_id => 192,
+      :title => "Seventh Heaven",
+      :description => "You defeated Nanabi",
+      :priority => 3002,
+    },
+    3003 => {
+      :icon_id => 192,
+      :title => "I hate riddles",
+      :description => "You defeated Sphinx",
+      :priority => 3003,
+    },
+    3004 => {
+      :icon_id => 192,
+      :title => "Monster Lord's defeat?",
+      :description => "You defeated Hades Alice",
+      :priority => 3004,
+    },
+    3005 => {
+      :icon_id => 191,
+      :title => "Conquered death itself",
+      :description => "You defeated Reaper",
+      :priority => 3005,
+    },
+    3006 => {
+      :icon_id => 191,
+      :title => "大海の覇者",
+      :description => "リヴァイアサンを倒した",
+      :priority => 3006,
+    },
+    3007 => {
+      :icon_id => 191,
+      :title => "火中に立ちて問ひし君はも",
+      :description => "ヤマタノオロチを倒した",
+      :priority => 3007,
+    },
+    3008 => {
+      :icon_id => 191,
+      :title => "月は無慈悲な夜の女王",
+      :description => "玉藻を倒した",
+      :priority => 3008,
+    },
+    3009 => {
+      :icon_id => 191,
+      :title => "ハインリヒの代わりに",
+      :description => "黒のアリスを倒した",
+      :priority => 3009,
+    },
+    3081 => {
+      :icon_id => 193,
+      :title => "試練チャレンジャー",
+      :description => "混沌の試練レベル1をクリアした",
+      :priority => 3081,
+    },
+    3082 => {
+      :icon_id => 192,
+      :title => "試練エキスパート",
+      :description => "混沌の試練レベル2をクリアした",
+      :priority => 3082,
+    },
+    3083 => {
+      :icon_id => 192,
+      :title => "試練マスター",
+      :description => "混沌の試練レベル3をクリアした",
+      :priority => 3083,
+    },
+    3084 => {
+      :icon_id => 191,
+      :title => "試練ゴッド",
+      :description => "混沌の試練レベル4をクリアした",
+      :priority => 3084,
+    },
+    3085 => {
+      :icon_id => 191,
+      :title => "試練カオス",
+      :description => "混沌の試練レベル5をクリアした",
+      :priority => 3085,
+    },
+    3100 => {
+      :icon_id => 193,
+      :title => "Labyrinth challenger",
+      :description => "You reached the 10th level of the Labyrinth of Chaos",
+      :priority => 3100,
+    },
+    3101 => {
+      :icon_id => 192,
+      :title => "Labyrinth expert",
+      :description => "You reached the 50th level of the Labyrinth of Chaos",
+      :priority => 3101,
+    },
+    3102 => {
+      :icon_id => 192,
+      :title => "Labyrinth master",
+      :description => "You reached the 100th level of the Labyrinth of Chaos",
+      :priority => 3102,
+    },
+    3103 => {
+      :icon_id => 191,
+      :title => "Labyrinth God",
+      :description => "You reached the 200th level of the Labyrinth of Chaos",
+      :priority => 3103,
+    },
+    3104 => {
+      :icon_id => 191,
+      :title => "迷宮カオス",
+      :description => "混沌の迷宮300階層に辿り着いた",
+      :priority => 3104,
+    },
+
+
+
+  }
+end

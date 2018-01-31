@@ -1,0 +1,1 @@
+"混沌迷宮移動・町" -> "Chaotic labyrinth movement · town"

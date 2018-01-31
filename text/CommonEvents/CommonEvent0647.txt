@@ -1,0 +1,7 @@
+"イベント：ルシア" -> "Event: Lucia"
+"【ルシア】" -> "【Rusia】"
+"錬金素材が余ってしまいましたね……" -> "Alchemy material has surplus ......"
+"よろしければ、差し上げましょう。" -> "Let me give it if you do not mind."
+"【ルシア】" -> "【Rusia】"
+"錬金術とは、なかなかにお金が掛かるもの……" -> "Alchemy is a thing with a lot of money ......"
+"真理の追究も安くはありませんね。" -> "The pursuit of the truth is also not cheap."

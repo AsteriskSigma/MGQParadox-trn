@@ -1,0 +1,27 @@
+// EVENT 7273
+Name "Marin: Defeat"
+
+RunCommonEvent(7000)
+PictureDisplay(5,"80_mob_mahousyouzyo_st01",0,0,0,0,100,100,255,0)
+PictureClear(6)
+ShowMessageFace("mob_mahousyouzyo_fc1",0,0,2,1)
+ShowMessage("【Magical Marikan】")
+ShowMessage("Yes, my win is ♪")
+ShowMessage("Well then, I will pay what I pay.")
+125(1,0,900)
+ShowMessageFace("",0,0,2,2)
+ShowMessage("Luke paid 900 G!")
+ShowMessageFace("mob_mahousyouzyo_fc1",0,0,2,3)
+ShowMessage("【Magical Marikan】")
+ShowMessage("Well then, please come back.")
+ShowMessage("Even with the next game, I will spoil it a lot ♪")
+If(0,2331,1)
+ PictureClear(5)
+ 281(1)
+ TeleportPlayer(0,49,12,28,2,0)
+ 216(0)
+ 0()
+EndIf()
+EndEventProcessing()
+0()
+

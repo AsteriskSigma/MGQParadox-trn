@@ -1,0 +1,6 @@
+"イベント：経験値" -> "Event: experience"
+"【サラ】" -> "【Sara】"
+"みんな一緒に、私と修行しましょうよ！" -> "Let's all go with me with everyone together!"
+"サラと一緒に修行し、パーティ全員が経験値を獲得した！" -> "Training with Sarah, all the parties won experience points!"
+"【サラ】" -> "【Sara】"
+"また今度、一緒に修行しようね。" -> "Let's practice together again next time."

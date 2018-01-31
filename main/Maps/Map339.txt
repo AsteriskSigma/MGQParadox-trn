@@ -1,0 +1,736 @@
+
+
+
+EVENT   1
+ PAGE   1
+  282(37)
+  0()
+
+
+
+EVENT   2
+ PAGE   1
+  282(37)
+  0()
+
+
+
+EVENT   3
+ PAGE   1
+  282(37)
+  0()
+
+
+
+EVENT   4
+ PAGE   1
+  282(37)
+  0()
+
+
+
+EVENT   5
+ PAGE   1
+  282(37)
+  0()
+
+
+
+EVENT   6
+ PAGE   1
+  282(37)
+  0()
+
+
+
+EVENT   7
+ PAGE   1
+  282(37)
+  0()
+
+
+
+EVENT   8
+ PAGE   1
+  282(37)
+  0()
+
+
+
+EVENT   9
+ PAGE   1
+  282(38)
+  0()
+
+
+
+EVENT   10
+ PAGE   1
+  282(38)
+  0()
+
+
+
+EVENT   11
+ PAGE   1
+  282(38)
+  0()
+
+
+
+EVENT   12
+ PAGE   1
+  282(38)
+  0()
+
+
+
+EVENT   13
+ PAGE   1
+  282(38)
+  0()
+
+
+
+EVENT   14
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,340,40,32,0,0)
+  If(1,1011,0,2,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("There are no signs of a struggle inside...")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   15
+ PAGE   1
+  282(38)
+  0()
+
+
+
+EVENT   16
+ PAGE   1
+  282(38)
+  0()
+
+
+
+EVENT   17
+ PAGE   1
+  282(38)
+  0()
+
+
+
+EVENT   18
+ PAGE   1
+  282(38)
+  0()
+
+
+
+EVENT   19
+ PAGE   1
+  282(38)
+  0()
+
+
+
+EVENT   20
+ PAGE   1
+  282(38)
+  0()
+
+
+
+EVENT   21
+ PAGE   1
+  282(38)
+  0()
+
+
+
+EVENT   22
+ PAGE   1
+  282(38)
+  0()
+
+
+
+EVENT   23
+ PAGE   1
+  282(38)
+  0()
+
+
+
+EVENT   24
+ PAGE   1
+  282(38)
+  0()
+
+
+
+EVENT   25
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,223,30,13,2,0)
+  0()
+
+
+
+EVENT   26
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,223,9,28,2,0)
+  0()
+
+
+
+EVENT   27
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,223,30,1,2,0)
+  0()
+
+
+
+EVENT   28
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,223,29,1,2,0)
+  0()
+
+
+
+EVENT   29
+ PAGE   1
+  0()
+
+
+
+EVENT   30
+ PAGE   1
+  0()
+
+
+
+EVENT   31
+ PAGE   1
+  0()
+
+
+
+EVENT   32
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,340,39,32,0,0)
+  If(1,1011,0,2,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("There are no signs of a struggle inside...")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   33
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,340,12,32,0,0)
+  If(1,1011,0,2,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("There are no signs of a struggle inside...")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   34
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,340,11,32,0,0)
+  If(1,1011,0,2,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("There are no signs of a struggle inside...")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   35
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,340,40,12,0,0)
+  If(1,1011,0,2,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("There are no signs of a struggle inside...")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   36
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,340,39,12,0,0)
+  If(1,1011,0,2,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("There are no signs of a struggle inside...")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   37
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,340,40,61,0,0)
+  If(1,1011,0,2,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("The merchandise in the item shop is still arranged neatly on the shelves. There are no signs of damage.")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   38
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,340,39,61,0,0)
+  If(1,1011,0,2,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("The merchandise in the item shop is still arranged neatly on the shelves. There are no signs of damage.")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   39
+ PAGE   1
+  // condition: variable 1011 >= 4
+  If(1,1011,0,4,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Harpy>Sigh, my clothes are so wrinkled. I left them out drying for months.")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("64")
+   ShowMessageFace("pramia_fc1",0,0,2,2)
+   ShowMessage("\\n<Teeny>Want me to help?")
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("\\n<Harpy>I appreciate it, but I can't make you go to all that trouble.")
+   EndEventProcessing()
+   DefineLabel("76")
+   ShowMessageFace("syuree_fc1",1,0,2,4)
+   ShowMessage("\\n<Sully>I'll wash them for you!")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1011,0,5,1)
+   ShowMessageFace("",0,0,2,5)
+   ShowMessage("【Harpy】")
+   ShowMessage("Osmaku ~ ♪ Osenku ~ ♪")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   40
+ PAGE   1
+  // condition: variable 1011 >= 4
+  If(1,1011,0,4,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Harpy>After leaving them behind for so long, my flowers... are doing great! I thought they'd wither, but they're actually growing beautifully!")
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Harpy>I was taking such meticulous care of them before too... I'm actually kind of disappointed now.")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("59")
+   ShowMessageFace("mdg_fc1",0,0,2,3)
+   ShowMessage("\\n<Ragora>Plants can be unexpectedly strong, as you've discovered...")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1011,0,5,1)
+   ShowMessageFace("",0,0,2,4)
+   ShowMessage("【Harpy】")
+   ShowMessage("I wonder whether the Queen will also fight Demon Lord ... ...")
+   ShowMessage("I hope to finish things peacefully.")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("323")
+   ShowMessageFace("queenhapy_fc1",0,0,2,5)
+   ShowMessage("【Lucrezia】")
+   ShowMessage("... ....")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+ PAGE   2
+  // condition: variable 1011 >= 5
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Harpy】")
+  ShowMessage("I wonder whether the Queen will also fight Demon Lord ... ...")
+  ShowMessage("I hope to finish things peacefully.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("323")
+  ShowMessageFace("queenhapy_fc1",0,0,2,2)
+  ShowMessage("【Lucrezia】")
+  ShowMessage("Do not worry ......")
+  ShowMessage("I will not involve the villagers into the battle.")
+  ShowMessageFace(binary"",0,0,2,3)
+  ShowMessage("【Harpy】")
+  ShowMessage("Oh, Queen!")
+  ShowMessage("It seems like a tough journey, but please take care of yourself!")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   41
+ PAGE   1
+  // condition: variable 1011 >= 4
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Harpy>Harpies are especially good at dancing and stealing. We flourish as either a Dancer or Thief.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Harpy>To become a Dancer, you do have to master Gadabout first... Dancing skills are so convenient that it's worth it though.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("56")
+  ShowMessageFace("inp_fc1",0,0,2,3)
+  ShowMessage("\\n<Rami>Hey, can you teach me how to fly? I'm terrible at it.")
+  ShowMessageFace("",0,0,2,4)
+  ShowMessage("\\n<Harpy>Aren't your boobs kind of heavy? Maybe you should lose some weight...")
+  ShowMessageFace("inp_fc1",2,0,2,5)
+  ShowMessage("\\n<Rami>I can't help it! They got this big on their own!")
+  If(4,66,0)
+   ShowMessageFace("vgirl_fc1",0,0,2,6)
+   ShowMessage("\\n<Vanilla>You're complaining about that? Die.")
+   0()
+  EndIf()
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   42
+ PAGE   1
+  // condition: variable 1011 >= 4
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Siren>The best ore you can find on this continent is gold. If you have weapons and armor made of gold, your adventure will go much smoother.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Siren>Midas Village to the north of here is famous for minting gold. From the harpy tower, it's located north-northeast.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("68")
+  If(8,152)
+   ShowMessageFace("dragonp_fc1",0,0,2,3)
+   ShowMessage("\\n<Papi>We've already got a gold nugget!")
+   0()
+  Else()
+   ShowMessageFace("dragonp_fc1",0,0,2,4)
+   ShowMessage("\\n<Papi>Let's get to Midas Village on the double then!")
+   0()
+  EndIf()
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   43
+ PAGE   1
+  // condition: variable 1011 >= 4
+  If(1,1011,0,4,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Harpy>This is the emergency office set up to find a way to save the Queen. Everyone is frantically bustling about trying to return her to the village.")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("83")
+   ShowMessageFace("hapy_a_fc1",0,0,2,2)
+   ShowMessage("\\n<Reina>I'll be searching for more Yggdrasil Fruit on my adventure too. We have to cure the Queen soon...")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+ PAGE   2
+  // condition: variable 1011 >= 5
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Harpy】")
+  ShowMessage("The Queen is back ~ ♪")
+  ShowMessage("We were also looking for the fruits of the world trees, but you got it well.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("323")
+  ShowMessageFace("queenhapy_fc1",0,0,2,2)
+  ShowMessage("【Lucrezia】")
+  ShowMessage("Truly, you put a hard time ... ...")
+  ShowMessage("I am thankful not only for Luke, but also for everyone in the village.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   44
+ PAGE   1
+  // condition: variable 1011 >= 4
+  If(1,1011,0,4,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Harpy>Sigh, all the water I collected is gone. I have to collect it all over again...")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("80")
+   ShowMessageFace("orc_fc1",0,0,2,2)
+   ShowMessage("\\n<Hip>Physical labor? Leave that to us orcs!")
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("\\n<Harpy>Thanks, but I'd feel awful making someone else do it.")
+   EndEventProcessing()
+   DefineLabel("542")
+   ShowMessageFace("domeima_fc1",0,0,2,4)
+   ShowMessage("\\n<Domaimer>Wa... water...")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1011,0,5,1)
+   ShowMessageFace("",0,0,2,5)
+   ShowMessage("【Harpy】")
+   ShowMessage("I am still busy with my work in the village, so I can not go to Happiness village.")
+   ShowMessage("I hate it, I guess ... ....?")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   45
+ PAGE   1
+  // condition: variable 1011 >= 4
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Harpy>I have to look after the flowers for when the Queen comes home. This field must be in full bloom!")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("59")
+  ShowMessageFace("mdg_fc1",0,0,2,2)
+  ShowMessage("\\n<Ragora>Can I help you dig?")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Harpy>Absolutely not...")
+  EndEventProcessing()
+  DefineLabel("61")
+  ShowMessageFace("mimizu_fc1",0,0,2,4)
+  ShowMessage("\\n<Mimi>Dig dig, dig a hole...")
+  ShowMessageFace("",0,0,2,5)
+  ShowMessage("\\n<Harpy>Hey, stop tearing up my field!")
+  EndEventProcessing()
+  DefineLabel("81")
+  ShowMessageFace("mitubati_fc1",1,0,2,6)
+  ShowMessage("\\n<Honey>I'll collect the nectar from the flowers...")
+  EndEventProcessing()
+  DefineLabel("97")
+  ShowMessageFace("fairy_fc1",0,0,2,7)
+  ShowMessage("\\n<Fell>I'll help you out! ♪")
+  EndEventProcessing()
+  DefineLabel("100")
+  ShowMessageFace("rahure_fc1",1,0,2,8)
+  ShowMessage("\\n<Fleesia>You need to plant some Rafflesia too....")
+  ShowMessageFace("",0,0,2,9)
+  ShowMessage("\\n<Harpy>Cut it out! Ugh... that smell...")
+  EndEventProcessing()
+  0()
+ PAGE   2
+  // condition: variable 1011 >= 5
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Harpy】")
+  ShowMessage("The Queen has gone home ~ ♪")
+  ShowMessage("Flower garden that I made my best, ♪ I have to see it")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("323")
+  ShowMessageFace("queenhapy_fc1",0,0,2,2)
+  ShowMessage("【Lucrezia】")
+  ShowMessage("Yes, it is a wonderful flower garden.")
+  ShowMessage("I brought up here so much.")
+  ShowMessageFace(binary"",0,0,2,3)
+  ShowMessage("【Harpy】")
+  ShowMessage("Hi! ♪")
+  ShowMessage("Let's make it bigger ... ♪ ♪")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   46
+ PAGE   1
+  // condition: variable 1011 >= 4
+  If(1,1001,0,29,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Traveling Warrior>Awesome! The harpies are back! Traveling all this way wasn't for nothing!")
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Traveling Warrior>Hnnnngh...")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("5")
+   ShowMessageFace("alice_fc5",0,0,2,3)
+   ShowMessage("\\n<Alice>Damn pervert...")
+   EndEventProcessing()
+   DefineLabel("73")
+   ShowMessageFace("hiru_fc1",0,0,2,4)
+   ShowMessage("\\n<Hiru>If you've got that much saved up, how about letting me relieve you?")
+   EndEventProcessing()
+   DefineLabel("96")
+   ShowMessageFace("delh_b_fc1",0,0,2,5)
+   ShowMessage("\\n<Marion>It looks like it's been a while for you. I wouldn't mind solving that problem...")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,30,1)
+   ShowMessageFace("",0,0,2,6)
+   ShowMessage("【Travel warrior】")
+   ShowMessage("Evil hands are not limited to not reaching this village.")
+   ShowMessage("To defend here, I will fight alone.")
+   ShowMessageFace("",0,0,2,7)
+   ShowMessage("【Travel warrior】")
+   ShowMessage("For now I have families to protect!")
+   ShowMessage("... ... Yes, I married here.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   47
+ PAGE   1
+  // condition: variable 1011 >= 4
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Harpy>Harpies absolutely love mating! We have to get permission from the Queen to have sex for procreation though.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Harpy>Since fighting in the past reduced our numbers, we've been reproducing a lot recently. However, I've heard there were times when overpopulation was a problem too.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("55")
+  ShowMessageFace("name_fc1",0,0,2,3)
+  ShowMessage("\\n<Melk>Be careful. It's a real pain to have too many of your own kind around.")
+  EndEventProcessing()
+  DefineLabel("87")
+  ShowMessageFace("name2_fc2",1,0,2,4)
+  ShowMessage("\\n<Melty>We have to be careful now too... Hey, I'm not kidding!")
+  EndEventProcessing()
+  DefineLabel("127")
+  ShowMessageFace("littlebug_fc1",0,0,2,5)
+  ShowMessage("\\n<Lippy>We multiply without worrying about things like that! If there are too many of us, a counter-reaction ends up thinning our numbers...")
+  EndEventProcessing()
+  DefineLabel("323")
+  ShowMessageFace("queenhapy_fc1",0,0,2,6)
+  ShowMessage("【Lucrezia】")
+  ShowMessage("The adjustment of the number of herds is also the queen's duty.")
+  ShowMessage("However, for the time being, it is good to proceed breeding.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   48
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("↑ Ahead, other side of the tree")
+  0()
+
+
+
+EVENT   49
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("← Left, other side of the tree")
+  0()
+
+
+
+EVENT   50
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("→ Right, other side of the tree")
+  0()
+
+
+
+EVENT   51
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(168,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   52
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,223,30,13,2,0)
+  0()
+
+
+
+EVENT   53
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,223,9,28,2,0)
+  0()
+
+
+
+EVENT   54
+ PAGE   1
+  0()
+
+
+
+EVENT   55
+ PAGE   1
+  0()
+
+
+
+EVENT   56
+ PAGE   1
+  0()
+
+
+
+EVENT   57
+ PAGE   1
+  0()
+
+
+
+EVENT   58
+ PAGE   1
+  0()
+
+
+
+EVENT   59
+ PAGE   1
+  0()
+

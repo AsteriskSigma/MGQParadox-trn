@@ -1,0 +1,2 @@
+"階先まで送ってもらう" -> "Have them send me to the floor"
+"遠慮しておく" -> "To withhold"

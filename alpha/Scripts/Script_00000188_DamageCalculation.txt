@@ -1,0 +1,68 @@
+# -*- encoding: utf-8 -*-
+=begin
+=Damage calculation formula
+
+=end
+
+#==============================================================================
+# ■ NWConst::Parameter
+#==============================================================================
+module NWConst::Parameter
+  # Calculation formula calculation formula of basic attack power according to weapon type table
+  WEAPON_TYPE_DAMAGE = {
+  # ID => "Calculation formula(The skill user's ability is defined as a.atkAnd a.defAvailable for reference)"
+    1 => "(a.atk + a.luk) * 1.2",
+    2 => "a.atk * 2",
+    3 => "a.atk * 2",
+    4 => "a.atk * 2.5",
+    5 => "(a.atk + a.agi) * 1.2",
+    6 => "(a.atk + a.mat) * 1.2",
+    7 => "(a.atk + a.agi) * 1.2",
+    8 => "(a.atk + a.agi) * 1.2",
+    9 => "(a.atk + a.luk) * 1.2",
+    10 => "(a.atk + a.luk) * 1.2",
+    11 => "(a.atk + a.agi) * 1.2",
+    12 => "a.atk * 2",
+    13 => "a.atk * 2",
+    14 => "a.atk * 2",
+    15 => "a.atk * 2",
+    16 => "(a.atk * 3 + a.mat) / 2 * 1.2",
+    17 => "(a.atk * 3 + a.mat) / 2 * 1.2",
+    18 => "(a.atk + a.luk) * 1.2",
+    19 => "(a.atk + a.luk) * 1.2",
+    20 => "a.luk * 2",
+    21 => "(a.atk + a.luk) * 1.2",
+    22 => "a.atk * 2",
+    23 => "(a.luk + a.agi) * 1.2",
+    24 => "(a.atk + a.luk) * 1.2",
+    25 => "a.atk * 2",
+    26 => "(a.atk + a.luk) * 1.2",
+    27 => "(a.atk + a.luk) * 1.2",
+    28 => "(a.atk + a.luk) * 1.2",
+    29 => "a.atk * 2",
+    30 => "a.luk * 2",
+    31 => "a.luk * 2",
+  # 0The number becomes the base attack power calculation formula with bare hands.
+    0 => "a.atk * 2"
+  }
+end
+
+#==============================================================================
+# ■ NWConst::Map
+#==============================================================================
+module NWConst::Map
+  # Since error checking is omitted
+  # Please input all corresponding terrain tags without damaged floor
+  DAMAGE_FLOOR = {
+    # Terrain tag=> Amount of damage,
+    0           => 2,
+    1           => 10,
+    2           => 2,
+    3           => 2,
+    4           => 2,
+    5           => 2,
+    6           => 2,
+    7           => 2,    
+  }
+end
+

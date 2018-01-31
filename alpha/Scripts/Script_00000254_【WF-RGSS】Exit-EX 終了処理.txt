@@ -1,0 +1,182 @@
+# coding: utf-8
+# ===========================================================================
+# ★ WF-RGSS Scripts ★
+#    Exit-EX Termination processing script (common execution script VXAce version)
+# Version: rev-2.1 (2012-1-24)
+# Author: A Crying Minister(WHITE-FLUTE)
+# Supported URI: http://www.whiteflute.org/wfrgss/
+# ---------------------------------------------------------------------------
+# function:
+# · VXAce termination processing is XP/VXformat(SystemExitSending out)Set to.
+# · For VXAce only, it can be used like common execution script.
+# ---------------------------------------------------------------------------
+# Installation location: Main section(The last)Overwrite
+#                Or just before Main section
+# Required script:
+# · Common script
+# Required DLL
+# · WFExit.dll
+# Notes:
+# ▽ A common script is required.
+#    Although it is recommended to use it by remodeling, it is OK even if you use it as it is.
+# ▽ When recording errors in the debug mode,
+#    It is necessary to be able to write with the current user.
+# ▽ The script is executed. The following sections will not be executed.
+#==============================================================================
+# ◆ Main( Execute )
+#------------------------------------------------------------------------------
+# After definition of each class is over, actual processing starts from here.
+#==============================================================================
+#module Exit
+#  # ---------------------------------------------------------------------------
+#  # ◆ Describe the customization point setup process.
+#  # ---------------------------------------------------------------------------
+#  def self.setup
+#  end
+#  # ---------------------------------------------------------------------------
+#  # ◆ Write customization point release processing.
+#  # ---------------------------------------------------------------------------
+#  def self.dispose
+#    DataManager.save_system
+#  end
+#end
+# ---------------------------------------------------------------------------
+# ◆ The following contents do not need to be changed.
+# ---------------------------------------------------------------------------
+
+#==============================================================================
+# ◆ Exit module
+#------------------------------------------------------------------------------
+module Exit
+  # ---------------------------------------------------------------------------
+  # ◆ Processing execution
+  # ---------------------------------------------------------------------------
+  begin
+    @@hook = Win32API.new('System/WFExit','hookExit','v','l')
+    @@exit = Win32API.new('System/WFExit','getToExit','v','l')
+    @@quit = Win32API.new('System/WFExit','Quit','v','v')
+    @@reset = Win32API.new('System/WFExit','getToReset','v','l')
+    @@clear = Win32API.new('System/WFExit','clearReset','v','v')
+  rescue Exception
+    raise if $TEST
+    raise( LoadError , "cannot read modules.(WFExit.dll)")
+  end
+  @@hook.call()
+  # ---------------------------------------------------------------------------
+  # ◆ Monitor termination
+  # --------------------------------------------------------------------------- 
+  def self.toexit
+    raise SystemExit.new(0) if @@exit.call() == 1
+  end
+  # ---------------------------------------------------------------------------
+  # ◆ Monitor F12 Reset
+  # --------------------------------------------------------------------------- 
+  def self.toreset
+    raise RGSSReset if @duration && @duration <= 0 if @@reset.call() == 1  
+    if @duration && @duration > 0
+      @duration -= 1
+      @@clear.call()
+    end
+  end
+  # ---------------------------------------------------------------------------
+  # ◆ True termination processing
+  # ---------------------------------------------------------------------------
+  def self.quit
+    @@quit.call()
+  end
+  # ---------------------------------------------------------------------------
+  # ◆ Clear reset count
+  # ---------------------------------------------------------------------------
+  def self.clearreset(wait = false)
+    @@clear.call()
+    @duration = wait ? 120 : 0
+  end
+end
+# ---------------------------------------------------------------------------
+# ◆ Set termination monitoring
+# ---------------------------------------------------------------------------
+class << Graphics
+  alias __wfexit_uodate__ update
+  def Graphics.update
+    __wfexit_uodate__
+    Exit.toexit
+    Exit.toreset
+  end
+end
+
+# ---------------------------------------------------------------------------
+# ◆ Set up the setup
+# ---------------------------------------------------------------------------
+class << SceneManager
+  alias __wfexit_run__ run
+  #--------------------------------------------------------------------------
+  # ● Execution
+  #--------------------------------------------------------------------------
+  def SceneManager.run
+    Exit.setup
+    Exit.clearreset(true)
+    __wfexit_run__
+  end
+end
+
+# ---------------------------------------------------------------------------
+# ◆ Processing execution
+# ---------------------------------------------------------------------------
+
+begin
+  rgss_main { SceneManager.run }
+    # Below, exception handling
+rescue BugDetected, InternalBugDetected => errobj
+  begin
+    MessageBox.fatalerror( errobj )
+    raise SystemExit.new(1)
+  rescue Hangup
+    nil
+  end
+
+rescue SyntaxError => errobj
+  # -------------------------------------------------------------------------
+  # ◆ Exceptions SyntaxError
+  # -------------------------------------------------------------------------
+  # Unless there is a bug or situation where setup is not properly done,
+  # It is not supplemented
+  begin
+    raise( BugDetected, 
+         "[FATAL] The invalidated exception was detected. \n\n" +
+         "Exception:\n#{errobj}")
+  rescue BugDetected => errobj
+    begin
+      MessageBox.fatalerror( errobj )
+      raise SystemExit.new(1)
+    rescue Hangup
+      nil
+    end
+  end
+rescue SystemExit
+  # Supplement the end. Do not add it to the error message.
+rescue Exception => errobj
+  # -------------------------------------------------------------------------
+  # ◆ Exception handling
+  # Supplements exceptions that are not specially specified.
+  # ※ rev-2 More, Errno::ENOENT Also supplement here.
+  # -------------------------------------------------------------------------
+  begin
+    MessageBox.fatalerror( errobj )
+    raise SystemExit.new(1)
+  rescue Hangup
+    nil
+  end
+
+ensure
+  # -------------------------------------------------------------------------
+  # Post processing
+  # -------------------------------------------------------------------------
+  # I will be in charge of post-processing.
+  # Depending on the script contents, release processing may be necessary here.
+  Exit.dispose
+  # ★----------------------------------------------------------------------
+  Exit.quit # Release the hook. Danger that it will not end unless it is executed
+end
+
+exit # MainTreatment should not be passed when section is later abbreviated
+

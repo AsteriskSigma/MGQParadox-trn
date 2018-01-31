@@ -1,0 +1,11 @@
+// EVENT 0011
+Name "Special Boss Difficulty Adjusting 2"
+
+If(0,23,0)
+ ChangeSwitch(23,23,1)
+ ChangeVariable(902,902,0,1,908)
+ RunCommonEvent(112)
+ 0()
+EndIf()
+0()
+

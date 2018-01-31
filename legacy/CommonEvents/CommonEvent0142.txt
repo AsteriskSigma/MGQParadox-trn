@@ -1,0 +1,19 @@
+﻿// EVENT 0142
+Name "ページ自動ゲット"
+
+ChangeVariable(11,11,0,2,1,50)
+If(1,11,0,40,2)
+ ChangeInventory_Item(109,0,0,1)
+ ShowMessageFace("",0,0,2,1)
+ ShowMessage("魔導書のページを手に入れた！")
+ EndEventProcessing()
+ 0()
+EndIf()
+If(1,11,0,41,1)
+ ChangeInventory_Item(109,0,0,2)
+ ShowMessageFace("",0,0,2,2)
+ ShowMessage("魔導書のページを2つ手に入れた！")
+ EndEventProcessing()
+ 0()
+EndIf()
+0()

@@ -1,0 +1,417 @@
+#==============================================================================
+# ■ Game_Party
+#------------------------------------------------------------------------------
+# It is a class dealing with parties. It includes information such as possessed money and items. This Kura
+# Instances of$game_party It is referred to.
+#==============================================================================
+
+class Game_Party < Game_Unit
+  #--------------------------------------------------------------------------
+  # ● Constants
+  #--------------------------------------------------------------------------
+  ABILITY_ENCOUNTER_HALF    = 0           # Halves encounter
+  ABILITY_ENCOUNTER_NONE    = 1           # Invalid Encount
+  ABILITY_CANCEL_SURPRISE   = 2           # Disable surprise campaign
+  ABILITY_RAISE_PREEMPTIVE  = 3           # Increase first strike rate
+  ABILITY_GOLD_DOUBLE       = 4           # Doubled earned amount
+  ABILITY_DROP_ITEM_DOUBLE  = 5           # Doubling the item acquisition rate
+  #--------------------------------------------------------------------------
+  # ● Public instance variables
+  #--------------------------------------------------------------------------
+  attr_reader   :gold                     # Possession money
+  attr_reader   :steps                    # Step count
+  attr_reader   :last_item                # For cursor storage: item
+  #--------------------------------------------------------------------------
+  # ● Object initialization
+  #--------------------------------------------------------------------------
+  def initialize
+    super
+    @gold = 0
+    @steps = 0
+    @last_item = Game_BaseItem.new
+    @menu_actor_id = 0
+    @target_actor_id = 0
+    @actors = []
+    init_all_items
+  end
+  #--------------------------------------------------------------------------
+  # ● Initialize all item list
+  #--------------------------------------------------------------------------
+  def init_all_items
+    @items = {}
+    @weapons = {}
+    @armors = {}
+  end
+  #--------------------------------------------------------------------------
+  # ● Existence determination
+  #--------------------------------------------------------------------------
+  def exists
+    !@actors.empty?
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of members
+  #--------------------------------------------------------------------------
+  def members
+    in_battle ? battle_members : all_members
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire all members
+  #--------------------------------------------------------------------------
+  def all_members
+    @actors.collect {|id| $game_actors[id] }
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of battle members
+  #--------------------------------------------------------------------------
+  def battle_members
+    all_members[0, max_battle_members].select {|actor| actor.exist? }
+  end
+  #--------------------------------------------------------------------------
+  # ● Get the maximum number of battle members
+  #--------------------------------------------------------------------------
+  def max_battle_members
+    return 4
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of leader
+  #--------------------------------------------------------------------------
+  def leader
+    battle_members[0]
+  end
+  #--------------------------------------------------------------------------
+  # ● Get an array of item objects
+  #--------------------------------------------------------------------------
+  def items
+    @items.keys.sort.collect {|id| $data_items[id] }
+  end
+  #--------------------------------------------------------------------------
+  # ● Get array of weapon objects
+  #--------------------------------------------------------------------------
+  def weapons
+    @weapons.keys.sort.collect {|id| $data_weapons[id] }
+  end
+  #--------------------------------------------------------------------------
+  # ● Array acquisition of Armor object
+  #--------------------------------------------------------------------------
+  def armors
+    @armors.keys.sort.collect {|id| $data_armors[id] }
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire the array of all the accessory objects
+  #--------------------------------------------------------------------------
+  def equip_items
+    weapons + armors
+  end
+  #--------------------------------------------------------------------------
+  # ● Get all array of item objects
+  #--------------------------------------------------------------------------
+  def all_items
+    items + equip_items
+  end
+  #--------------------------------------------------------------------------
+  # ● Retrieve the container object corresponding to the item class
+  #--------------------------------------------------------------------------
+  def item_container(item_class)
+    return @items   if item_class == RPG::Item
+    return @weapons if item_class == RPG::Weapon
+    return @armors  if item_class == RPG::Armor
+    return nil
+  end
+  #--------------------------------------------------------------------------
+  # ● Initial party setup
+  #--------------------------------------------------------------------------
+  def setup_starting_members
+    @actors = $data_system.party_members.clone
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire party name
+  #    If it is one person, the name of the actor, if it is plural"○ ○" return it.
+  #--------------------------------------------------------------------------
+  def name
+    return ""           if battle_members.size == 0
+    return leader.name  if battle_members.size == 1
+    return sprintf(Vocab::PartyName, leader.name)
+  end
+  #--------------------------------------------------------------------------
+  # ● Battle test setup
+  #--------------------------------------------------------------------------
+  def setup_battle_test
+    setup_battle_test_members
+    setup_battle_test_items
+  end
+  #--------------------------------------------------------------------------
+  # ● Setting up battle test party
+  #--------------------------------------------------------------------------
+  def setup_battle_test_members
+    $data_system.test_battlers.each do |battler|
+      actor = $game_actors[battler.actor_id]
+      actor.change_level(battler.level, false)
+      actor.init_equips(battler.equips)
+      actor.recover_all
+      add_actor(actor.id)
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Set up items for battle test
+  #--------------------------------------------------------------------------
+  def setup_battle_test_items
+    $data_items.each do |item|
+      gain_item(item, max_item_number(item)) if item && !item.name.empty?
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire the highest level of party members
+  #--------------------------------------------------------------------------
+  def highest_level
+    lv = members.collect {|actor| actor.level }.max
+  end
+  #--------------------------------------------------------------------------
+  # ● Add an actor
+  #--------------------------------------------------------------------------
+  def add_actor(actor_id)
+    @actors.push(actor_id) unless @actors.include?(actor_id)
+    $game_player.refresh
+    $game_map.need_refresh = true
+  end
+  #--------------------------------------------------------------------------
+  # ● Remove the actor
+  #--------------------------------------------------------------------------
+  def remove_actor(actor_id)
+    @actors.delete(actor_id)
+    $game_player.refresh
+    $game_map.need_refresh = true
+  end
+  #--------------------------------------------------------------------------
+  # ● Increase (decrease) in possession money
+  #--------------------------------------------------------------------------
+  def gain_gold(amount)
+    @gold = [[@gold + amount, 0].max, max_gold].min
+  end
+  #--------------------------------------------------------------------------
+  # ● Reduction of possession money
+  #--------------------------------------------------------------------------
+  def lose_gold(amount)
+    gain_gold(-amount)
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire the maximum value of possession money
+  #--------------------------------------------------------------------------
+  def max_gold
+    return 99999999
+  end
+  #--------------------------------------------------------------------------
+  # ● Increase the number of steps
+  #--------------------------------------------------------------------------
+  def increase_steps
+    @steps += 1
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire possession of items
+  #--------------------------------------------------------------------------
+  def item_number(item)
+    container = item_container(item.class)
+    container ? container[item.id] || 0 : 0
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire maximum number of items possessed
+  #--------------------------------------------------------------------------
+  def max_item_number(item)
+    return 99
+  end
+  #--------------------------------------------------------------------------
+  # ● Determine if you possess items to the maximum
+  #--------------------------------------------------------------------------
+  def item_max?(item)
+    item_number(item) >= max_item_number(item)
+  end
+  #--------------------------------------------------------------------------
+  # ● Judgment of possession of items
+  #     include_equip : Include equipment as well
+  #--------------------------------------------------------------------------
+  def has_item?(item, include_equip = false)
+    return true if item_number(item) > 0
+    return include_equip ? members_equip_include?(item) : false
+  end
+  #--------------------------------------------------------------------------
+  # ● Determine whether the designated item is included in the member's equipment
+  #--------------------------------------------------------------------------
+  def members_equip_include?(item)
+    members.any? {|actor| actor.equips.include?(item) }
+  end
+  #--------------------------------------------------------------------------
+  # ● Increase (decrease) items
+  #     include_equip : Include equipment as well
+  #--------------------------------------------------------------------------
+  def gain_item(item, amount, include_equip = false)
+    container = item_container(item.class)
+    return unless container
+    last_number = item_number(item)
+    new_number = last_number + amount
+    container[item.id] = [[new_number, 0].max, max_item_number(item)].min
+    container.delete(item.id) if container[item.id] == 0
+    if include_equip && new_number < 0
+      discard_members_equip(item, -new_number)
+    end
+    $game_map.need_refresh = true
+  end
+  #--------------------------------------------------------------------------
+  # ● Discard members' equipment
+  #--------------------------------------------------------------------------
+  def discard_members_equip(item, amount)
+    n = amount
+    members.each do |actor|
+      while n > 0 && actor.equips.include?(item)
+        actor.discard_equip(item)
+        n -= 1
+      end
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Item reduction
+  #     include_equip : Include equipment as well
+  #--------------------------------------------------------------------------
+  def lose_item(item, amount, include_equip = false)
+    gain_item(item, -amount, include_equip)
+  end
+  #--------------------------------------------------------------------------
+  # ● Item exhaustion
+  #    If the designated object is a consumable item, the number of possessions is decreased by one.
+  #--------------------------------------------------------------------------
+  def consume_item(item)
+    lose_item(item, 1) if item.is_a?(RPG::Item) && item.consumable
+  end
+  #--------------------------------------------------------------------------
+  # ● Skill / item availability determination
+  #--------------------------------------------------------------------------
+  def usable?(item)
+    members.any? {|actor| actor.usable?(item) }
+  end
+  #--------------------------------------------------------------------------
+  # ● Battle command input possible judgment
+  #--------------------------------------------------------------------------
+  def inputable?
+    members.any? {|actor| actor.inputable? }
+  end
+  #--------------------------------------------------------------------------
+  # ● Determination of extinction
+  #--------------------------------------------------------------------------
+  def all_dead?
+    super && ($game_party.in_battle || members.size > 0)
+  end
+  #--------------------------------------------------------------------------
+  # ● Processing when player moves one step
+  #--------------------------------------------------------------------------
+  def on_player_walk
+    members.each {|actor| actor.on_player_walk }
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire selected actor on menu screen
+  #--------------------------------------------------------------------------
+  def menu_actor
+    $game_actors[@menu_actor_id] || members[0]
+  end
+  #--------------------------------------------------------------------------
+  # ● Set the selected actor on the menu screen
+  #--------------------------------------------------------------------------
+  def menu_actor=(actor)
+    @menu_actor_id = actor.id
+  end
+  #--------------------------------------------------------------------------
+  # ● Select the next actor in the menu screen
+  #--------------------------------------------------------------------------
+  def menu_actor_next
+    index = members.index(menu_actor) || -1
+    index = (index + 1) % members.size
+    self.menu_actor = members[index]
+  end
+  #--------------------------------------------------------------------------
+  # ● Select the previous actor in the menu screen
+  #--------------------------------------------------------------------------
+  def menu_actor_prev
+    index = members.index(menu_actor) || 1
+    index = (index + members.size - 1) % members.size
+    self.menu_actor = members[index]
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire the actor for which the skill / item was used
+  #--------------------------------------------------------------------------
+  def target_actor
+    $game_actors[@target_actor_id] || members[0]
+  end
+  #--------------------------------------------------------------------------
+  # ● Set up actors targeted for skill / item usage
+  #--------------------------------------------------------------------------
+  def target_actor=(actor)
+    @target_actor_id = actor.id
+  end
+  #--------------------------------------------------------------------------
+  # ● Reorder
+  #--------------------------------------------------------------------------
+  def swap_order(index1, index2)
+    @actors[index1], @actors[index2] = @actors[index2], @actors[index1]
+    $game_player.refresh
+  end
+  #--------------------------------------------------------------------------
+  # ● Character image information for save file display
+  #--------------------------------------------------------------------------
+  def characters_for_savefile
+    battle_members.collect do |actor|
+      [actor.character_name, actor.character_index]
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Party ability judgment
+  #--------------------------------------------------------------------------
+  def party_ability(ability_id)
+    battle_members.any? {|actor| actor.party_ability(ability_id) }
+  end
+  #--------------------------------------------------------------------------
+  # ● Halved the encounter?
+  #--------------------------------------------------------------------------
+  def encounter_half?
+    party_ability(ABILITY_ENCOUNTER_HALF)
+  end
+  #--------------------------------------------------------------------------
+  # ● Encounter invalid?
+  #--------------------------------------------------------------------------
+  def encounter_none?
+    party_ability(ABILITY_ENCOUNTER_NONE)
+  end
+  #--------------------------------------------------------------------------
+  # ● Survivor invalid?
+  #--------------------------------------------------------------------------
+  def cancel_surprise?
+    party_ability(ABILITY_CANCEL_SURPRISE)
+  end
+  #--------------------------------------------------------------------------
+  # ● First strike rate increase?
+  #--------------------------------------------------------------------------
+  def raise_preemptive?
+    party_ability(ABILITY_RAISE_PREEMPTIVE)
+  end
+  #--------------------------------------------------------------------------
+  # ● Doubled earning amount?
+  #--------------------------------------------------------------------------
+  def gold_double?
+    party_ability(ABILITY_GOLD_DOUBLE)
+  end
+  #--------------------------------------------------------------------------
+  # ● Doubling the item acquisition rate?
+  #--------------------------------------------------------------------------
+  def drop_item_double?
+    party_ability(ABILITY_DROP_ITEM_DOUBLE)
+  end
+  #--------------------------------------------------------------------------
+  # ● Probability calculation for first strike
+  #--------------------------------------------------------------------------
+  def rate_preemptive(troop_agi)
+    (agi >= troop_agi ? 0.05 : 0.03) * (raise_preemptive? ? 4 : 1)
+  end
+  #--------------------------------------------------------------------------
+  # ● probability calculation for surprise
+  #--------------------------------------------------------------------------
+  def rate_surprise(troop_agi)
+    cancel_surprise? ? 0 : (agi >= troop_agi ? 0.03 : 0.05)
+  end
+end
+

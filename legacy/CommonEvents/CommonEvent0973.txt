@@ -1,0 +1,7 @@
+// EVENT 0973
+Name "Event: Dragon Pup"
+
+ShowMessageFace("dragonp_fc1",0,0,2,1)
+ShowMessage("\\n<Dragon Pup>Ugah!　パピの鍛冶屋さんなのだ！")
+RunCommonEvent(107)
+0()

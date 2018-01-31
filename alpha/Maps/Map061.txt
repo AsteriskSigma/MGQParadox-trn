@@ -1,0 +1,211 @@
+
+DisplayName "North Ilias Monastery"
+
+
+
+EVENT   1
+ PAGE   1
+  0()
+
+
+
+EVENT   2
+ PAGE   1
+  0()
+
+
+
+EVENT   3
+ PAGE   1
+  0()
+
+
+
+EVENT   4
+ PAGE   1
+  0()
+
+
+
+EVENT   5
+ PAGE   1
+  0()
+
+
+
+EVENT   6
+ PAGE   1
+  0()
+
+
+
+EVENT   7
+ PAGE   1
+  0()
+
+
+
+EVENT   8
+ PAGE   1
+  0()
+
+
+
+EVENT   9
+ PAGE   1
+  0()
+
+
+
+EVENT   10
+ PAGE   1
+  0()
+
+
+
+EVENT   11
+ PAGE   1
+  281(0)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0b,0x4d,0x61,0x67,0x69,0x63,0x32,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,213,14,31,2,1)
+  0()
+
+
+
+EVENT   12
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,2,350,278,0,0)
+  0()
+
+
+
+EVENT   13
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,2,350,278,0,0)
+  0()
+
+
+
+EVENT   14
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,2,350,278,0,0)
+  0()
+
+
+
+EVENT   15
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Priest>Welcome to the North Ilias Monastery. What can I do for you?")
+  ShowChoices(strings("Pray","Never mind"),2)
+  IfPlayerPicksChoice(0,null)
+   ChangeVariable(1002,1002,0,0,10)
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Priest>Well then, let us pray to Ilias. ...there, you should feel a bond drawing you to this place.")
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("\\n<Priest>If something were to happen to you on your journey, the bond should lead you back here. May Ilias watch over you...")
+   0()
+  IfPlayerPicksChoice(1,null)
+   ShowMessageFace("",0,0,2,4)
+   ShowMessage("\\n<Priest>May Ilias watch over you...")
+   0()
+  404()
+  0()
+
+
+
+EVENT   16
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Priest>After you master Priest, you can become a White Mage. They learn much stronger recovery magic than Priests.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("525")
+  ShowMessageFace("sonia_fc1",0,0,2,2)
+  ShowMessage("\\n<Sonya>As much as I'd love to continue advancing beyond Priest, I'd really like to improve my club skills too...")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   17
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Warrior>If you master both Warrior and Priest, you can become a Holy Knight. They use spears and are extremely strong against the undead.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Warrior>It's possible to infuse spears with healing power to heal your allies. They can also raise defenses and protect the party.")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Warrior>I'm aiming to become one myself, but this whole Priest thing is a real pain. I'm not made out for it at all, but I'm here trying anyway.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("525")
+  ShowMessageFace("sonia_fc1",0,0,2,4)
+  ShowMessage("\\n<Sonya>Holy Knight sounds attractive to me too, but then I'd have to gain experience as a Warrior...")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   18
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Martial Artist>Are you familiar with Paladins? They are pious fighters who serve the Goddess.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Martial Artist>If you master Martial Artist and Priest, you can become one. In addition to holy fighting techniques, they learn recovery and support skills.")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Martial Artist>Attack and recovery skills all in one package? Sign me up!")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("525")
+  ShowMessageFace("sonia_fc1",0,0,2,4)
+  ShowMessage("\\n<Sonya>Even if it requires training as a Martial Artist, Paladin could be a good job... maybe?")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   19
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Female Warrior>A Dancer's dance skills and Maid's service skills act very quickly. It's useful to be able to activate them before anyone else's turn.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("64")
+  ShowMessageFace("pramia_fc1",0,0,2,2)
+  ShowMessage("\\n<Teeny>You can always count on my Maid skills to come through! ♪")
+  EndEventProcessing()
+  DefineLabel("72")
+  ShowMessageFace("phoenix_fc1",1,0,2,3)
+  ShowMessage("\\n<Mini>I'll help everyone no matter how long I have to dance! ♪")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   20
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Swordsman>Some skill explanations include 'Effect:+'. Do you know how these skills work?")
+  ShowChoices(strings("No idea","Of course I do"),1)
+  IfPlayerPicksChoice(0,null)
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Swordsman>The plus sign means that the skill inherits the properties and effects of your normal attack.")
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("\\n<Swordsman>For example, if you equip the ability [Fire Strike], then any skill with 'Effect:+' will have the fire element added to it.")
+   ShowMessageFace("",0,0,2,4)
+   ShowMessage("\\n<Swordsman>This can be extremely powerful depending on how you use it. Additional elements can be added to weapons of any element, like flaming swords or whatever you've got.")
+   ShowMessageFace("",0,0,2,5)
+   ShowMessage("\\n<Swordsman>Inheritance isn't limited to elements either. You can stack [Harpy Slayer], [Blind Strike], etc. Even abilities that strengthen your normal attack will carry over.")
+   ShowMessageFace("",0,0,2,6)
+   ShowMessage("\\n<Swordsman>So make sure you pay attention to skill effect inheritance. There are lots of dagger, scythe, fan, and monster physical skills that include it.")
+   0()
+  IfPlayerPicksChoice(1,null)
+   ShowMessageFace("",0,0,2,7)
+   ShowMessage("\\n<Swordsman>Oh yeah? You must be an experienced adventurer then. Use these skills well and you're sure to benefit greatly.")
+   0()
+  404()
+  0()
+

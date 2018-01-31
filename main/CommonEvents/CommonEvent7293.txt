@@ -1,0 +1,27 @@
+// EVENT 7293
+Name "Magda: defeat"
+
+RunCommonEvent(7000)
+PictureDisplay(5,"80_mob_sanzoku_st01",0,0,0,0,100,100,255,0)
+PictureClear(6)
+ShowMessageFace("mob_sanzoku_fc1",0,0,2,1)
+ShowMessage("【Magda】")
+ShowMessage("My win is now.")
+ShowMessage("Next to semen, I will have money.")
+125(1,0,1100)
+ShowMessageFace("",0,0,2,2)
+ShowMessage("Luke paid 1100 G!")
+ShowMessageFace("mob_sanzoku_fc1",0,0,2,3)
+ShowMessage("【Magda】")
+ShowMessage("Well then, wash the cock and come again.")
+ShowMessage("I will make you feel good next time ......")
+If(0,2331,1)
+ PictureClear(5)
+ 281(1)
+ TeleportPlayer(0,143,5,28,2,0)
+ 216(0)
+ 0()
+EndIf()
+EndEventProcessing()
+0()
+

@@ -1,0 +1,3164 @@
+
+SCRIPT_UPDATE_ID = "qoiekacb"
+
+=begin
+
+Troublesome · ___ ___ 0 RPG
+Patch script reading ver 5 2017/06/10
+
+Place it immediately above \"▼ Main\"
+
+Patch/patch.rb Is a patch file
+
+The first to fourth lines of the patch file are as follows
+  1:# 936188
+  2:
+  3:p_version = "v1.20"
+  4:$patch_ver = "#{p_version}.00"
+
+1The line is \"# (Certification number)\"
+3The line is \"p_version = "(Body version)"\"
+4The line is \"$patch_ver = "#{p_version}.(Patch version)"\"
+
+3The version numbers of the line and the fourth line are displayed in the upper left corner of the title screen and in the error message
+
+At the time of patch reading, if the authentication number of the first line does not match \"normal authentication number\"
+· Exit error except for battle test
+· In the battle test, display the normal authentication number in the message box, then start the battle test
+
+The normal authentication number is \"from the entire contents of the second and subsequent lines of the patch file\"
+It depends on all characters excluding \"line feed code, blank, numeric value\"
+Just changing the numerical value of the version number does not change the normal authentication number
+Specifically, the character code numbers of all the characters(integer)With the total sum of n
+\"N\" × \"square root of n(Decimal)A value obtained by setting the number of the right end of \"1\" as an integer of one digit \"
+
+=end
+
+#==============================================================================
+# ■ NWPatch
+#==============================================================================
+module NWPatch
+  DIR_NAME  = "Patch"
+  FILE_NAME = "Patch.rb"
+  PATH      = DIR_NAME + "/" + FILE_NAME
+  
+  def self.included?
+    return $patch_ver
+  end
+  def self.ver_str(t = "")
+    return included? ? "#{$patch_ver}#{t}" : ""
+  end
+  def self.ver_name(t = "")
+    return included? ? "Ver#{ver_str}#{t}" : ""
+  end
+end
+
+if File.exist?(NWPatch::PATH)
+  s = File.read(NWPatch::PATH)
+  s1 = ""
+  n = 0
+  s.each_line do |line|
+    if s1 == ""
+      s1 = line
+    else
+      line.gsub(/\d|\s/, "").each_char {|c| n += c.unpack("U*")[0] }
+    end
+  end
+  true_pass = n * Math.sqrt(n).to_s[-1].to_i
+  if s1 =~ /^#\s*(\d+)/ and $1.to_i == true_pass
+    if $TEST
+      p "Authentication Of Patch Is Normal"
+    end
+  else
+    if $BTEST
+      mes  = "Authentication Of Patch Is Invalid, But During Test Play, Run It By Reading The Patch"
+      mes += "\nDisplay Of Correct Authentication Below"
+      mes += "\n\nPatch/Patch.rb Please Change Line 1 As Follows:"
+      mes += "\n\n##{true_pass}"
+      msgbox mes
+    elsif Object.const_defined?(:PATCH_TEST)
+      p "PatchError  - The contents of the patch are incorrect Please download again"
+      p "PatchError  - The contents of the patch are incorrect Please download again"
+      p "PatchError  - The contents of the patch are incorrect Please download again"
+      p "PatchError  - The contents of the patch are incorrect Please download again"
+      p "PatchError  - The contents of the patch are incorrect Please download again"
+      p "PatchError  - The contents of the patch are incorrect Please download again"
+      p "PatchError  - The contents of the patch are incorrect Please download again"
+      p "PatchError  - The contents of the patch are incorrect Please download again"
+      p "PatchError  - The contents of the patch are incorrect Please download again"
+      p "true_pass:#{true_pass}"
+    else
+      raise "PatchError  - Please Re-Download Patch Is invalid"
+    end
+  end
+  eval(s)
+end
+
+#==============================================================================
+# ■ Scene_Title
+#==============================================================================
+class Scene_Title < Scene_Base
+  #--------------------------------------------------------------------------
+  # ● Create foreground
+  #--------------------------------------------------------------------------
+  def create_foreground
+    @foreground_sprite = Sprite.new
+    @foreground_sprite.bitmap = Bitmap.new(Graphics.width, Graphics.height)
+    @foreground_sprite.z = 100
+    draw_game_title if $data_system.opt_draw_title
+    @foreground_sprite.bitmap.font.size = 24
+    rect = Rect.new(4, 0, Graphics.width, @foreground_sprite.bitmap.font.size)
+    @foreground_sprite.bitmap.draw_text(rect, NWPatch.ver_str)
+  end
+end
+
+
+#==============================================================================
+#    Global Text Codes [VXA]
+#    Version: 1.0a
+#    Author: modern algebra (rmrk.net)
+#    Date: April 5, 2012
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#  Description:
+#
+#    This script allows you to use special message codes in any window, not
+#   just message windows and help windows. Want to add an icon next to the 
+#   menu commands? With this script you can do that and more.
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#  Instructions:
+#
+#    Simply paste this script into its own slot above Main and below Materials
+#   and other custom scripts.
+#
+#    There are two settings for this script - automatic and manual. If set to
+#   automatic, then all you will need to do is put any of the special message
+#   codes in anything and they will automatically work. If set to manual, then
+#   you will also need to type the following code somewhere in the text field 
+#   to activate it: \*
+#
+#    The following default codes are available:
+#
+# \c[n] - Set the colour of the text being drawn to the nth colour of the 
+#     Windowskin palette. 0 is the normal color and 16 is the system color.
+# \i[n] - Draw icon with index n.
+# \p[n] - Draw the name of the actor in the xth position in the party. 1 is 
+#     the party leader, 2 is the second member, etc.
+# \n[n] - Draw the name of the actor with ID n
+# \v[n] - Draw the value of variable with ID n.
+# \g - Draws the unit of currency.
+#
+#    Depending on whether you are using any custom message script, you may have 
+#   additional message codes at your disposal. This script is mostly compatible
+#   with my ATS and every code except \x and ones related to message control 
+#   will work.
+#==============================================================================
+
+$imported = {} unless $imported
+$imported[:MAGlobalTextCodes] = true
+#\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+#  Editable Region
+#||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+#  MAGTC_MANUAL_CODES - If this is true, then you must put a \* code in any 
+# field that you want to have codes interpreted in. Otherwise, codes will 
+# always automatically be interpreted. The recommended value for this is true,
+# as the process for drawing text with codes is much slower than the process 
+# for drawing text without codes.
+MAGTC_MANUAL_CODES = true
+#  MAGTC RCODES - This feature is designed to overcome the space limitations in
+# much of the database - since codes take so much of that space, it might be
+# difficult to write everything you want into one of those fields. This feature
+# permits you to write the term you want in to the following array, and then 
+# access it in the database with the code \r[n], where n is the ID you assign 
+# to the phrase in the following way:
+#
+#    n => "replacement",
+#
+# Please note that: it is =>, not =; the replacement must be within quotation 
+# marks; and there must be a comma after every line. If using double quotation
+# marks ("", not ''), then you need to use two backslashes to access codes 
+# instead of one (\\c[1], not \c[1]).
+#
+#  EXAMPLE:
+#   0 => "\\i[112]\\c[14]New Game\\c[0]",
+#
+#  Under the New Game field in the Terms of the Database, all I would then need 
+# to put is:
+#    \*\r[0]
+#  and it would be the same as if I had put:
+#    \*\i[112]\c[14]New Game\c[0]
+MAGTC_RCODES = { # <- Do not touch
+  0 => "\\i[112]\\c[14]New Game\\c[0]", # Example
+  1 => "", # You can make as many of these as you want
+  2 => "\\i[40]Blood Hound",
+#||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+#  END Editable Region
+#//////////////////////////////////////////////////////////////////////////////
+}
+MAGTC_RCODES.default = ""
+
+#==============================================================================
+# ** Window_Base
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+#  Summary of Changes:
+#    aliased methods - draw_text; convert_escape_characters; process_new_line;
+#      reset_font_settings
+#    new methods - magtc_align_x; magtc_test_process_escape_character;
+#      magtc_calc_line_width
+#==============================================================================
+
+class Window_Base
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  # * Draw Text
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  alias ma_gtc_drwtxt_3fs1 draw_text
+  def draw_text(*args, &block)
+    # Get the arguments
+    if args[0].is_a?(Rect)
+        x, y, w, h = args[0].x, args[0].y, args[0].width, args[0].height
+        text, align = *args[1, 2]
+      else
+        x, y, w, h, text, align = *args[0, 6]
+      end
+    align = 0 unless align
+    #  Draw normally if text is not a string, draw normally if the text is not
+    # long enough to hold a code, and draw normally when the script is set to 
+    # manual and \* is included in the text
+      if !text.is_a?(String) || text.size < 2 || (MAGTC_MANUAL_CODES && text[/\\\*/].nil?)
+        ma_gtc_drwtxt_3fs1(*args, &block) # Run Original Method
+      else
+      @magtc_reset_font = contents.font.dup # Do not automatically reset font
+      @magtc_rect, @magtc_align = Rect.new(x, y, w, h), align
+      # Get first line of the text to test for alignment
+      @magtc_test_line = convert_escape_characters(text[/.*/])
+      y += [(h - calc_line_height(@magtc_test_line)) / 2, 0].max
+      # Draw text with message codes
+        draw_text_ex(magtc_align_x(x), y, text)
+      @magtc_reset_font = nil # Do not automatically reset font
+      @magtc_rect, @magtc_align = nil, nil # Reset Rect and Alignment
+      end
+  end
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  # * Convert Escape Characters
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  alias ma_gtc_convescchar_5tk9 convert_escape_characters
+  def convert_escape_characters(text, *args, &block)
+    # Remove \* codes
+    new_text = text.gsub(/\\\*/, "")
+    # Substitute for the R Codes
+    new_text.gsub!(/\\[Rr]\[(\d+)\]/) { MAGTC_RCODES[$1.to_i].to_s }
+    ma_gtc_convescchar_5tk9(new_text, *args, &block) # Call Original Method
+  end
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  # * Reset Font Settings
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  alias magtc_resetfonts_4ga5 reset_font_settings
+  def reset_font_settings(*args, &block)
+    magtc_resetfonts_4ga5(*args, &block) # Call Original Method
+    contents.font = @magtc_reset_font if @magtc_reset_font
+  end
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  # * Process New Line
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  alias magtc_prcsnewl_5gn9 process_new_line
+  def process_new_line(text, pos, *args, &block)
+    magtc_prcsnewl_5gn9(text, pos, *args, &block) # Run Original Method
+    if @magtc_align && @magtc_rext
+      @magtc_test_line = text[/.*/] # Get new line
+      pos[:x] = magtc_align_x       # Get the correct x, depending on alignment
+    end
+  end
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  # * Get Alignment X
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  def magtc_align_x(start_x = @magtc_rect.x)
+    return start_x unless (@magtc_rect && @magtc_align && @magtc_test_line) || @magtc_align != 0
+    tw = magtc_calc_line_width(@magtc_test_line)
+    case @magtc_align
+    when 1 then return start_x + ((@magtc_rect.width - tw) / 2)
+    when 2 then return start_x + (@magtc_rect.width - tw)
+    end
+    start_x
+  end
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  # * Calc Line Width
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  def magtc_calc_line_width(line)
+    # Remove all escape codes
+    line = line.clone
+    line.gsub!(/[\n\r\f]/, "")
+    real_contents = contents # Preserve Real Contents
+    # Create a dummy contents
+    self.contents = Bitmap.new(@magtc_rect.width, @magtc_rect.height)
+    reset_font_settings
+    pos = {x: 0, y: 0, new_x: 0, height: calc_line_height(line)}
+    tw = 0
+    while line[/^(.*?)\e(.*)/]
+      tw += text_size($1).width
+      line = $2
+      # Remove all ancillaries to the code, like parameters
+      code = obtain_escape_code(line)
+      magtc_test_process_escape_character(code, line, pos)
+    end
+    #  Add width of remaining text, as well as the value of pos[:x] under the 
+    # assumption that any additions to it are because the special code is 
+    # replaced by something which requires space (like icons)
+    tw += text_size(line).width + pos[:x]
+    self.contents.dispose # Dispose dummy contents
+    self.contents = real_contents # Restore real contents
+    return tw
+  end
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  # * Test Process Escape Character
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  def magtc_test_process_escape_character(code, text, pos)
+    if $imported[:ATS_SpecialMessageCodes] && ['X', 'HL'].include?(code.upcase)
+      obtain_escape_param(text)
+      return
+    end
+    process_escape_character(code, text, pos)
+  end
+end
+
+#==============================================================================
+# EX's scripts for overwriting enemy/place/etc names.
+# - * - Encoding: utf-8 - * -
+=begin
+=Extension Script(s) For MGQ Paradox
+=Library Note Name Data setting section by MGQ EX
+
+Adds Features For MGQ Paradox
+* ENEMY_SPECIAL_NAME		Used To Supplement Enemy Note: <Illustration title:
+* RACE_SPECIAL_NAME			Used To Supplement Category & Note: <Category:
+* PLACE_NAME				Used To Supplement Place Names
+* Various Word Wrap Corrections
+* Includes Scripts: YEA - Ace Message System (Unofficial Edit)
+					Basic Window Resizer v1.1 (Unofficial Edit)
+
+== Update history
+Date Version Author Comment
+08/14/2015 3.0,0 MGQ EX
+
+
+=end
+#==============================================================================
+# ■ NWConst::Library
+#==============================================================================
+module NWConst::Library  
+  # Special Settings
+  ENABLE_SAVE_DEBUG = false
+  
+  #Special Names
+  #Found In Database Note Section
+  # <Illustration title:SPECIAL_NAME>
+  # <Race:SPECIAL_NAME>
+  
+  #Google Translate
+  # <Picture Book Name: SPECIAL_NAME>
+  # <Race: SPECIAL_NAME>
+  
+  #Enemy Special Names
+  ENEMY_SPECIAL_NAME = [
+    ["Bunny Slime girl (boss)", "Bunny Slime (Boss)"],
+    ["Nurco", "Nuruko"],
+    ["Dark elf (sword)", "Dark Elf (Fencer)"],
+    ["Dark Elf (Summon)", "Dark Elf (Mage)"],
+    ["Zombie daughter A", "Zombie Girl A"],
+    ["Zombie daughter B", "Zombie Girl B"],
+    ["Zombie daughter C", "Zombie Girl C"],
+    ["Zombie daughter D", "Zombie Girl D"],
+    ["Fairies A", "Fairies A"],
+    ["Fairies B", "Fairies B"],
+    ["Fairies C", "Fairies C"],
+    ["Fairies D", "Fairies D"],
+    ["Fairies E", "Fairies E"],
+    ["Fairies F", "Fairies F"],
+    ["Lizards Thief A", "Lizard Thief A"],
+    ["Lizards Thief B", "Lizard Thief B"],
+    ["Alice Fies 16 (Hell)", "Alipheese The 16th (Hades)"],
+    ["Ranael (another world)", "Archangel Ranael (Alt)"],
+    ["Nagaeru (another world)", "Principality Nagael (Alt)"],
+  ]
+  
+  #Race Special Names
+  RACE_SPECIAL_NAME = [
+    ["Main", "Main"],
+    ["Apoptosis", "Apoptosis"],
+    ["Elf", "Elf"],
+    ["Chimera", "Chimera"],
+    ["ghost", "Ghost"],
+    ["Scura", "Scylla"],
+    ["Slime", "Slime"],
+    ["Other", "Other"],
+    ["zombie", "Zombie"],
+    ["Doll", "Doll"],
+    ["Lamia", "Lamia"],
+    ["Lloyd", "Roid"],
+    ["Fellow", "Demi-Human"],
+    ["A human", "Human"],
+    ["mermaid", "Mermaid"],
+    ["vampire", "Vampire"],
+    ["angel", "Angel"],
+    ["goddess", "Goddess"],
+    ["Fox", "Kitsune"],
+    ["fairy", "Fairy"],
+    ["Demon", "Yoma"],
+    ["plant", "Plant"],
+    ["Marine species", "Sea-Dweller"],
+    ["Bad luck", "Succubus"],
+    ["dragon", "Dragon"],
+    ["insect", "Insect"],
+    ["Evil spirit", "Evil Goddess"],
+    ["Terrestrial species", "Land-Dweller"],
+    ["A monster", "Beast"],
+    ["Devil", "Monster Lord"],
+    ["bird", "Harpy"],
+  ]
+  
+  #Skill Special Names
+  SKILL_SPECIAL_NAME = [
+    ["Sucking (F)", "Suck (F)"],
+    ["Shabu (Man)", "Suck (M)"],
+    ["Naname (female)", "Licking (F)"],
+    ["Naname (man)", "Licking (M)"],
+    ["Petra Scolpio (female)", "Petra Scorpio (F)"],
+    ["Petra Scolpio (invoked)", "Petra Scorpio (Act.)"],
+    ["Petra Scorpio (continued)", "Petra Scorpio (Cont.)"],
+    ["Ameba drain (female)", "Amoeba Drain (F)"],
+    ["Ameba drain (man)", "Amoeba Drain (M)"],
+    ["Ameber Haze (female)", "Amoeba Haze (F)"],
+    ["Ameba Hayes (man)", "Amoeba Haze (M)"],
+    ["Alligator Boa (female)", "Alligator Bore (F)"],
+    ["Alligator Boa (man)", "Alligator Bore (M)"],
+    ["Alchemist Eriia (female)", "Arukemi Euria (F)"],
+    ["Alchemist Superiore (man)", "Arukemi Euria (M)"],
+    ["Extentalcle (female)", "Ickx Tentacle (F)"],
+    ["Extentalcle (man)", "Ickx Tentacle (M)"],
+    ["Ecstasy worm (female)", "Ecstasy Worm (F)"],
+    ["Ecstasy worm (man)", "Ecstasy Worm (M)"],
+    ["Karees woman (female)", "Worm Caress (F)"],
+    ["Kalesworm (man)", "Worm Caress (M)"],
+    ["Grizzly rape (invocation)", "Grizzly Rape (Act.)"],
+    ["Grizzly rape (continued)", "Grizzly Rape (Cont.)"],
+    ["Cobra analogia (female)", "Cobra Anal (F)"],
+    ["Cobra analogia (man)", "Cobra Anal (M)"],
+    ["Ghost rape (invocation)", "Ghost Rape (Act.)"],
+    ["Ghost rape (continued)", "Ghost Rape (Cont.)"],
+    ["Psycho Drain (F)", "Psycho Drain (F)"],
+    ["Psycho Drain (Man)", "Psycho Drain (M)"],
+    ["Satanic pressure (female)", "Demonic Pressure (F)"],
+    ["Satanic pressure (man)", "Demonic Pressure (M)"],
+    ["Fertilization (activation) of Cactus Order", "Cactus Girl Fertilization (Act.)"],
+    ["Fertilization of Cactus Order (continued)", "Cactus Girl Fertilization (Cont.)"],
+    ["Sabolesborn (female)", "Sables Bourne (F)"],
+    ["Savolessborn (invoked)", "Sables Bourne (Act.)"],
+    ["Savoless bone (continued)", "Sables Bourne (Cont.)"],
+    ["Sister rape (invocation)", "Sister Rape (Act.)"],
+    ["Sister rape (continued)", "Sister Rape (Cont.)"],
+    ["Gel Prison (female)", "Gel Prison (F)"],
+    ["Gel Prison (invoked)", "Gel Prison (Act.)"],
+    ["Gel Prison (continued)", "Gel Prison (Cont.)"],
+    ["Jintrel harvester (female)", "Syringe Extraction Method (F)"],
+    ["Jintrel harvester (man)", "Syringe Extraction Method (M)"],
+    ["Slime crotch torture (female)", "Slime Genital Teasing (F)"],
+    ["Slime crotch torture (man)", "Slime Genital Teasing (M)"],
+    ["Ostrich rape (invocation)", "Ostrich Rape (Act.)"],
+    ["Ostrich rape (continued)", "Ostrich Rape (Cont.)"],
+    ["Tail drain · dora (female)", "Tail Drain· Dora(F)"],
+    ["Tail drain · Dora (invoked)", "Tail Drain· Dora(Act.)"],
+    ["Tail drain · Dora (continued)", "Tail Drain· Dora(Cont.)"],
+    ["Drain hand (female)", "Drain Hand (F)"],
+    ["Drain hand (man)", "Drain Hand (M)"],
+    ["Drain worm (female)", "Worm Drain (F)"],
+    ["Drain worm (male)", "Worm Drain (M)"],
+    ["Paralyze worm (female)", "Paralyze Worm (F)"],
+    ["Paralyze worm (man)", "Paralyze Worm (M)"],
+    ["Boar Worm (F)", "Bore Worm (F)"],
+    ["Bore worm (invoked)", "Bore Worm (Act.)"],
+    ["Boar Worm (continued)", "Bore Worm (Cont.)"],
+    ["Mermaid hair (female)", "Mermaid Hair (F)"],
+    ["Mermaid hair (man)", "Mermaid Hair (M)"],
+    ["Mummy Bandage (F)", "Mummy Bandage (F)"],
+    ["Mummy Bandage (man)", "Mummy Bandage (M)"],
+    ["Mummy package (female)", "Mummy Package (F)"],
+    ["Mummy package (invoked)", "Mummy Package (Act.)"],
+    ["Mummy package (continued)", "Mummy Package (Cont.)"],
+    ["Mini Melty Wash (F)", "Mini Melty Wash (F)"],
+    ["Mini Melty Wash (man)", "Mini Melty Wash (M)"],
+    ["Minotaur Rape (Activation)", "Minotauros Rape (Act.)"],
+    ["Minotaur Rape (continued)", "Minotauros Rape (Cont.)"],
+    ["Melty Wash (female)", "Melty Wash (F)"],
+    ["Melty Wash (man)", "Melty Wash (M)"],
+    ["Melt scissors (female)", "Melt Scissors (F)"],
+    ["Melt scissors (exercise)", "Melt Scissors (Act.)"],
+    ["Melt scissors (continued)", "Melt Scissors (Cont.)"],
+    ["Magic vagina of Lamia (activation)", "Lamia Devil Vagina (Act.)"],
+    ["Lamia's evil vow (continued)", "Lamia Devil Vagina (Cont.)"],
+    ["Riton squeezer (female)", "Litton Squeezed Essence Unit (F)"],
+    ["Riton squeezer (man)", "Litton Squeezed Essence Unit (M)"],
+    ["Luxreesown (female)", "Luxuru Slow Down (F)"],
+    ["Luksuslown (restraint)", "Luxuru Slow Down (Bind)"],
+    ["Luxreesown (continued)", "Luxuru Slow Down (Cont.)"],
+    ["Letia type palpation (female)", "Erection Check (F)"],
+    ["Letia type palpation (man)", "Erection Check (M)"],
+    ["Row consolidation (female)", "Wax Compaction (F)"],
+    ["Row consolidation (man)", "Wax Compaction (M)"],
+    ["Wild rape (invocation)", "Wild Rape (Act.)"],
+    ["Wild rape (continued)", "Wild Rape (Cont.)"],
+    ["Wakame caress (woman)", "Seaweed Caress (F)"],
+    ["Seaweed caress (man)", "Seaweed Caress (M)"],
+    ["Wakame seaweed (female)", "Seaweed Violations (F)"],
+    ["Wakame seaweed (man)", "Seaweed Violations (M)"],
+    ["Wald machine cage (female)", "Valto Machine Cage (F)"],
+    ["Wald machine cage (invoked)", "Valto Machine Cage (Act.)"],
+    ["Wald machine cage (continued)", "Valto Machine Cage (Cont.)"],
+    ["Vetara boa (female)", "Vetala Bore (F)"],
+    ["Vetara boa (invoked)", "Vetala Bore (Act.)"],
+    ["Vetara boa (continued)", "Vetala Bore (Cont.)"],
+    ["Doll playing (female)", "Doll Plaything (F)"],
+    ["Doll playing (man)", "Doll Plaything (M)"],
+    ["Body fluid exploitation (female)", "Fluid Squeezing Hole (F)"],
+    ["Body fluid exploitation (invocation)", "Fluid Squeezing Hole (Act.)"],
+    ["Body fluid exploitation (continued)", "Fluid Squeezing Hole (Cont.)"],
+    ["Whole body inhalation (female)", "Systemic Soul Sucking (F)"],
+    ["Whole body insemination (man)", "Systemic Soul Sucking (M)"],
+    ["Full body cleansing (female)", "Systemic Cleaning (F)"],
+    ["Full cleansing (man)", "Systemic Cleaning (M)"],
+    ["Whole body tentacle torture (female)", "Systemic Tentacles Torture (F)"],
+    ["Whole body tentacle torture (man)", "Systemic Tentacles Torture (M)"],
+    ["Capture (activate 1)", "Take (Trigger 1)"],
+    ["Capture (invocation 2)", "Take (Trigger 2)"],
+    ["Anabolic absorption (female)", "Assimilation (F)"],
+    ["Assimilation absorption (continuation)", "Assimilation (Cont.)"],
+    ["First name (female)", "Famous(F)"],
+    ["Name (invoked)", "Famous(Act.)"],
+    ["First name (continued)", "Famous(Cont.)"],
+    ["Cosmetic hair (female)", "Soul Sucking Hair (F)"],
+    ["Suction hair (man)", "Soul Sucking Hair (M)"],
+    ["Suicide (female)", "Soul Sucking (F)"],
+    ["Suicide (man)", "Soul Sucking (M)"],
+    ["Iron-virgin laden with pride (invocation)", "Iron Maiden Demonic Sneer (Act.)"],
+    ["Iron virgin who suffers from cruelty (continued)", "Iron Maiden Demonic Sneer (Cont.)"],
+    ["God's mother's grief (female)", "Mother Goddess Handjob (F)"],
+    ["Relief of the Earth God (Man)", "Mother Goddess Handjob (M)"],
+    ["Night dream spider (woman)", "Spider Night Dream (F)"],
+    ["Night dream spider (man)", "Spider Night Dream (M)"],
+    ["Heavenly Carmestra (invocation)", "Heavenly Kamasutra (Act.)"],
+    ["Carmestra in heaven (continued)", "Heavenly Kamasutra (Cont.)"],
+    ["Sponge rape (invocation)", "Child Demon Rape (Act.)"],
+    ["Sukka rape (continued)", "Child Demon Rape (Cont.)"],
+    ["Sensual handjob (female)", "Handjob Functional (F)"],
+    ["Sensual handjob (man)", "Handjob Functional (M)"],
+    ["Fruitless reproductive (invocation)", "Pointless Mating (Act.)"],
+    ["Fruitless reproduction (continuation)", "Pointless Mating (Cont.)"],
+    ["Odai's masterpiece (invoked)", "Imp Rare (Act.)"],
+    ["Ogre's famous instrument (continued)", "Imp Rare (Cont.)"],
+    ["Tail caress (woman)", "Tail Caress (F)"],
+    ["Tail caress (man)", "Tail Caress (M)"],
+    ["Tail restraint caress (female)", "Bound Tail Massage (F)"],
+    ["Tail constraint caress (man)", "Bound Tail Massage (M)"],
+    ["Huge arms clutching (female)", "Giant Arm Grasped (F)"],
+    ["Huge arm clenching (man)", "Giant Arm Grasped (M)"],
+    ["Winding (female)", "Coil (F)"],
+    ["Winding (man)", "Coil (M)"],
+    ["Shadow crosses (female)", "Shadow Tease (F)"],
+    ["Shadow crosses (invocation)", "Shadow Tease (Act.)"],
+    ["Shadow crosses (continued)", "Shadow Tease (Cont.)"],
+    ["Shadow of a shadow (a woman)", "Shadow Oral (F)"],
+    ["Shadow of a shadow (man)", "Shadow Oral (M)"],
+    ["Shadow dildo (female)", "Horny Shadow Hair Dance (F)"],
+    ["Shadow dildo (male)", "Horny Shadow Hair Dance (M)"],
+    ["Wind of pleasure (female)", "Pleasure Wind (F)"],
+    ["Wind of pleasure (man)", "Pleasure Wind (M)"],
+    ["Pleasure Honeysuckle Pickled (F)", "Pleasure Honey Pot Pickled (F)"],
+    ["Pleasure Honey Pickled Pickle (Activation)", "Pleasure Honey Pot Pickled (Act.)"],
+    ["Pleasure Honeysuckle pickled (continued)", "Pleasure Honey Pot Pickled (Cont.)"],
+    ["Ecstatic fingering (female)", "Fingers of Ecstasy (F)"],
+    ["Ecstatic fingering (man)", "Fingers of Ecstasy (M)"],
+    ["Ecstatic peristalsis (female)", "Ecstasy Rub (F)"],
+    ["Hands of pleasure (woman)", "Hand of Pleasure (F)"],
+    ["The hand of pleasure (man)", "Hand of Pleasure (M)"],
+    ["Joy of pleasure (female)", "Oral Pleasure (F)"],
+    ["Joy of pleasure (man)", "Oral Pleasure (M)"],
+    ["A nightmare embrace (female)", "Nightmare Embrace (F)"],
+    ["Embrace of nightmare (invocation)", "Nightmare Embrace (Act.)"],
+    ["A nightmare embrace (continued)", "Nightmare Embrace (Cont.)"],
+    ["Tightening of a nightmare (woman)", "Nightmare Tightening (F)"],
+    ["Tightening of nightmare (man)", "Nightmare Tightening (M)"],
+    ["Lock restraint (female)", "Restraint Once Licked (F)"],
+    ["Restraint licking (activation)", "Restraint Once Licked (Act.)"],
+    ["Lockdown lick (continued)", "Restraint Once Licked (Cont.)"],
+    ["Restrained tentacle caress (female)", "Restraint Tentacles Caress (F)"],
+    ["Restrained tentacle caress (man)", "Restraint Tentacles Caress (M)"],
+    ["Peristalsis of frosting (female)", "Squeezed Essence Peristalsis (F)"],
+    ["Peristaltic activity of imitation (man)", "Squeezed Essence Peristalsis (M)"],
+    ["Peristaltic movement of frozen sea anemone (female)", "Semen Squeeze Movement (F)"],
+    ["Peristaltic activity of sea anemone fish (man)", "Semen Squeeze Movement (M)"],
+    ["Exfoliation ball (female)", "Squeezed Essence Ball (F)"],
+    ["Exhausting ball (exercise)", "Squeezed Essence Ball (Act.)"],
+    ["Exhausting ball (continued)", "Squeezed Essence Ball (Cont.)"],
+    ["Mouth of delight (female)", "Mouth of Joy (F)"],
+    ["Mouth of delight (man)", "Mouth of Joy (M)"],
+    ["Trap of running sand (restraint)", "Quicksand Trap (Bind)"],
+    ["Sweet pacifier (woman)", "Sweet Pacifier (F)"],
+    ["Sweet pacifier (man)", "Sweet Pacifier (M)"],
+    ["Pseudo-predatory mechanism (female)", "Pseudo Predation Mechanism (F)"],
+    ["Pseudo-predatory mechanism (invocation)", "Pseudo Predation Mechanism (Act.)"],
+    ["Pseudo-predatory mechanism (continued)", "Pseudo Predation Mechanism (Cont.)"],
+    ["Hundred paws offense (female)", "Centipede Torture (F)"],
+    ["Hundred paws (man)", "Centipede Torture (M)"],
+    ["Foot sword (female)", "Centipede Violations (F)"],
+    ["Hundred feet trampled (male)", "Centipede Violations (M)"],
+    ["Winding thread winding woman", "Viscosity Spool Up (F)"],
+    ["Winding thread winding (male)", "Viscosity Spool Up (M)"],
+    ["Tighten up (F)", "Screw Up (F)"],
+    ["Tighten up (man)", "Screw Up (M)"],
+    ["Feather tickling (woman)", "Tickling Feather (F)"],
+    ["Feather tickle (man)", "Tickling Feather (M)"],
+    ["Invitation to meat vessel (woman)", "Vagina Unit Invitation (F)"],
+    ["Invitation to meat vessel (man)", "Vagina Unit Invitation (M)"],
+    ["Licking crotch licking (female)", "Crotch Lapping (F)"],
+    ["Crotch licking (man)", "Crotch Lapping (M)"],
+    ["Hip tentacle torture (female)", "Crotch Tentacles Torture (F)"],
+    ["Hip tentacle torture (man)", "Crotch Tentacles Torture (M)"],
+    ["Trio of Trance (F)", "Immoral Trio (F)"],
+    ["Trio of Trance (Men)", "Immoral Trio (M)"],
+    ["Sweet bite of female (female)", "Corrupted Play-Biting (F)"],
+    ["Sweet biting of the virtue (man)", "Corrupted Play-Biting (M)"],
+    ["Tongue tightening (female)", "Tongue Tightening (F)"],
+    ["Tongue tightening (man)", "Tongue Tightening (M)"],
+    ["Tongue wrapping lick (female)", "Tongue Tightening Once (F)"],
+    ["Tongue winding lick turn (man)", "Tongue Tightening Once (M)"],
+    ["Licking (female)", "Once Licked (F)"],
+    ["Licking turn (man)", "Once Licked (M)"],
+    ["Mushiho mating (invocation)", "Mushi Hole Mating (Act.)"],
+    ["Mushroom paired male (continued)", "Mushi Hole Mating (Cont.)"],
+    ["Tentacle suction (female)", "Tentacle Suction (F)"],
+    ["Tentacle suction (man)", "Tentacle Suction (M)"],
+    ["Tentacle insemination (female)", "Soul Sucking Tentacles (F)"],
+    ["Tentacle insemination (man)", "Soul Sucking Tentacles (M)"],
+    ["Tentacle caress (female)", "Tentacle Caress (F)"],
+    ["Tentacle caress (man)", "Tentacle Caress (M)"],
+    ["Group tightening (women)", "Group Tightening (F)"],
+    ["Group tightening (man)", "Group Tightening (M)"],
+    ["Paralysis pacifier (female)", "Paralysis Pacifier (F)"],
+    ["Paralysis pacifier (man)", "Paralysis Pacifier (M)"],
+  ]
+  
+  PLACE_NAME = [
+    ["What? What? What?", "? ? ?"],
+    ["Iliasville", "Iliasville"],
+    ["Temple of Iliad", "Ilias Temple"],
+    ["Iliasberg", "Iliasburg"],
+    ["Slam without name", "Nameless Slums"],
+    ["Pornov", "Pornof"],
+    ["Happiness Village", "Happiness Village"],
+    ["Harpy's settlement", "Harpy Village"],
+    ["Midas Village", "Midas Village"],
+    ["Enrica", "Enrika"],
+    ["Lostrum village", "Rostrum Village"],
+    ["Ilias port", "Iliasport"],
+    ["Natalia port", "Port Natalia"],
+    ["Laddite village", "Luddite Village"],
+    ["Saint Ilia", "San Ilia"],
+    ["Underground library", "Underground Library"],
+    ["Monte Carlo", "Monte Carlo"],
+    ["Rubiana", "Rubiana"],
+    ["Sabasa", "Sabasa"],
+    ["Grand Doll", "Grandeur"],
+    ["Magistea village", "Magistea Village"],
+    ["House of Lily", "Lily's Mansion"],
+    ["saloon", "Saloon"],
+	["Marlport", "Port Marle"],
+	["Navy headquarters", "Navy Headquarters"],
+	["Finoa", "Finoa"],
+	["Grand Noah", "Grand Noah"],
+	["Yamathai Village", "Yamatai Village"],
+	["Esta", "Esta"],
+	["Plan Sakt village", "Plansect Village"],
+	["Lima village ruins", "Lima Village Ruins"],
+	["Godard", "Goddard"],
+	["Grangold", "Grangold"],
+	["Gordport", "Gold Port"],
+	["Succubus village", "Succubus Village"],
+	["Lady's Village", "Lady Village"],
+	["The land of destruction", "Devestated Plains"],
+	["Elven no Sato", "Elf Village"],
+	["Fox of Fox", "Kitsune Village"],
+	["Tanuki no Sato", "Tanuki Village"],
+	["Snow Haven", "Snow Heaven"],
+    ["Pocket Maiden Castle", "Pocket Castle"],
+    ["Mitra sealed castle", "Mitra Sealed Castle"],
+    ["Tartarus (Ilias Continental South)", "Tartarus (Ilias Continent South)"],
+    ["Queen's Castle", "Medal Queen's Castle"],
+    ["Tartarus (Elias continent east)", "Tartarus (Ilias Continent East)"],
+    ["North haunted house", "Haunted House"],
+    ["Tartarus (Sabasa Continental North)", "Tartarus (Sabasa Continent North)"],
+	["Osaka issue", "MS Fish"],
+	["Magisterium school", "Magic Academy"],
+	["Tartarus (Gordian continent West)", "Tartarus (Gold Continent West)"],
+	["A ghost ship", "Ghost Ship"],
+	["Snowy spear", "Snow Shrine"],
+	["Helgond's spear", "Hellgondo Shrine"],
+	["Seal of a sinner", "Sealed Sinner's Prison"],
+	["Tartarus (Helgond Continent West)", "Tartarus (Hellgondo Continent West)"],
+	["Drain laboratory", "Drain Lab"],
+	["Biolab", "Biolab"],
+	["Remina Laboratories", "Remina Laboratory"],
+	["Tartarus (the middle of the Gordian continent)", "Tartarus (Gold Continent Center)"],
+	["Chaos Field", "Chaos Field"],
+    ["Trial cave", "Cave of Trials"],
+    ["Cave in the north of Irina mountains", "Northern Irina Mountain Cave"],
+    ["Cave in the southern Irina mountains", "Southern Irina Mountain Cave"],
+    ["Pornov mine", "Pornof Mine"],
+    ["Tower of Harpy", "Harpy Tower"],
+    ["Slugs Tower", "Slug Tower"],
+    ["Midas Offshore", "Midas Abandoned Mine"],
+    ["Lostrum Mountain Cave", "Rostrum Mountain Cave"],
+    ["Cave of the treasure", "Cave of Treasures"],
+    ["Temple at the bottom of the south", "Southern Undersea Temple"],
+    ["Ancient temple ruins", "Ancient Temple Ruins"],
+    ["Candidor's Cave", "Investigator Cave"],
+    ["pyramid", "Pyramid"],
+    ["Magical Tower", "Tower of Magic"],
+    ["Saloon disposal", "Saloon Abandoned Mine"],
+	["Mar Large Corridor", "Marle Grand Corridor"],
+	["Great Pirate's Cave", "Great Pirate's Cave"],
+    ["Administrator's tower", "Administrator Tower"],
+	["Fossil mine", "Fossil Mines"],
+	["Cave to Yamathi", "Yamatai Cave"],
+	["Orochi no dong", "Orochi's Cave"],
+	["A cave to a labyrinth", "Labyrinth Caverns"],
+	["Labyrinth of Minotaur", "Minotaur's Maze"],
+	["Fountain of Undine", "Undine's Spring"],
+	["Fort Gordes", "Fort Gold"],
+	["Lava cave", "Lava Mines"],
+	["Gordo Volcano Cave", "Gold Volcano"],
+	["Vampire's Devil", "Vampire Castle"],
+	["Temple at the bottom of the north", "Northern Undersea Temple"],
+	["Forgotten tower", "Forgotten Tower"],
+	["World Tree", "The World Tree"],
+	["The land of solitude", "Solitary Island"],
+	["Tower of puppeteers", "Puppeteer's Tower"],
+	["Cave over the snow", "Snow Cave"],
+	["House of Genesis", "Hall of Creation"],
+	["Helgond's cave", "Hellgondo Cave"],
+	["Devil's castle", "Monster Lord's Castle"],
+    ["Backyard of Iliasville", "Iliasville Mountains"],
+    ["Taras Hill", "Talus Hill"],
+    ["Forest of Lost", "Lost Woods"],
+    ["Remus Coast", "Lemuse Beach"],
+    ["Natalia Coast", "Natalia Coast"],
+    ["Seiyama Amos", "Mount Saint Amos"],
+    ["Spirit forest", "Forest of Spirits"],
+    ["Carlos Hill", "Carlos Hill"],
+    ["Oasis of grace", "Oasis of Blessings"],
+    ["Safar desert ruins", "Safaru Desert Ruins"],
+    ["Saloon Hill", "Saloon Hill"],
+	["Mount Ledo", "Red Mountain"],
+	["Lila's Otaki", "Lyra Falls"],
+	["The venomous swamp of Gordo East", "Poison Swamp (East Gold)"],
+	["Gordes Coast", "Gold Beach"],
+	["Advancing Hill", "Marching Hill"],
+	["Scenic hill", "Scenic Hill"],
+	["The nightmare wilderness", "Nightmare Plains"],
+	["Fairy Island", "Fairy's Island"],
+	["Horishai", "Mount Horai"],
+	["Temple of Ilias", "Ilias Temple Ruins"],
+	["Sucubus' village (another world)", "Succubus Village (alt)"],
+	["Helgond's cave (another world)", "Hellgondo Cave (alt)"],
+	["Continent of Helgond (Contemporary world)", "Hellgondo Continent (alt)"],
+	["Demon castle (another world)", "Monster Lord's Castle (alt)"],
+    ["Around Iliasville", "Around Iliasville"],
+    ["Around Iliasberg", "Around Iliasburg"],
+    ["Near slum surrounding name", "Around Nameless Slums"],
+    ["Around Pornov", "Around Pornof"],
+    ["Happinness Village Around", "Around Happiness Village"],
+    ["Surroundings around Iliasport", "Around Iliasport"],
+    ["Eastern Natalia", "Natalia Region East"],
+    ["Natalia region western part", "Natalia Region West"],
+    ["Sabasa desert southern part", "Sabasa Desert South"],
+    ["Northern part of the Sabbath desert", "Sabasa Desert North"],
+    ["Around Magistea village", "Around Witch Hunt Village"],
+    ["Around Marl Port", "Around Port Marle"],
+	["Utsumi", "Inland Sea"],
+	["Around the Grand Noah", "Around Grand Noah"],
+	["Around Yamahtai", "Around Yamatai"],
+	["Around Estre", "Around Esta"],
+	["Around Grangoldo", "Around Grangold"],
+	["", "Around Succubus Village"],
+	["Around the land of destruction", "Around Devestated Plains"],
+	["Outside sea", "Open Sea"],
+	["Around the fairy's island", "Around Fairy's Island"],
+	["Helgond continent", "Hellgondo Continent"],
+	["Snow Haven Around", "Around Snow Heaven"],
+	["Field (Heaven)", "Field (Heaven)"],
+	["Field (Makai)", "Field (Hell)"],
+    ["Various places", "Various Places"],
+    ["Surroundings of Iliasville (different world)", "Around Iliasville (Alt)"],
+    ["Iliasville (another world)", "Iliasville (Alt)"],
+    ["Lostrum village (another world)", "Rostrum Village (Alt)"],
+    ["cuisine", "Cooking"],
+    ["Casino prize (pornoff)", "Casino Prize (Pornof)"],
+    ["Casino prize (Grand D'Or)", "Casino Prize (Grandeur)"],
+	["Casino Premium (Pocket Magus Castle)", "Casino Prize (Pocket Castle)"],
+	["Coliseum prize", "Colosseum Prize"],
+	["Battle Fuck Premium", "Battlefuck Prize"],
+	["Remina (another world)", "Remina (alt)"],
+  ]
+  
+  #Custom Special Sale Notes
+  SPECIAL_SALE = [
+                [1, "I am using not for sale as a material, but do you really sell it?", "Synthesis result, base item not sold anywhere, confirm sale?"],
+                [2, "Although it is not for sale, will you really sell it?", "Item not sold anywhere, confirm sale?"],
+                [3, "It will be a not for sale and synthetic material, will you really sell it?", "Synthesis material, not sold anywhere, confirm sale?"],
+                [4, "It will be a synthetic material, will you really sell it?", "Synthesis material, confirm sale?"],
+                [5, "I do not need Chihpa ......", "A Chi Pa Pa! I do not need that..."],
+  ]
+  
+  # * New Method: SToggle Between Ranks and Percents
+  def self.toggle_rank(use_percent = false)
+    if !use_percent
+      new_valuation = ["S","A","B","C","D","E"]
+      new_status_valuation = [
+          [130,120,110,100, 90], # MAXHP
+          [130,120,110,100, 90], # MAXMP
+          [ 30, 20, 10,  0,-20], # MAXSP
+          [130,120,110,100, 90], # Offensive power
+          [130,120,110,100, 90], # Defense power
+          [130,120,110,100, 90], # Magical power
+          [130,120,110,100, 90], # Magic defense
+          [130,120,110,100, 90], # Agility
+          [130,120,110,100, 90], # luck
+        ]
+    else
+        new_valuation = ["500%","495%","490%","485%","480%","475%","470%","465%","460%","455%","450%","445%","440%","435%","430%","425%","420%","415%","410%","405%","400%","395%","390%","385%","380%","375%","370%","365%","360%","355%","350%","345%","340%","335%","330%","325%","320%","315%","310%","305%","300%","295%","290%","285%","280%","275%","270%","265%","260%","255%","250%","245%","240%","235%","230%","225%","220%","215%","210%","205%","200%","195%","190%","185%","180%","175%","170%","165%","160%","155%","150%","145%","140%","135%","130%","125%","120%","115%","110%","105%","100%"," 95%"," 90%"," 85%"," 80%"," 75%"," 70%"," 65%"," 60%"," 55%"," 50%"," 45%"," 40%"," 35%"," 30%"," 25%"," 20%"," 15%"," 10%","  5%"]
+        new_status_valuation = [
+            [500,495,490,485,480,475,470,465,460,455,450,445,440,435,430,425,420,415,410,405,400,395,390,385,380,375,370,365,360,355,350,345,340,335,330,325,320,315,310,305,300,295,290,285,280,275,270,265,260,255,250,245,240,235,230,225,220,215,210,205,200,195,190,185,180,175,170,165,160,155,150,145,140,135,130,125,120,115,110,105,100, 95, 90, 85, 80, 75, 70, 65, 60, 55, 50, 45, 40, 35, 30, 25, 20, 15, 10,  5], # MAXHP
+            [500,495,490,485,480,475,470,465,460,455,450,445,440,435,430,425,420,415,410,405,400,395,390,385,380,375,370,365,360,355,350,345,340,335,330,325,320,315,310,305,300,295,290,285,280,275,270,265,260,255,250,245,240,235,230,225,220,215,210,205,200,195,190,185,180,175,170,165,160,155,150,145,140,135,130,125,120,115,110,105,100, 95, 90, 85, 80, 75, 70, 65, 60, 55, 50, 45, 40, 35, 30, 25, 20, 15, 10,  5], # MAXMP
+            [400,395,390,385,380,375,370,365,360,355,350,345,340,335,330,325,320,315,310,305,300,295,290,285,280,275,270,265,260,255,250,245,240,235,230,225,220,215,210,205,200,195,190,185,180,175,170,165,160,155,150,145,140,135,130,125,120,115,110,105,100, 95, 90, 85, 80, 75, 70, 65, 60, 55, 50, 45, 40, 35, 30, 25, 20, 15, 10,  5,  0, -5,-10,-15,-20,-25,-30,-35,-40,-45,-50,-55,-60,-65,-70,-75,-80,-85,-90,-95], # MAXSP
+            [500,495,490,485,480,475,470,465,460,455,450,445,440,435,430,425,420,415,410,405,400,395,390,385,380,375,370,365,360,355,350,345,340,335,330,325,320,315,310,305,300,295,290,285,280,275,270,265,260,255,250,245,240,235,230,225,220,215,210,205,200,195,190,185,180,175,170,165,160,155,150,145,140,135,130,125,120,115,110,105,100, 95, 90, 85, 80, 75, 70, 65, 60, 55, 50, 45, 40, 35, 30, 25, 20, 15, 10,  5], # Offensive power
+            [500,495,490,485,480,475,470,465,460,455,450,445,440,435,430,425,420,415,410,405,400,395,390,385,380,375,370,365,360,355,350,345,340,335,330,325,320,315,310,305,300,295,290,285,280,275,270,265,260,255,250,245,240,235,230,225,220,215,210,205,200,195,190,185,180,175,170,165,160,155,150,145,140,135,130,125,120,115,110,105,100, 95, 90, 85, 80, 75, 70, 65, 60, 55, 50, 45, 40, 35, 30, 25, 20, 15, 10,  5], # Defense power
+            [500,495,490,485,480,475,470,465,460,455,450,445,440,435,430,425,420,415,410,405,400,395,390,385,380,375,370,365,360,355,350,345,340,335,330,325,320,315,310,305,300,295,290,285,280,275,270,265,260,255,250,245,240,235,230,225,220,215,210,205,200,195,190,185,180,175,170,165,160,155,150,145,140,135,130,125,120,115,110,105,100, 95, 90, 85, 80, 75, 70, 65, 60, 55, 50, 45, 40, 35, 30, 25, 20, 15, 10,  5], # Magical power
+            [500,495,490,485,480,475,470,465,460,455,450,445,440,435,430,425,420,415,410,405,400,395,390,385,380,375,370,365,360,355,350,345,340,335,330,325,320,315,310,305,300,295,290,285,280,275,270,265,260,255,250,245,240,235,230,225,220,215,210,205,200,195,190,185,180,175,170,165,160,155,150,145,140,135,130,125,120,115,110,105,100, 95, 90, 85, 80, 75, 70, 65, 60, 55, 50, 45, 40, 35, 30, 25, 20, 15, 10,  5], # Magic defense
+            [500,495,490,485,480,475,470,465,460,455,450,445,440,435,430,425,420,415,410,405,400,395,390,385,380,375,370,365,360,355,350,345,340,335,330,325,320,315,310,305,300,295,290,285,280,275,270,265,260,255,250,245,240,235,230,225,220,215,210,205,200,195,190,185,180,175,170,165,160,155,150,145,140,135,130,125,120,115,110,105,100, 95, 90, 85, 80, 75, 70, 65, 60, 55, 50, 45, 40, 35, 30, 25, 20, 15, 10,  5], # Agility
+            [500,495,490,485,480,475,470,465,460,455,450,445,440,435,430,425,420,415,410,405,400,395,390,385,380,375,370,365,360,355,350,345,340,335,330,325,320,315,310,305,300,295,290,285,280,275,270,265,260,255,250,245,240,235,230,225,220,215,210,205,200,195,190,185,180,175,170,165,160,155,150,145,140,135,130,125,120,115,110,105,100, 95, 90, 85, 80, 75, 70, 65, 60, 55, 50, 45, 40, 35, 30, 25, 20, 15, 10,  5], # luck
+          ]
+    end
+    
+    NWConst::JobChange.send(:remove_const , :VALUATION) if NWConst::Casino.const_defined?(:VALUATION)
+    NWConst::JobChange.const_set(:VALUATION, new_valuation) 
+      
+    NWConst::JobChange.send(:remove_const , :STATUS_VALUATION) if NWConst::Casino.const_defined?(:VALUATION)
+    NWConst::JobChange.const_set(:STATUS_VALUATION, new_status_valuation) 
+  end
+  
+end
+
+#==============================================================================
+#From Script: base/DataObject
+#Overwrite lib_category AND lib_name
+#This Allows Searching The Above Arrays And Replacing Data
+#==============================================================================
+
+#==============================================================================
+# ■ RPG::Enemy
+#==============================================================================
+class RPG::Enemy < RPG::BaseItem
+  #--------------------------------------------------------------------------
+  # ● picture book tribe name
+  #--------------------------------------------------------------------------
+  def lib_category
+    if @data_ex.key?(:lib_category)
+        category_name = @data_ex[:lib_category].to_s
+        NWConst::Library::RACE_SPECIAL_NAME.each{|jap_name, tran_name| 
+          if jap_name == category_name
+            category_name = tran_name
+            break
+          end
+        }
+        return category_name
+    else
+      return :EMPTY
+    end
+    #return @data_ex.key?(:lib_category) ? @data_ex[:lib_category] : :EMPTY
+  end  
+  #--------------------------------------------------------------------------
+  # ● picture book title
+  #--------------------------------------------------------------------------
+  def lib_name
+    if @data_ex.key?(:lib_name)
+        enemy_name = @data_ex[:lib_name].to_s
+        NWConst::Library::ENEMY_SPECIAL_NAME.each{|jap_name, tran_name| 
+          if jap_name == enemy_name
+            enemy_name = tran_name
+            break
+          end
+        }
+        return enemy_name
+    else
+      return self.name
+    end
+    #return @data_ex.key?(:lib_name) ? @data_ex[:lib_name] : self.name
+  end
+end
+
+#==============================================================================
+# ■ RPG::Skill
+#==============================================================================
+class RPG::Skill < RPG::UsableItem
+  #--------------------------------------------------------------------------
+  # ● picture book title
+  #--------------------------------------------------------------------------
+  def lib_name
+    if @data_ex.key?(:lib_name)
+        skill_name = @data_ex[:lib_name].to_s
+        NWConst::Library::SKILL_SPECIAL_NAME.each{|jap_name, tran_name| 
+          if jap_name == skill_name
+            skill_name = tran_name
+            break
+          end
+        }
+        return skill_name
+    else
+      return self.name
+    end
+    #return @data_ex.key?(:lib_name) ? @data_ex[:lib_name] : self.name
+  end
+end
+
+#==============================================================================
+# ■ Game_Library
+#----------------------------------------------------------------------------
+# We manage data on the books.
+#==============================================================================
+class Game_Library
+  #--------------------------------------------------------------------------
+  # ● Check location flag
+  #--------------------------------------------------------------------------
+  def place_name?(place)
+    if place?(place)
+      place_name = place.to_s
+        NWConst::Library::PLACE_NAME.each{|jap_name, tran_name| 
+          if jap_name == place_name
+            place_name = tran_name
+            break
+          end
+        }
+        return place_name
+    else
+      place_name = "?" * 8
+    end
+      
+    return place_name
+  end
+end
+
+#==============================================================================
+# ■ RPG::BaseItem
+#==============================================================================
+class RPG::BaseItem
+  #--------------------------------------------------------------------------
+  # ● Special Sale special sale
+  #--------------------------------------------------------------------------
+  def selld_draw
+    if @data_ex.key?(:selld_draw)
+        sale_text = @data_ex[:selld_draw]
+        NWConst::Library::SPECIAL_SALE.each{|index, jap_text, tran_text| 
+          if jap_text == sale_text
+            sale_text = tran_text
+            break
+          end
+        }
+        return sale_text
+    else
+      return nil
+    end
+    #return @data_ex.key?(:selld_draw) ? @data_ex[:selld_draw] : nil
+  end
+end
+
+#Overwrite Script:  An illustration/Body
+#==============================================================================
+# ■ Window_Library_RightMain
+#==============================================================================
+class Window_Library_RightMain < Window_Selectable
+  #--------------------------------------------------------------------------
+  # ● Character description drawing(actor, enemy)
+  #--------------------------------------------------------------------------
+  def draw_chara_description(y, chara)
+    # Generate drawing area
+    rect = standard_rect(y)
+    rect.height = self.contents.height - rect.y
+    @dest_rect = rect
+    @src_rect.y = 0 if @last_ext != @ext
+    # Acquisition of explanatory text
+    desc = ["No Details"]
+    if chara.is_a?(RPG::Enemy)
+      key = chara.id
+      desc = ENEMY_DESCRIPTION[key] if ENEMY_DESCRIPTION.key?(key)
+    end
+
+    # Generating a bit map of commentary text (key to the cacheext)
+    if @description[@ext].nil? || @description[@ext].disposed?
+      @description[@ext] = Bitmap.new(rect.width, desc.size * line_height)
+      @src_rect = @description[@ext].rect
+      i = 0
+#=begin
+      #Add WordWrap For English Text
+        str = ""
+        #Get Description From Array To String
+        desc.each{|txt|
+          if txt == ""
+            str = str + "\n\n"
+          else
+            str = str + txt + " "
+          end
+        }
+        #Process Actor
+        if chara.is_a?(RPG::Actor)
+          desc = []
+          #Change String To Line Array
+          str2 = str.split("\n")
+          str = ""
+          str2.each{|s|
+            #If Line Blank Retain Else Reformat Line
+            if s == ""
+                str = str + "\n\n"
+            else
+                str = str + reformat_wrapped(s)
+            end
+          }
+          str2 = ""
+          #Take Reformatted Description And Overwrite Old
+          str2 = str.split("\n")
+          str2.each{|s|
+            if s == ""
+                desc<<""
+            else
+                desc<<s
+            end
+          }
+        
+        #Process Enemy
+        if chara.is_a?(RPG::Enemy)
+          desc = []
+          #Change String To Line Array
+          str2 = str.split("\n")
+          str = ""
+          str2.each{|s|
+            #If Line Blank Retain Else Reformat Line
+            if s == ""
+                str = str + "\n\n"
+            else
+                str = str + reformat_wrapped(s)
+            end
+            }
+          str2 = ""
+          #Take Reformatted Description And Overwrite Old
+          str2 = str.split("\n")
+          #File.open("Library/Enemy.txt", "a") { |f|
+          #  f.write("<<enemy_description/"+key.to_s+"/note>>"+"\n")
+            str2.each{|s|
+              if s == ""
+                  desc<<""
+          #        f.write("\n")
+              else
+                  desc<<s
+          #        f.write(s + "\n")
+              end
+              }
+          #  f.write("\n")
+          #}
+      end
+      
+      #Recalculate Dimensions Of Content
+      @description[@ext] = Bitmap.new(rect.width, desc.size * line_height)
+      @src_rect = @description[@ext].rect
+end
+
+      desc.each{|txt|
+        r = standard_rect(i * line_height)
+        @description[@ext].draw_text(r, txt)
+        i += 1
+      }
+    end
+    bmp = @description[@ext]
+    # Set range of bitmap
+    @src_rect.height = bmp.height - @src_rect.y
+    # Transfer commentary text to drawing area.
+    self.contents.blt(@dest_rect.x, @dest_rect.y, bmp, @src_rect)
+    # Transfer scroll cursor.
+    # Up
+    if @src_rect.y > 0 && bmp.height > @dest_rect.height
+      arrow_rect = Rect.new(88, 14, 14, 10)
+      self.contents.blt((self.contents.width - 14) / 2, rect.y - 10,
+        self.windowskin, arrow_rect)
+    end
+    # under
+    if @src_rect.height > @dest_rect.height
+      arrow_rect = Rect.new(88, 38, 14, 10)
+      self.contents.blt((self.contents.width - 14) / 2, rect.y + rect.height - 10,
+        self.windowskin, arrow_rect)
+    end
+    # Return
+    reset_font_settings
+    return rect.y + rect.height
+  end
+  
+  #--------------------------------------------------------------------------
+  # ● Automatic Line Feed Text Display
+  #--------------------------------------------------------------------------
+  def draw_text_auto_line(rect, text)
+    array = []
+    s = ""    
+    #text.size.times{|i|
+    #  s += text[i]
+    #  next unless self.contents.width < text_size(s).width + (standard_padding * 2)
+    #  array.push(s)
+    #  s = ""
+    #}
+    #s = reformat_wrapped(text) #.split("\n")
+    #array.push(s)
+    s = reformat_wrapped(text).split("\n")
+    s.each{|str| array.push(str)}
+    #array.push(reformat_wrapped(text).split("\n"))
+    array.each{|str| draw_text(rect, str); rect.y += rect.height}
+    return rect
+  end
+  
+  #--------------------------------------------------------------------------
+  # ● Automatic line feed text display Line break at break of array
+  #--------------------------------------------------------------------------
+  def draw_text_auto_line_ex(rect, text)
+    array = []
+    s = ""
+    #text.size.times{|i|
+    #  s += text[i] if text[i] != "\n"
+    #  next if text[i] != "\n" and
+    #          self.contents.width >= text_size(s).width + (standard_padding * 2)
+    #  array.push(s)
+    #  s = ""
+    #}
+    s = reformat_wrapped(text).split("\n")
+    s.each{|str| array.push(str)}
+    array.each{|str| draw_text(rect, str); rect.y += rect.height}
+    return rect
+  end
+  
+  def reformat_wrapped(s, width=35)
+    lines = []
+    line = ""
+    s.split(/\s+/).each do |word|
+      if line.size + word.size >= width
+        lines << line
+        line = word
+      elsif line.empty?
+       line = word
+      else
+       line << " " << word
+     end
+     end
+     lines << line if line
+    return lines.join "\n"
+  end
+  
+  #--------------------------------------------------------------------------
+  # ● Unique Actor Abilities
+  #--------------------------------------------------------------------------
+  def draw_actor_fix_ability(y, actor)
+    fix_abilities = ACTOR_FIX_ABILITY[actor.id]
+    return y unless fix_abilities
+    rect = standard_rect(y)
+    reset_font_settings
+    
+    change_color(system_color)
+    draw_text(rect, FIX_ABILITY_NAME)
+    rect.y += rect.height
+    change_color(special_color)
+    draw_text(rect, fix_abilities.first)
+    rect.y += rect.height
+    change_color(normal_color)
+    
+    all_text = ""
+    fix_abilities[1...fix_abilities.size].each{|fix_ability|
+      all_text += fix_ability + " "
+      #all_text += "." unless all_text[-1] == "."
+      #all_text += "\n"
+    }
+    #all_text = reformat_wrapped(all_text)
+    all_text.slice!(-1, 1)
+    rect = draw_text_auto_line_ex(rect, all_text)
+    return rect.y
+  end
+  
+  #--------------------------------------------------------------------------
+  # ● Draw Common Parts(Weapons, Armor, Accessories, Items)
+  #--------------------------------------------------------------------------
+  def draw_items_common(item)
+    rect = standard_rect
+    reset_font_settings
+    # Draw item name
+    draw_item_name(item, rect.x, rect.y)
+    rect.y = self.contents.height - (line_height * 6) # Original 5
+    
+    # Drawing commentary
+    change_color(system_color)
+    draw_text(rect, "Details")
+    rect.y += rect.height
+    change_color(normal_color)
+    all_text = ""
+    item.description.each_line do |d|
+      d.slice!(/\[(.*?)\]/)
+      d.chomp!
+      next if d == ""
+      all_text += d
+      all_text += "\n"
+    end
+    rect = draw_text_auto_line_ex(rect, all_text)
+    
+    return line_height + LINE_HEIGHT
+  end
+end
+
+
+
+#==============================================================================
+# ■ Game_Actor
+#==============================================================================
+class Game_Actor < Game_Battler
+#--------------------------------------------------------------------------
+  # ○ Display level up message
+  #     new_skills : Array of newly learned skills
+  #--------------------------------------------------------------------------
+  def display_level_up(new_skills, kind)
+    $game_message.new_page
+    case kind
+      when :base;  prefix = Vocab::level
+      when :class; prefix = self.class.name + ' level'
+      when :tribe; prefix = self.tribe.name + ' level'
+    end
+
+    @name = actor.name if @name == nil
+    $game_message.add(sprintf(Vocab::LevelUp, @name, prefix, @level[kind]))
+    new_skills.each { |skill|
+      # Picking up \"message control character extension\" conflict countermeasure
+      $game_message.add(sprintf(Vocab::ObtainSkill, "\\S[#{skill.id}]"))
+    }
+  end
+end
+
+#==============================================================================
+# ■ Scene_Ability
+#==============================================================================
+class Scene_Ability < Scene_MenuBase
+  #--------------------------------------------------------------------------
+  # ● Start Screen/Ability Editor Edit 518
+  #--------------------------------------------------------------------------
+  alias :ex_alt_start :start
+  def start
+    ex_alt_start
+    # Add Correction For Height & Alignment
+    correction
+  end
+  
+  #--------------------------------------------------------------------------
+  # ● Corrects Height& Alignment
+  #--------------------------------------------------------------------------
+  def correction
+    #Help Window + Ability Window
+    top_area = @help_window.height + @ability_type_window.height
+    #Help Window X Lines
+    #Ability Window Align To Help Window
+    @ability_type_window.y = @help_window.height
+    # Align Middle Windows To Ability Window
+    @equip_ability_window.y = top_area
+    @stand_ability_window.y = top_area
+    #Shrink Middle Windows To Fit Between Second & Bottom
+    @stand_ability_window.height = Graphics.height - (top_area + @key_help_window.height)
+    @equip_ability_window.height = Graphics.height - (top_area + @key_help_window.height)
+  end
+  
+  #--------------------------------------------------------------------------
+  # ● Create Alternate Ability Help Window
+  #--------------------------------------------------------------------------
+  def create_ability_help_window
+    @help_window = Window_Help.new(3)
+    @help_window.viewport = @viewport
+  end
+end
+
+class Window_Help < Window_Base
+  #--------------------------------------------------------------------------
+  # * Object Initialization
+  #--------------------------------------------------------------------------
+  def initialize(line_number = 4)
+    super(0, 0, Graphics.width, fitting_height(line_number))
+  end
+  
+  #--------------------------------------------------------------------------
+  # * Set Text
+  #--------------------------------------------------------------------------
+  def set_text(text)
+    if text != @text
+      @text = reformat_wrapped(text)
+      refresh
+    end
+  end
+
+  def reformat_wrapped(s, width=60)
+    lines = []
+    line = ""
+    line_string = []
+    string1 = ""
+    
+    #Handle Target Items Differently   
+    if s.include?("Target:") || s.include?("Power:") || s.include?("Effect:")
+      #Handle These Line(s) Differently
+      s.split(/\r?\n/).each_with_index do |item, i|
+        if item.include?("Power:")
+          line_string << item
+        elsif item.include?("Target:")
+          line_string << item
+        elsif item.include?("Effect:")
+          line_string << item
+        else
+          #Common Stuff
+          string1 += item + " "
+        end
+      end
+    else
+      s.split(/\r?\n/).each_with_index do |item, i|
+        #Common Stuff
+        string1 += item + " "
+      end
+    end
+    
+    # Add Common Stuff To End
+    line_string << string1 if string1 != ""
+    
+    # Reset String 1 For Formatting
+    string1 = "" 
+    
+    # Process All Lines
+    line_string.each{|string_x|
+      lines = []
+      line = ""
+      string_x.split(/\s+/).each do |word|
+        if line.size + word.size >= width
+          lines << line
+          line = word
+        elsif line.empty?
+         line = word
+        else
+         line << " " << word
+        end
+      end
+      
+      lines << line if line
+      string_x = lines.join "\n"
+      if string1 == ""
+        string1 += string_x
+      else
+        string1 += "\n"+string_x
+      end
+    }
+
+    return string1
+  end
+end
+
+#==============================================================================
+# ■ Foo::JobChange::Window_SortEval
+#==============================================================================
+class Foo::JobChange::Window_SortEval < Window_Base
+  #--------------------------------------------------------------------------
+  # ● Display Sorting Method(New)
+  #--------------------------------------------------------------------------
+  def draw_eval
+    texts = {
+      :id => "ID Order",
+      :name => "By Name"
+    }
+    
+    if texts.include?(eval)
+      text = texts[eval]
+    else
+      # Added To Translate Categories
+      text = eval.to_s
+      NWConst::Library::RACE_SPECIAL_NAME.each{|jap_name, tran_name| 
+        if jap_name.to_s == text.to_s
+          text = tran_name
+          break
+        end
+      }
+    end
+    
+    change_color(system_color)
+    rect = Rect.new(0,0,self.contents.width,line_height)
+    draw_text(rect, text, 1)
+  end
+end
+
+#==============================================================================
+# ■ Foo::PTEdit::Window_SortEval
+#==============================================================================
+class Foo::PTEdit::Window_SortEval < Window_Base
+  #--------------------------------------------------------------------------
+  # ● Display Sorting Method(New)
+  #--------------------------------------------------------------------------
+  def draw_eval
+    texts = {
+      :id => "ID Order",
+      :name => "By Name"
+    }
+    
+    if texts.include?(eval)
+      text = texts[eval]
+    else
+      # Added To Translate Categories
+      text = eval.to_s
+      NWConst::Library::RACE_SPECIAL_NAME.each{|jap_name, tran_name| 
+        if jap_name.to_s == text.to_s
+          text = tran_name
+          break
+        end
+      }
+    end
+    
+    change_color(system_color)
+    rect = Rect.new(0,0,self.contents.width,line_height)
+    draw_text(rect, text, 1)
+  end
+end
+
+#==============================================================================
+# ■ DataManager
+#==============================================================================
+class << DataManager
+  
+  #--------------------------------------------------------------------------
+  # ● Load Normal Database EX
+  #--------------------------------------------------------------------------
+  alias dargoth_load_normal_database_ex load_normal_database_ex
+  def load_normal_database_ex
+    dargoth_load_normal_database_ex
+    # Added To Adjust Resolution From Game.ini
+    # Requires Basic Window Resizer v1.1
+    Window_Resize.load_resolution
+  end
+  
+  #--------------------------------------------------------------------------
+  # ○ Load Normal Database
+  #--------------------------------------------------------------------------
+  alias dargoth_load_normal_database load_normal_database
+  def load_normal_database
+    dargoth_load_normal_database
+    # Added To Adjust Resolution From Game.ini
+    # Requires Basic Window Resizer v1.1
+    Window_Resize.load_resolution
+  end
+end
+
+#==============================================================================
+# ■ DataManager
+#==============================================================================
+module DataManager
+  #--------------------------------------------------------------------------
+  # ● Start Load Of Saved Game
+  #--------------------------------------------------------------------------
+  def self.load_game(index)
+    begin
+      load_game_without_rescue(index) #rescue false
+    rescue Exception => ex_error
+      MessageBox.fatalerror(ex_error) if NWConst::Library::ENABLE_SAVE_DEBUG
+      return false
+    end
+  end
+end
+  
+
+
+#Basic Window Resizer v1.1
+#----------#
+#Features: Allows you to resize the window to whatever size you like! (This is not
+#            like Graphics.resize, this will scale to fit)
+#
+#Usage:   Script calls:
+#           Window_Resize.r(width, height)     - Self-explanatory
+#           Window_Resize.f                    - fits the game window to monitor size
+#           Window_Resize.full                 - switches to full screen unless already fullscreened
+#           Window_Resize.window               - same as full but opposite
+#           Window_Resize.toggle               - toggles between full and window
+#
+#No Customization
+#
+#----------#
+#-- Script by: V.M of D.T
+#
+#- Questions or comments can be:
+#    given by email: sumptuaryspade@live.ca
+#    provided on facebook: http://www.facebook.com/DaimoniousTailsGames
+#   All my other scripts and projects can be found here: http://daimonioustails.weebly.com/
+#
+#--- Free to use in any project, commercial or non-commercial, with credit given
+# - - Though a donation's always a nice way to say thank you~ (I also accept actual thank you's)
+ 
+SWPO = Win32API.new 'user32', 'SetWindowPos', ['l','i','i','i','i','i','p'], 'i'
+WINX = Win32API.new 'user32', 'FindWindowEx', ['l','l','p','p'], 'i'
+SMET = Win32API.new 'user32', 'GetSystemMetrics', ['i'], 'i'
+ 
+module Window_Resize
+    GAME_INI_Width = /^Width=(.+)$/
+    GAME_INI_Hight = /^Hight=(.+)$/
+    GAME_INI_WinMode = /^WinMode=(.+)$/
+    
+  def self.r(width, height)
+    resw = SMET.call(0)
+    resh = SMET.call(1)
+    window_loc = WINX.call(0,0,"RGSS Player",0)
+    width += (SMET.call(5) + SMET.call(45)) * 2
+    height += (SMET.call(6) + SMET.call(45)) * 2 + SMET.call(4)
+    x = (resw - width) / 2; y = (resh - height) / 2
+    y = 0 if y < 0;x = 0 if x < 0
+    SWPO.call(window_loc,0,x,y,width,height,0)
+  end
+  def self.f
+    resw = SMET.call(0)
+    resh = SMET.call(1)
+    window_loc = WINX.call(0,0,"RGSS Player",0)
+    SWPO.call(window_loc,0,0,0,resw,resh,0)
+  end
+  def self.full
+    resw = SMET.call(0)
+    return unless resw > 640
+    toggle
+  end
+  def self.window
+    resw = SMET.call(0)
+    return unless resw <= 640
+    toggle
+  end
+  def self.toggle
+    keybd = Win32API.new 'user32.dll', 'keybd_event', ['i', 'i', 'l', 'l'], 'v'
+    keybd.call 0xA4, 0, 0, 0
+    keybd.call 13, 0, 0, 0
+    keybd.call 13, 0, 2, 0
+    keybd.call 0xA4, 0, 2, 0
+  end
+    #--------------------------------------------------------------------------
+  # * Load Resolution from Game.ini if an entry exists
+  #--------------------------------------------------------------------------
+    def self.load_resolution
+      #Window_Resize.load_resolution
+      saved_res_x = nil
+      saved_res_y = nil
+      saved_winmode = nil
+      
+      ##
+      File.open("Game.ini") { |f|
+        f.each_line { |l|
+          GAME_INI_Width.match(l) { |m|
+            saved_res_x = m[1].to_i
+            break
+          }
+          GAME_INI_Hight.match(l) { |m|
+            saved_res_y = m[1].to_i
+            break
+          }
+          GAME_INI_WinMode.match(l) { |m|
+            saved_winmode = m[1].to_s
+            break
+          }
+        }
+      }
+      
+      #Sets the max Res Possible.
+      Graphics.resize_screen(640, 480)
+      
+      if saved_winmode.is_a?(String)
+        case saved_winmode.upcase
+        when 'FIT'
+          Window_Resize.f
+        when 'FULL'
+          Window_Resize.full
+        when 'WINDOW'
+          Window_Resize.window
+        when 'RESIZE'
+          #Streches the screen size using the Basic Window Resizer Script.
+          Window_Resize.r(saved_res_x, saved_res_y) if saved_res_x && saved_res_y
+        end
+      end
+      ##
+    end
+end
+
+#==============================================================================
+# 
+# ▼ Yanfly Engine Ace- Ace Message System v1.05
+# -- Last Updated: 2012.01.13
+# -- Level: Normal
+# -- Requires: n/a
+# 
+#==============================================================================
+
+$imported = {} if $imported.nil?
+$imported["YEA-MessageSystem"] = true
+
+#==============================================================================
+# ▼ Updates
+# =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+# 2015.08.10 - Unofficial Update For Paradox 1.21
+# 2012.07.21 - Fixed REGEXP error at line 824
+# 2012.01.13 - Bug Fixed: Negative tags didn't display other party members.
+# 2012.01.12 - Compatibility Update: Message Actor Codes
+# 2012.01.10 - Added Feature: \pic[x] text code.
+# 2012.01.04 - Bug Fixed: \ic tag was \ii. No longer the case.
+#            - Added: Scroll Text window now uses message window font.
+# 2011.12.31 - Started Script and Finished.
+# 
+#==============================================================================
+# ▼ Introduction
+# =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+# While RPG Maker VX Ace certainly improved the message system a whole lot, it
+# wouldn't hurt to add in a few more features, such as name windows, converting
+# textcodes to write out the icons and/or names of items, weapons, armours, and
+# more in quicker fashion. This script also gives the developer the ability to
+# adjust the size of the message window during the game, give it a separate
+# font, and to give the player a text fast-forward feature.
+# 
+#==============================================================================
+# ▼ Instructions
+# =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+# To install this script, open up your script editor and copy/paste this script
+# to an open slot below ▼ Materials/Material but above ▼ Main. Remember to save.
+# 
+# -----------------------------------------------------------------------------
+# Message Window text Codes - These go inside of your message window.
+# -----------------------------------------------------------------------------
+#  Default:    Effect:
+#    \v[x]     - Writes variable x's value.
+#    \n[x]     - Writes actor x's name.
+#    \p[x]     - Writes party member x's name.
+#    \g        - Writes gold currency name.
+#    \c[x]     - Changes the colour of the text to x.
+#    \i[x]     - Draws icon x at position of the text.
+#    \{        - Makes text bigger by 8 points.
+#    \}        - Makes text smaller by 8 points.
+#    \$        - Opens gold window.
+#    \.        - Waits 15 frames (quarter second).
+#    \|        - Waits 60 frames (a full second).
+#    \!        - Waits until key is pressed.
+#    \>        - Following text is instant.
+#    \<        - Following text is no longer instant.
+#    \^        - Skips to the next message.
+#    \\        - Writes a "\" in the window.
+# 
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# 
+#  Wait:       Effect:
+#    \w[x]     - Waits x frames (60 frames = 1 second). Message window only.
+# 
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# 
+#  NameWindow: Effect:
+#    \n<x>     - Creates a name box with x string. Left side. *Note
+#    \nc<x>    - Creates a name box with x string. Centered. *Note
+#    \nr<x>    - Creates a name box with x string. Right side. *Note
+# 
+#              *Note: Works for message window only.
+# 
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# 
+#  Position:   Effect:
+#    \px[x]    - Sets x position of text to x.
+#    \py[x]    - Sets y position of text to y.
+# 
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# 
+#  Picture:    Effect:
+#    \pic[x]   - Draws picture x from the Graphics\Pictures folder.
+# 
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# 
+#  Outline:    Effect:
+#    \oc[x]    - Sets outline colour to x.
+#    \oo[x]    - Sets outline opacity to x.
+# 
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# 
+#  Font:       Effect:
+#    \fr       - Resets all font changes.
+#    \fz[x]    - Changes font size to x.
+#    \fn[x]    - Changes font name to x.
+#    \fb       - Toggles font boldness.
+#    \fi       - Toggles font italic.
+#    \fo       - Toggles font outline.
+#    \fs       - Toggles font shadow.
+# 
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# 
+#  Actor:      Effect:
+#    \af[x]    - Shows face of actor x. *Note
+#    \ac[x]    - Writes out actor's class name. *Note
+#    \as[x]    - Writes out actor's subclass name. Req: Class System. *Note
+#    \an[x]    - Writes out actor's nickname. *Note
+# 
+#              *Note: If x is 0 or negative, it will show the respective
+#               party member's face instead.
+#                   0 - Party Leader
+#                  -1 - 1st non-leader member.
+#                  -2 - 2nd non-leader member. So on.
+# 
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# 
+#  Salvaged From ATS: Special Message Codes [VXA] by modern algebra (rmrk.net)
+#
+#  Enemy:      Effect:
+#    \en[x]    - Writes out enemy's name.
+#
+#  Party:      Effect:
+#    \pg       - Draws the amount of money the party has.
+#    \g        - Draws the unit of currency.
+#
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# 
+#  Names:      Effect:
+#    \nc[x]    - Writes out class x's name.
+#    \ni[x]    - Writes out item x's name.
+#    \nw[x]    - Writes out weapon x's name.
+#    \na[x]    - Writes out armour x's name.
+#    \ns[x]    - Writes out skill x's name.
+#    \nt[x]    - Writes out state x's name.
+#    \ne[x]    - Writes out element x's name.
+# 
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# 
+#  Icon Names: Effect:
+#    \ic[x]    - Writes out class x's name including icon. *
+#    \ii[x]    - Writes out item x's name including icon.
+#    \iw[x]    - Writes out weapon x's name including icon.
+#    \ia[x]    - Writes out armour x's name including icon.
+#    \is[x]    - Writes out skill x's name including icon.
+#    \it[x]    - Writes out state x's name or icon.
+#    \ie[x]    - Writes out element x's name or icon.
+# 
+#              *Note: Requires YEA - Class System
+# 
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# 
+# And those are the text codes added with this script. Keep in mind that some
+# of these text codes only work for the Message Window. Otherwise, they'll work
+# for help descriptions, actor biographies, and others.
+# 
+#==============================================================================
+# ▼ Compatibility
+# =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+# This script is made strictly for RPG Maker VX Ace. It is highly unlikely that
+# it will run with RPG Maker VX without adjusting.
+# 
+#==============================================================================
+
+module YEA
+  module MESSAGE
+    
+    #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+    # - General Message Settings -
+    #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+    # The following below will adjust the basic settings and that will affect
+    # the majority of the script. Adjust them as you see fit.
+    #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+    # This button is the button used to make message windows instantly skip
+    # forward. Hold down for the effect. Note that when held down, this will
+    # speed up the messages, but still wait for the pauses. However, it will
+    # automatically go to the next page when prompted.
+    #Disabled for Paradox, A on keyboard works for this.
+    #TEXT_SKIP = :A     # Input::A is the shift button on keyboard.
+    
+    # This variable adjusts the number of visible rows shown in the message
+    # window. If you do not wish to use this feature, set this constant to 0.
+    # If the row value is 0 or below, it will automatically default to 4 rows.
+    VARIABLE_ROWS  = 0
+    
+    # This variable adjusts the width of the message window shown. If you do
+    # not wish to use this feature, set this constant to 0. If the width value
+    # is 0 or below, it will automatically default to the screen width.
+    VARIABLE_WIDTH = 0
+    
+    # This is the amount of space that the message window will indent whenever
+    # a face is used. Default: 112
+    FACE_INDENT_X = 112
+    
+    #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+    # - Name Window Settings -
+    #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+    # The name window is a window that appears outside of the main message
+    # window box to display whatever text is placed inside of it like a name.
+    #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+    NAME_WINDOW_X_BUFFER = 0       # Buffer x position of the name window.
+    NAME_WINDOW_Y_BUFFER = 0       # Buffer y position of the name window.
+    NAME_WINDOW_PADDING  = 20      # Padding added to the horizontal position.
+    NAME_WINDOW_OPACITY  = 255     # Opacity of the name window.
+    NAME_WINDOW_COLOUR   = 0       # Text colour used by default for names.
+    
+    #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+    # - Message Font Settings -
+    #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+    # Ace Message System separates the in-game system font form the message
+    # font. Adjust the settings here for your fonts.
+    #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+    # This array constant determines the fonts used. If the first font does not
+    # exist on the player's computer, the next font in question will be used
+    # in place instead and so on.
+    MESSAGE_WINDOW_FONT_NAME = ["VL Gothic", "VL Gothic Regular", "Courier New"]
+    
+    # These adjust the other settings regarding the way the game font appears
+    # including the font size, whether or not the font is bolded by default,
+    # italic by default, etc.
+    MESSAGE_WINDOW_FONT_SIZE    = 24       # Font size.
+    MESSAGE_WINDOW_FONT_BOLD    = false    # Default bold?
+    MESSAGE_WINDOW_FONT_ITALIC  = false    # Default italic?
+    MESSAGE_WINDOW_FONT_OUTLINE = true     # Default outline?
+    MESSAGE_WINDOW_FONT_SHADOW  = false    # Default shadow?
+    
+  end # MESSAGE
+end # YEA
+
+#==============================================================================
+# ▼ Editing anything past this point may potentially result in cause
+# computer damage, incontinence, explosion of user's head, coma, death, and/or
+# halitosis so edit at your own risk.
+#==============================================================================
+
+#==============================================================================
+# ■ Variable
+#==============================================================================
+
+module Variable
+  
+  #--------------------------------------------------------------------------
+  # self.message_rows
+  #--------------------------------------------------------------------------
+  def self.message_rows
+    return 4 if YEA::MESSAGE::VARIABLE_ROWS <= 0
+    return 4 if $game_variables[YEA::MESSAGE::VARIABLE_ROWS] <= 0
+    return $game_variables[YEA::MESSAGE::VARIABLE_ROWS]
+  end
+  
+  #--------------------------------------------------------------------------
+  # self.message_width
+  #--------------------------------------------------------------------------
+  def self.message_width
+    return Graphics.width if YEA::MESSAGE::VARIABLE_WIDTH <= 0
+    return Graphics.width if $game_variables[YEA::MESSAGE::VARIABLE_WIDTH] <= 0
+    return $game_variables[YEA::MESSAGE::VARIABLE_WIDTH]
+  end
+  
+end # Variable
+
+#==============================================================================
+# ■ Game_Interpreter
+#==============================================================================
+
+class Game_Interpreter
+  
+  #--------------------------------------------------------------------------
+  # overwrite method: command_101
+  # Updated for Paradox
+  #--------------------------------------------------------------------------
+  def command_101
+    wait_for_message
+    $game_message.face_name = @params[0]
+    $game_message.face_index = @params[1]
+    $game_message.background = @params[2]
+    $game_message.position = @params[3]
+    while continue_message_string?
+      @index += 1
+      if @list[@index].code == 401
+        $game_message.add(@list[@index].parameters[0])
+      end
+      break if $game_message.texts.size >= Variable.message_rows
+    end
+    case next_event_code
+    when 102
+      @index += 1
+      setup_choices(@list[@index].parameters)
+    when 103
+      @index += 1
+      setup_num_input(@list[@index].parameters)
+    when 104
+      @index += 1
+      setup_item_choice(@list[@index].parameters)
+    when 355
+      while next_command_ex_choice?
+        @index += 1
+        command_355
+      end
+    end
+    wait_for_message
+  end
+  
+  #--------------------------------------------------------------------------
+  # new method: continue_message_string?
+  #--------------------------------------------------------------------------
+  def continue_message_string?
+    return true if next_event_code == 101 && Variable.message_rows > 4
+    return next_event_code == 401
+  end
+  
+end # Game_Interpreter
+
+#==============================================================================
+# ■ Window_Base
+#==============================================================================
+
+class Window_Base < Window
+  
+  #--------------------------------------------------------------------------
+  # new method: setup_message_font
+  #--------------------------------------------------------------------------
+  def setup_message_font
+    @message_font = true
+    change_color(normal_color)
+    contents.font.out_color = Font.default_out_color
+    contents.font.name = YEA::MESSAGE::MESSAGE_WINDOW_FONT_NAME
+    contents.font.size = YEA::MESSAGE::MESSAGE_WINDOW_FONT_SIZE
+    contents.font.bold = YEA::MESSAGE::MESSAGE_WINDOW_FONT_BOLD
+    contents.font.italic = YEA::MESSAGE::MESSAGE_WINDOW_FONT_ITALIC
+    contents.font.outline = YEA::MESSAGE::MESSAGE_WINDOW_FONT_OUTLINE
+    contents.font.shadow = YEA::MESSAGE::MESSAGE_WINDOW_FONT_SHADOW
+  end
+  
+  #--------------------------------------------------------------------------
+  # alias method: reset_font_settings
+  #--------------------------------------------------------------------------
+  alias window_base_reset_font_settings_ams reset_font_settings
+  def reset_font_settings
+    if @message_font
+      setup_message_font
+    else
+      window_base_reset_font_settings_ams
+      contents.font.out_color = Font.default_out_color
+      contents.font.outline = Font.default_outline
+      contents.font.shadow = Font.default_shadow
+    end
+  end
+  
+  #--------------------------------------------------------------------------
+  # alias method: convert_escape_characters
+  #--------------------------------------------------------------------------
+  alias window_base_convert_escape_characters_ams convert_escape_characters
+  def convert_escape_characters(text)
+    result = text
+    result = window_base_convert_escape_characters_ams(result)
+    result = convert_ace_message_system_new_escape_characters(result)
+    return result
+  end
+  
+  #--------------------------------------------------------------------------
+  # new method: convert_ace_message_system_new_escape_characters
+  # Updated for Paradox
+  #--------------------------------------------------------------------------
+  def convert_ace_message_system_new_escape_characters(result)
+    #msgbox result
+    #---
+    #result.gsub!(/\edialogue\[([^\]]+)\]/) { LanguageFileSystem::get_dialogue($1.to_s) }
+    #---
+    result.gsub!(/\eFR/i) { "\eAMSF[0]" }
+    result.gsub!(/\eFB/i) { "\eAMSF[1]" }
+    result.gsub!(/\eFI/i) { "\eAMSF[2]" }
+    result.gsub!(/\eFO/i) { "\eAMSF[3]" }
+    result.gsub!(/\eFS/i) { "\eAMSF[4]" }
+    #---
+    result.gsub!(/\eAC\[([-+]?\d+)\]/i) { escape_actor_class_name($1.to_i) }
+    result.gsub!(/\eAS\[([-+]?\d+)\]/i) { escape_actor_subclass_name($1.to_i) }
+    result.gsub!(/\eAN\[([-+]?\d+)\]/i) { escape_actor_nickname($1.to_i) }
+    #---
+    result.gsub!(/\eNC\[(\d+)\]/i) { $data_classes[$1.to_i].name rescue "" }
+    result.gsub!(/\eNI\[(\d+)\]/i) { $data_items[$1.to_i].name rescue "" }
+    result.gsub!(/\eNW\[(\d+)\]/i) { $data_weapons[$1.to_i].name rescue "" }
+    result.gsub!(/\eNA\[(\d+)\]/i) { $data_armors[$1.to_i].name rescue "" }
+    result.gsub!(/\eNS\[(\d+)\]/i) { $data_skills[$1.to_i].name rescue "" }
+    result.gsub!(/\eNT\[(\d+)\]/i) { $data_states[$1.to_i].name rescue "" }
+    result.gsub!(/\eNE\[(\d+)\]/i)  { $data_system.elements[$1.to_i].to_s rescue ""  }
+    #---
+    result.gsub!(/\eEN\[(\d+)\]/i)  { $data_enemies[$1.to_i].name rescue "" }
+    result.gsub!(/\ePG/i) { $game_party.gold }
+    #---
+    result.gsub!(/\eIC\[(\d+)\]/i) { escape_icon_item($1.to_i, :class) }
+    result.gsub!(/\eII\[(\d+)\]/i) { escape_icon_item($1.to_i, :item) }
+    result.gsub!(/\eIW\[(\d+)\]/i) { escape_icon_item($1.to_i, :weapon) }
+    result.gsub!(/\eIA\[(\d+)\]/i) { escape_icon_item($1.to_i, :armour) }
+    result.gsub!(/\eIS\[(\d+)\]/i) { escape_icon_item($1.to_i, :skill) }
+    result.gsub!(/\eIT\[(\d+)\]/i) { escape_icon_item($1.to_i, :state) }
+    #---
+    result.gsub!(/\eIE\[(\d+)\]/i)  { escape_icon_item($1.to_i, :element) }
+    #---
+    # From Script: Message control character extension Ver1.1
+    result.gsub!(/\eJ\[(\d+)\]/i) { actor_class_name($1.to_i) }
+    result.gsub!(/\eK\[(\d+)\]/i) { actor_nickname($1.to_i) }
+    result.gsub!(/\eT\[(\d+)\]/i) { escape_icon_item($1.to_i, :item) }
+    result.gsub!(/\eW\[(\d+)\]/i) { escape_icon_item($1.to_i, :weapon) }
+    result.gsub!(/\eA\[(\d+)\]/i) { escape_icon_item($1.to_i, :armour) }
+    result.gsub!(/\eS\[(\d+)\]/i) { escape_icon_item($1.to_i, :skill) }
+    #---
+    #result.gsub!(/\eN/i) { "\n" }
+    return result
+  end
+  
+  #--------------------------------------------------------------------------
+  # new method: escape_actor_class_name
+  #--------------------------------------------------------------------------
+  def escape_actor_class_name(actor_id)
+    actor_id = $game_party.members[actor_id.abs].id if actor_id <= 0
+    actor = $game_actors[actor_id]
+    return "" if actor.nil?
+    return actor.class.name
+  end
+  
+  #--------------------------------------------------------------------------
+  # new method: actor_subclass_name
+  #--------------------------------------------------------------------------
+  def escape_actor_subclass_name(actor_id)
+    return "" unless $imported["YEA-ClassSystem"]
+    actor_id = $game_party.members[actor_id.abs].id if actor_id <= 0
+    actor = $game_actors[actor_id]
+    return "" if actor.nil?
+    return "" if actor.subclass.nil?
+    return actor.subclass.name
+  end
+  
+  #--------------------------------------------------------------------------
+  # new method: escape_actor_nickname
+  #--------------------------------------------------------------------------
+  def escape_actor_nickname(actor_id)
+    actor_id = $game_party.members[actor_id.abs].id if actor_id <= 0
+    actor = $game_actors[actor_id]
+    return "" if actor.nil?
+    return actor.nickname
+  end
+  
+  #--------------------------------------------------------------------------
+  # new method: escape_icon_item
+  #--------------------------------------------------------------------------
+  def escape_icon_item(data_id, type)
+    case type
+    when :class
+      return "" unless $imported["YEA-ClassSystem"]
+      icon = $data_classes[data_id].icon_index
+      name = $data_items[data_id].name
+    when :item
+      icon = $data_items[data_id].icon_index
+      name = $data_items[data_id].name
+    when :weapon
+      icon = $data_weapons[data_id].icon_index
+      name = $data_weapons[data_id].name
+    when :armour
+      icon = $data_armors[data_id].icon_index
+      name = $data_armors[data_id].name
+    when :skill
+      icon = $data_skills[data_id].icon_index
+      name = $data_skills[data_id].name
+    when :state
+      if LanguageFileSystem::enable_stat_icons
+        icon = $data_states[data_id].icon_index
+      else
+        icon = 0
+      end
+      name = $data_states[data_id].name
+    when :element
+      if LanguageFileSystem::enable_elem_icons
+        case data_id
+        when 2
+          icon = 59
+        when 3
+          icon = 144
+        when 4
+          icon = 145
+        when 5
+          icon = 146
+        when 6
+          icon = 149
+        when 7
+          icon = 148
+        when 8
+          icon = 147
+        when 9
+          icon = 150
+        when 10
+          icon = 151
+        when 35
+          icon = 176
+        when 36
+          icon = 18
+        else
+          icon = 0
+        end
+      else
+        icon = 0
+      end
+      name = $data_system.elements[data_id]
+    else; return ""
+    end
+    if icon != nil
+      if icon > 0
+        case type
+        when :state
+          if LanguageFileSystem::enable_stat_icons
+            text = "\eI[#{icon}]"
+          else
+            text = name
+          end
+        when :element
+          if LanguageFileSystem::enable_elem_icons
+            text = "\eI[#{icon}]"
+          else
+            text = name
+          end
+        else
+          text = "\eI[#{icon}]" + name
+        end
+      else
+        text = name
+      end
+    else
+      text = name
+    end
+    return text
+  end
+  
+  #--------------------------------------------------------------------------
+  # alias method: process_escape_character
+  #--------------------------------------------------------------------------
+  alias window_base_process_escape_character_ams process_escape_character
+  def process_escape_character(code, text, pos)
+    case code.upcase
+    #---
+    when 'FZ'
+      contents.font.size = obtain_escape_param(text)
+    when 'FN'
+      text.sub!(/\[(.*?)\]/, "")
+      font_name = $1.to_s
+      font_name = Font.default_name if font_name.nil?
+      contents.font.name = font_name.to_s
+    #---
+    when 'OC'
+      colour = text_color(obtain_escape_param(text))
+      contents.font.out_color = colour
+    when 'OO'
+      contents.font.out_color.alpha = obtain_escape_param(text)
+    #---
+    when 'AMSF'
+      case obtain_escape_param(text)
+      when 0; reset_font_settings
+      when 1; contents.font.bold = !contents.font.bold
+      when 2; contents.font.italic = !contents.font.italic
+      when 3; contents.font.outline = !contents.font.outline
+      when 4; contents.font.shadow = !contents.font.shadow
+      end
+    #---
+    when 'PX'
+      pos[:x] = obtain_escape_param(text)
+    when 'PY'
+      pos[:y] = obtain_escape_param(text)
+    #---
+    when 'PIC'
+      text.sub!(/\[(.*?)\]/, "")
+      bmp = Cache.picture($1.to_s)
+      rect = Rect.new(0, 0, bmp.width, bmp.height)
+      contents.blt(pos[:x], pos[:y], bmp, rect)
+    #---
+    else
+      window_base_process_escape_character_ams(code, text, pos)
+    end
+  end
+  
+end # Window_Base
+
+#==============================================================================
+# ■ Window_ChoiceList
+#==============================================================================
+
+class Window_ChoiceList < Window_Command
+  
+  #--------------------------------------------------------------------------
+  # alias method: initialize
+  #--------------------------------------------------------------------------
+  alias window_choicelist_initialize_ams initialize
+  def initialize(message_window)
+    window_choicelist_initialize_ams(message_window)
+    setup_message_font
+  end
+  
+end # Window_ChoiceList
+
+#==============================================================================
+# ■ Window_ScrollText
+#==============================================================================
+
+class Window_ScrollText < Window_Base
+  
+  #--------------------------------------------------------------------------
+  # alias method: initialize
+  #--------------------------------------------------------------------------
+  alias window_scrolltext_initialize_ams initialize
+  def initialize
+    window_scrolltext_initialize_ams
+    setup_message_font
+  end
+  
+end # Window_ScrollText
+
+#==============================================================================
+# ■ Window_NameMessage
+#==============================================================================
+
+class Window_NameMessage < Window_Base
+  
+  #--------------------------------------------------------------------------
+  # initialize
+  #--------------------------------------------------------------------------
+  def initialize(message_window)
+    @message_window = message_window
+    super(0, 0, Graphics.width, fitting_height(1))
+    self.opacity = YEA::MESSAGE::NAME_WINDOW_OPACITY
+    self.z = @message_window.z + 1
+    self.openness = 0
+    setup_message_font
+    @close_counter = 0
+    deactivate
+  end
+  
+  #--------------------------------------------------------------------------
+  # update
+  #--------------------------------------------------------------------------
+  def update
+    super
+    return if self.active
+    return if self.openness == 0
+    return if @closing
+    @close_counter -= 1
+    return if @close_counter > 0
+    close
+  end
+  
+  #--------------------------------------------------------------------------
+  # start_close
+  #--------------------------------------------------------------------------
+  def start_close
+    @close_counter = 4
+    deactivate
+  end
+  
+  #--------------------------------------------------------------------------
+  # force_close
+  #--------------------------------------------------------------------------
+  def force_close
+    @close_counter = 0
+    deactivate
+    close
+  end
+  
+  #--------------------------------------------------------------------------
+  # start
+  #--------------------------------------------------------------------------
+  def start(text, x_position)
+    @text = text.clone
+    set_width
+    create_contents
+    set_x_position(x_position)
+    set_y_position
+    refresh
+    activate
+    open
+  end
+  
+  #--------------------------------------------------------------------------
+  # set_width
+  #--------------------------------------------------------------------------
+  def set_width
+    text = @text.clone
+    dw = standard_padding * 2 + text_size(text).width
+    dw += YEA::MESSAGE::NAME_WINDOW_PADDING * 2
+    dw += calculate_size(text.slice!(0, 1), text) until text.empty?
+    self.width = dw
+  end
+  
+  #--------------------------------------------------------------------------
+  # calculate_size
+  #--------------------------------------------------------------------------
+  def calculate_size(code, text)
+    case code
+    when "\e"
+      return calculate_escape_code_width(obtain_escape_code(text), text)
+    else
+      return 0
+    end
+  end
+  
+  #--------------------------------------------------------------------------
+  # calculate_escape_code_width
+  #--------------------------------------------------------------------------
+  def calculate_escape_code_width(code, text)
+    dw = -text_size("\e").width - text_size(code).width
+    case code.upcase
+    when 'C', 'OC', 'OO'
+      dw += -text_size("[" + obtain_escape_param(text).to_s + "]").width
+      return dw
+    when 'I'
+      dw += -text_size("[" + obtain_escape_param(text).to_s + "]").width
+      dw += 24
+      return dw
+    when '{'
+      make_font_bigger
+    when '}'
+      make_font_smaller
+    when 'FZ'
+      contents.font.size = obtain_escape_param(text)
+    when 'FN'
+      text.sub!(/\[(.*?)\]/, "")
+      font_name = $1.to_s
+      font_name = Font.default_name if font_name.nil?
+      contents.font.name = font_name.to_s
+    when 'AMSF'
+      case obtain_escape_param(text)
+      when 0; reset_font_settings
+      when 1; contents.font.bold = !contents.font.bold
+      when 2; contents.font.italic = !contents.font.italic
+      when 3; contents.font.outline = !contents.font.outline
+      when 4; contents.font.shadow = !contents.font.shadow
+      end
+    else
+      return dw
+    end
+  end
+  
+  #--------------------------------------------------------------------------
+  # set_y_position
+  #--------------------------------------------------------------------------
+  def set_x_position(x_position)
+    case x_position
+    when 1 # Left
+      self.x = @message_window.x
+      self.x += YEA::MESSAGE::NAME_WINDOW_X_BUFFER
+    when 2 # 3/10
+      self.x = @message_window.x
+      self.x += @message_window.width * 3 / 10
+      self.x -= self.width / 2
+    when 3 # Center
+      self.x = @message_window.x
+      self.x += @message_window.width / 2
+      self.x -= self.width / 2
+    when 4 # 7/10
+      self.x = @message_window.x
+      self.x += @message_window.width * 7 / 10
+      self.x -= self.width / 2
+    when 5 # Right
+      self.x = @message_window.x + @message_window.width
+      self.x -= self.width
+      self.x -= YEA::MESSAGE::NAME_WINDOW_X_BUFFER
+    end
+    self.x = [[self.x, Graphics.width - self.width].min, 0].max
+  end
+  
+  #--------------------------------------------------------------------------
+  # set_y_position
+  #--------------------------------------------------------------------------
+  def set_y_position
+    case $game_message.position
+    when 0
+      self.y = @message_window.height
+      self.y -= YEA::MESSAGE::NAME_WINDOW_Y_BUFFER
+    else
+      self.y = @message_window.y - self.height
+      self.y += YEA::MESSAGE::NAME_WINDOW_Y_BUFFER
+    end
+  end
+  
+  #--------------------------------------------------------------------------
+  # refresh
+  #--------------------------------------------------------------------------
+  def refresh
+    contents.clear
+    reset_font_settings
+    @text = sprintf("\eC[%d]%s", YEA::MESSAGE::NAME_WINDOW_COLOUR, @text)
+    draw_text_ex(YEA::MESSAGE::NAME_WINDOW_PADDING, 0, @text)
+  end
+  
+end # Window_NameMessage
+
+#==============================================================================
+# ■ Window_Message
+#==============================================================================
+
+class Window_Message < Window_Base
+  
+  #--------------------------------------------------------------------------
+  # alias method: initialize
+  #--------------------------------------------------------------------------
+  alias window_message_initialize_ams initialize
+  def initialize
+    window_message_initialize_ams
+    setup_message_font
+  end
+  
+  #--------------------------------------------------------------------------
+  # overwrite method: window_width
+  #--------------------------------------------------------------------------
+  def window_width
+    return Variable.message_width
+  end
+  
+  #--------------------------------------------------------------------------
+  # overwrite method: window_height
+  #--------------------------------------------------------------------------
+  def window_height
+    return fitting_height(Variable.message_rows)
+  end
+  
+  #--------------------------------------------------------------------------
+  # alias method: create_all_windows
+  #--------------------------------------------------------------------------
+  alias window_message_create_all_windows_ams create_all_windows
+  def create_all_windows
+    window_message_create_all_windows_ams
+    @name_window = Window_NameMessage.new(self)
+  end
+  
+  #--------------------------------------------------------------------------
+  # overwrite method: create_back_bitmap
+  #--------------------------------------------------------------------------
+  def create_back_bitmap
+    @back_bitmap = Bitmap.new(width, height)
+    rect1 = Rect.new(0, 0, Graphics.width, 12)
+    rect2 = Rect.new(0, 12, Graphics.width, fitting_height(4) - 24)
+    rect3 = Rect.new(0, fitting_height(4) - 12, Graphics.width, 12)
+    @back_bitmap.gradient_fill_rect(rect1, back_color2, back_color1, true)
+    @back_bitmap.fill_rect(rect2, back_color1)
+    @back_bitmap.gradient_fill_rect(rect3, back_color1, back_color2, true)
+  end
+  
+  #--------------------------------------------------------------------------
+  # alias method: dispose_all_windows
+  #--------------------------------------------------------------------------
+  alias window_message_dispose_all_windows_ams dispose_all_windows
+  def dispose_all_windows
+    window_message_dispose_all_windows_ams
+    @name_window.dispose
+  end
+  
+  #--------------------------------------------------------------------------
+  # alias method: update_all_windows
+  #--------------------------------------------------------------------------
+  alias window_message_update_all_windows_ams update_all_windows
+  def update_all_windows
+    window_message_update_all_windows_ams
+    @name_window.update
+    @name_window.back_opacity = self.back_opacity
+    @name_window.opacity = self.opacity
+  end
+  
+  #--------------------------------------------------------------------------
+  # alias method: update_show_fast
+  # Disabled for Paradox
+  #--------------------------------------------------------------------------
+  #alias window_message_update_show_fast_ams update_show_fast
+  #def update_show_fast
+  #  @show_fast = true if Input.press?(YEA::MESSAGE::TEXT_SKIP)
+  #  window_message_update_show_fast_ams
+  #end
+  
+  #--------------------------------------------------------------------------
+  # overwrite method: input_pause
+  # Disabled for Paradox
+  #--------------------------------------------------------------------------
+  #def input_pause
+  #  self.pause = true
+  #  wait(10)
+  #  Fiber.yield until Input.trigger?(:B) || Input.trigger?(:C) ||
+  #    Input.press?(YEA::MESSAGE::TEXT_SKIP)
+  #  Input.update
+  #  self.pause = false
+  #end
+  
+  #--------------------------------------------------------------------------
+  # overwrite method: convert_escape_characters
+  #--------------------------------------------------------------------------
+  def convert_escape_characters(text)
+    result = super(text.to_s.clone)
+    result = namebox_escape_characters(result)
+    result = message_escape_characters(result)
+    #result.gsub!(/\eN/i) { "\n" }
+    return result
+  end
+  
+  #--------------------------------------------------------------------------
+  # new method: namebox_escape_characters
+  #--------------------------------------------------------------------------
+  def namebox_escape_characters(result)
+    # Updated 08-10-2015 To Also Remove New Line
+    result.gsub!(/\eN\<(.+?)\>\n/i)  { namewindow($1, 1) }
+    result.gsub!(/\eN1\<(.+?)\>\n/i) { namewindow($1, 1) }
+    result.gsub!(/\eN2\<(.+?)\>\n/i) { namewindow($1, 2) }
+    result.gsub!(/\eNC\<(.+?)\>\n/i) { namewindow($1, 3) }
+    result.gsub!(/\eN3\<(.+?)\>\n/i) { namewindow($1, 3) }
+    result.gsub!(/\eN4\<(.+?)\>\n/i) { namewindow($1, 4) }
+    result.gsub!(/\eN5\<(.+?)\>\n/i) { namewindow($1, 5) }
+    result.gsub!(/\eNR\<(.+?)\>\n/i) { namewindow($1, 5) }
+    
+    result.gsub!(/\eN\<(.+?)\>\eN/i)  { namewindow($1, 1) }
+    result.gsub!(/\eN1\<(.+?)\>\eN/i) { namewindow($1, 1) }
+    result.gsub!(/\eN2\<(.+?)\>\eN/i) { namewindow($1, 2) }
+    result.gsub!(/\eNC\<(.+?)\>\eN/i) { namewindow($1, 3) }
+    result.gsub!(/\eN3\<(.+?)\>\eN/i) { namewindow($1, 3) }
+    result.gsub!(/\eN4\<(.+?)\>\eN/i) { namewindow($1, 4) }
+    result.gsub!(/\eN5\<(.+?)\>\eN/i) { namewindow($1, 5) }
+    result.gsub!(/\eNR\<(.+?)\>\eN/i) { namewindow($1, 5) }
+    
+    result.gsub!(/\eN\<(.+?)\>/i)  { namewindow($1, 1) }
+    result.gsub!(/\eN1\<(.+?)\>/i) { namewindow($1, 1) }
+    result.gsub!(/\eN2\<(.+?)\>/i) { namewindow($1, 2) }
+    result.gsub!(/\eNC\<(.+?)\>/i) { namewindow($1, 3) }
+    result.gsub!(/\eN3\<(.+?)\>/i) { namewindow($1, 3) }
+    result.gsub!(/\eN4\<(.+?)\>/i) { namewindow($1, 4) }
+    result.gsub!(/\eN5\<(.+?)\>/i) { namewindow($1, 5) }
+    result.gsub!(/\eNR\<(.+?)\>/i) { namewindow($1, 5) }
+    return result
+  end
+  
+  #--------------------------------------------------------------------------
+  # new method: namebox
+  #--------------------------------------------------------------------------
+  def namewindow(text, position)
+    @name_text = text
+    @name_position = position
+    return ""
+  end
+  
+  #--------------------------------------------------------------------------
+  # new method: message_escape_characters
+  #--------------------------------------------------------------------------
+  def message_escape_characters(result)
+    result.gsub!(/\eAF\[(-?\d+)]/i) { change_face($1.to_i) }
+    return result
+  end
+  
+  #--------------------------------------------------------------------------
+  # new method: change_face
+  #--------------------------------------------------------------------------
+  def change_face(actor_id)
+    actor_id = $game_party.members[actor_id.abs].id if actor_id <= 0
+    actor = $game_actors[actor_id]
+    return "" if actor.nil?
+    $game_message.face_name = actor.face_name
+    $game_message.face_index = actor.face_index
+    return ""
+  end
+  
+  #--------------------------------------------------------------------------
+  # alias method: new_page
+  #--------------------------------------------------------------------------
+  alias window_message_new_page_ams new_page
+  def new_page(text, pos)
+    adjust_message_window_size
+    window_message_new_page_ams(text, pos)
+  end
+  
+  #--------------------------------------------------------------------------
+  # overwrite method: new_line_x
+  #--------------------------------------------------------------------------
+  def new_line_x
+    return $game_message.face_name.empty? ? 0 : YEA::MESSAGE::FACE_INDENT_X
+  end
+  
+  #--------------------------------------------------------------------------
+  # new method: adjust_message_window_size
+  #--------------------------------------------------------------------------
+  def adjust_message_window_size
+    self.height = window_height
+    self.width = window_width
+    create_contents
+    update_placement
+    self.x = (Graphics.width - self.width) / 2
+    start_name_window
+  end
+  
+  #--------------------------------------------------------------------------
+  # new method: clear_name_window
+  #--------------------------------------------------------------------------
+  def clear_name_window
+    @name_text = ""
+    @name_position = 0
+  end
+  
+  #--------------------------------------------------------------------------
+  # new method: start_name_window
+  #--------------------------------------------------------------------------
+  def start_name_window
+    return if @name_text == ""
+    @name_window.start(@name_text, @name_position)
+  end
+  
+  #--------------------------------------------------------------------------
+  # overwrite method: fiber_main
+  #--------------------------------------------------------------------------
+  def fiber_main
+    $game_message.visible = true
+    update_background
+    update_placement
+    loop do
+      process_all_text if $game_message.has_text?
+      process_input
+      $game_message.clear
+      @gold_window.close
+      @name_window.start_close
+      Fiber.yield
+      break unless text_continue?
+    end
+    close_and_wait
+    $game_message.visible = false
+    @fiber = nil
+  end
+  
+  #--------------------------------------------------------------------------
+  # alias method: open_and_wait
+  #--------------------------------------------------------------------------
+  alias window_message_open_and_wait_ams open_and_wait
+  def open_and_wait
+    clear_name_window
+    adjust_message_window_size
+    window_message_open_and_wait_ams
+  end
+  
+  #--------------------------------------------------------------------------
+  # alias method: close_and_wait
+  #--------------------------------------------------------------------------
+  alias window_message_close_and_wait_ams close_and_wait
+  def close_and_wait
+    @name_window.force_close
+    window_message_close_and_wait_ams
+  end
+  
+  #--------------------------------------------------------------------------
+  # alias method: all_close?
+  #--------------------------------------------------------------------------
+  alias window_message_all_close_ams all_close?
+  def all_close?
+    return window_message_all_close_ams && @name_window.close?
+  end
+  
+  #--------------------------------------------------------------------------
+  # alias method: process_escape_character
+  #--------------------------------------------------------------------------
+  alias window_message_process_escape_character_ams process_escape_character
+  def process_escape_character(code, text, pos)
+    case code.upcase
+    when 'W' # Wait
+      wait(obtain_escape_param(text))
+    else
+      window_message_process_escape_character_ams(code, text, pos)
+    end
+  end
+  
+end # Window_Message
+
+#==============================================================================
+# 
+# ■ Word
+#==============================================================================
+class Word
+  #--------------------------------------------------------------------------
+  # ● Object Initializer
+  #--------------------------------------------------------------------------
+  def initialize(word_data, face_name, face_index)
+    # Words Will Still Be Filtered Later
+    @words = word_data     #@words = Word.convert_new_escape_characters(word_data).split("\\n")
+    @face_name = face_name
+    @face_index = face_index
+  end
+  #--------------------------------------------------------------------------
+  # ● Run
+  #--------------------------------------------------------------------------
+  def execute
+    $game_message.face_name = @face_name
+    $game_message.face_index = @face_index
+    $game_message.background = 0
+    $game_message.position = 2
+    # YEA Script Will Still Filter This
+    $game_message.add(@words)     #@words.each{|line| $game_message.add(line)}
+  end
+  
+  #--------------------------------------------------------------------------
+  # new method: convert_ace_message_system_new_escape_characters
+  # Copy Of YEA - Ace Message System Function For Combat Dialoge
+  # Updated For Paradox 08-10-2015
+  #--------------------------------------------------------------------------
+  def self.convert_new_escape_characters(result)
+    #---
+    result.gsub!(/\eFR/i) { "\eAMSF[0]" }
+    result.gsub!(/\eFB/i) { "\eAMSF[1]" }
+    result.gsub!(/\eFI/i) { "\eAMSF[2]" }
+    result.gsub!(/\eFO/i) { "\eAMSF[3]" }
+    result.gsub!(/\eFS/i) { "\eAMSF[4]" }
+    #---
+    result.gsub!(/\eAC\[([-+]?\d+)\]/i) { Word.escape_actor_class_name($1.to_i) }
+    result.gsub!(/\eAS\[([-+]?\d+)\]/i) { Word.escape_actor_subclass_name($1.to_i) }
+    result.gsub!(/\eAN\[([-+]?\d+)\]/i) { Word.escape_actor_nickname($1.to_i) }
+    #---
+    #---
+    result.gsub!(/\\AC\[([-+]?\d+)\]/i) { Word.escape_actor_class_name($1.to_i) }
+    result.gsub!(/\\AS\[([-+]?\d+)\]/i) { Word.escape_actor_subclass_name($1.to_i) }
+    result.gsub!(/\\AN\[([-+]?\d+)\]/i) { Word.escape_actor_nickname($1.to_i) }
+    #---
+    result.gsub!(/\eN\[(\d+)\]/i) { $game_actors[$1.to_i].name rescue "" }
+    #---
+    #---
+    result.gsub!(/\\n\[(\d+)\]/i) { $game_actors[$1.to_i].name rescue "" }
+    #---
+    result.gsub!(/\eNC\[(\d+)\]/i) { $data_classes[$1.to_i].name rescue "" }
+    result.gsub!(/\eNI\[(\d+)\]/i) { $data_items[$1.to_i].name rescue "" }
+    result.gsub!(/\eNW\[(\d+)\]/i) { $data_weapons[$1.to_i].name rescue "" }
+    result.gsub!(/\eNA\[(\d+)\]/i) { $data_armors[$1.to_i].name rescue "" }
+    result.gsub!(/\eNS\[(\d+)\]/i) { $data_skills[$1.to_i].name rescue "" }
+    result.gsub!(/\eNT\[(\d+)\]/i) { $data_states[$1.to_i].name rescue "" }
+    result.gsub!(/\eNE\[(\d+)\]/i)  { $data_system.elements[$1.to_i].to_s rescue ""  }
+    #---
+    #---
+    result.gsub!(/\\NC\[(\d+)\]/i) { $data_classes[$1.to_i].name rescue "" }
+    result.gsub!(/\\NI\[(\d+)\]/i) { $data_items[$1.to_i].name rescue "" }
+    result.gsub!(/\\NW\[(\d+)\]/i) { $data_weapons[$1.to_i].name rescue "" }
+    result.gsub!(/\\NA\[(\d+)\]/i) { $data_armors[$1.to_i].name rescue "" }
+    result.gsub!(/\\NS\[(\d+)\]/i) { $data_skills[$1.to_i].name rescue "" }
+    result.gsub!(/\\NT\[(\d+)\]/i) { $data_states[$1.to_i].name rescue "" }
+    result.gsub!(/\\NE\[(\d+)\]/i)  { $data_system.elements[$1.to_i].to_s rescue ""  }
+    #---
+    result.gsub!(/\eEN\[(\d+)\]/i)  { $data_enemies[$1.to_i].name rescue "" }
+    result.gsub!(/\ePG/i) { $game_party.gold }
+    #---
+    #---
+    result.gsub!(/\\EN\[(\d+)\]/i)  { $data_enemies[$1.to_i].name rescue "" }
+    result.gsub!(/\\PG/i) { $game_party.gold }
+    #---
+    result.gsub!(/\eIC\[(\d+)\]/i) { Word.escape_icon_item($1.to_i, :class) }
+    result.gsub!(/\eII\[(\d+)\]/i) { Word.escape_icon_item($1.to_i, :item) }
+    result.gsub!(/\eIW\[(\d+)\]/i) { Word.escape_icon_item($1.to_i, :weapon) }
+    result.gsub!(/\eIA\[(\d+)\]/i) { Word.escape_icon_item($1.to_i, :armour) }
+    result.gsub!(/\eIS\[(\d+)\]/i) { Word.escape_icon_item($1.to_i, :skill) }
+    result.gsub!(/\eIT\[(\d+)\]/i) { Word.escape_icon_item($1.to_i, :state) }
+    result.gsub!(/\eIE\[(\d+)\]/i)  { Word.escape_icon_item($1.to_i, :element) }
+    #---
+    #---
+    result.gsub!(/\\IC\[(\d+)\]/i) { Word.escape_icon_item($1.to_i, :class) }
+    result.gsub!(/\\II\[(\d+)\]/i) { Word.escape_icon_item($1.to_i, :item) }
+    result.gsub!(/\\IW\[(\d+)\]/i) { Word.escape_icon_item($1.to_i, :weapon) }
+    result.gsub!(/\\IA\[(\d+)\]/i) { Word.escape_icon_item($1.to_i, :armour) }
+    result.gsub!(/\\IS\[(\d+)\]/i) { Word.escape_icon_item($1.to_i, :skill) }
+    result.gsub!(/\\IT\[(\d+)\]/i) { Word.escape_icon_item($1.to_i, :state) }
+    result.gsub!(/\\IE\[(\d+)\]/i)  { Word.escape_icon_item($1.to_i, :element) }
+    #---
+    #---
+    # From Script: Message control character extension Ver1.1
+    result.gsub!(/\eJ\[(\d+)\]/i) { actor_class_name($1.to_i) }
+    result.gsub!(/\eK\[(\d+)\]/i) { actor_nickname($1.to_i) }
+    result.gsub!(/\eT\[(\d+)\]/i) { Word.escape_icon_item($1.to_i, :item) }
+    result.gsub!(/\eW\[(\d+)\]/i) { Word.escape_icon_item($1.to_i, :weapon) }
+    result.gsub!(/\eA\[(\d+)\]/i) { Word.escape_icon_item($1.to_i, :armour) }
+    result.gsub!(/\eS\[(\d+)\]/i) { Word.escape_icon_item($1.to_i, :skill) }
+    #---
+    #---
+    # From Script: Message control character extension Ver1.1
+    result.gsub!(/\\J\[(\d+)\]/i) { actor_class_name($1.to_i) }
+    result.gsub!(/\\K\[(\d+)\]/i) { actor_nickname($1.to_i) }
+    result.gsub!(/\\T\[(\d+)\]/i) { Word.escape_icon_item($1.to_i, :item) }
+    result.gsub!(/\\W\[(\d+)\]/i) { Word.escape_icon_item($1.to_i, :weapon) }
+    result.gsub!(/\\A\[(\d+)\]/i) { Word.escape_icon_item($1.to_i, :armour) }
+    result.gsub!(/\\S\[(\d+)\]/i) { Word.escape_icon_item($1.to_i, :skill) }
+    #---
+    return result
+  end
+  
+  #--------------------------------------------------------------------------
+  # new method: escape_actor_class_name
+  #--------------------------------------------------------------------------
+  def self.escape_actor_class_name(actor_id)
+    actor_id = $game_party.members[actor_id.abs].id if actor_id <= 0
+    actor = $game_actors[actor_id]
+    return "" if actor.nil?
+    return actor.class.name
+  end
+  
+  #--------------------------------------------------------------------------
+  # new method: actor_subclass_name
+  #--------------------------------------------------------------------------
+  def self.escape_actor_subclass_name(actor_id)
+    return "" unless $imported["YEA-ClassSystem"]
+    actor_id = $game_party.members[actor_id.abs].id if actor_id <= 0
+    actor = $game_actors[actor_id]
+    return "" if actor.nil?
+    return "" if actor.subclass.nil?
+    return actor.subclass.name
+  end
+  
+  #--------------------------------------------------------------------------
+  # new method: escape_actor_nickname
+  #--------------------------------------------------------------------------
+  def self.escape_actor_nickname(actor_id)
+    actor_id = $game_party.members[actor_id.abs].id if actor_id <= 0
+    actor = $game_actors[actor_id]
+    return "" if actor.nil?
+    return actor.nickname
+  end
+  
+  #--------------------------------------------------------------------------
+  # new method: escape_icon_item
+  #--------------------------------------------------------------------------
+  def self.escape_icon_item(data_id, type)
+    case type
+    when :class
+      return "" unless $imported["YEA-ClassSystem"]
+      icon = $data_classes[data_id].icon_index
+      name = $data_items[data_id].name
+    when :item
+      icon = $data_items[data_id].icon_index
+      name = $data_items[data_id].name
+    when :weapon
+      icon = $data_weapons[data_id].icon_index
+      name = $data_weapons[data_id].name
+    when :armour
+      icon = $data_armors[data_id].icon_index
+      name = $data_armors[data_id].name
+    when :skill
+      icon = $data_skills[data_id].icon_index
+      name = $data_skills[data_id].name
+    when :state
+      if LanguageFileSystem::enable_stat_icons
+        icon = $data_states[data_id].icon_index
+      else
+        icon = 0
+      end
+      name = $data_states[data_id].name
+    when :element
+      if LanguageFileSystem::enable_elem_icons
+        case data_id
+        when 2
+          icon = 59
+        when 3
+          icon = 144
+        when 4
+          icon = 145
+        when 5
+          icon = 146
+        when 6
+          icon = 149
+        when 7
+          icon = 148
+        when 8
+          icon = 147
+        when 9
+          icon = 150
+        when 10
+          icon = 151
+        when 35
+          icon = 176
+        when 36
+          icon = 18
+        else
+          icon = 0
+        end
+      else
+        icon = 0
+      end
+      name = $data_system.elements[data_id]
+    else; return ""
+    end
+    if icon != nil
+      if icon > 0
+        case type
+        when :state
+          if LanguageFileSystem::enable_stat_icons
+            text = "\eI[#{icon}]"
+          else
+            text = name
+          end
+        when :element
+          if LanguageFileSystem::enable_elem_icons
+            text = "\eI[#{icon}]"
+          else
+            text = name
+          end
+        else
+          text = "\eI[#{icon}]" + name
+        end
+      else
+        text = name
+      end
+    else
+      text = name
+    end
+    return text
+  end
+end
+
+#========================================================================
+# ** Word Wrapping Message Boxes, by: KilloZapit
+#------------------------------------------------------------------------
+# Changes message boxes so it will automatically wrap long lines.
+#
+# Note: I consider this script to be public domain, and put no
+# restrictions on it's use whatsoever. My only request is that
+# a link back to the script is provided so more people can
+# access it if they want to.
+#
+# Version the Second:
+#   Now strips color codes and icon codes so they don't break words.
+#   Also calculates icon width along with text width for words.
+# Version the Third:
+#   Now also strips delays and other timing related codes.
+#   Splits for non-icon control codes before counting icons.
+#   Control codes can now break lines in case of font changes.
+#   Added some comments to clarify some code.
+# Version the Forth:
+#   Fixed a small bug that might cause a error when counting icons.
+#   Added a small notice for copyright questions.
+# Version the Fifth:
+#   Added "collapse" mode, which elimanates extra spaces.
+#   Can now use "whitespace" mode outside of wordwrap mode if needed.
+# Version the Sixth:
+#   Fixed problems with collapsed whitespace not wraping words right.
+# Version the Seventh:
+#   Added option to add a margin to the right hand side of the window.
+#------------------------------------------------------------------------
+# Also adds the following new escape sequences:
+#
+# \ww  - Word Wrap: turns word wrap on if it's off
+# \nw  - No Wrap: Turns word wrap off
+# \ws  - WhiteSpace mode: Converts newlines to spaces (like HTML)
+# \nl  - New Line: Preserves hard returns
+# \cs  - Collapse whiteSpace: Eliminates extra spaces (also like HTML)
+# \pre - PRE-formatted: Preserves spaces
+# \br  - line BRake: manual newline for whitespace mode
+# \rm  - Right Margin: extra space on the right side of the window
+#========================================================================
+
+# Standard config module.
+module KZIsAwesome
+  module WordWrap
+
+    # change this if you don't want wordwrap on by default.
+    DEFAULT_WORDWRAP = true
+
+    # change this if you want white space mode on by default.
+    DEFAULT_WHITESPACE = false
+   
+    # change this if you want white space mode on by default.
+    DEFAULT_COLLAPSE = true
+    
+    # change this to add a right margin to the window.
+    DEFAULT_RIGHT_MARGIN = 0
+
+  end
+end
+
+class Window_Base < Window
+  include KZIsAwesome::WordWrap
+
+  alias_method :initialize_kz_window_base, :initialize
+  def initialize(x, y, width, height)
+    initialize_kz_window_base(x, y, width, height)
+    @wordwrap = DEFAULT_WORDWRAP
+    @convert_newlines = DEFAULT_WHITESPACE
+    @collapse_whitespace = DEFAULT_COLLAPSE
+    @right_margin = DEFAULT_RIGHT_MARGIN
+    @lastc = "\n"
+  end
+
+  alias_method :process_character_kz_window_base, :process_character
+  def process_character(c, text, pos)
+    c = ' ' if @convert_newlines && c == "\n"
+    if @wordwrap && c =~ /[ \t]/
+      c = '' if @collapse_whitespace && @lastc =~ /[\s\n\f]/
+      if pos[:x] + get_next_word_size(c, text) > contents.width - @right_margin
+        process_new_line(text, pos)
+      else
+        process_normal_character(c, pos)
+      end
+      @lastc = c
+    else
+      @lastc = c
+      process_character_kz_window_base(c, text, pos)
+    end
+  end
+
+  def get_next_word_size(c, text)
+    # Split text by the next space/line/page and grab the first split
+    nextword = text.split(/[\s\n\f]/, 2)[0]
+    if nextword
+      icons = 0
+      if nextword =~ /\e/i
+        # Get rid of color codes and YEA Message system outline colors
+        nextword = nextword.split(/\e[oOcC]+\[\d*\]/).join
+        # Get rid of message timing control codes
+        nextword = nextword.split(/\e[\.\|\^<>!]/).join
+        # Split text by the first non-icon escape code
+        # (the hH is for compatibility with the Icon Hues script)
+        nextword = nextword.split(/\e[^iIhH]+/, 2)[0]
+        # Erase and count icons in remaining text
+        nextword.gsub!(/\e[iIhH]+\[[\d,]*\]/) do
+          icons += 1
+          ''
+        end if nextword
+      end
+      wordsize = (nextword ? text_size(c + nextword).width : text_size( c ).width)
+      wordsize += icons * 24
+    else
+      wordsize = text_size( c ).width
+    end
+    return wordsize
+  end
+
+  alias_method :process_escape_character_kz_window_base, :process_escape_character
+  def process_escape_character(code, text, pos)
+    #temp fix for Nil Class
+    code = 'WW' if code == nil
+    
+    case code.upcase
+    when 'WW'
+      @wordwrap = true
+    when 'NW'
+      @wordwrap = false
+    when 'WS'
+      @convert_newlines = true
+    when 'NL'
+      @convert_newlines = false
+    when 'CS'
+      @collapse_whitespace = true
+    when 'PRE'
+      @collapse_whitespace = false
+    when 'BR'
+      process_new_line(text, pos)
+      @lastc = "\n"
+    when 'RM'
+      @right_margin = obtain_escape_param(text)
+    else
+      process_escape_character_kz_window_base(code, text, pos)
+    end
+
+    # Recalculate the next word size and insert line breaks
+    # (Needed primarily for font changes)
+    if pos[:x] + get_next_word_size('', text) > contents.width
+      process_new_line(text, pos)
+    end
+  end
+
+end
+
+#==============================================================================
+#
+# Fix in-battle word wrap & squishing.
+#
+#==============================================================================
+class Window_BattleLog < Window_Selectable
+  #--------------------------------------------------------------------------
+  # ● Refresh
+  #--------------------------------------------------------------------------
+  def refresh
+    contents.clear
+    counter = -1
+    #@lines.size.times {|i|
+    @lines.each_with_index {|line, index|
+      text = reformat_wrapped(line)
+      txt_array = text.split("\n")
+      if txt_array.size <= 1
+        counter += 1
+        #draw_line(index)
+        draw_line_ex(counter, text)
+      else
+        txt_array.each{|new_line|
+          counter += 1
+          draw_line_ex(counter, new_line)
+        }
+      end
+    }
+  end
+  
+  #--------------------------------------------------------------------------
+  # ● Draw Line
+  #--------------------------------------------------------------------------
+  def draw_line_ex(line_number, text)
+    rect = item_rect_for_text(line_number)
+    contents.clear_rect(rect)
+    draw_text_ex(rect.x, rect.y, text)
+  end
+  
+  #--------------------------------------------------------------------------
+  # ● Reformat Wrapped
+  #--------------------------------------------------------------------------
+  def reformat_wrapped(s, width=60)
+      lines = []
+      line = ""
+      s.split(/\s+/).each do |word|
+        if line.size + word.size >= width
+          lines << line
+          line = word
+        elsif line.empty?
+         line = word
+        else
+         line << " " << word
+       end
+       end
+       lines << line if line
+      return lines.join "\n"
+    end
+end
+
+#==============================================================================
+#
+# Enable Message Window Text Hiding.
+#
+#==============================================================================
+
+=begin
+===============================================================================
+ Message Visibility by efeberk
+ Version: RGSS3
+===============================================================================
+ This script will allow to player sets message window visible or unvisible with 
+ a key.
+ 
+ Example : Press F8 to hide message window and repress F8 to show message 
+ window.
+--------------------------------------------------------------------------------
+=end
+
+module EFE
+  
+  KEY = :F8
+
+end
+
+class Window_Message < Window_Base
+  
+  alias efeberk_window_message_update update
+  def update
+    efeberk_window_message_update
+    if Input.trigger?(EFE::KEY)
+      self.visible = !self.visible
+      
+      # Update For YEA - Ace Message System
+      # Name Box Window
+      @name_window.visible = self.visible if $imported["YEA-MessageSystem"]
+      # Other Message Windows That Appear On Screen
+      @gold_window.visible = self.visible
+      @choice_window.visible = self.visible
+      @number_window.visible = self.visible
+      @item_window.visible = self.visible
+    end
+  end
+  
+end
+
+#==============================================================================
+# 
+# ▼ End of File
+# 
+#==============================================================================
+

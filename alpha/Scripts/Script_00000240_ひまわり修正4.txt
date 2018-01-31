@@ -1,0 +1,220 @@
+#Add instruction
+class Game_Interpreter
+	def actor_skill_have?(actor_id,skill_id)
+		return false unless $game_actors.exist?(actor_id)
+		skill = $data_skills[skill_id]
+		return false if skill.nil?
+		$game_actors[actor_id].skill_learn?(skill) || $game_actors[actor_id].all_abilities.include?(skill_id)
+	end
+	def actor_set_ability?(actor_id,skill_id)
+		return false unless $game_actors.exist?(actor_id)
+		skill = $data_skills[skill_id]
+		return false if skill.nil?
+		$game_actors[actor_id].all_equip_abilities.include?(skill_id)
+	end
+	def all_members_add_state(state_id)
+		$game_party.all_members.each{|actor|
+			actor.add_state(state_id)
+		}
+	end
+	#Actor initialization
+	def clear_actor_ex(actor_id)
+		return unless $game_actors.exist?(actor_id)
+		change_id = $game_actors[actor_id].id
+		$game_actors[actor_id].clear_equipments
+		$game_actors[actor_id].reset(actor_id)
+		$game_actors[actor_id].persona_change(change_id)
+	end
+end
+
+class Game_Actor
+	def reset(actor_id)
+		@actor_id = actor_id
+		@name = actor.name
+		@nickname = actor.nickname
+		init_graphics
+		@class_id = actor.class_id
+		@tribe_id = actor.initial_tribe_id
+		@level_list = {}
+		@exp = {}
+		init_level
+		init_exp
+		init_skills
+		clear_param_plus
+		recover_all
+		refresh
+	end
+end
+
+#Fixed bug with expanded target
+class Game_Action
+	#--------------------------------------------------------------------------
+	# ● Creating Extended Targets
+	#--------------------------------------------------------------------------
+	def make_exp_targets
+		arr = []
+		exp = item.exp_target
+		exp_id = exp[0][0]
+		num = exp[0][1]
+		ram = exp[1] ? rand(exp[1]) : 0
+		ex_remove = friends_unit.members.size == 1
+		case exp_id
+		when 1
+			arr << opponents_unit.smooth_target(@target_index)
+			arr *= (num + ram)
+		when 2
+			arr = opponents_unit.alive_members
+			arr *= (num + ram)
+		when 3
+			(num + ram).times do arr << opponents_unit.random_target end
+		when 4
+			arr << friends_unit.smooth_target(@target_index)
+			arr *= (num + ram)
+		when 5
+			arr = item.for_dead_friend? ? friends_unit.dead_members : friends_unit.alive_members
+			arr *= (num + ram)
+			
+		when 6
+			if exp[2] == 1
+				(num + ram).times do arr << friends_unit.exp_ram_target(@subject.master_observer) end
+			else
+				(num + ram).times do arr << friends_unit.random_target end
+			end
+		when 7 
+			arr << opponents_unit.random_target
+			arr *= (num + ram)
+		when 8
+			arr << friends_unit.random_target
+			arr *= (num + ram)
+		when 9
+			arr = opponents_unit.alive_members + friends_unit.alive_members
+			arr *= (1 + ram)
+		when 10
+			if ex_remove
+				(num + ram).times do arr << opponents_unit.random_target end
+			else
+				(num + ram).times do
+					if rand(2).zero? 
+						arr << opponents_unit.random_target
+					else
+						if exp[2] == 1
+							arr << friends_unit.exp_ram_target(@subject.master_observer)
+						else
+							arr << friends_unit.random_target
+						end
+					end
+				end
+			end
+		end
+		arr.delete(@subject.master_observer) if exp[2].zero?
+		arr.compact!
+		#arr = [@subject.master_observer] if arr.empty?
+		return arr
+	end
+end
+
+#Level 100 or more released
+class Game_Actor < Game_Battler
+	#--------------------------------------------------------------------------
+	# ● Acquire basic value of normal ability value
+	#--------------------------------------------------------------------------
+	def param_base(param_id)
+		if base_level >= 100
+			self.class.params[param_id, 99] + (self.base.params[param_id, 99] - self.base.params[param_id, 98])*( base_level - 99)
+		else
+			self.base.params[param_id, base_level]
+		end
+	end
+end
+
+
+
+
+#Party experience value acquisition
+class Game_Interpreter
+	def gain_party_exp(exp, show = false)
+		$game_party.all_members.each{|actor|
+			actor.change_exp(actor.base_exp + exp,show,:base)
+		}
+	end
+	
+	def gain_party_class_exp(exp, show = false)
+		$game_party.all_members.each{|actor|
+			actor.change_exp(actor.class_exp + exp,show,:class)
+		}
+	end
+	
+	def gain_party_tribe_exp(exp, show = false)
+		$game_party.all_members.each{|actor|
+			actor.change_exp(actor.tribe_exp + exp,show,:tribe)
+		}
+	end 
+	
+	def gain_party_friend(love)
+		$game_party.all_members.each{|actor|
+			actor.love = actor.love + love
+		}
+	end
+end
+
+#Change formula
+class Game_BattlerBase
+	#--------------------------------------------------------------------------
+	# ○ Calculation of feature values ​​of xparam strain
+	#--------------------------------------------------------------------------
+	def features_xparam_rate(code, id)
+		1.0 - features_with_id(code, id).inject(1.0) {|r, ft| r * (1.0 -  ft.value) }
+	end
+	#--------------------------------------------------------------------------
+	# ○ Acquisition of additional ability value
+	#--------------------------------------------------------------------------
+	def xparam(xparam_id)
+			
+		return features_sum(FEATURE_XPARAM, xparam_id) if xparam_id == 0 || xparam_id == 3 #Added hit and avoidance
+		features_xparam_rate(FEATURE_XPARAM, xparam_id)
+	end
+end
+class Game_Battler
+	#--------------------------------------------------------------------------
+	# ○ Acquisition of physical reflectance
+	#--------------------------------------------------------------------------
+	def physical_reflection_rate
+		features_xparam_rate(FEATURE_BATTLER_ABILITY, PHYSICAL_REFLECTION)
+	end
+	
+	#--------------------------------------------------------------------------
+	# ○ Required to get the counter rate
+	#--------------------------------------------------------------------------
+	def certain_counter
+		features_xparam_rate(FEATURE_BATTLER_ABILITY, CERTAIN_COUNTER)
+	end
+	#--------------------------------------------------------------------------
+	# ○ Acquire magic counterattack rate
+	#--------------------------------------------------------------------------
+	def magical_counter
+		features_xparam_rate(FEATURE_BATTLER_ABILITY, MAGICAL_COUNTER)
+	end
+	
+end
+class Game_Enemy < Game_Battler
+	#--------------------------------------------------------------------------
+	# ● Acquisition of experience value
+	#--------------------------------------------------------------------------
+	def exp
+		return enemy.exp unless $game_variables[NWConst::Var::EXP] > 0
+		(enemy.exp * $game_variables[NWConst::Var::EXP] *0.01).to_i
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquisition of money
+	#--------------------------------------------------------------------------
+	def gold
+		return enemy.gold unless $game_variables[NWConst::Var::MONEY] > 0
+		(enemy.gold * $game_variables[NWConst::Var::MONEY] *0.01).to_i
+	end
+end
+###Enemy's ability value compensation
+module NWConst::Var
+	EXP = 46
+	MONEY = 47
+end
+

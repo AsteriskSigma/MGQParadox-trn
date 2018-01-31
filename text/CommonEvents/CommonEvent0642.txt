@@ -1,0 +1,7 @@
+"イベント：ミノタウロス" -> "Event: Minotaur"
+"【ミノタウロス娘】" -> "【Minotaur girls】"
+"どうだ？　元気モリモリになっただろ！？" -> "How is it? You became cheerful! What?"
+"【ミノタウロス娘】" -> "【Minotaur girls】"
+"さあ、牛丼食おうぜ！" -> "Let's eat beef bowl, Oh!"
+"ミノタウロス娘に牛丼を食べさせられた！" -> "Minotaros got daughter to eat beef bowl!"
+"次のボスフロアまで、戦闘開始時に力が溜まる！" -> "Power will accumulate at the beginning of battle until the next boss floor!"

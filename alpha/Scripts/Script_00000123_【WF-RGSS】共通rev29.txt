@@ -1,0 +1,1091 @@
+# coding: utf-8
+# ===========================================================================
+# ★ WF-RGSS Scripts ★
+#    Common Script(XP/VX/VXAceBoth versions)
+# Version: rev-29 (2013-3-26)
+# Author: A Crying Minister(WHITE-FLUTE)
+# Supported URI: http://www.whiteflute.org/wfrgss/
+# ---------------------------------------------------------------------------
+# function:
+# · If a SyntaxError occurs in the script after this section
+#   Since it is replaced by another exception, detailed information will not be deleted.
+#   (VXAceIt is no longer deleted by the standard.)
+# · Write SyntaxError information to a file.
+# · It prevents transition to inadvertent debug mode.
+#   (There is no problem in original debug mode.)
+# · It inhibits transition to illegal debug mode.
+# · Display debugging console to make debugging easier.
+# ---------------------------------------------------------------------------
+# Impact:
+# · Some built-in functions such as external command execution are undefined.
+# · Exception SyntaxError can not be created.(XP/VX)
+#   (* Replaced with ScriptSyntaxError.)
+# ---------------------------------------------------------------------------
+# Installation location: the first section(Game_Temp(XP)/module(VX/VXAce)Before)
+# Required script:
+# · Common execution script(VXAce , Exit-EXCan be replaced with.)
+# Notes:
+#   It is recommended to overwrite the common execution script in the Main section and use it.			
+# ===========================================================================
+BEGIN {
+
+module WFRGSS
+  # -------------------------------------------------------------------------
+  # ● Adjustment point
+  # -------------------------------------------------------------------------
+  # Set whether to inhibit the debug mode transition.
+  # Since it can not be surely protected, overstock is not permitted.
+
+  DEBUG_CHECK = true
+
+  # -------------------------------------------------------------------------
+  # In the debug mode, displays the debugging console.
+  # (VXAceRegardless of the setting, it is equipped as standard.)
+
+  DEBUG_CONSOLE = false
+
+  # -------------------------------------------------------------------------
+  # Debug messages are erased when in release mode.
+
+  DELETE_DEBUG_MESSAGE = false
+
+  # -------------------------------------------------------------------------
+  # XPonly. Set the debug flag to VX/VXAceDo you want to fix it to compliance?
+  # (!) Script correspondence is required.
+
+  DEBUG_FLAG_CHANGE = false
+
+
+  # -------------------------------------------------------------------------
+  # Adjustment point end
+  # -------------------------------------------------------------------------
+end
+
+
+
+# ---------------------------------------------------------------------------
+# ● Exception definition
+# ---------------------------------------------------------------------------
+
+# Inheritance exception
+class InheritanceError < Exception;end
+
+# Mix-in exception
+class IncludeError < Exception;end
+  
+# Using virtual classes, methods
+class AbstractError < NotImplementedError;end
+
+# ◆ Bug Detection
+#    Please generate it when it becomes absolutely impossible state except bug.
+# ※ Because it is intended for bug reporting, it should not be discarded on the way.
+class BugDetected < Exception;end
+
+# ◆ For internal bug report
+# This happens when WFRGSS falls into a state where it only has bugs.
+# ※ Because it is intended for bug reporting, it should not be discarded on the way.
+class InternalBugDetected < BugDetected;end
+
+# Event hierarchy is too deep
+class EventDeepError < SystemStackError;end
+
+# Initialization failure
+class InitializeError < TypeError;end
+
+# Assertion failure
+class AssertionError < Exception;end
+
+# ◆ Exception Hangup
+# Exception thrown when it is deemed hung up.
+# Since you may not be able to capture from a deep hierarchy, you need attention
+# RPGVX/VXAceAlthough it does not exist, it is set to maintain compatibility with XP.
+class Hangup < Exception;end
+
+# ◆ Exceptions Reset
+# Graphics.update Exception thrown when F 12 is pressed when calling.(XP)
+# F12 Exceptions thrown when pressed(VX)
+# When this goes out of the section
+# I try to redo the execution from the first section again.
+# This operation is a method of built-in class,
+# alias Or undef is used
+# It becomes the source of trouble.
+class Reset < Exception;end
+
+# Security breach
+class SecurityHazard < Exception;end
+
+# RPGXPFor compatibility
+if WFRGSS::DEBUG_FLAG_CHANGE
+  $TEST = $DEBUG
+  $DEBUG = false
+else
+  $TEST = false unless $TEST
+end
+
+module WFRGSS
+  @@debug = ($TEST or $DEBUG)
+  def self.check
+    debug = ($TEST or $DEBUG)
+    if debug != @@debug or (@@debug and
+       (FileTest.file?("Game.rgssad") or FileTest.file?("Game.rgss2a") or
+        FileTest.file?("Game.rgss3a")))
+      raise(SecurityHazard ,"Insecure - debug flag can't be change.")
+    end
+  end
+end
+
+# ---------------------------------------------------------------------------
+# ◆ ◆ Measures to prevent debugging mode
+# ---------------------------------------------------------------------------
+# Prevent debug mode
+if defined? untrace_var
+  undef untrace_var
+  # If not in debug mode, prohibit transition to debug mode
+  proc = Proc.new {
+    if $DEBUG
+      $DEBUG = false
+      $TEST = false
+      $BTEST = false
+      raise(SecurityHazard ,"Insecure - debug flag can't be change.", caller(1))
+    end
+  }
+  trace_var( :$DEBUG , proc )
+  trace_var( :$-d , proc )    # $DEBUG Another name for
+  proc = nil
+  
+  # If not in debug mode, prohibit transition to debug mode
+  proc = Proc.new {
+    if $TEST
+      $DEBUG = false
+      $TEST = false
+      $BTEST = false
+      raise(SecurityHazard ,"Insecure - debug flag can't be change.", caller(1))
+    end
+  }
+  trace_var( :$TEST , proc )  # RPGVX Debug flag
+  proc = nil
+  
+  # If it is not a battle test, prohibit transition to battle test
+  proc = Proc.new {
+    if $BTEST
+      $DEBUG = false
+      $TEST = false
+      $BTEST = false
+      raise(SecurityHazard ,"Insecure - battle test flag can't be change.",
+               caller(1))
+    end
+  }
+  trace_var( :$BTEST , proc )
+  proc = nil
+end
+
+unless defined? ScriptSyntaxError
+  # RGSSThen, I delete all the detailed information of SyntaxError which I originally had,
+  # Debugging becomes very difficult.
+  # It is an exception prepared for that.
+  # * Especially when I give SyntaxError on the event script it is very miserable ...
+  #  \"SyntaxError occurred during script execution\" only
+  #   Can you fix it soon?
+  class ScriptSyntaxError < Exception;end
+  # -------------------------------------------------------------------------
+  # ◆ Built-in exception class SyntaxError<obsolete>
+  # -------------------------------------------------------------------------
+  # RGSS, Since all the detailed information of the SyntaxError which it originally has is deleted,
+  # SyntaxError We take over the constructor of another and replace it with another exception.
+  # * You can not create an instance of SyntaxError.
+  class SyntaxError < ScriptError
+    ERROR = Hash.new
+  end
+  class << SyntaxError
+    #--------------------------------------------------------------------------
+    # ◆(! ※ No prohibition ※!)
+    #--------------------------------------------------------------------------
+    def SyntaxError.inherited( subclass ) 
+      raise( InheritanceError ,
+             "can't inherit class #{subclass} from #{self}" , caller(1) )
+    end
+    private_class_method(:inherited)
+    unless defined? BasicObject
+      undef allocate
+      undef new
+      #------------------------------------------------------------------------
+      # ◆ Forcibly replace with another exception
+      #------------------------------------------------------------------------
+      def new( errors , *args )
+        error_message = make_error_message(errors)
+        error_message_dump(error_message)
+        ScriptSyntaxError.new(error_message)
+      end
+    else
+      alias __wfrgss__new__ new unless $!
+      def new( errors , *args )
+        error_message = make_error_message(errors)
+        error_message_dump(error_message)
+        __wfrgss__new__(errors)
+      end
+    end
+    private
+    #----------------------------------------------------------------------------
+    # ◆(Internal only)◆ Error message creation
+    #----------------------------------------------------------------------------
+    def make_error_message( error_message )
+      extra = ""
+      unless (error_message[/^(?:Section)?{?(\d+)}?:(\d+):/]).nil?
+        nums = $1.to_i     # When picking up a section
+        extra = $RGSS_SCRIPTS.at(nums).at(1)
+        unless $2.nil?
+          lines = $2.to_i
+          unless ($RGSS_SCRIPTS.at(nums).at(3)).nil?
+            details = show_details_source_code( nums , lines )
+            unless details.empty?
+              #error_message += "\n** script source code:\n#{details}"
+            else
+              error_message += 
+              "\n** script source code:#{lines} unknown data.\n"
+            end
+          end
+        end
+      end
+      error_message.gsub!(/^(?:Section)?{?(\d+)}?:/){"( #{extra} ):#{$1}: Lines"}
+      error_message
+    end
+    #--------------------------------------------------------------------------
+    # ◆(Internal only)◆ Writing Information
+    #--------------------------------------------------------------------------
+    def error_message_dump(error_message)
+      e = Zlib::crc32(error_message)
+      return if SyntaxError::ERROR[e]
+      SyntaxError::ERROR[e] = true
+      File.open("syntaxerror.txt","a") do | file |
+        file.write("*SyntaxError - " + 
+                  (Time.now).strftime("%Y-%m-%d %H:%M:%S (%A)") + "\n")
+        file.write( "#{error_message}\n" )
+      end
+    end
+    #--------------------------------------------------------------------------
+    # ◆(Internal only)◆ Reading the source code position
+    #--------------------------------------------------------------------------
+    def show_details_source_code( nums , lines )
+      details = ""
+      splitstr = ($RGSS_SCRIPTS.at(nums).at(3)).split(/\r\n/)
+      if lines < 4
+        ranges = ( 0...( lines + 3 ))
+      else
+        ranges = (( lines - 4 )...( lines + 3 ))
+      end
+      for i in ranges
+        unless (splitstr.at(i)).nil?
+          if i != (lines - 1)
+            details += "|" + splitstr.at(i) + "\n"
+          else
+            details += ">" + splitstr.at(i) + "\n"
+          end
+        else
+          details += "[End of File]\n"
+          break
+        end
+      end
+      splitstr = nil
+      rpgvxace? ? details.force_encoding("UTF-8") : details
+    end 
+  end
+
+
+  # -------------------------------------------------------------------------
+  # ◆ RGSS embedded module Graphics
+  # -------------------------------------------------------------------------
+
+  class << Graphics
+    #------------------------------------------------------------------------
+    # ◆ Ignore reset Graphics.update
+    #------------------------------------------------------------------------
+    def Graphics.safe_update
+      begin
+        update
+      rescue Reset
+        # Ignore the reset operation.
+        # However, cursor animation etc. are rewound.
+        nil
+      end
+    end
+
+    if WFRGSS::DEBUG_CHECK
+    #------------------------------------------------------------------------
+    # ◆ Graphics.update Add a check to
+    #------------------------------------------------------------------------
+      alias ___original__update___ update
+      def Graphics.update
+        WFRGSS.check
+        ___original__update___
+      end
+      private(:___original__update___)
+    end
+  end
+
+  module Graphics
+    # -----------------------------------------------------------------------
+    # ◆ Class variables
+    # -----------------------------------------------------------------------
+    @@rate = 0
+    @@count = 0
+    # -----------------------------------------------------------------------
+    # ◆ Temporarily change the frame rate
+    # -----------------------------------------------------------------------
+    def self.frame_workset( frame_rates )
+      @@rate = Graphics.frame_rate
+      @@count = Graphics.frame_count
+      Graphics.frame_rate = frame_rates
+    end
+    # -----------------------------------------------------------------------
+    # ◆ Restore frame rate
+    # -----------------------------------------------------------------------
+    def self.frame_restore
+      cnt = Graphics.frame_count - @@count
+      cnt *= @@rate
+      cnt /= Graphics.frame_rate
+      Graphics.frame_count = @@count + cnt
+      Graphics.frame_rate = @@rate
+    end
+    # -----------------------------------------------------------------------
+    # ◆ Resolution width(VX/VXAceIgnored by)
+    # -----------------------------------------------------------------------
+    unless defined? Graphics.width
+      def self.width
+        640
+       end
+    end
+    # -----------------------------------------------------------------------
+    # ◆ Resolution Vertical width(VX/VXAceIgnored by)
+    # -----------------------------------------------------------------------
+    unless defined? Graphics.height
+      def self.height
+        480
+      end
+    end
+  end
+end
+
+# ---------------------------------------------------------------------------
+# ◆ Built-in module GC
+# ---------------------------------------------------------------------------
+module GC
+  module_function
+  #--------------------------------------------------------------------------
+  # ◆ Perform safe garbage collection
+  #--------------------------------------------------------------------------
+  def update_start
+    Graphics.safe_update
+    start
+    Graphics.safe_update
+  end
+end
+
+}
+
+unless defined? Abstract
+# -----------------------------------------------------------------------------
+# ◆◆ Built-in Class
+# -----------------------------------------------------------------------------
+class Class
+  # ---------------------------------------------------------------------------
+  # ◆ Class variables
+  # ---------------------------------------------------------------------------
+  @@_abstract_class = Hash.new
+  # ---------------------------------------------------------------------------
+  # ◆ Abstract class addition
+  # ---------------------------------------------------------------------------
+  def self.abstract_class( klass )
+    __failure_type_call__( klass ) unless klass.is_a?(Class)
+    unless @@_abstract_class[klass.__id__]
+      @@_abstract_class[klass.__id__] = klass
+    end
+  end
+  # ---------------------------------------------------------------------------
+  # ◆ Abstract class judgment
+  # ---------------------------------------------------------------------------
+  def self.abstract?( klass )
+    @@_abstract_class[klass.__id__]
+  end
+end
+
+module Abstract
+  # ---------------------------------------------------------------------------
+  # Abstraction
+  # ---------------------------------------------------------------------------
+  def self.included( klass )
+    if klass.include?(FinalClass)
+      # FinalClass Module has already been included
+      raise( IncludeError ,
+           "can't include #{klass} from #{self}" , caller(1) )
+    end
+    Class.abstract_class( klass )   
+    klass.extend(Abstract_Class__)
+  end
+  private_class_method(:included)
+end
+
+# ---------------------------------------------------------------------------
+# ◆ Abstraction ※ Special method exclusive use ※
+# ---------------------------------------------------------------------------
+module Abstract_Class__
+  # -------------------------------------------------------------------------
+  # ◆ ※ abstract class
+  # -------------------------------------------------------------------------
+  def allocate
+    return super unless Class.abstract?( self )
+    raise( AbstractError ,
+      "class #{self} cannot use it because of the abstraction class.",
+      caller(1) ) 
+  end
+  # -------------------------------------------------------------------------
+  # ◆ ※ abstract class
+  # -------------------------------------------------------------------------
+  def new( *args )
+    return super unless Class.abstract?( self )
+    raise( AbstractError ,
+      "class #{self} cannot use it because of the abstraction class.",
+      caller(1) )
+  end
+  # -------------------------------------------------------------------------
+  # ◆ * Mix-in Restriction
+  # -------------------------------------------------------------------------
+  def self.included( klass )
+    unless self.is_a?(Class)
+      raise( IncludeError ,
+           "can't include #{klass} from #{self}" , caller(1) )
+    end
+  end
+end
+
+module FinalClass
+  # ---------------------------------------------------------------------------
+  # ◆ Classes that can not be inherited
+  # ---------------------------------------------------------------------------
+  def self.included( klass )
+    if Class.abstract?( klass )
+      # Abstract Module has already been included
+      raise( IncludeError ,
+             "can't include #{klass} from #{self}" , caller(1) )
+    end
+    klass.module_eval(<<-End)
+      def self.inherited( subclass ) 
+        raise( InheritanceError ,
+        sprintf(\"can't inherit class %s from %s\",subclass.inspect,
+                self.inspect ) , caller(1) )
+      end
+      private_class_method(:inherited)
+    End
+  end
+  private_class_method(:included)
+end
+
+# ---------------------------------------------------------------------------
+# ◆ Built-in module Kernel
+# ---------------------------------------------------------------------------
+
+module Kernel
+  # ---------------------------------------------------------------------------
+  # ◆ Set dangerous functions to undefined
+  # ---------------------------------------------------------------------------
+  # Explicitly disable dangerous operations such as reading external commands.
+  # ※ The need for these commands(Normally)In addition,
+  #    Danger(It can cause system destruction)Because it is removed.
+  # ※ If you use these, please consider the effect and danger.
+  # ---------------------------------------------------------------------------
+  # Execute an external command.
+  undef `       #` # Execute an external command.
+  undef exec    # Do not return control to execute external command.
+  undef fork    # Generate a subshell.
+  undef system  # Execute an external command.
+  undef abort   # Terminate forcibly without post-processing. I am in trouble when I need post processing.
+  undef exit!   # abort Same as.
+  undef open    # Commands can be executed.(If you open the file IO.openUse)
+  #--------------------------------------------------------------------------
+  private
+  #--------------------------------------------------------------------------
+  # ◆ RPGVX/VXAce whether
+  #--------------------------------------------------------------------------
+  def rpgvx?
+    defined? Graphics.resize_screen
+  end
+  #--------------------------------------------------------------------------
+  # ◆ whether RPGVXAce or not
+  #--------------------------------------------------------------------------
+  def rpgvxace?
+    defined? BasicObject
+  end
+  #--------------------------------------------------------------------------
+  # ◆ RGSS version
+  #--------------------------------------------------------------------------
+  def rgss_version
+    rpgvx? ? (rpgvxace? ? 3 : 2 ) : 1
+  end
+  #--------------------------------------------------------------------------
+  # ◆ Test mode or not
+  #--------------------------------------------------------------------------
+  def debug?
+    $DEBUG or $TEST
+  end
+  #--------------------------------------------------------------------------
+  # ◆ Debug Console
+  #--------------------------------------------------------------------------
+  if WFRGSS::DEBUG_CONSOLE and debug? and (not rpgvxace?)
+    unless $@
+      $VERBOSE = true
+      alias wfrgss_p p
+      Win32API.new("kernel32","AllocConsole",'v','l').call
+      $stdout.reopen("conout$","w") 
+      def p(*a)
+        a.each{|v|$stdout.puts(String.utf82ansi(v.inspect))}
+      end
+    end
+  elsif WFRGSS::DELETE_DEBUG_MESSAGE
+    unless $@
+      alias display_p p
+      def p(*a)
+        # No output
+      end
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ◆ Exception set
+  #    Raise an exception.
+  #--------------------------------------------------------------------------
+  # ◆ method_missing same as
+  #--------------------------------------------------------------------------
+  def __failure_method_call__( method_name , *args )
+    raise( NoMethodError ,
+           "undefined method `#{method_name}' for #{self}" , caller(2) )
+  end
+  #--------------------------------------------------------------------------
+  # ◆ Override required
+  #--------------------------------------------------------------------------
+  def __override_required_call__( method_name , *args )
+    raise( AbstractError ,
+           "It is necessary to do override to use method `#{method_name}'" +
+           " of this class #{self}. " +
+           "(or, it tried to call the method of a super-class.)" , caller(2))
+  end
+  #--------------------------------------------------------------------------
+  # ◆ Generate exception TypeError
+  #--------------------------------------------------------------------------
+  def __failure_type_call__( object_type )
+    e = ( object_type.class ).to_s
+    raise( TypeError , "no implicit conversion from #{e}" , caller(2) )
+  end
+  #--------------------------------------------------------------------------
+  # ◆ Generate exception RangeError( num BugDetected if it is not Numeric)
+  #--------------------------------------------------------------------------
+  def __outof_range_call__( num , str , call_value = 2 )
+    if num.is_a?(Numeric)
+      if str.is_a?(String)
+        raise( RangeError , "#{num} out of range of #{str}",caller(call_value))
+      else
+        e = ( str.class ).to_s
+        raise(TypeError,"no implicit conversion from #{e}",caller(call_value))
+      end
+    else
+      e = ( num.class ).to_s
+      raise( BugDetected, "[BUG] no implicit conversion from #{e} (TypeError)",
+             caller(1))
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ◆ Generate exception ArgumentError( str BugDetected if it is not a String)
+  #--------------------------------------------------------------------------
+  def __invalid_value_call__( str , value , call_value = 2 )
+    if str.is_a?(String)
+      raise( ArgumentError , "invalid #{str} for #{value.to_s}")
+    else
+      e = ( str.class ).to_s
+      raise( BugDetected, "[BUG] no implicit conversion from #{e} (TypeError)",
+             caller(1))
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ◆ Generate exception SecurityError( str BugDetected if it is not a String)
+  #--------------------------------------------------------------------------
+  def __insecure_call__( str )
+    if str.is_a?(String)
+      raise( SecurityError , "Insecure operation - #{str}" , caller(2) )
+    else
+      e = ( str.class ).to_s
+      raise( BugDetected, "[BUG] no implicit conversion from #{e} (TypeError)",
+             caller(1))
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ◆ Report a bug.( str Even if it is not a String, BugDetected)
+  #--------------------------------------------------------------------------
+  def __report_bug( str )
+    if str.is_a?(String)
+      raise( BugDetected , str , caller(1))
+    else
+      e = ( str.class ).to_s
+      raise( BugDetected ,
+             "[BUG] no implicit conversion from #{e} (TypeError)" , caller(1) )
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ◆ Report a bug.(Detect abnormal value)
+  #--------------------------------------------------------------------------
+  def __report_bug_invalid_value( value )
+    raise( BugDetected , "[BUG] invalid value for #{value}", caller(1))
+  end
+  #--------------------------------------------------------------------------
+  # ◆ ◆! ※ ◆ WF-RGSS Report bugs.
+  #    ※ This method is WF-RGSS It is intended to report internal bugs.
+  #    * If you want to report a bug when customizing,
+  #       __report_bug( str ) Please use.
+  #--------------------------------------------------------------------------
+  def __report_internal_bug( str )
+    if str.is_a?(String)
+      raise( InternalBugDetected , str , caller(1))
+    else
+      e = ( str.class ).to_s
+      raise( InternalBugDetected ,
+             "[BUG] no implicit conversion from #{e} (TypeError)" , caller(1) )
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ◆ Check related methods
+  #    Check types and ranges.
+  #--------------------------------------------------------------------------
+  # ◆ If the type does not match, raise an exception TypeError
+  #    (※ BugDetected if klass is abnormal)
+  #--------------------------------------------------------------------------
+  def _type_check_( object_type , klass , call_value = 2 )
+    begin
+      return if object_type.is_a?(klass)
+      e = ( object_type.class ).to_s
+      raise( TypeError,"no implicit conversion from #{e}")
+    rescue TypeError => errobj
+      # Change the location of exception report
+      if errobj.message[/^no/].nil?
+        raise( BugDetected , "[BUG] #{errobj.message} (TypeError)",caller(1))
+      else
+        raise( TypeError , errobj.message , caller(call_value))
+      end
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ◆ Verify the range of Fixnum * Generate an exception if the range is abnormal
+  #--------------------------------------------------------------------------
+  def _fixnum_range_check( value , minimum , maximum )
+    __failure_type_call__( value , 3 ) unless value.is_a?(Fixnum)
+    unless value >= minimum and value <= maximum
+      # Raise an exception because it is out of range
+      call_ary = caller(1)
+      if call_ary.size > 0
+        sections = call_ary.at(0)
+        str = sections + " ( range #{minimum} .. #{maximum} )"
+      else
+        str = "caller method (unknown) ( range #{minimum} .. #{maximum} )"
+      end
+      __outof_range_call__( value , str , 3 )
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ◆ Summarize to the range of Integer(※ Do not use in places where processing speed is required)
+  #    * If the abnormal range is not recognized, use the method of ↑
+  #--------------------------------------------------------------------------
+  def _integer_range_value( value , minimum , maximum )
+    __failure_type_call__( value , 3 ) unless value.is_a?(Integer)
+    if value < minimum
+      return minimum
+    elsif value > maximum
+      return maximum
+    else
+      return value
+    end
+  end
+  # ---------------------------------------------------------------------------
+  # Change visibility
+  public
+  # From this point on as defined as a module function
+  module_function
+  # ---------------------------------------------------------------------------
+  # ◆ Verify true
+  # ---------------------------------------------------------------------------
+  def assert_if( value )
+    unless value
+      raise(AssertionError,"Assertion Failed (false for true)",caller(1))
+    end
+  end
+  # ---------------------------------------------------------------------------
+  # ◆ Verify fake
+  # ---------------------------------------------------------------------------
+  def assert_unless( value )
+    if value
+      raise(AssertionError,"Assertion Failed (true for false)",caller(1))
+    end
+  end
+end
+
+# ---------------------------------------------------------------------------
+# ◆ Built-in class Object
+# ---------------------------------------------------------------------------
+class Object
+  # Change visibility
+  private
+  #--------------------------------------------------------------------------
+  # ◆ Mix-inImplement prohibition
+  #--------------------------------------------------------------------------
+  def self.__cannot_mixin( klass )
+    raise( IncludeError ,
+           "can't include #{klass} from #{self}" , caller(2) )
+  end
+  #--------------------------------------------------------------------------
+  # ◆ Implement inheritance prohibition
+  #--------------------------------------------------------------------------
+  def self.__cannot_inherited( subclass )
+    raise( InheritanceError ,
+           "can't inherit class #{subclass} from #{self}" , caller(2) )
+  end
+  #--------------------------------------------------------------------------
+  # ◆ Abstract class(Inheritance is always necessary)
+  #--------------------------------------------------------------------------
+  def __abstract_class( target )
+    klass = self.class
+    unless target.is_a?(Class) or target.is_a?(Module)
+      __report_bug("[BUG] class or modules required (TypeError)")
+    end
+    until ( klass = klass.superclass ) == Object
+      return if klass == target
+    end
+    raise( AbstractError ,
+      "class #{target} cannot use it because of the abstraction class.",
+      caller(2) )
+  end
+end
+
+# ---------------------------------------------------------------------------
+# ◆ Built-in class String
+# ---------------------------------------------------------------------------
+class String
+  # ---------------------------------------------------------------------------
+  # ◆ Constants
+  # ---------------------------------------------------------------------------
+  CP_ACP   = 0         # ANSI code
+  CP_UTF7  = 65000     # UTF-7 code
+  CP_UTF8  = 65001     # UTF-8 code
+  EMPTY_STR = "".freeze
+  #--------------------------------------------------------------------------
+  # ◆ Class variables
+  #--------------------------------------------------------------------------
+  @@rm = Win32API.new('kernel32','RtlZeroMemory',%w(p l),'l').freeze
+  # An API that maps a string to a wide character string (Unicode)
+  @@mb2wc = Win32API.new('kernel32', 
+                        'MultiByteToWideChar', %w(i l p i p i), 'l').freeze
+  # An API that maps wide character strings to new strings
+  @@wc2mb = Win32API.new('kernel32', 
+                      'WideCharToMultiByte', %w(i l p i p i p p), 'l').freeze
+  #--------------------------------------------------------------------------
+  # ◆ Clear
+  #--------------------------------------------------------------------------
+  unless rpgvxace?
+    def clear
+      @@rm.call( self , self.size )
+      self.replace("")
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ◆ Encoding
+  #--------------------------------------------------------------------------
+  def encode_by_
+    for i in 0...self.size
+      self[i] = 256 - self[i]
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ◆ UTF-8 → ANSI conversion
+  #--------------------------------------------------------------------------
+  unless rpgvxace?
+    def self.utf82ansi( str )
+      to_multibyte( to_widechar( str , CP_UTF8 ) , CP_ACP )
+    end
+  else
+    def self.utf82ansi( str )
+     to_multibyte(to_widechar(str,CP_UTF8),CP_ACP).force_encoding("ASCII-8BIT")
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ◆ ANSI → UTF-8 conversion
+  #--------------------------------------------------------------------------
+  unless rpgvxace?
+    def self.ansi2utf8( str )
+      to_multibyte( to_widechar( str , CP_ACP ) , CP_UTF8 )
+    end
+  else
+    def self.ansi2utf8( str )
+      to_multibyte(to_widechar(str,CP_ACP),CP_UTF8).force_encoding("UTF-8")
+    end
+  end
+  private  # Change visibility to private
+  #--------------------------------------------------------------------------
+  # ◆(Internal only)◆ Wide character string( Unicode ) Convert to
+  #--------------------------------------------------------------------------
+  def self.to_widechar( str , codepage )
+    length = @@mb2wc.call( codepage , 0 , str , -1 , nil , 0 )
+    unless length.zero?
+      buffer = "\x00" * ( length << 1 )
+      unless (@@mb2wc.call( codepage ,0,str,-1,buffer,length)).zero?
+        return buffer
+      else
+        return ""
+      end
+    else
+      return ""
+    end
+  end
+  private_class_method(:to_widechar)
+  #--------------------------------------------------------------------------
+  # ◆(Internal only)◆ Wide character string( Unicode ) Get a string from
+  #--------------------------------------------------------------------------
+  def self.to_multibyte( str , codepage )
+    length = @@wc2mb.call( codepage , 0 , str , -1 , nil , 0 , nil , nil )
+    unless length.zero?
+      buffer = "\x00" * length
+      unless (@@wc2mb.call(codepage,0,str,-1,buffer,buffer.size,nil,nil)).zero?
+        return buffer
+      else
+        return ""
+      end
+    else
+      return ""
+    end
+  end
+  private_class_method(:to_multibyte)
+end
+
+# ---------------------------------------------------------------------------
+# ◆ Module ErrorLogWriter
+# ---------------------------------------------------------------------------
+
+module ErrorLogWriter
+  #--------------------------------------------------------------------------
+  # ◆(Internal only)◆ Mix-in Ban
+  #--------------------------------------------------------------------------
+  def self.included( klass )
+    __cannot_mixin( klass )
+  end
+  private_class_method(:included)
+  
+  ERROR_SECTION_NUM = (/^(?:Section)?{?(\d+)}?:/).freeze
+  ERROR_SECTION     = (/^(?:Section)?{?\d+}?:/).freeze
+  DOUBLE_CRLF       = (/\n\n/).freeze
+  # -------------------------------------------------------------------------
+  # ◆ Record error information( DEBUG Only)
+  # -------------------------------------------------------------------------
+  def self.write( errobj )
+    return unless debug?
+    begin
+      begin
+        Graphics.safe_update
+      rescue SecurityHazard
+      end
+      sleep(0.1)
+      File.open("errors.txt","a") do | file |
+        file.write("*Error - " + 
+                  (Time.now).strftime("%Y-%m-%d %H:%M:%S (%A)") + "\n")
+        file.write( "Exception : #{errobj.class}\n" )
+        file.write( errobj.message )
+        unless $@.nil? and $@.empty?
+          backtrace = ""
+          for str in $@.dup
+            unless (str[ERROR_SECTION_NUM]).nil?
+              extra = $RGSS_SCRIPTS.at($1.to_i).at(1)
+              str.gsub!(ERROR_SECTION) { "( " + extra + " ):" } 
+            end
+            backtrace += str
+           end
+          file.write( "\ntrace:\n" + $@.inspect + "\n" )
+        end
+      end
+    rescue Exception => errs
+      raise( errs , 
+      errs.message + "\n (" + (errobj.class).to_s + " )\n" + errobj.message )
+    end
+  end
+end
+
+end
+
+module MessageBox
+  #----------------------------------------------------------------------------
+  # ◆(Internal only)◆ Mix-in Ban
+  #----------------------------------------------------------------------------
+  def self.included( klass )
+    raise( IncludeError , "can't include #{klass} from #{self}" , caller(1) )
+  end
+  private_class_method(:included)
+  # ---------------------------------------------------------------------------
+  # ◆ Constants
+  # ---------------------------------------------------------------------------
+  MB_OK               = 0x0    #
+  MB_OKCANCEL         = 0x1    #
+  MB_ABORTRETRYIGNORE = 0x2    #
+  MB_YESNOCANCEL      = 0x3    #
+  MB_YESNO            = 0x4    #
+  MB_RETRYCANCEL      = 0x5    #
+  
+  MB_ICONERROR        = 0x10     # error
+  MB_ICONQUESTION     = 0x20     # Inquiry
+  MB_ICONWARNING      = 0x30     # warning
+  MB_ICONINFORMATION  = 0x40     # information
+  MB_SYSTEMMODAL      = 0x1000   # System modal
+  MB_TASKMODAL        = 0x2000   # Task modal
+  MB_TOPMOST          = 0x040000 # Frontmost
+  MB_FATAL            = 0x042010 # For fatal error
+  MB_WARN             = 0x042030 # warning
+  
+  IDOK     = 1
+  IDCANCEL = 2
+  IDABORT  = 3
+  IDRETRY  = 4
+  IDIGNORE = 5
+  IDYES    = 6
+  IDNO     = 7
+  # ---------------------------------------------------------------------------
+  # ◆ internal usage constants
+  # ---------------------------------------------------------------------------
+  ERROR_SECTION_NUM = (/^(?:Section)?{?(\d+)}?:/).freeze
+  ERROR_SECTION     = (/^(?:Section)?{?\d+}?:/).freeze
+  DOUBLE_CRLF       = (/\n\n/).freeze
+
+  begin
+    # message-box
+    @@mb = Win32API.new('user32', 'MessageBoxA', %w(p p p i), 'i').freeze
+  rescue Exception
+    # Acquisition failure
+    Script_Deleter.finalizer
+    raise( LoadError , "cannot read modules.(user32.dll)",caller(0))  
+  end
+  begin
+    # ini API to retrieve section keys from file
+    @@gpps = Win32API.new('kernel32',
+                      'GetPrivateProfileStringA',%w(p p p p l p),'l').freeze
+  rescue Exception
+    # Acquisition failure
+    Script_Deleter.finalizer
+    raise( LoadError , "cannot read modules.(kernel32.dll)",caller(0))
+  end
+  #--------------------------------------------------------------------------
+  # ◆(! Careful method!)◆ Display message box
+  #   * Warning: Exception Hangup must be taken always!
+  #--------------------------------------------------------------------------
+  def self.messagebox( message , title , type )
+    begin
+      # For stop measures
+      begin
+        Graphics.safe_update
+      rescue SecurityHazard
+      end
+      @@mb.call(0, String.utf82ansi( message ), String.utf82ansi( title ),type)
+    rescue Hangup
+      nil # ! ※ There is a possibility of being thrown to the outside without passing through here at exception
+    ensure
+      # ! ※ There is a possibility of being thrown to the outside without passing through here at exception
+      begin
+        Graphics.safe_update
+      rescue SecurityHazard
+      end
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ◆(! Prohibited outside specified use!)◆ Notify fatal error
+  #   * Warning: Exception Hangup must be taken always!
+  #--------------------------------------------------------------------------
+  def self.fatalerror( errobj )
+    begin
+      ErrorLogWriter.write( errobj )
+      error_message , tracer = error_message_setup( errobj )
+      # Instantaneous erase
+      Graphics.transition(0)
+      Audio.bgm_stop
+      Audio.bgs_stop
+      Audio.me_stop
+      Audio.se_stop
+      if debug? and ( not (tracer[/^(?:Section)?{?(\d+)}?:(\d+)/]).nil? )
+        # When picking up a section
+        nums = $1.to_i
+        extra = $RGSS_SCRIPTS.at(nums).at(1)
+        lines = $2.to_i
+        tracer = "#{extra} of #{lines} In the line,\n"
+        error_message = tracer + error_message
+      end
+      title = "\x00" * 256
+      @@gpps.call( 'Game' , 'Title' , '' , title , 255 , '.\\Game.ini' )
+      title = String.ansi2utf8(title)
+      title.tr("\x00","")
+      # Show mouse cursor
+      Input.mouse_show if Input.method_defined?(:mouse_show)
+      # message-box
+      messagebox( error_message , title , MB_FATAL )
+    rescue Hangup
+      nil # ! ※ There is a possibility of being thrown to the outside without passing through here at exception
+    end
+  rescue Hangup
+    nil
+  end
+  # ---------------------------------------------------------------------------
+  # ◆ Format abnormal termination message
+  # ---------------------------------------------------------------------------
+  def self.error_message_setup( errobj )
+    Graphics.freeze
+    begin
+      Graphics.safe_update
+    rescue SecurityHazard
+    end
+    _message = ""
+    # Remember backtrace
+    unless $@.nil? or ($@.at(0)).nil?
+      tracer =  ($@.at(0)).dup
+      # Analyze backtrace
+      backtrace = ""
+      i = 0
+      for str in $@.dup
+        unless (str[ERROR_SECTION_NUM]).nil?
+          extra = $RGSS_SCRIPTS.at($1.to_i).at(1)
+          str.gsub!(ERROR_SECTION) { "( " + extra + " ):" } 
+        end
+        backtrace += str
+      end
+      unless errobj.is_a?(SystemStackError)
+        if rpgvxace?
+          _message = errobj.message.force_encoding("UTF-8") + 
+                     "\n** backtrace:\n" + backtrace
+        else
+          _message = errobj.message + "\n** backtrace:\n" + backtrace
+        end
+      end
+    else
+      tracer = "" # Failure to acquire backtrace
+      if rpgvxace?
+        _message = errobj.message.force_encoding("UTF-8")
+      else
+        _message = errobj.message
+      end
+    end    
+    until (_message[DOUBLE_CRLF]).nil?
+      _message.gsub!(DOUBLE_CRLF){ "\n" }
+    end
+    if debug?
+      _message = "Unresolvable exception" + (errobj.class).inspect +
+                 " Processing can not be continued as it has occurred.\n" +
+                 _message
+    else
+      _message = "Unresolvable exception" + (errobj.class).inspect +
+                 " The processing could not be continued as it occurred.\n" +
+                 "I'm sorry to trouble you.\n\nDetailed information:\n" +
+                 _message
+    end
+    return _message, tracer
+  end
+end
+
+# RGSS2 In an environment, reset can not be prevented.
+if $@ and WFRGSS::DEBUG_CONSOLE and debug?
+  p "Exception Reset was thrown to the outside."
+end
+

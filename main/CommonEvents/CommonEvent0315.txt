@@ -1,0 +1,23 @@
+// EVENT 0315
+Name "Slugs"
+
+355("actor_label_jump")
+EndEventProcessing()
+DefineLabel("53")
+ShowMessageFace("slime_fc1",2,0,2,1)
+ShowMessage("\\n<Lime>So many slugs...")
+EndEventProcessing()
+DefineLabel("55")
+ShowMessageFace("name_fc1",2,0,2,2)
+ShowMessage("\\n<Melk>Oh my, so many of my comrades...\nIt makes me feel so damp and humid.")
+EndEventProcessing()
+DefineLabel("85")
+ShowMessageFace("highslag_fc1",0,0,2,3)
+ShowMessage("\\n<Elizabeth>My, look at all my little sisters...\nFufufufu...")
+EndEventProcessing()
+DefineLabel("87")
+ShowMessageFace("name2_fc2",1,0,2,4)
+ShowMessage("\\n<Melty>They've surely gone too far...\nThey're going to cause the humans problems if they don't stop breeding for a while.")
+EndEventProcessing()
+0()
+

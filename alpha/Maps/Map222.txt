@@ -1,0 +1,1641 @@
+
+
+
+EVENT   1
+ PAGE   1
+  0()
+
+
+
+EVENT   2
+ PAGE   1
+  0()
+
+
+
+EVENT   3
+ PAGE   1
+  0()
+
+
+
+EVENT   4
+ PAGE   1
+  0()
+
+
+
+EVENT   5
+ PAGE   1
+  0()
+
+
+
+EVENT   6
+ PAGE   1
+  0()
+
+
+
+EVENT   7
+ PAGE   1
+  0()
+
+
+
+EVENT   8
+ PAGE   1
+  0()
+
+
+
+EVENT   9
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,186,8,47,0,0)
+  0()
+
+
+
+EVENT   10
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,186,9,47,0,0)
+  0()
+
+
+
+EVENT   11
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,186,17,34,0,0)
+  0()
+
+
+
+EVENT   12
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,186,18,34,0,0)
+  0()
+
+
+
+EVENT   13
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,222,28,35,2,0)
+  0()
+
+
+
+EVENT   14
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,222,3,29,2,0)
+  0()
+
+
+
+EVENT   15
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,186,19,48,0,0)
+  0()
+
+
+
+EVENT   16
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,186,20,48,0,0)
+  0()
+
+
+
+EVENT   17
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,183,6,29,0,0)
+  0()
+
+
+
+EVENT   18
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,183,12,29,0,0)
+  0()
+
+
+
+EVENT   19
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,183,7,13,0,0)
+  0()
+
+
+
+EVENT   20
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,183,8,13,0,0)
+  0()
+
+
+
+EVENT   21
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,222,84,6,2,0)
+  0()
+
+
+
+EVENT   22
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,222,59,6,2,0)
+  0()
+
+
+
+EVENT   23
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,187,10,13,0,0)
+  0()
+
+
+
+EVENT   24
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,187,20,14,0,0)
+  0()
+
+
+
+EVENT   25
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,187,16,49,0,0)
+  0()
+
+
+
+EVENT   26
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,183,31,13,0,0)
+  0()
+
+
+
+EVENT   27
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,183,31,13,0,0)
+  0()
+
+
+
+EVENT   28
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,183,31,13,0,0)
+  0()
+
+
+
+EVENT   29
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,222,97,58,2,0)
+  0()
+
+
+
+EVENT   30
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,222,61,57,2,0)
+  0()
+
+
+
+EVENT   31
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,183,30,31,0,0)
+  0()
+
+
+
+EVENT   32
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,183,30,31,0,0)
+  0()
+
+
+
+EVENT   33
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,183,30,31,0,0)
+  0()
+
+
+
+EVENT   34
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,187,7,38,0,0)
+  0()
+
+
+
+EVENT   35
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,187,7,38,0,0)
+  0()
+
+
+
+EVENT   36
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,187,7,38,0,0)
+  0()
+
+
+
+EVENT   37
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【merchant】")
+  ShowMessage("You can not talk about the devil 's continent if you do not have enough weapons to deal with at home.")
+  ShowMessage("I thought that I would protect my life with money, please buy me anyway.")
+  Shop(1,29,0,0,false)
+  605(1,230,0,0)
+  605(1,813,0,0)
+  605(1,908,0,0)
+  605(2,92,0,0)
+  605(2,221,0,0)
+  605(2,316,0,0)
+  0()
+
+
+
+EVENT   38
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Wyburn smithing】")
+  ShowMessage("Dragon's blacksmith is the world's best!")
+  ShowMessage("Now, what do you need ...?")
+  355("call_synthesize(21)")
+  0()
+
+
+
+EVENT   39
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Otaru of a bar】")
+  ShowMessage("Welcome, what will you do?")
+  Shop(0,428,0,0,false)
+  605(0,431,0,0)
+  0()
+
+
+
+EVENT   40
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Accessory store】")
+  ShowMessage("Please have accessories.")
+  ShowMessage("There are convenient items to protect yourself.")
+  Shop(2,1091,0,0,false)
+  605(2,1104,0,0)
+  605(2,1105,0,0)
+  605(2,1106,0,0)
+  605(2,1127,0,0)
+  0()
+
+
+
+EVENT   41
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Father")
+  ShowMessage("Welcome to the sacred Remina church.")
+  ShowMessage("What do you need?")
+  ShowChoices(strings("To pray","Career change · party formation","There is no use"),3)
+  IfPlayerPicksChoice(0,null)
+   ChangeVariable(1002,1002,0,0,39)
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("Father")
+   ShowMessage("Let's pray to Ilius.")
+   ShowMessage("...... Oh, I feel the edge of guidance in this place.")
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("Father")
+   ShowMessage("If something happens on the road, it will be led to this place.")
+   ShowMessage("Irias's blessing is ... ...")
+   0()
+  IfPlayerPicksChoice(1,null)
+   RunCommonEvent(113)
+   EndEventProcessing()
+   0()
+  IfPlayerPicksChoice(2,null)
+   ShowMessageFace("",0,0,2,4)
+   ShowMessage("Father")
+   ShowMessage("Irias's blessing is ... ...")
+   0()
+  404()
+  0()
+
+
+
+EVENT   42
+ PAGE   1
+  If(1,833,0,2,1)
+   If(0,1582,1)
+    ShowMessageFace("mob_douguya_fc1",0,0,2,1)
+    ShowMessage("【Aurora】")
+    ShowMessage("Can I join you on your journey?")
+    ShowMessage("Medicine knowledge, it should be useful.")
+    ShowChoices(strings("To make friends","Do not companion"),0)
+    IfPlayerPicksChoice(0,null)
+     ShowMessageFace("mob_douguya_fc1",0,0,2,2)
+     ShowMessage("【Aurora】")
+     ShowMessage("Well then, let's get ready ...")
+     ShowMessage("alright, let's go.")
+     PictureClear(5)
+     205(0,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x09,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x2a,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x0f,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x2c,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+     355("add_actor_ex(582)")
+     249(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0c,0x66,0x61,0x6e,0x66,0x61,0x6c,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69))
+     ShowMessageFace("",0,0,2,3)
+     ShowMessage("Aurora joined the group!")
+     Wait(60)
+     EndEventProcessing()
+     0()
+    IfPlayerPicksChoice(1,null)
+     ShowMessageFace("mob_douguya_fc1",0,0,2,4)
+     ShowMessage("【Aurora】")
+     ShowMessage("Is that so ... I'm sorry.")
+     0()
+    404()
+    0()
+   EndIf()
+   0()
+  EndIf()
+  ShowMessageFace("mob_douguya_fc1",0,0,2,5)
+  ShowMessage("【Aurora】")
+  ShowMessage("Do you want an item?")
+  ShowMessage("Or ... would you like a battle fuck with me?")
+  ShowChoices(strings("shopping","Battle Fuck"),2)
+  IfPlayerPicksChoice(0,null)
+   Shop(0,2,0,0,false)
+   605(0,7,0,0)
+   605(0,11,0,0)
+   605(0,13,0,0)
+   605(0,14,0,0)
+   605(0,15,0,0)
+   605(0,16,0,0)
+   605(0,17,0,0)
+   605(0,18,0,0)
+   605(0,19,0,0)
+   605(0,20,0,0)
+   605(0,21,0,0)
+   605(0,23,0,0)
+   605(0,35,0,0)
+   0()
+  IfPlayerPicksChoice(1,null)
+   RunCommonEvent(7321)
+   0()
+  404()
+  0()
+ PAGE   2
+  // condition: party contains actor #582
+  0()
+
+
+
+EVENT   43
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Inn young girl】")
+  ShowMessage("20GWill it be possible to stay overnight?\\$")
+  ShowChoices(strings("Yes","No"),2)
+  IfPlayerPicksChoice(0,null)
+   If(7,20,0)
+    125(1,0,20)
+    221()
+    249(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x08,0x49,0x6e,0x6e,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69))
+    Wait(150)
+    314(0,0)
+    222()
+    0()
+   Else()
+    ShowMessageFace("",0,0,2,2)
+    ShowMessage("【Inn young girl】")
+    ShowMessage("It seems that you are running out of ... ...")
+    0()
+   EndIf()
+   0()
+  IfPlayerPicksChoice(1,null)
+   0()
+  404()
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   44
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Midget meal of a diner】")
+  ShowMessage("Well, what are you ordering?")
+  Shop(0,361,0,0,true)
+  605(0,363,0,0)
+  605(0,364,0,0)
+  605(0,365,0,0)
+  605(0,380,0,0)
+  605(0,388,0,0)
+  605(0,389,0,0)
+  0()
+
+
+
+EVENT   45
+ PAGE   1
+  ShowMessageFace("usagi_fc1",0,0,2,1)
+  ShowMessage("【Rabbit owner】")
+  ShowMessage("Oh, welcome.")
+  ShowMessage("Alcohol which human beings do not die even if they drink ......")
+  Shop(0,429,0,0,false)
+  605(0,430,0,0)
+  605(0,431,0,0)
+  0()
+
+
+
+EVENT   46
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Kuonichi】")
+  ShowMessage("The ninja's top-ranking worker \"Yukari Kunoichi\" is an expert in honor.")
+  ShowMessage("With a rich pleasure attack, pull out the enemy.")
+  ShowMessageFace(binary"",0,0,2,2)
+  ShowMessage("【Kuonichi】")
+  ShowMessage("It is totally different from a ninja of strength, saying \"ninja\".")
+  ShowMessage("I am also training, aiming for \"Yukari Kunoichi\".")
+  0()
+
+
+
+EVENT   47
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Kuonichi】")
+  ShowMessage("There are two kinds of ninja's top jobs.")
+  ShowMessage("It is extremely fighting the mystery mystery and \"extremely horrible kunoichi\" that made the most of horny art.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("【Kuonichi】")
+  ShowMessage("Each required job change item is different ...")
+  ShowMessage("Be careful not to confuse them.")
+  0()
+
+
+
+EVENT   48
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Ninja】")
+  ShowMessage("\"Ninjin\", the ninja's top senior position, is exactly the ultimate ninja.")
+  ShowMessage("Burden the enemy with a powerless blind ninjutsu.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("【Ninja】")
+  ShowMessage("It is different from 'Fortune kunoichi' etc ... It was nothing to do with obsessive techniques ......")
+  ShowMessage("The power of a true ninja, I definitely want to acquire it.")
+  0()
+
+
+
+EVENT   49
+ PAGE   1
+  ShowMessageFace("youki_fc1",0,0,2,1)
+  ShowMessage("Kisame daughter")
+  ShowMessage("I wonder what kind of guy Heinrich hero is ... ...")
+  ShowMessage("After all, is it muscle muscles?")
+  ShowMessageFace("youki_fc1",0,0,2,2)
+  ShowMessage("Kisame daughter")
+  ShowMessage("That's right, there seems to be a brave Luca who won Queen Succubus.")
+  ShowMessage("After all, is it muscle muscles?")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("538")
+  ShowMessageFace("heinrich_fc1",7,0,2,3)
+  ShowMessage("【Heinrich】")
+  ShowMessage("I can not make it to your expectations ...")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   50
+ PAGE   1
+  ShowMessageFace("hituzi_fc1",3,0,2,1)
+  ShowMessage("【Sheep Girl】")
+  ShowMessage("It is! Powered by Discuz!")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("This is not our sheep ...")
+  ShowMessageFace("hituzi_fc1",3,0,2,3)
+  ShowMessage("【Sheep Girl】")
+  ShowMessage("When a weak demon like me comes out of town ......")
+  ShowMessage("Instantly, it will be eaten by the behemoth daughter ......")
+  ShowMessageFace("behemoth_fc1",2,0,2,4)
+  ShowMessage("【Behemoth girl】")
+  ShowMessage("Someone who seems like you, who will eat it ......")
+  ShowMessageFace("usagi_fc1",3,0,2,5)
+  ShowMessage("【Rabbit owner】")
+  ShowMessage("Oh? Sheep meat is delicious, is not it?")
+  ShowMessageFace("hituzi_fc1",2,0,2,6)
+  ShowMessage("【Sheep Girl】")
+  ShowMessage("What to say, this rabbit ~!")
+  0()
+
+
+
+EVENT   51
+ PAGE   1
+  ShowMessageFace("behemoth_fc1",0,0,2,1)
+  ShowMessage("【Behemoth girl】")
+  ShowMessage("It is unusual for humans to come to this shop!")
+  ShowMessage("Would you like to buy explosive lava wine from me?")
+  ShowMessageFace("ruka_fc1",0,0,2,2)
+  ShowMessage("【Luke】")
+  ShowMessage("Well, I will hold back ... ...")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("15")
+  ShowMessageFace("salamander_fc1",0,0,2,3)
+  ShowMessage("【Salamander】")
+  ShowMessage("Explosive lava wine ......")
+  ShowMessage("I used to drink Gran Berrier often.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   52
+ PAGE   1
+  ShowMessageFace("hutakuti_fc1",3,0,2,1)
+  ShowMessage("【Two-mouth daughter】")
+  ShowMessage("It is sad that the demons and the human frustration continue. ...")
+  ShowMessage("Demon Lord says things like tearing up tribe ... ...")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("45")
+  ShowMessageFace("alicetromeria_fc1",4,0,2,2)
+  ShowMessage("【Aristo Romelia】")
+  ShowMessage("Well, why is not it ...?")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   53
+ PAGE   1
+  ShowMessageFace("kezyorou_fc1",0,0,2,1)
+  ShowMessage("【Hairdresser】")
+  ShowMessage("We have a child who eats big.")
+  ShowMessage("It can not be helped meal cost ......")
+  ShowMessageFace("hutakuti_fc1",6,0,2,2)
+  ShowMessage("【Two-mouth daughter】")
+  ShowMessage("Sorry, sorry!")
+  ShowMessageFace("kezyorou_fc1",2,0,2,3)
+  ShowMessage("【Hairdresser】")
+  ShowMessage("Have you reply before the front mouth?")
+  ShowMessage("Or is it behind the mouth ...?")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("143")
+  ShowMessageFace("eva_fc1",0,0,2,4)
+  ShowMessage("【Eva】")
+  ShowMessage("Haha, I have grain.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   54
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Young man】")
+  ShowMessage("Because I was born in Remina ......")
+  ShowMessage("I never thought I was worried that the monsters were in the town.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("【Young man】")
+  ShowMessage("You look quite accustomed to demons.")
+  ShowMessage("Besides Remina, I do not ask for places coexisting with demons.")
+  0()
+
+
+
+EVENT   55
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Young woman】")
+  ShowMessage("Because I've been married from Grangoldo ....")
+  ShowMessage("When I came to this town where demons were falling down, I had a fear.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("【Young woman】")
+  ShowMessage("There is no fear anymore.")
+  ShowMessage("Everyone is mild and I have become accustomed to it.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("569")
+  ShowMessageFace("kakyouin_fc1",0,0,2,3)
+  ShowMessage("【Kanji】")
+  ShowMessage("I overcame my fear .... I am also.")
+  ShowMessageFace("",0,0,2,4)
+  ShowMessage("【Young woman】")
+  ShowMessage("Haha ...")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   56
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Girl】")
+  ShowMessage("Mommy! Can I go play with my two-girl-chan?")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("【Young woman】")
+  ShowMessage("It is not lured and eaten too much.")
+  0()
+
+
+
+EVENT   57
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Researcher】")
+  ShowMessage("It is a wonderful place filled with freedom and openness.")
+  ShowMessage("The disadvantage is that she must not mind ...")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("41")
+  ShowMessageFace("stein_fc2",0,0,2,2)
+  ShowMessage("【Promotin】")
+  ShowMessage("Is that a drawback ...?")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   58
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Researcher】")
+  ShowMessage("Sorry, can you please do not disturb me?")
+  ShowMessage("Mumumu ... is there no response?")
+  0()
+
+
+
+EVENT   59
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("[Scholar]")
+  ShowMessage("The handling of this compound requires careful ......")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("41")
+  ShowMessageFace("stein_fc2",1,0,2,2)
+  ShowMessage("【Promotin】")
+  ShowMessage("It is Makai Rin.")
+  ShowMessage("This smell is nostalgic ...")
+  EndEventProcessing()
+  DefineLabel("72")
+  ShowMessageFace("phoenix_fc1",4,0,2,3)
+  ShowMessage("【mini】")
+  ShowMessage("What are you doing ...?")
+  ShowMessage("Do not be shy, show me! Show me!")
+  ShowMessageFace("",0,0,2,4)
+  ShowMessage("[Scholar]")
+  ShowMessage("Fire, fire ...! Do not come close!")
+  EndEventProcessing()
+  DefineLabel("134")
+  ShowMessageFace("chrom_fc2",5,0,2,5)
+  ShowMessage("【chromium】")
+  ShowMessage("儂 has done with more dangerous medicine ... ...")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   60
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Researcher】")
+  ShowMessage("I do not have confidence in muscles, so packing is tight.")
+  0()
+
+
+
+EVENT   61
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("[Scholar]")
+  ShowMessage("Do not be with an alchemist, we are scientists.")
+  ShowMessage("Well, you guys do not know where they are different ... ...")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("41")
+  ShowMessageFace("stein_fc2",1,0,2,2)
+  ShowMessage("【Promotin】")
+  ShowMessage("I think that people in this hand are also in the era ......")
+  ShowMessage("It is somewhat funny.")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("[Scholar]")
+  ShowMessage("What are you saying ...?")
+  ShowMessageFace("stein_fc2",1,0,2,4)
+  ShowMessage("【Promotin】")
+  ShowMessage("You are a universal existence.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   62
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Researcher】")
+  ShowMessage("I need to concentrate quite a bit ... ...")
+  0()
+
+
+
+EVENT   63
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("[Scholar]")
+  ShowMessage("look! You have never seen purity of super spirit and so far!")
+  ShowMessage("I did it, I did it!")
+  0()
+
+
+
+EVENT   64
+ PAGE   1
+  ShowMessageFace("mino_fc1",0,0,2,1)
+  ShowMessage("【Minotaur girls】")
+  ShowMessage("Muscle up with accessories!")
+  ShowMessage("I want to be fashionable at the same time!")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("216")
+  ShowMessageFace("m_mino_fc1",0,0,2,2)
+  ShowMessage("【Odette】")
+  ShowMessage("Oh no, uh huh ...")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   65
+ PAGE   1
+  ShowMessageFace("mino_fc1",0,0,2,1)
+  ShowMessage("【Minotaur girls】")
+  ShowMessage("Muscle wine is the best!")
+  ShowMessage("...... Humans do not drink, I will blow nosebleed.")
+  0()
+
+
+
+EVENT   66
+ PAGE   1
+  ShowMessageFace("namazu_fc1",0,0,2,1)
+  ShowMessage("【Catfish girl】")
+  ShowMessage("Human sake has a low frequency and does not get too drunk ......")
+  ShowMessage("It is perfect for young people.")
+  0()
+
+
+
+EVENT   67
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Hurry up")
+  ShowMessage("Drunken momentum, I have ever entered a demon's tavern ... ...")
+  ShowMessage("I started drinking a strange drink and a flame came out of my mouth.")
+  0()
+
+
+
+EVENT   68
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Youth")
+  ShowMessage("I thought about giving to fiancee, but it is expensive ......")
+  ShowMessage("Besides, I can only see the future that my witnesses awfully, such as the effect of raising the attention rate.")
+  0()
+
+
+
+EVENT   69
+ PAGE   1
+  ShowMessageFace("kappa_fc1",0,0,2,1)
+  ShowMessage("【Kappa girl】")
+  ShowMessage("I like cucumbers more than beautiful accessories ♪")
+  ShowMessage("You are a cheap woman ... ....?")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("520")
+  ShowMessageFace("lazarus3_fc1",0,0,2,2)
+  ShowMessage("【Lazarus】")
+  ShowMessage("A woman who cheap is the most fearful ......")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   70
+ PAGE   1
+  ShowMessageFace("kappa_fc1",1,0,2,1)
+  ShowMessage("【Kappa girl】")
+  ShowMessage("ぱ っ ぱ ー ♪ Rappi ♪ ♪")
+  0()
+
+
+
+EVENT   71
+ PAGE   1
+  ShowMessageFace("basilisk_fc1",0,0,2,1)
+  ShowMessage("【Basilisk Musume】")
+  ShowMessage("To be honest, it is annoying to Satan.")
+  ShowMessage("With my ambition, challenging people to war ... ...")
+  ShowMessageFace("basilisk_fc1",0,0,2,2)
+  ShowMessage("【Basilisk Musume】")
+  ShowMessage("There are many people who are also dissatisfied with demons.")
+  ShowMessage("Especially those who coexist with us like ours!")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("45")
+  ShowMessageFace("alicetromeria_fc1",4,0,2,3)
+  ShowMessage("【Aristo Romelia】")
+  ShowMessage("That's rude ... ....")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   72
+ PAGE   1
+  ShowMessageFace("kirin_fc1",1,0,2,1)
+  ShowMessage("【giraffe】")
+  ShowMessage("Would you like a minor to drink sake ...?")
+  ShowMessage("Why儂 has exceeded two hundred years old!")
+  0()
+
+
+
+EVENT   73
+ PAGE   1
+  ShowMessageFace("elf_fc1",2,0,2,1)
+  ShowMessage("【Elf】")
+  ShowMessage("Who is such a rumor that the elves are nymphos ......")
+  ShowMessage("I can not afford to drink!")
+  ShowMessageFace("elf_fc1",1,0,2,2)
+  ShowMessage("【Elf】")
+  ShowMessage("This is this, the devil \"fairy wind\"!")
+  ShowMessage("Be careful as a human being drinks, throat gets staggered with a camoupe.")
+  If(4,12,0)
+   ShowMessageFace("sylph_fc1",2,0,2,3)
+   ShowMessage("【Sylph】")
+   ShowMessage("Hugh!")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   74
+ PAGE   1
+  ShowMessageFace("zyakotuonna_fc1",0,0,2,1)
+  ShowMessage("[Snake bone woman]")
+  ShowMessage("My concubine snakes are stifling ... ...")
+  ShowMessage("It is weak to raise the sound by a bad guy ......")
+  0()
+
+
+
+EVENT   75
+ PAGE   1
+  ShowMessageFace("scylla_fc1",0,0,2,1)
+  ShowMessage("【Scully】")
+  ShowMessage("What is it?")
+  ShowMessage("Scyra married to humans is rare ... ...?")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("289")
+  ShowMessageFace("maidscyulla_fc1",1,0,2,2)
+  ShowMessage("【run】")
+  ShowMessage("No ... ... It is enviable.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   76
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【husband】")
+  ShowMessage("My wife is a former maid, so I am very good at housework.")
+  ShowMessage("I am an unnecessary bride to me.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("【husband】")
+  ShowMessage("Night is amazing ... .... Hehu.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("5")
+  ShowMessageFace("alice_fc5",0,0,2,3)
+  ShowMessage("【Alice】")
+  ShowMessage("Erotic ...")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   77
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Young girl】")
+  ShowMessage("Is not it good for humans to dress up?")
+  ShowMessage("I will store the tentacles well in the skirt.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("294")
+  ShowMessageFace("emily_fc1",1,0,2,2)
+  ShowMessage("【Emily】")
+  ShowMessage("I am also good at that kind of thing ♪")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   78
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Girl】")
+  ShowMessage("Somewhat around ♪")
+  0()
+
+
+
+EVENT   79
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【middle aged】")
+  ShowMessage("It's a ninja ... ...")
+  ShowMessage("Mekachi stands out, is it okay ...?")
+  0()
+
+
+
+EVENT   80
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Thugs】")
+  ShowMessage("Remina seems to be called \"town of virtue\" outside.")
+  ShowMessage("Just living with demons and calling for tranquility, they are narrow-minded guys.")
+  0()
+
+
+
+EVENT   81
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Lonely middle age】")
+  ShowMessage("One person's message ...")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("88")
+  ShowMessageFace("jack_fc1",1,0,2,2)
+  ShowMessage("【pumpkin】")
+  ShowMessage("Let's eat together ... ....?")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   82
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Researcher】")
+  ShowMessage("After the research, it is a dress in this dining room after all.")
+  ShowMessage("This bustle brings excitement to the tired brain.")
+  0()
+
+
+
+EVENT   83
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Researcher】")
+  ShowMessage("At last the fingerprint has gone ... ...")
+  ShowMessage("I do not feel like becoming a part of scientist.")
+  0()
+
+
+
+EVENT   84
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Researcher】")
+  ShowMessage("I am not good at this cafeteria.")
+  ShowMessage("The bar is also getting together, is not the bad gar ...?")
+  0()
+
+
+
+EVENT   85
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Researcher】")
+  ShowMessage("The sake I made my own is delicious ...")
+  ShowMessage("No, of course it is illegal! Please be silent!")
+  0()
+
+
+
+EVENT   86
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("[Scholar]")
+  ShowMessage("Today there was quite a result.")
+  ShowMessage("Exciting and order miso soup!")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("143")
+  ShowMessageFace("eva_fc1",2,0,2,2)
+  ShowMessage("【Eva】")
+  ShowMessage("Seco Sobane ......")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   87
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Researcher】")
+  ShowMessage("There are personnel from all over the world in this laboratory.")
+  ShowMessage("Surprisingly few are born in Remina.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("【Researcher】")
+  ShowMessage("With pure inquiry, I started researching ... ...")
+  ShowMessage("Many have been treated like magicians of the roadside and are forced to hometown.")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("【Researcher】")
+  ShowMessage("Wandering around the world, finally finding whereabouts ......")
+  ShowMessage("Do you understand the joy that I came across with comrades?")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("41")
+  ShowMessageFace("stein_fc2",1,0,2,4)
+  ShowMessage("【Promotin】")
+  ShowMessage("Yes, I understand well.")
+  EndEventProcessing()
+  DefineLabel("167")
+  ShowMessageFace("lusia_fc1",0,0,2,5)
+  ShowMessage("【Rusia】")
+  ShowMessage("I also want to find comrades ......")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   88
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Brave of the journey】")
+  ShowMessage("Finally, I reached this town ... ...")
+  ShowMessage("Finally I knew my limitations.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("【Brave of the journey】")
+  ShowMessage("I heard the rumor of the hero, the brave man Heinrich, but it is probably excellent ...")
+  ShowMessage("It is unlikely that the lineage and talent are different from the brave of the country like me.")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("【Brave of the journey】")
+  ShowMessage("...... What is this slugs girl?")
+  0()
+
+
+
+EVENT   89
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Travel warrior】")
+  ShowMessage("Many people give up adventure in this town.")
+  ShowMessage("Still, it is better that I can retire as long as I live ......")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("【Travel warrior】")
+  ShowMessage("I also have little teeth at the demon opponent of the Helgond Continent.")
+  ShowMessage("Running around is a life that connects ... ...")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("【Travel warrior】")
+  ShowMessage("...... By the way, what is this slugs girl?")
+  0()
+
+
+
+EVENT   90
+ PAGE   1
+  ShowMessageFace("name_fc1",0,0,2,1)
+  ShowMessage("【Slug Sister】")
+  ShowMessage("It's a damp air, so I came ...")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("55")
+  ShowMessageFace("name_fc1",0,0,2,2)
+  ShowMessage("【Merck】")
+  ShowMessage("Drunk ......")
+  EndEventProcessing()
+  DefineLabel("85")
+  ShowMessageFace("highslag_fc1",0,0,2,3)
+  ShowMessage("【Elizabeth】")
+  ShowMessage("Uhhuh, good air ...")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   91
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【old woman】")
+  ShowMessage("In this town, you can see with white eyes just by worshiping Iliad ... ...")
+  ShowMessage("In the past I did not get bad, but it was not here.")
+  0()
+
+
+
+EVENT   92
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("[Old Man]")
+  ShowMessage("Someday God's judgment will come down in this town!")
+  ShowMessage("You must drive out fools who are deceived by science etc from this town!")
+  0()
+
+
+
+EVENT   93
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Sister】")
+  ShowMessage("God, judgment is against those who are going down the science ... ...")
+  ShowMessage("It is not science to save people but to obey the word of God.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("41")
+  ShowMessageFace("stein_fc2",0,0,2,2)
+  ShowMessage("【Promotin】")
+  ShowMessage("Neither God nor science will save people.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   94
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Shinto priest")
+  ShowMessage("First and foremost, you have to drive demons out of this town!")
+  ShowMessage("It would be a good idea to have Crusaders sent from San Yyria!")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("531")
+  ShowMessageFace("saniria_fc2",0,0,2,2)
+  ShowMessage("【King of Saint Iria】")
+  ShowMessage("King of Saint Iria of this age ... ... Felipe VIII?")
+  ShowMessage("If Ken is Ken, I will not respond to such a request.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   95
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Shinto priest")
+  ShowMessage("It is not corruption that people lost faith, is not it the arrogance of our priests?")
+  ShowMessage("If so, the first thing we should change is ...")
+  0()
+
+
+
+EVENT   96
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Shinto priest")
+  ShowMessage("Please scrape all science books, etc.")
+  ShowMessage("Then, the popular gaming entertainment book to be read is abolished.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("Shinto priest")
+  ShowMessage("If that happens, it will be only a book in which the word of God is written.")
+  ShowMessage("Faith returns to this city and we will go on the right path.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("531")
+  ShowMessageFace("saniria_fc2",0,0,2,3)
+  ShowMessage("【King of Saint Iria】")
+  ShowMessage("What a fool ......")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   97
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Shinto priest")
+  ShowMessage("In the past everything was pure, full of joy for the gods.")
+  ShowMessage("However, modern people's minds are dominated by luster, and they are muddy ... ...")
+  0()
+
+
+
+EVENT   98
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Inn young girl】")
+  ShowMessage("Oh, I am busy ... ... I am busy ...")
+  0()
+
+
+
+EVENT   99
+ PAGE   1
+  ShowMessageFace("hutakuti_fc1",1,0,2,1)
+  ShowMessage("【Two-mouth daughter】")
+  ShowMessage("It is part-time job.")
+  ShowMessage("I will also eat pinuchi ♪ ♪")
+  ShowMessageFace("hutakuti_fc1",2,0,2,2)
+  ShowMessage("【Two-mouth daughter】")
+  ShowMessage("...... Now, the back mouth said.")
+  0()
+
+
+
+EVENT   100
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("[Master of the inn]")
+  ShowMessage("Oh, welcome to our inn.")
+  ShowMessage("It is the motto of this inn, that people and monsters are separated from each other without distinction.")
+  0()
+
+
+
+EVENT   101
+ PAGE   1
+  ShowMessageFace("scylla_s_fc1",0,0,2,1)
+  ShowMessage("【Scylla servant】")
+  ShowMessage("お そ し ♪ お そ し じ ♪")
+  0()
+
+
+
+EVENT   102
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Book girl】")
+  ShowMessage("If the world is disturbed, travelers will be more.")
+  ShowMessage("Ironically, our inn is thriving, is not it?")
+  0()
+
+
+
+EVENT   103
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Inn young girl】")
+  ShowMessage("Everyone staying here has a tired face.")
+  ShowMessage("Many people retire braves in this town ......")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("538")
+  ShowMessageFace("heinrich_fc1",7,0,2,2)
+  ShowMessage("【Heinrich】")
+  ShowMessage("Certainly, it is probably the top in this continent ....")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   104
+ PAGE   1
+  ShowMessageFace("ustrel_fc1",0,0,2,1)
+  ShowMessage("【Ustrel】")
+  ShowMessage("This is a nice town ...")
+  ShowMessage("In the hometown of Grand Noah, monsters can not shop.")
+  0()
+
+
+
+EVENT   105
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Brave of the journey】")
+  ShowMessage("Ten years of hardship, I finally reached Remina ...")
+  ShowMessage("But I felt the limits on myself, I think I will put a sword here.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("【Brave of the journey】")
+  ShowMessage("That's why I tried it out without thinking, and I tried the temptation of a woman!")
+  ShowMessage("I stayed away from such fun for a long journey!")
+  0()
+
+
+
+EVENT   106
+ PAGE   1
+  ShowMessageFace("succubuses_fc3",0,0,2,1)
+  ShowMessage("【Succubus】")
+  ShowMessage("Because there are many such men in this town, it is choro good, is not it? ... ♪")
+  0()
+
+
+
+EVENT   107
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Inn young girl】")
+  ShowMessage("The retired braves put some weapons here for some reason.")
+  ShowMessage("Are you going to commemorate something ...?")
+  0()
+
+
+
+EVENT   108
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Brave of the journey】")
+  ShowMessage("As expected it is handling the good weapon of the demonic castle, ....")
+  0()
+
+
+
+EVENT   109
+ PAGE   1
+  ShowMessageFace("vampire_fc1",0,0,2,1)
+  ShowMessage("【Vampire】")
+  ShowMessage("This is a gun ...")
+  ShowMessage("It seems like an unknown weapon excavated from Tartarus in the west of Gordes.")
+  0()
+
+
+
+EVENT   110
+ PAGE   1
+  ShowMessageFace("elf_fc1",0,0,2,1)
+  ShowMessage("【Elf】")
+  ShowMessage("Recently, there are many exclusive demons.")
+  ShowMessage("The rise of black Alice is disturbing not only humans but also the hearts of demons.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("45")
+  ShowMessageFace("alicetromeria_fc1",4,0,2,2)
+  ShowMessage("【Aristo Romelia】")
+  ShowMessage("Everyone exposes himself ... ...")
+  ShowMessage("Is not it pleasant?")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   111
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Man】")
+  ShowMessage("According to rumors, Princess Edina seems to have a desire.")
+  ShowMessage("I guess it is not me ... ...")
+  0()
+
+
+
+EVENT   112
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Female】")
+  ShowMessage("I want to become a beautiful person like Edina Princess ......")
+  0()
+
+
+
+EVENT   113
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(210,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   114
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(414,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   115
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(225,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   116
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(208,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   117
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(7,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   118
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(202,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   119
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(376,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   120
+ PAGE   1
+  If(2,"A",1)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("【chief】")
+   ShowMessage("This is a research institution, but it is also an educational institution.")
+   ShowMessage("Those who graduated from our school are given \"the extreme of science\".")
+   If(0,4,0)
+    ShowMessageFace("alice_fc5",0,0,2,2)
+    ShowMessage("【Alice】")
+    ShowMessage("\"The extreme of science\" is certain ... ...")
+    ShowMessage("It is a career change item that will be able to get to the top job in science job.")
+    0()
+   EndIf()
+   If(0,5,0)
+    ShowMessageFace("iriasu_fc4",0,0,2,3)
+    ShowMessage("【Iliad】")
+    ShowMessage("\"The extreme of science\" is certain ... ...")
+    ShowMessage("It is supposed to be a career change item that will become a top job in science-based profession.")
+    0()
+   EndIf()
+   If(0,1041,0)
+    ShowMessageFace("stein_fc2",0,0,2,4)
+    ShowMessage("【Promotin】")
+    ShowMessage("That is an item you want by all means ....")
+    ShowMessage("Okay, let me enroll.")
+    ShowMessageFace("",0,0,2,5)
+    ShowMessage("【chief】")
+    ShowMessage("Are you enrolled, ...?")
+    ShowMessage("However, our entrance examination is the most in the world -")
+    ShowMessageFace("stein_fc2",0,0,2,6)
+    ShowMessage("【Promotin】")
+    ShowMessage("……it is complete.")
+    ShowMessage("It is the foundation of chemistry.")
+    ShowMessageFace("",0,0,2,7)
+    ShowMessage("【chief】")
+    ShowMessage("What!")
+    ShowMessage("Although there is a grading system, my curriculum is -")
+    221()
+    ShowMessageFace("",0,0,2,8)
+    ShowMessage("After 17 minutes -")
+    Wait(60)
+    222()
+    ShowMessageFace("stein_fc2",0,0,2,9)
+    ShowMessage("【Promotin】")
+    ShowMessage("……finished.")
+    ShowMessage("I am graduating with this, thank you for taking care of me.")
+    250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+    ChangeSelfSwitch("A",0)
+    ChangeInventory_Item(631,0,0,1)
+    If(0,4,0)
+     ShowMessageFace("alice_fc5",1,0,2,10)
+     ShowMessage("【Alice】")
+     ShowMessage("If you have this, do not go to the top job in science job!")
+     0()
+    EndIf()
+    If(0,5,0)
+     ShowMessageFace("iriasu_fc4",0,0,2,11)
+     ShowMessage("【Iliad】")
+     ShowMessage("With this, you will be in the top position in science job!")
+     0()
+    EndIf()
+    ShowMessageFace("",0,0,2,12)
+    ShowMessage("【chief】")
+    ShowMessage("What, such a thing ......")
+    ShowMessage("Be a visiting professor at our school! If it is impossible, to my daughter!")
+    ShowMessageFace("stein_fc2",0,0,2,13)
+    ShowMessage("【Promotin】")
+    ShowMessage("I do not like it.")
+    EndEventProcessing()
+    0()
+   Else()
+    ShowMessageFace("ruka_fc1",0,0,2,14)
+    ShowMessage("【Luke】")
+    ShowMessage("I definitely want this item ....")
+    ShowMessage("For that reason, admission is not realistic.")
+    EndEventProcessing()
+    0()
+   EndIf()
+   0()
+  Else()
+   ShowMessageFace("",0,0,2,15)
+   ShowMessage("【chief】")
+   ShowMessage("What, such a thing ......")
+   ShowMessage("Be a visiting professor at our school! If it is impossible, to my daughter!")
+   ShowMessageFace("stein_fc2",0,0,2,16)
+   ShowMessage("【Promotin】")
+   ShowMessage("I do not like it.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+

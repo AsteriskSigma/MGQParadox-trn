@@ -1,0 +1,4 @@
+"「I want to dispose of my semen in a method of no value」" -> "\"I want to dispose of my semen in a method of no value\""
+"　Aaaah" -> "Aaaah"
+"　Stop already" -> "Stop already"
+"♪" -> "♪"

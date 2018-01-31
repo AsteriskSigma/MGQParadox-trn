@@ -1,0 +1,39 @@
+
+=begin
+
+もんむす・くえすと！ＲＰＧ
+　SettingData処理  ver1  2015/03/24
+
+※このスクリプトは、以下の全てよりも下に導入する
+　SettingDataフォルダの読み込みスクリプト（■データ設定）
+　SettingDataフォルダの各ファイル内容を移行したセクション
+
+
+機能一覧　説明は下
+・SkillWords(Actor).rb　SKILL_WORDS　アクター0に「全アクター共通の設定」を記述
+
+
+機能　説明
+・SkillWords(Actor).rb　SKILL_WORDS　アクター0に「全アクター共通の設定」を記述
+アクターIDを0にして、通常のアクターと同様に設定する
+アクター0内で記述したものは共通設定となり、全アクターのSKILL_WORDSにコピーされる
+
+ただし共通設定が有効なのは、アクターがそのスキルについて設定していない場合のみ
+設定しているアクターはその設定が使われ、共通設定は使われない
+　・[1576] の設定がないアクター：アクター0の [1576] 設定がコピーされる
+　・[1576] の設定があるアクター：そのアクターの [1576] 設定がそのまま残る
+
+=end
+
+#==============================================================================
+# SkillWords(Actor).rb　SKILL_WORDS　アクター0に「全アクター共通の設定」を記述
+#==============================================================================
+if NWConst::Actor::SKILL_WORDS[0]
+  NWConst::Actor::SKILL_WORDS[0].each do |convert_skill_key, convert_value|
+    NWConst::Actor::SKILL_WORDS.each_key do |actor_key|
+      next if actor_key == 0
+      next if NWConst::Actor::SKILL_WORDS[actor_key][convert_skill_key]
+      NWConst::Actor::SKILL_WORDS[actor_key][convert_skill_key] = convert_value
+    end
+  end
+end

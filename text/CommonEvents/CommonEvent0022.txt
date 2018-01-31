@@ -1,0 +1,3 @@
+"名状しがたき触手を手に入れた！" -> "I got a tentacle we could not nameily!"
+"百魔の粘液を手に入れた！" -> "I got a hundred demon's mucus!"
+"黙示の羽根を手に入れた！" -> "I got an implied feather!"

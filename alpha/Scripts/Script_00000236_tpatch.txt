@@ -1,0 +1,23 @@
+
+# · If you display an animation of \"feet\" on Enemy, if the image vertical width is over 360, the Y coordinate is 360 instead of the bottom of the image
+
+# · Turn multiple times, the same<Deathblow>Fixed that you may use skills more than once
+
+
+# · Incoming state invalidates Luke's automatic recovery
+
+
+# · Counterattack of all characters in the surrender condition,Invalid extended counterattack
+
+
+# · Final counterattacks of all characters in the surrender condition,Disable skills at death
+
+# · Enemies who do not join after battle<Fellow ID:N>Then it is turned into a friend \"/There is no
+# Dealing with the problem that became \"not becoming a member\" because the joining switch switches when the personality is different
+# Switch to \"Actor\" instead of \"N\"[N-1000]Current personality+1000\"Respond to personality switching by setting it
+#==============================================================================
+# ■ Window_Library_RightMain
+#==============================================================================
+class Window_Library_RightMain < Window_Selectable
+
+endd

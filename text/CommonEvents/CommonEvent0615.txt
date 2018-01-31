@@ -1,0 +1,8 @@
+"イベント：種族経験値" -> "Event: Race Experience Value"
+"【プロメスティン】" -> "【Promotin】"
+"私が発明した、このDNA向進……いえ、にんじんエキス。" -> "I developed this DNA mush ... .... No, carrot extract."
+"さあ、みんなで飲んで下さい！" -> "Now, please drink together!"
+"にんじんエキスによって、パーティ全員に種族経験値が与えられた！" -> "With the carrot extract, all the parties were given race experience values!"
+"【プロメスティン】" -> "【Promotin】"
+"すみません、今はにんじんエキスを切らしていまして……" -> "Sorry, now I am out of the carrot extract ......"
+"にん○んをすり潰して、また作っておきますね。" -> "I grind the Nin, I made it again."

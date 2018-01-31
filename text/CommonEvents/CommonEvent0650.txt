@@ -1,0 +1,7 @@
+"イベント：エリザベート" -> "Event: Elisabeth"
+"【エリザベート】" -> "【Elisabeth】"
+"さて、我は眠るとするか……" -> "Well, I suppose I will sleep ......"
+"【エリザベート】" -> "【Elisabeth】"
+"くくくくく、闇の力を貸してやろう！" -> "Let me reap the power of the darkness!"
+"エリザベートから不思議な力が与えられた！" -> "Elizabeth gave a magical power!"
+"次のボスフロアまで、魔技の威力が二倍になる！" -> "Until the next boss floor, the power of the magic skill doubles!"

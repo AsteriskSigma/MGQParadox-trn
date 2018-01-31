@@ -1,0 +1,12 @@
+﻿// EVENT 0601
+Name "イベント：白兎"
+
+ChangeSwitch(73,73,0)
+ShowMessageFace("sirousagi_fc1",0,0,2,1)
+ShowMessage("【白兎】")
+ShowMessage("あれっ？　こんなところで奇遇だね。")
+ShowMessage("せっかくだから、助けてあげるよ！")
+RunCommonEvent(912)
+ChangeSwitch(73,73,1)
+EndEventProcessing()
+0()

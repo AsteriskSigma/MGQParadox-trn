@@ -1,0 +1,99 @@
+=begin
+=戦闘関連 by nwapeg
+
+戦闘に関連するスクリプトのマージを行った物です。
+
+
+==更新履歴
+  Date     Version Author Comment
+==15/09/03 2.0.2   トリス 統合J～U M
+
+=end
+
+#==============================================================================
+# ■ Scene_Battle
+#==============================================================================
+class Scene_Battle < Scene_Base
+  #--------------------------------------------------------------------------
+  # ○ フレーム更新（基本）
+  #--------------------------------------------------------------------------
+  def update_basic
+    super
+    $game_timer.update
+    $game_troop.update
+    @spriteset.update
+    update_info_viewport
+    update_log_open
+  end
+  #--------------------------------------------------------------------------
+  # ● ログウィンドウの開閉管理更新処理
+  #--------------------------------------------------------------------------
+  def update_log_open
+    if @message_window.open? || @info_viewport.visible
+      @log_window.close if @log_window.open?
+    else
+      @log_window.open if @log_window.close?
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ○ メッセージウィンドウの作成
+  #--------------------------------------------------------------------------
+  def create_message_window
+    @message_window = Window_BattleMessage.new
+  end
+  #--------------------------------------------------------------------------
+  # ○ ターン終了
+  #--------------------------------------------------------------------------
+  def turn_end
+    all_battle_members.each do |battler|
+      battler.on_turn_end
+      refresh_status
+      @log_window.display_auto_affected_status(battler)
+      @log_window.wait_and_clear
+    end
+    BattleManager.turn_end
+    process_event
+    BattleManager.set_turn_end_skill
+    process_action while BattleManager.gm_exist?
+    # 降参時はコマンド入力飛ばし
+    if BattleManager.giveup?
+      if BattleManager.giveup_count_down
+        actor = $game_actors[NWConst::Actor::LUCA]
+        actor.add_state(actor.death_state_id)
+        actor.orgasm_word.execute
+        process_luca_orgasm
+        BattleManager.process_defeat
+      else
+        $game_troop.make_actions
+        turn_start
+      end
+    else
+      start_party_command_selection
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ○ 戦闘行動終了時の処理
+  #--------------------------------------------------------------------------
+  def process_action_end
+    @subject.on_action_end
+    refresh_status
+    @log_window.display_auto_affected_status(@subject)
+    @log_window.wait_and_clear
+    @log_window.display_current_state(@subject)
+    @log_window.wait_and_clear
+    @log_window.display_damage(@subject, nil)
+    @log_window.wait_and_clear
+    BattleManager.judge_win_loss
+  end
+end
+
+
+
+
+
+
+
+
+
+
+

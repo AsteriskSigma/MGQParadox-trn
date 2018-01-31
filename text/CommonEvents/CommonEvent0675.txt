@@ -1,0 +1,7 @@
+"【ウィッチサキュバス】" -> "【Witch Succubus】"
+"複数の状態異常を発生させる凶悪な黒魔法……" -> "Horrible black magic that causes multiple state anomalies ......"
+"「カーズ」を覚えたい人はいるかしら？" -> "Does anyone want to remember \"Cars\"?"
+"選択" -> "Choice"
+"選択" -> "Choice"
+"【ウィッチサキュバス】" -> "【Witch Succubus】"
+"あんまり悪用はしないようにね……ふふっ。" -> "Do not misuse it much ... ... Huh."

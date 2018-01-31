@@ -1,0 +1,3867 @@
+=begin
+=base/GameObject
+
+Here we focus on GameObject
+
+
+==Change log
+  Date     Version Author Comment
+==14/12/13 2.0.0   Tris integration A to E A B C
+==14/12/19 2.0.1   Tris Integration F to I F G H I
+==15/09/03 2.0.2   Tris integration J to U J L M N O P Q R S T U
+==17/05/16 2.0.4   Tris integrated V ~ W V W
+==17/09/21 2.2.0   Sunflower integration 1 3 tp X
+
+=end
+
+#==============================================================================
+# ■ Game_Temp
+#==============================================================================
+class Game_Temp
+	#--------------------------------------------------------------------------
+	# ● Public instance variables
+	#--------------------------------------------------------------------------
+	attr_accessor   :gain_medal_count
+	attr_accessor   :keys_stack
+	attr_accessor   :battler_graphic_hide
+	attr_accessor   :lib_class_type_id
+	attr_reader     :normal_invoke_count
+	attr_accessor   :event_abort
+	#--------------------------------------------------------------------------
+	# ○ Object initialization
+	#--------------------------------------------------------------------------
+	def initialize
+		@common_events = []
+		@gain_medals = []
+		@gain_medal_count = 0
+		@fade_type = 0
+		@keys_stack = []
+	end
+	#--------------------------------------------------------------------------
+	# ○ Reserved for common event call
+	#--------------------------------------------------------------------------
+	def reserve_common_event(common_event_id)
+		@common_events.push(common_event_id)
+	end
+	#--------------------------------------------------------------------------
+	# ○ Clear common event call reservation
+	#--------------------------------------------------------------------------
+	def clear_common_event
+		@common_events.clear
+	end
+	#--------------------------------------------------------------------------
+	# ● Eliminate the beginning of call reservation for common event
+	#--------------------------------------------------------------------------
+	def shift_common_event
+		@common_events.shift
+	end
+	#--------------------------------------------------------------------------
+	# ○ Reserve judgment for common event call
+	#--------------------------------------------------------------------------
+	def common_event_reserved?
+		!@common_events.empty?
+	end
+	#--------------------------------------------------------------------------
+	# ○ Acquire reserved common event
+	#--------------------------------------------------------------------------
+	def reserved_common_event
+		common_event_id = common_event_reserved? ? @common_events[0] : 0
+		$data_common_events[common_event_id]
+	end
+	#--------------------------------------------------------------------------
+	# ● Reserve appointment medals
+	#--------------------------------------------------------------------------
+	def gain_medal_push(id)
+		@gain_medals.push(id)
+	end
+	#--------------------------------------------------------------------------
+	# ● Take out earned medals
+	#--------------------------------------------------------------------------
+	def gain_medal_pop
+		@gain_medals.shift
+	end
+	#--------------------------------------------------------------------------
+	# ● Have acquired medals?
+	#--------------------------------------------------------------------------
+	def gain_medal_exist?
+		return !@gain_medals.empty?
+	end
+	#--------------------------------------------------------------------------
+	# ○ Start of application of effects other than counterattacks
+	#--------------------------------------------------------------------------
+	def normal_invoke_start
+		@normal_invoke_count = 0
+	end
+	#--------------------------------------------------------------------------
+	# ○ \"Application of effects other than counterattacks\" obtain TP count added
+	#--------------------------------------------------------------------------
+	def normal_invoke_plus_count
+		@normal_invoke_count += 1 if @normal_invoke_count
+	end
+	#--------------------------------------------------------------------------
+	# ○ \"End of application of counterattack effects\"
+	#--------------------------------------------------------------------------
+	def normal_invoke_end
+		@normal_invoke_count = nil
+	end
+end
+
+#==============================================================================
+# ■ Game_System
+#==============================================================================
+class Game_System
+	#--------------------------------------------------------------------------
+	# ● Public instance variables
+	#--------------------------------------------------------------------------
+	attr_accessor :party_lose_count # Number of extinctions
+	#--------------------------------------------------------------------------
+	# ○ Object initialization
+	#--------------------------------------------------------------------------
+	def initialize
+		@save_disabled = false
+		@menu_disabled = false
+		@encounter_disabled = false
+		@formation_disabled = false
+		@battle_count = 0
+		@save_count = 0
+		@version_id = 0
+		@window_tone = nil
+		@battle_bgm = nil
+		@battle_end_me = nil
+		@saved_bgm = nil
+		#
+		@party_lose_count = 0
+		no_enemy_map_prepare
+	end
+	#--------------------------------------------------------------------------
+	# ● Get real time as a character string
+	#--------------------------------------------------------------------------
+	def realtime_s
+		return Time.now.strftime("%Y/%m/%d %H:%M")
+	end  
+	#--------------------------------------------------------------------------
+	# ○ Map designation Encounter prohibition
+	#--------------------------------------------------------------------------
+	def no_enemy_map_prepare
+		@no_enemy_maps ||= []
+	end
+	def no_enemy_maps_get
+		no_enemy_map_prepare
+		return @no_enemy_maps
+	end
+	def no_enemy_map_on(*map_ids)
+		no_enemy_map_prepare
+		@no_enemy_maps += map_ids
+		@no_enemy_maps.uniq!
+		@no_enemy_maps.sort!
+	end
+	def no_enemy_map_off(*map_ids)
+		no_enemy_map_prepare
+		last_include = @no_enemy_maps.include?($game_map.map_id)
+		@no_enemy_maps -= map_ids
+		now_include  = @no_enemy_maps.include?($game_map.map_id)
+		$game_player.make_encounter_count if last_include != now_include
+	end
+	def no_enemy_map_clear
+		last_include = @no_enemy_maps.include?($game_map.map_id)
+		@no_enemy_maps = []
+		now_include  = @no_enemy_maps.include?($game_map.map_id)
+		$game_player.make_encounter_count if last_include != now_include
+	end
+	def no_enemy_map_show
+		no_enemy_map_prepare
+		p @no_enemy_maps
+	end
+end
+
+#==============================================================================
+# ■ Game_Map
+#==============================================================================
+class Game_Map
+	#--------------------------------------------------------------------------
+	# ● Obtain display name
+	#--------------------------------------------------------------------------
+	def display_name
+		@map.display_name.gsub(/\\V\[(\d+)\]/i) { $game_variables[$1.to_i] }
+	end
+end
+
+#==============================================================================
+# ■ Game_Action
+#==============================================================================
+class Game_Action
+	#--------------------------------------------------------------------------
+	# ● Public instance variables
+	#--------------------------------------------------------------------------
+	attr_reader  :symbol
+	#--------------------------------------------------------------------------
+	# ○ Use symbols to judge skills at death
+	#--------------------------------------------------------------------------
+	def set_symbol(symbol)
+		@symbol = symbol
+	end
+	#--------------------------------------------------------------------------
+	# ● Set up a game
+	#--------------------------------------------------------------------------
+	def set_bind_resist
+		set_skill(subject.bind_resist_skill_id)
+		self
+	end
+	#--------------------------------------------------------------------------
+	# ● Let it be as it is
+	#--------------------------------------------------------------------------
+	def set_mercy
+		set_skill(subject.mercy_skill_id)
+		self
+	end
+	#--------------------------------------------------------------------------
+	# ● Set action skills at temptation
+	#--------------------------------------------------------------------------
+	def set_temptation
+		set_skill(subject.temptation_skill_id)
+		self    
+	end
+	#--------------------------------------------------------------------------
+	# ○ Action preparation
+	#--------------------------------------------------------------------------
+	def prepare
+		if subject.temptation? && !forcing
+			set_temptation
+		elsif subject.confusion? && !forcing
+			set_confusion
+		end    
+		decide_random_target if @target_index == -1    
+	end
+	#--------------------------------------------------------------------------
+	# ○ Create target array
+	#--------------------------------------------------------------------------
+	def make_targets
+		if !forcing && subject.temptation?
+			temptation_targets
+		elsif !forcing && subject.confusion?
+			[confusion_target]
+		elsif item.for_opponent?
+			targets_for_opponents
+		elsif item.for_friend?
+			targets_for_friends
+		else
+			[]
+		end
+	end  
+	#--------------------------------------------------------------------------
+	# ● Target at temptation
+	#--------------------------------------------------------------------------
+	def temptation_targets
+		return [$game_actors[NWConst::Actor::LUCA]]
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire used item array
+	#--------------------------------------------------------------------------
+	def use_items(can_failure)
+		mode = item.use_items_mode
+		case mode
+		when :multi ; return item.multi_invoke.collect {|id| $data_skills[id] }
+		when :normal; return [item]
+		else        ; return [SceneManager.scene.process_use_items(mode, self, item, can_failure)]
+		end
+	end
+	#--------------------------------------------------------------------------
+	# ○ Random target
+	#--------------------------------------------------------------------------
+	def decide_random_target
+		target = make_random_target
+		if target
+			@target_index = target.index
+		else
+			return if @symbol == :dead_skill
+			return if @symbol == :final_invoke
+			return if !forcing && subject.temptation?
+			clear
+		end
+	end
+	#--------------------------------------------------------------------------
+	# ○ Random target
+	#--------------------------------------------------------------------------
+	def make_random_target
+		if item.for_dead_friend?
+			target = friends_unit.random_dead_target_ex(item.ext_scope, item.include_bench?)
+		elsif item.for_friend?
+			target = friends_unit.random_target_ex(item.ext_scope, item.include_bench?)
+		else
+			target = opponents_unit.random_target_ex(item.ext_scope)
+		end
+		return target
+	end
+	#--------------------------------------------------------------------------
+	# ○ Target at confusion
+	#--------------------------------------------------------------------------
+	def confusion_target
+		case subject.confusion_level
+		when 1
+			return opponents_unit.random_target_ex(item.ext_scope)
+		when 2
+			if rand(2) == 0
+				return opponents_unit.random_target_ex(item.ext_scope)
+			else
+				return friends_unit.random_target_ex(item.ext_scope)
+			end
+		else
+			return friends_unit.random_target_ex(item.ext_scope)
+		end
+	end
+	#--------------------------------------------------------------------------
+	# ○ Target for enemies
+	#--------------------------------------------------------------------------
+	def targets_for_opponents
+		if item.for_random?
+			return Array.new(item.number_of_targets) { opponents_unit.random_target_ex(item.ext_scope) }
+		elsif item.for_one?
+			num = 1 + (attack? ? subject.atk_times_add.to_i : 0)
+			if @target_index < 0
+				return [opponents_unit.random_target_ex(item.ext_scope)] * num
+			else
+				return [opponents_unit.smooth_target(@target_index)] * num
+			end
+		else
+			num = 1 + (attack? ? subject.atk_times_add.to_i : 0)
+			return opponents_unit.alive_members_ex(item.ext_scope) * num
+		end
+	end
+	#--------------------------------------------------------------------------
+	# ○ Target for ally
+	#--------------------------------------------------------------------------
+	def targets_for_friends
+		if item.for_user?
+			return subject.game_master? ? [subject.observer] : [subject] # GMCorresponds to included specifications
+		elsif item.for_dead_friend?
+			if item.for_one?
+				return [friends_unit.smooth_dead_target(@target_index)]
+			else
+				return friends_unit.dead_members_ex(item.ext_scope, item.include_bench?)
+			end
+		elsif item.for_friend?
+			if item.for_one?
+				return [friends_unit.smooth_target(@target_index)]
+			else
+				return friends_unit.alive_members_ex(item.ext_scope, item.include_bench?)
+			end
+		end
+	end
+	#--------------------------------------------------------------------------
+	# ○ Obtain skill / item usage target candidate
+	#--------------------------------------------------------------------------
+	def item_target_candidates
+		if item.for_opponent?
+			return opponents_unit.alive_members_ex(item.ext_scope)
+		elsif item.for_user?
+			return [subject]
+		elsif item.for_dead_friend?
+			return friends_unit.dead_members_ex(item.ext_scope)
+		else
+			return friends_unit.alive_members_ex(item.ext_scope)
+		end
+	end
+end
+
+#==============================================================================
+# ■ Game_ActionResult
+#==============================================================================
+class Game_ActionResult
+	#--------------------------------------------------------------------------
+	# ● Public instance variables
+	#--------------------------------------------------------------------------
+	attr_accessor   :unusable
+	attr_accessor   :predation
+	attr_accessor   :pleasure
+	attr_accessor   :hp_restore
+	attr_accessor   :mp_restore
+	attr_accessor   :stealed
+	attr_accessor   :stealed_item_empty
+	attr_accessor   :stealed_item_kind
+	attr_accessor   :stealed_item_id
+	attr_accessor   :auto_stand
+	attr_accessor   :invalidate_wall
+	attr_accessor   :defense_wall
+	attr_accessor   :over_drive  
+	attr_accessor   :binding_start
+	attr_accessor   :bind_resist
+	#--------------------------------------------------------------------------
+	# ○ Clear
+	#--------------------------------------------------------------------------
+	def clear
+		clear_hit_flags
+		clear_damage_values
+		clear_status_effects
+		clear_nwapeg_extends
+		clear_stealed_information
+		clear_battler_ability
+		clear_binded_information
+	end
+	#--------------------------------------------------------------------------
+	# ● Clear the functional information expanded by the predecessor
+	# Summarize
+	#--------------------------------------------------------------------------
+	def clear_nwapeg_extends
+		@unusable     = -1
+		@predation    = false
+		@pleasure     = false #
+		@hp_restore   = 0
+		@mp_restore   = 0
+	end  
+	#--------------------------------------------------------------------------
+	# ● Clear the steel result information
+	#--------------------------------------------------------------------------
+	def clear_stealed_information
+		@stealed            = false
+		@stealed_item_empty = false
+		@stealed_item_kind  = 0
+		@stealed_item_id    = 0
+	end
+	#--------------------------------------------------------------------------
+	# ● Clear Butler Ability Flag
+	#--------------------------------------------------------------------------
+	def clear_battler_ability
+		@auto_stand      = false
+		@invalidate_wall = false
+		@defense_wall    = false
+		@over_drive      = false
+	end
+	#--------------------------------------------------------------------------
+	# ● Clear constraint result information
+	#--------------------------------------------------------------------------
+	def clear_binded_information
+		@binding_start   = -1
+		@bind_resist     = false
+	end
+	#--------------------------------------------------------------------------
+	# ○ Determine whether or not you eventually hit
+	#--------------------------------------------------------------------------
+	def hit?
+		@used && !@missed && !@evaded && @unusable == -1
+	end
+	#--------------------------------------------------------------------------
+	# ● Reduced?
+	#--------------------------------------------------------------------------
+	def restoration?
+		return (0 < @hp_restore) || (0 < @mp_restore)
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire sentence at the time of failure
+	#--------------------------------------------------------------------------
+	def unusable_text
+		if (0...5).include?(@unusable)
+			values = ["HP", "MP", "SP", "gold", "of that item"]
+			return sprintf(Vocab::Shortage, values[@unusable])
+		elsif @unusable == 5
+			return Vocab::SkillSealedFailure
+		elsif @unusable == 6
+			return Vocab::TemptationActionFailure
+		end
+		return ""
+	end
+	#--------------------------------------------------------------------------
+	# ● Obtain sentence of damage reduction
+	#--------------------------------------------------------------------------
+	def restoration_text(subject)
+		ary = []
+		#MGLCheck ary.push("HP#{@hp_restore}") if 0 < @hp_restore
+		#ary.push("MP#{@mp_restore}") if 0 < @mp_restore    
+		ary.push("#{@hp_restore} HP") if 0 < @hp_restore
+		ary.push("#{@mp_restore} MP") if 0 < @mp_restore
+		return sprintf(Vocab::ReStoration, subject.name, ary.join(", "))
+	end
+	#--------------------------------------------------------------------------
+	# ● Did you die?
+	#--------------------------------------------------------------------------
+	def death_state_added?
+		added_state_objects.any? {|state| state.death? }
+	end
+	#--------------------------------------------------------------------------
+	# ● Did you die
+	#--------------------------------------------------------------------------
+	def death_pleasure_state_added?
+		added_state_objects.any? {|state| state.death_pleasure? }
+	end
+	#--------------------------------------------------------------------------
+	# ○ Obtain sentences of HP damage
+	#--------------------------------------------------------------------------
+	def hp_damage_text
+		if @hp_drain > 0
+			fmt = @battler.actor? ? Vocab::ActorDrain : Vocab::EnemyDrain
+			value = @hp_drain >= NWConst::Damage::GIVE_UNIT ? @hp_drain.give_unit  : @hp_drain
+			sprintf(fmt, @battler.name, Vocab::hp, value)
+		elsif @hp_damage > 0
+			fmt = @battler.actor? ? Vocab::ActorDamage : Vocab::EnemyDamage
+			value = @hp_damage >= NWConst::Damage::GIVE_UNIT ? @hp_damage.give_unit  : @hp_damage
+			sprintf(fmt, @battler.name, value)
+		elsif @hp_damage < 0
+			fmt = @battler.actor? ? Vocab::ActorRecovery : Vocab::EnemyRecovery
+			value = -@hp_damage >= -NWConst::Damage::GIVE_UNIT ? (-@hp_damage).give_unit  : -@hp_damage
+			sprintf(fmt, @battler.name, Vocab::hp, value)
+		else
+			fmt = @battler.actor? ? Vocab::ActorNoDamage : Vocab::EnemyNoDamage
+			sprintf(fmt, @battler.name)
+		end
+	end
+end
+
+#==============================================================================
+# ■ Game_BattlerBase
+#==============================================================================
+class Game_BattlerBase
+	#--------------------------------------------------------------------------
+	# ● Constants (Capacity Enhancement / Weak Body Icon Start Numbers)
+	#--------------------------------------------------------------------------
+	ICON_BUFF_START       = 80              # Enhancement (16 pieces)
+	ICON_DEBUFF_START     = 120             # Weak body (16 pieces)
+	#--------------------------------------------------------------------------
+	# ● Mix-In
+	#--------------------------------------------------------------------------
+	include       NWFeature
+	include       NWFeature::PartyEx
+	include       NWFeature::Battler
+	include       NWFeature::Booster
+	#--------------------------------------------------------------------------
+	# ○ Acquire percentage of TP
+	#--------------------------------------------------------------------------
+	def tp_rate
+		0 < max_tp ? tp / max_tp.to_f : 0.0
+	end
+	#--------------------------------------------------------------------------
+	# ● Maximum value of feature value (specify data ID)
+	#--------------------------------------------------------------------------
+	def features_max(code, id)
+		features_with_id(code, id).inject(0.0){|r, ft|r = r < ft.value ? ft.value : r}
+	end
+	#--------------------------------------------------------------------------
+	# ● Minimum value of feature value (specify data ID)
+	#--------------------------------------------------------------------------
+	def features_min(code, id)
+		features_with_id(code, id).inject(1.0){|r, ft|r = r > ft.value ? ft.value : r}
+	end
+	#--------------------------------------------------------------------------
+	# ● Calculation of Booster Feature Value Summation
+	#--------------------------------------------------------------------------
+	def features_sum_booster(feature_id, data_id)
+		features_with_id(FEATURE_MULTI_BOOSTER, feature_id).inject(0.0){|sum, ft|
+			ft.value.key?(data_id) ? sum + ft.value[data_id] : sum
+		}
+	end  
+	#--------------------------------------------------------------------------
+	# ○ Acquire maximum value of normal ability value
+	#--------------------------------------------------------------------------
+	def param_max(param_id)
+		return 999999 if param_id == 0  # MHP
+		return 9999
+	end
+	#--------------------------------------------------------------------------
+	# ○ Obtain normal ability value
+	#--------------------------------------------------------------------------
+	def param(param_id)
+		value = param_base(param_id) + param_plus(param_id)
+		value *= param_rate(param_id) * param_buff_rate(param_id)   
+		if $game_party.in_battle && (2..7).include?(param_id)
+			value *= (booster_fall_hp && hp_rate < booster_fall_hp[:per]) ? 1.0 + booster_fall_hp[:boost] : 1.0
+			value *= 1.0 + (friends_unit.dead_members.size * over_soul)
+			value *= terrain_revise
+		end
+		Integer([[value, param_max(param_id)].min, param_min(param_id)].max)
+	end
+	#--------------------------------------------------------------------------
+	# ○ Acquisition of additional ability value
+	#--------------------------------------------------------------------------
+	def xparam(xparam_id)
+		x = features_max(FEATURE_XPARAM, xparam_id)
+		x = 0.9 if xparam_id == 0 && x == 0.0 # Accuracy
+		x += features_sum(FEATURE_XPARAM_EX, xparam_id)
+		return [7,8,9].include?(xparam_id) ? x : [0.0, x].max
+	end
+	#--------------------------------------------------------------------------
+	# ○ Acquisition of additional attack number
+	#--------------------------------------------------------------------------
+	def atk_times_add
+		features(FEATURE_ATK_TIMES).inject(0.0){|r, ft| r < ft.value ? ft.value : r}
+	end
+	#--------------------------------------------------------------------------
+	# ○ Acquisition of protection effect rate
+	#--------------------------------------------------------------------------
+	def grd
+		[1.0, features_max(FEATURE_SPARAM, 1)].max
+	end
+	#--------------------------------------------------------------------------
+	# ○ Acquisition of recovery effect rate
+	#--------------------------------------------------------------------------
+	def rec
+		[1.0, features_max(FEATURE_SPARAM, 2)].max
+	end
+	#--------------------------------------------------------------------------
+	# ○ Acquisition of medicine knowledge
+	#--------------------------------------------------------------------------
+	def pha
+		[1.0, features_max(FEATURE_SPARAM, 3)].max
+	end
+	#--------------------------------------------------------------------------
+	# ○ Acquire TP charge rate
+	#--------------------------------------------------------------------------
+	def tcr
+		[1.0, features_max(FEATURE_SPARAM, 5)].max
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquisition Amount Magnification
+	#--------------------------------------------------------------------------
+	def get_gold_rate
+		[1.0, features_max(FEATURE_PARTY_EX_ABILITY, GET_GOLD_RATE)].max
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquisition item magnification
+	#--------------------------------------------------------------------------
+	def get_item_rate
+		[1.0, features_max(FEATURE_PARTY_EX_ABILITY, GET_ITEM_RATE)].max
+	end
+	#--------------------------------------------------------------------------
+	# ● Encount magnification
+	#--------------------------------------------------------------------------
+	def encounter_rate
+		features_with_id(FEATURE_PARTY_EX_ABILITY, ENCOUNTER_RATE).collect{|ft| ft.value}
+	end
+	#--------------------------------------------------------------------------
+	# ● Fellow participation multiplier
+	#--------------------------------------------------------------------------
+	def collect_rate
+		[1.0, features_max(FEATURE_PARTY_EX_ABILITY, COLLECT_RATE)].max
+	end
+	#--------------------------------------------------------------------------
+	# ● Slot Chance
+	#--------------------------------------------------------------------------
+	def slot_chance
+		features_max(FEATURE_PARTY_EX_ABILITY, SLOT_CHANCE).to_i
+	end
+	#--------------------------------------------------------------------------
+	# ● Unlock level
+	#--------------------------------------------------------------------------
+	def unlock_level
+		features_max(FEATURE_PARTY_EX_ABILITY, UNLOCK_LEVEL).to_i
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire stealing success rate
+	#--------------------------------------------------------------------------
+	def steal_success
+		[1.0, features_max(FEATURE_BATTLER_ABILITY, STEAL_SUCCESS)].max
+	end
+	#--------------------------------------------------------------------------
+	# ○ Acquire acquisition experience value magnification
+	#--------------------------------------------------------------------------
+	def exr
+		max = features_max(FEATURE_BATTLER_ABILITY, GET_EXP_RATE)
+		min = features_min(FEATURE_BATTLER_ABILITY, GET_EXP_RATE)
+		return [max, 1.0].max - (1.0 - min)
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquired professional experience magnification
+	#--------------------------------------------------------------------------
+	def cexr
+		max = features_max(FEATURE_BATTLER_ABILITY, GET_CLASSEXP_RATE)
+		min = features_min(FEATURE_BATTLER_ABILITY, GET_CLASSEXP_RATE)
+		return [max, 1.0].max - (1.0 - min)
+	end  
+	#--------------------------------------------------------------------------
+	# ● Get stepping stone value
+	#--------------------------------------------------------------------------
+	def auto_stand
+		features_min(FEATURE_BATTLER_ABILITY, AUTO_STAND)
+	end  
+	#--------------------------------------------------------------------------
+	# ● Acquire recovery inversion value
+	#--------------------------------------------------------------------------
+	def heel_reverse
+		features_max(FEATURE_BATTLER_ABILITY, HEEL_REVERSE)
+	end
+	#--------------------------------------------------------------------------
+	# ● Obtain auto-state ID array
+	#--------------------------------------------------------------------------
+	def auto_state
+		features_with_id(FEATURE_BATTLER_ABILITY, AUTO_STATE).inject([]){|r, ft| r | ft.value}
+	end  
+	#--------------------------------------------------------------------------
+	# ● Get trigger state
+	#--------------------------------------------------------------------------
+	def trigger_state
+		features_with_id(FEATURE_BATTLER_ABILITY, TRIGGER_STATE).collect{|ft| ft.value}
+	end
+	#--------------------------------------------------------------------------
+	# ● Get upper limit of metal body
+	#--------------------------------------------------------------------------
+	def metal_body
+		features_with_id(FEATURE_BATTLER_ABILITY, METAL_BODY).inject([]){|r, ft| r | [ft.value]}.min
+	end
+	#--------------------------------------------------------------------------
+	# ● Obtain defensive wall deployment
+	#--------------------------------------------------------------------------
+	def defense_wall
+		features_with_id(FEATURE_BATTLER_ABILITY, DEFENSE_WALL).inject([]){|r, ft| r | [ft.value]}.max
+	end
+	#--------------------------------------------------------------------------
+	# ● Obtain invalidation barriers
+	#--------------------------------------------------------------------------
+	def invalidate_wall
+		features_with_id(FEATURE_BATTLER_ABILITY, INVALIDATE_WALL).inject([]){|r, ft| r | [ft.value]}.max
+	end
+	#--------------------------------------------------------------------------
+	# ● Damage MP conversion acquired
+	#--------------------------------------------------------------------------
+	def damage_mp_convert
+		features_with_id(FEATURE_BATTLER_ABILITY, DAMAGE_MP_CONVERT).inject([]){|r, ft| r | [ft.value]}.min
+	end  
+	#--------------------------------------------------------------------------
+	# ● Acquire Damaged Gold Conversion
+	#--------------------------------------------------------------------------
+	def damage_gold_convert
+		features_with_id(FEATURE_BATTLER_ABILITY, DAMAGE_GOLD_CONVERT).inject([]){|r, ft| r | [ft.value]}.min
+	end
+	#--------------------------------------------------------------------------
+	# ● Damage MP absorption acquired
+	#--------------------------------------------------------------------------
+	def damage_mp_drain
+		features_with_id(FEATURE_BATTLER_ABILITY, DAMAGE_MP_DRAIN).inject([]){|r, ft| r | [ft.value]}.max
+	end  
+	#--------------------------------------------------------------------------
+	# ● Acquire Damaged Gold Recovery
+	#--------------------------------------------------------------------------
+	def damage_gold_drain
+		features_with_id(FEATURE_BATTLER_ABILITY, DAMAGE_GOLD_DRAIN).inject([]){|r, ft| r | [ft.value]}.max
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire skills at death
+	#--------------------------------------------------------------------------
+	def dead_skill
+		features_with_id(FEATURE_BATTLER_ABILITY, DEAD_SKILL).inject([]){|r, ft| r |= [ft.value]}.max
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire skill at start of battle
+	#--------------------------------------------------------------------------
+	def battle_start_skill
+		features_with_id(FEATURE_BATTLER_ABILITY, BATTLE_START_SKILL).inject([]){|r, ft| r.push(ft.value)}
+	end
+	#--------------------------------------------------------------------------
+	# ● Get the beginning skill at turn
+	#--------------------------------------------------------------------------
+	def turn_start_skill
+		features_with_id(FEATURE_BATTLER_ABILITY, TURN_START_SKILL).inject([]){|r, ft| r.push(ft.value)}
+	end
+	#--------------------------------------------------------------------------
+	# Get skills at end of turn
+	#--------------------------------------------------------------------------
+	def turn_end_skill
+		features_with_id(FEATURE_BATTLER_ABILITY, TURN_END_SKILL).inject([]){|r, ft| r.push(ft.value)}
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire behavior change
+	#--------------------------------------------------------------------------
+	def change_action
+		features_with_id(FEATURE_BATTLER_ABILITY, CHANGE_ACTION).inject([]){|r, ft| r += [ft.value]}.flatten.shuffle
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire skill change
+	#--------------------------------------------------------------------------
+	def change_skill(src_skill_id)
+		features_with_id(FEATURE_BATTLER_ABILITY, CHANGE_SKILL).inject({}){|sum, ft|
+			sum.merge(ft.value)
+		}[src_skill_id]
+	end  
+	#--------------------------------------------------------------------------
+	# ● Acquire skill type consumption rate
+	#--------------------------------------------------------------------------
+	def stype_cost_rate(stype_id, type)
+		features_with_id(FEATURE_BATTLER_ABILITY, STYPE_COST_RATE).select{|ft|
+			ft.value[:type] == type
+		}.inject(1.0){|r, ft|
+			ft.value[:id] == stype_id ? [r * ft.value[:rate] ,0.01].max : r   
+		}
+	end
+	#--------------------------------------------------------------------------
+	# ● Get HP type consumption rate
+	#--------------------------------------------------------------------------
+	def stype_cost_rate_hp(skill)
+		skill.stypes.inject(1.0){|r, stype_id| r *= stype_cost_rate(stype_id, :HP)}
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire MP type consumption rate
+	#--------------------------------------------------------------------------
+	def stype_cost_rate_mp(skill)
+		skill.stypes.inject(1.0){|r, stype_id| r *= stype_cost_rate(stype_id, :MP)}
+	end  
+	#--------------------------------------------------------------------------
+	# ● Get TP type consumption rate
+	#--------------------------------------------------------------------------
+	def stype_cost_rate_tp(skill)
+		skill.stypes.inject(1.0){|r, stype_id| r *= stype_cost_rate(stype_id, :TP)}
+	end  
+	#--------------------------------------------------------------------------
+	# ● Acquire skill consumption rate
+	#--------------------------------------------------------------------------
+	def skill_cost_rate(skill_id, type)
+		features_with_id(FEATURE_BATTLER_ABILITY, SKILL_COST_RATE).select{|ft|
+			ft.value[:type] == type
+		}.inject(1.0){|r, ft|
+			ft.value[:id] == skill_id ? [r * ft.value[:rate] ,0.01].max : r       
+		}
+	end  
+	#--------------------------------------------------------------------------
+	# ● Get HP skill consumption rate
+	#--------------------------------------------------------------------------
+	def skill_cost_rate_hp(skill)
+		skill_cost_rate(skill.id, :HP)
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire MP skill consumption rate
+	#--------------------------------------------------------------------------
+	def skill_cost_rate_mp(skill)
+		skill_cost_rate(skill.id, :MP)
+	end
+	#--------------------------------------------------------------------------
+	# ● Get TP skill consumption rate
+	#--------------------------------------------------------------------------
+	def skill_cost_rate_tp(skill)
+		skill_cost_rate(skill.id, :TP)
+	end
+	#--------------------------------------------------------------------------
+	# ● Get TP consumption rate
+	#--------------------------------------------------------------------------
+	def tp_cost_rate
+		features_pi(FEATURE_BATTLER_ABILITY, TP_COST_RATE)
+	end  
+	#--------------------------------------------------------------------------
+	# ● Acquire HP consumption rate
+	#--------------------------------------------------------------------------
+	def hp_cost_rate
+		features_pi(FEATURE_BATTLER_ABILITY, HP_COST_RATE)
+	end  
+	#--------------------------------------------------------------------------
+	# ● Acquire gold consumption rate
+	#--------------------------------------------------------------------------
+	def gold_cost_rate
+		features_pi(FEATURE_BATTLER_ABILITY, GOLD_COST_RATE)
+	end
+	#--------------------------------------------------------------------------
+	# ● Get consumer item savings rate
+	#--------------------------------------------------------------------------
+	def item_cost_scrimp(item_id)
+		list = [0]
+		features_with_id(FEATURE_BATTLER_ABILITY, ITEM_COST_SCRIMP).each {|ft|
+			list.push(ft.value[item_id]) if ft.value[item_id]
+		}
+		return list.max
+	end
+	#--------------------------------------------------------------------------
+	# ● Obtain required items ignored
+	#--------------------------------------------------------------------------
+	def need_item_ignore?(item_id)
+		features_with_id(FEATURE_BATTLER_ABILITY, NEED_ITEM_IGNORE).any?{|ft| ft.value.include?(item_id)}
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire fixed TP increase value
+	#--------------------------------------------------------------------------
+	def increase_tp_fix
+		features_with_id(FEATURE_BATTLER_ABILITY, INCREASE_TP).select{|ft|
+			!ft.value[:per]
+		}.inject(0){|sum, ft|
+			sum += ft.value[:plus] ? ft.value[:num] : -ft.value[:num]
+		}
+	end  
+	#--------------------------------------------------------------------------
+	# ● Acquire proportion TP increase value
+	#--------------------------------------------------------------------------
+	def increase_tp_per
+		hoge = features_with_id(FEATURE_BATTLER_ABILITY, INCREASE_TP).select{|ft|
+			ft.value[:per]
+		}.inject(1.0){|sum, ft|
+			sum += ft.value[:plus] ? ft.value[:num] * 0.01 : -ft.value[:num] * 0.01
+		}
+	end
+	#--------------------------------------------------------------------------
+	# ● Get TP at start
+	#--------------------------------------------------------------------------
+	def start_tp_rate
+		features_max(FEATURE_BATTLER_ABILITY, START_TP_RATE)
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire HP recovery after battle
+	#--------------------------------------------------------------------------
+	def battle_end_heel_hp
+		features_max(FEATURE_BATTLER_ABILITY, BATTLE_END_HEEL_HP)
+	end  
+	#--------------------------------------------------------------------------
+	# ● Acquire MP recovery after battle
+	#--------------------------------------------------------------------------
+	def battle_end_heel_mp
+		features_max(FEATURE_BATTLER_ABILITY, BATTLE_END_HEEL_MP)
+	end
+	#--------------------------------------------------------------------------
+	# ○ Obtain skill ID for normal attack
+	#--------------------------------------------------------------------------
+	def attack_skill_id
+		features_with_id(FEATURE_BATTLER_ABILITY, Battler::NORMAL_ATTACK).inject([1]){|r, ft| r | [ft.value]}.max
+	end
+	#--------------------------------------------------------------------------
+	# ● Get a counterattack skill
+	#--------------------------------------------------------------------------
+	def counter_skill
+		features_with_id(FEATURE_BATTLER_ABILITY, COUNTER_SKILL).inject([]){|r, ft| r | [ft.value]}.flatten.sample
+	end
+	#--------------------------------------------------------------------------
+	# ● Get the final counterattack
+	#--------------------------------------------------------------------------
+	def final_invoke
+		features_with_id(FEATURE_BATTLER_ABILITY, FINAL_INVOKE).inject([]){|r, ft| r | [ft.value]}.flatten.sample
+	end
+	#--------------------------------------------------------------------------
+	# ● Required to get the counter rate
+	#--------------------------------------------------------------------------
+	def certain_counter
+		features_with_id(FEATURE_BATTLER_ABILITY, CERTAIN_COUNTER).inject(0.0){|sum, ft| sum + ft.value}
+	end
+	#--------------------------------------------------------------------------
+	# ● Get magic counterattack rate
+	#--------------------------------------------------------------------------
+	def magical_counter
+		features_with_id(FEATURE_BATTLER_ABILITY, MAGICAL_COUNTER).inject(0.0){|sum, ft| sum + ft.value}
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire mandatory counter rate
+	#--------------------------------------------------------------------------
+	def certain_counter_ex
+		features_with_id(FEATURE_BATTLER_ABILITY, CERTAIN_COUNTER_EX).inject(0.0){|sum, ft| sum + ft.value}
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire extended counter rate
+	#--------------------------------------------------------------------------
+	def physical_counter_ex
+		features_with_id(FEATURE_BATTLER_ABILITY, PHYSICAL_COUNTER_EX).inject(0.0){|sum, ft| sum + ft.value}
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire extended magic counterattack rate
+	#--------------------------------------------------------------------------
+	def magical_counter_ex
+		features_with_id(FEATURE_BATTLER_ABILITY, MAGICAL_COUNTER_EX).inject(0.0){|sum, ft| sum + ft.value}
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire companion feelings correction
+	#--------------------------------------------------------------------------
+	def considerate
+		features_max(FEATURE_BATTLER_ABILITY, CONSIDERATE)
+	end
+	#--------------------------------------------------------------------------
+	# ● Continuous activation
+	#--------------------------------------------------------------------------
+	def invoke_repeats(item)
+		return 1 unless item.is_skill?
+		stype_count = item.stypes.inject(1){|count, stype_id|
+			features_with_id(FEATURE_BATTLER_ABILITY, INVOKE_REPEATS_TYPE).each{|ft|
+				if ft.value.key?(stype_id)
+					count += ft.value[stype_id] - 1
+				end
+			}
+			count
+		}
+		skill_count = features_with_id(FEATURE_BATTLER_ABILITY, INVOKE_REPEATS_SKILL).inject(1){|count, ft|
+			if ft.value.key?(item.id) then count += ft.value[item.id] -1  else count end
+		}
+		return [stype_count, skill_count].max
+	end
+	#--------------------------------------------------------------------------
+	# ● Get self-destructive resistance judgment
+	#--------------------------------------------------------------------------
+	def own_crush_resist?
+		!features_with_id(FEATURE_BATTLER_ABILITY, OWN_CRUSH_RESIST).empty?
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire attribute absorption judgment
+	#--------------------------------------------------------------------------
+	def element_drain?(element_id)
+		features_with_id(FEATURE_BATTLER_ABILITY, ELEMENT_DRAIN).inject([]){|r, ft| r | ft.value}.include?(element_id)
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire ignorance of time stop
+	#--------------------------------------------------------------------------
+	def ignore_over_drive?
+		!features_with_id(FEATURE_BATTLER_ABILITY, IGNORE_OVER_DRIVE).empty?
+	end
+	#--------------------------------------------------------------------------
+	# ● Get instant death reversal
+	#--------------------------------------------------------------------------
+	def instant_dead_reverse?
+		!features_with_id(FEATURE_BATTLER_ABILITY, INSTANT_DEAD_REVERSE).empty?
+	end
+	#--------------------------------------------------------------------------
+	# ● Dual Sword Slot Unacceptable
+	#--------------------------------------------------------------------------
+	def slot_cannot_dual_wield?
+		!features_with_id(FEATURE_BATTLER_ABILITY, SLOT_CANNOT_DUAL_WIELD).empty?
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire attribute booster magnification
+	#--------------------------------------------------------------------------
+	def booster_element(element_id)
+		1.0 + features_sum_booster(ELEMENT, element_id)
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire Weapons Reinforcement Physical Scale
+	#--------------------------------------------------------------------------
+	def booster_weapon_physical(wtype_id)
+		1.0 + features_sum_booster(WEAPON_PHYSICAL, wtype_id)
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire Weapon Enhancement Magic Magnification
+	#--------------------------------------------------------------------------
+	def booster_weapon_magical(wtype_id)
+		1.0 + features_sum_booster(WEAPON_MAGICAL, wtype_id)
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire Weapons Reinforcement Necessary Magnification
+	#--------------------------------------------------------------------------
+	def booster_weapon_certain(wtype_id)
+		1.0 + features_sum_booster(WEAPON_CERTAIN, wtype_id)
+	end
+	#--------------------------------------------------------------------------
+	# ● Obtain normal enlargement magnification
+	#--------------------------------------------------------------------------
+	def booster_normal_attack(wtype_id)
+		1.0 + features_sum_booster(Booster::NORMAL_ATTACK, wtype_id)
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire state proportion enhancement type magnification
+	#--------------------------------------------------------------------------
+	def booster_state_ratio_type(skill)
+		1.0 + skill.stypes.inject(0.0){|sum, id|
+			sum + features_sum_booster(STATE_RATIO_TYPE, id)
+		}    
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire State Fixed Enhancement Type
+	#--------------------------------------------------------------------------
+	def booster_state_fix_type(skill)
+		skill.stypes.inject(0.0){|sum, id|
+			sum + features_sum_booster(STATE_FIX_TYPE, id)
+		}
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire skill type reinforcement magnification
+	#--------------------------------------------------------------------------
+	def booster_skill_type(skill)
+		1.0 + skill.stypes.inject(0.0){|sum, id|
+			sum + features_sum_booster(SKILL_TYPE, id)
+		}
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire state ratio enhancement skill magnification
+	#--------------------------------------------------------------------------
+	def booster_state_ratio_skill(skill)
+		1.0 + features_sum_booster(STATE_RATIO_SKILL, skill.id)
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire Skill Enhancement Scale
+	#--------------------------------------------------------------------------
+	def booster_skill(skill)
+		1.0 + features_sum_booster(SKILL, skill.id)
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire Weapons Skill Enhancement Scale
+	#--------------------------------------------------------------------------
+	def booster_wtype_skill(wtype_id, skill)
+		1.0 + skill.stypes.inject(0.0) do |sum, stype_id|
+			sum + features_sum_booster(WTYPE_SKILL, [wtype_id, stype_id])
+		end
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire counter enhancement magnification
+	#--------------------------------------------------------------------------
+	def booster_counter
+		1.0 + features_sum(FEATURE_MULTI_BOOSTER, COUNTER)
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquired reinforcement when decreasing HP
+	#--------------------------------------------------------------------------
+	def booster_fall_hp
+		features_with_id(FEATURE_MULTI_BOOSTER, FALL_HP).collect{|ft| 
+			ft.value
+		}.sort{|a, b|b[:boost] <=> a[:boost]}.first
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire overseal
+	#--------------------------------------------------------------------------
+	def over_soul
+		features_max(FEATURE_MULTI_BOOSTER, OVER_SOUL)
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire terrain correction
+	#--------------------------------------------------------------------------
+	def terrain_revise
+		return 1.0 + features_max(FEATURE_TERRAIN_BOOSTER, BattleManager.terrain)
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire Mastery multiplier applied to selected items
+	#--------------------------------------------------------------------------
+	def item_mastery_rate(item)
+		ft_id = nil
+		ft_id = [0, item.wtype_id] if item.is_a?(RPG::Weapon)
+		ft_id = [1, item.atype_id] if item.is_a?(RPG::Armor)
+		rate = features_max(NWFeature::FEATURE_EQUIP_MASTERY, ft_id)
+		rate = 1.0 if rate == 0.0
+		return rate
+	end
+	#--------------------------------------------------------------------------
+	# ● Temporary state determination
+	#--------------------------------------------------------------------------
+	def temptation?
+		exist? && state?(NWConst::State::TEMPTATION)
+	end
+	#--------------------------------------------------------------------------
+	# ○ Skill consumption MP calculation
+	#--------------------------------------------------------------------------
+	def skill_mp_cost(skill)
+		cost = skill.mp_cost
+		if skill.mp_cost_ex
+			cost  = skill.mp_cost_ex[:data]      
+			cost *= 0.01 * (skill.mp_cost_ex[:max?] ? mmp : mp) if skill.mp_cost_ex[:per?]
+			return cost.ceil if skill.mp_cost_ex[:abs?]
+		end
+		return (cost * mcr * stype_cost_rate_mp(skill) * skill_cost_rate_mp(skill)).ceil
+	end
+	#--------------------------------------------------------------------------
+	# ¡Skill consumption TP calculation
+	#--------------------------------------------------------------------------
+	def skill_tp_cost(skill)
+		cost = skill.tp_cost
+		if skill.tp_cost_ex
+			cost  = skill.tp_cost_ex[:data]
+			cost *= 0.01 * (skill.tp_cost_ex[:max?] ? max_tp : tp) if skill.tp_cost_ex[:per?]
+			return cost.ceil if skill.tp_cost_ex[:abs?]
+		end
+		return (cost * tp_cost_rate * stype_cost_rate_tp(skill) * skill_cost_rate_tp(skill)).ceil
+	end
+	#--------------------------------------------------------------------------
+	# ● HP calculation of skill consumption
+	#--------------------------------------------------------------------------
+	def skill_hp_cost(skill)
+		cost = 0
+		if skill.hp_cost_ex
+			cost  = skill.hp_cost_ex[:data]      
+			cost *= 0.01 * (skill.hp_cost_ex[:max?] ? mhp : hp) if skill.hp_cost_ex[:per?]
+			return cost.ceil if skill.hp_cost_ex[:abs?]
+		end
+		return (cost * hp_cost_rate * stype_cost_rate_hp(skill) * skill_cost_rate_hp(skill)).ceil
+	end
+	#--------------------------------------------------------------------------
+	# ● Calculate consumption amount of skill
+	#--------------------------------------------------------------------------
+	def skill_gold_cost(skill)
+		return (skill.gold_cost * gold_cost_rate).ceil
+	end
+	#--------------------------------------------------------------------------
+	# ● Determination of possession of necessary items when using skills
+	#--------------------------------------------------------------------------
+	def skill_need_item?(skill)
+		skill.item_cost.all?{|cost| cost[:num] <= $game_party.item_number($data_items[cost[:id]])} &&
+		skill.need_item.all?{|item_id|
+			$game_party.has_item?($data_items[item_id]) || need_item_ignore?(item_id)
+		}
+	end
+	#--------------------------------------------------------------------------
+	# Determination of two-sword requirement of skill
+	#--------------------------------------------------------------------------
+	def skill_need_dual_wield?(skill)
+		return true unless skill.need_dual_wield?
+		return true if actor? && dual_wield? && weapons[1]
+		return false
+	end  
+	#--------------------------------------------------------------------------
+	# ○ Payment for skill use costs
+	#--------------------------------------------------------------------------
+	def pay_skill_cost(skill)
+		self.hp -= skill_hp_cost(skill)
+		self.mp -= skill_mp_cost(skill)
+		self.tp -= skill_tp_cost(skill)
+		$game_party.lose_gold(skill_gold_cost(skill))
+		skill.item_cost.each{|cost|
+			next if rand < item_cost_scrimp(cost[:id])
+			$game_party.lose_item($data_items[cost[:id]], cost[:num])
+		}
+	end
+	#--------------------------------------------------------------------------
+	# ○ Possibility to pay skill use cost
+	#--------------------------------------------------------------------------
+	def skill_cost_payable?(skill)
+		tp >= skill_tp_cost(skill) &&
+		mp >= skill_mp_cost(skill) &&
+		hp > skill_hp_cost(skill) &&
+		$game_party.gold >= skill_gold_cost(skill) &&
+		skill_need_item?(skill)  
+	end
+	#--------------------------------------------------------------------------
+	# ○ Check available conditions for skills
+	#--------------------------------------------------------------------------
+	def skill_conditions_met?(skill)
+		usable_item_conditions_met?(skill) &&
+		skill_wtype_ok?(skill) &&
+		skill_cost_payable?(skill) &&
+		!skill_sealed?(skill.id) &&
+		!skill.stypes.all?{|stype_id| skill_type_sealed?(stype_id)} &&
+		skill_need_dual_wield?(skill) &&
+		!(temptation? && !$game_actors[NWConst::Actor::LUCA].alive?)
+	end
+	#--------------------------------------------------------------------------
+	# ○ Equipment availability determination
+	#--------------------------------------------------------------------------
+	def equippable?(item)
+		return false unless item.is_a?(RPG::EquipItem)
+		return false if equip_type_sealed?(item.etype_id)
+		return false if item.exclusive_actors && !item.exclusive_actors.include?(self.id)
+		if item.is_a?(RPG::Weapon)
+			return false if item.not_dual_wield? && weapons.size == 2
+			return equip_wtype_ok?(item.wtype_id)
+		elsif item.is_a?(RPG::Armor)
+			return equip_atype_ok?(item.atype_id)
+		end
+		return false
+	end
+	#--------------------------------------------------------------------------
+	# ○ Skill / item availability determination
+	#--------------------------------------------------------------------------
+	def usable?(item)
+		result = false
+		result = skill_conditions_met?(item) if item.is_a?(RPG::Skill)
+		result = item_conditions_met?(item) if item.is_a?(RPG::Item)
+		return result && usable_item_sex_ok?(item)
+	end
+	#--------------------------------------------------------------------------
+	# ● Skill / Item Gender Availability Check
+	#--------------------------------------------------------------------------
+	def usable_item_sex_ok?(item)
+		# Unconditionally possible if indiscriminate
+		return true if item.ext_scope == NWSex::ALL
+		case item.scope
+			# Available among enemies, if there is one that matches the expansion scope
+		when 1..6
+			return true unless opponents_unit.alive_members_ex(item.ext_scope).empty?
+			# In a friend, 〃
+		when 7..8
+			return true unless friends_unit.alive_members_ex(item.ext_scope).empty?
+			# Among the dead people, 〃
+		when 9..10
+			return true unless friends_unit.dead_members_ex(item.ext_scope).empty?
+			# To myself,
+		when 11
+			return true unless (self.sex & item.ext_scope) != 0
+		end
+		return false
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire skill ID of struggle
+	#--------------------------------------------------------------------------
+	def bind_resist_skill_id
+		return NWConst::Skill::BIND_RESIST
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire skill ID of leave as is
+	#--------------------------------------------------------------------------
+	def mercy_skill_id
+		return NWConst::Skill::MERCY
+	end
+	#--------------------------------------------------------------------------
+	# ○ Check on skill / item availability
+	#--------------------------------------------------------------------------
+	def occasion_ok?(item)
+		($game_party.in_battle ? item.battle_ok? : item.menu_ok?) && throw_ok?(item)
+	end
+	#--------------------------------------------------------------------------
+	# ● Check availability of throw-only item
+	# Available only with \"Ninjutsu\"
+	#--------------------------------------------------------------------------
+	def throw_ok?(item)
+		return true unless item.throw?
+		return true if added_skill_types.include?(31) 
+		return false
+	end  
+	#--------------------------------------------------------------------------
+	# ● Determination of two swords
+	#--------------------------------------------------------------------------
+	def dual_wield?
+		return false if slot_cannot_dual_wield?
+		slot_type == 1
+	end
+end
+
+
+#==============================================================================
+# ■ Game_Battler
+#==============================================================================
+class Game_Battler < Game_BattlerBase  
+	#--------------------------------------------------------------------------
+	# ● Mix-In(Use effect)
+	#--------------------------------------------------------------------------
+	include NWUsableEffect
+	
+	#--------------------------------------------------------------------------
+	# ○ Object initialization
+	#--------------------------------------------------------------------------
+	def initialize
+		@battler_name = ""
+		@battler_hue = 0
+		@actions = []
+		@speed = 0
+		@result = Game_ActionResult.new(self)
+		@last_target_index = 0
+		@guarding = false
+		clear_sprite_effects
+		clear_counter
+		super
+	end
+	#--------------------------------------------------------------------------
+	# ○ Obtain normal ability value
+	#--------------------------------------------------------------------------
+	def param(param_id)
+		[super(param_id),super(get_convert_param_id(param_id))].max
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire ID with ability value replacement applied to ability value ID
+	#--------------------------------------------------------------------------
+	def get_convert_param_id(param_id)
+		if @convert_param_data and @convert_param_data[param_id]
+			return @convert_param_data[param_id]
+		else
+			return param_id
+		end
+	end
+	#--------------------------------------------------------------------------
+	# ● Gender
+	#--------------------------------------------------------------------------
+	def sex
+		return NWSex::FEMALE
+	end
+	#--------------------------------------------------------------------------
+	# ● Luca?
+	#--------------------------------------------------------------------------
+	def luca?
+		return actor? && self.id == NWConst::Actor::LUCA
+	end
+	#--------------------------------------------------------------------------
+	# ● Calculate reflectance of skill / item
+	#--------------------------------------------------------------------------
+	def item_mrf(user, item)
+		return physical_reflection_rate if item.physical? # Physical Attack Physical Reflectance
+		return mrf if item.magical?             # If it is a magic attack return magic reflectance
+		return 0
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquisition of physical reflectance
+	#--------------------------------------------------------------------------
+	def physical_reflection_rate
+		features_sum(FEATURE_BATTLER_ABILITY, PHYSICAL_REFLECTION)
+	end
+	#--------------------------------------------------------------------------
+	# ● Are you being predator
+	#--------------------------------------------------------------------------
+	def predationed?
+		@predationed
+	end
+	#--------------------------------------------------------------------------
+	# ○ Addition of state
+	#--------------------------------------------------------------------------
+	def add_state(state_id)
+		display_state_id = state_id
+		state_id = death_state_id if $data_states[state_id].death?    
+		if state_addable?(state_id)
+			add_new_state(state_id) unless state?(state_id)
+			reset_state_counts(state_id)
+			@result.added_states.push(display_state_id).uniq!
+		end
+	end
+	
+	#--------------------------------------------------------------------------
+	# ○ Release state
+	#--------------------------------------------------------------------------
+	def remove_state(state_id)
+		if state?(state_id)
+			revive if state_id == death_state_id
+			erase_state(state_id)
+			refresh
+			@result.removed_states.push(state_id).uniq!
+			BattleManager.bind_refresh if $game_party.in_battle
+		end
+	end
+
+	#--------------------------------------------------------------------------
+	# ○ Apply skill / item effect
+	#--------------------------------------------------------------------------
+	def item_apply(user, item, is_cnt = false)
+		@result.clear
+		@result.used = item_test(user, item)
+		user = user.observer if user.is_a?(Game_Master)
+		@result.missed = (@result.used && rand >= item_hit(user, item))
+		@result.pleasure = user.final_elements(item).include?(NWConst::Elem::PLEASURE)
+		if @result.hit?
+			if item.erase_defense_wall?
+				@cnt[:defense_wall] = []
+			end
+			unless item.damage.none?
+				@result.critical = (rand < item_cri(user, item))
+				make_damage_value(user, item, is_cnt)
+				execute_damage(user)
+			end
+			item.effects.each {|effect| item_effect_apply(user, item, effect) }
+		end
+		@result.pleasure ||= @result.death_pleasure_state_added?
+		item_user_effect(user, item)
+	end
+	#--------------------------------------------------------------------------
+	# ○ Application of effect of use
+	#--------------------------------------------------------------------------
+	def item_effect_apply(user, item, effect)    
+		method_table = {
+			EFFECT_RECOVER_HP    => :item_effect_recover_hp,
+			EFFECT_RECOVER_MP    => :item_effect_recover_mp,
+			EFFECT_GAIN_TP       => :item_effect_gain_tp,
+			EFFECT_ADD_STATE     => :item_effect_add_state,
+			EFFECT_REMOVE_STATE  => :item_effect_remove_state,
+			EFFECT_ADD_BUFF      => :item_effect_add_buff,
+			EFFECT_ADD_DEBUFF    => :item_effect_add_debuff,
+			EFFECT_REMOVE_BUFF   => :item_effect_remove_buff,
+			EFFECT_REMOVE_DEBUFF => :item_effect_remove_debuff,
+			EFFECT_SPECIAL       => :item_effect_special,
+			EFFECT_GROW          => :item_effect_grow,
+			EFFECT_LEARN_SKILL   => :item_effect_learn_skill,
+			EFFECT_COMMON_EVENT  => :item_effect_common_event,
+			EFFECT_STEAL         => :item_effect_steal,
+			EFFECT_DEFENSE_WALL  => :item_effect_defense_wall,
+			EFFECT_OVER_DRIVE    => :item_effect_over_drive,
+			EFFECT_GAIN_EXP      => :item_effect_gain_exp,
+			EFFECT_DEATH_ELEMENT => :item_effect_death_element,
+			EFFECT_DEATH_STATE   => :item_effect_death_state,
+			EFFECT_PREDATION     => :item_effect_predation,
+			EFFECT_RESTORATION   => :item_effect_restoration,
+			EFFECT_BINDING_START => :item_effect_binding_start,
+			EFFECT_BIND_RESIST   => :item_effect_bind_resist,
+		}
+		method_name = method_table[effect.code]
+		send(method_name, user, item, effect) if method_name
+	end
+	#--------------------------------------------------------------------------
+	# ○ Effect of use [HP recovery]
+	#--------------------------------------------------------------------------
+	def item_effect_recover_hp(user, item, effect)
+		value = (mhp * effect.value1 + effect.value2) * rec
+		value *= user.pha if item.is_a?(RPG::Item)
+		value *= -heel_reverse if $game_party.in_battle && 0.0 < heel_reverse && !item.heel_reverse_ignore?
+		value = value.to_i
+		@result.hp_damage -= value
+		@result.success = true
+		self.hp += value
+	end  
+	#--------------------------------------------------------------------------
+	# ○ Effect of use [TP increase]
+	#--------------------------------------------------------------------------
+	def item_effect_gain_tp(user, item, effect)
+		value = (self.max_tp * effect.value1.to_f * 0.01).ceil
+		@result.tp_damage -= value
+		@result.success = true if value != 0
+		self.tp += value
+	end
+	#--------------------------------------------------------------------------
+	# ○ Effect of use [State added]
+	#--------------------------------------------------------------------------
+	def item_effect_add_state(user, item, effect)
+		if item.state_penetrate?  
+			item_effect_add_state_penetrate(user, item, effect)
+		else
+			if effect.data_id == 0
+				item_effect_add_state_attack(user, item, effect)
+			else
+				item_effect_add_state_normal(user, item, effect)
+			end
+		end
+	end
+	#--------------------------------------------------------------------------
+	# ○ Usage Effect [Add State]: Normal Attack
+	#--------------------------------------------------------------------------
+	def item_effect_add_state_attack(user, item, effect)
+		user.atk_states.each do |state_id|
+			chance = effect.value1 * user.atk_states_rate(state_id)    
+			#~ chance *= user.booster_state_ratio_type(item)
+			#~ chance *= user.booster_state_ratio_skill(item)
+			#~ chance += user.booster_state_fix_type(item)
+			if (chance < 1.0) && (state_rate(state_id) < 1.0)
+				chance *= state_rate(state_id)
+			else
+				chance += state_rate(state_id) - 1.0
+			end
+			chance = 0.0 if state_rate(state_id) == 0.0 || state_resist?(state_id)
+			
+			print "#{$data_states[state_id].name}Granted final success rate#{(chance * 100).to_i}%\n" if $TEST
+			if rand < chance
+				if state_id == NWConst::State::INSTANT_DEAD && (0 < hp) && instant_dead_reverse?
+					@result.hp_damage = -(mhp - hp)
+					self.hp = mhp
+				else
+					add_state(state_id)
+				end
+				@result.success = true
+			end
+		end
+		
+	end
+	#--------------------------------------------------------------------------
+	# ○ Use effect [state added]: normal
+	#--------------------------------------------------------------------------
+	def item_effect_add_state_normal(user, item, effect)
+		chance = effect.value1    
+		if item.is_skill?
+			chance *= user.booster_state_ratio_type(item)
+			chance *= user.booster_state_ratio_skill(item)
+			chance += user.booster_state_fix_type(item)
+		end
+		if (chance < 1.0) && (state_rate(effect.data_id) < 1.0)
+			chance *= state_rate(effect.data_id)
+		else
+			chance += state_rate(effect.data_id) - 1.0
+		end
+		chance = 0.0 if state_rate(effect.data_id) == 0.0 || state_resist?(effect.data_id)
+		
+		print "#{$data_states[effect.data_id].name}Granted final success rate#{(chance * 100).to_i}%\n" if $TEST
+		if rand < chance
+			if effect.data_id == NWConst::State::INSTANT_DEAD && (0 < hp) && instant_dead_reverse?
+				@result.hp_damage = -(mhp - hp)
+				self.hp = mhp
+			else
+				add_state(effect.data_id)
+			end
+			@result.success = true
+		end
+	end
+	#--------------------------------------------------------------------------
+	# ● Use effect [Add state]: Ignore tolerance
+	#--------------------------------------------------------------------------
+	def item_effect_add_state_penetrate(user, item, effect)
+		if rand < effect.value1
+			add_state(effect.data_id)
+			@result.success = true
+		end
+	end
+	#--------------------------------------------------------------------------
+	# ○ Effect of use [Special effect]
+	#--------------------------------------------------------------------------
+	def item_effect_special(user, item, effect)
+		case effect.data_id
+		when SPECIAL_EFFECT_ESCAPE
+			if actor?  # Forced escape by ally
+				BattleManager.process_forced_escape
+				@result.success = true
+			else       # Enemy forced escape
+				if BattleManager.can_forced_escape?
+					escape
+					@result.success = true
+				else
+					@result.success = false
+				end
+			end
+		end
+	end
+	#--------------------------------------------------------------------------
+	# ○ Effect of use [Common Event]
+	#--------------------------------------------------------------------------
+	def item_effect_common_event(user, item, effect)
+		@result.success = true
+	end
+	#--------------------------------------------------------------------------
+	# ● Effect of use [Item Steel]
+	#--------------------------------------------------------------------------
+	def item_effect_steal(user, item, effect)
+		return unless user.actor? && self.enemy?
+		list = self.steal_list[effect.data_id]
+		@result.stealed_item_empty = list.empty? ? true : false
+		unless $game_switches[NWConst::Sw::STEAL_FAIL]
+			list.sort{|a, b| b[:denominator] <=> a[:denominator]}.each{|steal|  
+				next unless rand * steal[:denominator] < user.steal_success
+				case steal[:kind]
+				when 1; item = $data_items[steal[:data_id]]
+				when 2; item = $data_weapons[steal[:data_id]]
+				when 3; item = $data_armors[steal[:data_id]]
+				end
+				
+				$game_party.gain_item(item, 1)
+				$game_library.count_up_actor_steal(user.id)
+				$game_library.count_up_steal_item(self.id, effect.data_id, steal)
+				list.clear
+				@result.stealed_item_kind = steal[:kind]
+				@result.stealed_item_id   = steal[:data_id]
+				break
+			}
+		end
+		@result.stealed = true
+		@result.success = true
+	end
+	#--------------------------------------------------------------------------
+	# ● Effect of use [Added defender wall]
+	#--------------------------------------------------------------------------
+	def item_effect_defense_wall(user, item, effect)
+		@cnt[:defense_wall] += [true] * effect.data_id
+		remove_defense_wall_over
+		@result.success = true
+	end
+	#--------------------------------------------------------------------------
+	# ● Effect of use [Experience rise]
+	#--------------------------------------------------------------------------
+	def item_effect_gain_exp(user, item, effect)
+		case effect.data_id
+		when 0
+			current_exp = base_exp
+			kind = :base
+		when 1
+			current_exp = class_exp
+			kind = :class
+		when 2
+			current_exp = tribe_exp
+			kind = :tribe
+		end
+		exp  = current_exp + effect.value1
+		show = effect.value2
+		change_exp(exp, show, kind)
+		@result.success = true
+	end
+	#--------------------------------------------------------------------------
+	# ● Effect of use [Attribute instant death]
+	#--------------------------------------------------------------------------
+	def item_effect_death_element(user, item, effect)
+		if rand < elements_max_rate([effect.value2[:id]])
+			chance = effect.value1
+			chance *= state_rate(effect.data_id) unless effect.value2[:opt]
+			if rand < chance
+				add_state(effect.data_id)
+				@result.success = true
+			end
+		end
+	end
+	#--------------------------------------------------------------------------
+	# ● Use effect [state limited]
+	#--------------------------------------------------------------------------
+	def item_effect_death_state(user, item, effect)
+		if state?(effect.value2[:id])
+			chance = effect.value1
+			chance *= state_rate(effect.data_id) unless effect.value2[:opt]
+			if rand < chance
+				add_state(effect.data_id)
+				@result.success = true
+			end
+		end
+	end
+	#--------------------------------------------------------------------------
+	# ● Effect of use [predation]
+	#--------------------------------------------------------------------------
+	def item_effect_predation(user, item, effect)
+		return unless effect.value1.any?{|state_id| self.state?(state_id)}
+		if effect.value2 & 0x1 == 0x1
+			user.hp += self.hp
+			self.hp = 0
+		end
+		if effect.value2 & 0x2 == 0x2
+			user.mp += self.mp
+			self.mp = 0
+		end
+		if effect.value2 & 0x4 == 0x4
+			user.tp += self.tp
+			self.tp = 0
+		end
+		self.add_state(death_state_id)
+		self.hide unless self.luca?
+		@result.predation = true
+		@result.success = true
+		@predationed = true
+	end
+	#--------------------------------------------------------------------------
+	# ● Effect of use [Damage reduction]
+	#--------------------------------------------------------------------------
+	def item_effect_restoration(user, item, effect)
+		value = 0
+		case item.damage.type
+		when 1, 5
+			value = @result.hp_damage
+		when 2, 6
+			value = @result.mp_damage
+		end    
+		value = (value * effect.value1).to_i
+		
+		return unless 0 < value
+		case effect.data_id
+		when :HP
+			user.hp += value
+			@result.hp_restore = value
+		when :MP
+			user.mp += value
+			@result.mp_restore = value
+		end
+		@result.success = true
+	end
+	#--------------------------------------------------------------------------
+	# ● Effect of use [Binding start technique]
+	#--------------------------------------------------------------------------
+	def item_effect_binding_start(user, item, effect)
+		return unless user.enemy?
+		return unless self.luca?
+		return unless rand < self.state_rate(effect.value2)
+		return unless self.state_addable?(effect.value2)
+		
+		if BattleManager.bind? && (BattleManager.bind_user_index != user.index)
+			@result.binding_start = 3
+		else
+			unless user.bind_user? 
+				@result.binding_start = effect.value1 == NWConst::State::UBIND ? 0 : 1
+			else
+				@result.binding_start = 2
+			end
+			BattleManager.bind_set(effect.data_id)
+			user.add_state(effect.value1)
+			self.add_state(effect.value2)
+		end
+		clear_actions
+		@result.success = true
+	end
+	#--------------------------------------------------------------------------
+	# ● Effect of use [Mogaaku]
+	#--------------------------------------------------------------------------
+	def item_effect_bind_resist(user, item, effect)
+		BattleManager.bind_count_down
+		@result.bind_resist = true
+		@result.success     = true
+	end
+	#--------------------------------------------------------------------------
+	# ● Skill / Item \"Application to be applied once regardless of number of subjects when successfully used\" Application
+	#--------------------------------------------------------------------------
+	def item_one_use_apply(item, targets, called_scene = nil)
+		self.item_use_tp_gain(item, "None") if targets.empty? and called_scene.is_a?(Scene_Battle)
+		item.effects.each {|effect| item_one_use_effect_apply(self, item, effect, called_scene) }
+	end
+	#--------------------------------------------------------------------------
+	# ● \"Application Effects to be Applied once regardless of Number of Targets in Successful Usage\"
+	#--------------------------------------------------------------------------
+	def item_one_use_effect_apply(user, item, effect, called_scene)
+		user = user.observer if user.is_a?(Game_Master)
+		method_table = {
+			NWUsableEffect::EFFECT_GET_ITEM     => :item_one_use_effect_get_item,
+			NWUsableEffect::EFFECT_SELF_ENCHANT => :item_one_use_effect_self_enchant,
+		}
+		method_name = method_table[effect.code]
+		send(method_name, user, item, effect, called_scene) if method_name
+	end
+	#--------------------------------------------------------------------------
+	# ● Use effect [item acquisition]
+	#--------------------------------------------------------------------------
+	def item_one_use_effect_get_item(user, item, effect, called_scene)
+		return unless user.actor?
+		effect.data_id.times{|i|
+			$game_party.gain_item($data_items[effect.value1[i]], effect.value2[i])
+		}
+	end
+	#--------------------------------------------------------------------------
+	# ● Effect of use [Self-state grant]
+	#--------------------------------------------------------------------------
+	def item_one_use_effect_self_enchant(user, item, effect, called_scene)
+		chance = effect.value1
+		chance *= user.state_rate(effect.data_id) unless effect.value2
+		if rand < chance
+			user.add_state(effect.data_id)
+			if user.state_addable?(effect.data_id) and called_scene.is_a?(Scene_Battle)
+				called_scene.refresh_status
+				log_window = called_scene.instance_variable_get(:@log_window)
+				log_window.display_user_self_enchant(user, effect.data_id)
+			end
+		end
+	end
+	#--------------------------------------------------------------------------
+	# ● Retrieve the attributes that will eventually be applied
+	#--------------------------------------------------------------------------
+	def final_elements(item)
+		return item.elements.collect{|id| id < 0 ? atk_elements : id}.flatten
+	end
+	#--------------------------------------------------------------------------
+	# ● Skill unavailable?
+	#--------------------------------------------------------------------------
+	def skill_unusable?(item)
+		return false unless item.is_skill?
+		return false if skill_conditions_met?(item)
+		@result.clear
+		@result.used = true    
+		if hp < skill_hp_cost(item)
+			@result.unusable = 0
+		elsif mp < skill_mp_cost(item)
+			@result.unusable = 1
+		elsif tp < skill_tp_cost(item)
+			@result.unusable = 2
+		elsif $game_party.gold < skill_gold_cost(item)
+			@result.unusable = 3
+		elsif !skill_need_item?(item)  
+			@result.unusable = 4
+		elsif skill_type_sealed?(item.stype_id) || skill_sealed?(item.id)
+			@result.unusable = 5
+		elsif temptation? && !$game_actors[NWConst::Actor::LUCA].alive?
+			@result.unusable = 6
+		end
+		return true
+	end    
+	#--------------------------------------------------------------------------
+	# Did you attack during permanent restraint?
+	#--------------------------------------------------------------------------
+	def eternal_bind_resist?(item)
+		return false unless item.is_skill?
+		return false unless state?(NWConst::State::ETBIND)
+		return false unless item.id != bind_resist_skill_id
+		return false unless item.id != mercy_skill_id
+		return true
+	end
+	#--------------------------------------------------------------------------
+	# ○ Acquisition of effectiveness change rate by luck
+	#--------------------------------------------------------------------------
+	def luk_effect_rate(user)
+		1.0
+	end
+	#--------------------------------------------------------------------------
+	# ○ TP charge due to damage
+	#--------------------------------------------------------------------------
+	def charge_tp_by_damage(damage_rate)
+	end
+	#--------------------------------------------------------------------------
+	# ○ Acquire TP charge rate
+	#--------------------------------------------------------------------------
+	def tcr
+		[1.0, features_max(FEATURE_SPARAM, 5)].max
+	end
+	#--------------------------------------------------------------------------
+	# ○ Effect on user side when applying skill / item object to target
+	#--------------------------------------------------------------------------
+	def item_user_effect(user, item)
+		user.item_use_tp_gain(item, self.name)
+	end
+	#--------------------------------------------------------------------------
+	# ○ Whether to increase the obtained TP when applying the effect to skill / item target
+	#--------------------------------------------------------------------------
+	def enable_apply_tp_gain?(item)
+		return true unless $game_party.in_battle                # Not battling
+		return true unless item.for_all?                        # It is not a whole attack
+		return true unless $game_temp.normal_invoke_count       # Normal/It is not reflection
+		return true unless $game_temp.normal_invoke_count >= 1  # It is not the second time or later
+		# \"During battle, normal/Reflection, Overall Attack, Second Time or Later \"is satisfied, TP does not increase
+		return false
+	end
+	#--------------------------------------------------------------------------
+	# ○ Increase in obtained TP at the time of applying the effect to skill / item target
+	#--------------------------------------------------------------------------
+	def item_use_tp_gain(item, target_name)
+		print "<#{name}In case#{item.name}Target:#{target_name}"
+		if enable_apply_tp_gain?(item)
+			self.tp += (item.tp_gain * tcr).ceil
+			$game_temp.normal_invoke_plus_count
+			print "Obtain TP:#{item.tp_gain}Increase value:#{(item.tp_gain * tcr).ceil}>"
+		else
+			print "Invalid TP invalid"
+		end
+		print "\n"
+	end
+	#--------------------------------------------------------------------------
+	# Battle start processing
+	#--------------------------------------------------------------------------
+	def on_battle_start
+		init_tp unless preserve_tp?
+		set_counter
+		set_trigger_state
+		auto_state.each{|state_id| add_state(state_id)}
+	end 
+	#--------------------------------------------------------------------------
+	# ● Clear Battle Counter
+	#--------------------------------------------------------------------------  
+	def clear_counter
+		@cnt = {}
+		@cnt[:dead_skill_flag] = false
+		@cnt[:defense_wall] = []
+		@cnt[:auto_stand] = false
+	end  
+	#--------------------------------------------------------------------------
+	# ● Set of battle counter
+	#--------------------------------------------------------------------------  
+	def set_counter
+		@cnt[:dead_skill_flag] = true
+		@cnt[:defense_wall] = defense_wall ? [true] * defense_wall : []
+		remove_defense_wall_over
+		@cnt[:auto_stand] = true
+	end
+	#--------------------------------------------------------------------------
+	# ● Restrict the number of defensive walls
+	#--------------------------------------------------------------------------
+	def remove_defense_wall_over
+		while @cnt[:defense_wall].size > 2 # Up to 2 sheets
+			@cnt[:defense_wall].pop
+		end
+	end
+	#--------------------------------------------------------------------------
+	# ● Set of trigger states
+	#--------------------------------------------------------------------------
+	def set_trigger_state
+		trigger_state.each{|obj|
+			rate  = {:H => hp_rate, :M => mp_rate, :T => tp_rate}[obj[:point]]
+			check = [rate < obj[:per], obj[:per] <= rate]
+			exec  = [:add_state, :remove_state]      
+			method(exec[obj[:trigger] / 2]).call(obj[:state_id]) if check[obj[:trigger] % 2]
+		}
+	end
+	#--------------------------------------------------------------------------
+	# ○ It becomes impossible to fight
+	#--------------------------------------------------------------------------
+	def die
+		if $game_party.in_battle && @cnt[:dead_skill_flag] && dead_skill && !BattleManager.giveup?
+			BattleManager.skill_interrupt(self, dead_skill, :dead_skill)
+			@cnt[:dead_skill_flag] = false
+		end
+		if $game_party.in_battle && !BattleManager.giveup? && final_invoke
+			BattleManager.skill_interrupt(self, final_invoke, :final_invoke)
+		end
+		@hp = 0
+		clear_states
+		clear_buffs
+		BattleManager.bind_refresh if $game_party.in_battle # Or clear_statesso
+	end
+	#--------------------------------------------------------------------------
+	# ○ Calculate the counterattack rate of skill / item
+	#--------------------------------------------------------------------------
+	def item_cnt(user, item)
+		return 0.0 unless opposite?(user)         # I will not fight back on my side
+		return 0.0 unless movable?
+		return 0.0 if bind_target?
+		return certain_counter if item.certain?
+		return cnt             if item.physical?
+		return magical_counter #if item.magical?
+	end
+	#--------------------------------------------------------------------------
+	# ● Calculate the skill / item extended counterattack rate
+	#--------------------------------------------------------------------------
+	def item_cnt_ex(user, item)
+		return 0.0 unless opposite?(user)         # I will not fight back on my side
+		return 0.0 unless movable?
+		return 0.0 if bind_target?
+		return certain_counter_ex  if item.certain?
+		return physical_counter_ex if item.physical?
+		return magical_counter_ex  #if item.magical?
+	end
+	#--------------------------------------------------------------------------
+	# ○ Damage calculation
+	#--------------------------------------------------------------------------
+	def make_damage_value(user, item, is_cnt = false)
+		if item.is_a?(RPG::Skill)
+			user.set_category_convert_param_data(item.stype_id)
+		end
+		value = item.damage.eval(user, self, $game_variables)
+		user.clear_convert_param_data
+		value *= item_element_rate(user, item)
+		value *= pdr if item.physical?
+		value *= mdr if item.magical?
+		value *= rec if item.damage.recover?
+		value *= heel_reverse_rate(item)
+		value *= boost_rate(user, item, is_cnt)
+		value = apply_critical(value) if @result.critical
+		value = apply_variance(value, item.damage.variance)
+		value = apply_guard(value)
+		value = apply_damage_bind_turn(value, item, user)
+		value = apply_invalidate_wall(value, item)
+		value = apply_defense_wall(value, item)
+		value = apply_metal_body(value, item)
+		value = apply_stand(value, item)
+		value = apply_damage_mp_convert(value, item)
+		value = apply_damage_gold_convert(value, item)
+		value = apply_damage_mp_drain(value, item)
+		value = apply_damage_gold_drain(value, item)
+		@result.make_damage(value.to_i, item)
+	end
+	#--------------------------------------------------------------------------
+	# ○ Acquire parameter substitution data
+	#--------------------------------------------------------------------------
+	def category_convert_param_data(stype_id)
+		result = {}
+		feature_objects.each do |object|
+			data = object.category_convert_param_data(stype_id)
+			next if data.nil?
+			data.each do |convert|
+				result[convert[0]] = convert[1]
+			end
+		end
+		return result
+	end
+	#--------------------------------------------------------------------------
+	# ○ Set of parameter substitution
+	#--------------------------------------------------------------------------
+	def set_category_convert_param_data(stype_id)
+		@convert_param_data = category_convert_param_data(stype_id)
+	end
+	#--------------------------------------------------------------------------
+	# ○ Clear parameter substitution
+	#--------------------------------------------------------------------------
+	def clear_convert_param_data
+		@convert_param_data = nil
+	end
+	#--------------------------------------------------------------------------
+	# ○ Acquire skill / item attribute modification value
+	#--------------------------------------------------------------------------
+	def item_element_rate(user, item)
+		return  1.0 if item.element_penetrate?
+		return -1.0 if user.final_elements(item).any?{|id| element_drain?(id)}
+		return elements_max_rate(user.final_elements(item))
+	end
+	#--------------------------------------------------------------------------
+	# ○ Acquire maximum correction value of attribute
+	#     elements : Array of attribute IDs
+	#    Returns the most effective correction value among given attributes
+	#--------------------------------------------------------------------------
+	def elements_max_rate(elements)
+		return 1.0 if elements.empty?
+		return elements.inject([0.0]) {|r, i| r.push(element_rate(i)) }.max
+	end
+	#--------------------------------------------------------------------------
+	# ○ Calculate the accuracy of hit / item skill
+	#--------------------------------------------------------------------------
+	def item_hit(user, item)
+		hit_chance = item.success_rate * 0.01
+		eva_chance = 1.0
+		if item.physical?
+			hit  = (item.is_skill? && item.skill_hit) ? item.skill_hit : user.hit
+			hit_factor = item.is_skill? ? item.skill_hit_factor : 0.0
+			hit_chance *= hit + hit_factor 
+			eva_chance -= self.eva
+		elsif item.magical?
+			eva_chance -= self.mev
+		end
+		if (hit_chance < 1.0) && (eva_chance < 1.0)
+			chance = hit_chance * eva_chance
+		else
+			chance = hit_chance - (1.0 - eva_chance)
+		end
+		
+		print "#{item.name}Final Accuracy:#{(chance * 100.0).to_i}%\n" if $TEST
+		return chance
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquisition of recovery inversion rate
+	#--------------------------------------------------------------------------
+	def heel_reverse_rate(item)
+		return 1.0 unless $game_party.in_battle
+		return 1.0 unless item.damage.recover?
+		return 1.0 unless 0.0 < heel_reverse
+		return 1.0 if item.heel_reverse_ignore?
+		return -(heel_reverse)
+	end
+	#--------------------------------------------------------------------------
+	# ○ Application of critical
+	#--------------------------------------------------------------------------
+	def apply_critical(damage)
+		damage * 2
+	end
+	#--------------------------------------------------------------------------
+	# ● Application of constraint turn correction
+	#--------------------------------------------------------------------------
+	def apply_damage_bind_turn(damage, item, user)
+		return damage unless BattleManager.bind?
+		return damage unless user.bind_user?
+		return damage unless self.bind_target?
+		return damage unless item.is_a?(RPG::Skill) and (item.bind? or item.eternal_bind?)
+		turn = BattleManager.binding_turn
+		rate = [1.0 + (turn - 1) * 0.5, 1.0].max
+		s = self.state?(NWConst::State::ETBIND) ? "Permanent restraint" : "Restraint"
+		print "Constraint Turn Compensation Attacker:#{user.name}In case#{s}Number of turns:#{turn}"
+		print "Correction result:#{(rate * 100).to_i}%\n"
+		return damage * rate
+	end
+	#--------------------------------------------------------------------------
+	# ● Application of invalidation barriers
+	#--------------------------------------------------------------------------
+	def apply_invalidate_wall(damage, item)
+		return damage unless invalidate_wall
+		return damage if invalidate_wall < damage
+		return damage if item.damage.recover?
+		@result.invalidate_wall = true
+		return 0
+	end  
+	#--------------------------------------------------------------------------
+	# ● Application of defensive wall deployment
+	#--------------------------------------------------------------------------
+	def apply_defense_wall(damage, item)
+		return damage if @cnt[:defense_wall].empty?
+		return damage if @result.invalidate_wall
+		return damage if item.damage.recover?
+		@cnt[:defense_wall].pop
+		@result.defense_wall = true
+		return 0
+	end  
+	#--------------------------------------------------------------------------
+	# ● Application of metal body
+	#--------------------------------------------------------------------------
+	def apply_metal_body(damage, item)
+		return damage unless metal_body
+		return damage unless metal_body < damage
+		return damage if item.damage.recover?
+		return metal_body
+	end
+	#--------------------------------------------------------------------------
+	# ● Application of treadmill
+	#--------------------------------------------------------------------------
+	def apply_stand(damage, item)
+		return damage if hp == 1
+		return damage unless hp <= damage
+		return damage unless mhp * auto_stand < hp
+		return damage if item.damage.recover?
+		return damage unless @cnt[:auto_stand]
+		@cnt[:auto_stand] = false
+		@result.auto_stand = true
+		return hp - 1
+	end
+	#--------------------------------------------------------------------------
+	# ● Application of Damage MP Conversion
+	#--------------------------------------------------------------------------
+	def apply_damage_mp_convert(damage, item)
+		return damage unless damage_mp_convert
+		return damage if item.damage.recover?
+		return 0 if damage_mp_convert == 0.0
+		mp_damage = damage * damage_mp_convert
+		rest      = 0.0 < (mp_damage - mp) ? mp_damage - mp : 0.0
+		self.mp  -= mp_damage.ceil
+		return (rest / damage_mp_convert).ceil
+	end
+	#--------------------------------------------------------------------------
+	# ● Application of Damaged Gold Transformation
+	#--------------------------------------------------------------------------
+	def apply_damage_gold_convert(damage, item)
+		return damage unless damage_gold_convert
+		return damage if item.damage.recover?
+		return 0 if damage_gold_convert == 0.0
+		gold_damage = damage * damage_gold_convert
+		rest        = 0.0 < (gold_damage - $game_party.gold) ? gold_damage - $game_party.gold : 0.0
+		$game_party.lose_gold(gold_damage.ceil)
+		return (rest / damage_gold_convert).ceil
+	end  
+	#--------------------------------------------------------------------------
+	# ● Application of Damage MP Absorption
+	#--------------------------------------------------------------------------
+	def apply_damage_mp_drain(damage, item)
+		return damage unless damage_mp_drain
+		return damage if item.damage.recover?
+		self.mp += (damage * damage_mp_drain).ceil
+		return damage
+	end
+	#--------------------------------------------------------------------------
+	# ● Application of damage gold collection
+	#--------------------------------------------------------------------------
+	def apply_damage_gold_drain(damage, item)
+		return damage unless damage_gold_drain
+		return damage if item.damage.recover?
+		$game_party.gain_gold((damage * damage_gold_drain).ceil)
+		return damage
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquisition of Booster Correction Rate
+	#--------------------------------------------------------------------------
+	def boost_rate(user, item, is_cnt)
+		value  = 1.0
+		value *= user.final_elements(item).inject(1.0){|max, id| max = max > user.booster_element(id) ? max : user.booster_element(id)}
+		value *= 1.0 + (user.friends_unit.dead_members.size * user.considerate)
+		value *= 1.0 + (user.friends_unit.dead_members.size * item.considerate_revise)
+		wrate = user.wtypes.map{|id| item.weapon_rate(id)}.max
+		value *= wrate if wrate
+		value *= user.pha if item.apply_pharmacology?
+		value *= user.booster_counter if is_cnt
+		
+		user.wtypes.each do |wtype_id|
+			case item.hit_type
+			when 0; value *= user.booster_weapon_certain(wtype_id)
+			when 1; value *= user.booster_weapon_physical(wtype_id)
+			when 2; value *= user.booster_weapon_magical(wtype_id)
+			end
+		end
+		if item.is_skill?
+			use_wtypes = user.wtypes.empty? ? [0] : user.wtypes
+			use_wtypes.each do |wtype_id|
+				value *= user.booster_wtype_skill(wtype_id, item)
+				if item == $data_skills[user.attack_skill_id]
+					value *= user.booster_normal_attack(wtype_id)
+				end
+			end
+			value *= user.booster_skill_type(item)
+			value *= user.booster_skill(item)
+		end
+		return value
+	end
+	#--------------------------------------------------------------------------
+	# ○ Regeneration of TP
+	#--------------------------------------------------------------------------
+	def regenerate_tp
+		@result.tp_damage = -(max_tp * trg).ceil
+		self.tp -= @result.tp_damage
+	end
+	#--------------------------------------------------------------------------
+	# ○ All playback
+	#--------------------------------------------------------------------------
+	def regenerate_all
+		if $game_party.in_battle && alive? && !(BattleManager.giveup? && luca?)
+			regenerate_hp
+			regenerate_mp
+			regenerate_tp
+		end
+	end
+	#--------------------------------------------------------------------------
+	# ○ Process at the end of battle action
+	#--------------------------------------------------------------------------
+	def on_action_end
+		@result.clear
+		regenerate_all
+		remove_states_auto(1)
+		remove_buffs_auto
+	end
+	#--------------------------------------------------------------------------
+	# ○ End turn processing
+	#--------------------------------------------------------------------------
+	def on_turn_end
+		@result.clear
+		update_state_turns
+		update_buff_turns
+		remove_states_auto(2)
+		set_trigger_state if $game_party.in_battle
+	end  
+	#--------------------------------------------------------------------------
+	# Battle end processing
+	#--------------------------------------------------------------------------
+	def on_battle_end
+		remove_battle_states
+		remove_all_buffs
+		clear_actions
+		init_tp unless preserve_tp?
+		appear
+		self.hp += Integer(mhp * battle_end_heel_hp)
+		self.mp += Integer(mmp * battle_end_heel_mp)
+		@predationed = false
+		@result.clear
+	end
+	
+	#--------------------------------------------------------------------------
+	# ● Weapon type Strike force calculation
+	#--------------------------------------------------------------------------
+	def wp_atk
+		# Prioritize one with higher calculated value
+		a = self
+		warray = wtypes.empty? ? [0] : wtypes
+		warray.collect{|w| eval(NWConst::Parameter::WEAPON_TYPE_DAMAGE[w])}.max
+	end
+	#--------------------------------------------------------------------------
+	# ● User using restraint technique?
+	#--------------------------------------------------------------------------
+	def bind_user?
+		self.state?(NWConst::State::UBIND) || self.state?(NWConst::State::EUBIND)
+	end
+	#--------------------------------------------------------------------------
+	# ● Person subject to restraint technique?
+	#--------------------------------------------------------------------------
+	def bind_target?
+		self.state?(NWConst::State::TBIND) || self.state?(NWConst::State::ETBIND)
+	end
+end
+
+#==============================================================================
+# ■ Game_Actor
+#==============================================================================
+class Game_Actor < Game_Battler  
+	#--------------------------------------------------------------------------
+	# ● Public instance variables
+	#--------------------------------------------------------------------------
+	attr_accessor :last_select_command      # For cursor storage: Actor command
+	attr_accessor :last_select_stype        # For cursor storage: Skill type
+	attr_accessor :last_select_skill        # For cursor storage: skill
+	#--------------------------------------------------------------------------
+	# ● Gender
+	#--------------------------------------------------------------------------
+	def sex
+		return actor.sex
+	end
+	#--------------------------------------------------------------------------
+	# ○ Main RPG RPG::ActorObtain an object
+	#--------------------------------------------------------------------------
+	def original_persona_data_actor
+		return $data_actors[actor.original_persona_id] if actor.persona_kind == :sub
+		return actor
+	end
+	#--------------------------------------------------------------------------
+	# ○ Obtain additional value of normal ability value
+	#--------------------------------------------------------------------------
+	def param_plus(param_id)
+		base = [@param_plus[param_id] , max_param_plus(param_id)].min
+		equips.compact.inject(base) do |r, item|
+			value = item.params[param_id]
+			value *= item_mastery_rate(item) if value > 0 and (2..7).include?(param_id)
+			r += value # to_iNot required
+		end
+	end
+	#--------------------------------------------------------------------------
+	# ● Testing effectiveness
+	#--------------------------------------------------------------------------
+	def item_effect_test(user, item, effect)
+		return @param_plus[effect.data_id] <= max_param_plus(effect.data_id) if effect.code == EFFECT_GROW
+		super
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire maximum value of ability value increase
+	#--------------------------------------------------------------------------
+	def max_param_plus(param_id)
+		return NWConst::Actor::MAX_MHP_PLUS if param_id == 0  # MHP
+		return NWConst::Actor::MAX_PARAM_PLUS 
+	end
+	#--------------------------------------------------------------------------
+	# Attack power
+	#--------------------------------------------------------------------------
+	def atk
+		(BattleManager.giveup? && luca?) || bind_target? ? super * 0.5 : super
+	end
+	#--------------------------------------------------------------------------
+	# ● Defense power
+	#--------------------------------------------------------------------------
+	def def
+		(BattleManager.giveup? && luca?) ? 0.0 : super
+	end
+	#--------------------------------------------------------------------------
+	# ● mental strength
+	#--------------------------------------------------------------------------
+	def mdf
+		(BattleManager.giveup? && luca?) ? 0.0 : super
+	end
+	#--------------------------------------------------------------------------
+	# ● Quickness
+	#--------------------------------------------------------------------------
+	def agi
+		(BattleManager.giveup? && luca?) || bind_target? ? super * 0.5 : super
+	end
+	#--------------------------------------------------------------------------
+	# ● dexterity
+	#--------------------------------------------------------------------------
+	def luk
+		(BattleManager.giveup? && luca?) || bind_target? ? super * 0.5 : super
+	end
+	#--------------------------------------------------------------------------
+	# ● Floor damage rate
+	#--------------------------------------------------------------------------
+	def fdr
+		features_min(FEATURE_SPARAM, 8)
+	end
+	#--------------------------------------------------------------------------
+	# ● Reinforcement / Remove all weaknesses
+	#--------------------------------------------------------------------------
+	def remove_all_buffs
+		clear_buffs
+	end
+	#--------------------------------------------------------------------------
+	# ○ Array of weapon objects
+	#--------------------------------------------------------------------------
+	def weapons
+		w = @equips.select {|item| item.is_weapon? }.collect {|item| item.object}
+		states.select{|state| state.tmp_equip > 0}.each{|state|
+			w[0] = $data_weapons[state.tmp_equip]
+		}
+		return w
+	end
+	#--------------------------------------------------------------------------
+	# ○ Acquire array of equipment objects
+	#--------------------------------------------------------------------------
+	def equips
+		e = @equips.collect {|item| item.object}
+		states.select{|state| state.tmp_equip > 0}.each{|state|
+			e[0] = $data_weapons[state.tmp_equip]
+		}
+		return e
+	end  
+	#--------------------------------------------------------------------------
+	# ● Acquire weapon type array
+	#--------------------------------------------------------------------------
+	def wtypes
+		weapons.collect{|w| w.wtype_id}
+	end
+	#--------------------------------------------------------------------------
+	# ○ Strongest equipment
+	#--------------------------------------------------------------------------
+	def optimize_equipments
+		accessory = equips[4]
+		clear_equipments
+		4.times do |i|
+			next if !equip_change_ok?(i)
+			items = $game_party.equip_items.select do |item|
+				item.etype_id == equip_slots[i] &&
+				equippable?(item) && item.performance >= 0
+			end
+			change_equip(i, items.max_by {|item| item.performance })
+		end
+		change_equip(4, accessory)
+	end 
+	#--------------------------------------------------------------------------
+	# ● Acquire behavioral skill ID at temptation
+	#--------------------------------------------------------------------------
+	def temptation_skill_id
+		actor.temptation_skill ? actor.temptation_skill : NWConst::Skill::DEFAULT_TEMPTATION
+	end
+	#--------------------------------------------------------------------------
+	# ○ Acquire maximum value of normal ability value
+	#--------------------------------------------------------------------------
+	def param_max(param_id)
+		return NWConst::Actor::MAX_MHP if param_id == 0  # MHP
+		return NWConst::Actor::MAX_PARAM
+	end
+	#--------------------------------------------------------------------------
+	# ○ Acquire array of skill objects
+	#--------------------------------------------------------------------------
+	def skills
+		(@skills | added_skills).sort.collect {|id| $data_skills[id] }
+	end  
+	#--------------------------------------------------------------------------
+	# ○ Obtain basic value of floor damage
+	#--------------------------------------------------------------------------
+	def basic_floor_damage
+		return NWConst::Map::DAMAGE_FLOOR[$game_player.terrain_tag]
+	end
+	#--------------------------------------------------------------------------
+	# ● Full Recovery
+	#--------------------------------------------------------------------------
+	def recover_all
+		super
+		init_tp
+	end
+	#--------------------------------------------------------------------------
+	# ● Get the maximum value of TP
+	#--------------------------------------------------------------------------
+	def max_tp
+		[mtp_max, [((actor.base_tp + (actor.tp_level_revise * (base_level - 1)) + increase_tp_fix) * increase_tp_per).ceil, 1].max].min
+	end
+	#--------------------------------------------------------------------------
+	# ● Get maximum value of maximum TP 【Override】
+	#--------------------------------------------------------------------------
+	def mtp_max
+		return NWConst::Actor::MAX_MSP
+	end
+	#--------------------------------------------------------------------------
+	# ● Initialize TP 【Override】
+	#--------------------------------------------------------------------------
+	def init_tp
+		self.tp = (max_tp * start_tp_rate).ceil
+	end
+	#--------------------------------------------------------------------------
+	# ○ Calculation of final experience acquisition rate
+	#--------------------------------------------------------------------------
+	def final_exp_rate
+		exr * (battle_member? ? 1 : reserve_members_exp_rate) * (death_state? ? 0 : 1)
+	end
+	#--------------------------------------------------------------------------
+	# ● Calculation of ultimate occupational experience acquisition rate
+	#--------------------------------------------------------------------------
+	def final_cexp_rate
+		cexr * (battle_member? ? 1 : reserve_members_exp_rate) * (death_state? ? 0 : 1)
+	end  
+	#--------------------------------------------------------------------------
+	# ● Skill / Use of items
+	#    Called to the action side, apply the effect on non-use target.
+	#--------------------------------------------------------------------------
+	def use_item(item)
+		super(item)
+		item_effect_persona_change(item.persona_change)
+	end
+	#--------------------------------------------------------------------------
+	# ● Personality change by skill / item
+	#--------------------------------------------------------------------------
+	def item_effect_persona_change(persona_id)
+		return if persona_id == nil
+		return if $game_actors[id] != $game_actors[persona_id]
+		$game_party.persona_change(persona_id)
+	end
+	#--------------------------------------------------------------------------
+	# ○ Apply sort to skill type array
+	#--------------------------------------------------------------------------
+	def sorted_stypes(stypes)
+		@stype_sort ||= {}
+		a = stypes
+		b = stypes.sort_by {|stype| @stype_sort[stype] ? @stype_sort[stype] : stype }
+		stypes.sort_by {|stype| @stype_sort[stype] ? @stype_sort[stype] : stype }
+	end
+	#--------------------------------------------------------------------------
+	# ○ Perform skill type sorting
+	#--------------------------------------------------------------------------
+	def swap_stype_sort(a, b)
+		@stype_sort ||= {}
+		@stype_sort[a] ||= a
+		@stype_sort[b] ||= b
+		@stype_sort[a], @stype_sort[b] = @stype_sort[b], @stype_sort[a]
+	end
+	#--------------------------------------------------------------------------
+	# ○ Reset Skill Type Sort
+	#--------------------------------------------------------------------------
+	def clear_stype_sort
+		@stype_sort = {}
+	end
+	#--------------------------------------------------------------------------
+	# ● Skill Type Hidden Determination
+	#--------------------------------------------------------------------------
+	def skill_type_disabled?(stype_id)
+		return @skill_types_disabled[stype_id]
+	end
+	#--------------------------------------------------------------------------
+	# ● Flip Skill Type Hide Flag
+	#--------------------------------------------------------------------------
+	def flip_skill_type_disabled(stype_id)
+		@skill_types_disabled[stype_id] = !@skill_types_disabled[stype_id]
+	end
+	#--------------------------------------------------------------------------
+	# ● Create an action candidate list for automatic battle
+	#--------------------------------------------------------------------------
+	def make_action_list
+		list = []
+		list.push(Game_Action.new(self).set_attack.evaluate)
+		skills.each do |skill|
+			
+		end
+		usable_skills.each do |skill|
+			next if skill.no_auto_battle?
+			next unless skill.stypes.any? {|type| added_skill_types.include?(type) }
+			if $game_system.conf[:bt_stype]
+				next unless skill.stypes.any? {|type| !skill_type_disabled?(type) }
+			end
+			list.push(Game_Action.new(self).set_skill(skill.id).evaluate)
+		end
+		list.push(Game_Action.new(self).set_attack.evaluate) if list.empty?
+		list
+	end
+	#--------------------------------------------------------------------------
+	# ● Floor damage treatment
+	#--------------------------------------------------------------------------
+	def execute_floor_damage
+		damage = (basic_floor_damage * $game_party.floor_damage_rate).to_i
+		self.hp -= [damage, max_floor_damage].min
+		perform_map_damage_effect if damage > 0
+	end
+	#--------------------------------------------------------------------------
+	# ○ Whether or not it has \"one or more designated categories\" or not
+	#--------------------------------------------------------------------------
+	def is_include_categories?(*categories)
+		categories.each do |category|
+			return true if actor.actor_categories.include?(category)
+		end
+		return false
+	end
+	#--------------------------------------------------------------------------
+	# ● Final selection actor command
+	#--------------------------------------------------------------------------
+	def get_last_command
+		return @last_select_command
+	end
+	def set_last_command(symbol)
+		@last_select_command = symbol
+	end
+	#--------------------------------------------------------------------------
+	# ● Last selected skill type
+	#--------------------------------------------------------------------------
+	def get_last_stype
+		return @last_select_stype
+	end
+	def set_last_stype(stype_id)
+		@last_select_stype = stype_id
+	end
+	#--------------------------------------------------------------------------
+	# ● Last selected skill
+	#--------------------------------------------------------------------------
+	def prepare_last_skill(stype_id)
+		@last_select_skill ||= []
+		@last_select_skill[stype_id] ||= Game_BaseItem.new
+	end
+	def get_last_skill(stype_id)
+		prepare_last_skill(stype_id)
+		return @last_select_skill[stype_id].object
+	end
+	def set_last_skill(stype_id, skill)
+		prepare_last_skill(stype_id)
+		@last_select_skill[stype_id].object = skill
+	end
+end
+
+#==============================================================================
+# ■ Game_Enemy
+#==============================================================================
+class Game_Enemy < Game_Battler
+	#--------------------------------------------------------------------------
+	# ● Public instance variables
+	#--------------------------------------------------------------------------
+	attr_reader     :steal_list
+	#--------------------------------------------------------------------------
+	# ○ Object initialization
+	#--------------------------------------------------------------------------
+	def initialize(index, enemy_id)
+		super()
+		@index = index
+		@enemy_id = enemy_id
+		enemy = $data_enemies[@enemy_id]
+		@original_name = enemy.name
+		@letter = ""
+		@plural = false
+		@screen_x = 0
+		@screen_y = 0
+		@battler_name = enemy.battler_name
+		@battler_hue = enemy.battler_hue
+		@hp = mhp
+		@mp = mmp
+		@steal_list = Marshal.load(Marshal.dump(enemy.steal_list))
+		@recharge_skills = {}
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquisition of Enemy ID
+	#--------------------------------------------------------------------------
+	def id
+		@enemy_id
+	end
+	#--------------------------------------------------------------------------
+	# ● Maximum HP
+	#--------------------------------------------------------------------------
+	def mhp
+		return super if enemy.no_difficulty?
+		return super unless 0 < $game_variables[NWConst::Var::PARAM1]
+		return (super * $game_variables[NWConst::Var::PARAM1] * 0.01).to_i
+	end
+	#--------------------------------------------------------------------------
+	# Attack power
+	#--------------------------------------------------------------------------
+	def atk
+		return super if enemy.no_difficulty?
+		return super unless 0 < $game_variables[NWConst::Var::PARAM2]
+		return (super * $game_variables[NWConst::Var::PARAM2] * 0.01).to_i
+	end
+	#--------------------------------------------------------------------------
+	# ● Defense power
+	#--------------------------------------------------------------------------
+	def def
+		return super if enemy.no_difficulty?
+		return super unless 0 < $game_variables[NWConst::Var::PARAM3]
+		return (super * $game_variables[NWConst::Var::PARAM3] * 0.01).to_i
+	end
+	#--------------------------------------------------------------------------
+	# ● Magical power
+	#--------------------------------------------------------------------------
+	def mat
+		return super if enemy.no_difficulty?
+		return super unless 0 < $game_variables[NWConst::Var::PARAM2]
+		return (super * $game_variables[NWConst::Var::PARAM2] * 0.01).to_i
+	end
+	#--------------------------------------------------------------------------
+	# The spirit
+	#--------------------------------------------------------------------------
+	def mdf
+		return super if enemy.no_difficulty?
+		return super unless 0 < $game_variables[NWConst::Var::PARAM3]
+		return (super * $game_variables[NWConst::Var::PARAM3] * 0.01).to_i
+	end
+	#--------------------------------------------------------------------------
+	# ● Quick
+	#--------------------------------------------------------------------------
+	def agi
+		return super if enemy.no_difficulty?
+		return super unless 0 < $game_variables[NWConst::Var::PARAM4]
+		return (super * $game_variables[NWConst::Var::PARAM4] * 0.01).to_i
+	end
+	#--------------------------------------------------------------------------
+	# ● Deft
+	#--------------------------------------------------------------------------
+	def luk
+		return super if enemy.no_difficulty?
+		return super unless 0 < $game_variables[NWConst::Var::PARAM2]
+		return (super * $game_variables[NWConst::Var::PARAM2] * 0.01).to_i
+	end
+	#--------------------------------------------------------------------------
+	# ● Obtain state availability
+	#--------------------------------------------------------------------------
+	def state_rate(state_id)
+		rate = super(state_id)
+		var_id = NWConst::Var::PARAM_STATE_RATE[state_id]
+		if var_id
+			value = $game_variables[var_id]
+			if value > 0
+				rate *= value * 0.01
+			elsif value < 0
+				rate *= 0
+			end
+		end
+		return rate
+	end
+	#--------------------------------------------------------------------------
+	# ● Get maximum value of TP 【Override】
+	#--------------------------------------------------------------------------
+	def max_tp
+		# Basic value 999
+		[((999 + increase_tp_fix) * increase_tp_per).ceil, 1].max
+	end
+	#--------------------------------------------------------------------------
+	# ● Initialize TP 【Override】
+	#--------------------------------------------------------------------------
+	def init_tp
+		self.tp = max_tp
+	end  
+	#--------------------------------------------------------------------------
+	# ○ Regeneration of TP
+	#--------------------------------------------------------------------------
+	def regenerate_tp
+		init_tp
+	end
+	#--------------------------------------------------------------------------
+	# ○ Acquire the magnification of the drop item acquisition rate
+	#--------------------------------------------------------------------------
+	def drop_item_rate
+		[$game_party.get_item_rate, ($game_party.drop_item_double? ? 2.0 : 1.0)].max
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire escape level
+	#--------------------------------------------------------------------------
+	def escape_level
+		enemy.escape_level
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire occupational experience value
+	#--------------------------------------------------------------------------
+	def class_exp
+		enemy.class_exp
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire weapon type array
+	#--------------------------------------------------------------------------
+	def wtypes
+		[enemy.wtype_id]
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire behavioral skill ID at temptation
+	#--------------------------------------------------------------------------
+	def temptation_skill_id
+		enemy.temptation_skill ? enemy.temptation_skill : NWConst::Skill::DEFAULT_TEMPTATION
+	end
+	
+	#--------------------------------------------------------------------------
+	# ○ Create battle behavior
+	#--------------------------------------------------------------------------
+	def make_actions
+		super
+		return if @actions.empty?
+		
+		if self.state?(NWConst::State::UBIND)
+			action_list = make_bind_actions
+		elsif self.state?(NWConst::State::EUBIND)
+			action_list = make_eternal_bind_actions
+		else
+			action_list = make_normal_actions
+		end
+		action_list.select!{|a| conditions_met?(a)} 
+		action_list.reject!{|a| @recharge_skills.keys.include?(a.skill_id)}
+		action_list.reject!{|a| $game_party.lonely? && $data_skills[a.skill_id].lonely_unused?}
+		cycle_success = []
+		cycle_failure = []   
+		action_list.select{|a| $data_skills[a.skill_id].cycle_skill?}.each{|a|
+			if $data_skills[a.skill_id].cycle_eval
+				cycle_success.push(a)
+			else
+				cycle_failure.push(a)
+			end
+		}
+		cycle_failure.each{|a| action_list.delete(a)}
+		action_list = cycle_success unless cycle_success.empty?
+		rating_sum  = action_list.inject(0){|sum, a| sum += a.rating}
+		@actions.map!{|action|
+			next nil if action_list.empty?
+			action.set_enemy_action(select_enemy_action(action_list, rating_sum))
+			if action.item.recharge > 0
+				action_list.reject!{|a| a.skill_id == action.item.id}
+				rating_sum  = action_list.inject(0){|sum, a| sum += a.rating}
+			end
+			action
+		}.compact!
+	end
+	#--------------------------------------------------------------------------
+	# ○ Use skills when there is no valid action
+	#--------------------------------------------------------------------------
+	def no_valid_action_skill_id
+		NWConst::Skill::NO_VALID_ACTION
+	end
+	#--------------------------------------------------------------------------
+	# ○ Randomly select battle behavior
+	#--------------------------------------------------------------------------
+	def select_enemy_action(action_list, rating_sum)
+		
+		value = rand(rating_sum)
+		action_list.each{|action| 
+			value -= action.rating
+			return action if value <= 0
+		}
+	end
+	#--------------------------------------------------------------------------
+	# ● Creating Behavior under Restraint
+	#--------------------------------------------------------------------------
+	def make_bind_actions
+		enemy.actions.select{|action|
+			skill = $data_skills[action.skill_id]
+			result = skill.bind?
+			result &&= !(skill.binding_start? && BattleManager.bind? && (BattleManager.bind_user_index != self.index))
+			result
+		}
+	end
+	#--------------------------------------------------------------------------
+	# ● Create permanent restraint behaviors
+	#--------------------------------------------------------------------------
+	def make_eternal_bind_actions
+		enemy.actions.select{|action|
+			$data_skills[action.skill_id].eternal_bind?
+		}
+	end
+	#--------------------------------------------------------------------------
+	# ● Create normal behavior
+	#--------------------------------------------------------------------------
+	def make_normal_actions
+		enemy.actions.select{|action|
+			skill    = $data_skills[action.skill_id]
+			result   = !skill.bind?
+			result &&= !skill.eternal_bind?
+			result &&= !(skill.binding_start? && BattleManager.bind? && (BattleManager.bind_user_index != self.index))
+			result &&= usable_item_sex_ok?(skill)
+			result
+		}
+	end  
+	#--------------------------------------------------------------------------
+	# ● Payment of skill use costs
+	#--------------------------------------------------------------------------
+	def pay_skill_cost(skill)
+		super
+		@recharge_skills[skill.id] = skill.recharge
+	end
+	#--------------------------------------------------------------------------
+	# ● Effect of use [predation]
+	#--------------------------------------------------------------------------
+	def item_effect_predation(user, item, effect)
+		return if enemy.no_predation?
+		super(user, item, effect)
+	end
+	#--------------------------------------------------------------------------
+	# ● End turn processing
+	#--------------------------------------------------------------------------
+	def on_turn_end
+		super
+		count_recharge_skills
+	end
+	#--------------------------------------------------------------------------
+	# ● Advance recharge count of skills
+	#--------------------------------------------------------------------------
+	def count_recharge_skills
+		@recharge_skills.each{|key, value|
+			@recharge_skills[key] = value - 1
+		}
+		@recharge_skills.delete_if {|key, value| value <= 0}
+	end
+	#--------------------------------------------------------------------------
+	# ● Skipping animation and collapse effects
+	#--------------------------------------------------------------------------
+	def battle_show_skip?
+		Input.press?(:X)
+	end
+	#--------------------------------------------------------------------------
+	# ● Execution of collapse effect
+	#--------------------------------------------------------------------------
+	def perform_collapse_effect
+		case collapse_type
+		when 0
+			if battle_show_skip?
+				@sprite_effect_type = :instant_collapse
+				Sound.play_enemy_collapse
+			else
+				@sprite_effect_type = :collapse
+				Sound.play_enemy_collapse
+			end
+		when 1
+			if battle_show_skip?
+				@sprite_effect_type = :instant_collapse
+				Sound.play_enemy_collapse
+			else
+				@sprite_effect_type = :boss_collapse
+				Sound.play_boss_collapse1
+			end
+		when 2
+			@sprite_effect_type = :instant_collapse
+		end
+	end
+end
+
+#==============================================================================
+# ■ Game_Actors
+#==============================================================================
+class Game_Actors
+	#--------------------------------------------------------------------------
+	# ● Release of actors
+	#--------------------------------------------------------------------------
+	def release(actor_id)
+		@data[actor_id] = nil
+	end
+end
+
+#==============================================================================
+# ■ Game_Unit
+#==============================================================================
+class Game_Unit
+	#--------------------------------------------------------------------------
+	# ● Public instance variables
+	#--------------------------------------------------------------------------
+	attr_accessor     :display_skill_name
+	#--------------------------------------------------------------------------
+	# ● Unable to fight or acquire the sequence of predator members
+	#--------------------------------------------------------------------------
+	def defeated_members
+		members.select {|member| member.dead? || member.predationed? }
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire all members including waiting support
+	#--------------------------------------------------------------------------
+	def force_all_members
+		return defined?(:all_members) ? all_members : members
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire sequence of living members by standby target
+	#--------------------------------------------------------------------------
+	def alive_include_bench_members(include_bench)
+		use_members = include_bench ? force_all_members : members
+		use_members.select {|member| member.alive? }
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire the sequence of non-fightable members by standby target
+	#--------------------------------------------------------------------------
+	def dead_include_bench_members(include_bench)
+		use_members = include_bench ? force_all_members : members
+		use_members.select {|member| member.dead? }
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire the sequence of the living members corresponding to the standby target
+	#--------------------------------------------------------------------------
+	def alive_members_ex(scope = NWSex::ALL, include_bench = false)
+		use_members = alive_include_bench_members(include_bench)
+		return use_members if scope == NWSex::ALL
+		return use_members.select{|member| (member.sex & scope) != 0}
+	end
+	#--------------------------------------------------------------------------
+	# ● Respond to standby object Acquire sequence of nonbattleable members
+	#--------------------------------------------------------------------------
+	def dead_members_ex(scope = NWSex::ALL, include_bench = false)
+		use_members = dead_include_bench_members(include_bench)
+		return use_members if scope == NWSex::ALL
+		return use_members.select{|member| (member.sex & scope) != 0}
+	end
+	#--------------------------------------------------------------------------
+	# ● Random determination of corresponding target for standby target
+	#--------------------------------------------------------------------------
+	def random_target(include_bench = false)
+		use_members = alive_include_bench_members(include_bench)
+		tgr_rand = rand * use_members.inject(0){|r, member| r + member.tgr}
+		use_members.each do |member|
+			tgr_rand -= member.tgr
+			return member if tgr_rand < 0
+		end
+		use_members[0]
+	end
+	#--------------------------------------------------------------------------
+	# ● Random determination of waiting target Random determination of target (battle impossible)
+	#--------------------------------------------------------------------------
+	def random_dead_target(include_bench = false)
+		use_members = dead_include_bench_members(include_bench)
+		use_members.empty? ? nil : use_members.sample
+	end
+	#--------------------------------------------------------------------------
+	# ● Random determination of corresponding target for standby target
+	#--------------------------------------------------------------------------
+	def random_target_ex(scope = NWSex::ALL, include_bench = false)
+		return random_target(include_bench) if scope == NWSex::ALL
+		use_members_ex = alive_members_ex(scope, include_bench)
+		tgr_rand = rand * use_members_ex.inject(0){|r, member| r + member.tgr}
+		use_members_ex.each {|member|
+			tgr_rand -= member.tgr
+			return member if tgr_rand < 0
+		}
+		return use_members_ex.first
+	end
+	#--------------------------------------------------------------------------
+	# ● Random determination of waiting target Random determination of target (battle impossible)
+	#--------------------------------------------------------------------------
+	def random_dead_target_ex(scope = NWSex::ALL, include_bench = false)
+		return random_dead_target(include_bench) if scope == NWSex::ALL
+		use_members_ex = dead_members_ex(scope, include_bench)
+		return nil if use_members_ex.empty?
+		return use_members_ex.sample
+	end
+end
+
+#==============================================================================
+# ■ Game_Actors
+#==============================================================================
+class Game_Actors
+	#--------------------------------------------------------------------------
+	# ● Do you exist?
+	#--------------------------------------------------------------------------
+	def exist?(actor_id)
+		return @data[actor_id] != nil
+	end
+end
+
+#==============================================================================
+# ■ Game_Party
+#==============================================================================
+class Game_Party < Game_Unit
+	#--------------------------------------------------------------------------
+	# ● Object initialization
+	#--------------------------------------------------------------------------
+	def initialize
+		super
+		@gold = 0
+		@steps = 0
+		@last_item = Game_BaseItem.new
+		@menu_actor_id = 0
+		@target_actor_id = 0
+		@actors = []
+		@temp_actors = []
+		init_all_items
+	end
+	#--------------------------------------------------------------------------
+	# ○ Acquire the maximum value of possession money
+	#--------------------------------------------------------------------------
+	def max_gold
+		return NWConst::Party::MAX_MONEY
+	end
+	#--------------------------------------------------------------------------
+	# ○ Acquire all members
+	#--------------------------------------------------------------------------
+	def all_members
+		(@temp_actors.empty? ? @actors : @temp_actors).collect{|id| $game_actors[id]}
+	end
+	#--------------------------------------------------------------------------
+	# ● Release temporary members
+	#--------------------------------------------------------------------------
+	def release_temp_actors
+		@temp_actors.each{|actor_id| $game_actors.release(actor_id)}
+		@temp_actors.clear
+	end
+	#--------------------------------------------------------------------------
+	# ● Set of temporary members
+	#--------------------------------------------------------------------------
+	def set_temp_actors(ary)
+		@temp_actors = ary[0, max_battle_members]
+	end
+	#--------------------------------------------------------------------------
+	# ● Are you using temporary members?
+	#--------------------------------------------------------------------------
+	def temp_actors_use?
+		return !@temp_actors.empty?
+	end
+	#--------------------------------------------------------------------------
+	# ● There is only one person?
+	#--------------------------------------------------------------------------  
+	def lonely?
+		return battle_members.size == 1
+	end
+	#--------------------------------------------------------------------------
+	# ○ Acquisition of battle members
+	#--------------------------------------------------------------------------
+	def battle_members
+		all_members.select{|actor| actor.exist?}[0, max_battle_members]
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquisition of bench members
+	#--------------------------------------------------------------------------
+	def bench_members
+		id = battle_members.collect{|actor| actor.id}
+		return all_members.reject{|actor| actor.hidden? || id.include?(actor.id)}
+	end
+	#--------------------------------------------------------------------------
+	# ○ Set up battle test party
+	#--------------------------------------------------------------------------
+	def setup_battle_test_members
+		$data_system.test_battlers.each do |battler|
+			actor = $game_actors[battler.actor_id]
+			actor.change_level(battler.level, false, :base)
+			actor.init_equips(battler.equips)
+			actor.recover_all
+			add_actor(actor.id)
+		end
+	end  
+	#--------------------------------------------------------------------------
+	# ● Selection of withdrawal actor at the time of party packing
+	#--------------------------------------------------------------------------
+	def choice_stand_actor_on_member_full(actor_id, actor_name)
+		battle_flag = (actor_name != nil)
+		color_index  = battle_flag ? 0 : 29 # tp_gauge_color2
+		choice_index =  0
+		actor_name   = $data_actors[actor_id].name unless battle_flag
+		members = $game_party.all_members.reject{|actor| actor.luca?}
+		choices = members.collect{|actor| actor.name}
+		choices.push("\\C[#{color_index}]" + actor_name)
+		choices.each { |name| $game_message.choices.push(name) }
+		$game_message.choice_cancel_type = choices.size
+		$game_message.choice_proc = Proc.new {|n| choice_index = n }
+		if battle_flag
+			BattleManager.wait_for_message
+		else
+			Fiber.yield while $game_message.choice?
+		end
+		if choice_index < members.size
+			return members[choice_index]
+		end
+		return false
+	end
+	#--------------------------------------------------------------------------
+	# ● Behavior change judgment
+	#--------------------------------------------------------------------------
+	def check_change_action
+		members.each{|actor|
+			actor.change_action.each{|action|
+				if rand < action[:per]
+					actor.clear_actions
+					actor.skill_interrupt(action[:id])
+					break
+				end
+			}
+		}
+		members.each{|actor|
+			actor.actions.each{|action|
+				next unless action.item
+				next unless action.item.is_skill?
+				next unless actor.change_skill(action.item.id)
+				action.set_skill(actor.change_skill(action.item.id))
+			}
+		}
+	end
+	#--------------------------------------------------------------------------
+	# ○ Determination of extinction
+	#--------------------------------------------------------------------------
+	def all_dead?
+		return super && !$game_switches[NWConst::Sw::ALL_DEAD_DISABLE]
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquisition Amount Magnification
+	#--------------------------------------------------------------------------
+	def get_gold_rate
+		all_members.inject([1.0]){|r, actor| r.push(actor.get_gold_rate)}.max
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquisition item magnification
+	#--------------------------------------------------------------------------
+	def get_item_rate
+		all_members.inject([1.0]){|r, actor| r.push(actor.get_item_rate)}.max
+	end
+	#--------------------------------------------------------------------------
+	# ● Fellow participation multiplier
+	#--------------------------------------------------------------------------
+	def collect_rate
+		all_members.inject([1.0]){|r, actor| r.push(actor.collect_rate)}.max
+	end
+	#--------------------------------------------------------------------------
+	# ● Encount magnification
+	#--------------------------------------------------------------------------
+	def encounter_rate
+		array = members.inject([]){|ary, actor| ary + actor.encounter_rate}
+		array.delete_if {|r| r < 1.0 } if $game_switches[NWConst::Sw::STRICT_ENCOUNT]
+		unless array.empty?
+			rate = array.inject(1.0){|result, r| result * r}
+			return rate
+		else
+			return 1.0
+		end
+	end
+	#--------------------------------------------------------------------------
+	# ● Slot Chance
+	#--------------------------------------------------------------------------
+	def slot_chance
+		members.inject(0){|r, actor| r < actor.slot_chance ? actor.slot_chance : r}
+	end
+	#--------------------------------------------------------------------------
+	# ● Unlock level
+	#--------------------------------------------------------------------------
+	def unlock_level
+		members.inject(0){|r, actor| r < actor.unlock_level ? actor.unlock_level : r}
+	end
+	#--------------------------------------------------------------------------
+	# ○ Preemptive strike probability calculation
+	#--------------------------------------------------------------------------
+	def rate_preemptive(troop_agi)
+		raise_preemptive? ? 0.15 : 0.03
+	end
+	#--------------------------------------------------------------------------
+	# ○ probability calculation for surprise
+	#--------------------------------------------------------------------------
+	def rate_surprise(troop_agi)
+		cancel_surprise? ? 0.0 : 0.03
+	end
+	#--------------------------------------------------------------------------
+	# ○ To the last member who is being predator
+	#--------------------------------------------------------------------------
+	def sort_hidden_last
+		@actors.sort_by! {|id|
+			($game_actors[id].hidden? ? 100 : 0) + @actors.index(id)
+		}
+	end
+	#--------------------------------------------------------------------------
+	# ○ Preventing extinction by replacing members
+	#--------------------------------------------------------------------------
+	def no_swap_all_dead?(index1, index2)
+		temp = Marshal.load(Marshal.dump(@actors))
+		temp[index1], temp[index2] = temp[index2], temp[index1]
+		return true if actors_all_dead?(temp[0, max_battle_members])
+		return false
+	end
+	#--------------------------------------------------------------------------
+	# ○ All designated actor IDs are unable to fight
+	#--------------------------------------------------------------------------
+	def actors_all_dead?(actors)
+		actors.compact.each {|actor_id|
+			return false if $game_actors[actor_id].alive?
+		}
+		return true
+	end
+	#--------------------------------------------------------------------------
+	# Battle end processing
+	#--------------------------------------------------------------------------
+	alias :nw_predation_on_battle_end :on_battle_end
+	def on_battle_end
+		# Actor on_battle_end It turns off predationed in
+		sort_hidden_last if actors_all_dead?(@actors[0, max_battle_members])
+		nw_predation_on_battle_end
+	end
+	#--------------------------------------------------------------------------
+	# ● Floor damage rate
+	#--------------------------------------------------------------------------
+	def floor_damage_rate
+		all_members.map(&:fdr).min
+	end
+	#--------------------------------------------------------------------------
+	# ● Party ability judgment for all members
+	#--------------------------------------------------------------------------
+	def all_party_ability(ability_id)
+		all_members.any? {|actor| actor.party_ability(ability_id) }
+	end
+	#--------------------------------------------------------------------------
+	# ● Survivor invalid?
+	#--------------------------------------------------------------------------
+	def cancel_surprise?
+		all_party_ability(ABILITY_CANCEL_SURPRISE)
+	end
+	#--------------------------------------------------------------------------
+	# ● First strike rate increase?
+	#--------------------------------------------------------------------------
+	def raise_preemptive?
+		all_party_ability(ABILITY_RAISE_PREEMPTIVE)
+	end
+end
+
+#==============================================================================
+# ■ Game_Troop
+#==============================================================================
+class Game_Troop < Game_Unit
+	#--------------------------------------------------------------------------
+	# ○ Initialize color tone of screen
+	#--------------------------------------------------------------------------
+	def init_screen_tone
+		#    @screen.start_tone_change($game_map.screen.tone, 0) if $game_map
+	end  
+	#--------------------------------------------------------------------------
+	# ● Maximum escape level calculation
+	#--------------------------------------------------------------------------
+	def escape_level_max
+		members.inject(1) {|r, enemy| r = r > enemy.escape_level ? r : enemy.escape_level}
+	end
+	#--------------------------------------------------------------------------
+	# ● Total calculation of experience value
+	#--------------------------------------------------------------------------
+	def exp_total
+		defeated_members.inject(0) {|r, enemy| r += enemy.exp }
+	end
+	#--------------------------------------------------------------------------
+	# ● Create array of drop items
+	#--------------------------------------------------------------------------
+	def make_drop_items
+		defeated_members.inject([]) {|r, enemy| r += enemy.make_drop_items }
+	end
+	#--------------------------------------------------------------------------
+	# ● Total calculation of occupational experience value
+	#--------------------------------------------------------------------------
+	def class_exp_total
+		Integer(defeated_members.inject(0) {|r, enemy| r += enemy.class_exp})
+	end
+	#--------------------------------------------------------------------------
+	# ○ Total calculation of money
+	#--------------------------------------------------------------------------
+	def gold_total
+		(defeated_members.inject(0){|r, enemy| r += enemy.gold } * gold_rate).to_i
+	end
+	#--------------------------------------------------------------------------
+	# ○ Acquire money multiplier
+	#--------------------------------------------------------------------------
+	def gold_rate
+		[$game_party.get_gold_rate, ($game_party.gold_double? ? 2.0 : 1.0)].max
+	end  
+	#--------------------------------------------------------------------------
+	# ● Acquisition of Battle BGM
+	#--------------------------------------------------------------------------
+	def battle_bgm
+		if troop.name =~ /<BGM(?:\:|:)(\S+)>/i
+			return RPG::BGM.new($1.to_s)
+		else
+			return $game_system.battle_bgm
+		end
+	end  
+	#--------------------------------------------------------------------------
+	# ○ Condition matching judgment of battle event (page)
+	#--------------------------------------------------------------------------
+	def conditions_met?(page)
+		c = page.condition
+		if !c.turn_ending && !c.turn_valid && !c.enemy_valid &&
+			!c.actor_valid && !c.switch_valid
+			return false      # No condition set ... Do not execute
+		end
+		if @event_flags[page]
+			return false      # executed
+		end
+		if c.turn_ending    # At end of turn
+			return false unless BattleManager.turn_end?
+		end
+		if c.turn_valid     # Number of turns
+			n = @turn_count
+			a = c.turn_a
+			b = c.turn_b
+			return false if (b == 0 && n != a)
+			return false if (b > 0 && (n < 1 || n < a || n % b != a % b))
+		end
+		if c.enemy_valid    # Enemy character
+			enemy = $game_troop.members[c.enemy_index]
+			return false if enemy == nil
+			return false if enemy.hp_rate * 100 > c.enemy_hp
+		end
+		if c.actor_valid    # actor
+			return false unless $game_party.members.any?{|member| member.id == c.actor_id}
+			return false if $game_actors[c.actor_id].hp_rate * 100 > c.actor_hp
+		end
+		if c.switch_valid   # switch
+			return false if !$game_switches[c.switch_id]
+		end
+		return true         # Condition matching
+	end
+end
+
+#==============================================================================
+# ■ Game_Map
+#==============================================================================
+class Game_Map
+	#--------------------------------------------------------------------------
+	# ○ Setup
+	#--------------------------------------------------------------------------
+	def setup(map_id)
+		@map_id = map_id
+		@map = load_data(sprintf("Data/Map%03d.rvdata2", @map_id))
+		@tileset_id = @map.tileset_id
+		@display_x = 0
+		@display_y = 0
+		referesh_vehicles
+		setup_map_level
+		setup_events
+		setup_scroll
+		setup_parallax
+		setup_battleback
+		@need_refresh = false
+	end
+	#--------------------------------------------------------------------------
+	# ● Map level setup
+	#--------------------------------------------------------------------------
+	def setup_map_level
+		if field? || encounter_list.empty?
+			@map_level = 1
+		else
+			@map_level = encounter_list.inject(1){|troop_max, troop|
+				max = $data_troops[troop.troop_id].members.inject(1){|enemy_max, enemy|
+					max = $data_enemies[enemy.enemy_id].escape_level
+					enemy_max < max ? max : enemy_max
+				}
+				troop_max < max ? max : troop_max
+			}
+		end
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire map level
+	#--------------------------------------------------------------------------
+	def map_level
+		return @map_level
+	end  
+	#--------------------------------------------------------------------------
+	# ○ Traffic check
+	#     bit : Traffic prohibit bit to investigate
+	#--------------------------------------------------------------------------
+	def check_passage(x, y, bit)
+		all_tiles(x, y).each_with_index do |tile_id, i|
+			flag = tileset.flags[tile_id]
+			next if flag & 0x10 != 0              # [☆] : It does not affect traffic
+			next if (i == 1) && (flag & bit == 0) # Ignore the judgment if it is the second layer and passable
+			return true  if flag & bit == 0       # [○] : Passable
+			return false if flag & bit == bit     # [×] : No traffic
+		end
+		return false                            # No traffic
+	end
+	#--------------------------------------------------------------------------
+	# ○ Damaged floor judgment
+	#--------------------------------------------------------------------------
+	def damage_floor?(x, y)
+		return false unless valid?(x, y)
+		layered_tiles(x, y).each{|tile_id|
+			next if tile_id == 0
+			return true if tileset.flags[tile_id] & 0x100 != 0
+		}
+		return false
+	end
+end
+
+#==============================================================================
+# ■ Game_Player
+#==============================================================================
+class Game_Player < Game_Character  
+	#--------------------------------------------------------------------------
+	# ● Execute the encounter processing
+	#--------------------------------------------------------------------------
+	alias no_enemy_map_encounter encounter
+	def encounter
+		return false if $game_system.no_enemy_maps_get.include?($game_map.map_id)
+		return no_enemy_map_encounter
+	end
+	#--------------------------------------------------------------------------
+	# ○ Create an encount count
+	#--------------------------------------------------------------------------
+	def make_encounter_count
+		n = $game_map.encounter_step
+		m = rand(n) + rand(n) + 1
+		@encounter_count = n + ((m - n) * 0.5)
+		
+		if $TEST
+			step = 0.0 < $game_party.encounter_rate ? "#{(@encounter_count / $game_party.encounter_rate).ceil}Step" : "No encounter"
+			print "maplv:#{$game_map.map_level} encounter:#{$game_party.encounter_rate}/#{@encounter_count}(#{step})\n"
+		end
+		#~     @encounter_rate  = $game_party.encounter_rate
+		#~     if $TEST
+		#~       step = 0.0 < @encounter_rate ? "#{(@encounter_count / @encounter_rate).ceil}Step" : "No encounter"
+		#~       print "maplv:#{$game_map.map_level} encounter:#{@encounter_rate}/#{@encounter_count}(#{step})\n"
+		#~     end
+	end
+	#--------------------------------------------------------------------------
+	# ○ Updating Encount
+	#--------------------------------------------------------------------------
+	def update_encounter
+		return if $TEST && Input.press?(:CTRL)
+		return if $game_map.encounter_list.empty?
+		return if in_airship?
+		return if @move_route_forcing
+		@encounter_count -= encounter_progress_value
+	end  
+	#--------------------------------------------------------------------------
+	# ○ Acquisition of encounter progress value
+	#--------------------------------------------------------------------------
+	def encounter_progress_value
+		value = $game_map.bush?(@x, @y) ? 2.0 : 1.0
+		value *= in_ship? ? 0.5 : 1.0
+		value *= $game_party.encounter_rate
+		#~     value *= @encounter_rate
+		value
+	end
+	#--------------------------------------------------------------------------
+	# ● Forcibly ride a vehicle
+	#--------------------------------------------------------------------------
+	def forced_get_on_vehicle(type)
+		return if vehicle
+		$game_map.vehicle(type).set_location($game_map.map_id, self.x, self.y)
+		@vehicle_type = type
+		@followers.gather
+		@direction = vehicle.direction
+		@move_speed = vehicle.speed
+		@transparent = true
+		@through     = true if in_airship?
+		vehicle.get_on
+	end
+	#--------------------------------------------------------------------------
+	# ● Forcibly get off the vehicle
+	#--------------------------------------------------------------------------
+	def forced_get_off_vehicle
+		return unless vehicle
+		@direction = vehicle.direction
+		@followers.synchronize(@x, @y, @direction)
+		vehicle.get_off
+		@followers.gather
+		@move_speed  = 4
+		@through     = false
+		make_encounter_count
+		@vehicle_type = :walk
+		@transparent = false
+		@vehicle_getting_on = false
+		@vehicle_getting_off = false
+	end  
+	#--------------------------------------------------------------------------
+	# ○ Get off the vehicle
+	#--------------------------------------------------------------------------
+	def get_off
+		@driving = false
+		@walk_anime = false
+		@step_anime = false
+		@direction = 4
+		@walking_bgm.play if @walking_bgm
+	end
+end
+
+#==============================================================================
+# ■ Game_Vehicle
+#==============================================================================
+class Game_Vehicle < Game_Character
+	#--------------------------------------------------------------------------
+	# ● Does it exist?
+	#--------------------------------------------------------------------------
+	def exist?
+		0 < @map_id
+	end
+end
+
+#==============================================================================
+# ■ Game_Event
+#==============================================================================
+class Game_Event < Game_Character
+	#--------------------------------------------------------------------------
+	# ○ Easy to pass
+	#     d : Direction (2,4,6,8)
+	#--------------------------------------------------------------------------
+	def passable?(x, y, d)
+		x2 = $game_map.round_x_with_direction(x, d)
+		y2 = $game_map.round_y_with_direction(y, d)
+		return false unless $game_map.valid?(x2, y2)
+		return true if @through || debug_through?
+		return false unless map_passable?(x, y, d)
+		return false unless map_passable?(x2, y2, reverse_dir(d))
+		return false unless region_passable?(x, y, d)
+		return false if collide_with_characters?(x2, y2)
+		return true
+	end
+	#--------------------------------------------------------------------------
+	# ● Region passage judgment
+	#     d : Direction (2,4,6,8)
+	#--------------------------------------------------------------------------
+	def region_passable?(x, y, d)
+		x2 = $game_map.round_x_with_direction(x, d)
+		y2 = $game_map.round_y_with_direction(y, d)
+		return region_id == $game_map.region_id(x2, y2)
+	end
+	#--------------------------------------------------------------------------
+	# ○ Condition conformity judgment of event page
+	#--------------------------------------------------------------------------
+	def conditions_met?(page)
+		c = page.condition
+		if c.switch1_valid
+			return false unless $game_switches[c.switch1_id]
+		end
+		if c.switch2_valid
+			return false unless $game_switches[c.switch2_id]
+		end
+		if c.variable_valid
+			return false if $game_variables[c.variable_id] < c.variable_value
+		end
+		if c.self_switch_valid
+			key = [@map_id, @event.id, c.self_switch_ch]
+			return false if $game_self_switches[key] != true
+		end
+		if c.item_valid
+			item = $data_items[c.item_id]
+			return false unless $game_party.has_item?(item)
+		end
+		if c.actor_valid
+			return false unless $game_party.members.any?{|member| member.id == c.actor_id}
+		end
+		return true
+	end
+end
+
+#==============================================================================
+# ■ Game_Interpreter
+#==============================================================================
+class Game_Interpreter
+	#--------------------------------------------------------------------------
+	# ○ Detect / set up call reserved common event
+	#--------------------------------------------------------------------------
+	def setup_reserved_common_event
+		if $game_temp.common_event_reserved?
+			setup($game_temp.reserved_common_event.list)
+			$game_temp.shift_common_event
+			true
+		else
+			false
+		end
+	end
+	#--------------------------------------------------------------------------
+	# ● Iterator for enemy characters (index)
+	#--------------------------------------------------------------------------
+	def convert_enemy_id(param)
+		var_param = $game_variables[NWConst::Var::EVENT_ENEMY_ID] - 1
+		return var_param >= 0 ? var_param : param
+	end
+	#--------------------------------------------------------------------------
+	# ● Iterator for enemy characters (index)
+	#     param : 0 If it is index,-1 If the whole
+	#--------------------------------------------------------------------------
+	def iterate_enemy_index(param)
+		param = convert_enemy_id(param)
+		if param < 0
+			$game_troop.members.each {|enemy| yield enemy }
+		else
+			enemy = $game_troop.members[param]
+			yield enemy if enemy
+		end
+	end
+	#--------------------------------------------------------------------------
+	# ● Obtain game data for variable operands
+	#--------------------------------------------------------------------------
+	def game_data_operand(type, param1, param2)
+		case type
+		when 0  # item
+			return $game_party.item_number($data_items[param1])
+		when 1  # weapon
+			return $game_party.item_number($data_weapons[param1])
+		when 2  # Armor
+			return $game_party.item_number($data_armors[param1])
+		when 3  # actor
+			actor = $game_actors[param1]
+			if actor
+				case param2
+				when 0      # level
+					return actor.level
+				when 1      # Experience point
+					return actor.exp
+				when 2      # HP
+					return actor.hp
+				when 3      # MP
+					return actor.mp
+				when 4..11  # Normal ability value
+					return actor.param(param2 - 4)
+				end
+			end
+		when 4  # Enemy character
+			enemy = $game_troop.members[ convert_enemy_id(param1) ]
+			if enemy
+				case param2
+				when 0      # HP
+					return enemy.hp
+				when 1      # MP
+					return enemy.mp
+				when 2..9   # Normal ability value
+					return enemy.param(param2 - 2)
+				end
+			end
+		when 5  # character
+			character = get_character(param1)
+			if character
+				case param2
+				when 0  # X Coordinate
+					return character.x
+				when 1  # Y Coordinate
+					return character.y
+				when 2  # direction
+					return character.direction
+				when 3  # Screen X coordinate
+					return character.screen_x
+				when 4  # Screen Y coordinate
+					return character.screen_y
+				end
+			end
+		when 6  # Party
+			actor = $game_party.members[param1]
+			return actor ? actor.id : 0
+		when 7  # Other
+			case param1
+			when 0  # Map ID
+				return $game_map.map_id
+			when 1  # Party number of people
+				return $game_party.members.size
+			when 2  # gold
+				return $game_party.gold
+			when 3  # Step count
+				return $game_party.steps
+			when 4  # Play time
+				return Graphics.frame_count / Graphics.frame_rate
+			when 5  # timer
+				return $game_timer.sec
+			when 6  # Number of saves
+				return $game_system.save_count
+			when 7  # Battle frequency
+				return $game_system.battle_count
+			end
+		end
+		return 0
+	end
+	#--------------------------------------------------------------------------
+	# ○ Conditional branch
+	#--------------------------------------------------------------------------
+	def command_111
+		result = false
+		case @params[0]
+		when 0  # switch
+			result = ($game_switches[@params[1]] == (@params[2] == 0))
+		when 1  # variable
+			value1 = $game_variables[@params[1]]
+			if @params[2] == 0
+				value2 = @params[3]
+			else
+				value2 = $game_variables[@params[3]]
+			end
+			case @params[4]
+			when 0  # Equivalent to
+				result = (value1 == value2)
+			when 1  # that's all
+				result = (value1 >= value2)
+			when 2  # Less than
+				result = (value1 <= value2)
+			when 3  # Super
+				result = (value1 > value2)
+			when 4  # Less than
+				result = (value1 < value2)
+			when 5  # Other than
+				result = (value1 != value2)
+			end
+		when 2  # Self switch
+			if @event_id > 0
+				key = [@map_id, @event_id, @params[1]]
+				result = ($game_self_switches[key] == (@params[2] == 0))
+			end
+		when 3  # timer
+			if $game_timer.working?
+				if @params[2] == 0
+					result = ($game_timer.sec >= @params[1])
+				else
+					result = ($game_timer.sec <= @params[1])
+				end
+			end
+		when 4  # actor
+			actor = $game_actors[@params[1]]
+			if actor
+				case @params[2]
+				when 0  # I am at a party
+					result = ($game_party.members.include?(actor))
+				when 1  # name
+					result = (actor.name == @params[3])
+				when 2  # Profession
+					result = (actor.class_id == @params[3])
+				when 3  # skill
+					result = (actor.skill_learn?($data_skills[@params[3]]))
+				when 4  # weapon
+					result = (actor.weapons.include?($data_weapons[@params[3]]))
+				when 5  # Armor
+					result = (actor.armors.include?($data_armors[@params[3]]))
+				when 6  # State
+					result = (actor.state?(@params[3]))
+				end
+			end
+		when 5  # Enemy character
+			enemy = $game_troop.members[ convert_enemy_id(@params[1]) ]
+			if enemy
+				case @params[2]
+				when 0  # Has appeared
+					result = (enemy.alive?)
+				when 1  # State
+					result = (enemy.state?(@params[3]))
+				end
+			end
+		when 6  # character
+			character = get_character(@params[1])
+			if character
+				result = (character.direction == @params[2])
+			end
+		when 7  # gold
+			case @params[2]
+			when 0  # that's all
+				result = ($game_party.gold >= @params[1])
+			when 1  # Less than
+				result = ($game_party.gold <= @params[1])
+			when 2  # Less than
+				result = ($game_party.gold < @params[1])
+			end
+		when 8  # item
+			result = $game_party.has_item?($data_items[@params[1]])
+		when 9  # weapon
+			result = $game_party.has_item?($data_weapons[@params[1]], @params[2])
+		when 10  # Armor
+			result = $game_party.has_item?($data_armors[@params[1]], @params[2])
+		when 11  # button
+			result = Input.press?(@params[1])
+		when 12  # script
+			result = eval(@params[1])
+		when 13  # vehicle
+			result = ($game_player.vehicle == $game_map.vehicles[@params[1]])
+		end
+		@branch[@indent] = result
+		command_skip if !@branch[@indent]
+	end
+	#--------------------------------------------------------------------------
+	# ○ Swap members
+	#--------------------------------------------------------------------------
+	def command_129
+		actor = $game_actors[@params[0]]
+		if actor
+			if @params[1] == 0    # Add
+				if @params[2] == 1  # Initialization
+					$game_actors[@params[0]].setup(@params[0])
+				end
+				add_actor_ex(@params[0])
+			else                  # remove
+				$game_party.remove_actor(@params[0])
+			end
+		end
+	end
+	#--------------------------------------------------------------------------
+	# ○ Changing row walking
+	#--------------------------------------------------------------------------
+	def command_216
+		unless @params[0] == 0
+			luca_index = 0
+			$game_party.all_members.each_with_index{|actor, i|
+				luca_index = (actor.luca? ? i : luca_index)
+			}
+			$game_party.swap_order(0, luca_index)
+		end
+		$game_player.followers.visible = (@params[0] == 0)
+		$game_player.refresh
+	end
+	#--------------------------------------------------------------------------
+	# ○ Script
+	#--------------------------------------------------------------------------
+	unless $TEST
+		def command_355
+			script = @list[@index].parameters[0] + "\n"
+			while next_event_code == 655
+				@index += 1
+				script += @list[@index].parameters[0] + "\n"
+			end
+			begin
+				eval(script)
+			rescue Exception => exc
+				if $TEST
+					p "Execution of script command failed"
+					p exc
+				end
+			end
+		end
+	end
+	#--------------------------------------------------------------------------
+	# ● Battle interruption
+	#--------------------------------------------------------------------------
+	def command_340
+		$game_temp.event_abort = true
+		BattleManager.abort
+		Fiber.yield
+	end
+end
+
+
+
+
+
+

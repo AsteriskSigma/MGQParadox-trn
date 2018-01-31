@@ -1,0 +1,545 @@
+
+
+
+EVENT   1
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,310,22,10,0,0)
+  0()
+
+
+
+EVENT   2
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,310,28,16,0,0)
+  0()
+
+
+
+EVENT   3
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,310,15,32,0,0)
+  0()
+
+
+
+EVENT   4
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Innkeeper>Will you be staying the night with us? It's 5G.\\$")
+  ShowChoices(strings("Yes","No"),2)
+  IfPlayerPicksChoice(0,null)
+   If(7,5,0)
+    125(1,0,5)
+    221()
+    249(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x08,0x49,0x6e,0x6e,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69))
+    Wait(150)
+    314(0,0)
+    222()
+    0()
+   Else()
+    ShowMessageFace("",0,0,2,2)
+    ShowMessage("\\n<Innkeeper>Oh my, you don't have enough money...")
+    0()
+   EndIf()
+   0()
+  IfPlayerPicksChoice(1,null)
+   0()
+  404()
+  0()
+
+
+
+EVENT   5
+ PAGE   1
+  If(2,"A",1)
+   ChangeSelfSwitch("A",0)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Alfonso>Oh, hi Marcellus...\nOh, you're not him?")
+   ShowMessageFace("ruka_fc1",0,0,2,2)
+   ShowMessage("\\n<Luka>No, but you're the legendary chef Alfonso!?")
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("\\n<Alfonso>Some call me that, yes.\nShall I whip something up since you're here?")
+   If(0,4,0)
+    ShowMessageFace("alice_fc5",7,0,2,4)
+    ShowMessage("\\n<Alice>I'm so glad we came...")
+    0()
+   EndIf()
+   If(0,5,0)
+    ShowMessageFace("iriasu_fc4",1,0,2,5)
+    ShowMessage("\\n<Ilias>That would be delightful, thanks.")
+    0()
+   EndIf()
+   If(4,64,0)
+    ShowMessageFace("pramia_fc1",0,0,2,6)
+    ShowMessage("\\n<Teeny>I need to study how a legendary chef works...")
+    0()
+   EndIf()
+   ShowMessageFace("",0,0,2,7)
+   ShowMessage("\\n<Alfonso>All right then, give me a few minutes...")
+   205(0,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x0a,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x22,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x06,0x69,0x09,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x2a,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x09,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x09,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+   221()
+   Wait(60)
+   222()
+   205(0,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x0b,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x22,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x06,0x69,0x09,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x06,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x06,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x1e,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x2b,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+   ShowMessageFace("",0,0,2,8)
+   ShowMessage("\\n<Alfonso>Here's a salad made with vegetables from my own garden. My apologies for serving you something so simple.")
+   ShowMessageFace("",0,0,2,9)
+   ShowMessage("Luka and his companions eat the salad...")
+   250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0b,0x53,0x61,0x69,0x6e,0x74,0x36,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x37,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+   284("BlueSky",true,false,5,0)
+   Wait(180)
+   284("",false,false,0,0)
+   If(0,4,0)
+    ShowMessageFace("alice_fc5",7,0,2,10)
+    ShowMessage("\\n<Alice>Delicious! ♪")
+    0()
+   EndIf()
+   If(0,5,0)
+    ShowMessageFace("iriasu_fc4",1,0,2,11)
+    ShowMessage("\\n<Ilias>Magnificent...♪ Let's just say your place in Heaven is guaranteed.")
+    0()
+   EndIf()
+   If(4,64,0)
+    ShowMessageFace("pramia_fc1",0,0,2,12)
+    ShowMessage("\\n<Teeny>How many years would I have to practice to come close to this...?")
+    0()
+   EndIf()
+   ShowMessageFace("",0,0,2,13)
+   ShowMessage("\\n<Alfonso>Hahaha! I may have retired, but I haven't lost my touch.")
+   ShowMessageFace("",0,0,2,14)
+   ShowMessage("\\n<Alfonso>I have but one regret, which is that I always worked alone and never took on an apprentice.")
+   ShowMessageFace("",0,0,2,15)
+   ShowMessage("\\n<Alfonso>Now there's no one to inherit this \\ii[616] of mine. I think I'll just end up burying it at the base of the tree in front of my house before I die.")
+   205(0,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x07,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x15,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+   ShowMessageFace("ruka_fc1",0,0,2,16)
+   ShowMessage("\\n<Luka>The \\ii[616] at the base of a tree...\nMaybe if we look in our world...")
+   ChangeSwitch(2052,2052,0)
+   0()
+  Else()
+   ShowMessageFace("",0,0,2,17)
+   ShowMessage("\\n<Alfonso>I have but one regret, which is that I always worked alone and never took on an apprentice.")
+   ShowMessageFace("",0,0,2,18)
+   ShowMessage("\\n<Alfonso>Now there's no one to inherit this \\ii[616] of mine. I think I'll just end up burying it at the base of the tree in front of my house before I die.")
+   ShowMessageFace("ruka_fc1",0,0,2,19)
+   ShowMessage("\\n<Luka>The \\ii[616] at the base of a tree...\nMaybe if we look in our world...")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   6
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Old Woman>Things have been odd around here ever since that Tartarus rift appeared 5 years ago. There are regular tremors and earthquakes, and the crops grow with a vengeance.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Old Woman>I'm happy about the crops, except that lots of odd vegetables are springing up among them. Their colors and shapes are off, as if two different vegetables mixed together.")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Old Woman>I have a feeling that these are signs of bad things to come, and I know I'm not the only one in the village thinking the same thing.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("41")
+  ShowMessageFace("stein_fc2",0,0,2,4)
+  ShowMessage("\\n<Promestein>Abnormal crops, you say? I'll have to get a few samples before we leave...")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   7
+ PAGE   1
+  // condition: variable 1014 >= 1
+  ChangeVariable(1014,1014,0,0,2)
+  ChangeVariable(1018,1018,0,0,1)
+  ChangeVariable(1001,1001,0,0,11)
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Village Chief>Oh, is that you, Marcellus? You seem quite different once again...")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Village Chief>...hmm? You're not him? You bear quite the resemblance though...")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Village Chief>The villagers saw more of him than me since I missed him the first time he visited.")
+  ShowMessageFace("",0,0,2,4)
+  ShowMessage("\\n<Village Chief>We did meet the second time, however. I'll never forget that day he came knocking at my door.")
+  ShowMessageFace("",0,0,2,5)
+  ShowMessage("\\n<Village Chief>We talked about Tartarus and the recent odd events. He was especially interested in the spate of earthquakes and the weird crops.")
+  If(4,41,0)
+   ShowMessageFace("stein_fc2",0,0,2,6)
+   ShowMessage("\\n<Promestein>I'm interested in them too. I'd love to acquire any data you have on the abnormal increase in seismic activity.")
+   0()
+  EndIf()
+  ShowMessageFace("",0,0,2,7)
+  ShowMessage("\\n<Village Chief>There was another thing he mentioned too.")
+  ShowMessageFace("",0,0,2,8)
+  ShowMessage("\\n<Village Chief>He said something big might happen to the village within the next few years and that we should leave before then.")
+  If(0,4,0)
+   ShowMessageFace("alice_fc6",0,0,2,9)
+   ShowMessage("\\n<Alice>Something big in the next few years...? Wait, was he talking about whatever disaster ends up destroying this village?")
+   0()
+  EndIf()
+  If(0,5,0)
+   ShowMessageFace("iriasu_fc4",7,0,2,10)
+   ShowMessage("\\n<Ilias>Something big in the next few years...? Wait, was he talking about whatever disaster ends up destroying this village?")
+   0()
+  EndIf()
+  If(0,6,0)
+   ShowMessageFace("sonia_fc3",7,0,2,11)
+   ShowMessage("\\n<Sonya>But how would Marcellus from this time period know about that? Could he really predict the village's destruction?")
+   0()
+  Else()
+   ShowMessageFace("ruka_fc1",0,0,2,12)
+   ShowMessage("\\n<Luka>But how would Marcellus from this time period know about that? Could he really predict the village's destruction?")
+   0()
+  EndIf()
+  ShowMessageFace("",0,0,2,13)
+  ShowMessage("\\n<Village Chief>Destruction? Please don't give me a heart attack... Recent events have scared all of us enough already.")
+  ShowMessageFace("",0,0,2,14)
+  ShowMessage("\\n<Village Chief>Oh, Marcellus left a letter with me. He wanted me to deliver it to an acquaintance of his if he ever showed up here.")
+  ShowMessageFace("ruka_fc1",0,0,2,15)
+  ShowMessage("\\n<Luka>Someone who might come to this village? Who in the world would he be leaving a letter for?")
+  241(bytes(0x04,0x08,0x6f,0x3a,0x0d,0x52,0x50,0x47,0x3a,0x3a,0x42,0x47,0x4d,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x6b,0x69,0x6b,0x69,0x32,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69))
+  ShowMessageFace("",0,0,2,16)
+  ShowMessage("\\n<Village Chief>A young man named Luka.")
+  ShowMessageFace("ruka_fc1",0,0,2,17)
+  ShowMessage("\\n<Luka>What!?")
+  If(0,4,0)
+   ShowMessageFace("alice_fc6",0,0,2,18)
+   ShowMessage("\\n<Alice>That's ridiculous! Luka shouldn't even be born yet!")
+   ShowMessageFace("alice_fc6",0,0,2,19)
+   ShowMessage("\\n<Alice>How could Marcellus possibly know of you? And then he even left you a letter...?")
+   0()
+  EndIf()
+  If(0,5,0)
+   ShowMessageFace("iriasu_fc4",7,0,2,20)
+   ShowMessage("\\n<Ilias>That's absurd and impossible! Luka isn't even born yet!")
+   ShowMessageFace("iriasu_fc4",7,0,2,21)
+   ShowMessage("\\n<Ilias>How could Marcellus possibly know of you? And then he even left you a letter...")
+   0()
+  EndIf()
+  ShowMessageFace("ruka_fc1",0,0,2,22)
+  ShowMessage("\\n<Luka>Sir, I'm Luka! Can you please show me that letter!?")
+  ShowMessageFace("",0,0,2,23)
+  ShowMessage("\\n<Village Chief>Well I'll be, you're Luka? This letter is all yours then...")
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeInventory_Item(510,0,0,1)
+  ShowMessageFace("",0,0,2,24)
+  ShowMessage("Luka unfolds the letter!")
+  ShowMessageFace("",0,0,2,25)
+  ShowMessage("'To my son, Luka.\nIf you're reading this letter, it means that I haven't returned to Iliasville.'")
+  ShowMessageFace("ruka_fc1",0,0,2,26)
+  ShowMessage("\\n<Luka>My son, Luka!? But he isn't even my father yet...")
+  ShowMessageFace("",0,0,2,27)
+  ShowMessage("'Most likely, Lucifina isn't with you anymore either. If she were, she'd never allow you to leave on an adventure. Please forgive your parents for not being there for you at such a crucial stage of your life.'")
+  ShowMessageFace("ruka_fc1",0,0,2,28)
+  ShowMessage("\\n<Luka>No, this letter was definitely written by my father!")
+  If(0,4,0)
+   ShowMessageFace("alice_fc6",0,0,2,29)
+   ShowMessage("\\n<Alice>So your actual father wrote it, not the Marcellus from this time? Our world's Marcellus came here then!?")
+   ShowMessageFace("alice_fc6",0,0,2,30)
+   ShowMessage("\\n<Alice>That certainly explains why he seemed to have changed after only a week. The second Marcellus was a different person altogether.")
+   ShowMessageFace("alice_fc5",3,0,2,31)
+   ShowMessage("\\n<Alice>The first Marcellus was the fresh adventurer from this world, then a week later, our Marcellus showed up...")
+   0()
+  EndIf()
+  If(0,5,0)
+   ShowMessageFace("iriasu_fc4",7,0,2,32)
+   ShowMessage("\\n<Ilias>So your actual father wrote it, not the Marcellus from this time? Our world's Marcellus came here then!?")
+   ShowMessageFace("iriasu_fc4",7,0,2,33)
+   ShowMessage("\\n<Ilias>That certainly explains why he seemed to have changed after only a week. The second Marcellus was a different one altogether.")
+   ShowMessageFace("iriasu_fc4",7,0,2,34)
+   ShowMessage("\\n<Ilias>The first Marcellus was the fresh adventurer from this world, then a week later, our Marcellus showed up...")
+   0()
+  EndIf()
+  ShowMessageFace("",0,0,2,35)
+  ShowMessage("'Seek Micaela's help, Luka. She lives in the hidden village of Enrika, deep inside the lost woods. Micaela should be able to help you, if anyone can.'")
+  If(0,5,0)
+   ShowMessageFace("iriasu_fc4",2,0,2,36)
+   ShowMessage("\\n<Ilias>Micaela...")
+   0()
+  EndIf()
+  ShowMessageFace("",0,0,2,37)
+  ShowMessage("'I'm determined to drive out the darkness that's covering the entire world. Go to Micaela and protect your world. Know that I'm proud of you for making it this far.'")
+  ShowMessageFace("",0,0,2,38)
+  ShowMessage("-your father, Marcellus")
+  ShowMessageFace("",0,0,2,39)
+  ShowMessage("That's the end of the letter.")
+  ShowMessageFace("ruka_fc1",0,0,2,40)
+  ShowMessage("\\n<Luka>Father...")
+  If(0,4,0)
+   ShowMessageFace("alice_fc6",0,0,2,41)
+   ShowMessage("\\n<Alice>So if the Marcellus from our world wrote this letter, that must mean he can open spacetime doors too.")
+   ShowMessageFace("alice_fc6",0,0,2,42)
+   ShowMessage("\\n<Alice>Why do humans have that power?\nAnd what's he even trying to do?")
+   ShowMessageFace("alice_fc5",0,0,2,43)
+   ShowMessage("\\n<Alice>At any rate, it's been a month since he left that letter. It will probably be difficult to track him down now.")
+   0()
+  EndIf()
+  If(0,5,0)
+   ShowMessageFace("iriasu_fc4",2,0,2,44)
+   ShowMessage("\\n<Ilias>So if the Marcellus from our world wrote this letter, that must mean he can open spacetime doors too.")
+   ShowMessageFace("iriasu_fc4",2,0,2,45)
+   ShowMessage("\\n<Ilias>Why would a normal human like him have that power? And what is his objective?")
+   ShowMessageFace("iriasu_fc4",2,0,2,46)
+   ShowMessage("\\n<Ilias>At any rate, a month has passed since he left that letter. It will probably be difficult to track him down now.")
+   0()
+  EndIf()
+  ShowMessageFace("ruka_fc1",0,0,2,47)
+  ShowMessage("\\n<Luka>I doubt he's even in this world anymore. Did he return to ours, or go to a different world entirely?")
+  241(bytes(0x04,0x08,0x6f,0x3a,0x0d,0x52,0x50,0x47,0x3a,0x3a,0x42,0x47,0x4d,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x6d,0x75,0x72,0x61,0x32,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69))
+  If(0,6,0)
+   ShowMessageFace("sonia_fc2",2,0,2,48)
+   ShowMessage("\\n<Sonya>Luka, do you know anything about this Micaela person? Marcellus wants us to meet with her, but...")
+   ShowMessageFace("ruka_fc1",0,0,2,49)
+   ShowMessage("\\n<Luka>No, this is the first time I've heard her name. An old friend of my father's, maybe?")
+   0()
+  Else()
+   ShowMessageFace("ruka_fc1",0,0,2,50)
+   ShowMessage("\\n<Luka>Meet with Micaela...\nI've never heard of her before.")
+   0()
+  EndIf()
+  If(0,4,0)
+   ShowMessageFace("alice_fc5",0,0,2,51)
+   ShowMessage("\\n<Alice>We know where we're going next then. Enrika, where this Micaela is supposed to be.")
+   ShowMessageFace("alice_fc5",0,0,2,52)
+   ShowMessage("\\n<Alice>We'll need to go through the lost woods to reach Enrika. The woods span the area west of Iliasville.")
+   0()
+  EndIf()
+  If(0,5,0)
+   ShowMessageFace("iriasu_fc4",2,0,2,53)
+   ShowMessage("\\n<Ilias>I know Micaela. She is your mother Lucifina's older sister...")
+   ShowMessageFace("ruka_fc1",0,0,2,54)
+   ShowMessage("\\n<Luka>She's my aunt then!? I had no idea I still had family...")
+   ShowMessageFace("iriasu_fc4",2,0,2,55)
+   ShowMessage("\\n<Ilias>...it looks like we'll have to pay her a visit. To be honest, I wanted to avoid her.")
+   ShowMessageFace("iriasu_fc4",2,0,2,56)
+   ShowMessage("\\n<Ilias>If she sees me like this, she might attack me... Luka, protect me if it comes to that.")
+   ShowMessageFace("ruka_fc1",0,0,2,57)
+   ShowMessage("\\n<Luka>She'd attack you on sight?\nIs she really that scary?")
+   ShowMessageFace("iriasu_fc4",2,0,2,58)
+   ShowMessage("\\n<Ilias>The scariest. She may unsheath the Sword of the Heavens itself on me. Even if you were trying to protect me...")
+   ShowMessageFace("ruka_fc1",0,0,2,59)
+   ShowMessage("\\n<Luka>What would happen?")
+   ShowMessageFace("iriasu_fc4",2,0,2,60)
+   ShowMessage("\\n<Ilias>The two of us would be vaporized in a column of light... Enrika and a few surrounding kilometers of forest would probably be reduced to ash too.")
+   If(0,6,0)
+    ShowMessageFace("sonia_fc3",2,0,2,61)
+    ShowMessage("\\n<Sonya>Luka's aunt is crazy!")
+    0()
+   EndIf()
+   ShowMessageFace("iriasu_fc4",2,0,2,62)
+   ShowMessage("\\n<Ilias>So that's why I don't want to meet with her. With me as weak as I am now, I'll be in big trouble...")
+   ShowMessageFace("ruka_fc1",0,0,2,63)
+   ShowMessage("\\n<Luka>We have to go see her though. Since my father mentioned her in his letter, she must know something.")
+   If(0,6,0)
+    ShowMessageFace("sonia_fc1",0,0,2,64)
+    ShowMessage("\\n<Sonya>He wrote that she's in Enrika, which is through the lost woods. Those are just west of Iliasville.")
+    ShowMessageFace("sonia_fc4",0,0,2,65)
+    ShowMessage("\\n<Sonya>To think that after traveling all over two different worlds, the person we need to speak to is so close to where we started...")
+    0()
+   Else()
+    ShowMessageFace("",0,0,2,66)
+    ShowMessage("Micaela is in the hidden village of Enrika, west of Iliasville.")
+    0()
+   EndIf()
+   0()
+  EndIf()
+  ShowMessageFace("ruka_fc1",0,0,2,67)
+  ShowMessage("\\n<Luka>To the hidden village of Enrika then! The lost woods are full of powerful monsters, but nothing we can't handle!")
+  If(0,6,0)
+   ShowMessageFace("sonia_fc2",2,0,2,68)
+   ShowMessage("\\n<Sonya>My whole life I was told never to go in there, and now we're stuck having to explore the place as part of our trip.")
+   0()
+  EndIf()
+  If(4,41,0)
+   ShowMessageFace("stein_fc2",1,0,2,69)
+   ShowMessage("\\n<Promestein>So we're going back to your world now? I get to explore so many different worlds! I'm so excited!")
+   0()
+  EndIf()
+  If(4,79,0)
+   ShowMessageFace("nuruko_fc1",0,0,2,70)
+   ShowMessage("\\n<Nuruko>Kyu kyu kyu!")
+   0()
+  EndIf()
+  355("gain_medal(15)")
+  0()
+ PAGE   2
+  // condition: variable 1014 >= 2
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Village Chief>It sounds like you all are caught up in some serious matters. I suppose I can't pretend that your warning about the village being destroyed was a joke anymore.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Village Chief>We'll prepare an evacuation plan in case of emergency. If something were to happen, we need to be able to respond immediately.")
+  0()
+
+
+
+EVENT   8
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Traveling Gadabout>If you want to use pleasure attacks, being a Prostitute is perfect. You can change your job to that once you master Gadabout.")
+  0()
+
+
+
+EVENT   9
+ PAGE   1
+  ShowMessageFace("dog_fc1",0,0,2,1)
+  ShowMessage("\\n<Traveling Dog Girl>Do you wonder whether you should equip your beast-type companions with fangs or claws? Fangs have high attack power, but claws have high agility.")
+  ShowMessageFace("dog_fc1",0,0,2,2)
+  ShowMessage("\\n<Traveling Dog Girl>Biting attacks make use of attack power, but scratching attacks need both attack power and agility.")
+  ShowMessageFace("dog_fc1",0,0,2,3)
+  ShowMessage("\\n<Traveling Dog Girl>Therefore, it's best to equip fangs if you like to fight with biting attacks. Fangs can also have special effects that strengthen your biting attacks.")
+  ShowMessageFace("dog_fc1",0,0,2,4)
+  ShowMessage("\\n<Traveling Dog Girl>If you want to use scratching attacks, go with claws that increase attack power and agility. Fist weapons also use attack power and agility so they're in the same category.")
+  ShowMessageFace("dog_fc1",1,0,2,5)
+  ShowMessage("\\n<Traveling Dog Girl>If you're going to use a variety of skills, you can choose either weapon. If you mainly focus on martial arts, definitely go with claws. ♪")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("71")
+  ShowMessageFace("okami_fc1",2,0,2,6)
+  ShowMessage("\\n<Amara>That's so complicated...\nLuka, I'll leave it up to you!")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   10
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Traveling Thief>If you master Hunter, you can become a Monster Tamer. With one of those in the party, you increase your chances of getting monsters to be your companions.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Traveling Thief>After I finish Thief I plan to change to Hunter. It'll be a lot easier to travel if I can add more companions.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("74")
+  ShowMessageFace("usagi_fc1",0,0,2,3)
+  ShowMessage("\\n<Barbun>Of course, there are other advanced employment opportunities for Hunters. What's a girl to do...")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   11
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Warrior>The party of 3 staying here today has horrible balance. Are you properly taking balance into consideration when forming your party?")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Warrior>A common mistake is forming a party with all physical attacking types. You should really include 1 or 2 healers and someone with magical attacks.")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Warrior>It's good to have someone like a Thief or Merchant as a support, too. Anyway, choose whatever is best for your style of adventuring.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("66")
+  ShowMessageFace("vgirl_fc1",0,0,2,4)
+  ShowMessage("\\n<Vanilla>I've got Merchant covered!")
+  EndEventProcessing()
+  DefineLabel("72")
+  ShowMessageFace("phoenix_fc1",0,0,2,5)
+  ShowMessage("\\n<Mini>Playing around as a Gadabout isn't very useful, but once I can change to Dancer or Minstrel, I'll be a great support!")
+  ShowMessageFace("phoenix_fc1",1,0,2,6)
+  ShowMessage("\\n<Mini>...that's what the Don told me anyway. I'm useless for now, but I want to keep at it.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   12
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(431,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   13
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(379,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   14
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventoryWeapon(756,0,0,1,false)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   15
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(393,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   16
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(302,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   17
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventoryWeapon(798,0,0,1,false)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   18
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(313,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   19
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Cat>Mrrrrow...")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("70")
+  ShowMessageFace("nezumi_fc1",2,0,2,2)
+  ShowMessage("\\n<Ratty>Eeek, a cat! Save me!")
+  EndEventProcessing()
+  0()
+

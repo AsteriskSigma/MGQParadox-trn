@@ -1,0 +1,8 @@
+"～♪ I've never been camping before～♪" -> "~ ♪ I've never been camping before ~ ​​♪"
+"♪" -> "♪"
+"～" -> "~"
+"～" -> "~"
+"～" -> "~"
+"～" -> "~"
+"～" -> "~"
+"～！" -> "~!"

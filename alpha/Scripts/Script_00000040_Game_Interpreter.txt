@@ -1,0 +1,1413 @@
+#==============================================================================
+# ■ Game_Interpreter
+#------------------------------------------------------------------------------
+# It is an interpreter that executes event commands. This class is Game_Map class,
+# Game_Troop Class, Game_Event It is used inside the class.
+#==============================================================================
+
+class Game_Interpreter
+  #--------------------------------------------------------------------------
+  # ● Public instance variables
+  #--------------------------------------------------------------------------
+  attr_reader   :map_id             # Map ID
+  attr_reader   :event_id           # Event ID (normal event only)
+  #--------------------------------------------------------------------------
+  # ● Object initialization
+  #     depth : Depth of nest
+  #--------------------------------------------------------------------------
+  def initialize(depth = 0)
+    @depth = depth
+    check_overflow
+    clear
+  end
+  #--------------------------------------------------------------------------
+  # ● Overflow check
+  #    The depth will not be more than 100 with normal use. Recursive event call
+  #    Because there is a high possibility of an infinite loop due to, we abort at 100 and make an error.
+  #--------------------------------------------------------------------------
+  def check_overflow
+    if @depth >= 100
+      msgbox(Vocab::EventOverflow)
+      exit
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Clear
+  #--------------------------------------------------------------------------
+  def clear
+    @map_id = 0
+    @event_id = 0
+    @list = nil                       # Execution contents
+    @index = 0                        # index
+    @branch = {}                      # Branch data
+    @fiber = nil                      # Fiber
+  end
+  #--------------------------------------------------------------------------
+  # ● Event setup
+  #--------------------------------------------------------------------------
+  def setup(list, event_id = 0)
+    clear
+    @map_id = $game_map.map_id
+    @event_id = event_id
+    @list = list
+    create_fiber
+  end
+  #--------------------------------------------------------------------------
+  # ● Fiber creation
+  #--------------------------------------------------------------------------
+  def create_fiber
+    @fiber = Fiber.new { run } if @list
+  end
+  #--------------------------------------------------------------------------
+  # ● Dump objects
+  #    Since the fiber does not correspond to Marshal, it is defined on its own.
+  #    The execution position of the event is advanced one by one.
+  #--------------------------------------------------------------------------
+  def marshal_dump
+    [@depth, @map_id, @event_id, @list, @index + 1, @branch]
+  end
+  #--------------------------------------------------------------------------
+  # ● Loading objects
+  #     obj : marshal_dump Object (array) dumped by
+  #    Restore the data with multiple assignment and recreate the fiber if necessary.
+  #--------------------------------------------------------------------------
+  def marshal_load(obj)
+    @depth, @map_id, @event_id, @list, @index, @branch = obj
+    create_fiber
+  end
+  #--------------------------------------------------------------------------
+  # ● Determine whether it is the same as map at event start
+  #--------------------------------------------------------------------------
+  def same_map?
+    @map_id == $game_map.map_id
+  end
+  #--------------------------------------------------------------------------
+  # ● Detect / set up call reserved common event
+  #--------------------------------------------------------------------------
+  def setup_reserved_common_event
+    if $game_temp.common_event_reserved?
+      setup($game_temp.reserved_common_event.list)
+      $game_temp.clear_common_event
+      true
+    else
+      false
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Execution
+  #--------------------------------------------------------------------------
+  def run
+    wait_for_message
+    while @list[@index] do
+      execute_command
+      @index += 1
+    end
+    Fiber.yield
+    @fiber = nil
+  end
+  #--------------------------------------------------------------------------
+  # ● Judging during execution
+  #--------------------------------------------------------------------------
+  def running?
+    @fiber != nil
+  end
+  #--------------------------------------------------------------------------
+  # ● Frame update
+  #--------------------------------------------------------------------------
+  def update
+    @fiber.resume if @fiber
+  end
+  #--------------------------------------------------------------------------
+  # ● Actor iterator (ID)
+  #     param : 1 If it is greater than 0,
+  #--------------------------------------------------------------------------
+  def iterate_actor_id(param)
+    if param == 0
+      $game_party.members.each {|actor| yield actor }
+    else
+      actor = $game_actors[param]
+      yield actor if actor
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Iterator for actor (variable)
+  #     param1 : 0 Fix if, 1 if variable specified
+  #     param2 : Actor or variable ID
+  #--------------------------------------------------------------------------
+  def iterate_actor_var(param1, param2)
+    if param1 == 0
+      iterate_actor_id(param2) {|actor| yield actor }
+    else
+      iterate_actor_id($game_variables[param2]) {|actor| yield actor }
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Iterator for actors (index)
+  #     param : 0 If it is index,-1 If the whole
+  #--------------------------------------------------------------------------
+  def iterate_actor_index(param)
+    if param < 0
+      $game_party.members.each {|actor| yield actor }
+    else
+      actor = $game_party.members[param]
+      yield actor if actor
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Iterator for enemy characters (index)
+  #     param : 0 If it is index,-1 If the whole
+  #--------------------------------------------------------------------------
+  def iterate_enemy_index(param)
+    if param < 0
+      $game_troop.members.each {|enemy| yield enemy }
+    else
+      enemy = $game_troop.members[param]
+      yield enemy if enemy
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Butler iterator (consider the entire enemy group, the whole party)
+  #     param1 : 0 If you are an enemy character, if 1 1 actor
+  #     param2 : For enemy characters index, for actor ID
+  #--------------------------------------------------------------------------
+  def iterate_battler(param1, param2)
+    if $game_party.in_battle
+      if param1 == 0
+        iterate_enemy_index(param2) {|enemy| yield enemy }
+      else
+        iterate_actor_id(param2) {|actor| yield actor }
+      end
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Obtain target of screen type commands
+  #--------------------------------------------------------------------------
+  def screen
+    $game_party.in_battle ? $game_troop.screen : $game_map.screen
+  end
+  #--------------------------------------------------------------------------
+  # ● Execution of event command
+  #--------------------------------------------------------------------------
+  def execute_command
+    command = @list[@index]
+    @params = command.parameters
+    @indent = command.indent
+    method_name = "command_#{command.code}"
+    send(method_name) if respond_to?(method_name)
+  end
+  #--------------------------------------------------------------------------
+  # ● Command skip
+  #    Advance the index by skipping commands deeper than the current indent.
+  #--------------------------------------------------------------------------
+  def command_skip
+    @index += 1 while @list[@index + 1].indent > @indent
+  end
+  #--------------------------------------------------------------------------
+  # ● Get the code of the next event command
+  #--------------------------------------------------------------------------
+  def next_event_code
+    @list[@index + 1].code
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of characters
+  #     param : -1 If this is the player, 0 this event, otherwise the event ID
+  #--------------------------------------------------------------------------
+  def get_character(param)
+    if $game_party.in_battle
+      nil
+    elsif param < 0
+      $game_player
+    else
+      events = same_map? ? $game_map.events : {}
+      events[param > 0 ? param : @event_id]
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Calculate the value to operate
+  #     operation    : Operation (0:Increase 1:cut back)
+  #     operand_type : Operand type (0:Constant 1:variable)
+  #     operand      : Operands (numeric or variable ID)
+  #--------------------------------------------------------------------------
+  def operate_value(operation, operand_type, operand)
+    value = operand_type == 0 ? operand : $game_variables[operand]
+    operation == 0 ? value : -value
+  end
+  #--------------------------------------------------------------------------
+  # ● Weight
+  #--------------------------------------------------------------------------
+  def wait(duration)
+    duration.times { Fiber.yield }
+  end
+  #--------------------------------------------------------------------------
+  # ● Weight while message display is busy
+  #--------------------------------------------------------------------------
+  def wait_for_message
+    Fiber.yield while $game_message.busy?
+  end
+  #--------------------------------------------------------------------------
+  # ● Display text
+  #--------------------------------------------------------------------------
+  def command_101
+    wait_for_message
+    $game_message.face_name = @params[0]
+    $game_message.face_index = @params[1]
+    $game_message.background = @params[2]
+    $game_message.position = @params[3]
+    
+    while next_event_code == 401       # Text data
+      @index += 1
+      $game_message.add(@list[@index].parameters[0])
+    end
+    case next_event_code
+    when 102  # Display choices
+      @index += 1
+      setup_choices(@list[@index].parameters)
+    when 103  # Processing numerical input
+      @index += 1
+      setup_num_input(@list[@index].parameters)
+    when 104  # Processing item selection
+      @index += 1
+      setup_item_choice(@list[@index].parameters)
+    end
+    wait_for_message
+  end
+  #--------------------------------------------------------------------------
+  # ● Display options
+  #--------------------------------------------------------------------------
+  def command_102
+    wait_for_message
+    setup_choices(@params)
+    Fiber.yield while $game_message.choice?
+  end
+  #--------------------------------------------------------------------------
+  # ● Setting up options
+  #--------------------------------------------------------------------------
+  def setup_choices(params)
+    params[0].each {|s| $game_message.choices.push(s) }
+    $game_message.choice_cancel_type = params[1]
+    $game_message.choice_proc = Proc.new {|n| @branch[@indent] = n }
+  end
+  #--------------------------------------------------------------------------
+  # ●[**] in the case of
+  #--------------------------------------------------------------------------
+  def command_402
+    command_skip if @branch[@indent] != @params[0]
+  end
+  #--------------------------------------------------------------------------
+  # ● Cancellation case
+  #--------------------------------------------------------------------------
+  def command_403
+    command_skip if @branch[@indent] != 4
+  end
+  #--------------------------------------------------------------------------
+  # ● Processing numeric input
+  #--------------------------------------------------------------------------
+  def command_103
+    wait_for_message
+    setup_num_input(@params)
+    Fiber.yield while $game_message.num_input?
+  end
+  #--------------------------------------------------------------------------
+  # ● Setting up numerical input
+  #--------------------------------------------------------------------------
+  def setup_num_input(params)
+    $game_message.num_input_variable_id = params[0]
+    $game_message.num_input_digits_max = params[1]
+  end
+  #--------------------------------------------------------------------------
+  # ● Item selection processing
+  #--------------------------------------------------------------------------
+  def command_104
+    wait_for_message
+    setup_item_choice(@params)
+    Fiber.yield while $game_message.item_choice?
+  end
+  #--------------------------------------------------------------------------
+  # ● Setting up item selection
+  #--------------------------------------------------------------------------
+  def setup_item_choice(params)
+    $game_message.item_choice_variable_id = params[0]
+  end
+  #--------------------------------------------------------------------------
+  # ● Display of scrolling text
+  #--------------------------------------------------------------------------
+  def command_105
+    Fiber.yield while $game_message.visible
+    $game_message.scroll_mode = true
+    $game_message.scroll_speed = @params[0]
+    $game_message.scroll_no_fast = @params[1]
+    while next_event_code == 405
+      @index += 1
+      $game_message.add(@list[@index].parameters[0])
+    end
+    wait_for_message
+  end
+  #--------------------------------------------------------------------------
+  # ● Annotation
+  #--------------------------------------------------------------------------
+  def command_108
+    @comments = [@params[0]]
+    while next_event_code == 408
+      @index += 1
+      @comments.push(@list[@index].parameters[0])
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Conditional branching
+  #--------------------------------------------------------------------------
+  def command_111
+    result = false
+    case @params[0]
+    when 0  # switch
+      result = ($game_switches[@params[1]] == (@params[2] == 0))
+    when 1  # variable
+      value1 = $game_variables[@params[1]]
+      if @params[2] == 0
+        value2 = @params[3]
+      else
+        value2 = $game_variables[@params[3]]
+      end
+      case @params[4]
+      when 0  # Equivalent to
+        result = (value1 == value2)
+      when 1  # that's all
+        result = (value1 >= value2)
+      when 2  # Less than
+        result = (value1 <= value2)
+      when 3  # Super
+        result = (value1 > value2)
+      when 4  # Less than
+        result = (value1 < value2)
+      when 5  # Other than
+        result = (value1 != value2)
+      end
+    when 2  # Self switch
+      if @event_id > 0
+        key = [@map_id, @event_id, @params[1]]
+        result = ($game_self_switches[key] == (@params[2] == 0))
+      end
+    when 3  # timer
+      if $game_timer.working?
+        if @params[2] == 0
+          result = ($game_timer.sec >= @params[1])
+        else
+          result = ($game_timer.sec <= @params[1])
+        end
+      end
+    when 4  # actor
+      actor = $game_actors[@params[1]]
+      if actor
+        case @params[2]
+        when 0  # I am at a party
+          result = ($game_party.members.include?(actor))
+        when 1  # name
+          result = (actor.name == @params[3])
+        when 2  # Profession
+          result = (actor.class_id == @params[3])
+        when 3  # skill
+          result = (actor.skill_learn?($data_skills[@params[3]]))
+        when 4  # weapon
+          result = (actor.weapons.include?($data_weapons[@params[3]]))
+        when 5  # Armor
+          result = (actor.armors.include?($data_armors[@params[3]]))
+        when 6  # State
+          result = (actor.state?(@params[3]))
+        end
+      end
+    when 5  # Enemy character
+      enemy = $game_troop.members[@params[1]]
+      if enemy
+        case @params[2]
+        when 0  # Has appeared
+          result = (enemy.alive?)
+        when 1  # State
+          result = (enemy.state?(@params[3]))
+        end
+      end
+    when 6  # character
+      character = get_character(@params[1])
+      if character
+        result = (character.direction == @params[2])
+      end
+    when 7  # gold
+      case @params[2]
+      when 0  # that's all
+        result = ($game_party.gold >= @params[1])
+      when 1  # Less than
+        result = ($game_party.gold <= @params[1])
+      when 2  # Less than
+        result = ($game_party.gold < @params[1])
+      end
+    when 8  # item
+      result = $game_party.has_item?($data_items[@params[1]])
+    when 9  # weapon
+      result = $game_party.has_item?($data_weapons[@params[1]], @params[2])
+    when 10  # Armor
+      result = $game_party.has_item?($data_armors[@params[1]], @params[2])
+    when 11  # button
+      result = Input.press?(@params[1])
+    when 12  # script
+      result = eval(@params[1])
+    when 13  # vehicle
+      result = ($game_player.vehicle == $game_map.vehicles[@params[1]])
+    end
+    @branch[@indent] = result
+    command_skip if !@branch[@indent]
+  end
+  #--------------------------------------------------------------------------
+  # ● Other cases
+  #--------------------------------------------------------------------------
+  def command_411
+    command_skip if @branch[@indent]
+  end
+  #--------------------------------------------------------------------------
+  # ● Loop
+  #--------------------------------------------------------------------------
+  def command_112
+  end
+  #--------------------------------------------------------------------------
+  # ● Repeat
+  #--------------------------------------------------------------------------
+  def command_413
+    begin
+      @index -= 1
+    end until @list[@index].indent == @indent
+  end
+  #--------------------------------------------------------------------------
+  # ● Loop suspension
+  #--------------------------------------------------------------------------
+  def command_113
+    loop do
+      @index += 1
+      return if @index >= @list.size - 1
+      return if @list[@index].code == 413 && @list[@index].indent < @indent
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Suspending event processing
+  #--------------------------------------------------------------------------
+  def command_115
+    @index = @list.size
+  end
+  #--------------------------------------------------------------------------
+  # ● Common Event
+  #--------------------------------------------------------------------------
+  def command_117
+    common_event = $data_common_events[@params[0]]
+    if common_event
+      child = Game_Interpreter.new(@depth + 1)
+      child.setup(common_event.list, same_map? ? @event_id : 0)
+      child.run
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Label
+  #--------------------------------------------------------------------------
+  def command_118
+  end
+  #--------------------------------------------------------------------------
+  # ● Label jump
+  #--------------------------------------------------------------------------
+  def command_119
+    label_name = @params[0]
+    @list.size.times do |i|
+      if @list[i].code == 118 && @list[i].parameters[0] == label_name
+        @index = i
+        return
+      end
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Switch operation
+  #--------------------------------------------------------------------------
+  def command_121
+    (@params[0]..@params[1]).each do |i|
+      $game_switches[i] = (@params[2] == 0)
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Manipulating Variables
+  #--------------------------------------------------------------------------
+  def command_122
+    value = 0
+    case @params[3]  # operand
+    when 0  # constant
+      value = @params[4]
+    when 1  # variable
+      value = $game_variables[@params[4]]
+    when 2  # random number
+      value = @params[4] + rand(@params[5] - @params[4] + 1)
+    when 3  # Game data
+      value = game_data_operand(@params[4], @params[5], @params[6])
+    when 4  # script
+      value = eval(@params[4])
+    end
+    (@params[0]..@params[1]).each do |i|
+      operate_variable(i, @params[2], value)
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Obtain game data for variable operands
+  #--------------------------------------------------------------------------
+  def game_data_operand(type, param1, param2)
+    case type
+    when 0  # item
+      return $game_party.item_number($data_items[param1])
+    when 1  # weapon
+      return $game_party.item_number($data_weapons[param1])
+    when 2  # Armor
+      return $game_party.item_number($data_armors[param1])
+    when 3  # actor
+      actor = $game_actors[param1]
+      if actor
+        case param2
+        when 0      # level
+          return actor.level
+        when 1      # Experience point
+          return actor.exp
+        when 2      # HP
+          return actor.hp
+        when 3      # MP
+          return actor.mp
+        when 4..11  # Normal ability value
+          return actor.param(param2 - 4)
+        end
+      end
+    when 4  # Enemy character
+      enemy = $game_troop.members[param1]
+      if enemy
+        case param2
+        when 0      # HP
+          return enemy.hp
+        when 1      # MP
+          return enemy.mp
+        when 2..9   # Normal ability value
+          return enemy.param(param2 - 2)
+        end
+      end
+    when 5  # character
+      character = get_character(param1)
+      if character
+        case param2
+        when 0  # X Coordinate
+          return character.x
+        when 1  # Y Coordinate
+          return character.y
+        when 2  # direction
+          return character.direction
+        when 3  # Screen X coordinate
+          return character.screen_x
+        when 4  # Screen Y coordinate
+          return character.screen_y
+        end
+      end
+    when 6  # Party
+      actor = $game_party.members[param1]
+      return actor ? actor.id : 0
+    when 7  # Other
+      case param1
+      when 0  # Map ID
+        return $game_map.map_id
+      when 1  # Party number of people
+        return $game_party.members.size
+      when 2  # gold
+        return $game_party.gold
+      when 3  # Step count
+        return $game_party.steps
+      when 4  # Play time
+        return Graphics.frame_count / Graphics.frame_rate
+      when 5  # timer
+        return $game_timer.sec
+      when 6  # Number of saves
+        return $game_system.save_count
+      when 7  # Battle frequency
+        return $game_system.battle_count
+      end
+    end
+    return 0
+  end
+  #--------------------------------------------------------------------------
+  # ● Perform variable manipulation
+  #--------------------------------------------------------------------------
+  def operate_variable(variable_id, operation_type, value)
+    begin
+      case operation_type
+      when 0  # Substitution
+        $game_variables[variable_id] = value
+      when 1  # Addition
+        $game_variables[variable_id] += value
+      when 2  # Subtraction
+        $game_variables[variable_id] -= value
+      when 3  # Multiplication
+        $game_variables[variable_id] *= value
+      when 4  # division
+        $game_variables[variable_id] /= value
+      when 5  # Remainder
+        $game_variables[variable_id] %= value
+      end
+    rescue
+      $game_variables[variable_id] = 0
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Operation of self switch
+  #--------------------------------------------------------------------------
+  def command_123
+    if @event_id > 0
+      key = [@map_id, @event_id, @params[0]]
+      $game_self_switches[key] = (@params[1] == 0)
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Timer operation
+  #--------------------------------------------------------------------------
+  def command_124
+    if @params[0] == 0  # Starting
+      $game_timer.start(@params[1] * Graphics.frame_rate)
+    else                # Stop
+      $game_timer.stop
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Increase or decrease of possession money
+  #--------------------------------------------------------------------------
+  def command_125
+    value = operate_value(@params[0], @params[1], @params[2])
+    $game_party.gain_gold(value)
+  end
+  #--------------------------------------------------------------------------
+  # ● Increase or decrease items
+  #--------------------------------------------------------------------------
+  def command_126
+    value = operate_value(@params[1], @params[2], @params[3])
+    $game_party.gain_item($data_items[@params[0]], value)
+  end
+  #--------------------------------------------------------------------------
+  # ● Increase or decrease of weapons
+  #--------------------------------------------------------------------------
+  def command_127
+    value = operate_value(@params[1], @params[2], @params[3])
+    $game_party.gain_item($data_weapons[@params[0]], value, @params[4])
+  end
+  #--------------------------------------------------------------------------
+  # ● Increase or decrease armor
+  #--------------------------------------------------------------------------
+  def command_128
+    value = operate_value(@params[1], @params[2], @params[3])
+    $game_party.gain_item($data_armors[@params[0]], value, @params[4])
+  end
+  #--------------------------------------------------------------------------
+  # ● Replacing Members
+  #--------------------------------------------------------------------------
+  def command_129
+    actor = $game_actors[@params[0]]
+    if actor
+      if @params[1] == 0    # Add
+        if @params[2] == 1  # Initialization
+          $game_actors[@params[0]].setup(@params[0])
+        end
+        $game_party.add_actor(@params[0])
+      else                  # remove
+        $game_party.remove_actor(@params[0])
+      end
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Change Battle BGM
+  #--------------------------------------------------------------------------
+  def command_132
+    $game_system.battle_bgm = @params[0]
+  end
+  #--------------------------------------------------------------------------
+  # ● Battle end ME change
+  #--------------------------------------------------------------------------
+  def command_133
+    $game_system.battle_end_me = @params[0]
+  end
+  #--------------------------------------------------------------------------
+  # ● Change save disabled
+  #--------------------------------------------------------------------------
+  def command_134
+    $game_system.save_disabled = (@params[0] == 0)
+  end
+  #--------------------------------------------------------------------------
+  # ● Change of menu prohibition
+  #--------------------------------------------------------------------------
+  def command_135
+    $game_system.menu_disabled = (@params[0] == 0)
+  end
+  #--------------------------------------------------------------------------
+  # ● Changing the prohibition of encounter
+  #--------------------------------------------------------------------------
+  def command_136
+    $game_system.encounter_disabled = (@params[0] == 0)
+    $game_player.make_encounter_count
+  end
+  #--------------------------------------------------------------------------
+  # ● Change sort prohibition
+  #--------------------------------------------------------------------------
+  def command_137
+    $game_system.formation_disabled = (@params[0] == 0)
+  end
+  #--------------------------------------------------------------------------
+  # ● Change window color
+  #--------------------------------------------------------------------------
+  def command_138
+    $game_system.window_tone = @params[0]
+  end
+  #--------------------------------------------------------------------------
+  # ● Location movement
+  #--------------------------------------------------------------------------
+  def command_201
+    return if $game_party.in_battle
+    Fiber.yield while $game_player.transfer? || $game_message.visible
+    if @params[0] == 0                      # Direct designation
+      map_id = @params[1]
+      x = @params[2]
+      y = @params[3]
+    else                                    # Specify by variable
+      map_id = $game_variables[@params[1]]
+      x = $game_variables[@params[2]]
+      y = $game_variables[@params[3]]
+    end
+    $game_player.reserve_transfer(map_id, x, y, @params[4])
+    $game_temp.fade_type = @params[5]
+    Fiber.yield while $game_player.transfer?
+  end
+  #--------------------------------------------------------------------------
+  # ● Position setting of the vehicle
+  #--------------------------------------------------------------------------
+  def command_202
+    if @params[1] == 0                      # Direct designation
+      map_id = @params[2]
+      x = @params[3]
+      y = @params[4]
+    else                                    # Specify by variable
+      map_id = $game_variables[@params[2]]
+      x = $game_variables[@params[3]]
+      y = $game_variables[@params[4]]
+    end
+    vehicle = $game_map.vehicles[@params[0]]
+    vehicle.set_location(map_id, x, y) if vehicle
+  end
+  #--------------------------------------------------------------------------
+  # ● Position setting of events
+  #--------------------------------------------------------------------------
+  def command_203
+    character = get_character(@params[0])
+    if character
+      if @params[1] == 0                      # Direct designation
+        character.moveto(@params[2], @params[3])
+      elsif @params[1] == 1                   # Specify by variable
+        new_x = $game_variables[@params[2]]
+        new_y = $game_variables[@params[3]]
+        character.moveto(new_x, new_y)
+      else                                    # Exchange with other events
+        character2 = get_character(@params[2])
+        character.swap(character2) if character2
+      end
+      character.set_direction(@params[4]) if @params[4] > 0
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Scroll the map
+  #--------------------------------------------------------------------------
+  def command_204
+    return if $game_party.in_battle
+    Fiber.yield while $game_map.scrolling?
+    $game_map.start_scroll(@params[0], @params[1], @params[2])
+  end
+  #--------------------------------------------------------------------------
+  # ● Setting travel routes
+  #--------------------------------------------------------------------------
+  def command_205
+    $game_map.refresh if $game_map.need_refresh
+    character = get_character(@params[0])
+    if character
+      character.force_move_route(@params[1])
+      Fiber.yield while character.move_route_forcing if @params[1].wait
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Getting on and off the vehicle
+  #--------------------------------------------------------------------------
+  def command_206
+    $game_player.get_on_off_vehicle
+  end
+  #--------------------------------------------------------------------------
+  # ● Change of transparent state
+  #--------------------------------------------------------------------------
+  def command_211
+    $game_player.transparent = (@params[0] == 0)
+  end
+  #--------------------------------------------------------------------------
+  # ● Display animation
+  #--------------------------------------------------------------------------
+  def command_212
+    character = get_character(@params[0])
+    if character
+      character.animation_id = @params[1]
+      Fiber.yield while character.animation_id > 0 if @params[2]
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Display of ball dash icon
+  #--------------------------------------------------------------------------
+  def command_213
+    character = get_character(@params[0])
+    if character
+      character.balloon_id = @params[1]
+      Fiber.yield while character.balloon_id > 0 if @params[2]
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Temporary erase of events
+  #--------------------------------------------------------------------------
+  def command_214
+    $game_map.events[@event_id].erase if same_map? && @event_id > 0
+  end
+  #--------------------------------------------------------------------------
+  # ● Changing row walking
+  #--------------------------------------------------------------------------
+  def command_216
+    $game_player.followers.visible = (@params[0] == 0)
+    $game_player.refresh
+  end
+  #--------------------------------------------------------------------------
+  # ● Collectively formed members
+  #--------------------------------------------------------------------------
+  def command_217
+    return if $game_party.in_battle
+    $game_player.followers.gather
+    Fiber.yield until $game_player.followers.gather?
+  end
+  #--------------------------------------------------------------------------
+  # ● Screen fade out
+  #--------------------------------------------------------------------------
+  def command_221
+    Fiber.yield while $game_message.visible
+    screen.start_fadeout(30)
+    wait(30)
+  end
+  #--------------------------------------------------------------------------
+  # ● Screen fade in
+  #--------------------------------------------------------------------------
+  def command_222
+    Fiber.yield while $game_message.visible
+    screen.start_fadein(30)
+    wait(30)
+  end
+  #--------------------------------------------------------------------------
+  # ● Change color tone of screen
+  #--------------------------------------------------------------------------
+  def command_223
+    screen.start_tone_change(@params[0], @params[1])
+    wait(@params[1]) if @params[2]
+  end
+  #--------------------------------------------------------------------------
+  # ● Flush screen
+  #--------------------------------------------------------------------------
+  def command_224
+    screen.start_flash(@params[0], @params[1])
+    wait(@params[1]) if @params[2]
+  end
+  #--------------------------------------------------------------------------
+  # ● Shake screen
+  #--------------------------------------------------------------------------
+  def command_225
+    screen.start_shake(@params[0], @params[1], @params[2])
+    wait(@params[1]) if @params[2]
+  end
+  #--------------------------------------------------------------------------
+  # ● Weight
+  #--------------------------------------------------------------------------
+  def command_230
+    wait(@params[0])
+  end
+  #--------------------------------------------------------------------------
+  # ● Picture display
+  #--------------------------------------------------------------------------
+  def command_231
+    if @params[3] == 0    # Direct designation
+      x = @params[4]
+      y = @params[5]
+    else                  # Specify by variable
+      x = $game_variables[@params[4]]
+      y = $game_variables[@params[5]]
+    end
+    screen.pictures[@params[0]].show(@params[1], @params[2],
+      x, y, @params[6], @params[7], @params[8], @params[9])
+  end
+  #--------------------------------------------------------------------------
+  # ● Move Picture
+  #--------------------------------------------------------------------------
+  def command_232
+    if @params[3] == 0    # Direct designation
+      x = @params[4]
+      y = @params[5]
+    else                  # Specify by variable
+      x = $game_variables[@params[4]]
+      y = $game_variables[@params[5]]
+    end
+    screen.pictures[@params[0]].move(@params[2], x, y, @params[6],
+      @params[7], @params[8], @params[9], @params[10])
+    wait(@params[10]) if @params[11]
+  end
+  #--------------------------------------------------------------------------
+  # ● Picture rotation
+  #--------------------------------------------------------------------------
+  def command_233
+    screen.pictures[@params[0]].rotate(@params[1])
+  end
+  #--------------------------------------------------------------------------
+  # ● Change color of picture
+  #--------------------------------------------------------------------------
+  def command_234
+    screen.pictures[@params[0]].start_tone_change(@params[1], @params[2])
+    wait(@params[2]) if @params[3]
+  end
+  #--------------------------------------------------------------------------
+  # ● Picture erasing
+  #--------------------------------------------------------------------------
+  def command_235
+    screen.pictures[@params[0]].erase
+  end
+  #--------------------------------------------------------------------------
+  # ● Weather setting
+  #--------------------------------------------------------------------------
+  def command_236
+    return if $game_party.in_battle
+    screen.change_weather(@params[0], @params[1], @params[2])
+    wait(@params[2]) if @params[3]
+  end
+  #--------------------------------------------------------------------------
+  # ● BGM playing
+  #--------------------------------------------------------------------------
+  def command_241
+    @params[0].play
+  end
+  #--------------------------------------------------------------------------
+  # ● BGM fade out
+  #--------------------------------------------------------------------------
+  def command_242
+    RPG::BGM.fade(@params[0] * 1000)
+  end
+  #--------------------------------------------------------------------------
+  # ● Save BGM
+  #--------------------------------------------------------------------------
+  def command_243
+    $game_system.save_bgm
+  end
+  #--------------------------------------------------------------------------
+  # ● Restart BGM
+  #--------------------------------------------------------------------------
+  def command_244
+    $game_system.replay_bgm
+  end
+  #--------------------------------------------------------------------------
+  # ● BGS playing
+  #--------------------------------------------------------------------------
+  def command_245
+    @params[0].play
+  end
+  #--------------------------------------------------------------------------
+  # ● BGS fade out
+  #--------------------------------------------------------------------------
+  def command_246
+    RPG::BGS.fade(@params[0] * 1000)
+  end
+  #--------------------------------------------------------------------------
+  # ● ME playing
+  #--------------------------------------------------------------------------
+  def command_249
+    @params[0].play
+  end
+  #--------------------------------------------------------------------------
+  # ● SE playing
+  #--------------------------------------------------------------------------
+  def command_250
+    @params[0].play
+  end
+  #--------------------------------------------------------------------------
+  # ● Stopping SE
+  #--------------------------------------------------------------------------
+  def command_251
+    RPG::SE.stop
+  end
+  #--------------------------------------------------------------------------
+  # ● Movie playback
+  #--------------------------------------------------------------------------
+  def command_261
+    Fiber.yield while $game_message.visible
+    Fiber.yield
+    name = @params[0]
+    Graphics.play_movie('Movies/' + name) unless name.empty?
+  end
+  #--------------------------------------------------------------------------
+  # ● Change map name display
+  #--------------------------------------------------------------------------
+  def command_281
+    $game_map.name_display = (@params[0] == 0)
+  end
+  #--------------------------------------------------------------------------
+  # ● Change tile set
+  #--------------------------------------------------------------------------
+  def command_282
+    $game_map.change_tileset(@params[0])
+  end
+  #--------------------------------------------------------------------------
+  # ● Change battle background
+  #--------------------------------------------------------------------------
+  def command_283
+    $game_map.change_battleback(@params[0], @params[1])
+  end
+  #--------------------------------------------------------------------------
+  # ● Change of distant view
+  #--------------------------------------------------------------------------
+  def command_284
+    $game_map.change_parallax(@params[0], @params[1], @params[2],
+                              @params[3], @params[4])
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire information on designated position
+  #--------------------------------------------------------------------------
+  def command_285
+    if @params[2] == 0      # Direct designation
+      x = @params[3]
+      y = @params[4]
+    else                    # Specify by variable
+      x = $game_variables[@params[3]]
+      y = $game_variables[@params[4]]
+    end
+    case @params[1]
+    when 0      # Terrain tag
+      value = $game_map.terrain_tag(x, y)
+    when 1      # Event ID
+      value = $game_map.event_id_xy(x, y)
+    when 2..4   # Tile ID
+      value = $game_map.tile_id(x, y, @params[1] - 2)
+    else        # Region ID
+      value = $game_map.region_id(x, y)
+    end
+    $game_variables[@params[0]] = value
+  end
+  #--------------------------------------------------------------------------
+  # ● Battle processing
+  #--------------------------------------------------------------------------
+  def command_301
+    return if $game_party.in_battle
+    if @params[0] == 0                      # Direct designation
+      troop_id = @params[1]
+    elsif @params[0] == 1                   # Specify by variable
+      troop_id = $game_variables[@params[1]]
+    else                                    # Enemy group designated by map
+      troop_id = $game_player.make_encounter_troop_id
+    end
+    if $data_troops[troop_id]
+      BattleManager.setup(troop_id, @params[2], @params[3])
+      BattleManager.event_proc = Proc.new {|n| @branch[@indent] = n }
+      $game_player.make_encounter_count
+      SceneManager.call(Scene_Battle)
+    end
+    Fiber.yield
+  end
+  #--------------------------------------------------------------------------
+  # ● If you win
+  #--------------------------------------------------------------------------
+  def command_601
+    command_skip if @branch[@indent] != 0
+  end
+  #--------------------------------------------------------------------------
+  # ● In case of escape
+  #--------------------------------------------------------------------------
+  def command_602
+    command_skip if @branch[@indent] != 1
+  end
+  #--------------------------------------------------------------------------
+  # ● When losing
+  #--------------------------------------------------------------------------
+  def command_603
+    command_skip if @branch[@indent] != 2
+  end
+  #--------------------------------------------------------------------------
+  # ● Shop processing
+  #--------------------------------------------------------------------------
+  def command_302
+    return if $game_party.in_battle
+    goods = [@params]
+    while next_event_code == 605
+      @index += 1
+      goods.push(@list[@index].parameters)
+    end
+    SceneManager.call(Scene_Shop)
+    SceneManager.scene.prepare(goods, @params[4])
+    Fiber.yield
+  end
+  #--------------------------------------------------------------------------
+  # ● Name input processing
+  #--------------------------------------------------------------------------
+  def command_303
+    return if $game_party.in_battle
+    if $data_actors[@params[0]]
+      SceneManager.call(Scene_Name)
+      SceneManager.scene.prepare(@params[0], @params[1])
+      Fiber.yield
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● HP increase / decrease
+  #--------------------------------------------------------------------------
+  def command_311
+    value = operate_value(@params[2], @params[3], @params[4])
+    iterate_actor_var(@params[0], @params[1]) do |actor|
+      next if actor.dead?
+      actor.change_hp(value, @params[5])
+      actor.perform_collapse_effect if actor.dead?
+    end
+    SceneManager.goto(Scene_Gameover) if $game_party.all_dead?
+  end
+  #--------------------------------------------------------------------------
+  # ● Change in MP
+  #--------------------------------------------------------------------------
+  def command_312
+    value = operate_value(@params[2], @params[3], @params[4])
+    iterate_actor_var(@params[0], @params[1]) do |actor|
+      actor.mp += value
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● State change
+  #--------------------------------------------------------------------------
+  def command_313
+    iterate_actor_var(@params[0], @params[1]) do |actor|
+      already_dead = actor.dead?
+      if @params[2] == 0
+        actor.add_state(@params[3])
+      else
+        actor.remove_state(@params[3])
+      end
+      actor.perform_collapse_effect if actor.dead? && !already_dead
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Full Recovery
+  #--------------------------------------------------------------------------
+  def command_314
+    iterate_actor_var(@params[0], @params[1]) do |actor|
+      actor.recover_all
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Change in experience value
+  #--------------------------------------------------------------------------
+  def command_315
+    value = operate_value(@params[2], @params[3], @params[4])
+    iterate_actor_var(@params[0], @params[1]) do |actor|
+      actor.change_exp(actor.exp + value, @params[5])
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Change in level
+  #--------------------------------------------------------------------------
+  def command_316
+    value = operate_value(@params[2], @params[3], @params[4])
+    iterate_actor_var(@params[0], @params[1]) do |actor|
+      actor.change_level(actor.level + value, @params[5])
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Increase or decrease of ability value
+  #--------------------------------------------------------------------------
+  def command_317
+    value = operate_value(@params[3], @params[4], @params[5])
+    iterate_actor_var(@params[0], @params[1]) do |actor|
+      actor.add_param(@params[2], value)
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Increase or decrease of skill
+  #--------------------------------------------------------------------------
+  def command_318
+    iterate_actor_var(@params[0], @params[1]) do |actor|
+      if @params[2] == 0
+        actor.learn_skill(@params[3])
+      else
+        actor.forget_skill(@params[3])
+      end
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Change of equipment
+  #--------------------------------------------------------------------------
+  def command_319
+    actor = $game_actors[@params[0]]
+    actor.change_equip_by_id(@params[1], @params[2]) if actor
+  end
+  #--------------------------------------------------------------------------
+  # ● Rename
+  #--------------------------------------------------------------------------
+  def command_320
+    actor = $game_actors[@params[0]]
+    actor.name = @params[1] if actor
+  end
+  #--------------------------------------------------------------------------
+  # ● Change occupation
+  #--------------------------------------------------------------------------
+  def command_321
+    actor = $game_actors[@params[0]]
+    actor.change_class(@params[1]) if actor && $data_classes[@params[1]]
+  end
+  #--------------------------------------------------------------------------
+  # ● Change graphics of actors
+  #--------------------------------------------------------------------------
+  def command_322
+    actor = $game_actors[@params[0]]
+    if actor
+      actor.set_graphic(@params[1], @params[2], @params[3], @params[4])
+    end
+    $game_player.refresh
+  end
+  #--------------------------------------------------------------------------
+  # ● Graphic change of vehicles
+  #--------------------------------------------------------------------------
+  def command_323
+    vehicle = $game_map.vehicles[@params[0]]
+    vehicle.set_graphic(@params[1], @params[2]) if vehicle
+  end
+  #--------------------------------------------------------------------------
+  # ● Change of two names
+  #--------------------------------------------------------------------------
+  def command_324
+    actor = $game_actors[@params[0]]
+    actor.nickname = @params[1] if actor
+  end
+  #--------------------------------------------------------------------------
+  # ● HP increase or decrease of enemy character
+  #--------------------------------------------------------------------------
+  def command_331
+    value = operate_value(@params[1], @params[2], @params[3])
+    iterate_enemy_index(@params[0]) do |enemy|
+      return if enemy.dead?
+      enemy.change_hp(value, @params[4])
+      enemy.perform_collapse_effect if enemy.dead?
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● MP increase or decrease of enemy character
+  #--------------------------------------------------------------------------
+  def command_332
+    value = operate_value(@params[1], @params[2], @params[3])
+    iterate_enemy_index(@params[0]) do |enemy|
+      enemy.mp += value
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● State change of enemy character
+  #--------------------------------------------------------------------------
+  def command_333
+    iterate_enemy_index(@params[0]) do |enemy|
+      already_dead = enemy.dead?
+      if @params[1] == 0
+        enemy.add_state(@params[2])
+      else
+        enemy.remove_state(@params[2])
+      end
+      enemy.perform_collapse_effect if enemy.dead? && !already_dead
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Full recovery of enemy character
+  #--------------------------------------------------------------------------
+  def command_334
+    iterate_enemy_index(@params[0]) do |enemy|
+      enemy.recover_all
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Appearance of enemy characters
+  #--------------------------------------------------------------------------
+  def command_335
+    iterate_enemy_index(@params[0]) do |enemy|
+      enemy.appear
+      $game_troop.make_unique_names
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Transformation of enemy character
+  #--------------------------------------------------------------------------
+  def command_336
+    iterate_enemy_index(@params[0]) do |enemy|
+      enemy.transform(@params[1])
+      $game_troop.make_unique_names
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Battle animation display
+  #--------------------------------------------------------------------------
+  def command_337
+    iterate_enemy_index(@params[0]) do |enemy|
+      enemy.animation_id = @params[1] if enemy.alive?
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Force combat action
+  #--------------------------------------------------------------------------
+  def command_339
+    iterate_battler(@params[0], @params[1]) do |battler|
+      next if battler.death_state?
+      battler.force_action(@params[2], @params[3])
+      BattleManager.force_action(battler)
+      Fiber.yield while BattleManager.action_forced?
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Battle interruption
+  #--------------------------------------------------------------------------
+  def command_340
+    BattleManager.abort
+    Fiber.yield
+  end
+  #--------------------------------------------------------------------------
+  # ● Open the menu screen
+  #--------------------------------------------------------------------------
+  def command_351
+    return if $game_party.in_battle
+    SceneManager.call(Scene_Menu)
+    Window_MenuCommand::init_command_position
+    Fiber.yield
+  end
+  #--------------------------------------------------------------------------
+  # ● Open Save screen
+  #--------------------------------------------------------------------------
+  def command_352
+    return if $game_party.in_battle
+    SceneManager.call(Scene_Save)
+    Fiber.yield
+  end
+  #--------------------------------------------------------------------------
+  # ● Game Over
+  #--------------------------------------------------------------------------
+  def command_353
+    SceneManager.goto(Scene_Gameover)
+    Fiber.yield
+  end
+  #--------------------------------------------------------------------------
+  # ● Return to title screen
+  #--------------------------------------------------------------------------
+  def command_354
+    SceneManager.goto(Scene_Title)
+    Fiber.yield
+  end
+  #--------------------------------------------------------------------------
+  # ● Script
+  #--------------------------------------------------------------------------
+  def command_355
+    script = @list[@index].parameters[0] + "\n"
+    while next_event_code == 655
+      @index += 1
+      script += @list[@index].parameters[0] + "\n"
+    end
+    eval(script)
+  end
+end
+

@@ -1,0 +1,112 @@
+#==============================================================================
+# ■ Game_Followers
+#------------------------------------------------------------------------------
+# It is a wrapper around the follower's array. This class is Game_Player Used inside class
+# It will be use.
+#==============================================================================
+
+class Game_Followers
+  #--------------------------------------------------------------------------
+  # ● Public instance variables
+  #--------------------------------------------------------------------------
+  attr_accessor :visible                  # Visible state(If true it stands walking ON)
+  #--------------------------------------------------------------------------
+  # ● Object initialization
+  #     leader : First character
+  #--------------------------------------------------------------------------
+  def initialize(leader)
+    @visible = $data_system.opt_followers
+    @gathering = false                    # Set processing in progress flag
+    @data = []
+    @data.push(Game_Follower.new(1, leader))
+    (2...$game_party.max_battle_members).each do |index|
+      @data.push(Game_Follower.new(index, @data[-1]))
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire Followers
+  #--------------------------------------------------------------------------
+  def [](index)
+    @data[index]
+  end
+  #--------------------------------------------------------------------------
+  # ● Iterator
+  #--------------------------------------------------------------------------
+  def each
+    @data.each {|follower| yield follower } if block_given?
+  end
+  #--------------------------------------------------------------------------
+  # ● Iterator (reverse order)
+  #--------------------------------------------------------------------------
+  def reverse_each
+    @data.reverse.each {|follower| yield follower } if block_given?
+  end
+  #--------------------------------------------------------------------------
+  # ● Refresh
+  #--------------------------------------------------------------------------
+  def refresh
+    each {|follower| follower.refresh }
+  end
+  #--------------------------------------------------------------------------
+  # ● Frame update
+  #--------------------------------------------------------------------------
+  def update
+    if gathering?
+      move unless moving? || moving?
+      @gathering = false if gather?
+    end
+    each {|follower| follower.update }
+  end
+  #--------------------------------------------------------------------------
+  # ● Move
+  #--------------------------------------------------------------------------
+  def move
+    reverse_each {|follower| follower.chase_preceding_character }
+  end
+  #--------------------------------------------------------------------------
+  # ● Sync
+  #--------------------------------------------------------------------------
+  def synchronize(x, y, d)
+    each do |follower|
+      follower.moveto(x, y)
+      follower.set_direction(d)
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Set
+  #--------------------------------------------------------------------------
+  def gather
+    @gathering = true
+  end
+  #--------------------------------------------------------------------------
+  # ● Judging during grouping
+  #--------------------------------------------------------------------------
+  def gathering?
+    @gathering
+  end
+  #--------------------------------------------------------------------------
+  # ● Retrieve the array of displayed followers
+  #--------------------------------------------------------------------------
+  def visible_folloers
+    @data.select {|follower| follower.visible? }
+  end
+  #--------------------------------------------------------------------------
+  # ● Judging while moving
+  #--------------------------------------------------------------------------
+  def moving?
+    visible_folloers.any? {|follower| follower.moving? }
+  end
+  #--------------------------------------------------------------------------
+  # ● Considered judgment
+  #--------------------------------------------------------------------------
+  def gather?
+    visible_folloers.all? {|follower| follower.gather? }
+  end
+  #--------------------------------------------------------------------------
+  # Collision determination
+  #--------------------------------------------------------------------------
+  def collide?(x, y)
+    visible_folloers.any? {|follower| follower.pos?(x, y) }
+  end
+end
+

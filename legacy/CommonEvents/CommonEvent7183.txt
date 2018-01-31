@@ -1,0 +1,22 @@
+﻿// EVENT 7183
+Name "Witch: Defeat"
+
+RunCommonEvent(7000)
+PictureDisplay(5,"80_mob_majyo1_st01",0,0,0,0,100,100,255,0)
+PictureClear(6)
+ShowMessageFace("mob_majyo1_fc1",0,0,2,1)
+ShowMessage("\\n<Witchy>Big surprise, I won again. Remember the bet? You owe me 330G.")
+125(1,0,330)
+ShowMessageFace("",0,0,2,2)
+ShowMessage("Luka paid 330G!")
+ShowMessageFace("mob_majyo1_fc1",0,0,2,3)
+ShowMessage("\\n<Witchy>Hehehe, my toes win every time! Sperm on my toes and gold in my pocket. Everyone wins in battle fucking!")
+If(0,2331,1)
+ PictureClear(5)
+ 281(1)
+ TeleportPlayer(0,224,56,64,2,0)
+ 216(0)
+ 0()
+EndIf()
+EndEventProcessing()
+0()

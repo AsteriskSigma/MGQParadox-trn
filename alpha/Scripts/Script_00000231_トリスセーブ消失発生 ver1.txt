@@ -1,0 +1,33 @@
+
+=begin
+
+Troublesome · ___ ___ 0 RPG
+Save lost arbitrary occurrence ver1 2015/03/14
+
+If USE of the setting is set to true, saving fails without fail.
+
+=end
+
+module MakeSaveError
+  
+  # true:Valid false:Disabled
+  USE = false
+  
+end
+
+if MakeSaveError::USE
+#==============================================================================
+# ■ Scene_Map
+#==============================================================================
+class Scene_Map < Scene_Base
+  #--------------------------------------------------------------------------
+  # ● Start processing
+  #--------------------------------------------------------------------------
+  alias :make_save_error_start :start
+  def start
+    make_save_error_start
+    msgbox "Script \"save lost option arbitrary occurrence\" is valid Avoid in product version"
+    $game_actors[1].instance_eval "@aaa = Bitmap.new(32, 32)"
+  end
+end
+endd

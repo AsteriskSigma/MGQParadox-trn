@@ -1,0 +1,7 @@
+"イベント：SP軽減" -> "Event: SP reduction"
+"【銀狐二尾】" -> "【Gin fox two tails】"
+"これで、技がいっぱい使えるね♪" -> "With this, I can use a lot of techniques ♪"
+"【銀狐二尾】" -> "【Gin fox two tails】"
+"きつねの踊りで、助けてあげる♪" -> "I will save you with a fox dance, ♪"
+"銀狐二尾から妖狐の加護が与えられた！" -> "Gin fox protection was given from two foxes."
+"次のボスフロアまで、戦闘中の消費SPが半減する！" -> "Consumption SP during battle is halved until next boss floor!"

@@ -1,0 +1,11 @@
+// EVENT 1384
+Name "会話：玉藻"
+
+ChangeVariable(25,25,0,0,0)
+ShowMessageFace("tamamo_fc3",0,0,2,1)
+ShowMessage("【玉藻】")
+ShowMessage("問答は無用よ……")
+ShowMessageFace("",0,0,2,2)
+ShowMessage("玉藻は会話を拒絶している！")
+EndEventProcessing()
+0()

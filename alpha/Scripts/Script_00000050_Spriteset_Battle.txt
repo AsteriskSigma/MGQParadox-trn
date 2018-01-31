@@ -1,0 +1,389 @@
+#==============================================================================
+# ■ Spriteset_Battle
+#------------------------------------------------------------------------------
+# It is a class that summarizes sprites of battle screen. This class is Scene_Battle Kula
+# It is used internally.
+#==============================================================================
+
+class Spriteset_Battle
+  #--------------------------------------------------------------------------
+  # ● Object initialization
+  #--------------------------------------------------------------------------
+  def initialize
+    create_viewports
+    create_battleback1
+    create_battleback2
+    create_enemies
+    create_actors
+    create_pictures
+    create_timer
+    update
+  end
+  #--------------------------------------------------------------------------
+  # ● Create viewport
+  #--------------------------------------------------------------------------
+  def create_viewports
+    @viewport1 = Viewport.new
+    @viewport2 = Viewport.new
+    @viewport3 = Viewport.new
+    @viewport2.z = 50
+    @viewport3.z = 100
+  end
+  #--------------------------------------------------------------------------
+  # ● Battle background (floor) creation of sprite
+  #--------------------------------------------------------------------------
+  def create_battleback1
+    @back1_sprite = Sprite.new(@viewport1)
+    @back1_sprite.bitmap = battleback1_bitmap
+    @back1_sprite.z = 0
+    center_sprite(@back1_sprite)
+  end
+  #--------------------------------------------------------------------------
+  # ● Battle Background (Wall) Creating Sprites
+  #--------------------------------------------------------------------------
+  def create_battleback2
+    @back2_sprite = Sprite.new(@viewport1)
+    @back2_sprite.bitmap = battleback2_bitmap
+    @back2_sprite.z = 1
+    center_sprite(@back2_sprite)
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of Battle Background (Floor) Bitmap
+  #--------------------------------------------------------------------------
+  def battleback1_bitmap
+    if battleback1_name
+      Cache.battleback1(battleback1_name)
+    else
+      create_blurry_background_bitmap
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Battle Background (Wall) Obtaining Bitmap
+  #--------------------------------------------------------------------------
+  def battleback2_bitmap
+    if battleback2_name
+      Cache.battleback2(battleback2_name)
+    else
+      Bitmap.new(1, 1)
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Creating a Bitmap for Battle Background Processing the Map Screen
+  #--------------------------------------------------------------------------
+  def create_blurry_background_bitmap
+    source = SceneManager.background_bitmap
+    bitmap = Bitmap.new(640, 480)
+    bitmap.stretch_blt(bitmap.rect, source, source.rect)
+    bitmap.radial_blur(120, 16)
+    bitmap
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of battle background (floor) file name
+  #--------------------------------------------------------------------------
+  def battleback1_name
+    if $BTEST
+      $data_system.battleback1_name
+    elsif $game_map.battleback1_name
+      $game_map.battleback1_name
+    elsif $game_map.overworld?
+      overworld_battleback1_name
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of battle background (wall) file name
+  #--------------------------------------------------------------------------
+  def battleback2_name
+    if $BTEST
+      $data_system.battleback2_name
+    elsif $game_map.battleback2_name
+      $game_map.battleback2_name
+    elsif $game_map.overworld?
+      overworld_battleback2_name
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Field battle background (floor) file name acquisition
+  #--------------------------------------------------------------------------
+  def overworld_battleback1_name
+    $game_player.vehicle ? ship_battleback1_name : normal_battleback1_name
+  end
+  #--------------------------------------------------------------------------
+  # ● Field battle background (wall) file name acquisition
+  #--------------------------------------------------------------------------
+  def overworld_battleback2_name
+    $game_player.vehicle ? ship_battleback2_name : normal_battleback2_name
+  end
+  #--------------------------------------------------------------------------
+  # ● Normal battle background (floor) file name acquisition
+  #--------------------------------------------------------------------------
+  def normal_battleback1_name
+    terrain_battleback1_name(autotile_type(1)) ||
+    terrain_battleback1_name(autotile_type(0)) ||
+    default_battleback1_name
+  end
+  #--------------------------------------------------------------------------
+  # ● Normal battle background (wall) file name acquisition
+  #--------------------------------------------------------------------------
+  def normal_battleback2_name
+    terrain_battleback2_name(autotile_type(1)) ||
+    terrain_battleback2_name(autotile_type(0)) ||
+    default_battleback2_name
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire battle background (floor) file name corresponding to terrain
+  #--------------------------------------------------------------------------
+  def terrain_battleback1_name(type)
+    case type
+    when 24,25        # wasteland
+      "Wasteland"
+    when 26,27        # Soil skin
+      "DirtField"
+    when 32,33        # Desert
+      "Desert"
+    when 34           # Rock fields
+      "Lava1"
+    when 35           # Iwaki (lava)
+      "Lava2"
+    when 40,41        # Snowy field
+      "Snowfield"
+    when 42           # cloud
+      "Clouds"
+    when 4,5          # Poison swamp
+      "PoisonSwamp"
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire battle background (wall) file name corresponding to terrain
+  #--------------------------------------------------------------------------
+  def terrain_battleback2_name(type)
+    case type
+    when 20,21        # Woods
+      "Forest1"
+    when 22,30,38     # Low mountain
+      "Cliff"
+    when 24,25,26,27  # Wasteland ground
+      "Wasteland"
+    when 32,33        # Desert
+      "Desert"
+    when 34,35        # Rock fields
+      "Lava"
+    when 40,41        # Snowy field
+      "Snowfield"
+    when 42           # cloud
+      "Clouds"
+    when 4,5          # Poison swamp
+      "PoisonSwamp"
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire default battle background (floor) file name
+  #--------------------------------------------------------------------------
+  def default_battleback1_name
+    "Grassland"
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire default battle background (wall) file name
+  #--------------------------------------------------------------------------
+  def default_battleback2_name
+    "Grassland"
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of battle background (floor) file name at boarding time
+  #--------------------------------------------------------------------------
+  def ship_battleback1_name
+    "Ship"
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of Battle Background (Wall) File Name on Boarding
+  #--------------------------------------------------------------------------
+  def ship_battleback2_name
+    "Ship"
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire the type of auto tile at the player's feet
+  #--------------------------------------------------------------------------
+  def autotile_type(z)
+    $game_map.autotile_type($game_player.x, $game_player.y, z)
+  end
+  #--------------------------------------------------------------------------
+  # ● Move the sprite to the center of the screen
+  #--------------------------------------------------------------------------
+  def center_sprite(sprite)
+    sprite.ox = sprite.bitmap.width / 2
+    sprite.oy = sprite.bitmap.height / 2
+    sprite.x = Graphics.width / 2
+    sprite.y = Graphics.height / 2
+  end
+  #--------------------------------------------------------------------------
+  # ● Creating enemy character sprite
+  #--------------------------------------------------------------------------
+  def create_enemies
+    @enemy_sprites = $game_troop.members.reverse.collect do |enemy|
+      Sprite_Battler.new(@viewport1, enemy)
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Create actor sprite
+  #    By default the image on the actor side is not displayed, but for convenience, the enemy and ally are the same
+  #  Create a dummy sprite to treat as.
+  #--------------------------------------------------------------------------
+  def create_actors
+    @actor_sprites = Array.new(4) { Sprite_Battler.new(@viewport1) }
+  end
+  #--------------------------------------------------------------------------
+  # ● Create a picture sprite
+  #    In the initial state, only an empty array is made, and it is added when necessary.
+  #--------------------------------------------------------------------------
+  def create_pictures
+    @picture_sprites = []
+  end
+  #--------------------------------------------------------------------------
+  # ● Creating a timer sprite
+  #--------------------------------------------------------------------------
+  def create_timer
+    @timer_sprite = Sprite_Timer.new(@viewport2)
+  end
+  #--------------------------------------------------------------------------
+  # ● Release
+  #--------------------------------------------------------------------------
+  def dispose
+    dispose_battleback1
+    dispose_battleback2
+    dispose_enemies
+    dispose_actors
+    dispose_pictures
+    dispose_timer
+    dispose_viewports
+  end
+  #--------------------------------------------------------------------------
+  # Battle background (floor) release of sprite
+  #--------------------------------------------------------------------------
+  def dispose_battleback1
+    @back1_sprite.bitmap.dispose
+    @back1_sprite.dispose
+  end
+  #--------------------------------------------------------------------------
+  # ● Battle Background (Wall) Liberation of Sprite
+  #--------------------------------------------------------------------------
+  def dispose_battleback2
+    @back2_sprite.bitmap.dispose
+    @back2_sprite.dispose
+  end
+  #--------------------------------------------------------------------------
+  # ● Release enemy character sprite
+  #--------------------------------------------------------------------------
+  def dispose_enemies
+    @enemy_sprites.each {|sprite| sprite.dispose }
+  end
+  #--------------------------------------------------------------------------
+  # ● Release Actor Sprite
+  #--------------------------------------------------------------------------
+  def dispose_actors
+    @actor_sprites.each {|sprite| sprite.dispose }
+  end
+  #--------------------------------------------------------------------------
+  # ● Release of Picture Sprite
+  #--------------------------------------------------------------------------
+  def dispose_pictures
+    @picture_sprites.compact.each {|sprite| sprite.dispose }
+  end
+  #--------------------------------------------------------------------------
+  # ● Release of timer sprite
+  #--------------------------------------------------------------------------
+  def dispose_timer
+    @timer_sprite.dispose
+  end
+  #--------------------------------------------------------------------------
+  # ● Release the viewport
+  #--------------------------------------------------------------------------
+  def dispose_viewports
+    @viewport1.dispose
+    @viewport2.dispose
+    @viewport3.dispose
+  end
+  #--------------------------------------------------------------------------
+  # ● Frame update
+  #--------------------------------------------------------------------------
+  def update
+    update_battleback1
+    update_battleback2
+    update_enemies
+    update_actors
+    update_pictures
+    update_timer
+    update_viewports
+  end
+  #--------------------------------------------------------------------------
+  # ● Battle background (floor) sprite updates
+  #--------------------------------------------------------------------------
+  def update_battleback1
+    @back1_sprite.update
+  end
+  #--------------------------------------------------------------------------
+  # ● Battle Background (Wall) Update Sprite
+  #--------------------------------------------------------------------------
+  def update_battleback2
+    @back2_sprite.update
+  end
+  #--------------------------------------------------------------------------
+  # ● Enemy character sprite updates
+  #--------------------------------------------------------------------------
+  def update_enemies
+    @enemy_sprites.each {|sprite| sprite.update }
+  end
+  #--------------------------------------------------------------------------
+  # ● Updating Actor Sprite
+  #--------------------------------------------------------------------------
+  def update_actors
+    @actor_sprites.each_with_index do |sprite, i|
+      sprite.battler = $game_party.members[i]
+      sprite.update
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Update picture sprite
+  #--------------------------------------------------------------------------
+  def update_pictures
+    $game_troop.screen.pictures.each do |pic|
+      @picture_sprites[pic.number] ||= Sprite_Picture.new(@viewport2, pic)
+      @picture_sprites[pic.number].update
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Update Timer Sprite
+  #--------------------------------------------------------------------------
+  def update_timer
+    @timer_sprite.update
+  end
+  #--------------------------------------------------------------------------
+  # ● Update viewport
+  #--------------------------------------------------------------------------
+  def update_viewports
+    @viewport1.tone.set($game_troop.screen.tone)
+    @viewport1.ox = $game_troop.screen.shake
+    @viewport2.color.set($game_troop.screen.flash_color)
+    @viewport3.color.set(0, 0, 0, 255 - $game_troop.screen.brightness)
+    @viewport1.update
+    @viewport2.update
+    @viewport3.update
+  end
+  #--------------------------------------------------------------------------
+  # ● Get an enemy character and actor's sprite
+  #--------------------------------------------------------------------------
+  def battler_sprites
+    @enemy_sprites + @actor_sprites
+  end
+  #--------------------------------------------------------------------------
+  # ● During animation display judgment
+  #--------------------------------------------------------------------------
+  def animation?
+    battler_sprites.any? {|sprite| sprite.animation? }
+  end
+  #--------------------------------------------------------------------------
+  # ● Judging during effect execution
+  #--------------------------------------------------------------------------
+  def effect?
+    battler_sprites.any? {|sprite| sprite.effect? }
+  end
+end
+

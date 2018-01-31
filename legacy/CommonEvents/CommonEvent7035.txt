@@ -1,0 +1,19 @@
+// EVENT 7035
+Name "Don Dahlia: Defeat"
+
+DefineLabel("敗北")
+RunCommonEvent(7000)
+PictureClear(6)
+ShowMessageFace("dondaria_fc1",0,0,2,1)
+ShowMessage("\\n<Don Dahlia>That's it for our match. If you're disappointed in yourself, come back any time and challenge me again.")
+ShowMessageFace("dondaria_fc1",0,0,2,2)
+ShowMessage("\\n<Don Dahlia>Well, you'll just end up jizzing all over me again. Better save up a lot of semen for next time, ahaha!")
+If(0,2331,1)
+ PictureClear(5)
+ 281(1)
+ TeleportPlayer(0,235,14,12,2,0)
+ 216(0)
+ 0()
+EndIf()
+EndEventProcessing()
+0()

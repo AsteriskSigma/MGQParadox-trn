@@ -1,0 +1,7 @@
+"イベント：クィーンアント" -> "Event: Queen Ant"
+"【クィーンアント】" -> "【Queen Ant】"
+"それでは、娘達が待っているので帰りましょうか。" -> "Let's go home so your daughters are waiting."
+"【クィーンアント】" -> "【Queen Ant】"
+"虫の本能、刺激して差し上げましょう……" -> "Let's stimulate the instincts of insects ......"
+"クィーンアントから不思議な力が与えられた！" -> "Granted a magical power from Queen Ant!"
+"次のボスフロアまで、虫技の威力が二倍になる！" -> "Until the next boss floor, the power of the insect technique doubles!"

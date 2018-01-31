@@ -1,0 +1,20 @@
+// EVENT 0113
+Name "Book Of Job Change"
+
+ShowChoices(strings("Change Jobs and Races","Organize Party","Never Mind"),3)
+IfPlayerPicksChoice(0,"転職・転種")
+ 355("SceneManager.call(Scene_JobChange)")
+ 314(0,0)
+ EndEventProcessing()
+ 0()
+IfPlayerPicksChoice(1,"パーティ編成")
+ 217()
+ 313(0,1,1,1)
+ 355("call_party_edit")
+ EndEventProcessing()
+ 0()
+IfPlayerPicksChoice(2,"何もしない")
+ EndEventProcessing()
+ 0()
+404()
+0()

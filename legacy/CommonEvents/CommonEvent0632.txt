@@ -1,0 +1,10 @@
+﻿// EVENT 0632
+Name "イベント：ドラゴンパピー"
+
+ChangeSwitch(73,73,0)
+ShowMessageFace("dragonp_fc1",0,0,2,1)
+ShowMessage("【ドラゴンパピー】")
+ShowMessage("うが！　パピの鍛冶屋さんなのだ！")
+RunCommonEvent(107)
+ChangeSwitch(73,73,1)
+0()

@@ -1,0 +1,4 @@
+"会話：ソニアマズダ" -> "Conversation: Sonia Mazda"
+"【ソニアマズダ】" -> "【Sonia Mazda】"
+"■■■■■■■■■■■■■■■■……" -> "■■■■■■■■■■■■■■■■ ......"
+"ソニアマズダは会話を拒絶している！" -> "Sonia Mazda is rejecting the conversation!"

@@ -1,0 +1,8 @@
+"明かり設定1200400" -> "Light setting 1200400"
+"明かり設定1200400" -> "Light setting 1200400"
+"明かり設定1200400" -> "Light setting 1200400"
+"明かり設定1200400" -> "Light setting 1200400"
+"明かり設定1200400" -> "Light setting 1200400"
+"明かり設定1200400" -> "Light setting 1200400"
+"明かり設定2160300" -> "Light setting 2160300"
+"明かり設定2160300" -> "Light setting 2160300"

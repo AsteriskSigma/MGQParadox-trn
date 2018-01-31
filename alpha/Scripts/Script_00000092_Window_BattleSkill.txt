@@ -1,0 +1,35 @@
+#==============================================================================
+# ■ Window_BattleSkill
+#------------------------------------------------------------------------------
+# In the battle screen, the window to select the skill to use.
+#==============================================================================
+
+class Window_BattleSkill < Window_SkillList
+  #--------------------------------------------------------------------------
+  # ● Object initialization
+  #     info_viewport : Information viewport port
+  #--------------------------------------------------------------------------
+  def initialize(help_window, info_viewport)
+    y = help_window.height
+    super(0, y, Graphics.width, info_viewport.rect.y - y)
+    self.visible = false
+    @help_window = help_window
+    @info_viewport = info_viewport
+  end
+  #--------------------------------------------------------------------------
+  # ● Window display
+  #--------------------------------------------------------------------------
+  def show
+    select_last
+    @help_window.show
+    super
+  end
+  #--------------------------------------------------------------------------
+  # ● Hide Window
+  #--------------------------------------------------------------------------
+  def hide
+    @help_window.hide
+    super
+  end
+end
+

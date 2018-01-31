@@ -1,0 +1,7 @@
+"イベント：ナターシャ" -> "Event: Natasha"
+"【ナターシャ】" -> "【Natasha】"
+"魔導書のページが不足してはいませんか？" -> "Is there a shortage of magical book pages?"
+"特別に、差し入れをしてあげましょう……" -> "I will give you a special, ... ...."
+"【ナターシャ】" -> "【Natasha】"
+"これ以上は、差し上げられません……" -> "I can not give you any more ... ..."
+"ページを破った魔導書が、ずいぶん薄くなってしまったので。" -> "Because the magic book that broke the page got much thinner."

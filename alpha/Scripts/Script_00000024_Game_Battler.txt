@@ -1,0 +1,824 @@
+#==============================================================================
+# ■ Game_Battler
+#------------------------------------------------------------------------------
+# It is a class of Butler who added methods related to sprites and behavior. This class
+# Is Game_Actor Class and Game_Enemy It is used as a superclass of the class.
+#==============================================================================
+
+class Game_Battler < Game_BattlerBase
+  #--------------------------------------------------------------------------
+  # ● Constants (Usage Effect)
+  #--------------------------------------------------------------------------
+  EFFECT_RECOVER_HP     = 11              # HP recovery
+  EFFECT_RECOVER_MP     = 12              # MP recovery
+  EFFECT_GAIN_TP        = 13              # TP increase
+  EFFECT_ADD_STATE      = 21              # State addition
+  EFFECT_REMOVE_STATE   = 22              # State release
+  EFFECT_ADD_BUFF       = 31              # Capacity building
+  EFFECT_ADD_DEBUFF     = 32              # Weak ability
+  EFFECT_REMOVE_BUFF    = 33              # Cancellation of capacity enhancement
+  EFFECT_REMOVE_DEBUFF  = 34              # Cancellation of competence
+  EFFECT_SPECIAL        = 41              # Special effects
+  EFFECT_GROW           = 42              # growth
+  EFFECT_LEARN_SKILL    = 43              # Skill acquisition
+  EFFECT_COMMON_EVENT   = 44              # Common event
+  #--------------------------------------------------------------------------
+  # ● Constants (special effects)
+  #--------------------------------------------------------------------------
+  SPECIAL_EFFECT_ESCAPE = 0               # escape
+  #--------------------------------------------------------------------------
+  # ● Public instance variables
+  #--------------------------------------------------------------------------
+  attr_reader   :battler_name             # Battle graphic file name
+  attr_reader   :battler_hue              # Battle graphic hue
+  attr_reader   :action_times             # Number of actions
+  attr_reader   :actions                  # Battle behavior (action side)
+  attr_reader   :speed                    # Behavior speed
+  attr_reader   :result                   # Action result (target side)
+  attr_accessor :last_target_index        # Last target
+  attr_accessor :animation_id             # Animation ID
+  attr_accessor :animation_mirror         # Animation left / right inversion flag
+  attr_accessor :sprite_effect_type       # Sprite effect
+  #--------------------------------------------------------------------------
+  # ● Object initialization
+  #--------------------------------------------------------------------------
+  def initialize
+    @battler_name = ""
+    @battler_hue = 0
+    @actions = []
+    @speed = 0
+    @result = Game_ActionResult.new(self)
+    @last_target_index = 0
+    @guarding = false
+    clear_sprite_effects
+    super
+  end
+  #--------------------------------------------------------------------------
+  # ● Clear Sprite effect
+  #--------------------------------------------------------------------------
+  def clear_sprite_effects
+    @animation_id = 0
+    @animation_mirror = false
+    @sprite_effect_type = nil
+  end
+  #--------------------------------------------------------------------------
+  # ● Clear battle behavior
+  #--------------------------------------------------------------------------
+  def clear_actions
+    @actions.clear
+  end
+  #--------------------------------------------------------------------------
+  # ● Clear state information
+  #--------------------------------------------------------------------------
+  def clear_states
+    super
+    @result.clear_status_effects
+  end
+  #--------------------------------------------------------------------------
+  # ● Addition of state
+  #--------------------------------------------------------------------------
+  def add_state(state_id)
+    if state_addable?(state_id)
+      add_new_state(state_id) unless state?(state_id)
+      reset_state_counts(state_id)
+      @result.added_states.push(state_id).uniq!
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Judgment of addition of state
+  #--------------------------------------------------------------------------
+  def state_addable?(state_id)
+    alive? && $data_states[state_id] && !state_resist?(state_id) &&
+      !state_removed?(state_id) && !state_restrict?(state_id)
+  end
+  #--------------------------------------------------------------------------
+  # ● Determine the released state within the same action
+  #--------------------------------------------------------------------------
+  def state_removed?(state_id)
+    @result.removed_states.include?(state_id)
+  end
+  #--------------------------------------------------------------------------
+  # ● Determine states that are invalidated by action constraints
+  #--------------------------------------------------------------------------
+  def state_restrict?(state_id)
+    $data_states[state_id].remove_by_restriction && restriction > 0
+  end
+  #--------------------------------------------------------------------------
+  # ● Addition of new state
+  #--------------------------------------------------------------------------
+  def add_new_state(state_id)
+    die if state_id == death_state_id
+    @states.push(state_id)
+    on_restrict if restriction > 0
+    sort_states
+    refresh
+  end
+  #--------------------------------------------------------------------------
+  # ● Processing when action constraints occur
+  #--------------------------------------------------------------------------
+  def on_restrict
+    clear_actions
+    states.each do |state|
+      remove_state(state.id) if state.remove_by_restriction
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Reset state count (number of turns and number of steps)
+  #--------------------------------------------------------------------------
+  def reset_state_counts(state_id)
+    state = $data_states[state_id]
+    variance = 1 + [state.max_turns - state.min_turns, 0].max
+    @state_turns[state_id] = state.min_turns + rand(variance)
+    @state_steps[state_id] = state.steps_to_remove
+  end
+  #--------------------------------------------------------------------------
+  # ● Release of state
+  #--------------------------------------------------------------------------
+  def remove_state(state_id)
+    if state?(state_id)
+      revive if state_id == death_state_id
+      erase_state(state_id)
+      refresh
+      @result.removed_states.push(state_id).uniq!
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Fighting will be impossible
+  #--------------------------------------------------------------------------
+  def die
+    @hp = 0
+    clear_states
+    clear_buffs
+  end
+  #--------------------------------------------------------------------------
+  # ● Resurrection from battle impossibility
+  #--------------------------------------------------------------------------
+  def revive
+    @hp = 1 if @hp == 0
+  end
+  #--------------------------------------------------------------------------
+  # To escape
+  #--------------------------------------------------------------------------
+  def escape
+    hide if $game_party.in_battle
+    clear_actions
+    clear_states
+    Sound.play_escape
+  end
+  #--------------------------------------------------------------------------
+  # ● Capacity building
+  #--------------------------------------------------------------------------
+  def add_buff(param_id, turns)
+    return unless alive?
+    @buffs[param_id] += 1 unless buff_max?(param_id)
+    erase_buff(param_id) if debuff?(param_id)
+    overwrite_buff_turns(param_id, turns)
+    @result.added_buffs.push(param_id).uniq!
+    refresh
+  end
+  #--------------------------------------------------------------------------
+  # ● Weak ability
+  #--------------------------------------------------------------------------
+  def add_debuff(param_id, turns)
+    return unless alive?
+    @buffs[param_id] -= 1 unless debuff_max?(param_id)
+    erase_buff(param_id) if buff?(param_id)
+    overwrite_buff_turns(param_id, turns)
+    @result.added_debuffs.push(param_id).uniq!
+    refresh
+  end
+  #--------------------------------------------------------------------------
+  # ● Reinforcement / cancellation of weakness
+  #--------------------------------------------------------------------------
+  def remove_buff(param_id)
+    return unless alive?
+    return if @buffs[param_id] == 0
+    erase_buff(param_id)
+    @buff_turns.delete(param_id)
+    @result.removed_buffs.push(param_id).uniq!
+    refresh
+  end
+  #--------------------------------------------------------------------------
+  # ● Enhance capacity / erase weak bodies
+  #--------------------------------------------------------------------------
+  def erase_buff(param_id)
+    @buffs[param_id] = 0
+    @buff_turns[param_id] = 0
+  end
+  #--------------------------------------------------------------------------
+  # ● Determination of capacity strengthening status
+  #--------------------------------------------------------------------------
+  def buff?(param_id)
+    @buffs[param_id] > 0
+  end
+  #--------------------------------------------------------------------------
+  # ● Determining ability weakness condition
+  #--------------------------------------------------------------------------
+  def debuff?(param_id)
+    @buffs[param_id] < 0
+  end
+  #--------------------------------------------------------------------------
+  # ● Determine whether capacity enhancement is the maximum stage or not
+  #--------------------------------------------------------------------------
+  def buff_max?(param_id)
+    @buffs[param_id] == 2
+  end
+  #--------------------------------------------------------------------------
+  # ● Determine if weak ability is the maximum stage
+  #--------------------------------------------------------------------------
+  def debuff_max?(param_id)
+    @buffs[param_id] == -2
+  end
+  #--------------------------------------------------------------------------
+  # ● Capability Enhancement / Number of Weak Turns Overwrite
+  #    If the number of turns becomes shorter, do not overwrite it.
+  #--------------------------------------------------------------------------
+  def overwrite_buff_turns(param_id, turns)
+    @buff_turns[param_id] = turns if @buff_turns[param_id].to_i < turns
+  end
+  #--------------------------------------------------------------------------
+  # ● Turn count update of state
+  #--------------------------------------------------------------------------
+  def update_state_turns
+    states.each do |state|
+      @state_turns[state.id] -= 1 if @state_turns[state.id] > 0
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Reinforcement / weak body turn count update
+  #--------------------------------------------------------------------------
+  def update_buff_turns
+    @buff_turns.keys.each do |param_id|
+      @buff_turns[param_id] -= 1 if @buff_turns[param_id] > 0
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Release of battle state
+  #--------------------------------------------------------------------------
+  def remove_battle_states
+    states.each do |state|
+      remove_state(state.id) if state.remove_at_battle_end
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Reinforcement / Remove all weaknesses
+  #--------------------------------------------------------------------------
+  def remove_all_buffs
+    @buffs.size.times {|param_id| remove_buff(param_id) }
+  end
+  #--------------------------------------------------------------------------
+  # ● State automatic release
+  #     timing : ● Release state due to damage:Behavior end 2:End of turn)
+  #--------------------------------------------------------------------------
+  def remove_states_auto(timing)
+    states.each do |state|
+      if @state_turns[state.id] == 0 && state.auto_removal_timing == timing
+        remove_state(state.id)
+      end
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Reinforce / Automatic release of weak bodies
+  #--------------------------------------------------------------------------
+  def remove_buffs_auto
+    @buffs.size.times do |param_id|
+      next if @buffs[param_id] == 0 || @buff_turns[param_id] > 0
+      remove_buff(param_id)
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Release state due to damage
+  #--------------------------------------------------------------------------
+  def remove_states_by_damage
+    states.each do |state|
+      if state.remove_by_damage && rand(100) < state.chance_by_damage
+        remove_state(state.id)
+      end
+    end
+  end
+  #--------------------------------------------------------------------------
+  # Determination of the number of actions
+  #--------------------------------------------------------------------------
+  def make_action_times
+    action_plus_set.inject(1) {|r, p| rand < p ? r + 1 : r }
+  end
+  #--------------------------------------------------------------------------
+  # ● Create battle behavior
+  #--------------------------------------------------------------------------
+  def make_actions
+    clear_actions
+    return unless movable?
+    @actions = Array.new(make_action_times) { Game_Action.new(self) }
+  end
+  #--------------------------------------------------------------------------
+  # Determination of behavior speed
+  #--------------------------------------------------------------------------
+  def make_speed
+    @speed = @actions.collect {|action| action.speed }.min || 0
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire current battle behavior
+  #--------------------------------------------------------------------------
+  def current_action
+    @actions[0]
+  end
+  #--------------------------------------------------------------------------
+  # ● Remove current battle behavior
+  #--------------------------------------------------------------------------
+  def remove_current_action
+    @actions.shift
+  end
+  #--------------------------------------------------------------------------
+  # ● Force combat action
+  #--------------------------------------------------------------------------
+  def force_action(skill_id, target_index)
+    clear_actions
+    action = Game_Action.new(self, true)
+    action.set_skill(skill_id)
+    if target_index == -2
+      action.target_index = last_target_index
+    elsif target_index == -1
+      action.decide_random_target
+    else
+      action.target_index = target_index
+    end
+    @actions.push(action)
+  end
+  #--------------------------------------------------------------------------
+  # ● Damage calculation
+  #--------------------------------------------------------------------------
+  def make_damage_value(user, item)
+    value = item.damage.eval(user, self, $game_variables)
+    value *= item_element_rate(user, item)
+    value *= pdr if item.physical?
+    value *= mdr if item.magical?
+    value *= rec if item.damage.recover?
+    value = apply_critical(value) if @result.critical
+    value = apply_variance(value, item.damage.variance)
+    value = apply_guard(value)
+    @result.make_damage(value.to_i, item)
+  end
+  #--------------------------------------------------------------------------
+  # ● Retrieve skill / item attribute modification value
+  #--------------------------------------------------------------------------
+  def item_element_rate(user, item)
+    if item.damage.element_id < 0
+      user.atk_elements.empty? ? 1.0 : elements_max_rate(user.atk_elements)
+    else
+      element_rate(item.damage.element_id)
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire maximum correction value of attribute
+  #     elements : Array of attribute IDs
+  #    Returns the most effective correction value among given attributes
+  #--------------------------------------------------------------------------
+  def elements_max_rate(elements)
+    elements.inject([0.0]) {|r, i| r.push(element_rate(i)) }.max
+  end
+  #--------------------------------------------------------------------------
+  # ● Application of critical
+  #--------------------------------------------------------------------------
+  def apply_critical(damage)
+    damage * 3
+  end
+  #--------------------------------------------------------------------------
+  # ● Application of dispersion degree
+  #--------------------------------------------------------------------------
+  def apply_variance(damage, variance)
+    amp = [damage.abs * variance / 100, 0].max.to_i
+    var = rand(amp + 1) + rand(amp + 1) - amp
+    damage >= 0 ? damage + var : damage - var
+  end
+  #--------------------------------------------------------------------------
+  # ● Application of defense correction
+  #--------------------------------------------------------------------------
+  def apply_guard(damage)
+    damage / (damage > 0 && guard? ? 2 * grd : 1)
+  end
+  #--------------------------------------------------------------------------
+  # ● Processing damage
+  #    Before calling@result.hp_damage @result.mp_damage @result.hp_drain
+  #    @result.mp_drain Must be set.
+  #--------------------------------------------------------------------------
+  def execute_damage(user)
+    on_damage(@result.hp_damage) if @result.hp_damage > 0
+    self.hp -= @result.hp_damage
+    self.mp -= @result.mp_damage
+    user.hp += @result.hp_drain
+    user.mp += @result.mp_drain
+  end
+  #--------------------------------------------------------------------------
+  # ● Skill / Use of items
+  #    Called to the action side, apply the effect on non-use target.
+  #--------------------------------------------------------------------------
+  def use_item(item)
+    pay_skill_cost(item) if item.is_a?(RPG::Skill)
+    consume_item(item)   if item.is_a?(RPG::Item)
+    item.effects.each {|effect| item_global_effect_apply(effect) }
+  end
+  #--------------------------------------------------------------------------
+  # ● Item exhaustion
+  #--------------------------------------------------------------------------
+  def consume_item(item)
+    $game_party.consume_item(item)
+  end
+  #--------------------------------------------------------------------------
+  # ● Application effect on non-use target
+  #--------------------------------------------------------------------------
+  def item_global_effect_apply(effect)
+    if effect.code == EFFECT_COMMON_EVENT
+      $game_temp.reserve_common_event(effect.data_id)
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Skill / item application test
+  #    The recovery prohibition etc. when the use target is fully enjoyed is judged.
+  #--------------------------------------------------------------------------
+  def item_test(user, item)
+    return false if item.for_dead_friend? != dead?
+    return true if $game_party.in_battle
+    return true if item.for_opponent?
+    return true if item.damage.recover? && item.damage.to_hp? && hp < mhp
+    return true if item.damage.recover? && item.damage.to_mp? && mp < mmp
+    return true if item_has_any_valid_effects?(user, item)
+    return false
+  end
+  #--------------------------------------------------------------------------
+  # ● Determine whether there is even one effective use effect for skill / item
+  #--------------------------------------------------------------------------
+  def item_has_any_valid_effects?(user, item)
+    item.effects.any? {|effect| item_effect_test(user, item, effect) }
+  end
+  #--------------------------------------------------------------------------
+  # ● Skill / Item counter rate calculation
+  #--------------------------------------------------------------------------
+  def item_cnt(user, item)
+    return 0 unless item.physical?          # Hit type is not physical
+    return 0 unless opposite?(user)         # I will not fight back on my side
+    return cnt                              # Return counter rate
+  end
+  #--------------------------------------------------------------------------
+  # ● Calculate reflectance of skill / item
+  #--------------------------------------------------------------------------
+  def item_mrf(user, item)
+    return mrf if item.magical?             # If it is a magic attack return magic reflectance
+    return 0
+  end
+  #--------------------------------------------------------------------------
+  # ● Skill / Item hit rate calculation
+  #--------------------------------------------------------------------------
+  def item_hit(user, item)
+    rate = item.success_rate * 0.01         # Acquire success rate
+    rate *= user.hit if item.physical?      # Physical Attack: Multiplies Accuracy
+    return rate                             # Return the calculated hit ratio
+  end
+  #--------------------------------------------------------------------------
+  # ● Skill / item avoidance ratio calculation
+  #--------------------------------------------------------------------------
+  def item_eva(user, item)
+    return eva if item.physical?            # If it is a physical attack return the avoidance rate
+    return mev if item.magical?             # If it is a magic attack return magic evasion rate
+    return 0
+  end
+  #--------------------------------------------------------------------------
+  # ● Skill / Item Concentration Calculation
+  #--------------------------------------------------------------------------
+  def item_cri(user, item)
+    item.damage.critical ? user.cri * (1 - cev) : 0
+  end
+  #--------------------------------------------------------------------------
+  # ● Application of normal attack effect
+  #--------------------------------------------------------------------------
+  def attack_apply(attacker)
+    item_apply(attacker, $data_skills[attacker.attack_skill_id])
+  end
+  #--------------------------------------------------------------------------
+  # ● Apply skill / item effect
+  #--------------------------------------------------------------------------
+  def item_apply(user, item)
+    @result.clear
+    @result.used = item_test(user, item)
+    @result.missed = (@result.used && rand >= item_hit(user, item))
+    @result.evaded = (!@result.missed && rand < item_eva(user, item))
+    if @result.hit?
+      unless item.damage.none?
+        @result.critical = (rand < item_cri(user, item))
+        make_damage_value(user, item)
+        execute_damage(user)
+      end
+      item.effects.each {|effect| item_effect_apply(user, item, effect) }
+      item_user_effect(user, item)
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Testing effectiveness
+  #--------------------------------------------------------------------------
+  def item_effect_test(user, item, effect)
+    case effect.code
+    when EFFECT_RECOVER_HP
+      hp < mhp || effect.value1 < 0 || effect.value2 < 0
+    when EFFECT_RECOVER_MP
+      mp < mmp || effect.value1 < 0 || effect.value2 < 0
+    when EFFECT_ADD_STATE
+      !state?(effect.data_id)
+    when EFFECT_REMOVE_STATE
+      state?(effect.data_id)
+    when EFFECT_ADD_BUFF
+      !buff_max?(effect.data_id)
+    when EFFECT_ADD_DEBUFF
+      !debuff_max?(effect.data_id)
+    when EFFECT_REMOVE_BUFF
+      buff?(effect.data_id)
+    when EFFECT_REMOVE_DEBUFF
+      debuff?(effect.data_id)
+    when EFFECT_LEARN_SKILL
+      actor? && !skills.include?($data_skills[effect.data_id])
+    else
+      true
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Application of effect of use
+  #--------------------------------------------------------------------------
+  def item_effect_apply(user, item, effect)
+    method_table = {
+      EFFECT_RECOVER_HP    => :item_effect_recover_hp,
+      EFFECT_RECOVER_MP    => :item_effect_recover_mp,
+      EFFECT_GAIN_TP       => :item_effect_gain_tp,
+      EFFECT_ADD_STATE     => :item_effect_add_state,
+      EFFECT_REMOVE_STATE  => :item_effect_remove_state,
+      EFFECT_ADD_BUFF      => :item_effect_add_buff,
+      EFFECT_ADD_DEBUFF    => :item_effect_add_debuff,
+      EFFECT_REMOVE_BUFF   => :item_effect_remove_buff,
+      EFFECT_REMOVE_DEBUFF => :item_effect_remove_debuff,
+      EFFECT_SPECIAL       => :item_effect_special,
+      EFFECT_GROW          => :item_effect_grow,
+      EFFECT_LEARN_SKILL   => :item_effect_learn_skill,
+      EFFECT_COMMON_EVENT  => :item_effect_common_event,
+    }
+    method_name = method_table[effect.code]
+    send(method_name, user, item, effect) if method_name
+  end
+  #--------------------------------------------------------------------------
+  # ● Effect of use [HP recovery]
+  #--------------------------------------------------------------------------
+  def item_effect_recover_hp(user, item, effect)
+    value = (mhp * effect.value1 + effect.value2) * rec
+    value *= user.pha if item.is_a?(RPG::Item)
+    value = value.to_i
+    @result.hp_damage -= value
+    @result.success = true
+    self.hp += value
+  end
+  #--------------------------------------------------------------------------
+  # ● Use effect [MP recovery]
+  #--------------------------------------------------------------------------
+  def item_effect_recover_mp(user, item, effect)
+    value = (mmp * effect.value1 + effect.value2) * rec
+    value *= user.pha if item.is_a?(RPG::Item)
+    value = value.to_i
+    @result.mp_damage -= value
+    @result.success = true if value != 0
+    self.mp += value
+  end
+  #--------------------------------------------------------------------------
+  # ● Effect of use [TP increase]
+  #--------------------------------------------------------------------------
+  def item_effect_gain_tp(user, item, effect)
+    value = effect.value1.to_i
+    @result.tp_damage -= value
+    @result.success = true if value != 0
+    self.tp += value
+  end
+  #--------------------------------------------------------------------------
+  # ● Use effect [state added]
+  #--------------------------------------------------------------------------
+  def item_effect_add_state(user, item, effect)
+    if effect.data_id == 0
+      item_effect_add_state_attack(user, item, effect)
+    else
+      item_effect_add_state_normal(user, item, effect)
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Usage Effect [Add State]: Normal Attack
+  #--------------------------------------------------------------------------
+  def item_effect_add_state_attack(user, item, effect)
+    user.atk_states.each do |state_id|
+      chance = effect.value1
+      chance *= state_rate(state_id)
+      chance *= user.atk_states_rate(state_id)
+      chance *= luk_effect_rate(user)
+      if rand < chance
+        add_state(state_id)
+        @result.success = true
+      end
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Usage Effect [Add State]: Normal
+  #--------------------------------------------------------------------------
+  def item_effect_add_state_normal(user, item, effect)
+    chance = effect.value1
+    chance *= state_rate(effect.data_id) if opposite?(user)
+    chance *= luk_effect_rate(user)      if opposite?(user)
+    if rand < chance
+      add_state(effect.data_id)
+      @result.success = true
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Use effect [state release]
+  #--------------------------------------------------------------------------
+  def item_effect_remove_state(user, item, effect)
+    chance = effect.value1
+    if rand < chance
+      remove_state(effect.data_id)
+      @result.success = true
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Effects of use [Enhance capacity]
+  #--------------------------------------------------------------------------
+  def item_effect_add_buff(user, item, effect)
+    add_buff(effect.data_id, effect.value1)
+    @result.success = true
+  end
+  #--------------------------------------------------------------------------
+  # ● Effect of use [Weak ability]
+  #--------------------------------------------------------------------------
+  def item_effect_add_debuff(user, item, effect)
+    chance = debuff_rate(effect.data_id) * luk_effect_rate(user)
+    if rand < chance
+      add_debuff(effect.data_id, effect.value1)
+      @result.success = true
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Effect of use [Release of capacity enhancement]
+  #--------------------------------------------------------------------------
+  def item_effect_remove_buff(user, item, effect)
+    remove_buff(effect.data_id) if @buffs[effect.data_id] > 0
+    @result.success = true
+  end
+  #--------------------------------------------------------------------------
+  # ● Effects of use [Cancellation of competence]
+  #--------------------------------------------------------------------------
+  def item_effect_remove_debuff(user, item, effect)
+    remove_buff(effect.data_id) if @buffs[effect.data_id] < 0
+    @result.success = true
+  end
+  #--------------------------------------------------------------------------
+  # ● Effect of use [Special effect]
+  #--------------------------------------------------------------------------
+  def item_effect_special(user, item, effect)
+    case effect.data_id
+    when SPECIAL_EFFECT_ESCAPE
+      escape
+    end
+    @result.success = true
+  end
+  #--------------------------------------------------------------------------
+  # ● Effects of use [Growth]
+  #--------------------------------------------------------------------------
+  def item_effect_grow(user, item, effect)
+    add_param(effect.data_id, effect.value1.to_i)
+    @result.success = true
+  end
+  #--------------------------------------------------------------------------
+  # ● Effect of use [Skill acquisition]
+  #--------------------------------------------------------------------------
+  def item_effect_learn_skill(user, item, effect)
+    learn_skill(effect.data_id) if actor?
+    @result.success = true
+  end
+  #--------------------------------------------------------------------------
+  # ● Effect of use [Common Event]
+  #--------------------------------------------------------------------------
+  def item_effect_common_event(user, item, effect)
+  end
+  #--------------------------------------------------------------------------
+  # ● Effects of skill / items to the user side
+  #--------------------------------------------------------------------------
+  def item_user_effect(user, item)
+    user.tp += item.tp_gain * user.tcr
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of effectiveness change rate by luck
+  #--------------------------------------------------------------------------
+  def luk_effect_rate(user)
+    [1.0 + (user.luk - luk) * 0.001, 0.0].max
+  end
+  #--------------------------------------------------------------------------
+  # ● Determination of hostile relationship
+  #--------------------------------------------------------------------------
+  def opposite?(battler)
+    actor? != battler.actor?
+  end
+  #--------------------------------------------------------------------------
+  # ● Effects when receiving damage on the map
+  #--------------------------------------------------------------------------
+  def perform_map_damage_effect
+  end
+  #--------------------------------------------------------------------------
+  # ● Initialization of TP
+  #--------------------------------------------------------------------------
+  def init_tp
+    self.tp = rand * 25
+  end
+  #--------------------------------------------------------------------------
+  # ● Clear TP
+  #--------------------------------------------------------------------------
+  def clear_tp
+    self.tp = 0
+  end
+  #--------------------------------------------------------------------------
+  # ● TP charge due to damage
+  #--------------------------------------------------------------------------
+  def charge_tp_by_damage(damage_rate)
+    self.tp += 50 * damage_rate * tcr
+  end
+  #--------------------------------------------------------------------------
+  # ● Regeneration of HP
+  #--------------------------------------------------------------------------
+  def regenerate_hp
+    damage = -(mhp * hrg).to_i
+    perform_map_damage_effect if $game_party.in_battle && damage > 0
+    @result.hp_damage = [damage, max_slip_damage].min
+    self.hp -= @result.hp_damage
+  end
+  #--------------------------------------------------------------------------
+  # ● Get the maximum value of slip damage
+  #--------------------------------------------------------------------------
+  def max_slip_damage
+    $data_system.opt_slip_death ? hp : [hp - 1, 0].max
+  end
+  #--------------------------------------------------------------------------
+  # ● MP playback
+  #--------------------------------------------------------------------------
+  def regenerate_mp
+    @result.mp_damage = -(mmp * mrg).to_i
+    self.mp -= @result.mp_damage
+  end
+  #--------------------------------------------------------------------------
+  # ● TP regeneration
+  #--------------------------------------------------------------------------
+  def regenerate_tp
+    self.tp += 100 * trg
+  end
+  #--------------------------------------------------------------------------
+  # ● All playback
+  #--------------------------------------------------------------------------
+  def regenerate_all
+    if alive?
+      regenerate_hp
+      regenerate_mp
+      regenerate_tp
+    end
+  end
+  #--------------------------------------------------------------------------
+  # Battle start processing
+  #--------------------------------------------------------------------------
+  def on_battle_start
+    init_tp unless preserve_tp?
+  end
+  #--------------------------------------------------------------------------
+  # ● Process at the end of battle action
+  #--------------------------------------------------------------------------
+  def on_action_end
+    @result.clear
+    remove_states_auto(1)
+    remove_buffs_auto
+  end
+  #--------------------------------------------------------------------------
+  # ● End turn processing
+  #--------------------------------------------------------------------------
+  def on_turn_end
+    @result.clear
+    regenerate_all
+    update_state_turns
+    update_buff_turns
+    remove_states_auto(2)
+  end
+  #--------------------------------------------------------------------------
+  # Battle end processing
+  #--------------------------------------------------------------------------
+  def on_battle_end
+    @result.clear
+    remove_battle_states
+    remove_all_buffs
+    clear_actions
+    clear_tp unless preserve_tp?
+    appear
+  end
+  #--------------------------------------------------------------------------
+  # ● Process at the time of damage
+  #--------------------------------------------------------------------------
+  def on_damage(value)
+    remove_states_by_damage
+		
+    charge_tp_by_damage(value.to_f / mhp)
+  end
+end
+

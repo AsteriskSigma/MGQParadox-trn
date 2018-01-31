@@ -1,0 +1,9 @@
+// EVENT 1380
+Name "Conversation: Rosa"
+
+ChangeVariable(25,25,0,0,0)
+ShowMessageFace("",0,0,2,1)
+ShowMessage("I am rejecting the conversation!")
+EndEventProcessing()
+0()
+

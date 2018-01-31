@@ -1,0 +1,4 @@
+"ここより下のセクションに設定ファイルをコピペしてください" -> "Copy the configuration file to the section below this"
+"コピペした後はSettingDataフォルダを削除してください" -> "Please delete the SettingData folder after copying"
+"順不動でも構いませんがいつもはファイル名順に読み込んでいます" -> "It does not matter if you do not move forward, but it is always loaded in order of file name"
+"更新履歴" -> "Change log"

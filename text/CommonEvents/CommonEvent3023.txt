@@ -1,0 +1,5 @@
+"反省会" -> "Evaluation meeting"
+"♪" -> "♪"
+"　Am" -> "Am"
+"締め付けもヒダも極上でしょう？" -> "Is the tightening and the fold the best?"
+"反省会" -> "Evaluation meeting"

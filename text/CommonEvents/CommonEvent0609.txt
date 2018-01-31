@@ -1,0 +1,7 @@
+"イベント：ノーム" -> "Event: Nome"
+"【ノーム】" -> "【Gnomes】"
+"……………………" -> "........................"
+"【ノーム】" -> "【Gnomes】"
+"……………………" -> "........................"
+"ノームが力を貸してくれるようだ！" -> "Norm seems to lend a help!"
+"次のボスフロアまで、土の加護が与えられる！" -> "Earth protection will be given until the next boss floor!"

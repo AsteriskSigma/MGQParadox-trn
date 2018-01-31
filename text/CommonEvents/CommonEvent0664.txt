@@ -1,0 +1,7 @@
+"【クィーンハーピー】" -> "【Queen Harpie】"
+"ハーピーの女王に伝わる槍の奥義……" -> "The mystery of the spear transmitted to the Queen of Harpy ..."
+"「流星槍」を、誰か一人に伝授してあげるわ。" -> "I'm going to tell one of them \"Meteor Spear\"."
+"選択" -> "Choice"
+"選択" -> "Choice"
+"【クィーンハーピー】" -> "【Queen Harpie】"
+"その技で、時代を切り開きなさい……" -> "With that technique, open your time ... ..."

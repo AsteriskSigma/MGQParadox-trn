@@ -1,0 +1,25 @@
+// EVENT 0602
+Name "Event: Warp 3"
+
+ChangeSwitch(73,73,0)
+ShowMessageFace("gob_fc1",0,0,2,1)
+ShowMessage("\\n<Goblin Girl>Welcome to the goblin taxi.\nFor the price of 300G, I'll send you up 3 floors!")
+ShowChoices(strings("Transport up 3 Floors","Decline"),2)
+IfPlayerPicksChoice(0,"3Have them send me to the floor")
+ 125(1,0,300)
+ ShowMessageFace("gob_fc1",0,0,2,2)
+ ShowMessage("\\n<Goblin Girl>Well then, let's go!!")
+ ChangeVariable(121,121,1,0,2)
+ RunCommonEvent(901)
+ ChangeSwitch(73,73,1)
+ EndEventProcessing()
+ 0()
+IfPlayerPicksChoice(1,"To withhold")
+ ShowMessageFace("gob_fc1",4,0,2,3)
+ ShowMessage("\\n<Goblin Girl>Be careful out there.")
+ ChangeSwitch(73,73,1)
+ EndEventProcessing()
+ 0()
+404()
+0()
+

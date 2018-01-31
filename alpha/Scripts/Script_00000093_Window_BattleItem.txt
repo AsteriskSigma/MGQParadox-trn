@@ -1,0 +1,41 @@
+#==============================================================================
+# ■ Window_BattleItem
+#------------------------------------------------------------------------------
+# In the battle screen, it is a window to select items to use.
+#==============================================================================
+
+class Window_BattleItem < Window_ItemList
+  #--------------------------------------------------------------------------
+  # ● Object initialization
+  #     info_viewport : Information viewport port
+  #--------------------------------------------------------------------------
+  def initialize(help_window, info_viewport)
+    y = help_window.height
+    super(0, y, Graphics.width, info_viewport.rect.y - y)
+    self.visible = false
+    @help_window = help_window
+    @info_viewport = info_viewport
+  end
+  #--------------------------------------------------------------------------
+  # ● Whether to include items in the list
+  #--------------------------------------------------------------------------
+  def include?(item)
+    $game_party.usable?(item)
+  end
+  #--------------------------------------------------------------------------
+  # ● Window display
+  #--------------------------------------------------------------------------
+  def show
+    select_last
+    @help_window.show
+    super
+  end
+  #--------------------------------------------------------------------------
+  # ● Hide Window
+  #--------------------------------------------------------------------------
+  def hide
+    @help_window.hide
+    super
+  end
+end
+

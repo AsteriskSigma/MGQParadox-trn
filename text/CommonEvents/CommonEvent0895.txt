@@ -1,0 +1,1 @@
+"混沌迷宮移動・洞窟" -> "Chaotic labyrinth movement · cave"

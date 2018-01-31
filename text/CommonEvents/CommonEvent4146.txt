@@ -1,0 +1,5 @@
+"！　G" -> "! G"
+"　Aaah" -> "Aaah"
+"　Let me rest" -> "Let me rest"
+"　Aaaah" -> "Aaaah"
+"　Aaaah" -> "Aaaah"

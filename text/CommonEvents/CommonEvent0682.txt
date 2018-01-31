@@ -1,0 +1,7 @@
+"【ハインリヒ】" -> "【Heinrich】"
+"天使を……" -> "An angel ......"
+"この技で、天使を討ってくれ……" -> "Take an angel with this technique ... ..."
+"選択" -> "Choice"
+"選択" -> "Choice"
+"【ハインリヒ】" -> "【Heinrich】"
+"天使を……一人でも多く、天使を……" -> "An angel ...... as many as one, an angel ......"

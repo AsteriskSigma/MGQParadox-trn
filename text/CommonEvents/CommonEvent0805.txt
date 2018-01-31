@@ -1,0 +1,1 @@
+"器速武器レア" -> "Instrument speed weapon rare"

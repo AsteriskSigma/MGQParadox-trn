@@ -1,0 +1,7 @@
+﻿// EVENT 0915
+Name "混沌迷宮プラチナ宝箱"
+
+ChangeSwitch(73,73,0)
+RunCommonEvent(800)
+ChangeSwitch(73,73,1)
+0()

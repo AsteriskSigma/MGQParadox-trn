@@ -1,0 +1,13 @@
+// EVENT 0104
+Name "Direct: Before Ejaculation"
+
+If(11,14)
+ EndEventProcessing()
+ 0()
+Else()
+ PictureDisplay(10,"sys_white",0,0,0,0,100,100,0,0)
+ PictureMove(10,null,0,0,0,0,100,100,255,0,20,true)
+ 0()
+EndIf()
+0()
+

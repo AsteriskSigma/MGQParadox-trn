@@ -1,0 +1,159 @@
+#******************************************************************************
+#
+#    * Benchmark
+#
+#  --------------------------------------------------------------------------
+#    Version: 1.1.0
+#    Action: RPG Maker VX Ace: RGSS3
+#    Producer: CACAO
+#    Distribution source: http://cacaosoft.web.fc2.com/
+#  --------------------------------------------------------------------------
+#   == Overview ==
+#
+#    : Add a function to measure the time taken for a specific process.
+#
+#  --------------------------------------------------------------------------
+#   == Notes ==
+#
+#    ※ Measurement results are output to the console window.
+#
+#  --------------------------------------------------------------------------
+#   == how to use ==
+#
+#    ★ Measurement of processing time
+#     Benchmark.measure(["name"]) { Processing}
+#
+#    ★ Measure processing time average
+#     Benchmark.benchmark(Number of executions[, "name"]) { Processing}
+#
+#    ★ Measurement of processing time(Returns elapsed seconds)
+#     bm = Benchmark.new
+#     bm.start              # start/Restart
+#     bm.stop               # pause
+#     bm.reset              # reset
+#     p bm.elapsed          # elapsed time
+#     p bm.lap              # lap time
+#     p bm.total            # Total time to be called
+#
+#
+#******************************************************************************
+
+
+#/////////////////////////////////////////////////////////////////////////////#
+#                                                                             #
+#                You do not need to change the script below.#
+#                                                                             #
+#/////////////////////////////////////////////////////////////////////////////#
+
+
+class Benchmark
+  #--------------------------------------------------------------------------
+  # ●
+  #--------------------------------------------------------------------------
+  def initialize
+    reset
+  end
+  #--------------------------------------------------------------------------
+  # ●
+  #--------------------------------------------------------------------------
+  def reset
+    @start_time = nil
+    @last_time  = nil
+    @restart_time = nil
+    @elapsed_time = 0.0
+  end
+  #--------------------------------------------------------------------------
+  # ●
+  #--------------------------------------------------------------------------
+  def start
+    if @start_time
+      if @restart_time
+        puts "must stop or reset (#{_caller})"
+      else
+        @last_time    = Time.now
+        @restart_time = Time.now
+      end
+    else
+      @start_time   = Time.now
+      @last_time    = Time.now
+      @restart_time = Time.now
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ●
+  #--------------------------------------------------------------------------
+  def stop
+    if @start_time && @restart_time
+      @elapsed_time += Time.now - @restart_time
+      @last_time = nil
+      @restart_time = nil
+    else
+      puts "not started (#{_caller})"
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ●
+  #--------------------------------------------------------------------------
+  def elapsed
+    if @start_time
+      return @elapsed_time
+    else
+      puts "not started (#{_caller})"
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ●
+  #--------------------------------------------------------------------------
+  def total
+    if @start_time
+      return Time.now - @start_time
+    else
+      puts "not started (#{_caller})"
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ●
+  #--------------------------------------------------------------------------
+  def lap
+    if @start_time && @last_time
+      lap_time = Time.now - @last_time
+      @last_time = Time.now
+      return lap_time
+    else
+      puts "must start (#{_caller})"
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ●
+  #--------------------------------------------------------------------------
+  def _caller
+    match_data = caller[1].match(/^\{(\d+)\}:(\d+):/)
+    section = $RGSS_SCRIPTS[match_data[1].to_i][1]
+    return "#{section.empty? ? "-" : section}:#{match_data[2].to_i}"
+  end
+  private :_caller
+  
+  #--------------------------------------------------------------------------
+  # ● Measurement
+  #--------------------------------------------------------------------------
+  def self.measure(name = "Time")
+    raise(LocalJumpError, "no block given", caller) unless block_given?
+    time = Time.now
+    yield
+    puts "#{name}: #{Time.now - time} s"
+  end
+  #--------------------------------------------------------------------------
+  # ● Measurement(average)
+  #--------------------------------------------------------------------------
+  def self.benchmark(n = 5, name = "Time")
+    raise(LocalJumpError, "no block given", caller) unless block_given?
+    list = []
+    n.times {
+      time = Time.now
+      yield
+      list << Time.now - time
+    }
+    puts "#{name}: #{list.inject(0.0) {|total,time| total+time }/list.size} s"
+  end
+end
+

@@ -1,0 +1,8 @@
+"イベント：白蛇様" -> "Event: Mr. Whitebackie"
+"【白蛇様】" -> "【White Snake】"
+"たまには、妾も人の役に立つのじゃ。" -> "Occasionally, myself will help others."
+"妹がうるさいからのう……" -> "My sister is loud ..."
+"【白蛇様】" -> "【White Snake】"
+"これ、蛇の力を与えてやろうぞ。" -> "Let me give you the power of the snake."
+"白蛇様から不思議な力が与えられた！" -> "Mysterious power was given from Ha!"
+"次のボスフロアまで、蛇技の威力が二倍になる！" -> "The power of the snake technique doubles until the next boss floor!"

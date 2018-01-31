@@ -1,0 +1,7 @@
+"天才ネクロマンサーのクロムちゃんが、究極のゾンビを……" -> "Chrome of genius necromancer, the ultimate zombie ......"
+"……禁じられているので、適当な医術を教えてやるのじゃ。" -> "...... Because it is forbidden, tell me about the appropriate medicine."
+"誰が「お注射なのじゃ！」を修得しますか？" -> "Who will acquire \"Is it an injection?\""
+"お注射なのじゃ！" -> "It's an injection!"
+"を修得した！" -> "Learned!"
+"今日はもうお開きじゃ。" -> "Today is already open."
+"儂は研究で忙しいからな。" -> "儂 I am busy with my research."

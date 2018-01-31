@@ -1,0 +1,8 @@
+"イベント：HPアップ" -> "Event: HP up"
+"【ラミア】" -> "【Lamia】"
+"さあ、体力トレーニングを行うわよ。" -> "Now, I will do fitness training."
+"いっぱい運動して、いっぱいダイエットしなきゃね！" -> "A lot of exercise, I have to diet a lot!"
+"誰がトレーニングしますか？" -> "Who will be training?"
+"ラミアとトレーニングし、最大HPが3ポイントアップした！" -> "Training with Lamia, the maximum HP up 3 points!"
+"【ラミア】" -> "【Lamia】"
+"今日はもうヘトヘトよ……" -> "Today is already going to het he ... ..."

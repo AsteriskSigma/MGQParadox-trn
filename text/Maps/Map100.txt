@@ -1,0 +1,3 @@
+"♪" -> "♪"
+"証明できない" -> "I can not prove it"
+"証明できない" -> "I can not prove it"

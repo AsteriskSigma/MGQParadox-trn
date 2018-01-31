@@ -1,0 +1,7 @@
+"【クィーンアルラウネ】" -> "【Queen Alrightane】"
+"味方全員の弱体効果を解除する白魔法……" -> "White magic that cancels weakness effect of all ally ......"
+"「オールクリア」を、この私が伝授しましょう。" -> "Let me transfer this \"all clear\"."
+"選択" -> "Choice"
+"選択" -> "Choice"
+"【クィーンアルラウネ】" -> "【Queen Alrightane】"
+"あなたも咲き乱れて下さいね……" -> "You too will bloom ... ..."

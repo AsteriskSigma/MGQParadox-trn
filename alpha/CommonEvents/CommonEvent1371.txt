@@ -1,0 +1,10 @@
+// EVENT 1371
+ChangeVariable(25,25,0,0,0)
+ShowMessageFace("soniamazda_fc1",0,0,2,1)
+ShowMessage("【Sonia Mazda】")
+ShowMessage("■■■■■■■■■■■■■■■■ ......")
+ShowMessageFace("",0,0,2,2)
+ShowMessage("Sonia Mazda is rejecting the conversation!")
+EndEventProcessing()
+0()
+

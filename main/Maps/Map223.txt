@@ -1,0 +1,906 @@
+
+DisplayName "Harpy Village"
+
+
+
+EVENT   1
+ PAGE   1
+  282(38)
+  0()
+
+
+
+EVENT   2
+ PAGE   1
+  282(37)
+  0()
+
+
+
+EVENT   3
+ PAGE   1
+  282(37)
+  0()
+
+
+
+EVENT   4
+ PAGE   1
+  282(38)
+  0()
+
+
+
+EVENT   5
+ PAGE   1
+  282(38)
+  0()
+
+
+
+EVENT   6
+ PAGE   1
+  282(38)
+  0()
+
+
+
+EVENT   7
+ PAGE   1
+  282(37)
+  0()
+
+
+
+EVENT   8
+ PAGE   1
+  282(38)
+  0()
+
+
+
+EVENT   9
+ PAGE   1
+  282(38)
+  0()
+
+
+
+EVENT   10
+ PAGE   1
+  // condition: variable 1011 >= 4
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Harpy>The previous queen was so good at fighting that she was called the War Goddess. Though after fighting for so long, the entire harpy race got tired of it...")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Harpy>The current queen, on the other hand, is extremely kind and wise. She isn't nearly as powerful, but I definitely prefer her anyway.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("71")
+  ShowMessageFace("okami_fc1",2,0,2,3)
+  ShowMessage("\\n<Amara>Many of our sisters died in all that pointless fighting...")
+  EndEventProcessing()
+  DefineLabel("82")
+  ShowMessageFace("suzume_fc1",0,0,2,4)
+  ShowMessage("\\n<Chirp>I love the current queen too. Fighting all the time is awful...")
+  EndEventProcessing()
+  DefineLabel("323")
+  ShowMessageFace("queenhapy_fc1",0,0,2,5)
+  ShowMessage("【Lucrezia】")
+  ShowMessage("Bringing peace to everyone, the Queen's duties ......")
+  ShowMessage("I think so.")
+  ShowMessageFace("",0,0,2,6)
+  ShowMessage("【Harpy】")
+  ShowMessage("Oh, my Queen ~ ♪")
+  EndEventProcessing()
+  DefineLabel("376")
+  ShowMessageFace("cirqueb_fc5",0,0,2,7)
+  ShowMessage("【Refrezia】")
+  ShowMessage("It is because I have destroyed enemy forces in my generation ......")
+  ShowMessage("There is this prosperity now.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   11
+ PAGE   1
+  282(38)
+  0()
+
+
+
+EVENT   12
+ PAGE   1
+  282(38)
+  0()
+
+
+
+EVENT   13
+ PAGE   1
+  0()
+
+
+
+EVENT   14
+ PAGE   1
+  0()
+
+
+
+EVENT   15
+ PAGE   1
+  0()
+
+
+
+EVENT   16
+ PAGE   1
+  0()
+
+
+
+EVENT   17
+ PAGE   1
+  0()
+
+
+
+EVENT   18
+ PAGE   1
+  0()
+
+
+
+EVENT   19
+ PAGE   1
+  0()
+
+
+
+EVENT   20
+ PAGE   1
+  0()
+
+
+
+EVENT   21
+ PAGE   1
+  0()
+
+
+
+EVENT   22
+ PAGE   1
+  0()
+
+
+
+EVENT   23
+ PAGE   1
+  0()
+
+
+
+EVENT   24
+ PAGE   1
+  282(37)
+  0()
+
+
+
+EVENT   25
+ PAGE   1
+  282(37)
+  0()
+
+
+
+EVENT   26
+ PAGE   1
+  282(38)
+  0()
+
+
+
+EVENT   27
+ PAGE   1
+  282(38)
+  0()
+
+
+
+EVENT   28
+ PAGE   1
+  282(38)
+  0()
+
+
+
+EVENT   29
+ PAGE   1
+  282(38)
+  0()
+
+
+
+EVENT   30
+ PAGE   1
+  282(38)
+  0()
+
+
+
+EVENT   31
+ PAGE   1
+  0()
+
+
+
+EVENT   32
+ PAGE   1
+  0()
+
+
+
+EVENT   33
+ PAGE   1
+  0()
+
+
+
+EVENT   34
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,339,9,13,2,0)
+  0()
+
+
+
+EVENT   35
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,339,30,28,2,0)
+  0()
+
+
+
+EVENT   36
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,339,9,1,2,0)
+  0()
+
+
+
+EVENT   37
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,339,8,1,2,0)
+  0()
+
+
+
+EVENT   38
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,340,12,12,0,0)
+  If(1,1011,0,2,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("There don't appear to be any signs of a struggle...")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   39
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,340,11,12,0,0)
+  If(1,1011,0,2,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("There don't appear to be any signs of a struggle...")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   40
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,340,12,61,0,0)
+  If(1,1011,0,1,0)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("There don't appear to be any signs of a struggle... but there's someone in here!")
+   0()
+  EndIf()
+  0()
+
+EVENT   41
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,340,12,61,0,0)
+  If(1,1011,0,1,0)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("There don't appear to be any signs of a struggle... but there's someone in here!")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   42
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,2,355,325,0,0)
+  0()
+
+
+
+EVENT   43
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,2,355,325,0,0)
+  0()
+
+
+
+EVENT   44
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,2,355,325,0,0)
+  0()
+
+
+
+EVENT   45
+ PAGE   1
+  // condition: variable 1011 >= 1
+  ChangeSelfSwitch("A",0)
+  If(0,6,0)
+   ShowMessageFace("sonia_fc2",2,0,2,1)
+   ShowMessage("\\n<Sonya>The rumors were true. There's no one here, not even a sign of anyone...")
+   0()
+  Else()
+   ShowMessageFace("ruka_fc1",0,0,2,2)
+   ShowMessage("\\n<Luka>The rumors were true. There's no one here, not even a sign of anyone...")
+   0()
+  EndIf()
+  If(4,68,0)
+   ShowMessageFace("dragonp_fc1",2,0,2,3)
+   ShowMessage("\\n<Papi>It's kind of creepy...")
+   0()
+  EndIf()
+  If(4,58,0)
+   ShowMessageFace("inp_fc2",2,0,2,4)
+   ShowMessage("\\n<Remi>*Shiver* I'm scared...")
+   0()
+  EndIf()
+  If(0,4,0)
+   ShowMessageFace("alice_fc5",0,0,2,5)
+   ShowMessage("\\n<Alice>We should look around just to be sure. There might be some clues that will help us find them.")
+   ShowMessageFace("alice_fc5",0,0,2,6)
+   ShowMessage("\\n<Alice>It appears there are houses on the other side of the tree as well. Be sure to check the sign boards so you don't miss any places.")
+   0()
+  EndIf()
+  If(0,5,0)
+   ShowMessageFace("iriasu_fc4",2,0,2,7)
+   ShowMessage("\\n<Ilias>We should look around just to be sure. It is possible that some evidence remains.")
+   ShowMessageFace("iriasu_fc4",2,0,2,8)
+   ShowMessage("\\n<Ilias>It appears there are houses on the other side of the tree as well. Read the signs so you do not miss any locations.")
+   0()
+  EndIf()
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   46
+ PAGE   1
+  // condition: variable 1011 >= 4
+  ChangeSelfSwitch("A",0)
+  ChangeSwitch(100,100,1)
+  ShowMessageFace("ruka_fc1",0,0,2,1)
+  ShowMessage("\\n<Luka>I'm worried about the queen, but this is the best we could do for now.")
+  If(0,4,0)
+   ShowMessageFace("alice_fc5",0,0,2,2)
+   ShowMessage("\\n<Alice>Yeah, the situation is as resolved as it's going to get for the time being. That said, where should we go next?")
+   0()
+  EndIf()
+  If(0,5,0)
+   ShowMessageFace("iriasu_fc4",0,0,2,3)
+   ShowMessage("\\n<Ilias>Well, the situation is mostly normalized. Where should be our next destination?")
+   0()
+  EndIf()
+  ShowMessageFace("ruka_fc1",0,0,2,4)
+  ShowMessage("\\n<Luka>We can go straight to the eastern Tartarus rift, or instead take the trouble to equip ourselves in golden equipment first.")
+  If(0,4,0)
+   ShowMessageFace("alice_fc5",0,0,2,5)
+   ShowMessage("\\n<Alice>We can get the golden equipment in Midas Village. It's north of the harpy tower and along the coast.")
+   0()
+  EndIf()
+  If(0,5,0)
+   ShowMessageFace("iriasu_fc4",0,0,2,6)
+   ShowMessage("\\n<Ilias>We can procure golden equipment in Midas Village. It is located north of the harpy tower, along the coastline.")
+   0()
+  EndIf()
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+ PAGE   3
+  // condition: variable 1001 >= 11
+  0()
+ PAGE   4
+  // condition: variable 1015 >= 2
+  0()
+
+
+
+EVENT   47
+ PAGE   1
+  // condition: variable 1011 >= 4
+  If(1,1011,0,4,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Harpy>Thank you so much! It would have taken ages for us to be cured without the medicine you brought!")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("56")
+   ShowMessageFace("inp_fc1",0,0,2,2)
+   ShowMessage("\\n<Rami>Hey, can you teach me how to fly? I'm super bad at it...")
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("\\n<Harpy>Hmm, how to fly.... Sorry, it's so natural to us that it would be harder NOT to fly.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1011,0,5,1)
+   ShowMessageFace("",0,0,2,4)
+   ShowMessage("【Harpy】")
+   ShowMessage("He helped the Queen!")
+   ShowMessage("You really are a benefactor of this settlement ♪")
+   ShowMessageFace("",0,0,2,5)
+   ShowMessage("【Harpy】")
+   ShowMessage("When adventure ends, do not live here.")
+   ShowMessage("So let's leave a lot of descendants ... ♪")
+   If(0,6,0)
+    ShowMessageFace("sonia_fc2",6,0,2,6)
+    ShowMessage("【Sonia】")
+    ShowMessage("No!")
+    0()
+   EndIf()
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   48
+ PAGE   1
+  // condition: variable 1011 >= 4
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Harpy>I heard there's a legendary maid in Midas Village. She's an old lady now, but she apparently has grandchildren carrying on her legacy.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("64")
+  If(1,1017,0,0,0)
+   ShowMessageFace("pramia_fc1",0,0,2,2)
+   ShowMessage("\\n<Teeny>A legendary maid!? I'd love to go meet her!")
+   0()
+  EndIf()
+  If(1,1017,0,1,1)
+   ShowMessageFace("pramia_fc1",0,0,2,3)
+   ShowMessage("\\n<Teeny>I met her! She was an amazingly refined woman.")
+   0()
+  EndIf()
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   49
+ PAGE   1
+  // condition: variable 1011 >= 4
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Harpy>Welcome to Harpy Village! Where would you like to go?")
+  281(1)
+  ShowChoices(strings("Inn","Item Shop","Queen's House","Nowhere"),4)
+  IfPlayerPicksChoice(0,null)
+   TeleportPlayer(0,339,20,43,2,0)
+   EndEventProcessing()
+   0()
+  IfPlayerPicksChoice(1,null)
+   TeleportPlayer(0,339,15,26,2,0)
+   EndEventProcessing()
+   0()
+  IfPlayerPicksChoice(2,null)
+   TeleportPlayer(0,223,35,5,2,0)
+   EndEventProcessing()
+   0()
+  IfPlayerPicksChoice(3,null)
+   EndEventProcessing()
+   0()
+  404()
+  0()
+
+
+
+EVENT   50
+ PAGE   1
+  // condition: variable 1011 >= 4
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Siren>It's a pain to walk back out after clearing a cave or tower, isn't it? Fortunately, there's a magic spell that can take you outside in a flash.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Siren>The spell is called [Teleport], and Time Mages learn it. It's very handy to have someone in your party with the spell.")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Siren>How do you become a Time Mage? All you have to do is master Magician first.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("56")
+  ShowMessageFace("inp_fc1",0,0,2,4)
+  ShowMessage("\\n<Rami>I want to be a Black Mage, not a Time Mage. Buuuurn, muwahaha!♪")
+  EndEventProcessing()
+  DefineLabel("78")
+  ShowMessageFace("syesta_fc1",0,0,2,5)
+  ShowMessage("\\n<Shesta>Time Mage... sounds interesting.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   51
+ PAGE   1
+  // condition: variable 1011 >= 4
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Harpy>We harpies all want to become Dragon Knights some day. To soar through the skies with a spear in hand... Aaah, so awesome.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Harpy>Since spear skills are more powerful with higher agility, we're perfect for it. We can really go on a rampage flying around our foes.")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Harpy>How do you become a Dragon Knight? Just master Warrior.")
+  ShowMessageFace("",0,0,2,4)
+  ShowMessage("\\n<Harpy>That's the real issue, though. We harpies aren't suited at all for physically punishing jobs like Warrior.")
+  ShowMessageFace("",0,0,2,5)
+  ShowMessage("\\n<Harpy>But if you struggle through it, you'll be rewarded in the end! If you have any harpy companions, why not try out Dragon Knight?")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("101")
+  ShowMessageFace("cent2_fc1",0,0,2,6)
+  ShowMessage("\\n<Lihitinu>Centaurs are suited for Dragon Knight as well. It'd be good for me to level it up.")
+  EndEventProcessing()
+  DefineLabel("260")
+  ShowMessageFace("k_hapy_fc1",0,0,2,7)
+  ShowMessage("【Chris】")
+  ShowMessage("I am already a knight in Harpy.")
+  ShowMessage("However, there are problems of temper and there are not few people who want martial arts ... ...")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   52
+ PAGE   1
+  // condition: variable 1011 >= 4
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Harpy>Harpies can use skills called Wing Skills. For example, we can flap our wings to stir up a fierce wind.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Harpy>Wing Skill damage depends on agility, which makes them very effective for us.")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Harpy>So if you party with any harpies, you should try to find agility boosting equipment for them. Fans are highly recommended.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("72")
+  ShowMessageFace("phoenix_fc1",1,0,2,4)
+  ShowMessage("\\n<Mini>I want to see you dance with a fan!")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   53
+ PAGE   1
+  // condition: variable 1011 >= 4
+  If(1,1011,0,4,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Harpy>After being gone for so long, there's a lot of cleaning that needs to be done. The place is covered in weeds now too.")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("56")
+   ShowMessageFace("inp_fc1",0,0,2,2)
+   ShowMessage("\\n<Rami>If I help you with weeding, can you teach me to fly? I'm really bad at flying...")
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("\\n<Harpy>You can't fly on your own? I don't know how to describe it... Can't you just flap your wings and then it happens?")
+   ShowMessageFace("inp_fc1",2,0,2,4)
+   ShowMessage("\\n<Rami>No matter how hard I flap, I can't get any lift!")
+   EndEventProcessing()
+   DefineLabel("540")
+   ShowMessageFace("amira_fc1",0,0,2,5)
+   ShowMessage("\\n<Amira>Weeding is my specialty. Would you like me to lend a hand?")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1011,0,5,1)
+   ShowMessageFace("",0,0,2,6)
+   ShowMessage("【Harpy】")
+   ShowMessage("Wow, the Queen is back ~ ♪")
+   ShowMessage("Thanks, help me up to the Queen ♪")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   54
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,2,355,325,0,0)
+  0()
+
+
+
+EVENT   55
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,2,355,325,0,0)
+  0()
+
+
+
+EVENT   56
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,2,355,325,0,0)
+  0()
+
+
+
+EVENT   57
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,2,355,325,0,0)
+  0()
+
+
+
+EVENT   58
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,2,355,325,0,0)
+  0()
+
+
+
+EVENT   59
+ PAGE   1
+  // condition: variable 1011 >= 4
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Siren>Lalalalala♪ Oh... I was told I can't sing in the middle of the village.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Siren>Even if I'm not trying, I can accidentally charm anyone who hears me singing. I don't know why they can't all just wear earplugs though...")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("59")
+  ShowMessageFace("mdg_fc1",0,0,2,3)
+  ShowMessage("\\n<Ragora>I know, right! I want to sing wherever I go too!")
+  ShowMessageFace("",0,0,2,4)
+  ShowMessage("\\n<Siren>Preach it, sister.")
+  EndEventProcessing()
+  DefineLabel("75")
+  ShowMessageFace("hituzi_fc1",3,0,2,5)
+  ShowMessage("\\n<Mary>We sheep are never sober anyway so I don't mind.")
+  EndEventProcessing()
+  DefineLabel("155")
+  ShowMessageFace("saki_fc1",3,0,2,6)
+  ShowMessage("\\n<Saki>Hey, why don't we sing and dance together! ♪")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   60
+ PAGE   1
+  // condition: variable 1011 >= 4
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Harpy>I picked up this Small Medal inside the tower. I'm going to trade it in to the Medal Queen!")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Harpy>Huh? You don't know where she is? You can teleport to her from a small shrine to the north of the harpy tower.")
+  0()
+
+
+
+EVENT   61
+ PAGE   1
+  0()
+
+
+
+EVENT   62
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("→ Right, other side of the tree")
+  0()
+
+
+
+EVENT   63
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("← Left, other side of the tree")
+  0()
+
+
+
+EVENT   64
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("↑ Ahead, other side of the tree")
+  0()
+
+
+
+EVENT   65
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,339,30,28,2,0)
+  0()
+
+
+
+EVENT   66
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,339,9,13,2,0)
+  0()
+
+
+
+EVENT   67
+ PAGE   1
+  0()
+
+
+
+EVENT   68
+ PAGE   1
+  0()
+
+
+
+EVENT   69
+ PAGE   1
+  0()
+
+
+
+EVENT   70
+ PAGE   1
+  0()
+
+
+
+EVENT   71
+ PAGE   1
+  0()
+
+
+
+EVENT   72
+ PAGE   1
+  0()
+
+
+
+EVENT   73
+ PAGE   1
+  0()
+
+
+
+EVENT   74
+ PAGE   1
+  0()
+
+
+
+EVENT   75
+ PAGE   1
+  0()
+
+
+
+EVENT   76
+ PAGE   1
+  0()
+
+
+
+EVENT   77
+ PAGE   1
+  0()
+
+
+
+EVENT   78
+ PAGE   1
+  0()
+
+
+
+EVENT   79
+ PAGE   1
+  0()
+
+
+
+EVENT   80
+ PAGE   1
+  0()
+
+
+
+EVENT   81
+ PAGE   1
+  0()
+
+
+
+EVENT   82
+ PAGE   1
+  0()
+
+
+
+EVENT   83
+ PAGE   1
+  0()
+
+
+
+EVENT   84
+ PAGE   1
+  0()
+
+
+
+EVENT   85
+ PAGE   1
+  0()
+
+
+
+EVENT   86
+ PAGE   1
+  // condition: variable 1011 >= 4
+  If(1,1011,0,4,2)
+   ShowMessageFace("suzume_fc1",1,0,2,1)
+   ShowMessage("\\n<Sparrow Girl>*Chirp* *Chirp*! It's so nice to be outside again! Thank you so so much! ♪")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("72")
+   ShowMessageFace("phoenix_fc1",1,0,2,2)
+   ShowMessage("\\n<Mini>Yeah! Spreading your wings outdoors is the best!")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1011,0,5,1)
+   ShowMessageFace("suzume_fc1",1,0,2,3)
+   ShowMessage("[Sparrow girl]")
+   ShowMessage("Junin! The Queen's illness has recovered!")
+   ShowMessage("The hierarchical relationship of the village also makes a big turbulence with this")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+

@@ -1,0 +1,107 @@
+#==============================================================================
+# ■ Window_MenuCommand
+#------------------------------------------------------------------------------
+# Command window to be displayed on the menu screen.
+#==============================================================================
+
+class Window_MenuCommand < Window_Command
+  #--------------------------------------------------------------------------
+  # ● Initialization of command selection position (class method)
+  #--------------------------------------------------------------------------
+  def self.init_command_position
+    @@last_command_symbol = nil
+  end
+  #--------------------------------------------------------------------------
+  # ● Object initialization
+  #--------------------------------------------------------------------------
+  def initialize
+    super(0, 0)
+    select_last
+  end
+  #--------------------------------------------------------------------------
+  # ● Obtain window width
+  #--------------------------------------------------------------------------
+  def window_width
+    return 160
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire number of display lines
+  #--------------------------------------------------------------------------
+  def visible_line_number
+    item_max
+  end
+  #--------------------------------------------------------------------------
+  # ● Create command list
+  #--------------------------------------------------------------------------
+  def make_command_list
+    add_main_commands
+    add_formation_command
+    add_original_commands
+    add_save_command
+    add_game_end_command
+  end
+  #--------------------------------------------------------------------------
+  # ● Add key commands to the list
+  #--------------------------------------------------------------------------
+  def add_main_commands
+    add_command(Vocab::item,   :item,   main_commands_enabled)
+    add_command(Vocab::skill,  :skill,  main_commands_enabled)
+    add_command(Vocab::equip,  :equip,  main_commands_enabled)
+    add_command(Vocab::status, :status, main_commands_enabled)
+  end
+  #--------------------------------------------------------------------------
+  # ● Add sort to command list
+  #--------------------------------------------------------------------------
+  def add_formation_command
+    add_command(Vocab::formation, :formation, formation_enabled)
+  end
+  #--------------------------------------------------------------------------
+  # ● For adding additional proprietary commands
+  #--------------------------------------------------------------------------
+  def add_original_commands
+  end
+  #--------------------------------------------------------------------------
+  # ● Add save to command list
+  #--------------------------------------------------------------------------
+  def add_save_command
+    add_command(Vocab::save, :save, save_enabled)
+  end
+  #--------------------------------------------------------------------------
+  # ● Add game end to command list
+  #--------------------------------------------------------------------------
+  def add_game_end_command
+    add_command(Vocab::game_end, :game_end)
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire the effective status of the main command
+  #--------------------------------------------------------------------------
+  def main_commands_enabled
+    $game_party.exists
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire effective status of sort
+  #--------------------------------------------------------------------------
+  def formation_enabled
+    $game_party.members.size >= 2 && !$game_system.formation_disabled
+  end
+  #--------------------------------------------------------------------------
+  # ● Get effective save status
+  #--------------------------------------------------------------------------
+  def save_enabled
+    !$game_system.save_disabled
+  end
+  #--------------------------------------------------------------------------
+  # ● Processing when the enter button is pressed
+  #--------------------------------------------------------------------------
+  def process_ok
+    @@last_command_symbol = current_symbol
+    super
+  end
+  #--------------------------------------------------------------------------
+  # ● Return the last selected position
+  #--------------------------------------------------------------------------
+  def select_last
+    select_symbol(@@last_command_symbol)
+  end
+end
+

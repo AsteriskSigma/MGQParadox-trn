@@ -1,0 +1,1119 @@
+
+DisplayName "Sabasa Castle 1F"
+
+
+
+EVENT   1
+ PAGE   1
+  0()
+
+
+
+EVENT   2
+ PAGE   1
+  0()
+
+
+
+EVENT   3
+ PAGE   1
+  0()
+
+
+
+EVENT   4
+ PAGE   1
+  0()
+
+
+
+EVENT   5
+ PAGE   1
+  If(1,1028,0,7,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Assassin>Get lost.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1028,0,8,0)
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Assassin>Seems like you saved the head. You have my thanks.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   6
+ PAGE   1
+  281(0)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,476,14,1,0,0)
+  0()
+
+
+
+EVENT   7
+ PAGE   1
+  281(0)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,476,14,1,0,0)
+  0()
+
+
+
+EVENT   8
+ PAGE   1
+  281(0)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,476,14,1,0,0)
+  0()
+
+
+
+EVENT   9
+ PAGE   1
+  281(0)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,476,14,1,0,0)
+  0()
+
+
+
+EVENT   10
+ PAGE   1
+  0()
+
+
+
+EVENT   11
+ PAGE   1
+  0()
+
+
+
+EVENT   12
+ PAGE   1
+  ChangeSwitch(31,31,1)
+  If(1,1028,0,4,2)
+   205(14,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x46,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x07,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x18,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+   205(15,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x07,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x18,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Royal Guard A> The queen's chambers are up ahead. But...it seems that your friends are accompanying you...")
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Royal Guard B>If you're going in, go in alone. You'll be able to enjoy yourself that way.")
+   ShowMessageFace("ruka_fc1",0,0,2,3)
+   ShowMessage("\\n<Luka>Wait here, everyone. I'll handle this by myself.")
+   ChangeSwitch(100,100,0)
+   ShowMessageFace("",0,0,2,4)
+   ShowMessage("Luka left his companions behind and went up the stairs...")
+   216(1)
+   0()
+  EndIf()
+  If(1,1028,0,5,0)
+   205(14,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x46,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x07,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x18,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+   205(15,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x07,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x18,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+   If(1,1022,0,5,2)
+    ShowMessageFace("",0,0,2,5)
+    ShowMessage("\\n<Royal Guard A>Hey, hold up a moment. The queen is in a meeting with an emissary from San Ilia right now.")
+    ShowMessageFace("",0,0,2,6)
+    ShowMessage("\\n<Royal Guard B>What's strange is that she's not having any fun. They were talking about Luddite's Temple Ruins...")
+    ShowMessageFace("",0,0,2,7)
+    ShowMessage("\\n<Royal Guard A>So I suggest coming back later. You'll be able to enjoy yourself plenty then.")
+    205(-1,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x07,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x06,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+    ShowMessageFace("",0,0,2,8)
+    ShowMessage("Since an agent from San Ilia was in there, we didn't want to intrude. Clearly, their discussion involves the Ancient Temple's Ruins.")
+    EndEventProcessing()
+    0()
+   EndIf()
+   ShowMessageFace("",0,0,2,9)
+   ShowMessage("\\n<Royal Guard A>The queen's chambers are up ahead. But...it seems that your friends are accompanying you...")
+   ShowMessageFace("ruka_fc1",0,0,2,10)
+   ShowMessage("\\n<Luka>Sorry, but we must meet with her!")
+   If(0,6,0)
+    ShowMessageFace("sonia_fc1",5,0,2,11)
+    ShowMessage("\\n<Sonya>We aim to bring the queen back to her senses at any cost!")
+    0()
+   EndIf()
+   ShowMessageFace("",0,0,2,12)
+   ShowMessage("\\n<Royal Guard A>Seriously? It's just my luck that something as troublesome as this would happen during my shift...")
+   ShowMessageFace("",0,0,2,13)
+   ShowMessage("\\n<Royal Guard B>I would prefer not to be beat up over something like this, so just hurry up and go through.")
+   If(0,4,0)
+    ShowMessageFace("alice_fc5",5,0,2,14)
+    ShowMessage("\\n<Alice>So undisciplined. These guys always have been nothing but thugs, it would seem.")
+    0()
+   EndIf()
+   If(0,5,0)
+    ShowMessageFace("iriasu_fc4",2,0,2,15)
+    ShowMessage("\\n<Ilias>What a blatant lack of discipline. They are clearly no better than common thugs.")
+    0()
+   EndIf()
+   ShowMessageFace("ruka_fc1",0,0,2,16)
+   ShowMessage("\\n<Luka>Okay, let's go!")
+   0()
+  EndIf()
+  281(0)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,378,31,24,0,0)
+  0()
+
+
+
+EVENT   13
+ PAGE   1
+  ChangeSwitch(31,31,1)
+  If(1,1028,0,4,2)
+   205(14,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x46,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x07,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x18,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+   205(15,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x07,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x18,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Royal Guard A> The queen's chambers are up ahead. But...it seems that your friends are accompanying you...")
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Royal Guard B>If you're going in, go in alone. You'll be able to enjoy yourself that way.")
+   ShowMessageFace("ruka_fc1",0,0,2,3)
+   ShowMessage("\\n<Luka>Wait here, everyone. I'll handle this by myself.")
+   ChangeSwitch(100,100,0)
+   ShowMessageFace("",0,0,2,4)
+   ShowMessage("Luka left his companions behind and went up the stairs...")
+   216(1)
+   0()
+  EndIf()
+  If(1,1028,0,5,0)
+   205(14,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x46,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x07,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x18,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+   205(15,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x07,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x18,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+   If(1,1022,0,5,2)
+    ShowMessageFace("",0,0,2,5)
+    ShowMessage("\\n<Royal Guard A>Hey, hold up a moment. The queen is in a meeting with an emissary from San Ilia right now.")
+    ShowMessageFace("",0,0,2,6)
+    ShowMessage("\\n<Royal Guard B>What's strange is that she's not having any fun. They were talking about Luddite's Temple Ruins...")
+    ShowMessageFace("",0,0,2,7)
+    ShowMessage("\\n<Royal Guard A>So I suggest coming back later. You'll be able to enjoy yourself plenty then.")
+    205(-1,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x07,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x06,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+    ShowMessageFace("",0,0,2,8)
+    ShowMessage("Since an agent from San Ilia was in there, we didn't want to intrude. Clearly, their discussion involves the Ancient Temple's Ruins.")
+    EndEventProcessing()
+    0()
+   EndIf()
+   ShowMessageFace("",0,0,2,9)
+   ShowMessage("\\n<Royal Guard A>The queen's chambers are up ahead. But...it seems that your friends are accompanying you...")
+   ShowMessageFace("ruka_fc1",0,0,2,10)
+   ShowMessage("\\n<Luka>Sorry, but we must meet with her!")
+   If(0,6,0)
+    ShowMessageFace("sonia_fc1",5,0,2,11)
+    ShowMessage("\\n<Sonya>We aim to bring the queen back to her senses at any cost!")
+    0()
+   EndIf()
+   ShowMessageFace("",0,0,2,12)
+   ShowMessage("\\n<Royal Guard A>Seriously? It's just my luck that something as troublesome as this would happen during my shift...")
+   ShowMessageFace("",0,0,2,13)
+   ShowMessage("\\n<Royal Guard B>I would prefer not to be beat up over something like this, so just hurry up and go through.")
+   If(0,4,0)
+    ShowMessageFace("alice_fc5",5,0,2,14)
+    ShowMessage("\\n<Alice>So undisciplined. These guys always have been nothing but thugs, it would seem.")
+    0()
+   EndIf()
+   If(0,5,0)
+    ShowMessageFace("iriasu_fc4",2,0,2,15)
+    ShowMessage("\\n<Ilias>What a blatant lack of discipline. They are clearly no better than common thugs.")
+    0()
+   EndIf()
+   ShowMessageFace("ruka_fc1",0,0,2,16)
+   ShowMessage("\\n<Luka>Okay, let's go!")
+   0()
+  EndIf()
+  281(0)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,378,31,24,0,0)
+  0()
+
+EVENT   14
+ PAGE   1
+  If(1,1001,0,25,2)
+   If(1,1028,0,7,2)
+    ShowMessageFace("",0,0,2,1)
+    ShowMessage("\\n<Royal Guard>I drank too much yesterday and now I've got a hangover...")
+    EndEventProcessing()
+    0()
+   EndIf()
+   If(1,1028,0,8,0)
+    ShowMessageFace("",0,0,2,2)
+    ShowMessage("\\n<Royal Guard>It may be difficult to tell since I'm wearing the same uniform, but I'm actually a different guard from the one who was here earlier.")
+    ShowMessageFace("",0,0,2,3)
+    ShowMessage("\\n<Royal Guard>Worry not. I will guard the staircase.")
+    EndEventProcessing()
+    0()
+   EndIf()
+   0()
+  EndIf()
+  If(1,1001,0,26,1)
+   ShowMessageFace(binary"",0,0,2,4)
+   ShowMessage("Neighbors")
+   ShowMessage("I will never pass any enemies.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   15
+ PAGE   1
+  If(1,1001,0,25,2)
+   If(1,1028,0,7,2)
+    ShowMessageFace("",0,0,2,1)
+    ShowMessage("\\n<Royal Guard>I hope night comes soon.")
+    EndEventProcessing()
+    0()
+   EndIf()
+   If(1,1028,0,8,0)
+    ShowMessageFace("",0,0,2,2)
+    ShowMessage("\\n<Royal Guard>Good grief. The new recruits have caused the reputation of the Sabasa Royal Guards to plummet. We will need to redeem ourselves with impeccable service from now on.")
+    355("actor_label_jump")
+    EndEventProcessing()
+    DefineLabel("529")
+    ShowMessageFace("sara_fc1",0,0,2,3)
+    ShowMessage("\\n<Sara>Likewise. I will do my best to put all of this shame behind us.")
+    EndEventProcessing()
+    0()
+   EndIf()
+   0()
+  EndIf()
+  If(1,1001,0,26,1)
+   ShowMessageFace(binary"",0,0,2,4)
+   ShowMessage("Neighbors")
+   ShowMessage("Whatever comes up to attack, I am ready to defend this place.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   16
+ PAGE   1
+  281(0)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,476,14,1,0,0)
+  0()
+
+
+
+EVENT   17
+ PAGE   1
+  If(1,1028,0,7,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Soldier>His Majesty definitely is alive. He will return to our country after recovering from his injuries.")
+   0()
+  EndIf()
+  If(1,1028,0,8,0)
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Soldier>His Majesty might really be dead. I wonder if he watches over us from above as we reclaim our honor.")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   18
+ PAGE   1
+  If(1,1001,0,25,2)
+   If(1,1028,0,7,2)
+    ShowMessageFace("",0,0,2,1)
+    ShowMessage("\\n<Minister>Leaving the united powers alone is such a disrespect and also a bad move considering the circumstances.")
+    ShowMessageFace("",0,0,2,2)
+    ShowMessage("\\n<Minister>After conquering Grand Noah, Grangold will surely invade the southern parts of the continent.")
+    ShowMessageFace("",0,0,2,3)
+    ShowMessage("\\n<Minister>When that time comes, our troubled country won't be able to resist them. I wonder what options the queen is considering...")
+    EndEventProcessing()
+    0()
+   EndIf()
+   If(1,1028,0,8,0)
+    ShowMessageFace("",0,0,2,4)
+    ShowMessage("\\n<Minister>The expeditionary force has been reorganized and Sabasa has once again joined the alliance. Since we dishonored ourselves, I was prepared for strong criticism...")
+    ShowMessageFace("",0,0,2,5)
+    ShowMessage("\\n<Minister>But we were not subject to any special conditions after reentering the alliance. Either they couldn't afford to be bothered with such details, or...")
+    ShowMessageFace("",0,0,2,6)
+    ShowMessage("\\n<Minister>...or they already have a handle on the situation involving the yoma that have influencing events behind the scenes. It's possible that the monsters have been manipulating other nations.")
+    355("actor_label_jump")
+    EndEventProcessing()
+    DefineLabel("529")
+    ShowMessageFace("sara_fc1",0,0,2,7)
+    ShowMessage("\\n<Sara>That's one of the major reasons why I wish to accompany the others in their journey. I wish to get out of the castle and see what is happening in the world.")
+    EndEventProcessing()
+    0()
+   EndIf()
+   0()
+  EndIf()
+  If(1,1001,0,26,1)
+   ShowMessageFace(binary"",0,0,2,8)
+   ShowMessage("【Minister】")
+   ShowMessage("After all, was the prowser of the devil kicked in Grangold?")
+   ShowMessage("But what kind of beautiful woman was you, for example, to turn into a queen and trample the king ... ....")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   19
+ PAGE   1
+  If(1,1001,0,29,2)
+   If(1,1028,0,7,2)
+    ShowMessageFace("",0,0,2,1)
+    ShowMessage("\\n<Minister>Ahh, so many things have been distressing lately. Her Majesty went crazy when we first withdrew from the alliance.")
+    ShowMessageFace("",0,0,2,2)
+    ShowMessage("\\n<Minister>The local dispute in Magistea Village is worsening. Rubiana's villagers have gone missing.")
+    ShowMessageFace("",0,0,2,3)
+    ShowMessage("\\n<Minister>No matter how many men join our ranks, there are never enough. I wonder what's going to happen to Sabasa...")
+    EndEventProcessing()
+    0()
+   EndIf()
+   If(1,1028,0,8,0)
+    ShowMessageFace("",0,0,2,4)
+    ShowMessage("\\n<Minister>Lady Sara's sanity has returned since we have returned to the alliance. But while that situation has taken a turn for the better, other problems are still continuing to pile up.")
+    ShowMessageFace("",0,0,2,5)
+    ShowMessage("\\n<Minister>The local dispute in Magistea Village is worsening. Rubiana's villagers have gone missing.")
+    ShowMessageFace("",0,0,2,6)
+    ShowMessage("\\n<Minister>As the war with Grangold is intensifies, mysterious yoma who plot our downfall.")
+    ShowMessageFace("",0,0,2,7)
+    ShowMessage("\\n<Minister>No matter how many men join our ranks, there are never enough. Looks like the dark days are going to continue.")
+    EndEventProcessing()
+    0()
+   EndIf()
+   0()
+  EndIf()
+  If(1,1001,0,30,1)
+   ShowMessageFace(binary"",0,0,2,8)
+   ShowMessage("【Minister】")
+   ShowMessage("From territories, only abnormal reports are coming up.")
+   ShowMessage("Black snow fell in Saloon, frequent earthquakes and shrieks in various places.")
+   ShowMessageFace(binary"",0,0,2,9)
+   ShowMessage("【Minister】")
+   ShowMessage("The sky emits a strange light, and various other abnormal weather occurs.")
+   ShowMessage("Malformed wildlife also increased, and many abnormalities occurred in crops ......")
+   ShowMessageFace(binary"",0,0,2,10)
+   ShowMessage("【Minister】")
+   ShowMessage("Is this the devil's fault?")
+   ShowMessage("Or maybe something else ... ...")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   20
+ PAGE   1
+  If(1,1028,0,7,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Soldier>An Assassin? Scary. I wouldn't get too close to him.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1028,0,8,0)
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Soldier>The Assassin Clan has continued to support Sabasa since the founder's era. We owe a lot to them for what they have done.")
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("\\n<Soldier>But they're still scary.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   21
+ PAGE   1
+  281(0)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,378,46,15,0,0)
+  0()
+
+
+
+EVENT   22
+ PAGE   1
+  281(0)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,378,46,15,0,0)
+  0()
+
+
+
+EVENT   23
+ PAGE   1
+  281(0)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,378,46,15,0,0)
+  0()
+
+
+
+EVENT   24
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Minister>Far North of Sabasa, there's a town called Saloon. I hear that the Assassin Clan that served the Royal Family for generations had initially come from there...")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Minister>You may think that it's a frightening place with that in mind, but it's actually just an ordinary, peaceful town.")
+  0()
+
+
+
+EVENT   25
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Vassal>It's said that the wife of the first King of Sabasa was a monster. In other words, Sabasa's Royal Family has monster blood within them. ")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Vassal>This is widely known by the people of Sabasa. Our former King of Sabasa actually was proud of that fact and didn't wish to hide it.")
+  0()
+
+
+
+EVENT   26
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Vassal>The Pyramid is a huge labyrinth made by ancient monsters a thousand years ago. Records tell us that it was built for a special trial.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Vassal>The trial is a ritual called the 'Dragon Seal Trial'. According to documents, it's a ceremonial trial for marriage vows with one of the dragonkind.")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Vassal>However, based on what I heard from a certain Lizard Girl acquaintance, it has become completely obsolete among the dragonkind and there are very few who know of it.")
+  ShowMessageFace("",0,0,2,4)
+  ShowMessage("\\n<Vassal>The girl I asked about it told me, 'You're like a stalker. How gross.'")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("169")
+  ShowMessageFace("lizardthief_fc1",0,0,2,5)
+  ShowMessage("\\n<Liru>That IS gross. If you want to get married, then ask the woman you like.")
+  EndEventProcessing()
+  DefineLabel("170")
+  ShowMessageFace("lizardthief_fc2",0,0,2,6)
+  ShowMessage("\\n<Len>But I think the trial still has a purpose. Your groom-to-be is going to prove his strength to you. What could be so bad about that?")
+  EndEventProcessing()
+  DefineLabel("525")
+  ShowMessageFace("sonia_fc4",0,0,2,7)
+  ShowMessage("\\n<Sonya>To relate it to human customs, it's like a complete stranger coming to you with marriage registration papers.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   27
+ PAGE   1
+  If(1,1001,0,30,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Knight>In the town of Saloon to the north, there's a craftswoman who can make crystal equipment. They say it's a process handed down within the Assassin Clan that resides there.")
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Knight>But it seems that she's a bit of an oddball. Unless you gain her favor, she will refuse to craft any crystal equipment for you.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,31,1)
+   ShowMessageFace(binary"",0,0,2,3)
+   ShowMessage("[Knight]")
+   ShowMessage("I heard the rumor that black snow fell in Saloon.")
+   ShowMessage("This kind of opinion says it happens around the world.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   28
+ PAGE   1
+  If(1,1001,0,25,2)
+   If(1,1028,0,7,2)
+    ShowMessageFace("",0,0,2,1)
+    ShowMessage("\\n<Maid>I have seen it with my own eyes... Wings sprouted from the queen's back!")
+    EndEventProcessing()
+    0()
+   EndIf()
+   If(1,1028,0,8,0)
+    ShowMessageFace("",0,0,2,2)
+    ShowMessage("\\n<Maid>Everything should be back to normal now. Well, not really, since it seems that the war with Grangold still rages on.")
+    EndEventProcessing()
+    0()
+   EndIf()
+   0()
+  EndIf()
+  If(1,1001,0,26,1)
+   ShowMessageFace(binary"",0,0,2,3)
+   ShowMessage("【Maid】")
+   ShowMessage("King Grangold was also brainwashed just like Queen Sarah.")
+   ShowMessage("It is a poor person to bear all the responsibility of war ...")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   29
+ PAGE   1
+  If(1,1001,0,25,2)
+   If(1,1028,0,7,2)
+    ShowMessageFace("",0,0,2,1)
+    ShowMessage("\\n<Maid>Clearly, the queen has lost her sanity. I mean, she's just playing with men these days, right?")
+    ShowMessageFace("",0,0,2,2)
+    ShowMessage("\\n<Maid>But Lady Sara was only interested in women originally... Whoops, please forget I said that.")
+    EndEventProcessing()
+    0()
+   EndIf()
+   If(1,1028,0,8,0)
+    ShowMessageFace("",0,0,2,3)
+    ShowMessage("\\n<Maid>As I thought, Lady Sara really lost her sanity. I mean, she's usually only interested in women.")
+    ShowMessageFace("",0,0,2,4)
+    ShowMessage("\\n<Maid>How is it that I know that? I'll just leave that to your imagination.")
+    355("actor_label_jump")
+    EndEventProcessing()
+    DefineLabel("529")
+    ShowMessageFace("sara_fc1",1,0,2,5)
+    ShowMessage("\\n<Sara>Good grief. You're such a blabbermouth.")
+    ShowMessageFace("",0,0,2,6)
+    ShowMessage("\\n<Maid>L-Lady Sara... F-forgive me... ♪")
+    EndEventProcessing()
+    0()
+   EndIf()
+   0()
+  EndIf()
+  If(1,1001,0,26,1)
+   ShowMessageFace(binary"",0,0,2,7)
+   ShowMessage("【Maid】")
+   ShowMessage("The Devil was stretching out evil hands to the royal family of various countries.")
+   ShowMessage("It is also the reason why the former king passed away in the conspiracy of the demon king ......")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   30
+ PAGE   1
+  If(1,1001,0,25,2)
+   If(1,1028,0,7,2)
+    ShowMessageFace("",0,0,2,1)
+    ShowMessage("\\n<Knight>You were a commoner in the past as well, weren't you?! Hyahaha!")
+    0()
+   EndIf()
+   If(1,1028,0,8,0)
+    ShowMessageFace("",0,0,2,2)
+    ShowMessage("\\n<Knight>I wonder where the Grangold King's abnormal power comes from... He can destroy everything in his surroundings with his magic. That's beyond human power levels.")
+    ShowMessageFace("",0,0,2,3)
+    ShowMessage("\\n<Knight>Even if you impale his body with arrows or cut it with blades, nothing fazes him. It makes one question if he's even human.")
+    0()
+   EndIf()
+   0()
+  EndIf()
+  If(1,1001,0,26,1)
+   ShowMessageFace(binary"",0,0,2,4)
+   ShowMessage("[Knight]")
+   ShowMessage("Although the spirit of King Grangold was manipulated ... ...")
+   ShowMessage("What was that powerful magical power and vitality?")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   31
+ PAGE   1
+  If(1,1001,0,25,2)
+   If(1,1028,0,7,2)
+    ShowMessageFace("",0,0,2,1)
+    ShowMessage("\\n<Knight>Being a knight is awesome! Commoners clear a path for me when I walk the streets!")
+    0()
+   EndIf()
+   If(1,1028,0,8,0)
+    ShowMessageFace("",0,0,2,2)
+    ShowMessage("\\n<Knight>I used to think that the reports of the Grangold King's power were nothing more than rumors. But according to the expeditionary force that returned recently, they're all true.")
+    ShowMessageFace("",0,0,2,3)
+    ShowMessage("\\n<Knight>Either he uses some forbidden art or he could be a monster disguised as the king.")
+    0()
+   EndIf()
+   0()
+  EndIf()
+  If(1,1001,0,26,1)
+   ShowMessageFace(binary"",0,0,2,4)
+   ShowMessage("[Knight]")
+   ShowMessage("Like our country, the king of Grangold was also manipulating the spirit ... ...")
+   ShowMessage("I can not do much criticism with this.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   32
+ PAGE   1
+  If(1,1028,0,7,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Guard>Feel free to come and go as you please.")
+   0()
+  EndIf()
+  If(1,1028,0,8,0)
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Guard>Welcome to the Sabasa Castle. You are welcome to roam the first floor.")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   33
+ PAGE   1
+  If(1,1028,0,7,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Guard>30 more minutes before my guard shift finally ends. So tired...")
+   0()
+  EndIf()
+  If(1,1028,0,8,0)
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Guard>Welcome to Sabasa Castle. You have been authorized to enter, but you need a permission slip to go to the second floor.")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   34
+ PAGE   1
+  If(1,1028,0,7,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Soldier>Ungh. Unghh... C'mon, stop waking me up.")
+   0()
+  EndIf()
+  If(1,1028,0,8,0)
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Soldier>It's best to sleep in your free time. It's common practice among Sabasa soldiers. I learned that in the last expedition.")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("59")
+   ShowMessageFace("mdg_fc1",0,0,2,3)
+   ShowMessage("\\n<Ragora>I've known that ever since I was born. Now then, let's have a good sleep.")
+   EndEventProcessing()
+   DefineLabel("141")
+   ShowMessageFace("mino_fc1",0,0,2,4)
+   ShowMessage("\\n<Mina>After all, you can't sleep when you're fighting!")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   35
+ PAGE   1
+  If(1,1001,0,25,2)
+   If(1,1028,0,7,2)
+    ShowMessageFace("",0,0,2,1)
+    ShowMessage("\\n<Soldier>Those who went to war against Grangold should return soon. Since they're elite warriors, they shouldn't have much trouble.")
+    0()
+   EndIf()
+   If(1,1028,0,8,0)
+    ShowMessageFace("",0,0,2,2)
+    ShowMessage("\\n<Soldier>I have returned from the expedition. But I have to say: what's up with Grangold's army?")
+    ShowMessageFace("",0,0,2,3)
+    ShowMessage("\\n<Soldier>Their forces consist of all Ant Girls and Automatons. They don't have any human soldiers. What on earth is going on in that country?")
+    355("actor_label_jump")
+    EndEventProcessing()
+    DefineLabel("81")
+    ShowMessageFace("mitubati_fc1",0,0,2,4)
+    ShowMessage("\\n<Honey>Ant Girls won't listen to human orders. Surely, the Ant Queen must be leading them.")
+    EndEventProcessing()
+    DefineLabel("131")
+    ShowMessageFace("doll_fc1",0,0,2,5)
+    ShowMessage("\\n<Miyabi>I wonder if I can become friends with the Automaton soldiers...")
+    EndEventProcessing()
+    0()
+   EndIf()
+   0()
+  EndIf()
+  If(1,1001,0,26,1)
+   ShowMessageFace(binary"",0,0,2,6)
+   ShowMessage("[Soldier]")
+   ShowMessage("Is this the enemy the demon king ......")
+   ShowMessage("Soldiers just fight according to the order.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   36
+ PAGE   1
+  If(1,1001,0,25,2)
+   If(1,1028,0,7,2)
+    ShowMessageFace("",0,0,2,1)
+    ShowMessage("\\n<Knight>Ever since the new queen was crowned, many untrustworthy soldiers were recruited. If an emergency were to arise, they'd prove to be absolutely useless.")
+    ShowMessageFace("",0,0,2,2)
+    ShowMessage("\\n<Knight>The conflict between the veteran soldiers and the new recruits has only become worse as of late. The heroic traditions of Sabasa's military are coming to an end.")
+    0()
+   EndIf()
+   If(1,1028,0,8,0)
+    ShowMessageFace("",0,0,2,3)
+    ShowMessage("\\n<Knight>When we tried to put the new soldiers through proper training, they immediately resigned. After they left, everything returned to how it was during the reign of the previous king.")
+    ShowMessageFace("",0,0,2,4)
+    ShowMessage("\\n<Knight>Morale is much greater now compared to how it was when those thugs were in our ranks. The heroic traditions of Sabasa's military haven't really been lost to us yet.")
+    0()
+   EndIf()
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,26,1)
+   ShowMessageFace(binary"",0,0,2,5)
+   ShowMessage("[Knight]")
+   ShowMessage("The vampire flames are a weak point.")
+   ShowMessage("I had mastered the flame sword skill, so I managed to fight it yet ... ...")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   37
+ PAGE   1
+  If(1,1001,0,25,2)
+   If(1,1028,0,7,2)
+    ShowMessageFace("",0,0,2,1)
+    ShowMessage("\\n<Knight>Hey, what're ya lookin' at? I'm a knight under the queen's direct command, ya hear?")
+    0()
+   EndIf()
+   If(1,1028,0,8,0)
+    ShowMessageFace("",0,0,2,2)
+    ShowMessage("\\n<Knight>Now that the expeditionary force is back, those who have fought against Grangold's army talk about how strange their troops are.")
+    ShowMessageFace("",0,0,2,3)
+    ShowMessage("\\n<Knight>I wonder what could be going on in that country...")
+    355("actor_label_jump")
+    EndEventProcessing()
+    DefineLabel("531")
+    ShowMessageFace("saniria_fc2",0,0,2,4)
+    ShowMessage("\\n<King of San Ilia>I initially doubted the reports from our knights, but I'm starting to believe them. Is Grangold no longer a human country?")
+    EndEventProcessing()
+    0()
+   EndIf()
+   0()
+  EndIf()
+  If(1,1001,0,26,1)
+   ShowMessageFace(binary"",0,0,2,5)
+   ShowMessage("[Knight]")
+   ShowMessage("In the fight against Grangold, I lost a lot of my friends.")
+   ShowMessage("Because the spirit of King Gord is manipulated, you can smile and forgive ......")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   38
+ PAGE   1
+  If(1,1001,0,25,2)
+   If(1,1028,0,7,2)
+    ShowMessageFace("",0,0,2,1)
+    ShowMessage("\\n<Knight>Hee! So this is the first King of Sabasa? He looks really metallic!")
+    0()
+   EndIf()
+   If(1,1028,0,8,0)
+    ShowMessageFace("",0,0,2,2)
+    ShowMessage("\\n<Knight>For the next expedition, I am to lead an entire unit. Your Majesty the First, please protect us.")
+    355("actor_label_jump")
+    EndEventProcessing()
+    DefineLabel("529")
+    ShowMessageFace("sara_fc1",1,0,2,3)
+    ShowMessage("\\n<Sara>It's all right. You just have to do what you normally do during training.")
+    ShowMessageFace("",0,0,2,4)
+    ShowMessage("\\n<Knight>Yes, ma'am! Our country surely shall triumph over Grangold!")
+    EndEventProcessing()
+    0()
+   EndIf()
+   0()
+  EndIf()
+  If(1,1001,0,26,1)
+   ShowMessageFace(binary"",0,0,2,5)
+   ShowMessage("[Knight]")
+   ShowMessage("The first Sabbatha king, the courage to fight me with the Satan army ... ...")
+   ShowMessage("And victory and blessing to the brave Luca ......")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   39
+ PAGE   1
+  If(1,1001,0,25,2)
+   If(1,1028,0,7,2)
+    ShowMessageFace("",0,0,2,1)
+    ShowMessage("\\n<Maid>The queen eats whatever she wants. To think she eats so much and doesn't gain any weight... I envy her.")
+    EndEventProcessing()
+    0()
+   EndIf()
+   If(1,1028,0,8,0)
+    ShowMessageFace("",0,0,2,2)
+    ShowMessage("\\n<Maid>Proper discipline has finally returned in the castle. I think it would be better if it were a little less strict, but...")
+    EndEventProcessing()
+    0()
+   EndIf()
+   0()
+  EndIf()
+  If(1,1001,0,26,1)
+   ShowMessageFace(binary"",0,0,2,3)
+   ShowMessage("【Maid】")
+   ShowMessage("Since the declaration of Declaration of the Devil, the inside of the castle has been worried.")
+   ShowMessage("It is the first time in 500 years, such as the war of humans and demons ... ...")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   40
+ PAGE   1
+  If(1,1028,0,7,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Royal Guard>I stole the queen's panties from her room. Hehe... I love this job.")
+   If(0,6,0)
+    ShowMessageFace("sonia_fc4",0,0,2,2)
+    ShowMessage("\\n<Sonya>To think they recruited a pervert like this as a guard...")
+    0()
+   EndIf()
+   0()
+  EndIf()
+  If(1,1028,0,8,0)
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("\\n<Royal Guard>I snatched panties from Lady Sara's room. Hehe... I love this job.")
+   If(0,6,0)
+    ShowMessageFace("sonia_fc3",2,0,2,4)
+    ShowMessage("\\n<Sonya>Aren't you an elite soldier from the previous king's reign?! You're just the same as those other thug guards!")
+    ShowMessageFace("",0,0,2,5)
+    ShowMessage("\\n<Royal Guard>K-keep it a secret! I beg you! I was born in Pornof and moved here. I managed to get promoted since then!")
+    ShowMessageFace("sonia_fc3",0,0,2,6)
+    ShowMessage("\\n<Sonya>So he really came from that town... I'm gonna kill him.")
+    0()
+   EndIf()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   41
+ PAGE   1
+  // condition: variable 1028 >= 8
+  If(1,1001,0,19,2)
+   If(1,1028,0,7,2)
+    ShowMessageFace("",0,0,2,1)
+    ShowMessage("\\n<Maid>These perverts dare to call themselves Sabasa's soldiers. O Your Former Majesty, please forgive our incompetence.")
+    EndEventProcessing()
+    0()
+   EndIf()
+   If(1,1028,0,8,0)
+    ShowMessageFace("",0,0,2,2)
+    ShowMessage("\\n<Maid>Even after abdicating her position as queen, Sara remains extremely popular. She'll probably even be elected as president...")
+    355("actor_label_jump")
+    EndEventProcessing()
+    DefineLabel("529")
+    ShowMessageFace("sara_fc1",4,0,2,3)
+    ShowMessage("\\n<Sara>I think the role of a president suits me even less than that of a queen.")
+    EndEventProcessing()
+    0()
+   EndIf()
+   0()
+  EndIf()
+  If(1,1001,0,20,1)
+   ShowMessageFace(binary"",0,0,2,4)
+   ShowMessage("[Maidama]")
+   ShowMessage("After all, the citizen needs Queen Sarah.")
+   ShowMessage("Congratulations on re-appointment to the Queen!")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   42
+ PAGE   1
+  If(1,1001,0,30,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Guard>Sabasa's warriors long to have armor made from crystal. However, the crafting technique is only handed down in Saloon.")
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Guard>Because of that, there are only a few people who have access to that armor. I wish I had that...")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,31,1)
+   ShowMessageFace(binary"",0,0,2,3)
+   ShowMessage("Guards")
+   ShowMessage("Your activity, I was watching closely.")
+   ShowMessage("It is a tremendous arm to overwhelm such a strong vampire ... ...")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   43
+ PAGE   1
+  If(1,1028,0,7,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Soldier>What a drag! Even breathing is a pain in the ass!")
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Soldier>Whew... I feel better after getting that out of my system!")
+   0()
+  EndIf()
+  If(1,1028,0,8,0)
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("\\n<Soldier>Saki-chaaan... *twinkle* ☆")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("155")
+   ShowMessageFace("saki_fc1",3,0,2,4)
+   ShowMessage("\\n<Saki>Thanks for your support! ☆")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   44
+ PAGE   1
+  If(1,1001,0,25,2)
+   If(1,1028,0,7,2)
+    ShowMessageFace("",0,0,2,1)
+    ShowMessage("\\n<Soldier>I want to finish work quickly and goof off in Grandeur.")
+    0()
+   EndIf()
+   If(1,1028,0,8,0)
+    ShowMessageFace("",0,0,2,2)
+    ShowMessage("\\n<Soldier>The members of the expeditionary force have returned and provided us with useful information on the war against Grangold. It's a hot topic among those in Sabasa.")
+    ShowMessageFace("",0,0,2,3)
+    ShowMessage("\\n<Soldier>I can't deny that there are some who are shaken by that information, but morale has improved after learning what we're up against. We don't want such abominations trampling over our homeland!")
+    0()
+   EndIf()
+   0()
+  EndIf()
+  If(1,1001,0,26,1)
+   ShowMessageFace(binary"",0,0,2,4)
+   ShowMessage("[Soldier]")
+   ShowMessage("Who is the brave Ruka?")
+   ShowMessage("The trust of Queen Sara and Queen of Grand Noah is to thicken, to drop a few grand Gurudorudo ... ...")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   45
+ PAGE   1
+  If(1,1001,0,25,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Guard>Grangold killed the residents of a village called Lima along the border. Men alone were abducted, and the remaining women, children, and elders were all slaughtered...")
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Guard>Sabasa was initially against participating in a military alliance. But once we heard that Grangold was slaughtering women and children, we realized we couldn't just sit idly by.")
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("\\n<Guard>If we did just stand by and watch, then those atrocities could very well repeat in Sabasa's territory. We cannot allow this to happen again.")
+   If(1,1028,0,7,2)
+    ShowMessageFace("",0,0,2,4)
+    ShowMessage("\\n<Guard>But the idea of withdrawing from the alliance... Why would the queen even consider such a thing? Surely, she must know what is at stake.")
+    0()
+   EndIf()
+   If(1,1028,0,8,0)
+    ShowMessageFace("",0,0,2,5)
+    ShowMessage("\\n<Guard>I will be a member of the next expedition into Grangold territory. Grangold's despicable actions have to be put to a stop, no matter what cost!")
+    355("actor_label_jump")
+    EndEventProcessing()
+    DefineLabel("140")
+    ShowMessageFace("taran_fc1",0,0,2,6)
+    ShowMessage("\\n<Rachura>War is bad, right? Can't we all just get along?")
+    EndEventProcessing()
+    0()
+   EndIf()
+   0()
+  EndIf()
+  If(1,1001,0,26,1)
+   ShowMessageFace(binary"",0,0,2,7)
+   ShowMessage("Guards")
+   ShowMessage("With the conclusion of the Gordes war, participation in expedition forces has ceased.")
+   ShowMessage("But there is no time to stroke my chest, and what is the fight with the Magus army ... ...")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   46
+ PAGE   1
+  If(1,1001,0,25,2)
+   If(1,1028,0,7,2)
+    ShowMessageFace("",0,0,2,1)
+    ShowMessage("\\n<Soldier>Hell yeah, this job is awesome! All I have to do is stand here all day!")
+    ShowMessageFace("",0,0,2,2)
+    ShowMessage("\\n<Soldier>Ain't this a waste of taxes? This IS a waste of our taxes, right?")
+    0()
+   EndIf()
+   If(1,1028,0,8,0)
+    ShowMessageFace("",0,0,2,3)
+    ShowMessage("\\n<Soldier>Luddite Village was destroyed. According to the rumors, it was caused by the same yoma who tried to throw our country into political ruin.")
+    ShowMessageFace("",0,0,2,4)
+    ShowMessage("\\n<Soldier>If that is the case, Sabasa itself could be next on their list of annihilation. We will be ready for them if they do attack.")
+    355("actor_label_jump")
+    EndEventProcessing()
+    DefineLabel("141")
+    ShowMessageFace("mino_fc1",0,0,2,5)
+    ShowMessage("\\n<Mina>All righty, do your best!")
+    EndEventProcessing()
+    0()
+   EndIf()
+   0()
+  EndIf()
+  If(1,1001,0,26,1)
+   ShowMessageFace(binary"",0,0,2,6)
+   ShowMessage("[Soldier]")
+   ShowMessage("Never give in to the demon king!")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   47
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Vassal>The previous king was very distressed over the state of Magistea Village, but he was unable to intervene because of their independence laws.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Vassal>He sent troops to Magistea to investigate time and time again, but with their legal mess, they refused his help.")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Vassal>Because of our country's laws, we couldn't simply use force to assist. Doing so would be breaking our own law. As a result of this, Magistea Village has turned into the dark part of our country.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("163")
+  ShowMessageFace("lily_fc1",3,0,2,4)
+  ShowMessage("\\n<Lily>Hmph. How selfish.")
+  EndEventProcessing()
+  DefineLabel("167")
+  ShowMessageFace("lusia_fc1",2,0,2,5)
+  ShowMessage("\\n<Lucia>Although we understand the situation with our government, we won't pretend that we're not disappointed.")
+  EndEventProcessing()
+  DefineLabel("529")
+  ShowMessageFace("sara_fc1",4,0,2,6)
+  ShowMessage("\\n<Sara>All responsibility lies in the government. We wouldn't ever leave it up to innocent villagers to decide.")
+  EndEventProcessing()
+  0()
+
+
+

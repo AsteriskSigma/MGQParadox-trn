@@ -1,0 +1,1454 @@
+
+
+
+EVENT   1
+ PAGE   1
+  0()
+
+
+
+EVENT   2
+ PAGE   1
+  0()
+
+
+
+EVENT   3
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,223,35,5,0,0)
+  0()
+
+
+
+EVENT   4
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,223,36,5,0,0)
+  0()
+
+
+
+EVENT   5
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,339,15,26,0,0)
+  0()
+
+
+
+EVENT   6
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,339,16,26,0,0)
+  0()
+
+
+
+EVENT   7
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,339,5,39,0,0)
+  0()
+
+
+
+EVENT   8
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,339,6,39,0,0)
+  0()
+
+
+
+EVENT   9
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,339,20,43,0,0)
+  0()
+
+
+
+EVENT   10
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,339,21,43,0,0)
+  0()
+
+
+
+EVENT   11
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,339,14,17,0,0)
+  0()
+
+
+
+EVENT   12
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,339,15,17,0,0)
+  0()
+
+
+
+EVENT   13
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,223,35,24,0,0)
+  0()
+
+
+
+EVENT   14
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,223,34,24,0,0)
+  0()
+
+
+
+EVENT   15
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Books are neatly arranged on the shelves. There are no signs of a struggle.")
+  0()
+ PAGE   2
+  // condition: variable 1011 >= 4
+  0()
+
+
+
+EVENT   16
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("There's a note written at the bottom of the sign: 'Inn temporarily closed for business.'")
+  If(0,4,0)
+   ShowMessageFace("alice_fc5",0,0,2,2)
+   ShowMessage("\\n<Alice>They must have left of their own will if they had time to write a note like this.")
+   ShowMessageFace("alice_fc5",0,0,2,3)
+   ShowMessage("\\n<Alice>It also implies that they intend to return. Considering how many months it's been, I guess something unexpected happened to them.")
+   0()
+  EndIf()
+  If(0,5,0)
+   ShowMessageFace("iriasu_fc4",2,0,2,4)
+   ShowMessage("\\n<Ilias>They must have left of their own will if they had time to write a note like this.")
+   ShowMessageFace("iriasu_fc4",2,0,2,5)
+   ShowMessage("\\n<Ilias>It also implies that they intend to return. Considering how many months have passed, I feel something unexpected must have happened to them.")
+   0()
+  EndIf()
+  0()
+ PAGE   2
+  // condition: variable 1011 >= 4
+  0()
+
+
+
+EVENT   17
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Books are neatly arranged on the shelves. There are no signs of a struggle.")
+  0()
+ PAGE   2
+  // condition: variable 1011 >= 4
+  0()
+
+
+
+EVENT   18
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Books are neatly arranged on the shelves. There are no signs of a struggle.")
+  0()
+ PAGE   2
+  // condition: variable 1011 >= 4
+  0()
+
+
+
+EVENT   19
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("It looks like they left in the middle of preparing dinner.")
+  0()
+ PAGE   2
+  // condition: variable 1011 >= 3
+  0()
+
+
+
+EVENT   20
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("A note is scrawled on the pad: 'Be back soon. Don't worry about us.'")
+  If(0,4,0)
+   ShowMessageFace("alice_fc5",0,0,2,2)
+   ShowMessage("\\n<Alice>They've been gone for months though. Did something unforseen happen?")
+   0()
+  EndIf()
+  If(0,5,0)
+   ShowMessageFace("iriasu_fc4",2,0,2,3)
+   ShowMessage("\\n<Ilias>They've been gone for months though. Surely something unforseen must have happened?")
+   0()
+  EndIf()
+  0()
+ PAGE   2
+  // condition: variable 1011 >= 3
+  0()
+
+
+
+EVENT   21
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Some of the food left out is rotting...")
+  0()
+ PAGE   2
+  // condition: variable 1011 >= 3
+  0()
+
+
+
+EVENT   22
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Some of the food left out is rotting...")
+  0()
+ PAGE   2
+  // condition: variable 1011 >= 3
+  0()
+
+
+
+EVENT   23
+ PAGE   1
+  // condition: variable 1011 >= 1
+  PictureDisplay(5,"80_nero_st01b",0,0,0,0,100,100,0,0)
+  PictureMove(5,null,0,0,0,0,100,100,255,0,60,true)
+  If(1,1011,0,1,0)
+   ShowMessageFace("nero_fc1",0,0,2,1)
+   ShowMessage("\\n<Nero>Oh, it's you guys.")
+   If(4,62,0)
+    ShowMessageFace("gob_fc1",3,0,2,2)
+    ShowMessage("\\n<Gob>Whoa! Now this looks suspicious!")
+    0()
+   EndIf()
+   If(4,79,0)
+    ShowMessageFace("nuruko_fc1",0,0,2,3)
+    ShowMessage("\\n<Nuruko>Kyuu!")
+    0()
+   EndIf()
+   If(4,66,0)
+    ShowMessageFace("vgirl_fc1",1,0,2,4)
+    ShowMessage("\\n<Vanilla>Those clothes are so cool...! Where did you buy them, I want a set too!")
+    ShowMessageFace("nero_fc1",0,0,2,5)
+    ShowMessage("\\n<Nero>I made them myself.")
+    ShowMessageFace("vgirl_fc1",0,0,2,6)
+    ShowMessage("\\n<Vanilla>W... What!?")
+    0()
+   EndIf()
+   If(0,4,0)
+    ShowMessageFace("alice_fc5",2,0,2,7)
+    ShowMessage("\\n<Alice>The hell are you doing here? Don't tell me you're responsible for the harpies' disappearance!")
+    0()
+   EndIf()
+   If(0,5,0)
+    ShowMessageFace("iriasu_fc4",2,0,2,8)
+    ShowMessage("\\n<Ilias>You again... What on earth are you doing here? Wait, were you the one who exterminated the harpies!?")
+    0()
+   EndIf()
+   ShowMessageFace("nero_fc1",0,0,2,9)
+   ShowMessage("\\n<Nero>No no, don't jump to conclusions. I simply heard the rumors and came to investigate.")
+   If(0,6,0)
+    ShowMessageFace("sonia_fc2",2,0,2,10)
+    ShowMessage("\\n<Sonya>Is that so... Did you discover anything?")
+    0()
+   Else()
+    ShowMessageFace("ruka_fc1",0,0,2,11)
+    ShowMessage("\\n<Luka>Well, did you discover anything?")
+    0()
+   EndIf()
+   ShowMessageFace("nero_fc1",0,0,2,12)
+   ShowMessage("\\n<Nero>Indeed. I think I've got a good idea about what happened. The Queen kept a journal hidden here in her house.")
+   ShowMessageFace("nero_fc1",0,0,2,13)
+   ShowMessage("\\n<Nero>According to what I've read, a strange disease began to spread through the village about a month before they disappeared.")
+   ShowMessageFace("nero_fc1",0,0,2,14)
+   ShowMessage("\\n<Nero>The disease made them so crazy with lust that they'd attack any men on sight. It appears to be ALKQ5 Lust Fever, an infectious disease that only affects birds.")
+   If(0,4,0)
+    ShowMessageFace("alice_fc6",0,0,2,15)
+    ShowMessage("\\n<Alice>An infectious disease? But all the diseases that infected monsters were supposedly wiped out...")
+    ShowMessageFace("nero_fc1",0,0,2,16)
+    ShowMessage("\\n<Nero>Yes, ALKQ5 Lust Fever is an ancient disease that was eradicated a thousand years ago. Yet here it is again.")
+    0()
+   EndIf()
+   If(0,5,0)
+    ShowMessageFace("iriasu_fc4",2,0,2,17)
+    ShowMessage("\\n<Ilias>ALKQ5 Lust Fever!? That virus should have been eradicated ages ago...")
+    ShowMessageFace("nero_fc1",0,0,2,18)
+    ShowMessage("\\n<Nero>It was originally created as a biological weapon during the Great Monster Wars... By your side...")
+    ShowMessageFace("nero_fc1",0,0,2,19)
+    ShowMessage("\\n<Nero>I assume that makes you well acquainted with the situation.")
+    ShowMessageFace("iriasu_fc4",7,0,2,20)
+    ShowMessage("\\n<Ilias>......")
+    0()
+   EndIf()
+   ShowMessageFace("nero_fc1",0,0,2,21)
+   ShowMessage("\\n<Nero>Anyway, the harpies lost control and became ferocious. The Queen examined the literature and learned that it was a disease that was supposedly wiped out.")
+   ShowMessageFace("nero_fc1",0,0,2,22)
+   ShowMessage("\\n<Nero>It isn't fatal, but it does act on the hormonal system to greatly increase the urge to breed.")
+   ShowMessageFace("nero_fc1",0,0,2,23)
+   ShowMessage("\\n<Nero>The only known treatment is to avoid contact with human males, which is why the harpies quarantined themselves.")
+   ShowMessageFace("nero_fc1",0,0,2,24)
+   ShowMessage("\\n<Nero>They chose the harpy tower directly north of here and are probably locked in there recuperating still.")
+   If(4,66,0)
+    ShowMessageFace("vgirl_fc1",2,0,2,25)
+    ShowMessage("\\n<Vanilla>An epidemic? So that's why they all abandoned their homes...")
+    0()
+   EndIf()
+   If(4,79,0)
+    ShowMessageFace("nuruko_fc1",2,0,2,26)
+    ShowMessage("\\n<Nuruko>Kyu...")
+    0()
+   EndIf()
+   If(0,4,0)
+    ShowMessageFace("alice_fc5",2,0,2,27)
+    ShowMessage("\\n<Alice>But why is such a strange disease present in the modern day? Was it not destroyed back then?")
+    0()
+   EndIf()
+   If(0,5,0)
+    ShowMessageFace("iriasu_fc4",2,0,2,28)
+    ShowMessage("\\n<Ilias>Yet why is ALKQ5 Lust Fever still around? The second Monster Lord's health and sanitation policies should have eradicated it for good.")
+    0()
+   EndIf()
+   ShowMessageFace("nero_fc1",0,0,2,29)
+   ShowMessage("\\n<Nero>There's probably a virus carrier. Someone who still has the ancient virus in their body.")
+   If(0,4,0)
+    ShowMessageFace("alice_fc6",0,0,2,30)
+    ShowMessage("\\n<Alice>Who could that be, and why would they even have it?")
+    0()
+   EndIf()
+   If(0,5,0)
+    ShowMessageFace("iriasu_fc4",7,0,2,31)
+    ShowMessage("\\n<Ilias>Who could that be, and why in the world would they even have it?")
+    0()
+   EndIf()
+   ShowMessageFace("nero_fc1",0,0,2,32)
+   ShowMessage("\\n<Nero>...there is another possibility to consider. If someone from ancient times appeared here...")
+   If(0,6,0)
+    ShowMessageFace("sonia_fc2",3,0,2,33)
+    ShowMessage("\\n<Sonya>No way, you can't mean...")
+    0()
+   EndIf()
+   ShowMessageFace("nero_fc1",0,0,2,34)
+   ShowMessage("\\n<Nero>More pressingly, the harpies are still locked up in their tower.")
+   ShowMessageFace("nero_fc1",0,0,2,35)
+   ShowMessage("\\n<Nero>It could take decades of them waiting it out to completely recover. They'll need medicine to cure the disease any faster.")
+   If(4,66,0)
+    ShowMessageFace("vgirl_fc1",2,0,2,36)
+    ShowMessage("\\n<Vanilla>I don't know of any medicine for such an old epidemic... I still need to learn a lot as a merchant...")
+    0()
+   EndIf()
+   If(1,1001,0,29,2)
+    If(0,4,0)
+     ShowMessageFace("alice_fc5",0,0,2,37)
+     ShowMessage("\\n<Alice>If we had access to the World Tree Yggdrasil that the second Monster Lord planted, we could use its fruit to cure anything.")
+     ShowMessageFace("alice_fc5",3,0,2,38)
+     ShowMessage("\\n<Alice>Unfortunately, that's in Queen Alraune's domain, and there's no way we could get there at our current strength.")
+     0()
+    EndIf()
+    If(0,5,0)
+     ShowMessageFace("iriasu_fc4",2,0,2,39)
+     ShowMessage("\\n<Ilias>The fruit of the World Tree Yggdrasil would be ideal for curing ALKQ5 Lust Fever, but we aren't strong enough to get any.")
+     0()
+    EndIf()
+    0()
+   Else()
+    If(0,4,0)
+     ShowMessageFace("alice_fc5",0,0,2,40)
+     ShowMessage("【Alice】")
+     ShowMessage("If it is a medicine, or a world tree planted by the 2nd generation Demonoid ... ...")
+     ShowMessage("If that fruit becomes that spirit tree, you should be able to cure all kinds of illness.")
+     0()
+    EndIf()
+    If(0,5,0)
+     ShowMessageFace("iriasu_fc4",2,0,2,41)
+     ShowMessage("【Iliad】")
+     ShowMessage("Alke Q5 If you treat hell of fever, surely the fruits of world trees are the best ...")
+     0()
+    EndIf()
+    0()
+   EndIf()
+   PictureDisplay(5,"80_nero_st02b",0,0,0,0,100,100,255,0)
+   ShowMessageFace("nero_fc1",1,0,2,42)
+   ShowMessage("\\n<Nero>I thought something like this might happen! I'm actually carrying some [Yggdrasil Fruit] on me.")
+   PictureDisplay(5,"80_nero_st01b",0,0,0,0,100,100,255,0)
+   ShowMessageFace("nero_fc1",0,0,2,43)
+   ShowMessage("\\n<Nero>Please get the harpies to each swallow a bit of it. There should be enough to go around.")
+   250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+   ChangeInventory_Item(508,0,0,1)
+   If(0,4,0)
+    ShowMessageFace("alice_fc5",5,0,2,44)
+    ShowMessage("\\n<Alice>Is this really the fruit of the world tree? You aren't trying to trick us into poisoning them, are you?")
+    0()
+   EndIf()
+   If(0,5,0)
+    ShowMessageFace("iriasu_fc4",2,0,2,45)
+    ShowMessage("\\n<Ilias>Is this really the fruit of the world tree? I doubt you'd be trying to trick us into poisoning them or anything, but...")
+    0()
+   EndIf()
+   PictureDisplay(5,"80_nero_st03b",0,0,0,0,100,100,255,0)
+   ShowMessageFace("nero_fc1",2,0,2,46)
+   ShowMessage("\\n<Nero>You don't trust me? Am I really that suspicious?")
+   ShowChoices(strings("Yes","No"),2)
+   IfPlayerPicksChoice(0,null)
+    ShowMessageFace("ruka_fc1",0,0,2,47)
+    ShowMessage("\\n<Luka>Yes, very much so.")
+    If(4,62,0)
+     ShowMessageFace("gob_fc1",3,0,2,48)
+     ShowMessage("\\n<Gob>I've never seen anyone more suspicious in my life.")
+     0()
+    EndIf()
+    ShowMessageFace("nero_fc1",2,0,2,49)
+    ShowMessage("\\n<Nero>...I have nothing to gain by tricking you with this. Please, have faith in me.")
+    PictureDisplay(5,"80_nero_st01b",0,0,0,0,100,100,255,0)
+    0()
+   IfPlayerPicksChoice(1,null)
+    PictureDisplay(5,"80_nero_st01b",0,0,0,0,100,100,255,0)
+    ShowMessageFace("ruka_fc1",0,0,2,50)
+    ShowMessage("\\n<Luka>No, I think we can trust what you've told us.")
+    If(4,68,0)
+     ShowMessageFace("dragonp_fc1",0,0,2,51)
+     ShowMessage("\\n<Papi>I can tell you have an honest heart behind those suspicious glasses!")
+     0()
+    EndIf()
+    ShowMessageFace("nero_fc1",0,0,2,52)
+    ShowMessage("\\n<Nero>That's good to hear, thank you. I always get treated with suspicion no matter where I go.")
+    ShowMessageFace("ruka_fc1",0,0,2,53)
+    ShowMessage("\\n<Luka>(Is he really surprised by that...)")
+    0()
+   404()
+   DefineLabel("1")
+   ShowMessageFace("nero_fc1",0,0,2,54)
+   ShowMessage("\\n<Nero>I'll leave the harpies to you. As I said before, the harpy tower is far north of here.")
+   ShowMessageFace("nero_fc1",0,0,2,55)
+   ShowMessage("\\n<Nero>Many of them have probably gone crazy so please be careful.")
+   ShowMessageFace("nero_fc1",0,0,2,56)
+   ShowMessage("\\n<Nero>I've got some things to take care of myself. Let's all work hard together...")
+   ShowMessageFace("",0,0,2,57)
+   ShowMessage("With a teacup in hand, Nero begins reading the Queen's journal.")
+   ShowMessageFace("ruka_fc1",0,0,2,58)
+   ShowMessage("\\n<Luka>...a teacup!?")
+   ShowMessageFace("nero_fc1",0,0,2,59)
+   ShowMessage("\\n<Nero>It's my personal cup, of course. I wouldn't use someone else's things without permission.")
+   ShowMessageFace("ruka_fc1",0,0,2,60)
+   ShowMessage("\\n<Luka>(That's even weirder...)")
+   ChangeVariable(1011,1011,0,0,2)
+   PictureClear(5)
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1011,0,2,0)
+   If(0,6,0)
+    ShowMessageFace("sonia_fc2",2,0,2,61)
+    ShowMessage("\\n<Sonya>So... why didn't the harpies tell the residents of Happiness Village about the disease?")
+    0()
+   Else()
+    ShowMessageFace("ruka_fc1",0,0,2,62)
+    ShowMessage("\\n<Luka>So... why didn't the harpies tell the residents of Happiness Village about the disease?")
+    0()
+   EndIf()
+   ShowMessageFace("nero_fc1",0,0,2,63)
+   ShowMessage("\\n<Nero>Perhaps they wanted to avoid scaring them. They wouldn't have wanted people to know that the number of insane harpies were increasing.")
+   If(4,66,0)
+    ShowMessageFace("vgirl_fc1",2,0,2,64)
+    ShowMessage("\\n<Vanilla>It could have hurt their relations with humans...")
+    0()
+   EndIf()
+   ShowMessageFace("nero_fc1",0,0,2,65)
+   ShowMessage("\\n<Nero>They were hoping to find a solution before anyone found out. That's what the Queen wrote in her journal, at least.")
+   ShowMessageFace("nero_fc1",0,0,2,66)
+   ShowMessage("\\n<Nero>However, it wasn't that easy. In the end, they hid themselves away without saying anything to the villagers.")
+   If(4,62,0)
+    ShowMessageFace("gob_fc1",0,0,2,67)
+    ShowMessage("\\n<Gob>We've got to help them then!")
+    If(4,79,0)
+     ShowMessageFace("nuruko_fc1",0,0,2,68)
+     ShowMessage("\\n<Nuruko>Kyu kyu kyu!")
+     0()
+    EndIf()
+    0()
+   EndIf()
+   JumpToLabel("1")
+   0()
+  EndIf()
+  0()
+ PAGE   2
+  // condition: variable 1011 >= 3
+  0()
+
+
+
+EVENT   24
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("[History of the Harpy Race], [Genealogy of the Avian Royal Family], and other such books are lined up on the shelves. There are a few romance novels hiding behind them...")
+  0()
+
+
+
+EVENT   25
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("[History of the Harpy Race], [Genealogy of the Avian Royal Family], and other such books are lined up on the shelves. There are a few romance novels hiding behind them...")
+  0()
+
+
+
+EVENT   26
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("[History of the Harpy Race], [Genealogy of the Avian Royal Family], and other such books are lined up on the shelves. There are a few romance novels hiding behind them...")
+  0()
+
+
+
+EVENT   27
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("[History of the Harpy Race], [Genealogy of the Avian Royal Family], and other such books are lined up on the shelves. There are a few romance novels hiding behind them...")
+  0()
+
+
+
+EVENT   28
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Various items have been left out. I'd feel bad for taking any of them though.")
+  0()
+ PAGE   2
+  // condition: variable 1011 >= 4
+  0()
+
+
+
+EVENT   29
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Various items have been left out. I'd feel bad for taking any of them though.")
+  0()
+ PAGE   2
+  // condition: variable 1011 >= 4
+  0()
+
+
+
+EVENT   30
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Various items have been left out. I'd feel bad for taking any of them though.")
+  0()
+ PAGE   2
+  // condition: variable 1011 >= 4
+  0()
+
+
+
+EVENT   31
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Various items have been left out. I'd feel bad for taking any of them though.")
+  0()
+ PAGE   2
+  // condition: variable 1011 >= 4
+  0()
+
+
+
+EVENT   32
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Various items have been left out. I'd feel bad for taking any of them though.")
+  0()
+ PAGE   2
+  // condition: variable 1011 >= 4
+  0()
+
+
+
+EVENT   33
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Various items have been left out. I'd feel bad for taking any of them though.")
+  0()
+ PAGE   2
+  // condition: variable 1011 >= 4
+  0()
+
+
+
+EVENT   34
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Various items have been left out. I'd feel bad for taking any of them though.")
+  0()
+ PAGE   2
+  // condition: variable 1011 >= 4
+  0()
+
+
+
+EVENT   35
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Various items have been left out. I'd feel bad for taking any of them though.")
+  0()
+ PAGE   2
+  // condition: variable 1011 >= 4
+  0()
+
+
+
+EVENT   36
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Various items have been left out. I'd feel bad for taking any of them though.")
+  0()
+ PAGE   2
+  // condition: variable 1011 >= 4
+  0()
+
+
+
+EVENT   37
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Books are neatly arranged on the shelves. There are no signs of a struggle.")
+  0()
+ PAGE   2
+  // condition: variable 1011 >= 4
+  0()
+
+
+
+EVENT   38
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Books are neatly arranged on the shelves. There are no signs of a struggle.")
+  0()
+ PAGE   2
+  // condition: variable 1011 >= 4
+  0()
+
+
+
+EVENT   39
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Books are neatly arranged on the shelves. There are no signs of a struggle.")
+  0()
+ PAGE   2
+  // condition: variable 1011 >= 4
+  0()
+
+
+
+EVENT   40
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Books are neatly arranged on the shelves. There are no signs of a struggle.")
+  0()
+ PAGE   2
+  // condition: variable 1011 >= 4
+  0()
+
+
+
+EVENT   41
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Books are neatly arranged on the shelves. There are no signs of a struggle.")
+  0()
+ PAGE   2
+  // condition: variable 1011 >= 4
+  0()
+
+
+
+EVENT   42
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Books are neatly arranged on the shelves. There are no signs of a struggle.")
+  0()
+ PAGE   2
+  // condition: variable 1011 >= 4
+  0()
+
+
+
+EVENT   43
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Books are neatly arranged on the shelves. There are no signs of a struggle.")
+  0()
+ PAGE   2
+  // condition: variable 1011 >= 4
+  0()
+
+
+
+EVENT   44
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Books are neatly arranged on the shelves. There are no signs of a struggle.")
+  0()
+ PAGE   2
+  // condition: variable 1011 >= 4
+  0()
+
+
+
+EVENT   45
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Books are neatly arranged on the shelves. There are no signs of a struggle.")
+  0()
+ PAGE   2
+  // condition: variable 1011 >= 4
+  0()
+
+
+
+EVENT   46
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Books are neatly arranged on the shelves. There are no signs of a struggle.")
+  0()
+ PAGE   2
+  // condition: variable 1011 >= 4
+  0()
+
+
+
+EVENT   47
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Books are neatly arranged on the shelves. There are no signs of a struggle.")
+  0()
+ PAGE   2
+  // condition: variable 1011 >= 4
+  0()
+
+
+
+EVENT   48
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Books are neatly arranged on the shelves. There are no signs of a struggle.")
+  0()
+ PAGE   2
+  // condition: variable 1011 >= 4
+  0()
+
+
+
+EVENT   49
+ PAGE   1
+  // condition: variable 1011 >= 4
+  If(1,1011,0,4,2)
+   ShowMessageFace("hapy_a_fc1",0,0,2,1)
+   ShowMessage("\\n<Harpy>Even with our wings, we can't reach the World Tree. We're counting on you to find some of its fruit for us.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1011,0,5,1)
+   ShowMessageFace("hapy_a_fc1",0,0,2,2)
+   ShowMessage("【Harpy】")
+   ShowMessage("You healed the Queen's disease ... ...")
+   ShowMessage("Thank you for all my heartfelt Harpy.")
+   If(2,"A",1)
+    ShowMessageFace("hapy_a_fc1",0,0,2,3)
+    ShowMessage("【Harpy】")
+    ShowMessage("I can not prepare a big deal ... ....")
+    ShowMessage("I wonder if you will receive this.")
+    ChangeSelfSwitch("A",0)
+    250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+    ChangeInventory_Item(23,0,0,15)
+    ChangeInventory_Item(30,0,0,3)
+    0()
+   EndIf()
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   50
+ PAGE   1
+  // condition: variable 1011 >= 4
+  If(1,1011,0,4,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Siren>We hadn't performed maintenance on this piano in forever, but it's perfectly in tune now.")
+   If(0,4,0)
+    ShowMessageFace("alice_fc5",6,0,2,2)
+    ShowMessage("\\n<Alice>Nero even tuned their piano!? Who IS this guy?")
+    0()
+   EndIf()
+   If(0,5,0)
+    ShowMessageFace("iriasu_fc4",5,0,2,3)
+    ShowMessage("\\n<Ilias>Nero even tuned their piano!? Who IS this guy?")
+    0()
+   EndIf()
+   0()
+  EndIf()
+  0()
+ PAGE   2
+  // condition: variable 1011 >= 5
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Siren】")
+  ShowMessage("Queen, you have not returned here yet ...")
+  ShowMessage("Lonely days continue.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("323")
+  ShowMessageFace("queenhapy_fc1",0,0,2,2)
+  ShowMessage("【Lucrezia】")
+  ShowMessage("Now I have to fight ......")
+  ShowMessage("Be sure to regain peace and return.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   51
+ PAGE   1
+  // condition: variable 1011 >= 4
+  If(1,1011,0,4,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Harpy>The Queen's room is impeccably clean, but I swear it was a wreck when we left...")
+   If(0,4,0)
+    ShowMessageFace("alice_fc5",0,0,2,2)
+    ShowMessage("\\n<Alice>Nero may have cleaned up after himself, but he actually left the place nicer than he found it...?")
+    0()
+   EndIf()
+   If(0,5,0)
+    ShowMessageFace("iriasu_fc4",2,0,2,3)
+    ShowMessage("\\n<Ilias>Don't tell me that Nero did this... I cannot believe that man would leave a room in better shape than he found it.")
+    0()
+   EndIf()
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+ PAGE   2
+  // condition: variable 1011 >= 5
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Harpy】")
+  ShowMessage("Queen, do you follow the journey of the brave?")
+  ShowMessage("I thought that I would stay here for a while, so sorry ....")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("323")
+  ShowMessageFace("queenhapy_fc1",0,0,2,2)
+  ShowMessage("【Lucrezia】")
+  ShowMessage("To save this world with everyone in the village ......")
+  ShowMessage("I will have to leave here for a while.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   52
+ PAGE   1
+  // condition: variable 1011 >= 4
+  If(1,1011,0,4,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Harpy>Huh? The books are all sorted by genre on the shelves now. They were randomly mixed up before.")
+   If(0,4,0)
+    ShowMessageFace("alice_fc5",0,0,2,2)
+    ShowMessage("\\n<Alice>Nero even arranged their books...")
+    0()
+   EndIf()
+   If(0,5,0)
+    ShowMessageFace("iriasu_fc4",2,0,2,3)
+    ShowMessage("\\n<Ilias>Did Nero go so far as to arrange their books?")
+    0()
+   EndIf()
+   0()
+  EndIf()
+  0()
+ PAGE   2
+  // condition: variable 1011 >= 5
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Harpy】")
+  ShowMessage("For the time the Queen came back from the trip ... ...")
+  ShowMessage("Until every corner of the room, I have to clean it ♪")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("323")
+  ShowMessageFace("queenhapy_fc1",0,0,2,2)
+  ShowMessage("【Lucrezia】")
+  ShowMessage("I'll leave it to you.")
+  ShowMessage("Because I get dirty when I clean it ......")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   53
+ PAGE   1
+  // condition: variable 1011 >= 4
+  If(1,1011,0,4,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Harpy>My futon was neatly laid out on the floor when I got home, but I remember just shoving it in a corner. I wonder who did this?")
+   If(0,4,0)
+    ShowMessageFace("alice_fc5",0,0,2,2)
+    ShowMessage("\\n<Alice>Is that Nero guy a clean freak?")
+    0()
+   EndIf()
+   If(0,5,0)
+    ShowMessageFace("iriasu_fc4",2,0,2,3)
+    ShowMessage("\\n<Ilias>That Nero guy appears to be obsessively neat...")
+    0()
+   EndIf()
+   0()
+  EndIf()
+  0()
+ PAGE   2
+  // condition: variable 1011 >= 5
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Harpy】")
+  ShowMessage("When the Queen could go back, I worked properly ♪")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("323")
+  ShowMessageFace("queenhapy_fc1",0,0,2,2)
+  ShowMessage("【Lucrezia】")
+  ShowMessage("Thank you as always……")
+  ShowMessage("Inevitably I am not good at personal things.")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("【Harpy】")
+  ShowMessage("Please come back anytime ♪")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   54
+ PAGE   1
+  // condition: variable 1011 >= 4
+  If(1,1011,0,4,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Harpy>The dinnerware has all been cleaned...")
+   If(0,4,0)
+    ShowMessageFace("alice_fc5",0,0,2,2)
+    ShowMessage("\\n<Alice>Did Nero have too much free time on his hands, or was he so bothered by the mess that he had to clean it up?")
+    0()
+   EndIf()
+   If(0,5,0)
+    ShowMessageFace("iriasu_fc4",2,0,2,3)
+    ShowMessage("\\n<Ilias>Did Nero have too much free time on his hands, or was he so bothered by the mess that he had to clean it up?")
+    0()
+   EndIf()
+   0()
+  EndIf()
+  0()
+ PAGE   2
+  // condition: variable 1011 >= 5
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Harpy】")
+  ShowMessage("For the Queen, I have to keep my room in order ... ...")
+  ShowMessage("Also, it will soon get messed up.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("323")
+  ShowMessageFace("queenhapy_fc1",3,0,2,2)
+  ShowMessage("【Lucrezia】")
+  ShowMessage("This is embarrassing ......")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   55
+ PAGE   1
+  // condition: variable 1011 >= 4
+  If(1,1011,0,4,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Harpy>I have five daughters that all work at the big inn in Iliasburg. They went straight back to work as soon as we left the tower.")
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Harpy>I thought they'd stay with me a bit longer, but they flew off when they heard that a tiny lamia was the only employee helping there without them.")
+   If(0,1064,1)
+    If(0,6,0)
+     ShowMessageFace("sonia_fc1",0,0,2,3)
+     ShowMessage("\\n<Sonya>That should make Teeny's life a lot easier. If she's free, we might be able to enlist her help...")
+     0()
+    EndIf()
+    0()
+   EndIf()
+   0()
+  EndIf()
+  0()
+ PAGE   2
+  // condition: variable 1011 >= 5
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Harpy】")
+  ShowMessage("It seems that the demons' shoulders are narrowing in various towns and villages.")
+  ShowMessage("Are the girls who went to Iliasberg OK?")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("64")
+  ShowMessageFace("pramia_fc1",0,0,2,2)
+  ShowMessage("【Petit】")
+  ShowMessage("Everyone in the town is gentle with demons, so do not worry.")
+  ShowMessage("Harpee 's seniors are working well at lodging well!")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   56
+ PAGE   1
+  // condition: variable 1011 >= 4
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Harpy>10G per night. Would you like to stay?\\$")
+  ShowChoices(strings("Yes","No"),2)
+  IfPlayerPicksChoice(0,null)
+   If(7,10,0)
+    125(1,0,10)
+    221()
+    249(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x08,0x49,0x6e,0x6e,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69))
+    Wait(150)
+    314(0,0)
+    222()
+    0()
+   Else()
+    ShowMessageFace("",0,0,2,2)
+    ShowMessage("\\n<Harpy>You don't have enough money...")
+    0()
+   EndIf()
+   0()
+  IfPlayerPicksChoice(1,null)
+   0()
+  404()
+  0()
+
+
+
+EVENT   57
+ PAGE   1
+  // condition: variable 1011 >= 4
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Harpy>Everyone is doing what they can to help the Queen. No matter what it takes, we're going to get some fruit of the World Tree.")
+  0()
+ PAGE   2
+  // condition: variable 1011 >= 5
+  0()
+
+
+
+EVENT   58
+ PAGE   1
+  // condition: variable 1011 >= 4
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Harpy>Welcome, please buy my items. ♪")
+  Shop(0,1,0,0,false)
+  605(0,11,0,0)
+  605(0,13,0,0)
+  605(0,14,0,0)
+  605(0,17,0,0)
+  605(0,23,0,0)
+  If(1,1005,0,8,0)
+   If(0,2065,0)
+    If(4,66,0)
+     ShowMessageFace("vgirl_fc1",0,0,2,2)
+     ShowMessage("\\n<Vanilla>Hello, my name is Vanilla. I'm a merchant, and I was wondering if I may acquire some Harpy Feathers.")
+     ShowMessageFace("",0,0,2,3)
+     ShowMessage("\\n<Harpy>Yes, of course. After all, you are the companion of our savior.")
+     ShowMessageFace("",0,0,2,4)
+     ShowMessage("Vanilla negotiates an arrangement with the harpy.")
+     ShowMessageFace("",0,0,2,5)
+     ShowMessage("\\n<Harpy>OK, let's do it like that. I'll deliver them once a month.")
+     ShowMessageFace("vgirl_fc1",0,0,2,6)
+     ShowMessage("\\n<Vanilla>Thank you very much! I look forward to dealing with you more in the future!")
+     249(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0c,0x66,0x61,0x6e,0x66,0x61,0x6c,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69))
+     ShowMessageFace("",0,0,2,7)
+     ShowMessage("Vanilla can now sell Harpy Feathers at her shop!")
+     ChangeVariable(1005,1005,0,0,9)
+     ChangeSwitch(2065,2065,1)
+     Wait(60)
+     EndEventProcessing()
+     0()
+    EndIf()
+    0()
+   EndIf()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   59
+ PAGE   1
+  // condition: variable 1011 >= 4
+  If(1,1011,0,4,2)
+   ShowMessageFace("hapy_bc_fc1",0,0,2,1)
+   ShowMessage("\\n<Older Sister Harpy>I'm so glad to be cured.")
+   ShowMessageFace("hapy_bc_fc1",0,0,2,2)
+   ShowMessage("\\n<Younger Sister Harpy>Yeah, but it's a shame about the Queen...")
+   ShowMessageFace("hapy_bc_fc1",0,0,2,3)
+   ShowMessage("\\n<Older Sister Harpy>Everyone is discussing how to help her. We should do what we can to prepare for her return too.")
+   ShowMessageFace("hapy_bc_fc1",0,0,2,4)
+   ShowMessage("\\n<Younger Sister Harpy>Yeah! Let's make the fields pretty again!")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+ PAGE   2
+  // condition: variable 1011 >= 5
+  ShowMessageFace("hapy_bc_fc1",6,0,2,1)
+  ShowMessage("【Harpy's sister】")
+  ShowMessage("The Queen has come back ~ ♪")
+  ShowMessageFace("hapy_bc_fc1",4,0,2,2)
+  ShowMessage("【Harpy older sister】")
+  ShowMessage("It seems I went to adventure with the brave soon, but I'm still happy.")
+  ShowMessage("Next time, when will you come back?")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("323")
+  ShowMessageFace("queenhapy_fc1",0,0,2,3)
+  ShowMessage("【Lucrezia】")
+  ShowMessage("Sometimes, I will return to see everyone's face.")
+  ShowMessageFace("hapy_bc_fc1",6,0,2,4)
+  ShowMessage("【Harpy's sister】")
+  ShowMessage("Oh, my Queen ~ ♪")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   60
+ PAGE   1
+  // condition: variable 1011 >= 4
+  0()
+ PAGE   2
+  // condition: variable 1011 >= 5
+  0()
+
+
+
+EVENT   61
+ PAGE   1
+  // condition: variable 1011 >= 4
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Harpy>Even if we aren't able to get the Fruit of the World Tree, they'll send a second party, and then a third. Someone will eventually succeed.")
+  0()
+ PAGE   2
+  // condition: variable 1011 >= 5
+  0()
+
+
+
+EVENT   62
+ PAGE   1
+  // condition: variable 1011 >= 4
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Harpy>The World Tree is a long flight away, and then we'd have to climb the huge tree itself. It's going to be hard, but we'll do what we have to for the Queen.")
+  0()
+ PAGE   2
+  // condition: variable 1011 >= 5
+  0()
+
+
+
+EVENT   63
+ PAGE   1
+  // condition: variable 1011 >= 4
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Siren>All right! World Tree recon party one, move out!")
+  0()
+ PAGE   2
+  // condition: variable 1011 >= 5
+  0()
+
+
+
+EVENT   64
+ PAGE   1
+  // condition: variable 1011 >= 4
+  If(1,1011,0,4,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Merchant Harpy>I'll try asking all the merchants I know. I better bring all the money I can get in case someone knows where I can get the Fruit of the World Tree.")
+   If(0,6,0)
+    ShowMessageFace("sonia_fc2",2,0,2,2)
+    ShowMessage("\\n<Sonya>Yeah, it's a very valuable item. It's so hard to get that it's practically legendary...")
+    ShowMessageFace("sonia_fc2",2,0,2,3)
+    ShowMessage("\\n<Sonya>Nero was very generous to just hand it over for free. He's strange, but I guess he's a nice guy too?")
+    0()
+   EndIf()
+   0()
+  EndIf()
+  If(1,1011,0,5,1)
+   ShowMessageFace("",0,0,2,4)
+   ShowMessage("【Merchant Harpy】")
+   ShowMessage("Until a while ago, I was flying around seeking the fruits of the world trees.")
+   ShowMessage("I really appreciate to you.")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("323")
+   ShowMessageFace("queenhapy_fc1",0,0,2,5)
+   ShowMessage("【Lucrezia】")
+   ShowMessage("You put a lot of hardship ... ...")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   65
+ PAGE   1
+  // condition: variable 1011 >= 4
+  If(1,1011,0,4,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Informant Harpy>We asked around, but no one knows anyone with Fruit of the World Tree. Perhaps we can negotiate directly with the plant monsters that live near the World Tree?")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("59")
+   ShowMessageFace("mdg_fc1",2,0,2,2)
+   ShowMessage("\\n<Ragora>Plant monsters can be kind, but also very territorial. They aren't likely to hand any over easily.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+ PAGE   2
+  // condition: variable 1011 >= 5
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Information shop Harpy】")
+  ShowMessage("Queen Arlaune 's revolution, the fruits of world trees were not readily available.")
+  ShowMessage("No way I knocked down the Queen and turned it back to sanity ......")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("322")
+  ShowMessageFace("queenalraune_fc1",5,0,2,2)
+  ShowMessage("【Arluona】")
+  ShowMessage("My confusion brought influence to such a place ne.")
+  ShowMessage("If it is sane, I was instantly aid ... ...")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   66
+ PAGE   1
+  // condition: variable 1011 >= 4
+  If(1,1011,0,4,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Siren>It's extremely difficult to obtain fruit from the World Tree. How did you manage to get so much of it?")
+   If(0,6,0)
+    ShowMessageFace("sonia_fc2",2,0,2,2)
+    ShowMessage("\\n<Sonya>Nero got it from somewhere...")
+    0()
+   EndIf()
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1011,0,5,1)
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("【Siren】")
+   ShowMessage("I'm glad that the Queen came back ... ...")
+   ShowMessage("The battle between Magusama and humans is getting intense and the era of suffering will continue.")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("323")
+   ShowMessageFace("queenhapy_fc1",0,0,2,4)
+   ShowMessage("【Lucrezia】")
+   ShowMessage("We must bring peace soon ....")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   67
+ PAGE   1
+  // condition: variable 1011 >= 4
+  If(1,1011,0,4,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Traveling Merchant>I came here to buy Harpy Feathers. If the harpies had remained gone any longer, it would have had a real influence on their supply.")
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Traveling Merchant>At any rate, this settlement of theirs is quite nice. It almost makes me want to ditch my nagging wife and move here.")
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("\\n<Traveling Merchant>Oh, it doesn't look like I can get my hands on any Fruit of the World Tree either. I'll do whatever I can, but it's just so damn scarce.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1011,0,5,1)
+   ShowMessageFace("",0,0,2,4)
+   ShowMessage("【Merchant of the trip】")
+   ShowMessage("I came to buy Harpies' feathers.")
+   ShowMessage("It is particularly valuable recently because the transportation network is paralyzed in various places.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   68
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(63,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   69
+ PAGE   1
+  // condition: variable 1011 >= 4
+  // condition: party contains actor #56
+  If(1,1041,0,1,2)
+   ChangeVariable(1041,1041,0,0,1)
+   ShowMessageFace("inp_fc1",0,0,2,1)
+   ShowMessage("\\n<Rami>Hey, can you teach me how to fly? I'm terrible at it.")
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Harpy>Try jumping from somewhere high? And then generate lift somehow...?")
+   ShowMessageFace("inp_fc1",3,0,2,3)
+   ShowMessage("\\n<Rami>Somewhere high...")
+   If(0,4,0)
+    ShowMessageFace("alice_fc5",0,0,2,4)
+    ShowMessage("\\n<Alice>How about the summit of Iliasville Mountain? That's not far from here.")
+    0()
+   EndIf()
+   If(0,5,0)
+    ShowMessageFace("iriasu_fc4",1,0,2,5)
+    ShowMessage("\\n<Ilias>How about the summit of Iliasville Mountain? You may be able to generate lift if you jump off it.")
+    0()
+   EndIf()
+   ShowMessageFace("inp_fc1",3,0,2,6)
+   ShowMessage("\\n<Rami>Uhh okay... Let's go to Iliasville Mountain then...")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1041,0,2,1)
+   ShowMessageFace("",0,0,2,7)
+   ShowMessage("\\n<Harpy>Were you able to fly, little imp?")
+   ShowMessageFace("inp_fc1",3,0,2,8)
+   ShowMessage("\\n<Rami>......")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   70
+ PAGE   1
+  // condition: switch 2183 is ON
+  If(0,2228,1)
+   ChangeSwitch(2228,2228,0)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("【Harpy】")
+   ShowMessage("Haha, you can do more, right?")
+   ShowMessage("Hey, more ... ... more ......")
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("【Waiter A】")
+   ShowMessage("Ahimei ... ... It is already the tenth time ... um ぉ ぉ ぉ ぉ ......! !")
+   250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x11,0x6d,0x6f,0x6e,0x5f,0x66,0x61,0x6e,0x66,0x61,0x6c,0x65,0x32,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69))
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("I found a crowd!")
+   ShowMessageFace("ruka_fc1",0,0,2,4)
+   ShowMessage("【Luke】")
+   ShowMessage("OK, I found a popular A!")
+   ShowMessageFace("",0,0,2,5)
+   ShowMessage("【Harpy】")
+   ShowMessage("Kimi, you know his acquaintance?")
+   ShowMessage("I want to go back to my hometown, I'm crying, did you come home with me?")
+   ShowMessageFace("ruka_fc1",0,0,2,6)
+   ShowMessage("【Luke】")
+   ShowMessage("I was told to find out, but I was not told to take him back.")
+   ShowMessageFace("",0,0,2,7)
+   ShowMessage("【Harpy】")
+   ShowMessage("Well then, do it twenty more times ... ___ __")
+   ShowMessageFace("",0,0,2,8)
+   ShowMessage("【Waiter A】")
+   ShowMessage("I will die, I will die ... ___ ___ 0 !")
+   EndEventProcessing()
+   0()
+  Else()
+   ShowMessageFace("",0,0,2,9)
+   ShowMessage("【Harpy】")
+   ShowMessage("Well then, thirty more times ... ___ __")
+   ShowMessageFace("",0,0,2,10)
+   ShowMessage("【Waiter A】")
+   ShowMessage("It is increasing gradually ...! !")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   71
+ PAGE   1
+  // condition: switch 2183 is ON
+  If(0,2228,1)
+   ChangeSwitch(2228,2228,0)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("【Harpy】")
+   ShowMessage("Haha, you can do more, right?")
+   ShowMessage("Hey, more ... ... more ......")
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("【Waiter A】")
+   ShowMessage("Ahimei ... ... It is already the tenth time ... um ぉ ぉ ぉ ぉ ......! !")
+   250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x11,0x6d,0x6f,0x6e,0x5f,0x66,0x61,0x6e,0x66,0x61,0x6c,0x65,0x32,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69))
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("I found a crowd!")
+   ShowMessageFace("ruka_fc1",0,0,2,4)
+   ShowMessage("【Luke】")
+   ShowMessage("OK, I found a popular A!")
+   ShowMessageFace("",0,0,2,5)
+   ShowMessage("【Harpy】")
+   ShowMessage("Kimi, you know his acquaintance?")
+   ShowMessage("I want to go back to my hometown, I'm crying, did you come home with me?")
+   ShowMessageFace("ruka_fc1",0,0,2,6)
+   ShowMessage("【Luke】")
+   ShowMessage("I was told to find out, but I was not told to take him back.")
+   ShowMessageFace("",0,0,2,7)
+   ShowMessage("【Harpy】")
+   ShowMessage("Well then, do it twenty more times ... ___ __")
+   ShowMessageFace("",0,0,2,8)
+   ShowMessage("【Waiter A】")
+   ShowMessage("I will die, I will die ... ___ ___ 0 !")
+   EndEventProcessing()
+   0()
+  Else()
+   ShowMessageFace("",0,0,2,9)
+   ShowMessage("【Harpy】")
+   ShowMessage("Well then, thirty more times ... ___ __")
+   ShowMessageFace("",0,0,2,10)
+   ShowMessage("【Waiter A】")
+   ShowMessage("It is increasing gradually ...! !")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+

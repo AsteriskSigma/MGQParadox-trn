@@ -1,0 +1,6 @@
+// EVENT 0910
+Name "Boss Level Normal Treasure Chests"
+
+RunCommonEvent(903)
+0()
+

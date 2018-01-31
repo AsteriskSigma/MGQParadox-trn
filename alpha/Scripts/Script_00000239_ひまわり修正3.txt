@@ -1,0 +1,162 @@
+=begin
+
+==Change log
+  Date
+	17/8/1	Correction 1 New:Addition 1,2,3,4,5,6 
+	17/10/21Correction Addition 6
+==
+	Correction 1:Corresponding to state skill at death
+	Addition 1:Capability value upper limit setting
+	Addition 2:Unit is given to damage value of message at battle
+	Addition 3:Recording & display of maximum damage value
+	Addition 4:Set cap money limit
+	Addition 5:Capability value replacement, higher priority
+	Addition 6:Set the upper limit of the ability value up item and include it in the effect test target. Pop-up display when disabled
+	
+	
+=end
+
+
+
+#Correction 1:Corresponding to state skill at death
+
+
+#Addition 1:Capability value upper limit setting
+
+#Addition 2:Unit is given to damage value of message at battle
+class Integer
+	def give_unit
+		unit= ["","\,","\,","\,","\,","A","Pro","Evil","groove","A","Positive","Trial","very","Hengsa","Atsubi","Natori","Wonder","Immeasurable large number"]
+		
+		numbers = []
+		
+		unit_value = ""
+		self.to_s.each_char{|num|numbers << num}
+		numberblocks = numbers.reverse.each_slice(3).to_a
+		numberblocks.each_with_index{|block,index|
+			str = ""
+			block.reverse.each{|num|
+					str += num
+			}
+			str = str + unit[index]
+			unit_value = str + unit_value
+		}
+		return unit_value
+	end
+end
+
+
+#Addition 3:Recording & display of maximum damage value
+
+
+#Addition 4:Set cap money limit
+
+#Addition 5:Capability value replacement, higher priority
+
+
+#Addition 6:Set the upper limit of the ability value up item and include it in the effect test target. Pop-up display when disabled
+
+#Pop-up
+class Window_Popup < Window_Selectable
+  def initialize
+    super(0, 0, 1,1)
+    self.z = 200
+		self.openness = 0
+  end
+	
+  def set_text(text)
+    @text = text
+  end
+	
+  def window_width
+    [text_size(@text).width,Graphics.width].min + 20 + standard_padding * 2
+  end
+
+  def window_height
+    fitting_height(1)
+  end
+
+  def process_ok
+    Input.update
+    deactivate
+    call_ok_handler
+  end
+	
+  def process_cancel
+    Input.update
+    deactivate
+    call_cancel_handler
+  end
+	
+  def update_open
+    self.openness += 200
+    @opening = false if open?
+  end
+  def update_close
+    self.openness -= 200
+    @closing = false if close?
+  end
+  def refresh
+    move((Graphics.width/2) - (window_width/2), (Graphics.height/2) - (window_height/2), window_width, window_height)
+		update_padding
+    create_contents
+		rect = Rect.new(0, 0, contents_width, contents_height)
+    draw_text(rect, @text,1)
+  end
+end
+
+
+class Scene_ItemBase < Scene_MenuBase
+	alias hima_popup_start start
+	def start
+    hima_popup_start
+		create_popup_window
+  end
+	def create_popup_window
+		@popup_window = Window_Popup.new
+		@popup_window.set_handler(:ok,			method(:close_popup_window))
+		@popup_window.set_handler(:cancel,	method(:close_popup_window))
+	end
+  #--------------------------------------------------------------------------
+  # ● Actor [decision]
+  #--------------------------------------------------------------------------
+  def on_actor_ok
+    if item_usable?
+      use_item
+    else
+      Sound.play_buzzer
+			e = nil
+			grow_effects = item.effects.select {|effect| 
+				effect.code == 42 #EFFECT_GROW
+			}.uniq{|effect| 
+				effect.data_id
+			}.sort{|a,b|
+				a.data_id <=> b.data_id
+			} 
+			grow_popup(grow_effects) if grow_effects.size >= 1 && !item_effects_valid?
+    end
+  end
+	def grow_popup(effects)
+		param_name = $data_system.terms.params[effects[0].data_id]
+		actor_name = item_target_actors[0].name
+		actor_name += "Reach" if item_target_actors.size > 1 
+		open_popup_window("#{actor_name}'s#{param_name} can't go any higher.")
+	end
+	
+	def open_popup_window(text)
+		@actor_window.deactivate
+		@popup_window.set_text(text)
+		@popup_window.refresh
+		@popup_window.open.activate
+	end
+	
+	def close_popup_window
+		@popup_window.close.deactivate
+		@actor_window.activate
+	end
+end
+
+
+
+
+

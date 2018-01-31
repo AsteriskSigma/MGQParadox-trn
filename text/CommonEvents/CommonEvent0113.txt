@@ -1,0 +1,3 @@
+"転職・転種" -> "Change in job / change"
+"パーティ編成" -> "Party organization"
+"何もしない" -> "do nothing"

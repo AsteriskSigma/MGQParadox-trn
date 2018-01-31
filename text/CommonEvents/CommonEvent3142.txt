@@ -1,0 +1,8 @@
+"反省会" -> "Evaluation meeting"
+"♪" -> "♪"
+"♪" -> "♪"
+"　Aaaah" -> "Aaaah"
+"！" -> "!"
+"♪" -> "♪"
+"♪" -> "♪"
+"反省会" -> "Evaluation meeting"

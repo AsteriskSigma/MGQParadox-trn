@@ -1,0 +1,30 @@
+#
+#    Bulk operation of self-switch(RGSS2, RGSS3)
+#In case(C)2011 TYPE74RX-T
+#
+
+class Game_Interpreter
+  #--------------------------------------------------------------------------
+  # ★ Batch operation of self switch
+  #--------------------------------------------------------------------------
+  def rx_self_sw(rx_map_id, id, type = "on", sw = "on")
+    rx_map_id2 = rx_map_id
+    # Correction for when the argument shifts
+    rx_map_id2 = @map_id unless rx_map_id.kind_of?(Numeric)
+    switches = []
+    switches.push(id).flatten! if id.kind_of?(Array) # id Into the array
+    # Correction for when the argument shifts
+    switches.push(rx_map_id).flatten! if rx_map_id.kind_of?(Array) # id Into the array
+    types = type
+    # Correction for when the argument shifts
+    types = id if id.kind_of?(String)
+    rx_switch = sw
+    # Correction for when the argument shifts
+    rx_switch = type if id.kind_of?(String)
+    for i in 0...switches.size
+      key = [rx_map_id2, switches[i], types]
+      $game_self_switches[key] = (rx_switch == "on")
+      $game_map.need_refresh = true
+    end
+  end
+endd

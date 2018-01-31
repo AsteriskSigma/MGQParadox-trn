@@ -1,0 +1,27 @@
+// EVENT 7223
+Name "Lara: Defeat"
+
+RunCommonEvent(7000)
+PictureDisplay(5,"80_mob_murabito3_st01",0,0,0,0,100,100,255,0)
+PictureClear(6)
+ShowMessageFace("mob_murabito3_fc1",2,0,2,1)
+ShowMessage("【Lara】")
+ShowMessage("It's my victory!")
+ShowMessage("Hand over the money~!")
+125(1,0,500)
+ShowMessageFace("",0,0,2,2)
+ShowMessage("Luka hands over 500G!")
+ShowMessageFace("mob_murabito3_fc1",5,0,2,3)
+ShowMessage("【Lara】")
+ShowMessage("Ufufu, come back sometime.")
+ShowMessage("I wonder if you'll be able to endure it next time... ♪")
+If(0,2331,1)
+ PictureClear(5)
+ 281(1)
+ TeleportPlayer(0,25,37,19,2,0)
+ 216(0)
+ 0()
+EndIf()
+EndEventProcessing()
+0()
+

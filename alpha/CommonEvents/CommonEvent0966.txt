@@ -1,0 +1,22 @@
+// EVENT 0966
+Name "Event: Warp 10"
+
+ShowMessageFace("neris_fc1",0,0,2,1)
+ShowMessage("\\n<Nellis>Hey Ruka, please attend ♪\n1000GI will blow away to the tenth floor if you give me ♪")
+ShowChoices(strings("10Have them send me to the floor","To withhold"),2)
+IfPlayerPicksChoice(0,"10Have them send me to the floor")
+ 125(1,0,1000)
+ ShowMessageFace("neris_fc1",0,0,2,2)
+ ShowMessage("\\n<Nellis>Then I'll let you go ♪ Eiiya!!")
+ ChangeVariable(121,121,1,0,9)
+ RunCommonEvent(901)
+ EndEventProcessing()
+ 0()
+IfPlayerPicksChoice(1,"To withhold")
+ ShowMessageFace("neris_fc1",2,0,2,3)
+ ShowMessage("\\n<Nellis>Pocket money……")
+ EndEventProcessing()
+ 0()
+404()
+0()
+

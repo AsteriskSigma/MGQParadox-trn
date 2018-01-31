@@ -1,0 +1,5 @@
+// EVENT 1286
+Name "会話：グランベリア"
+
+RunCommonEvent(1178)
+0()

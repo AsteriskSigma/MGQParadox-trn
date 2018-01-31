@@ -1,0 +1,10 @@
+// EVENT 0005
+Name "Execute After Combat"
+
+ChangeSwitch(7,7,1)
+If(1,902,1,906,4)
+ ChangeVariable(906,906,0,1,902)
+ 0()
+EndIf()
+0()
+

@@ -1,0 +1,255 @@
+=begin
+=Infrastructure system/Game Master
+
+
+
+
+==Change log
+  Date     Version Author Comment
+==14/12/13 2.0.0   Tris integration A to E A
+==17/05/16 2.0.4   Tris integrated V ~ W V
+
+=end
+
+#==============================================================================
+# ■ BattleManager
+#==============================================================================
+class << BattleManager
+  #--------------------------------------------------------------------------
+  # ○ Initialization of member variables (def init_members)
+  # Since there are other things to add to others/ModuleUnified
+  #--------------------------------------------------------------------------
+  #--------------------------------------------------------------------------
+  # ○ Acquisition of the next acting entity
+  #    Get a butler from the beginning of the action order list.
+  #    If you get an actor that is not currently in the party (index is nil, Battle Ive
+  #    Occurred immediately after leaving, etc.), skip it.
+  #--------------------------------------------------------------------------
+  def next_subject
+    loop do
+      battler = @action_game_masters.shift
+      break unless battler
+      return battler
+    end
+    loop do
+      battler = @action_battlers.shift
+      return nil unless battler
+      next unless battler.index && battler.alive?
+      return battler
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ○ Winning or losing judgment
+  #--------------------------------------------------------------------------
+  def judge_win_loss
+    if @phase && !gm_exist?
+      return process_abort   if $game_party.members.empty?
+      return process_defeat  if $game_party.all_dead?
+      return process_victory if $game_troop.all_dead?
+      return process_abort   if aborting?
+    end
+    return false
+  end
+  #--------------------------------------------------------------------------
+  # ● Skill interrupt
+  #--------------------------------------------------------------------------
+  def skill_interrupt(battler, skill_id, symbol = nil)
+    gm = Game_Master.new(battler)
+    gm.skill_interrupt(skill_id, symbol)
+    @action_game_masters.unshift(gm)
+  end
+  #--------------------------------------------------------------------------
+  # ● GM action exists?
+  #--------------------------------------------------------------------------
+  def gm_exist?
+    return !@action_game_masters.empty?
+  end
+end
+
+#==============================================================================
+# ■ Game_Battler
+#==============================================================================
+class Game_Battler < Game_BattlerBase
+  #--------------------------------------------------------------------------
+  # ○ Skill / item applied test
+  #    The recovery prohibition etc. when the use target is fully enjoyed is judged.
+  #--------------------------------------------------------------------------
+  def item_test(user, item)
+    return false if (item.for_dead_friend? != dead?) && !(user.game_master? && item.for_user?)
+    return true if $game_party.in_battle
+    return true if item.for_opponent?
+    return true if item.damage.recover? && item.damage.to_hp? && hp < mhp
+    return true if item.damage.recover? && item.damage.to_mp? && mp < mmp
+    return true if item_has_any_valid_effects?(user, item)
+    return false
+  end
+  #--------------------------------------------------------------------------
+  # ● Skill interrupt
+  #--------------------------------------------------------------------------  
+  def skill_interrupt(skill_id, symbol = nil)
+    action = Game_Action.new(self)
+    action.set_skill(skill_id)
+    action.set_symbol(symbol)
+    @actions.unshift(action)
+  end
+  #--------------------------------------------------------------------------
+  # ● Game Master?
+  #--------------------------------------------------------------------------
+  def game_master?
+    return false
+  end
+  #--------------------------------------------------------------------------
+  # ● If you are a game master return an observer
+  #--------------------------------------------------------------------------
+  def master_observer
+    return game_master? ? @observer : self
+  end
+end
+
+#==============================================================================
+# ■ Game_Master
+#==============================================================================
+class Game_Master < Game_Battler
+  attr_reader   :observer
+  #--------------------------------------------------------------------------
+  # ● Object initialization
+  #--------------------------------------------------------------------------
+  def initialize(observer)
+    super()
+    @observer = observer
+    self.hp = mhp
+    self.mp = mmp
+    self.tp = max_tp
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of maximum HP
+  #--------------------------------------------------------------------------
+  def mhp
+    return 999999
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of maximum MP
+  #--------------------------------------------------------------------------
+  def mmp
+    return 9999
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of maximum TP
+  #--------------------------------------------------------------------------
+  def max_tp
+    return 99
+  end
+  #--------------------------------------------------------------------------
+  # ● Obtain display name
+  #--------------------------------------------------------------------------
+  def name
+    @observer.name
+  end
+  #--------------------------------------------------------------------------
+  # ● Get array of all objects holding features
+  #--------------------------------------------------------------------------
+  def feature_objects
+    @observer.feature_objects
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire basic value of normal ability value
+  #--------------------------------------------------------------------------
+  def param(param_id)
+    raise # Make sure this method is not called
+  end
+  #--------------------------------------------------------------------------
+  # ● ID acquisition
+  #--------------------------------------------------------------------------
+  def id
+    @observer.id
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire ally unit
+  #--------------------------------------------------------------------------
+  def friends_unit
+    @observer.friends_unit
+  end
+  #--------------------------------------------------------------------------
+  # ● Obtain enemy units
+  #--------------------------------------------------------------------------
+  def opponents_unit
+    @observer.opponents_unit
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire weapon type array
+  #--------------------------------------------------------------------------
+  def wtypes
+    @observer.wtypes
+  end
+  #--------------------------------------------------------------------------
+  # ● Game Master?
+  #--------------------------------------------------------------------------
+  def game_master?
+    return true
+  end
+  #--------------------------------------------------------------------------
+  # ● Actor?
+  #--------------------------------------------------------------------------
+  def actor?
+    @observer.actor?
+  end
+  #--------------------------------------------------------------------------
+  # ● Enemy?
+  #--------------------------------------------------------------------------
+  def enemy?
+    @observer.enemy?
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of Actors
+  #--------------------------------------------------------------------------
+  def actor
+    @observer.actor? ? @observer.actor : nil
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire base level
+  #--------------------------------------------------------------------------
+  def base_level
+    @observer.actor? ? @observer.base_level : 1
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire occupational level
+  #--------------------------------------------------------------------------
+  def class_level
+    @observer.actor? ? @observer.class_level : 1
+  end
+  #--------------------------------------------------------------------------
+  # ● Tribal level acquisition
+  #--------------------------------------------------------------------------
+  def tribe_level
+    @observer.actor? ? @observer.tribe_level : 1
+  end    
+  #--------------------------------------------------------------------------
+  # ● Acquire normal attack animation ID
+  #--------------------------------------------------------------------------
+  def atk_animation_id1
+    @observer.actor? ? @observer.atk_animation_id1 : 0
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire normal attack animation ID (two weapon: weapon 2)
+  #--------------------------------------------------------------------------
+  def atk_animation_id2
+    @observer.actor? ? @observer.atk_animation_id2 : 0
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of Enemy
+  #--------------------------------------------------------------------------
+  def enemy
+    @observer.enemy? ? @observer.enemy : nil
+  end
+  #--------------------------------------------------------------------------
+  # ● Process at the end of battle action
+  #--------------------------------------------------------------------------
+  def on_action_end
+    @result.clear
+  end
+end
+
+
+
+
+

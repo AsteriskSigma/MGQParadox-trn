@@ -1,0 +1,8 @@
+"イベント：あかなめ" -> "Event: Akaname"
+"【あかなめ】" -> "Akaname"
+"私達も習得できなかった、伝説のベロベロ奥義……" -> "We also could not master, legendary Veloveo mystery ... ...."
+"あなた達に教えちゃいますよ！" -> "I will teach you!"
+"選択" -> "Choice"
+"選択" -> "Choice"
+"【あかなめ】" -> "Akaname"
+"地面ナメナメ……地面ナメナメ……" -> "Earth groundwood ...... ground naming ......"

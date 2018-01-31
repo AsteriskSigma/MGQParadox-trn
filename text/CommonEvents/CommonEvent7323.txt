@@ -1,0 +1,8 @@
+"オーロラ：敗北" -> "Aurora: Defeat"
+"【オーロラ】" -> "【Aurora】"
+"私の勝ちですね……" -> "My win is ...."
+"それでは、賭け金を頂きましょう。" -> "Let's have a bet."
+"ルカは 1400G 支払った！" -> "Luke paid 1400 G!"
+"【オーロラ】" -> "【Aurora】"
+"再戦を望むなら、いつでも相手を務めましょう。" -> "Let's serve as a partner anytime if you want a rematch."
+"どうせ、また私の手で果てる事になるでしょうが……" -> "Anyway, I will end up with my hand ... ..."

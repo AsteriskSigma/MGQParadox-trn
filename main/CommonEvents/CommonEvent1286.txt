@@ -1,0 +1,6 @@
+// EVENT 1286
+Name "Conversation: Granberia"
+
+RunCommonEvent(1178)
+0()
+

@@ -1,0 +1,7 @@
+"レド山戦闘封鎖" -> "Ledo mountain battle blockade"
+"【アリス】" -> "【Alice】"
+"下手に近付いたら、戦闘に巻き込まれるな……" -> "If you get bad, you will not get caught up in battle ..."
+"長居は無用だぞ、ルカ。" -> "Nagai is useless, Luke."
+"【イリアス】" -> "【Iliad】"
+"こんなところで、魔物同士が小競り合いを……" -> "In such a place, the monsters skirmish each other ... ..."
+"関わらない方が良いですよ、ルカ。" -> "The one not involved is better, Luca."

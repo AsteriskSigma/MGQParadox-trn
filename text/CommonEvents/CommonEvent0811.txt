@@ -1,0 +1,1 @@
+"職業武器レア" -> "Vocational weapon rare"

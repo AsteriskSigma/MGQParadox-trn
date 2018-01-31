@@ -1,0 +1,8 @@
+"■ Game" -> "■ Game"
+"　スイッチを扱うクラスです。組み込みクラス Array のラッパーです。このクラス" -> "It is a class dealing with switches. It is a wrapper around the built-in class Array. This class"
+"のインスタンスは " -> "Instances of"
+"で参照されます。" -> "It is referred to."
+"● オブジェクト初期化" -> "● Object initialization"
+"● スイッチの取得" -> "● Obtaining the switch"
+"● スイッチの設定" -> "● Switch setting"
+"● スイッチの設定時の処理" -> "● Processing when setting the switch"

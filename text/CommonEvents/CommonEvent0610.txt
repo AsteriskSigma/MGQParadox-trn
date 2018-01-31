@@ -1,0 +1,7 @@
+"イベント：シルフ" -> "Event: Silfur"
+"【シルフ】" -> "【Sylph】"
+"風の力は、すごいんだから！" -> "The power of the wind is amazing!"
+"【シルフ】" -> "【Sylph】"
+"わーい、あたしが助けてあげるねー！" -> "Wow, I'll help you!"
+"シルフが力を貸してくれるようだ！" -> "Sylph seems to lend a help!"
+"次のボスフロアまで、風の加護が与えられる！" -> "Wind protection will be given until the next boss floor!"

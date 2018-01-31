@@ -1,0 +1,16 @@
+// EVENT 0205
+Name "Talk Seduction 5 Assign Enemy ID To Variable 14"
+
+108("●var_id = 29 + $game_variables[112] - 1")
+408("　var_idに(29 + 変数[112]の値 - 1)を代入")
+408("●$game_variables[14] = $game_variables[var_id]")
+408("　変数[14]に（変数[var_id]の値）を代入")
+108("変数112が1なら")
+408("　var_id = (29 + 変数112 - 1) = (29 + 1 - 1) = 29")
+408("　→変数[14]に（変数[29:敵1のID]の値）を代入")
+408("変数112が6なら")
+408("　var_id = (29 + 変数112 - 1) = (29 + 6 - 1) = 34")
+408("　→変数[14]に（変数[34:敵6のID]の値）を代入")
+355("var_id = 29 + $game_variables[112] - 1")
+655("$game_variables[14] = $game_variables[var_id]")
+0()

@@ -1,0 +1,15 @@
+// EVENT 0303
+Name "Freedom Judgment"
+
+ChangeVariable(1008,1008,1,0,1)
+If(1,1008,0,3,0)
+ 355("gain_medal(2000)")
+ 0()
+EndIf()
+If(1,1008,0,8,0)
+ 355("gain_medal(2001)")
+ 0()
+EndIf()
+EndEventProcessing()
+0()
+

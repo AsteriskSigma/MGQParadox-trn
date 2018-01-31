@@ -1,0 +1,1145 @@
+
+
+
+EVENT   1
+ PAGE   1
+  0()
+
+
+
+EVENT   2
+ PAGE   1
+  0()
+
+
+
+EVENT   3
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,41,15,16,0,0)
+  0()
+
+
+
+EVENT   4
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,41,28,18,0,0)
+  0()
+
+
+
+EVENT   5
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,41,48,7,0,0)
+  0()
+
+
+
+EVENT   6
+ PAGE   1
+  0()
+
+
+
+EVENT   7
+ PAGE   1
+  0()
+
+
+
+EVENT   8
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,41,9,31,0,0)
+  0()
+
+
+
+EVENT   9
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,41,31,24,0,0)
+  0()
+
+
+
+EVENT   10
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,41,46,22,0,0)
+  0()
+
+
+
+EVENT   11
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,41,18,37,0,0)
+  0()
+
+
+
+EVENT   12
+ PAGE   1
+  0()
+
+
+
+EVENT   13
+ PAGE   1
+  0()
+
+
+
+EVENT   14
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,42,55,55,0,0)
+  0()
+
+
+
+EVENT   15
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,42,56,55,0,0)
+  0()
+
+
+
+EVENT   16
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,42,28,52,0,0)
+  0()
+
+
+
+EVENT   17
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,42,29,52,0,0)
+  0()
+
+
+
+EVENT   18
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,41,30,41,0,0)
+  0()
+
+
+
+EVENT   19
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Angel soldier")
+  ShowMessage("")
+  ShowMessage("We are also driven by the need to armed ... ...")
+  0()
+
+
+
+EVENT   20
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Cupid】")
+  ShowMessage("This is cute ~ ♪")
+  ShowMessage("Because you do not need special effects, please sell at half price.")
+  0()
+
+
+
+EVENT   21
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【angel】")
+  ShowMessage("")
+  ShowMessage("So, various problems have arisen ... ...")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("【angel】")
+  ShowMessage("At first I used my own currency, but soon I started using my human currency.")
+  ShowMessage("Nowadays, the currency of the outside world is also distributed in the village.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("196")
+  ShowMessageFace("s_mermaid_fc1",0,0,2,3)
+  ShowMessage("【mink】")
+  ShowMessage("Well, we can buy and sell ordinary in this town.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   22
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(32,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   23
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【angel】")
+  ShowMessage("It is a chocolate specialty shop.")
+  ShowMessage("Have a paradise with a sweet mood ......")
+  Shop(0,414,0,0,false)
+  605(0,415,0,0)
+  605(0,416,0,0)
+  0()
+
+
+
+EVENT   24
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Weapons shop】")
+  ShowMessage("We have excellent weapons.")
+  ShowMessage("In order to protect your safety, please do not mind ......")
+  Shop(1,181,0,0,false)
+  605(1,230,0,0)
+  605(1,745,0,0)
+  605(1,909,0,0)
+  605(2,142,0,0)
+  605(2,172,0,0)
+  0()
+
+
+
+EVENT   25
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【angel】")
+  ShowMessage("Let's invite to heaven with an angel's cake ......")
+  Shop(0,417,0,0,false)
+  605(0,418,0,0)
+  605(0,419,0,0)
+  0()
+
+
+
+EVENT   26
+ PAGE   1
+  If(1,837,0,2,1)
+   If(0,1586,1)
+    ShowMessageFace("mob_ninzya1_fc1",0,0,2,1)
+    ShowMessage("【Shochi】")
+    ShowMessage("If you are you, you may commit ourself ... ...")
+    ShowMessage("Is this blade necessary, is not it?")
+    ShowChoices(strings("To make friends","Do not companion"),0)
+    IfPlayerPicksChoice(0,null)
+     ShowMessageFace("mob_ninzya1_fc1",0,0,2,2)
+     ShowMessage("【Shochi】")
+     ShowMessage("Well, we both go over ...")
+     PictureClear(5)
+     205(0,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x09,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x2a,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x0f,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x2c,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+     355("add_actor_ex(586)")
+     249(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0c,0x66,0x61,0x6e,0x66,0x61,0x6c,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69))
+     ShowMessageFace("",0,0,2,3)
+     ShowMessage("Shochiki joined the group!")
+     Wait(60)
+     EndEventProcessing()
+     0()
+    IfPlayerPicksChoice(1,null)
+     ShowMessageFace("mob_ninzya1_fc1",0,0,2,4)
+     ShowMessage("【Shochi】")
+     ShowMessage("Really……")
+     0()
+    404()
+    0()
+   EndIf()
+   0()
+  EndIf()
+  If(2,"A",1)
+   ChangeSelfSwitch("A",0)
+   ShowMessageFace("mob_ninzya1_fc1",0,0,2,5)
+   ShowMessage("【Shochi】")
+   ShowMessage("Are you the second person who visited this village ... ....")
+   ShowMessage("It looks like a miscellaneous combination.")
+   ShowMessageFace("mob_ninzya1_fc1",0,0,2,6)
+   ShowMessage("【Shochi】")
+   ShowMessage("I am a member of Assassin group of Saba.")
+   ShowMessage("It was dispatched to explore the continent of ice with the order of the former king.")
+   ShowMessageFace("mob_ninzya1_fc1",0,0,2,7)
+   ShowMessage("【Shochi】")
+   ShowMessage("But my friends collapse one after another in a harsh environment ......")
+   ShowMessage("As a result, only I was protected in the angel village.")
+   ShowMessageFace("mob_ninzya1_fc1",0,0,2,8)
+   ShowMessage("【Shochi】")
+   ShowMessage("The body was completely recovered and angels said that it is okay to return ... ...")
+   ShowMessage("For a while, I do not feel like returning to Saba.")
+   ShowMessageFace("mob_ninzya1_fc1",0,0,2,9)
+   ShowMessage("【Shochi】")
+   ShowMessage("I want to mourn the fellows who fell in the snow cave ...")
+   ShowMessage("In this quiet sanctuary, I also wanted to train.")
+   ShowMessageFace("mob_ninzya1_fc1",0,0,2,10)
+   ShowMessage("【Shochi】")
+   ShowMessage("That's why leave me alone.")
+   ShowMessage("However, if you are a battle fuck you will attend training.")
+   0()
+  Else()
+   ShowMessageFace("mob_ninzya1_fc1",0,0,2,11)
+   ShowMessage("【Shochi】")
+   ShowMessage("Although it is bad, I do not plan to return to my country for a while.")
+   ShowMessage("However, if you are a battle fuck you will attend training.")
+   0()
+  EndIf()
+  ShowChoices(strings("I want to have a battle fuck","There is no use"),2)
+  IfPlayerPicksChoice(0,null)
+   RunCommonEvent(7361)
+   0()
+  IfPlayerPicksChoice(1,null)
+   0()
+  404()
+  0()
+ PAGE   2
+  // condition: party contains actor #586
+  0()
+
+
+
+EVENT   27
+ PAGE   1
+  If(2,"A",1)
+   ChangeSelfSwitch("A",0)
+   PictureDisplay(5,"80_ranael_st11",0,0,0,0,100,100,0,0)
+   PictureMove(5,null,0,0,0,0,100,100,255,0,30,true)
+   ShowMessageFace("ranael_fc1",0,0,2,1)
+   ShowMessage("【Ranaiel】")
+   ShowMessage("What a visitor from the outside world ... ...")
+   ShowMessage("In the past thirty years, is not it the second time?")
+   If(0,4,0)
+    ShowMessageFace("alice_fc5",2,0,2,2)
+    ShowMessage("【Alice】")
+    ShowMessage("Are you a leader of angels?")
+    ShowMessageFace("ranael_fc1",0,0,2,3)
+    ShowMessage("【Ranaiel】")
+    ShowMessage("I am only an acting director of the angel chief.")
+    ShowMessage("He can not be involved in the minor things such as the rule of the town.")
+    0()
+   EndIf()
+   If(0,5,0)
+    ShowMessageFace("iriasu_fc4",2,0,2,4)
+    ShowMessage("【Iliad】")
+    ShowMessage("Ranael ...")
+    ShowMessage("Are you bundling angels?")
+    ShowMessageFace("ranael_fc1",0,0,2,5)
+    ShowMessage("【Ranaiel】")
+    ShowMessage("Oh, a little angel much like Iliad ... ...")
+    ShowMessage("I only serve as an agent of the angel chair to the last.")
+    ShowMessageFace("ranael_fc1",0,0,2,6)
+    ShowMessage("【Ranaiel】")
+    ShowMessage("He can not be involved in the minor things such as the rule of the town.")
+    0()
+   EndIf()
+   0()
+  EndIf()
+  DefineLabel("Description")
+  ShowMessageFace("ranael_fc1",0,0,2,7)
+  ShowMessage("【Ranaiel】")
+  ShowMessage("Well, do you have something you want to ask?")
+  ShowMessage("If I am good, I will answer ...")
+  ShowChoices(strings("About the Continent of Snow","About the angel chief","On the cause of disturbing mana","I never hear it."),4)
+  IfPlayerPicksChoice(0,null)
+   ShowMessageFace("ranael_fc1",2,0,2,8)
+   ShowMessage("【Ranaiel】")
+   ShowMessage("I will never forget that day thirty years ago ......")
+   ShowMessage("That day the goddess Iliad got disappeared ... ...")
+   ShowMessageFace("ranael_fc1",2,0,2,9)
+   ShowMessage("【Ranaiel】")
+   ShowMessage("The mysterious demarcation phenomenon attacked the Iliad temple.")
+   ShowMessage("At the same time the heavenly world was inclined and it crashed to the lower bound.")
+   ShowMessageFace("ranael_fc1",2,0,2,10)
+   ShowMessage("【Ranaiel】")
+   ShowMessage("We were thrown out into the lower world and we feared.")
+   ShowMessage("In the world filled with pollution and barbarism, we had no choice but to live ... ...")
+   ShowMessageFace("ranael_fc1",2,0,2,11)
+   ShowMessage("【Ranaiel】")
+   ShowMessage("Thirty years after that, we accomplished the reconstruction so far.")
+   ShowMessage("Someday, believe in the day Ilius will come back ... ...")
+   ShowMessageFace("ranael_fc1",0,0,2,12)
+   ShowMessage("【Ranaiel】")
+   ShowMessage("That is the continent of this snow ... and all of Snow Haven.")
+   ShowMessage("It is the history of our troubles thrown to the ground without knowing anything.")
+   JumpToLabel("Description")
+   0()
+  IfPlayerPicksChoice(1,null)
+   ShowMessageFace("ranael_fc1",0,0,2,13)
+   ShowMessage("【Ranaiel】")
+   ShowMessage("The angel chief is a man who has led us to fall down to the earth.")
+   ShowMessage("However, I am acting on behalf because I am hardly in town.")
+   ShowMessageFace("ranael_fc1",0,0,2,14)
+   ShowMessage("【Ranaiel】")
+   ShowMessage("Is it where the angel is? ...?")
+   ShowMessage("It is in the depths of \"Snowy spot\" in the southeast from this town.")
+   ShowMessageFace("ranael_fc1",0,0,2,15)
+   ShowMessage("【Ranaiel】")
+   ShowMessage("I am staying there and praying for us day and night.")
+   ShowMessage("While waiting for the day when the goddess Ilius will be returning ... ...")
+   If(0,5,0)
+    ShowMessageFace("iriasu_fc4",2,0,2,16)
+    ShowMessage("【Iliad】")
+    ShowMessage("I would like you to come to my aid if I have time to pray.")
+    0()
+   EndIf()
+   JumpToLabel("Description")
+   0()
+  IfPlayerPicksChoice(2,null)
+   ShowMessageFace("ranael_fc1",0,0,2,17)
+   ShowMessage("【Ranaiel】")
+   ShowMessage("Is the flow of mana disturbed ...?")
+   ShowMessage("If the cause is on this continent, it probably will be the Iliad shrine.")
+   ShowMessageFace("sonia_fc2",2,0,2,18)
+   ShowMessage("【Sonia】")
+   ShowMessage("Temple of Iliad ......")
+   ShowMessage("It's not about the temple built in Iliasville, is it?")
+   ShowMessageFace("ranael_fc1",0,0,2,19)
+   ShowMessage("【Ranaiel】")
+   ShowMessage("It is a different thing from the Temple of Iliad which you know, the outside world.")
+   ShowMessage("It is thing of Ilius' s majestic temple once existed in heavenly world.")
+   ShowMessageFace("ranael_fc1",2,0,2,20)
+   ShowMessage("【Ranaiel】")
+   ShowMessage("But the Temple of Iliad became a different world in the event of a major incident.")
+   ShowMessage("In order to suppress that erosion, the barrier is set up now.")
+   If(0,4,0)
+    ShowMessageFace("alice_fc5",2,0,2,21)
+    ShowMessage("【Alice】")
+    ShowMessage("Is it a different Temple of Iliad, ......")
+    ShowMessage("Indeed, it is a place that is likely to have the core of a mystery.")
+    ShowMessageFace("alice_fc5",0,0,2,22)
+    ShowMessage("【Alice】")
+    ShowMessage("But as long as there is a barrier, it is easy to put in.")
+    ShowMessage("I have to visit the operator of the barrier and temporarily cancel it.")
+    0()
+   EndIf()
+   If(0,5,0)
+    ShowMessageFace("iriasu_fc4",7,0,2,23)
+    ShowMessage("【Iliad】")
+    ShowMessage("Temple of Irias which is differentiated ...")
+    ShowMessage("No doubt, that is the core of a mystery.")
+    ShowMessageFace("iriasu_fc4",7,0,2,24)
+    ShowMessage("【Iliad】")
+    ShowMessage("However, it is troublesome to enter inside if a barrier is established.")
+    ShowMessage("It is necessary to command the operator of the barrier and release it.")
+    0()
+   EndIf()
+   ShowMessageFace("ranael_fc1",0,0,2,25)
+   ShowMessage("【Ranaiel】")
+   ShowMessage("It is the angel head in the shrine of the snow that seals the temple.")
+   ShowMessage("If you want to go inside, you'd have to ask the angel chief.")
+   If(0,4,0)
+    ShowMessageFace("alice_fc5",0,0,2,26)
+    ShowMessage("【Alice】")
+    ShowMessage("Okay, the angel and the guy are surely in the \"snowy spot\".")
+    ShowMessage("Was it southeast of this town ...? Let's go.")
+    0()
+   EndIf()
+   If(0,5,0)
+    ShowMessageFace("iriasu_fc4",7,0,2,27)
+    ShowMessage("【Iliad】")
+    ShowMessage("I understood the story, the angel chief was in \"the snowy spot\".")
+    ShowMessage("The location surely, southeast of this town ... Let's go now.")
+    0()
+   EndIf()
+   ShowMessageFace("ruka_fc1",0,0,2,28)
+   ShowMessage("【Luke】")
+   ShowMessage("OK, let's go see the angel chief!")
+   ShowMessage("I hope it will freeze the barrier soon ......")
+   ChangeVariable(1076,1076,0,0,4)
+   JumpToLabel("Description")
+   0()
+  IfPlayerPicksChoice(3,null)
+   PictureClear(5)
+   EndEventProcessing()
+   0()
+  404()
+  0()
+ PAGE   2
+  // condition: variable 1076 >= 5
+  PictureDisplay(5,"80_ranael_st11",0,0,0,0,100,100,0,0)
+  PictureMove(5,null,0,0,0,0,100,100,255,0,30,true)
+  If(0,4,0)
+   ShowMessageFace("ranael_fc1",0,0,2,1)
+   ShowMessage("【Ranaiel】")
+   ShowMessage("The angel chief is praying in the snow on today and tomorrow.")
+   ShowMessage("No one of us can not be as like that one ....")
+   PictureClear(5)
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(0,5,0)
+   If(2,"A",1)
+    ChangeSelfSwitch("A",0)
+    ShowMessageFace("ranael_fc1",0,0,2,2)
+    ShowMessage("【Ranaiel】")
+    ShowMessage("The angel chief is praying in the snow on today and tomorrow.")
+    ShowMessage("No one of us can not be as like that one ....")
+    ShowMessageFace("eden_fc1",0,0,2,3)
+    ShowMessage("【Eden】")
+    ShowMessage("Ranale, I have to go.")
+    ShowMessage("I left it to this town ... ...")
+    ShowMessageFace("ranael_fc1",0,0,2,4)
+    ShowMessage("【Ranaiel】")
+    ShowMessage("The angel chief was moved ...")
+    ShowMessage("...... That means that ... ...!")
+    If(1,1077,0,2,1)
+     ShowMessageFace("micaelac_fc1",0,0,2,5)
+     ShowMessage("【Michaela】")
+     ShowMessage("Mikaela is also here ...")
+     ShowMessageFace("rucyfinac_fc1",0,0,2,6)
+     ShowMessage("【Lucifina】")
+     ShowMessage("Lucifina-chan ♪")
+     0()
+    EndIf()
+    ShowMessageFace("ranael_fc1",0,0,2,7)
+    ShowMessage("【Ranaiel】")
+    ShowMessage("Oh, what is that ... ....")
+    ShowMessage("My breasts are filled with bliss ... ...")
+    ShowMessageFace("eden_fc1",0,0,2,8)
+    ShowMessage("【Eden】")
+    ShowMessage("To those in the city, let him lie down.")
+    ShowMessage("We still have something to do ... ...")
+    ShowMessageFace("ranael_fc1",0,0,2,9)
+    ShowMessage("【Ranaiel】")
+    ShowMessage("We understand……")
+    ShowMessage("Everyone, please be careful.")
+    PictureClear(5)
+    EndEventProcessing()
+    0()
+   EndIf()
+   If(2,"A",0)
+    ShowMessageFace("ranael_fc1",0,0,2,10)
+    ShowMessage("【Ranaiel】")
+    ShowMessage("Iliad, how are you feeling?")
+    ShowMessage("If you feel tired, please spare in this town.")
+    PictureClear(5)
+    EndEventProcessing()
+    0()
+   EndIf()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   28
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【angel】")
+  ShowMessage("How about delicious ice cream?")
+  ShowMessage("You can also have cool jelly and puddings.")
+  Shop(0,421,0,0,false)
+  605(0,422,0,0)
+  605(0,423,0,0)
+  605(0,424,0,0)
+  0()
+
+
+
+EVENT   29
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【angel】")
+  ShowMessage("Honestly, life on the ground is not bad ...")
+  ShowMessage("Because there was no food in the heavenly world.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("【angel】")
+  ShowMessage("Iliad, please forgive me ......")
+  ShowMessage("I am corrupted ......")
+  If(0,5,0)
+   ShowMessageFace("iriasu_fc4",3,0,2,3)
+   ShowMessage("【Iliad】")
+   ShowMessage("Mukuimu ... how sinful.")
+   ShowMessage("Munching ... ... lose to greed and be ashamed of fallen ... ...")
+   ShowMessageFace("sonia_fc4",0,0,2,4)
+   ShowMessage("【Sonia】")
+   ShowMessage("(It is not a matter of chewing chocolate over his mouth ...)")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   30
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【angel】")
+  ShowMessage("It seems that people on the ground were enjoying such pleasures ... ...")
+  ShowMessage("It is natural that the spirit falls down ...!")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("【angel】")
+  ShowMessage("I am going to fall as well ......")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("5")
+  ShowMessageFace("alice_fc5",7,0,2,3)
+  ShowMessage("【Alice】")
+  ShowMessage("Can I fall apart?")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   31
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【angel】")
+  ShowMessage("Oh, sweet ... ...")
+  ShowMessage("My cheeks are going to melt ... ...")
+  0()
+
+
+
+EVENT   32
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【angel】")
+  ShowMessage("When we fell to the ground, we were forced to take a meal.")
+  ShowMessage("However, I did not mind eating meat etc and decided to devote myself to ingesting sugar.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("【angel】")
+  ShowMessage("Somewhat, in the event that the sweet shop is in full bloom ... ...")
+  ShowMessage("Oh, sweet and tasty ......")
+  0()
+
+
+
+EVENT   33
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【angel】")
+  ShowMessage("Sweetness of bliss ...")
+  ShowMessage("This way straight to the fallen angel ......")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("【angel】")
+  ShowMessage("...... Also, I feel I gained weight.")
+  ShowMessage("No way, this trap ......")
+  0()
+
+
+
+EVENT   34
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Valkyrie】")
+  ShowMessage("Mushy ... ... mushrooms ......")
+  ShowMessage("...... only, do not look ...!! Do not look at the corrupt me ...!")
+  0()
+
+
+
+EVENT   35
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Valkyrie】")
+  ShowMessage("There are three types of occupations: general workers, senior positions, top senior positions ... ...")
+  ShowMessage("According to ancient books, there is a \"seal job\" on top of it.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("【Valkyrie】")
+  ShowMessage("Although it is occupation that it was sealed by goddess and evil god ... ...")
+  ShowMessage("It is enigmatic whether what it is like is mysterious.")
+  0()
+
+
+
+EVENT   36
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【angel】")
+  ShowMessage("This shop is ... just like heaven.")
+  0()
+
+
+
+EVENT   37
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【blacksmith】")
+  ShowMessage("In the heavenly world, I was learning metallurgical techniques.")
+  ShowMessage("Now I am making a living as a blacksmith.")
+  355("call_synthesize(22)")
+  0()
+
+
+
+EVENT   38
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【angel】")
+  ShowMessage("Basically, Mr. Rana reigns this town.")
+  ShowMessage("It is the style of consulting with the angel chief only when problems occur.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("【angel】")
+  ShowMessage("The angel chief always prays for Iliad's return ... ...")
+  ShowMessage("I do not want to bother your heart with miscellaneous affairs.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("383")
+  ShowMessageFace("eden_fc1",0,0,2,3)
+  ShowMessage("【Eden】")
+  ShowMessage("The time of prayer is over, now it is time to fight.")
+  ShowMessage("You guardian, please keep this town.")
+  ShowMessageFace("",0,0,2,4)
+  ShowMessage("【angel】")
+  ShowMessage("Ha ha! surely!")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   39
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【angel】")
+  ShowMessage("When you run a town, miscellaneous things will overflow from the next ... ...")
+  ShowMessage("It is only recently that it has finally calmed down since the major incident.")
+  0()
+
+
+
+EVENT   40
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【angel】")
+  ShowMessage("This is the house of Ranael, who is ruling over the town.")
+  0()
+
+
+
+EVENT   41
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【angel】")
+  ShowMessage("When the heavenly earth crashed, most of the buildings except for some were lost.")
+  ShowMessage("Therefore he founded a town by building a house with trees and bricks, following human beings.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("【angel】")
+  ShowMessage("It turned into a merchant, broke in the towns and villages of humans, sometimes purchased many items.")
+  ShowMessage("The fact that the reconstruction has proceeded so far has been the day of painfulness ... ...")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("36")
+  ShowMessageFace("rucyfinac_fc1",0,0,2,3)
+  ShowMessage("【Lucifina】")
+  ShowMessage("I tried hard, is not it?")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   42
+ PAGE   1
+  If(0,2259,1)
+   217()
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("【angel】")
+   ShowMessage("Until I fell to the ground, I did not even know the feeling of being cold ... ...")
+   250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x4f,0x70,0x65,0x6e,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+   Wait(30)
+   250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+   ChangeSwitch(31,31,0)
+   Wait(60)
+   ShowMessageFace("sonia_fc3",2,0,2,2)
+   ShowMessage("【Sonia】")
+   ShowMessage("Wow! Polar bear!")
+   ShowMessageFace("shirokuma_fc1",0,0,2,3)
+   ShowMessage("【Polar bear girl】")
+   ShowMessage("Shamasami ......")
+   205(43,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x0c,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x09,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x09,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x09,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x09,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x2d,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+   ChangeSwitch(2259,2259,0)
+   ChangeSwitch(31,31,1)
+   ShowMessageFace("shirokuma_fc1",0,0,2,4)
+   ShowMessage("【Polar bear girl】")
+   ShowMessage("In the house, warmth ...")
+   0()
+  EndIf()
+  ShowMessageFace("",0,0,2,5)
+  ShowMessage("【angel】")
+  ShowMessage("Polar bear girls have come to warmth at home.")
+  ShowMessage("Because it is cold outside ...")
+  ShowMessageFace("",0,0,2,6)
+  ShowMessage("【angel】")
+  ShowMessage("I was surprised at the beginning but now I am accepting it.")
+  ShowMessage("It's warm when I stick together ......")
+  0()
+
+
+
+EVENT   43
+ PAGE   1
+  // condition: switch 31 is ON
+  0()
+
+
+
+EVENT   44
+ PAGE   1
+  // condition: switch 2259 is ON
+  ShowMessageFace("shirokuma_fc1",0,0,2,1)
+  ShowMessage("【Polar bear girl】")
+  ShowMessage("In the house, warmth ...")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("359")
+  ShowMessageFace("cupid_fc1",4,0,2,2)
+  ShowMessage("【Kewpie】")
+  ShowMessage("Polar bear, warmth ♪")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   45
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Tool store】")
+  ShowMessage("We have various items.")
+  ShowMessage("Surely it will be useful for traveling ... ...")
+  Shop(0,2,0,0,false)
+  605(0,4,0,0)
+  605(0,7,0,0)
+  605(0,11,0,0)
+  605(0,13,0,0)
+  605(0,14,0,0)
+  605(0,15,0,0)
+  605(0,16,0,0)
+  605(0,17,0,0)
+  605(0,18,0,0)
+  605(0,19,0,0)
+  605(0,20,0,0)
+  605(0,21,0,0)
+  605(0,23,0,0)
+  605(0,35,0,0)
+  605(0,109,0,0)
+  If(1,1005,0,20,0)
+   If(4,66,0)
+    If(0,2065,0)
+     If(2,"A",1)
+      ChangeSelfSwitch("A",0)
+      ShowMessageFace("vgirl_fc1",0,0,2,2)
+      ShowMessage("【Vanilla】")
+      ShowMessage("Nice to meet you, it is a merchant's vanilla.")
+      ShowMessage("I would like to treat spirit medicines at our shop, too ....")
+      ShowMessageFace("",0,0,2,3)
+      ShowMessage("【Tool store】")
+      ShowMessage("That would be difficult.")
+      ShowMessage("The stockpile quantity of a spirit drug is to the extent that it responds to the demand of the town to the last.")
+      ShowMessageFace("",0,0,2,4)
+      ShowMessage("【Tool store】")
+      ShowMessage("If there are more spirit powders, a lot of spirits can be made ... ...")
+      ShowMessageFace("vgirl_fc1",0,0,2,5)
+      ShowMessage("【Vanilla】")
+      ShowMessage("Where is the spirit powder?")
+      ShowMessageFace("",0,0,2,6)
+      ShowMessage("【Tool store】")
+      ShowMessage("We extract from the air of this continent, a region of high sorpium.")
+      ShowMessage("It is not efficient because it will be truly inevitable ... ...")
+      ShowMessageFace("",0,0,2,7)
+      ShowMessage("【Tool store】")
+      ShowMessage("However, if I could enter the Creation House ... ...")
+      ShowMessage("The Holy Spirit powder, which is a high concentration condensate of spirit flour, may be placed.")
+      ShowMessageFace("vgirl_fc1",0,0,2,8)
+      ShowMessage("【Vanilla】")
+      ShowMessage("With that, mass production of a spirit can be possible?")
+      ShowMessage("Then, go to the building of Genesis!")
+      EndEventProcessing()
+      0()
+     Else()
+      If(8,554)
+       ChangeInventory_Item(554,1,0,1)
+       ShowMessageFace("",0,0,2,9)
+       ShowMessage("【Tool store】")
+       ShowMessage("The Holy Spirit powder, certainly received.")
+       ShowMessage("This will make it possible to produce a large quantity of the drugs ... ...")
+       ShowMessageFace("",0,0,2,10)
+       ShowMessage("【Tool store】")
+       ShowMessage("Let's also deliver it to your shop as promised.")
+       ShowMessage("Please give me the price as per the offer.")
+       ShowMessageFace("vgirl_fc1",0,0,2,11)
+       ShowMessage("【Vanilla】")
+       ShowMessage("Thank you!")
+       ShowMessage("Best regards in the future!")
+       249(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0c,0x66,0x61,0x6e,0x66,0x61,0x6c,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69))
+       ShowMessageFace("",0,0,2,12)
+       ShowMessage("I came to deal with a spirit in a vanilla shop!")
+       ChangeVariable(1005,1005,0,0,21)
+       ChangeSwitch(2065,2065,1)
+       Wait(60)
+       EndEventProcessing()
+       0()
+      Else()
+       ShowMessageFace("",0,0,2,13)
+       ShowMessage("【Tool store】")
+       ShowMessage("If I could enter the Creation House ... ...")
+       ShowMessage("The Holy Spirit powder, which is a high concentration condensate of spirit flour, may be placed.")
+       EndEventProcessing()
+       0()
+      EndIf()
+      0()
+     EndIf()
+     0()
+    EndIf()
+    0()
+   EndIf()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   46
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("[Angel who turned into a merchant]")
+  ShowMessage("Well then, are you going to Sabasa to work out.")
+  ShowMessage("This time I needed additional cocoa beans and coffee.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("[Angel who turned into a merchant]")
+  ShowMessage("Angel adapted enough to be mixed with the outside world, including myself, is negligible.")
+  ShowMessage("Most angels will be impossible to go out to a human town yet.")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("[Angel who turned into a merchant]")
+  ShowMessage("...... When the heavenly world was there, I am in charge of managing belief in the earth.")
+  ShowMessage("For customs of the worldly custom, there was reasonable knowledge.")
+  0()
+
+
+
+EVENT   47
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Accessory store】")
+  ShowMessage("How about a handy accessory?")
+  ShowMessage("Probably, it should be the best ones available on the ground.")
+  Shop(2,1067,0,0,false)
+  605(2,1072,0,0)
+  605(2,1077,0,0)
+  605(2,1155,0,0)
+  605(2,1165,0,0)
+  605(2,1538,0,0)
+  605(2,1540,0,0)
+  605(2,1542,0,0)
+  605(2,1544,0,0)
+  605(2,1573,0,0)
+  605(2,1575,0,0)
+  605(2,1577,0,0)
+  605(2,1579,0,0)
+  0()
+
+
+
+EVENT   48
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【angel】")
+  ShowMessage("Many angels use ascension magic.")
+  ShowMessage("I'd like to have a heavy guard by all means.")
+  0()
+
+
+
+EVENT   49
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Angel of Inn】")
+  ShowMessage("Thank you very much.")
+  ShowMessage("15GWill you rest your body?\\$")
+  ShowChoices(strings("Yes","No"),2)
+  IfPlayerPicksChoice(0,null)
+   If(7,15,0)
+    125(1,0,15)
+    221()
+    249(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x08,0x49,0x6e,0x6e,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69))
+    Wait(150)
+    314(0,0)
+    222()
+    0()
+   Else()
+    ShowMessageFace("",0,0,2,2)
+    ShowMessage("【Angel of Inn】")
+    ShowMessage("You do not seem to have enough money ...")
+    0()
+   EndIf()
+   0()
+  IfPlayerPicksChoice(1,null)
+   0()
+  404()
+  0()
+
+
+
+EVENT   50
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【angel】")
+  ShowMessage("In the town where travelers do not come either, I thought that we could profit from lodging, etc ... ...")
+  ShowMessage("It seems that there are many angels that will relax for a while here.")
+  0()
+
+
+
+EVENT   51
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【angel】")
+  ShowMessage("After serving security for about several weeks, I usually rest for a couple of days here.")
+  ShowMessage("In the life cycle of an angel, there are many people who possess owning houses.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("【angel】")
+  ShowMessage("For such a person, this hostel is very helpful.")
+  ShowMessage("You will be taken care of for nothing shortly for several days ... ...")
+  0()
+
+
+
+EVENT   52
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【angel】")
+  ShowMessage("A hotel is a good one, is not it?")
+  ShowMessage("While I am here I do not mind just being scared.")
+  0()
+
+
+
+EVENT   53
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【angel】")
+  ShowMessage("Work, rest, work and ...")
+  ShowMessage("It is everyday to feel sweating and living.")
+  0()
+
+
+
+EVENT   54
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【angel】")
+  ShowMessage("Let's go back to the pioneering work after a few days off.")
+  ShowMessage("In the outside world, it was said to be a migrant worker style.")
+  0()
+
+
+
+EVENT   55
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Cupid】")
+  ShowMessage("Ice, chocolate, cake ......")
+  ShowMessage("Oh, my heart will be useless ~ ♪")
+  0()
+
+
+
+EVENT   56
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(57,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   57
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(77,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   58
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(241,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   59
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(417,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   60
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(322,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   61
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(8,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   62
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(19,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   63
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(25,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+

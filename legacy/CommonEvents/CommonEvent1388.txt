@@ -1,0 +1,8 @@
+﻿// EVENT 1388
+Name "会話：ルカ・ハイネ"
+
+ChangeVariable(25,25,0,0,0)
+ShowMessageFace("",0,0,2,1)
+ShowMessage("会話を拒絶している！")
+EndEventProcessing()
+0()

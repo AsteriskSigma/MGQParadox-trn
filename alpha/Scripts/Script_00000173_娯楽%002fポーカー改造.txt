@@ -1,0 +1,800 @@
+=begin
+=Entertainment/Poker remodeling
+
+CACAO SOFT\"Poker\" is not used as the setting item of the original script, all set here
+Rebuild points refer to \"Tris Correction H ver4\" Invalidation of lines 714 to 715 of the former poker(#)Required
+
+==Change log
+  Date     Version Author Comment
+==14/12/19 2.0.1   Tris Integration F ~ I H Transplant
+==15/09/03 2.0.2   Tris integration J ~ U J L O
+
+=end
+
+#==============================================================================
+# ◆ Setting item
+#==============================================================================
+module CAO::Poker
+  #--------------------------------------------------------------------------
+  # ◆ Display of name and magnification (dividend) Adjust X coordinate Adjust left by minus, move right with plus
+  #    [Role on the left, Left magnification, The right role, Right magnification]
+  #--------------------------------------------------------------------------
+  HANDS_X        = [0, -20, -20, 0]   # Regular poker
+  BATTLE_HANDS_X = [0,   0, -20, 0]   # Skill poker magnification is not used
+  #--------------------------------------------------------------------------
+  # Explanation of operation during poker skill
+  #--------------------------------------------------------------------------
+  BATTLE_HELP = "\\C[2]<key_c>button\\C[0]Turn the card inside out\\C[2]<key_b>button\\C[0]Replace the face-down card with"
+  #--------------------------------------------------------------------------
+  # ◆ Poker Skill Invocation Skill ID
+  #--------------------------------------------------------------------------
+  BATTLE_SKILL = [3247, 3248, 3249, 3250, 3251, 3252,
+                        3253, 3254, 3255, 3256, 3257]
+  #--------------------------------------------------------------------------
+  # ◇ start_pokerIf not specified in the number of sheets initially displayed in the premium
+  #--------------------------------------------------------------------------
+  DEFAULT_COIN = 100
+  #--------------------------------------------------------------------------
+  # ◇ start_pokerIf you do not specify in increments / decrements
+  #--------------------------------------------------------------------------
+  BET_RATE = 10
+  #--------------------------------------------------------------------------
+  # ◇ start_pokerIf not specified Maximum number of premiums
+  #--------------------------------------------------------------------------
+  MAX_BET = 100
+  #--------------------------------------------------------------------------
+  # ◇ Increase amount of premium( n Double)
+  #--------------------------------------------------------------------------
+  DIVIDEND_COVER = [0, 1, 2, 3, 5, 7, 10, 30, 50, 100, 300]
+  #--------------------------------------------------------------------------
+  # ◇ In case the bottom three digits of dividend is 000, it is indicated as K
+  #--------------------------------------------------------------------------
+  ADDR_DIVIDEND = true
+  #--------------------------------------------------------------------------
+  # ◇ First name role(High card)Is not displayed on the screen
+  #--------------------------------------------------------------------------
+  VOCAB_HANDS = [ "High card", "One pair", "Two pair", "Three of a kind",
+                  "Straight", "Flush", "Full House", "Four of a kind",
+                  "Straight Flush", "Five of a kind",
+                  "Royal Straight Flush"]
+  #--------------------------------------------------------------------------
+  # ◇ Name and unit of premium
+  #--------------------------------------------------------------------------
+  VOCAB_COIN = "Balance"
+  VOCAB_COIN_U = " coins"
+  #--------------------------------------------------------------------------
+  # ◇ Message when selecting a premium
+  #--------------------------------------------------------------------------
+  VOCAB_BET  = "Please set your wager"
+  #--------------------------------------------------------------------------
+  # ◇ Message after the end of one game
+  #--------------------------------------------------------------------------
+  VOCAB_WIN  = "Congratulations.\n You won \\C[14]%s\\C[0] coins."
+  VOCAB_LOSE = "That's too bad. \nEarned coins\\C[14]%s\\C[0] It is a sheet"
+  #--------------------------------------------------------------------------
+  # ◇ Text in the help window
+  #--------------------------------------------------------------------------
+  VOCAB_HELP = "\\C[2]<key_a>\\C[0] : Game description"
+  #--------------------------------------------------------------------------
+  # ◇ Description of the game
+  #--------------------------------------------------------------------------
+  MANUAL_LINE = 11            # Number of lines
+  TEXT_MANUAL = <<-'[EOS]'    # A sentence(From the next line[EOS] Until)
+  
+\C[16]<Setting the amount of your bid>\C[0]
+ ·\C[2]↑/↓ key\C[0] Increase/decrease your bid
+ ·\C[2]<key_c> key\C[0] Confirm your bid and start the game
+ ·\C[2]<key_b> key\C[0] Cancel
+
+\C[16]<Card selection>\C[0]
+ ·\C[2]←/→ key\C[0] Change the highlighted card
+ ·\C[2]<key_c> key\C[0] Flip the seleted card
+ ·\C[2]<key_b> key\C[0] Replace face-down cards and confirm your hand
+ 
+  [EOS]
+  #--------------------------------------------------------------------------
+  # ◇ Sound effect
+  #--------------------------------------------------------------------------
+  SOUND_START   = "Flash2"      # When the card becomes a table and becomes selectable
+  SOUND_WIN     = "mon_fanfale" # Useful
+  SOUND_LOSE    = "Down1"       # No role
+  SOUND_BET     = "Shop"        # When you decide the premium
+  SOUND_COIN    = "Coin"        # When you change your premium
+  SOUND_DEAL    = "Book2"       # When hand is distributed
+  SOUND_SLOUGH  = "Book2"       # When you throw out your hand
+  SOUND_REVERSE = "Book1"       # When turning over the card
+  SOUND_CHANGE  = "Book2"       # When replacing the back card
+end
+# Setting items to here
+
+
+# :: Redefinition for setting in this script
+#==============================================================================
+# ■ Sound
+#==============================================================================
+module Sound
+  #--------------------------------------------------------------------------
+  # ● Create playback method
+  #--------------------------------------------------------------------------
+  def self.define_poker_sound(method_name, file_name)
+    if file_name.empty?
+      instance_eval %Q{
+        def #{method_name}
+        end
+      }
+    else
+      instance_eval %Q{
+        @#{method_name} = RPG::SE.new(file_name, #{NWConst::Casino::VOLUME_POKER_OTHER})
+        def #{method_name}
+          @#{method_name}.play
+        end
+      }
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Sound effect of poker
+  #--------------------------------------------------------------------------
+  define_poker_sound :play_poker_start,   CAO::Poker::SOUND_START
+  define_poker_sound :play_poker_lose,    CAO::Poker::SOUND_LOSE
+  define_poker_sound :play_poker_bet,     CAO::Poker::SOUND_BET
+  define_poker_sound :play_poker_coin,    CAO::Poker::SOUND_COIN
+  define_poker_sound :play_poker_deal,    CAO::Poker::SOUND_DEAL
+  define_poker_sound :play_poker_slough,  CAO::Poker::SOUND_SLOUGH
+  define_poker_sound :play_poker_reverse, CAO::Poker::SOUND_REVERSE
+  define_poker_sound :play_poker_change,  CAO::Poker::SOUND_CHANGE
+end
+
+# :: Countermeasures against conflict errors
+#==============================================================================
+# ■ Game_Poker
+#==============================================================================
+class Game_Poker
+  # Game_PokerProvisional measures to prevent errors in generation
+  # When script integration is done, create_game_objects On the side Game_PokerEliminate generation of
+end
+
+# :: Common coin with casino coin (slot)
+#==============================================================================
+# ■ CAO::Poker
+#==============================================================================
+class << CAO::Poker
+  #--------------------------------------------------------------------------
+  # ● Acquire the number of possessed coins
+  #--------------------------------------------------------------------------
+  def coin
+    return $game_party.coin
+  end
+  #--------------------------------------------------------------------------
+  # ● Increase (decrease) in coins
+  #--------------------------------------------------------------------------
+  def gain_coin(amount)
+    $game_party.gain_coin(amount)
+  end
+end
+
+# :: Set the range of wagers so that they can be set for different poker units
+#==============================================================================
+# ■ Game_Temp
+#==============================================================================
+class Game_Temp
+  #--------------------------------------------------------------------------
+  # ● Public instance variables
+  #--------------------------------------------------------------------------
+  attr_accessor :poker_default_coin
+  attr_accessor :poker_bet_rate
+  attr_accessor :poker_max_bet
+end
+#==============================================================================
+# ■ Game_Interpreter
+#==============================================================================
+class Game_Interpreter
+  #--------------------------------------------------------------------------
+  # ● Poker start
+  #--------------------------------------------------------------------------
+  def start_poker(max_bet = nil, bet_rate = nil, default_coin = nil)
+    max_bet      ||= CAO::Poker::MAX_BET
+    bet_rate     ||= CAO::Poker::BET_RATE
+    default_coin ||= CAO::Poker::DEFAULT_COIN
+    $game_temp.poker_max_bet       = max_bet
+    $game_temp.poker_bet_rate      = bet_rate
+    $game_temp.poker_default_coin  = default_coin
+    SceneManager.call(Scene_Poker)
+    Fiber.yield
+  end
+end
+#==============================================================================
+# ■ Window_PokerBet
+#==============================================================================
+class Window_PokerBet < Window_Base
+  #--------------------------------------------------------------------------
+  # ● Object initialization
+  #--------------------------------------------------------------------------
+  def initialize
+    super(0, 0, 272, fitting_height(2))
+    self.viewport = viewport
+    @digits_max = $game_temp.poker_max_bet % 10 + 1
+    self.openness = 0
+    deactivate
+    reset
+  end
+  #--------------------------------------------------------------------------
+  # ● Reset
+  #--------------------------------------------------------------------------
+  def reset
+    @count = 0
+    @number = $game_temp.poker_default_coin
+    refresh
+  end
+  #--------------------------------------------------------------------------
+  # ● Change processing of numbers
+  #--------------------------------------------------------------------------
+  def process_digit_change
+    return unless open? && active
+    if Input.repeat?(:UP) || Input.repeat?(:DOWN)
+      last_number = @number
+      if @count < 3
+        @count += 1
+        @number += $game_temp.poker_bet_rate if Input.repeat?(:UP)
+        @number -= $game_temp.poker_bet_rate if Input.repeat?(:DOWN)
+      else
+        @number += $game_temp.poker_bet_rate * 10 if Input.repeat?(:UP)
+        @number -= $game_temp.poker_bet_rate * 10 if Input.repeat?(:DOWN)
+      end
+      @number = $game_temp.poker_bet_rate if @number < $game_temp.poker_bet_rate
+      @number = $game_temp.poker_max_bet if $game_temp.poker_max_bet < @number
+      if @number != last_number
+        Sound.play_poker_coin
+        refresh
+      end
+    else
+      @count = 0
+    end
+  end
+end
+
+# :: Text in the help window VOCAB_HELP Control character(\\C[2]Such)Correspond to
+# :: Corresponds to the \"Button explanation\" function of Config on the operation explanation key display
+#==============================================================================
+# ■ Window_Base
+#==============================================================================
+class Window_Base < Window
+  #--------------------------------------------------------------------------
+  # ● Button replacement
+  #--------------------------------------------------------------------------
+  def vocab_key_text(text)
+    return text.gsub(/<(\S{5})>/) { eval("Vocab.#{$1}") }
+  end
+end
+#==============================================================================
+# ■ Window_PokerManual
+#==============================================================================
+class Window_PokerManual < Window_Base
+  #--------------------------------------------------------------------------
+  # ● Refresh
+  #--------------------------------------------------------------------------
+  def refresh
+    self.contents.clear
+    text = CAO::Poker::TEXT_MANUAL.gsub(/<(\S{5})>/) { eval("Vocab.#{$1}") }
+    draw_text_ex(0, 0, text)
+  end
+end
+#==============================================================================
+# ■ Window_PokerHelp
+#==============================================================================
+class Window_PokerHelp < Window_Base
+  #--------------------------------------------------------------------------
+  # ● Refresh
+  #--------------------------------------------------------------------------
+  def refresh
+    self.contents.clear
+    text = CAO::Poker::VOCAB_HELP.gsub(/<(\S{5})>/) { eval("Vocab.#{$1}") }
+    draw_text_ex(0, 0, text)
+  end
+end
+
+# :: Display of name and magnification (dividend) Setting item to adjust X coordinate HANDS_X Add
+# :: Card image"Graphics/System"Not a folder"Graphics/Casino"In a folder
+# :: Add a joker to the additional role and add a five card and erase the high card display
+#==============================================================================
+# ■ Window_PokerHands
+#==============================================================================
+class Window_PokerHands < Window_Base
+  #--------------------------------------------------------------------------
+  # ● Drawing items
+  #--------------------------------------------------------------------------
+  def draw_item(index)
+    item_index = index + 1
+    rect = Rect.new(0, 0, self.item_width, self.line_height)
+    rect.y = (index % 5) * rect.height
+    change_color(@index == item_index ? text_color(18) : normal_color)
+    
+    rect.x = (index / 5) * (rect.width + self.space) + hands_x[index / 5 * 2]
+    draw_text(rect, CAO::Poker::VOCAB_HANDS[item_index])
+    
+    rect.x = (index / 5) * (rect.width + self.space) + hands_x[index / 5 * 2 + 1]
+    draw_text(rect, prize_s(item_index), 2)
+  end
+  #--------------------------------------------------------------------------
+  # ● HANDS_X Acquisition
+  #--------------------------------------------------------------------------
+  def hands_x
+    CAO::Poker::HANDS_X
+  end
+end
+#==============================================================================
+# ■ Sprite_PokerTrump
+#==============================================================================
+class Sprite_PokerTrump < Sprite
+  #--------------------------------------------------------------------------
+  # ● Constants
+  #--------------------------------------------------------------------------
+  CARD_WIDTH  = Cache.casino("PokerTrump").width  / 14
+  CARD_HEIGHT = Cache.casino("PokerTrump").height / 4
+  #--------------------------------------------------------------------------
+  # ● Back of the card
+  #--------------------------------------------------------------------------
+  def create_backface
+    @backface = Bitmap.new(CARD_WIDTH, CARD_HEIGHT)
+    @backface.blt(0, 0, Cache.casino("PokerTrump"),
+      Rect.new(CARD_WIDTH * 13, CARD_HEIGHT * 0, CARD_WIDTH, CARD_HEIGHT))
+    self.bitmap = @backface
+  end
+  #--------------------------------------------------------------------------
+  # ● Set up the card
+  #--------------------------------------------------------------------------
+  def trump=(trump)
+    return if @trump == trump
+    @trump = trump
+    @trump_bitmap.dispose if @trump_bitmap
+    @trump_bitmap = Bitmap.new(CARD_WIDTH, CARD_HEIGHT)
+    rect = Rect.new(0, 0, CARD_WIDTH, CARD_HEIGHT)
+    if @trump.joker?
+      rect.x = CARD_WIDTH * 13
+      rect.y = CARD_HEIGHT * 1
+    else
+      rect.x = CARD_WIDTH * (trump.number - 1)
+      rect.y = CARD_HEIGHT * trump.suit
+    end
+    @trump_bitmap.blt(0, 0, Cache.casino("PokerTrump"), rect)
+  end
+end
+#==============================================================================
+# ■ CAO::Poker::Trump
+#==============================================================================
+class CAO::Poker::Trump
+  #--------------------------------------------------------------------------
+  # ● Object initialization
+  #--------------------------------------------------------------------------
+  def initialize(suit, number)
+    number = 1 if suit == 4
+    @suit = suit
+    @number = number
+  end
+  #--------------------------------------------------------------------------
+  # ● whether it is a joker or not
+  #--------------------------------------------------------------------------
+  def joker?
+    @suit == 4
+  end
+end
+#==============================================================================
+# ■ CAO::Poker::Hand
+#==============================================================================
+class CAO::Poker::Hand
+  #--------------------------------------------------------------------------
+  # ●
+  #--------------------------------------------------------------------------
+  @@deck = Array.new(13 * 4 + 1) {|i| CAO::Poker::Trump.new(i/13, i%13+1) }.freeze
+  #--------------------------------------------------------------------------
+  # ● Judgment of role
+  #--------------------------------------------------------------------------
+  def final
+    sort! # You need to sort your hand before judging a winning combination
+    return (@hand.any? {|card| card.joker? }) ? final_joker : final_normal
+  end
+  #--------------------------------------------------------------------------
+  # ● Judgment of the role No joker
+  #--------------------------------------------------------------------------
+  def final_normal
+    edge_straight   = _hand_edge_straight?
+    straight        = _hand_straight?
+    flush           = _hand_flush?
+    pairs           = _hand_pairs
+    pair_max        = pairs.max
+    pair_min        = pairs.min
+    pair_cnt        = pairs.count(pair_max)
+    
+    return 10 if edge_straight  && flush          # Royal straight flash
+    return  8 if straight       && flush          # Straight Flush
+    return  7 if pair_max == 4                    # Four Card
+    return  6 if pair_max == 3  && pair_min == 2  # Full house
+    return  5 if flush                            # flash
+    return  4 if straight                         # straight
+    return  3 if pair_max == 3  && pair_min == 1  # Three card
+    return  2 if pair_max == 2  && pair_cnt == 4  # Two pair
+    return  1 if pair_max == 2                    # One pair
+    return  0                                     # High card
+  end
+  #--------------------------------------------------------------------------
+  # ● Judgment of the role Joker included
+  #--------------------------------------------------------------------------
+  def final_joker
+    @hand.delete_if {|card| card.joker? }
+    edge_straight   = _hand_joker_edge_straight?
+    straight        = _hand_joker_straight?
+    flush           = _hand_flush?
+    pairs           = _hand_pairs
+    pair_max        = pairs.max
+    pair_min        = pairs.min
+    pair_cnt        = pairs.count(pair_max)
+    
+    return 10 if edge_straight  && flush          # Royal straight flash
+    return  9 if pair_max == 4                    # Five card(Four Card)
+    return  8 if straight       && flush          # Straight Flush
+    return  7 if pair_max == 3                    # Four Card(Three card)
+    return  6 if pair_max == 2  && pair_cnt == 4  # Full house(Two pair)
+    return  5 if flush                            # flash
+    return  4 if straight                         # straight
+    return  3 if pair_max == 2                    # Three card(One pair)
+    return  1                                     # One pair
+  end
+  #--------------------------------------------------------------------------
+  # ● End Connection[1, 10, 11, 12, 13]Joker nothing to judge straight
+  #--------------------------------------------------------------------------
+  def _hand_edge_straight?
+    list = [1, 10, 11, 12, 13]
+    @hand.each {|card| list.delete(card.number) }
+    return list.size == 0
+  end
+  #--------------------------------------------------------------------------
+  # ● End Connection[1, 10, 11, 12, 13]Joker available
+  #--------------------------------------------------------------------------
+  def _hand_joker_edge_straight?
+    list = [1, 10, 11, 12, 13]
+    @hand.each {|card| list.delete(card.number) }
+    return list.size == 1
+  end
+  #--------------------------------------------------------------------------
+  # ● Judge straight No joker
+  #--------------------------------------------------------------------------
+  def _hand_straight?
+    return true if _hand_edge_straight?
+    @hand.each_with_index do |card,i|
+      return false if card.number - @hand[0].number != i
+    end
+    return true
+  end
+  #--------------------------------------------------------------------------
+  # ● Judgment of straight Joker included
+  #--------------------------------------------------------------------------
+  def _hand_joker_straight?
+    return true if _hand_joker_edge_straight?
+    for i in 1..9
+      list = [i, i+1, i+2, i+3, i+4]
+      @hand.each {|card| list.delete(card.number) }
+      return true if list.size == 1
+    end
+    return false
+  end
+  #--------------------------------------------------------------------------
+  # ● Determination of flash
+  #--------------------------------------------------------------------------
+  def _hand_flush?
+    return @hand.all? {|card| card.suit == @hand[0].suit }
+  end
+  #--------------------------------------------------------------------------
+  # ● Get number of pairs as array(Duplicate)
+  #--------------------------------------------------------------------------
+  def _hand_pairs
+    return @hand.map {|c1| @hand.count{|c2| c1.number == c2.number } }
+  end
+end
+
+# ::<Slot Chance N> Increase the probability of pulling a joker when there is a character of
+#==============================================================================
+# ■ CAO::Poker::Hand
+#==============================================================================
+class CAO::Poker::Hand
+  #--------------------------------------------------------------------------
+  # ● Object initialization
+  #--------------------------------------------------------------------------
+  def initialize
+    @stock = @@deck.shuffle
+    @hand = []
+    5.times {|i| draw_card(i) }
+  end
+  #--------------------------------------------------------------------------
+  # ● Exchange card
+  #--------------------------------------------------------------------------
+  def change(index)
+    draw_card(index)
+  end
+  #--------------------------------------------------------------------------
+  # ● Pull card
+  #--------------------------------------------------------------------------
+  def draw_card(index)
+    $game_party.slot_chance.times do |i|
+      break if @hand.any? {|card| card.joker? }
+      break if @stock[-1].joker?
+      @stock.shuffle!
+    end
+    @hand[index] = @stock.pop
+  end
+end
+
+# :: Background image"Graphics/Casino/casino_bg.png" Into
+#==============================================================================
+# ■ Scene_Poker
+#==============================================================================
+class Scene_Poker < Scene_MenuBase
+  #--------------------------------------------------------------------------
+  # ● Create background
+  #--------------------------------------------------------------------------
+  def create_background
+    @background_sprite = Sprite.new
+    @background_sprite.bitmap = Cache.casino("casino_bg")
+  end
+end
+# :: Poker Skills
+#==============================================================================
+# ■ Scene_Battle
+#==============================================================================
+class Scene_Battle < Scene_Base
+  #--------------------------------------------------------------------------
+  # ● Poker processing
+  #--------------------------------------------------------------------------
+  def process_poker
+    @battlepoker_help_window = Window_BattlePokerHelp.new
+    @battlepoker_help_window.y = 0
+    @battlepoker_hands_window = Window_BattlePokerHands.new
+    @battlepoker_hands_window.y = @battlepoker_help_window.height
+    viewport = Viewport.new
+    viewport.rect.y = @battlepoker_hands_window.y +
+                      @battlepoker_hands_window.height - 48
+    viewport.rect.height -= viewport.rect.y + @battlepoker_help_window.height
+    @battlepoker_spriteset = Spriteset_PokerTrump.new(viewport)
+    @battlepoker_spriteset.set_handler(:cancel, method(:battlepoker_change_card))
+    
+    @battlepoker_hand = CAO::Poker::Hand.new
+    @battlepoker_spriteset.deal(@battlepoker_hand)
+    @battlepoker_spriteset.open
+    @battlepoker_spriteset.select(0)
+    @battlepoker_spriteset.activate
+    
+    while @battlepoker_spriteset.active
+      update_basic
+      @battlepoker_spriteset.update
+    end
+    60.times do
+      update_basic
+      @battlepoker_spriteset.update
+    end
+    sound = 
+      case @battlepoker_hands_window.index
+      when 0;     NWConst::Casino::SE_LOSE
+      when 1..2;  NWConst::Casino::SE_WIN1
+      when 3..6;  NWConst::Casino::SE_WIN2
+      when 7..9;  NWConst::Casino::SE_WIN3
+      when 10;    NWConst::Casino::SE_WIN4
+      end
+    CasinoManager.process_sound(:poker, @battlepoker_hands_window.index, method(:abs_wait))
+    CasinoManager.process_medal(:poker, @battlepoker_hands_window.index, 1)
+    
+    result_skill_id = CAO::Poker::BATTLE_SKILL[@battlepoker_hands_window.index]
+    
+    @battlepoker_hands_window.dispose
+    @battlepoker_help_window.dispose
+    @battlepoker_spriteset.dispose
+    remove_instance_variable(:@battlepoker_hands_window)
+    remove_instance_variable(:@battlepoker_help_window)
+    remove_instance_variable(:@battlepoker_spriteset)
+    remove_instance_variable(:@battlepoker_hand)
+    
+    return result_skill_id
+  end
+  #--------------------------------------------------------------------------
+  # ● Exchange card
+  #--------------------------------------------------------------------------
+  def battlepoker_change_card
+    @battlepoker_spriteset.unselect
+    @battlepoker_spriteset.reversed_indexes.each {|index| @battlepoker_hand.change(index) }
+    @battlepoker_spriteset.open(@battlepoker_hand)
+    @battlepoker_hands_window.index = @battlepoker_hand.final
+  end
+end
+#==============================================================================
+# ■ Window_BattlePokerHelp
+#==============================================================================
+class Window_BattlePokerHelp < Window_Base
+  #--------------------------------------------------------------------------
+  # ● Object initialization
+  #--------------------------------------------------------------------------
+  def initialize
+    h = fitting_height(1)
+    super(0, Graphics.height - h, Graphics.width, h)
+    refresh
+  end
+  #--------------------------------------------------------------------------
+  # ● Refresh
+  #--------------------------------------------------------------------------
+  def refresh
+    self.contents.clear
+    text = vocab_key_text(CAO::Poker::BATTLE_HELP)
+    draw_text_ex(0, 0, text)
+  end
+end
+#==============================================================================
+# ■ Window_BattlePokerHands
+#==============================================================================
+class Window_BattlePokerHands < Window_PokerHands
+  #--------------------------------------------------------------------------
+  # ● String of magnification or dividend
+  #--------------------------------------------------------------------------
+  def prize_s(index)
+    ""
+  end
+  #--------------------------------------------------------------------------
+  # ● HANDS_X Acquisition
+  #--------------------------------------------------------------------------
+  def hands_x
+    CAO::Poker::BATTLE_HANDS_X
+  end
+end
+
+# :: Change free cards during test play
+#==============================================================================
+# ■ Spriteset_PokerTrump
+#==============================================================================
+class Spriteset_PokerTrump
+  #--------------------------------------------------------------------------
+  # ● Frame update
+  #--------------------------------------------------------------------------
+  alias :nw_test_poker_update :update
+  def update
+    nw_test_poker_update
+    return unless $TEST
+    if self.active
+      SceneManager.scene.test_poker_send(:test_up)   if Input.repeat?(:UP)
+      SceneManager.scene.test_poker_send(:test_down) if Input.repeat?(:DOWN)
+      SceneManager.scene.test_poker_send(:test_l)    if Input.repeat?(:L)
+      SceneManager.scene.test_poker_send(:test_r)    if Input.repeat?(:R)
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Test Card Relocation
+  #--------------------------------------------------------------------------
+  def test_deal(hand, i)
+    @card_sprites[i].trump = hand[i]
+    @card_sprites[i].instance_eval { self.bitmap = @trump_bitmap }
+  end
+end
+#==============================================================================
+# ■ Scene_Poker
+#==============================================================================
+class Scene_Poker < Scene_MenuBase
+  #--------------------------------------------------------------------------
+  # ● Test card change
+  #--------------------------------------------------------------------------
+  def test_poker_send(symbol)
+    i = @spriteset.index
+    @hand.instance_eval { @stock.unshift(self[i]) }
+    @hand.send(symbol, i)
+    @hand.instance_eval { @stock.delete_if {|card| card.id == self[i].id } }
+    @spriteset.test_deal(@hand, i)
+  end
+end
+#==============================================================================
+# ■ Scene_Battle
+#==============================================================================
+class Scene_Battle < Scene_Base
+  #--------------------------------------------------------------------------
+  # ● Test card change
+  #--------------------------------------------------------------------------
+  def test_poker_send(symbol)
+    i = @battlepoker_spriteset.index
+    @battlepoker_hand.instance_eval { @stock.unshift(self[i]) }
+    @battlepoker_hand.send(symbol, i)
+    @battlepoker_hand.instance_eval { @stock.delete_if {|card| card.id == self[i].id } }
+    @battlepoker_spriteset.test_deal(@battlepoker_hand, i)
+  end
+end
+#==============================================================================
+# ■ CAO::Poker::Hand
+#==============================================================================
+class CAO::Poker::Hand
+  def test_up(i)
+    send(:test_card_number, i,  1)
+    send(:test_card_number, i,  1) while test_on_loop?(i)
+  end
+  def test_down(i)
+    send(:test_card_number, i, -1)
+    send(:test_card_number, i, -1) while test_on_loop?(i)
+  end
+  def test_l(i)
+    last_n = @hand[i].number
+    send(:test_card_suit,   i, -1)
+    if @hand[i].joker? and test_on_loop?(i)
+      @hand[i] = CAO::Poker::Trump.new(3, last_n)
+    end
+    send(:test_card_number, i,  1) while test_on_loop?(i)
+  end
+  def test_r(i)
+    last_n = @hand[i].number
+    send(     :test_card_suit,   i,  1)
+    if @hand[i].joker? and test_on_loop?(i)
+      @hand[i] = CAO::Poker::Trump.new(0, last_n)
+    end
+    send(:test_card_number, i,  1) while test_on_loop?(i)
+  end
+  def test_card_number(i, plus)
+    s = @hand[i].suit
+    n = @hand[i].number + plus
+    n =  1 if n == 14
+    n = 13 if n ==  0
+    @hand[i] = CAO::Poker::Trump.new(s, n)
+  end
+  def test_card_suit(i, plus)
+    s = @hand[i].suit + plus
+    n = @hand[i].number
+    s =  0 if s ==  5
+    s =  4 if s == -1
+    @hand[i] = CAO::Poker::Trump.new(s, n)
+  end
+  def test_on_loop?(i)
+    return (@hand.count {|c2| @hand[i].id == c2.id }) == 2
+  end
+end
+
+# :: Modify message display
+#==============================================================================
+# ■ Scene_Poker
+#==============================================================================
+class Scene_Poker < Scene_MenuBase
+  #--------------------------------------------------------------------------
+  # ● Victory indication
+  #--------------------------------------------------------------------------
+  def show_mes_win
+    show_mes_result(true)
+  end
+  #--------------------------------------------------------------------------
+  # ● Display of defeat
+  #--------------------------------------------------------------------------
+  def show_mes_lose
+    show_mes_result(false)
+  end
+  #--------------------------------------------------------------------------
+  # ● Display results
+  #--------------------------------------------------------------------------
+  def show_mes_result(win)
+    if win
+      CAO::Poker.gain_coin(@hands_window.prize)
+      @coin_window.refresh
+      @message_window.set_text(CAO::Poker::VOCAB_WIN % @hands_window.prize)
+    else
+      @message_window.set_text(CAO::Poker::VOCAB_LOSE % @hands_window.prize)
+    end
+    @message_window.arrows_visible = false
+    @message_window.open.deactivate
+    CasinoManager.process_sound(:poker, @hands_window.index, method(:abs_wait))
+    CasinoManager.process_medal(:poker, @hands_window.index, 0)
+    @message_window.arrows_visible = true
+    @message_window.activate
+  end
+  #--------------------------------------------------------------------------
+  # ● Frame update (for weight)
+  #--------------------------------------------------------------------------
+  def abs_wait(duration)
+    duration.times { update_basic }
+  end
+end
+#==============================================================================
+# ■ Window_PokerMessage
+#==============================================================================
+class Window_PokerMessage < Window_Base
+  #--------------------------------------------------------------------------
+  # ● Calculate height of window contents
+  #--------------------------------------------------------------------------
+  def contents_height
+    super + 1
+  end
+endd

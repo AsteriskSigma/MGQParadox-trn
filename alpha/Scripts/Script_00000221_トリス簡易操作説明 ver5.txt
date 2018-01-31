@@ -1,0 +1,456 @@
+
+=begin
+
+Troublesome · ___ ___ 0 RPG
+Tris simple operation explanation ver 5 2015/04/18
+	2017/10/21 Bug fixes
+
+For the function list explanation below, what newly added with this ver is ● What you changed is ○
+○ Simple operation explanation displayed on lower right of each screen
+
+
+Feature Description
+· Simple operation explanation is displayed at the lower right corner of each screen
+Effective screen
+· Item, Equipment, Skill, Ability, Status
+· Shop, composite, coin prize exchange
+
+
+
+=end
+
+#==============================================================================
+# ■ Sprite_ShowKey
+#==============================================================================
+class Sprite_ShowKey < Sprite_Base
+  #--------------------------------------------------------------------------
+  # ● Object initialization
+  #--------------------------------------------------------------------------
+  def initialize(window)
+    super(nil)
+    set_window(window)
+    self.bitmap = Bitmap.new(Graphics.width, Graphics.height)
+    self.bitmap.font.size = 14
+    self.bitmap.font.outline = false
+    set_text("")
+  end
+  #--------------------------------------------------------------------------
+  # ● Window setting
+  #--------------------------------------------------------------------------
+  def set_window(window)
+    self.viewport = window.viewport
+    self.z = window.z + 1
+    #@pos = [window.x + window.width, window.y + window.height]
+    @pos = [Graphics.width, Graphics.height]
+  end
+  #--------------------------------------------------------------------------
+  # ● Text setting
+  #--------------------------------------------------------------------------
+  def set_text(text)
+    text ||= ""
+    if @text != text
+      @text = text
+      refresh
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Refresh
+  #--------------------------------------------------------------------------
+  def refresh
+    self.bitmap.clear
+    if @text.is_a?(Array)
+      str = @text.inject("") {|r, s| r += " " + s + " " }
+    else
+      str = " " + @text + " "
+    end
+    return if (str.gsub(/ /) { "" }).empty?
+    pw = self.bitmap.text_size(str).width + 0
+    px = @pos[0] - pw
+    ph = self.bitmap.font.size + 0
+    py = @pos[1] - ph
+    rect = Rect.new(px, py, pw, ph)
+    self.bitmap.fill_rect(rect, Color.new(0, 0, 0, 192))
+    self.bitmap.draw_text(rect, str, 1)
+  end
+end
+#==============================================================================
+# ■ ShowKey_HelpWindow
+#==============================================================================
+module ShowKey_HelpWindow
+  #--------------------------------------------------------------------------
+  # ● Simple operation description Creating a sprite
+  #--------------------------------------------------------------------------
+  def create_show_key_sprite
+    @show_key_sprite = Sprite_ShowKey.new(show_key_sprite_window)
+    update_show_key_sprite
+  end
+  #--------------------------------------------------------------------------
+  # ● Updated simplified operation description
+  #--------------------------------------------------------------------------
+  def set_text_show_key_sprite(text)
+    @show_key_sprite.set_text(text)
+  end
+  #--------------------------------------------------------------------------
+  # ● Simple operation explanation window
+  #--------------------------------------------------------------------------
+  def show_key_sprite_window
+    @help_window
+  end
+  #--------------------------------------------------------------------------
+  # ● Frame update
+  #--------------------------------------------------------------------------
+  def update
+    super
+    update_show_key_sprite
+  end
+  #--------------------------------------------------------------------------
+  # ● Updated simplified operation description
+  #--------------------------------------------------------------------------
+  def update_show_key_sprite
+    set_text_show_key_sprite(show_key_text)
+  end
+  #--------------------------------------------------------------------------
+  # ● Termination processing
+  #--------------------------------------------------------------------------
+  def terminate
+    super
+    @show_key_sprite.dispose
+  end
+end
+#==============================================================================
+# ■ ShowKey_Help
+#==============================================================================
+module ShowKey_Help; end
+class << ShowKey_Help
+  #--------------------------------------------------------------------------
+  # ● Each screen
+  #--------------------------------------------------------------------------
+  def lr_scroll
+    "#{Vocab.key_l}/#{Vocab.key_r}:Page Scroll"
+  end
+  #--------------------------------------------------------------------------
+  # ● Screen for displaying items
+  #--------------------------------------------------------------------------
+  def favorite_item(state)
+    "#{Vocab.key_y}:#{state ? "Remove" : "Save"} favorite"
+  end
+  #--------------------------------------------------------------------------
+  # ● Screen for displaying items
+  #--------------------------------------------------------------------------
+  def favorite_mode(mode)
+    "#{Vocab.key_z}:#{mode ? "Display all but" : "Display only"} favorites"
+  end
+  #--------------------------------------------------------------------------
+  # ● Display screen for equipment
+  #--------------------------------------------------------------------------
+  def equip_info
+    "#{Vocab.key_x}:Equip Info"
+  end
+  #--------------------------------------------------------------------------
+  # ● Screens for each character
+  #--------------------------------------------------------------------------
+  def lr_actor
+     "#{Vocab.key_l}/#{Vocab.key_r}:Switch Character"
+  end
+  #--------------------------------------------------------------------------
+  # ● Skill screen
+  #--------------------------------------------------------------------------
+  def stype_disable
+    "#{Vocab.key_a}:Hide in Battle + Disable in Auto Mode"
+  end
+  #--------------------------------------------------------------------------
+  # ● Skill screen
+  #--------------------------------------------------------------------------
+  def stype_move
+    "#{Vocab.key_x}+↑ ↓:Sort"
+  end
+  #--------------------------------------------------------------------------
+  # ● Equipment screen
+  #--------------------------------------------------------------------------
+  def equip_shift
+    "#{Vocab.key_a}:Remove Equip"
+  end
+  #--------------------------------------------------------------------------
+  # Ability screen
+  #--------------------------------------------------------------------------
+  def ability_shift_all
+    "#{Vocab.key_a}:Remove all abilities"
+  end
+  #--------------------------------------------------------------------------
+  # Ability screen
+  #--------------------------------------------------------------------------
+  def ability_shift
+    "#{Vocab.key_a}:Remove Ability"
+  end
+  #--------------------------------------------------------------------------
+  # ● Equipment item change text on shop screen
+  #--------------------------------------------------------------------------  
+  def shop_equip_change
+    Help.shop_equip_change
+  end
+  #--------------------------------------------------------------------------
+  # ● Equipment item comparison performance on shop screen
+  #--------------------------------------------------------------------------  
+  def shop_param_compare
+    Help.shop_param_compare
+  end
+end
+#==============================================================================
+# Help
+#==============================================================================
+class << Help
+  #--------------------------------------------------------------------------
+  # ● Equipment item change text on shop screen
+  #--------------------------------------------------------------------------  
+  def shop_equip_change
+    "←/→:Change Page"
+  end
+  #--------------------------------------------------------------------------
+  # ● Equipment item comparison performance on shop screen
+  #--------------------------------------------------------------------------  
+  def shop_param_compare
+    "#{Vocab.key_x}:Compare Equip"
+  end
+end
+
+#==============================================================================
+# ■ Scene_Item
+#==============================================================================
+class Scene_Item < Scene_ItemBase
+  include ShowKey_HelpWindow
+  #--------------------------------------------------------------------------
+  # ● Start processing
+  #--------------------------------------------------------------------------
+  alias :show_key_sprite_start :start
+  def start
+    show_key_sprite_start
+    create_show_key_sprite
+  end
+  #--------------------------------------------------------------------------
+  # ● Simple operation explanation text
+  #--------------------------------------------------------------------------
+  def show_key_text
+    case
+    when @category_window.active
+      [ShowKey_Help.favorite_mode(@item_window.favorite_mode)]
+    when @item_window.active && ![1, 2].include?(@category_window.index)
+      [ShowKey_Help.favorite_item(@item_window.get_favorite_item_state),
+       ShowKey_Help.favorite_mode(@item_window.favorite_mode),
+       ShowKey_Help.lr_scroll]
+    when @item_window.active
+      [ShowKey_Help.equip_info,
+       ShowKey_Help.favorite_item(@item_window.get_favorite_item_state),
+       ShowKey_Help.favorite_mode(@item_window.favorite_mode),
+       ShowKey_Help.lr_scroll]
+    end
+  end
+end
+#==============================================================================
+# ■ Scene_Equip
+#==============================================================================
+class Scene_Equip < Scene_MenuBase
+  include ShowKey_HelpWindow
+  #--------------------------------------------------------------------------
+  # ● Start processing
+  #--------------------------------------------------------------------------
+  alias :show_key_sprite_start :start
+  def start
+    show_key_sprite_start
+    create_show_key_sprite
+  end
+  #--------------------------------------------------------------------------
+  # ● Simple operation explanation text
+  #--------------------------------------------------------------------------
+  def show_key_text
+    case
+    when @command_window.active
+      [ShowKey_Help.lr_actor]
+    when @slot_window.active
+      [ShowKey_Help.equip_info,
+       ShowKey_Help.equip_shift,
+       ShowKey_Help.favorite_mode(@item_window.favorite_mode),
+       ShowKey_Help.lr_actor]
+    when @item_window.active
+      [ShowKey_Help.equip_info,
+       ShowKey_Help.favorite_item(@item_window.get_favorite_item_state),
+       ShowKey_Help.favorite_mode(@item_window.favorite_mode),
+       ShowKey_Help.lr_scroll]
+    end
+  end
+end
+#==============================================================================
+# ■ Scene_Skill
+#==============================================================================
+class Scene_Skill < Scene_ItemBase
+  include ShowKey_HelpWindow
+  #--------------------------------------------------------------------------
+  # ● Start processing
+  #--------------------------------------------------------------------------
+  alias :show_key_sprite_start :start
+  def start
+    show_key_sprite_start
+    create_show_key_sprite
+  end
+  #--------------------------------------------------------------------------
+  # ● Simple operation explanation text
+  #--------------------------------------------------------------------------
+  def show_key_text
+    case
+    when @command_window.active
+      [ShowKey_Help.stype_move, ShowKey_Help.stype_disable, ShowKey_Help.lr_actor]
+    when @item_window.active
+      [ShowKey_Help.lr_scroll]
+    end
+  end
+end
+#==============================================================================
+# ■ Scene_Ability
+#==============================================================================
+class Scene_Ability < Scene_MenuBase
+  include ShowKey_HelpWindow
+  #--------------------------------------------------------------------------
+  # ● Start processing
+  #--------------------------------------------------------------------------
+  alias :show_key_sprite_start :start
+  def start
+    show_key_sprite_start
+    create_show_key_sprite
+  end
+  #--------------------------------------------------------------------------
+  # ● Simple operation explanation text
+  #--------------------------------------------------------------------------
+  def show_key_text
+    case
+    when @ability_type_window.active
+      [ShowKey_Help.ability_shift_all, ShowKey_Help.lr_actor]
+    when @equip_ability_window.active
+      [ShowKey_Help.ability_shift, ShowKey_Help.lr_scroll]
+    when @stand_ability_window.active
+      [ShowKey_Help.lr_scroll]
+    end
+  end
+end
+#==============================================================================
+# ■ Scene_Status
+#==============================================================================
+class Scene_Status < Scene_MenuBase
+  include ShowKey_HelpWindow
+  #--------------------------------------------------------------------------
+  # ● Start processing
+  #--------------------------------------------------------------------------
+  alias :show_key_sprite_start :start
+  def start
+    show_key_sprite_start
+    create_show_key_sprite
+  end
+  #--------------------------------------------------------------------------
+  # ● Simple operation explanation window
+  #--------------------------------------------------------------------------
+  def show_key_sprite_window
+    @simple_status_window
+  end
+  #--------------------------------------------------------------------------
+  # ● Simple operation explanation text
+  #--------------------------------------------------------------------------
+  def show_key_text
+    case
+    when @root_command_window.active
+      [ShowKey_Help.lr_actor]
+    when @main_status_window.active && @root_command_window.index == 1
+      [ShowKey_Help.equip_info, ShowKey_Help.lr_actor]
+    when @main_status_window.active
+      [ShowKey_Help.lr_actor]
+    end
+  end
+end
+#==============================================================================
+# ■ Scene_Shop
+#==============================================================================
+class Scene_Shop < Scene_MenuBase
+  include ShowKey_HelpWindow
+  #--------------------------------------------------------------------------
+  # ● Start processing
+  #--------------------------------------------------------------------------
+  alias :show_key_sprite_start :start
+  def start
+    show_key_sprite_start
+    create_show_key_sprite
+  end
+  #--------------------------------------------------------------------------
+  # ● Simple operation explanation text
+  #--------------------------------------------------------------------------
+  def show_key_text
+    case
+    when @buy_window.active
+      equip = @buy_window.item.is_a?(RPG::EquipItem)
+      page = equip && @status_window.page_max >= 2
+      result = []
+      result += [ShowKey_Help.shop_equip_change] if equip && page
+      result += [ShowKey_Help.shop_param_compare] if equip
+      result += [ShowKey_Help.lr_scroll]
+      result
+    when @sell_window.active && ![1, 2].include?(@category_window.index)
+      [ShowKey_Help.lr_scroll]
+    when @sell_window.active
+      [ShowKey_Help.equip_info, ShowKey_Help.lr_scroll]
+    end
+  end
+end
+#==============================================================================
+# ■ Scene_Synthesize
+#==============================================================================
+class Scene_Synthesize < Scene_MenuBase
+  include ShowKey_HelpWindow
+  #--------------------------------------------------------------------------
+  # ● Start processing
+  #--------------------------------------------------------------------------
+  alias :show_key_sprite_start :start
+  def start
+    show_key_sprite_start
+    create_show_key_sprite
+  end
+  #--------------------------------------------------------------------------
+  # ● Simple operation explanation text
+  #--------------------------------------------------------------------------
+  def show_key_text
+    case
+    when @lineup_window.active
+      equip = @lineup_window.item.is_a?(RPG::EquipItem)
+      page = equip && @status_window.page_max >= 2
+      result = []
+      result += [ShowKey_Help.shop_equip_change] if equip && page
+      result += [ShowKey_Help.shop_param_compare] if equip
+      result += [ShowKey_Help.lr_scroll]
+      result
+    end
+  end
+end
+#==============================================================================
+# ■ Scene_CasinoPrize
+#==============================================================================
+class Scene_CasinoPrize < Scene_MenuBase
+  include ShowKey_HelpWindow
+  #--------------------------------------------------------------------------
+  # ● Start processing
+  #--------------------------------------------------------------------------
+  alias :show_key_sprite_start :start
+  def start
+    show_key_sprite_start
+    create_show_key_sprite
+  end
+  #--------------------------------------------------------------------------
+  # ● Simple operation explanation text
+  #--------------------------------------------------------------------------
+  def show_key_text
+    case
+    when @lineup_window.active
+      equip = @lineup_window.item.is_a?(RPG::EquipItem)
+      page = equip && @status_window.page_max >= 2
+      result = []
+      result += [ShowKey_Help.shop_equip_change] if equip && page
+      result += [ShowKey_Help.shop_param_compare] if equip
+      result += [ShowKey_Help.lr_scroll]
+      result
+    end
+  end
+endd

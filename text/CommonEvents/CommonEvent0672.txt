@@ -1,0 +1,7 @@
+"【メイドスキュラ】" -> "【Maid Scull】"
+"メイドに伝わる究極奥義……" -> "Ultimate mystery which is transmitted to maid ... ...."
+"「サタデーナイトフィーバー」を、ここで伝授しましょう。" -> "Let's tell \"Saturday Night Fever\" here."
+"選択" -> "Choice"
+"選択" -> "Choice"
+"【メイドスキュラ】" -> "【Maid Scull】"
+"お互い、ご主人様のために尽くしましょう……" -> "Let's do our best for each other, your master ..."

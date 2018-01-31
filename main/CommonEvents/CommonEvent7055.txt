@@ -1,0 +1,23 @@
+// EVENT 7055
+Name "Louis: Defeat"
+
+RunCommonEvent(7000)
+PictureDisplay(5,"80_mob_touzoku_st01",0,0,0,0,100,100,255,0)
+PictureClear(6)
+ShowMessageFace("mob_touzoku_fc1",0,0,2,1)
+ShowMessage("\\n<Louise>Well then, that's my win.\nYou clearly came everywhere, so hand over the money.")
+125(1,0,70)
+ShowMessageFace("",0,0,2,2)
+ShowMessage("Luka paid 70G!")
+ShowMessageFace("mob_touzoku_fc1",0,0,2,3)
+ShowMessage("\\n<Louise>Come back some other time.\nI'll milk out your semen whenever...")
+If(0,2331,1)
+ PictureClear(5)
+ 281(1)
+ TeleportPlayer(0,341,27,6,2,0)
+ 216(0)
+ 0()
+EndIf()
+EndEventProcessing()
+0()
+

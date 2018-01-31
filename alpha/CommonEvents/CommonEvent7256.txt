@@ -1,0 +1,26 @@
+// EVENT 7256
+Name "Yayoi: Ejaculation 2"
+
+ShowMessageFace("ruka_fc1",0,0,2,1)
+ShowMessage("【Luke】")
+ShowMessage("Oh ... ... I'm going out ... ...")
+PictureDisplay(10,"sys_white",0,0,0,0,100,100,0,0)
+PictureMove(10,null,0,0,0,0,100,100,255,0,20,true)
+PictureDisplay(5,"ev_mob_samurai_h2",0,0,0,0,100,100,255,0)
+250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0f,0x6d,0x6f,0x6e,0x5f,0x73,0x79,0x61,0x73,0x65,0x69,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69))
+PictureMove(10,null,0,0,0,0,100,100,0,0,25,true)
+PictureMove(10,null,0,0,0,0,100,100,255,0,20,true)
+PictureMove(10,null,0,0,0,0,100,100,0,0,25,true)
+PictureMove(10,null,0,0,0,0,100,100,255,0,6,true)
+PictureMove(10,null,0,0,0,0,100,100,0,0,60,true)
+ShowMessageFace("",0,0,2,2)
+ShowMessage("I could not bear the supple handjob, I casually ejaculated.")
+ShowMessage("It squirts semen somewhatly from the soft palm to the face ... ...")
+ShowMessageFace("mob_samurai_fc1",0,0,2,3)
+ShowMessage("[Yayoi]")
+ShowMessage("Hmm, I got a piece easily.")
+ShowMessage("It is an embarrassing guy who leaked so much ......")
+RunCommonEvent(7253)
+EndEventProcessing()
+0()
+

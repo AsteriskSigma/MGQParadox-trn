@@ -1,0 +1,7 @@
+"イベント：サラマンダー" -> "Event: Salamander"
+"【サラマンダー】" -> "【Salamander】"
+"さあ行け、我が力はお前の元にあるぞ。" -> "Come now, my strength is in you."
+"【サラマンダー】" -> "【Salamander】"
+"仕方ない、一肌脱いでやるとしよう！" -> "I can not help it, let's do it with a single letdown!"
+"サラマンダーが力を貸してくれるようだ！" -> "Salamander seems to help me!"
+"次のボスフロアまで、火の加護が与えられる！" -> "Fire protection will be given to the next boss floor!"

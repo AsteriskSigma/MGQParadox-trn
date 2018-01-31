@@ -1,0 +1,6 @@
+"♪" -> "♪"
+"♪" -> "♪"
+"♪" -> "♪"
+"　That feels so good" -> "That feels so good"
+"♪" -> "♪"
+"♪" -> "♪"

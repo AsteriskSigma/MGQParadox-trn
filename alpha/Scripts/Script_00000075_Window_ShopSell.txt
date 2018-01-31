@@ -1,0 +1,27 @@
+#==============================================================================
+# ■ Window_ShopSell
+#------------------------------------------------------------------------------
+# It is a window that displays the list of possessed items for sale on the shop screen.
+#==============================================================================
+
+class Window_ShopSell < Window_ItemList
+  #--------------------------------------------------------------------------
+  # ● Object initialization
+  #--------------------------------------------------------------------------
+  def initialize(x, y, width, height)
+    super(x, y, width, height)
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire the effective state of the selected item
+  #--------------------------------------------------------------------------
+  def current_item_enabled?
+    enable?(@data[index])
+  end
+  #--------------------------------------------------------------------------
+  # ● Whether items are displayed in the permitted state
+  #--------------------------------------------------------------------------
+  def enable?(item)
+    item && item.price > 0
+  end
+end
+

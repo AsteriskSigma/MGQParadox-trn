@@ -1,0 +1,25 @@
+// EVENT 7135
+Name "Jasuka: Ejaculation 1"
+
+ShowMessageFace("ruka_fc1",0,0,2,1)
+ShowMessage("\\n<Luka>Ah... I'm coming...")
+ShowMessageFace("justice_fc1",0,0,2,2)
+ShowMessage("\\n<Jessica>Hey, do you have any guts at all!?")
+PictureDisplay(10,"sys_white",0,0,0,0,100,100,0,0)
+PictureMove(10,null,0,0,0,0,100,100,255,0,20,true)
+PictureDisplay(6,"ev_justice_ct32",0,0,240,50,100,100,255,0)
+250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0f,0x6d,0x6f,0x6e,0x5f,0x73,0x79,0x61,0x73,0x65,0x69,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69))
+PictureMove(10,null,0,0,0,0,100,100,0,0,25,true)
+PictureMove(10,null,0,0,0,0,100,100,255,0,20,true)
+PictureMove(10,null,0,0,0,0,100,100,0,0,25,true)
+PictureMove(10,null,0,0,0,0,100,100,255,0,6,true)
+PictureMove(10,null,0,0,0,0,100,100,0,0,60,true)
+ShowMessageFace("",0,0,2,3)
+ShowMessage("The moment Jessica touches me, I come.")
+ShowMessage("Her hand is dirtied by my semen...")
+ShowMessageFace("justice_fc1",0,0,2,4)
+ShowMessage("\\n<Jessica>Already coming...?\nDisgraceful!")
+RunCommonEvent(7133)
+EndEventProcessing()
+0()
+

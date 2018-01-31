@@ -1,0 +1,2 @@
+"攻撃を控える" -> "Abstain from attack"
+"攻撃する" -> "Attack"

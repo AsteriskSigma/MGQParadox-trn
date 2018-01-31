@@ -1,0 +1,6 @@
+"■ Window" -> "■ Window"
+"　スキル画面で、スキル使用者のステータスを表示するウィンドウです。" -> "In the skill screen, this is the window that displays the status of the skill user."
+"● オブジェクト初期化" -> "● Object initialization"
+"● ウィンドウ幅の取得" -> "● Obtain window width"
+"● アクターの設定" -> "● Actor settings"
+"● リフレッシュ" -> "● Refresh"

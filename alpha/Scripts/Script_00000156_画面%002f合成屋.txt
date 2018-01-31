@@ -1,0 +1,592 @@
+=begin
+=Composer by Foo
+
+
+==Change log
+Date     Version Author Comment
+	2017/10/15 2.2.0 SUNFLOWER COMPOSITION RESULT, corresponding to item In case synthetic result is secret stone, addition of function not to display items which do not possess any material.
+
+=end
+
+#==============================================================================
+# ■ NWConst::Synthesize
+#==============================================================================
+module NWConst::Synthesize
+	CONFIRM_TEXT = "%s will be synthesized. Proceed?"
+end
+
+#==============================================================================
+# ■ Game_Interpreter
+#==============================================================================
+class Game_Interpreter
+	#--------------------------------------------------------------------------
+	# ● Calling a synthesizer
+	#--------------------------------------------------------------------------
+	def call_synthesize(shop_id)
+		SceneManager.call(Scene_Synthesize)
+		SceneManager.scene.prepare(shop_id)
+		Fiber.yield
+	end
+end
+
+#==============================================================================
+# ■ Window_SynthesizeCommand
+#==============================================================================
+class Window_SynthesizeCommand < Window_HorzCommand
+	#--------------------------------------------------------------------------
+	# ● Object initialization
+	#--------------------------------------------------------------------------
+	def initialize
+		super(0, 0)
+	end
+	#--------------------------------------------------------------------------
+	# ● Obtain window width
+	#--------------------------------------------------------------------------
+	def window_width
+		480
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquisition of the number of digits
+	#--------------------------------------------------------------------------
+	def col_max
+		return 2
+	end
+	#--------------------------------------------------------------------------
+	# ● Create command list
+	#--------------------------------------------------------------------------
+	def make_command_list
+		add_command("Synthesize", :synthesize)
+		add_command("Leave", :cancel)
+	end  
+end
+
+#==============================================================================
+# ■ Window_SynthesizeStatus
+#==============================================================================
+class Window_SynthesizeStatus < Window_Base
+	#--------------------------------------------------------------------------
+	# ● Object initialization
+	#--------------------------------------------------------------------------
+	def initialize
+		super(304, 120, window_width, 360)
+		@item = nil
+		@befores = nil
+		@page_index = 0
+	end
+	#--------------------------------------------------------------------------
+	# ● Obtain window width
+	#--------------------------------------------------------------------------
+	def window_width
+		return 336
+	end
+	#--------------------------------------------------------------------------
+	# ● Item set
+	#--------------------------------------------------------------------------
+	def set_item(after_item, befores)
+		@item = after_item
+		@befores = befores
+		@page_index = 0
+		refresh
+	end
+	#--------------------------------------------------------------------------
+	# ● Refresh
+	#--------------------------------------------------------------------------
+	def refresh
+		contents.clear
+		return if @item.nil?
+		draw_possession(4, 0)
+		draw_button(0, contents.height - (line_height * 2)) unless @item.is_a?(RPG::Item)
+		method_name = draw_methods[@page_index][:name]
+		index = draw_methods[@page_index][:index]
+		send(method_name, 0, 28, index)    
+	end
+	#--------------------------------------------------------------------------
+	# ● Drawing instruction method array acquisition
+	#--------------------------------------------------------------------------
+	def draw_methods
+		methods = []
+		methods.push({:name => :draw_before_items, :index => 0})
+		param_page_max.times{|i| methods.push({:name => :draw_params, :index => i})}
+		enchant_page_max.times{|i| methods.push({:name => :draw_enchants, :index => i})}    
+		return methods
+	end  
+	#--------------------------------------------------------------------------
+	# ● Drawing number of possession
+	#--------------------------------------------------------------------------
+	def draw_possession(x, y)
+		rect = Rect.new(x, y, contents.width - 4 - x, line_height)
+		change_color(system_color)
+		draw_text(rect, Vocab::Possession)
+		change_color(normal_color)
+		draw_text(rect, $game_party.item_number(@item), 2)
+	end  
+	#--------------------------------------------------------------------------
+	# ● Drawing a button description
+	#--------------------------------------------------------------------------
+	def draw_button(x, y)
+		rect = Rect.new(x, y, contents.width, line_height)
+		change_color(system_color)
+		if 1 < page_max
+			draw_text(rect, Help.shop_equip_change)
+			draw_text(rect, "#{@page_index + 1}/#{page_max}", 2)
+		end
+		rect.y += line_height
+		draw_text(rect, Help.shop_param_compare)
+	end
+	#--------------------------------------------------------------------------
+	# ● Drawing of required materials
+	#--------------------------------------------------------------------------
+	def draw_before_items(x, y, dummy)
+		rect = Rect.new(x, y, contents.width, line_height)
+		change_color(system_color)
+		draw_text(rect, "Materials Needed")
+		rect.y += line_height + 2
+		change_color(normal_color)
+		@befores.each{|before|
+			case before[:kind]
+			when :I; item = $data_items[before[:id]]
+			when :W; item = $data_weapons[before[:id]]
+			when :A; item = $data_armors[before[:id]]
+			end
+			party_num = $game_party.item_number(item)
+			need_num = before[:num]
+			draw_item_name(item, rect.x, rect.y, need_num <= party_num)
+			draw_text(rect, "#{need_num}/#{party_num}", 2)
+			rect.y += line_height
+		}
+	end
+	#--------------------------------------------------------------------------
+	# ● Drawing basic performance
+	#--------------------------------------------------------------------------
+	def draw_params(x, y, index)
+		rect = Rect.new(x, y, contents.width, line_height)
+		param_names = @item.param_names[index * NWConst::Shop::STATUS_MAX, NWConst::Shop::STATUS_MAX]
+		change_color(system_color)
+		draw_text(rect, "Basic Stats")
+		rect.y += line_height + 2
+		change_color(normal_color)
+		param_names.each{|name|
+			draw_text(rect, name)
+			rect.y += line_height
+		}
+	end
+	#--------------------------------------------------------------------------
+	# ● Draw special effects
+	#--------------------------------------------------------------------------
+	def draw_enchants(x, y, index)
+		rect = Rect.new(x, y, contents.width, line_height)
+		enchant_names = @item.enchant_names[index * NWConst::Shop::STATUS_MAX, NWConst::Shop::STATUS_MAX]
+		change_color(system_color)
+		draw_text(rect, "Special Effects")
+		rect.y += line_height + 2
+		change_color(normal_color)
+		enchant_names.each{|name|
+			draw_text(rect, name)
+			rect.y += line_height
+		}
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquisition of maximum number of pages for basic performance
+	#--------------------------------------------------------------------------
+	def param_page_max
+		return 0 if @item.is_a?(RPG::Item)
+		return (@item.param_names.size - 1) / NWConst::Shop::STATUS_MAX + 1
+	end  
+	#--------------------------------------------------------------------------
+	# ● Acquire special effect maximum page number
+	#--------------------------------------------------------------------------
+	def enchant_page_max
+		return 0 if @item.is_a?(RPG::Item)
+		return (@item.enchant_names.size - 1) / NWConst::Shop::STATUS_MAX + 1
+	end  
+	#--------------------------------------------------------------------------
+	# ● Acquiring the maximum number of pages
+	#--------------------------------------------------------------------------
+	def page_max
+		return 1 + param_page_max + enchant_page_max
+	end
+	#--------------------------------------------------------------------------
+	# ● Frame update
+	#--------------------------------------------------------------------------
+	def update
+		super
+		update_page
+	end
+	#--------------------------------------------------------------------------
+	# ● Updating pages
+	#--------------------------------------------------------------------------
+	def update_page
+		if visible && @item.is_a?(RPG::EquipItem) && page_max > 1
+			if Input.trigger?(:RIGHT)
+				@page_index = (@page_index + 1) % page_max
+				refresh
+			elsif Input.trigger?(:LEFT)
+				@page_index = ((@page_index - 1) + page_max) % page_max
+				refresh
+			end
+		end
+	end
+end
+
+#==============================================================================
+# ■ Window_SynthesizeLineUp
+#==============================================================================
+class Window_SynthesizeLineUp < Window_Selectable
+	#--------------------------------------------------------------------------
+	# ● Public instance variables
+	#--------------------------------------------------------------------------
+	attr_reader   :status_window            # Status window
+	#--------------------------------------------------------------------------
+	# ● Object initialization
+	#--------------------------------------------------------------------------
+	def initialize(shop_id)
+		super(0, 120, window_width, 360)
+		@shop_id = shop_id
+		@money = 0
+		refresh
+		select(0)
+	end
+	#--------------------------------------------------------------------------
+	# ● Obtain window width
+	#--------------------------------------------------------------------------
+	def window_width
+		return 304
+	end
+	#--------------------------------------------------------------------------
+	# ● Activating the window
+	#--------------------------------------------------------------------------
+	def activate
+		@compare_window.hide.activate if @compare_window
+		super
+	end
+	#--------------------------------------------------------------------------
+	# ● Deactivate the window
+	#--------------------------------------------------------------------------
+	def deactivate
+		@compare_window.hide.deactivate if @compare_window
+		super
+	end  
+	#--------------------------------------------------------------------------
+	# ● Acquisition of number of items
+	#--------------------------------------------------------------------------
+	def item_max
+		@data ? @data.size : 1
+	end
+	#--------------------------------------------------------------------------
+	# ● Item acquisition
+	#--------------------------------------------------------------------------
+	def item
+		@data[index]
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire the price of the item
+	#--------------------------------------------------------------------------
+	def price(item)
+		@price[item]
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquisition of material items
+	#--------------------------------------------------------------------------
+	def befores(item)
+		@befores[item]
+	end  
+	#--------------------------------------------------------------------------
+	# ● Set money
+	#--------------------------------------------------------------------------
+	def money=(money)
+		@money = money
+		refresh
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire the effective state of the selected item
+	#--------------------------------------------------------------------------
+	def current_item_enabled?
+		enable?(@data[index])
+	end
+	#--------------------------------------------------------------------------
+	# ● Whether items are displayed in the permitted state
+	#--------------------------------------------------------------------------
+	def enable?(item)
+		item && price(item) <= @money && need_before_item?(item) && !$game_party.item_max?(item)
+	end
+	#--------------------------------------------------------------------------
+	# ● Do you have synthetic materials?
+	#--------------------------------------------------------------------------
+	def need_before_item?(after_item)
+		befores(after_item).all?{|before|
+			case before[:kind]
+			when :I; before_item = $data_items[before[:id]]
+			when :W; before_item = $data_weapons[before[:id]]
+			when :A; before_item = $data_armors[before[:id]]
+			end
+			if before_item && (before[:num] <= $game_party.item_number(before_item))
+				true
+			else
+				false
+			end
+		}
+	end 
+	#--------------------------------------------------------------------------
+	# ● Do you have any synthetic materials?
+	#--------------------------------------------------------------------------
+	def any_before_item?(befores)
+		befores.any?{|before|
+			case before[:kind]
+			when :I; before_item = $data_items[before[:id]]
+			when :W; before_item = $data_weapons[before[:id]]
+			when :A; before_item = $data_armors[before[:id]]
+			end
+			if before_item && $game_party.item_number(before_item) > 0
+				true
+			else
+				false
+			end
+		}
+	end 
+	#--------------------------------------------------------------------------
+	# ● Refresh
+	#--------------------------------------------------------------------------
+	def refresh
+		make_item_list
+		create_contents
+		draw_all_items
+	end
+	#--------------------------------------------------------------------------
+	# ● Create item list
+	#--------------------------------------------------------------------------
+	def make_item_list
+		@data = []
+		@price = {}
+		@befores = {}
+		NWConst::Synthesize::Shops[@shop_id].collect{ |recipe_id|
+			NWConst::Synthesize::Recipes[recipe_id]
+		}.each{|recipe|
+			case recipe[:after][:kind]
+			when :I; after_item = $data_items[recipe[:after][:id]]
+			when :W; after_item = $data_weapons[recipe[:after][:id]]
+			when :A; after_item = $data_armors[recipe[:after][:id]]
+			end
+			
+			if after_item
+				next if after_item.enchant_stone? && !any_before_item?(recipe[:befores])
+				@data.push(after_item)
+				@price[after_item] = recipe[:price]
+				@befores[after_item] = recipe[:befores]
+			end
+		}
+		
+	end
+	#--------------------------------------------------------------------------
+	# ● Drawing items
+	#--------------------------------------------------------------------------
+	def draw_item(index)
+		item = @data[index]
+		rect = item_rect(index)
+		name_width = rect.width - text_size(price(item)).width - 24
+		draw_item_name(item, rect.x, rect.y, enable?(item), name_width)
+		rect.width -= 4
+		draw_text(rect, price(item), 2)
+	end
+	#--------------------------------------------------------------------------
+	# ● Status Window Settings
+	#--------------------------------------------------------------------------
+	def status_window=(status_window)
+		@status_window = status_window
+		call_update_help
+	end
+	#--------------------------------------------------------------------------
+	# ● Setting of Performance Difference Comparison Window
+	#--------------------------------------------------------------------------
+	def compare_window=(compare_window)
+		@compare_window = compare_window
+		call_update_help
+	end
+	#--------------------------------------------------------------------------
+	# ● Help text update
+	#--------------------------------------------------------------------------
+	def update_help
+		@help_window.set_item(item) if @help_window
+		@status_window.set_item(item, befores(item)) if @status_window
+		@compare_window.item = item if @compare_window
+	end
+end
+
+#==============================================================================
+# ■ Scene_Synthesize
+#==============================================================================
+class Scene_Synthesize < Scene_MenuBase
+	#--------------------------------------------------------------------------
+	# ● Preparation
+	#--------------------------------------------------------------------------
+	def prepare(shop_id)
+		@shop_id = shop_id
+	end  
+	#--------------------------------------------------------------------------
+	# ● Start processing
+	#--------------------------------------------------------------------------
+	def start
+		super
+		create_help_window
+		create_gold_window
+		create_command_window
+		create_dummy_window
+		create_status_window
+		create_compare_window
+		create_lineup_window
+		create_popup_confirm_window
+	end  
+	#--------------------------------------------------------------------------
+	# ● Create a gold window
+	#--------------------------------------------------------------------------
+	def create_gold_window
+		@gold_window = Window_Gold.new
+		@gold_window.viewport = @viewport
+		@gold_window.x = Graphics.width - @gold_window.width
+		@gold_window.y = @help_window.height
+	end
+	#--------------------------------------------------------------------------
+	# ● Create Command Window
+	#--------------------------------------------------------------------------
+	def create_command_window
+		@command_window = Window_SynthesizeCommand.new
+		@command_window.viewport = @viewport
+		@command_window.y = @help_window.height
+		@command_window.set_handler(:synthesize, method(:command_synthesize))
+		@command_window.set_handler(:cancel, method(:return_scene))
+	end
+	#--------------------------------------------------------------------------
+	# ● Command: Synthesis
+	#--------------------------------------------------------------------------
+	def command_synthesize
+		@lineup_window.money = money
+		@dummy_window.hide
+		@lineup_window.show
+		@status_window.show
+		@lineup_window.activate
+	end
+	#--------------------------------------------------------------------------
+	# ● Create dummy window
+	#--------------------------------------------------------------------------
+	def create_dummy_window
+		wy = @command_window.y + @command_window.height
+		wh = Graphics.height - wy
+		@dummy_window = Window_Base.new(0, wy, Graphics.width, wh)
+		@dummy_window.viewport = @viewport
+	end
+	#--------------------------------------------------------------------------
+	# ● Create status window
+	#--------------------------------------------------------------------------
+	def create_status_window
+		@status_window = Window_SynthesizeStatus.new
+		@status_window.viewport = @viewport
+		@status_window.hide
+	end    
+	#--------------------------------------------------------------------------
+	# ● Creating performance difference comparison window
+	#--------------------------------------------------------------------------  
+	def create_compare_window
+		@compare_window = Window_ShopCompare.new
+		@compare_window.viewport = @viewport
+	end
+	#--------------------------------------------------------------------------
+	# ● Create lineup window
+	#--------------------------------------------------------------------------
+	def create_lineup_window
+		@lineup_window = Window_SynthesizeLineUp.new(@shop_id)
+		@lineup_window.viewport = @viewport
+		@lineup_window.hide
+		@lineup_window.set_handler(:ok, method(:synthesize_ok))
+		@lineup_window.set_handler(:cancel, method(:synthesize_cancel))
+		@lineup_window.help_window = @help_window
+		@lineup_window.status_window = @status_window
+		@lineup_window.compare_window = @compare_window    
+	end  
+	#--------------------------------------------------------------------------
+	# ● Synthesis: decision
+	#--------------------------------------------------------------------------
+	def synthesize_ok
+		@popup_confirm_window.refresh
+		@popup_confirm_window.show.activate
+		@popup_confirm_window.set_name(@lineup_window.item.name)
+		@popup_confirm_window.select(0)
+	end
+	#--------------------------------------------------------------------------
+	# ● Synthesis: Cancel
+	#--------------------------------------------------------------------------
+	def synthesize_cancel
+		@lineup_window.hide
+		@status_window.hide
+		@dummy_window.show
+		@help_window.clear
+		@command_window.activate
+	end
+	#--------------------------------------------------------------------------
+	# ● Create confirmation popup window
+	#--------------------------------------------------------------------------  
+	def create_popup_confirm_window
+		@popup_confirm_window = Window_PopupConfirm.new
+		@popup_confirm_window.set_title(NWConst::Synthesize::CONFIRM_TEXT)
+		@popup_confirm_window.viewport = @viewport
+		@popup_confirm_window.hide
+		@popup_confirm_window.set_handler(:ok, method(:confirm_ok))
+		@popup_confirm_window.set_handler(:cancel, method(:confirm_cancel))
+	end
+	#--------------------------------------------------------------------------
+	# ● Confirmation: determination
+	#--------------------------------------------------------------------------  
+	def confirm_ok
+		after_item = @lineup_window.item
+		price = @lineup_window.price(after_item)
+		befores = @lineup_window.befores(after_item)
+		$game_party.lose_gold(price)
+		befores.each{|before|
+			case before[:kind]
+			when :W; before_item = $data_weapons[before[:id]]
+			when :A; before_item = $data_armors[before[:id]]
+			when :I; before_item = $data_items[before[:id]]          
+			end
+			$game_party.lose_item(before_item, before[:num])
+		}
+		$game_party.gain_item(after_item, 1)
+		Sound.play_shop
+		@gold_window.refresh
+		@lineup_window.money = money
+		@lineup_window.refresh
+		@popup_confirm_window.hide
+		@lineup_window.activate
+	end
+	#--------------------------------------------------------------------------
+	# ● Confirmation: Cancel
+	#--------------------------------------------------------------------------  
+	def confirm_cancel
+		@popup_confirm_window.hide
+		@lineup_window.activate
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquisition of possession money
+	#--------------------------------------------------------------------------
+	def money
+		@gold_window.value
+	end
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

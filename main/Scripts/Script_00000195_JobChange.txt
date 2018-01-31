@@ -1,0 +1,4907 @@
+# -*- encoding: utf-8 -*-
+=begin
+=転職_職業データ設定セクション by Foo
+
+転職画面で扱う職業データを設定するセクションです
+
+==更新履歴
+Date     Version Author Comment
+13/08/05 1.1.0   Foo    表示行数設定の変更
+13/08/05 1.0.0   Foo    試作
+
+=end
+
+#==============================================================================
+# ■ NWConst::JobChange
+#==============================================================================
+module NWConst::JobChange
+  JOB_DESC_TEXT = {
+    1 => # 戦士 / Warrior
+      [[
+        "An ordinary fighter and the first step for all warrior-type jobs. Better than average attack and defense, but poor with and against magic. Capable of using basic weapons like swords and spears, but not knight swords or heavy weapons. Learns mostly basic sword skills.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Dagger,Sword,Rapier,Spear,Axe,Club,Scythe,Flail,Armor",
+        "   Helmet,Shield",
+        "Skills: Dagger,Sword,Rapier",
+        "Passive: None",
+        "",
+      ]],
+    2 => # 剣士 / Swordsman
+      [[
+        "An accomplished master of the blade. Newfound strength grants usage of the mighty knight sword, wide range sword skills, and enhanced attack and defense. Unfortunately, magic is still out of the question.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Dagger,Sword,Knight Sword,Rapier,Spear,Axe,Scythe,Armor",
+        "   Heavy Armor,Helmet,Heavy Helmet,Shield,Heavy Shield",
+        "Skills: Dagger,Sword,Rapier",
+        "Passive: None",
+        "",
+      ]],
+    3 => # 剣聖 / Swordsmaster
+      [[
+        "剣に加えて刀の扱いにも長けた、最高クラスの剣士",
+        "剣を持つ全ての者にとって、憧れの対象であるという",
+        "強力無比な剣技を習得し、複数の敵を撫で斬る事も容易い",
+        "刀技も使用可能で、まさに剣の頂点に立つ存在である",
+      ],
+      [
+        "Equip: Dagger,Sword,Knight Sword,Rapier,Katana,Spear,Axe,Scythe",
+        "Skills: Dagger,Sword,Katana",
+        "Passive: Equip Heavy Armor,Sword Mastery,Katana Mastery",
+        "",
+      ]],
+    4 => # 魔剣士 / Monster Swordsman
+      [[
+        "魔族の剣技を使いこなし、その剣に闇の力を宿す剣士",
+        "己の生命力と引き替えに放つ暗黒の技は、極めて強力である",
+        "また魔法剣をも使用可能で、魔性を帯びた剣を得意とする",
+        "魔族の剣士が編み出した伝説の剣技の数々を習得可能",
+      ],
+      [
+        "Equip: Dagger,Sword,Knight Sword,Great Sword",
+		"   Rapier,Spear,Axe,Scythe",
+        "Skills: Dagger,Sword,Rapier,Spellblade",
+        "Passive: Dark Strike,Equip Heavy Armor,Dual-Wield",
+        "",
+      ]],
+    5 => # 聖堂騎士 / Temple Knight
+      [[
+        "A holy soldier bearing a Priest's piety and a Warrior's bravery. Wields SP-fueled healing magic and adept with heavy spears. Learns abilities that aid in banishing the undead to the grave.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Dagger,Rapier,Spear,Heavy Spear,Armor,Heavy Armor,Helmet",
+        "   Heavy Helmet,Shield,Heavy Shield",
+        "Skills: Rapier,Spear,White Magic,Holy",
+        "Passive: None",
+        "",
+      ]],
+    6 => # ホーリーナイト / Holy Knight
+      [[
+        "聖なる奥義の数々を使いこなす最上級の聖騎士",
+        "その槍は邪悪を滅ぼし、味方に癒しをもたらすという",
+        "聖なる力を秘めた強力な槍技の数々を習得できる",
+        "また強力な回復技で、味方全員を一挙に癒やす事も可能",
+      ],
+      [
+        "Equip: Dagger,Rapier,Spear,Heavy Spear",
+        "Skills: Rapier,Spear,White Magic,Holy",
+        "Passive: Equip Heavy Armor,Spear Mastery,Rapier Mastery,",
+		"     Resist Holy 75%",
+        "",
+      ]],
+    7 => # 魔法戦士 / Spellsword
+      [[
+        "Specialized fighter trained in swordplay and magic, the Spellsword style is born. A Warrior's strength is retained and black magic can be used. The sword itself can be enchanted with various attributes to inflict elemental damage and status ailments.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Dagger,Sword,Rapier,Armor,Helmet,Shield",
+        "Skills: Dagger,Sword,Black Magic,Spellblade",
+        "Passive: None",
+        "",
+      ]],
+    8 => # マスターソーサラー / Master Swordcerer
+      [[
+        "剣士の技能と魔導の力を極限まで高めた究極の魔法戦士",
+        "強力な魔法を上乗せした剣技は、いかなる魔物をも討ち滅ぼす",
+        "黒魔法も使用でき、攻め技の多彩さは卓越している",
+        "さらに強力な魔法剣の他、強力な全体攻撃剣技も習得可能",
+      ],
+      [
+        "Equip: Dagger,Sword,Rapier,Magic Sword",
+        "Skills: Dagger,Sword,Black Magic,Spellblade",
+        "Passive: Equip Light Armor,Sword Mastery",
+        "",
+      ]],
+    9 => # 竜騎士 / Dragon Knight
+      [[
+        "Spear-wielding aerodynamic knight who leaps to the skies and toys with foes. Spear skills consist of harpy slaying attacks and blinding speed. Magic stats on the other hand aren't very respectable.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Rapier,Spear,Heavy Spear,Armor,Heavy Armor,Helmet",
+        "   Heavy Helmet,Shield,Heavy Shield",
+        "Skills: Rapier,Spear",
+        "Passive: Eva +10%",
+        "",
+      ]],
+    10 => # ホーリーランサー / Holy Lancer
+      [[
+        "聖なる槍技で邪悪を狩る、天翔ける聖騎士",
+        "卓越した攻撃力とスピードにより、あらゆる敵を滅殺する",
+        "SPと同時にMPをも消費する聖属性の槍奥義は極めて強力",
+        "特に邪悪な魔物に対して、致命的なダメージを与えるだろう",
+      ],
+      [
+        "Equip: Rapier,Spear,Heavy Spear",
+        "Skills: Rapier,Spear",
+        "Passive: Equip Heavy Armor,Spear Mastery,Rapier Mastery,Eva +10%",
+        "",
+      ]],
+    11 => # 邪竜騎士 / Dark Dragon Knight
+      [[
+        "闇の槍技を使いこなす暗黒の竜騎士",
+        "使用者の体力を捧げることで、暗黒の槍技を使用可能",
+        "槍に宿した闇の力は、耐性のない魔物を容赦なく即死させる",
+        "代償が大きい分、卓越した殲滅力を発揮するだろう",
+      ],
+      [
+        "Equip: Rapier,Spear,Heavy Spear",
+        "Skills: Rapier,Spear",
+        "Passive: Equip Heavy Armor,Dual-Wield,Resist Dark 75%",
+        "",
+      ]],
+    12 => # 侍 / Samurai
+      [[
+        "東洋の特殊剣である刀を使いこなす凄腕の剣士",
+        "研ぎ澄まされた刃が放つ数々の技は、比類無い殲滅力を誇る",
+        "ただし防御力は低く、その能力は攻撃面に特化",
+        "使用できる刀技は強力で、全体を撫で斬る技なども習得可能",
+      ],
+      [
+        "Equip: Katana",
+        "Skills: Katana",
+        "Passive: Crit +20%,Eva +15%",
+        "",
+      ]],
+    13 => # 聖侍 /Samurai Saint
+      [[
+        "聖なる力をその刃に宿し、闇を滅する清き侍",
+        "聖属性の刀技をもって、邪悪なる魂を容赦なく討ち滅ぼす",
+        "聖なる刀技の発動にはMPも必要な分、威力は極めて高い",
+        "強力な刀技の他、「明鏡止水」などの回避奥義も修得可能",
+      ],
+      [
+        "Equip: Katana",
+        "Skills: Katana",
+        "Passive: Katana Mastery,Crit +30%,Eva +15%,Resist Holy 75%",
+        "",
+      ]],
+    14 => # 魔侍 / Dark Samurai
+      [[
+        "闇の力をその刃に宿し、神をも畏れぬ外法の侍",
+        "暗黒の刀技は敵の息の根を止め、即死させる事もある",
+        "しかし、その発動と引き替えに自身の体力を消費",
+        "最高クラスの刀技が習得でき、戦力の要となるだろう",
+      ],
+      [
+        "Equip: Katana",
+        "Skills: Katana",
+        "Passive: Dual-Wield,Crit +30%,Eva +15%,Resist Dark 75%",
+        "",
+      ]],
+    15 => # パワーファイター / Power Fighter
+      [[
+        "A crude fighter who thoroughly smashes foes with hidden power. Forgoes the blade in favor of blunt weapons like clubs and flails. Like most warriors, attack is great while magic stays low.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Great Sword,Axe,Club,Flail,Armor,Heavy Armor,Helmet",
+        "   Heavy Helmet,Shield,Heavy Shield",
+        "Skills: Axe,Club,Flail",
+        "Passive: Endure,Crit +10%",
+        "",
+      ]],
+    16 => # ギガファイター / Giga Fighter
+      [[
+        "圧倒的な力で全てを破壊する究極のパワーファイター",
+        "強大な剛力を打撃武器に込め、あらゆる敵を粉砕する",
+        "攻防共に卓越しているが、やはり魔法は苦手",
+        "棍棒や鉄球の奥義を修得し、攻めの中核となれるだろう",
+      ],
+      [
+        "Equip: Great Sword,Axe,Club,Flail",
+        "Skills: Axe,Club,Flail",
+        "Passive: Super Endure,Equip Heavy Armor,Power Mastery",
+        "",
+      ]],
+    17 => # 狂戦士 / Savage Warrior
+      [[
+        "Rabid feral warrior fighting on pure instinct, tearing foes with extreme strength at the expense of sanity. In exchange, the SP regeneration rate is doubled and new axe skills can be learned.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Great Sword,Axe,Club,Flail,Armor,Helmet,Shield",
+        "Skills: Axe,Club,Flail",
+        "Passive: Berserk,Double SP Charge,Crit +15%,SP Regen 30%",
+        "",
+      ]],
+    18 => # ベルセルク / Berserker
+      [[
+        "強大な力と引き替えに、理性を完全喪失した究極の狂戦士",
+        "いっさい指示が出来ないが、比類無い殲滅能力を誇る",
+        "SPの回復量もさらに増加し、強力な必殺技を連発可能",
+        "最高クラスの斧技の他、「SPチャージ3倍」も習得できる",
+      ],
+      [
+        "Equip: Great Sword,Axe,Club,Flail",
+        "Skills: Axe,Club,Flail",
+        "Passive: Berserk,Triple SP Charge,Crit +30%,Equip Light Armor",
+        "　　　　　　Power Mastery",
+      ]],
+    19 => # 陰陽剣士 / Tao Swordsman
+      [[
+        "Unique fencer with Tao-infused blades homes in on enemy weaknesses. A tactical job mixing offense and defense, it has access to both Sword and Taoism skills and learns element boosting abilities.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Dagger,Sword,Scythe,Rod,Fan,Armor,Helmet,Shield",
+        "Skills: Dagger,Sword,Taoism",
+        "Passive: Mag Counter +25%,Mag Eva +10%,Res Wind/Earth/Water 50%",
+        "",
+      ]],
+    20 => # 九字剣神 / Kuji-In Sword God
+      [[
+        #"式神召喚の術と剣の技をミックスさせた魔剣士",
+        #"剣技をもって式神を召喚し、敵をまとめて討ち滅ぼす",
+        #"使用できる全体攻撃剣技は自然属性を網羅し、極めて強力",
+        #"属性を強化するアビリティも習得し、絶大な力を発揮する",
+        "A magic swordsman that expertly combines the powers of Taoism and swordplay. Learns sword skills that eradicate groups of foes with the power of the Ssu Ling as well as abilities that fully draw out the power of natural elements.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Dagger,Sword,Magic Sword,Katana,Scythe,Rod,Fan",
+        "Skills: Dagger,Sword,Taoism",
+        "Passive: Mag Counter +50%,Equip Light Armor,Sword Mastery",
+        "",
+      ]],
+
+    22 => # 武道家 / Martial Artist
+      [[
+        "A fighter who makes use of his or her own body through punches and kicks. Especially adept at critical hits, counters, and using high agility to dodge attacks. Learns various unarmed skills, instant KO skills, and body-strengthening skills.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Fist,Club,Gi",
+        "Skills: Unarmed",
+        "Passive: Counter +25%,Crit +15%,Eva +20%",
+        "",
+      ]],
+    23 => # 拳豪 / Overpowering Fist
+      [[
+        "Remarkable martial artist rewarded with a buffed counter rate, evasion, and critical hits after intense training. Techniques worthy of a Black Belt and even healing arts through sheer force of will become available.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Fist,Club,Gi",
+        "Skills: Unarmed",
+        "Passive: Counter +50%,Crit/Eva +20%",
+        "",
+      ]],
+    24 => # 拳聖 / Saint Fist
+      [[
+        "澄んだ心と磨き抜かれた肉体で、拳の頂点を極めた拳士",
+        "並外れた格闘センスで、会心やカウンターを高頻度で発動可能",
+        "特に聖なる拳技を得意とし、邪悪な魔物に圧倒的な力を発揮",
+        "習得武技は極めて強力で、そのチャクラは仲間をも癒やす",
+      ],
+      [
+        "Equip: Fist,Club,Gi",
+        "Skills: Unarmed",
+        "Passive: Counter +75%,Fist Mastery,Resist Holy 75%",
+        "",
+      ]],
+    25 => # 邪拳王 / Dark Fist
+      [[
+        "心を闇に染め、外法の拳技を極めた暗黒闘士",
+        "並外れた格闘センスで、会心やカウンターを高頻度で発動可能",
+        "闇の格闘奥義の数々習得し、その拳は敵を容赦なく滅殺する",
+        "その代償に己の生命力を捧げる、まさに禁断の奥義を使いこなす",
+      ],
+      [
+        "Equip: Fist,Club,Gi",
+        "Skills: Unarmed",
+        "Passive: Counter +75%,Dual-Wield,Resist Dark 75%",
+        "",
+      ]],
+    26 => # 魔導拳士 / Magus Fist
+      [[
+        "Hybrid monk who fights with magic-infused fists. In addition to black magic, this oddly mixed class wields elemental punches that spell doom for foes weak in both body and mind. A special skill restores MP.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Fist,Club,Gi",
+        "Skills: Unarmed,Black Magic",
+        "Passive: Mag Counter +25%,Crit/Eva +15%",
+        "",
+      ]],
+    27 => # フォースモンク / Force Monk
+      [[
+        "強大な魔法を極め、己の拳に込める究極の魔法拳士",
+        "あらゆる属性をその拳に宿し、いかなる敵も葬り去る",
+        "黒魔法も使用可能で、物理と魔法の両面で攻撃可能",
+        "様々な属性格闘奥義を習得し、その属性に穴はない",
+      ],
+      [
+        "Equip: Fist,Club,Gi",
+        "Skills: Unarmed,Black Magic",
+        "Passive: Mag Counter +50%,Crit +20%,Eva +15%,Fist Mastery",
+        "",
+      ]],
+    28 => # パラディン / Paladin
+      [[
+        "Faithful monk specializing in self-defense. While decent in attack, most skills prioritize the party's safety and overall health via holy power, ranging from recovery to revival.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Dagger,Fist,Club,Staff,Gi",
+        "Skills: Unarmed,White Magic,Holy",
+        "Passive: Crit +15%",
+        "",
+      ]],
+    29 => # ゴッドハンド / God Hand
+      [[
+        "信仰の道を極めた、敬虔な究極闘士",
+        "大いなる力で仲間を守護し、悪を容赦なく滅ぼす",
+        "磨き抜かれた肉体から繰り出される聖技は非常に強力",
+        "自身を犠牲にする究極の回復技なども習得できる",
+      ],
+      [
+        "Equip: Dagger,Fist,Club,Staff,Gi",
+        "Skills: Unarmed,White Magic,Holy",
+        "Passive: Crit +20%,Resist Holy 75%,Fist Mastery",
+        "",
+      ]],
+    30 => # バトルマスター / Battle Master
+      [[
+        "Undisputed master of sword and fist, this class mixes relentless punches and and countless slashes into a unique style backed by a handsome attack stat. However, the same cannot be said for magic.",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Dagger,Sword,Knight Sword,Rapier,Spear,Heavy Spear,Fist",
+        "   Axe,Club,Scythe,Flail,Armor,Heavy Armor,Helmet,Heavy Helmet",
+        "   Shield,Heavy Shield",
+        "Skills: Dagger,Sword,Multiweapon,Unarmed",
+        "Passive: Counter +25%,Crit/Eva +15%,HP Regen 5%,Great Defense",
+        "   Dual Wield",
+      ]],
+
+    33 => # 魔法使い
+      [[
+        "The first step for all magic-user jobs. Specializes in magic; extremely poor at physical combat. Low defense and health; weak to being hit. Learns basic Black Magic focusing on the three primary magic elements.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Dagger,Rapier,Scythe,Rod,Grimoire,Robe,Magic Hat",
+        "Skills: Black Magic",
+        "Passive: Res Fire/Ice/Lightning 75%",
+        "",
+      ]],
+    34 => # 黒魔導師 / Black Mage
+      [[
+        "Magician walking down the path of black magic, taking great pride in learning stronger elemental magic bolstered by an equally strong magic stat. It goes without saying that they're not fit for physical combat.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Dagger,Rapier,Scythe,Rod,Grimoire,Robe,Magic Hat",
+        "Skills: Black Magic",
+        "Passive: Res Fire/Ice/Lightning 50%",
+      ]],
+    35 => # 灼熱魔導師 / Inferno Mage
+      [[
+        "修練を積み、炎魔術に特化した究極の黒導師",
+        "膨大な魔力による業火は、敵を燃やし尽くす",
+        "また炎に対する耐性も高く、バーンも受け付けない",
+        "最強の炎魔法の他、炎を強化するアビリティも習得",
+      ],
+      [
+        "Equip: Dagger,Rapier,Magic Sword,Scythe,Rod,Grimoire,Robe",
+		"   Magic Hat",
+        "Skills: Black Magic,Dark",
+        "Passive: Null Fire/Burn,Res Ice/Lightning 50%,Magic Mastery",
+        "",
+      ]],
+    36 => # 輝氷魔導師 / Arctic Mage
+      [[
+        "修練を積み、氷魔術に特化した究極の黒導師",
+        "膨大な魔力による魔氷は、敵を凍てつかせる",
+        "また氷に対する耐性も高く、フリーズも受け付けない",
+        "最強の氷魔法の他、氷を強化するアビリティも習得",
+      ],
+      [
+        "Equip: Dagger,Rapier,Magic Sword,Scythe,Rod,Grimoire,Robe",
+		"   Magic Hat",
+        "Skills: Black Magic,Dark",
+        "Passive: Null Ice/Freeze,Res Fire/Lightning 50%,Magic Mastery",
+        "",
+      ]],
+    37 => # 極雷魔導師 / Gigavolt Mage
+      [[
+        "修練を積み、雷魔術に特化した究極の黒導師",
+        "膨大な魔力による極雷は、敵を灰燼に変える",
+        "また雷に対する耐性も高く、ショックも受け付けない",
+        "最強の雷魔法の他、雷を強化するアビリティも習得",
+      ],
+      [
+        "Equip: Dagger,Rapier,Magic Sword,Scythe,Rod,Grimoire,Robe",
+		"   Magic Hat",
+        "Skills: Black Magic,Dark",
+        "Passive: Null Lightning/Shock,Res Fire/Ice 50%,Magic Mastery",
+        "",
+      ]],
+    38 => # 時魔導師 / Time Mage
+      [[
+        "Branch of the mage family that taps into time and space. Unfit for combat and more suited for support, ranging from hastening allies to stopping enemies in their tracks. Furthermore, warp magic can be learned for fast travel to previous locations.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Dagger,Rapier,Scythe,Rod,Grimoire,Robe,Magic Hat",
+        "Skills: Time Magic",
+        "Passive: Null Slow/Stop",
+        "",
+        #Also nulls self-destruct element, note that somehow?
+      ]],
+    39 => # 時空魔導師 / Spacetime Mage
+      [[
+        "時間のみならず空間まで操る事のできる最上位の時魔導士",
+        "時間を操作する強力な魔法により、戦闘を補助する",
+        "天体の運行を操作し、隕石を落下させる魔法も習得可能",
+        "有用な補助魔法と強力な攻撃魔法を兼ね備えている",
+      ],
+      [
+        "Equip: Dagger,Rapier,Magic Sword,Scythe,Rod,Grimoire,Robe,Magic Hat",
+        "Skills: Time Magic",
+        "Passive: Null Slow/Stop,Magic Mastery",
+        "",
+      ]],
+    40 => # 召喚士 / Summoner
+      [[
+        "Magician capable of calling forth magical beasts that attack or heal. Much stronger then bog-standard spells and has the MP cost to match, making it fitting for decisive blows but infeasible for constant casting.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Dagger,Rapier,Scythe,Rod,Grimoire,Robe,Magic Hat",
+        "Skills: Summoning",
+        "Passive: None",
+        "",
+      ]],
+    41 => # 精霊召喚士 / Spirit Summoner
+      [[
+        "大精霊や神クラスを呼び出す事のできる究極の召喚師",
+        "その威力は絶大だが、消費するMPも極めて多い",
+        "魔法攻撃役としては、最高の力を発揮するだろう",
+        "強力な召喚技を習得し、アビリティでMPの底上げも可能",
+      ],
+      [
+        "Equip: Dagger,Rapier,Magic Sword,Scythe,Rod,Grimoire,Robe",
+		"   Magic Hat",
+        "Skills: Summoning",
+        "Passive: Magic Mastery",
+        "",
+      ]],
+    42 => # 陰陽師 / Taoist
+      [[
+        "Unique magician hailing from Yamatai. Seemingly weak magic attacks inflict potentially crippling weaknesses on all enemies with a chance of status ailments.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Dagger,Scythe,Rod,Fan,Robe,Magic Hat",
+        "Skills: Taoism",
+        "Passive: Eva/Mag Eva +5%,Res Wind/Earth/Water 50%",
+        "",
+      ]],
+    43 => # 天地陰陽師 / Cosmic Taoist
+      [[
+        "A talented taoist who has polished their spiritual skills to annihilate groups of foes by inflicting abnormal statuses and reduced magical resistances. Can do extreme damage by targeting the weakened resists.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Dagger,Scythe,Magic Sword,Rod,Fan,Robe,Magic Hat",
+        "Skills: Taoism",
+        "Passive: Eva/Mag Eva +5%,Null Wind/Earth/Water,Magic Mastery",
+        "",
+      ]],
+    44 => # 僧侶 / Priest
+      [[
+        "A pious monk who serves Ilias and specializes in healing magic. Invaluable on long trips for their ability to heal outside of combat. Not good at physical combat, although better than magic users. Learns support magic to assist the party.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Club,Whip,Staff,Grimoire,Robe,Magic Hat",
+        "Skills: White Magic",
+        "Passive: None",
+        "",
+      ]],
+    45 => # 白魔導師 / White Mage
+      [[
+        "Hardworking priest promoted to a true mage after mastering the basics. Learns stronger recovery and support magic along with a few offensive Holy spells. An unwritten requirement for truly dedicated parties.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Club,Whip,Staff,Grimoire,Robe,Magic Hat",
+        "Skills: White Magic",
+        "Passive: None",
+        "",
+      ]],
+    46 => # 聖魔導師 / Holy Mage
+      [[
+        "深い信仰により、白魔法を極めた導師",
+        "神の力を体現した聖なる攻撃術を用い、邪悪を討ち滅ぼす",
+        "回復魔法も補助魔法も非常に強力で、絶大な力を発揮",
+        "回復役の究極系として、大いに活躍するだろう",
+      ],
+      [
+        "Equip: Club,Whip,Staff,Grimoire,Robe,Magic Hat",
+        "Skills: White Magic,Holy",
+        "Passive: Resist Holy 75%,Magic Mastery",
+        "",
+      ]],
+    47 => # 賢者 / Sage
+      [[
+        "Highly skilled dual-caster of both black and white magic. As a result, this class can fill either task or both, at the expense of vast amounts of MP. Also learns a few element boosting abilities.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Dagger,Rapier,Magic Sword,Club,Scythe,Whip,Staff,Rod",
+        "　　　　　Fan,Grimoire,Robe,Magic Hat",
+        "Skills: White Magic,Black Magic",
+        "Passive: MP Cost 75%,Res Fire/Ice/Lightning 50%",
+      ]],
+    48 => # 森羅万象士 / Cosmic Magus
+      [[
+        "Highest class mage with knowledge of all living things. Uses skills of all types, including holy and dark. Reduced MP consumption allows many uses of powerful spells, including ones that expend all MP.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Dagger,Rapier,Magic Sword,Club,Scythe,Whip,Staff,Rod",
+        "　　　　　Fan,Grimoire,Robe,Magic Hat",
+        "Skills: White Magic,Black Magic,Time Magic,Summoning,Holy,Dark",
+        "　　　　Taoism",
+        "Passive: MP Cost 50%　Magic Mastery",
+      ]],
+    49 => # 魔法少女 / Magical Girl
+      [[
+        "汚れなき心で魔法少女に変身する正義の導師",
+        "通常状態では頼りないが、変身すると専用魔法が使用可能",
+        "攻撃魔法や回復魔法など、オールマイティな力を発揮する",
+        "変身している時間は限られるが、短期戦では心強い",
+      ],
+      [
+        "Equip: Dagger,Magic Sword,Scythe,Staff,Rod,Bow,Grimoire",
+        "　　　　　Gun,Robe,Magic Hat",
+        "Skills: White Magic,Black Magic",
+        "Passive: MP Regen 1%",
+        "",
+      ]],
+
+    52 => # 狩人
+      [[
+        "Experts with the bow, Hunters have extremely high accuracy and also learn elemental skills. Hunters live up to their name by learning skills especially effective against certain races. Their damage dealing is excellent, but their defense is less than a Warrior's.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Dagger,Scythe,Bow,Whip,Boomerang",
+        "Skills: Scythe,Bow,Whip,Throwing",
+        "Passive: Forest Strength,Slayer Boost 100%,Crit/Eva +10%",
+        "",
+      ]],
+    53 => # ボウマスター / Bowmaster
+      [[
+        "Keen-eyed hunter after rigorous training. Learns skills that inflict severe damage to even more races, such as insects and alraunes. Shooting down whole groups of foes at once becomes child's play for this class. Defenses are still fragile, so do be careful.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Dagger,Scythe,Bow,Whip,Boomerang",
+        "Skills: Scythe,Bow,Whip,Throwing",
+        "Passive: Forest Strength,Slayer Boost 100%,Crit +15%,Eva +10%",
+        "",
+      ]],
+    54 => # 神弓手 / Holy Archer
+      [[
+        "神業の腕前を誇る、聖なる狩人",
+        "その矢は、ラミアやスキュラなどの魔物を討ち滅ぼす",
+        "また聖属性を帯びた弓技は、SPとMPを消費して発動可能",
+        "コストは大きいが、絶大な威力で敵を全滅させる",
+      ],
+      [
+        "Equip: Dagger,Scythe,Bow,Whip,Boomerang",
+        "Skills: Scythe,Bow,Whip,Throwing",
+        "Passive: Super Forest Strength,Slayer Boost 100%,Crit +20%,",
+		"   Eva +10%,Resist Holy 75%,Bow Mastery",
+        "",
+      ]],
+    55 => # 影狩人 / Shadow Hunter
+      [[
+        "闇の世界に身をやつした暗黒の狩人",
+        "エルフや妖精等、普通の狩人は手を出さない対象を狩り滅ぼす",
+        "外法に属する弓技は闇の波動を伴い、命中した者を葬り去る",
+        "しかしその発動にはHPの消費を必要とし、代償は大きい",
+      ],
+      [
+        "Equip: Dagger,Scythe,Bow,Whip,Boomerang",
+        "Skills: Scythe,Bow,Whip,Throwing",
+        "Passive: Super Forest Strength,Slayer Boost 100%,Crit +20%,",
+		"   Eva +10%,Resist Dark 75%,Bow Mastery",
+        "",
+      ]],
+    56 => # ガンナー
+      [[
+        "Dynamic sharpshooter that swaps the old for the new. No enemy can avoid the bullets, their speed dwarfing and downing Harpies and Succubi. Average attack stat aside, even healing ammo can be acquired.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Gun",
+        "Skills: Gun",
+        "Passive: Slayer Boost 100%,Crit +15%",
+        "",
+      ]],
+    57 => # 神銃士 / God's Eye
+      [[
+        "聖なる力を弾に込め、邪悪を滅する神銃使い",
+        "MPを消費する聖なる銃技は、絶大な威力をもたらす",
+        "習得技は単体技や全体技を取り揃え、あらゆる状況に対応",
+        "また吸血鬼やアンデッドを滅ぼす特別な弾丸が使用できる",
+      ],
+      [
+        "Equip: Gun",
+        "Skills: Gun",
+        "Passive: Slayer Boost 100%,Crit +20%,Gun Mastery",
+        "",
+      ]],
+    58 => # 魔弾の射手 / Devil's Eye
+      [[
+        "悪魔と取引したと囁かれる闇の魔銃使い",
+        "HPを消費することで、強力な暗黒銃技を使用する事ができる",
+        "習得技は使いやすいものが多く、どんな状況にも対応可能",
+        "人魚や竜など、幻獣に属する魔物を滅ぼす弾丸を使用できる",
+      ],
+      [
+        "Equip: Gun",
+        "Skills: Gun",
+        "Passive: Slayer Boost 100%,Crit +20%,Dual-Wield",
+        "",
+      ]],
+    59 => # 魔獣使い / Monster Tamer
+      [[
+        "Different kind of hunter that aims to tame monster girls. Paralyzing, binding, seducing, and overall subduing their will to attack is their specialty. The mere presence of a Monster Trainer attracts other monster girls to come along for the ride.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Dagger,Scythe,Whip,Boomerang",
+        "Skills: Scythe,Whip",
+        "Passive: Recruit +50%,Slayer Boost 100%",
+        "",
+      ]],
+    60 => # ドラゴン使い / Dragon Tamer
+      [[
+        "ドラゴンを従えるとされる究極の魔物使い",
+        "使役の対象は竜のみならず、あらゆる魔物を従える",
+        "鞭の腕も鋭さを増し、聖なる鞭技も習得可能",
+        "MPを消費する聖属性の鞭技は、非常に心強い",
+      ],
+      [
+        "Equip: Dagger,Scythe,Whip,Boomerang",
+        "Skills: Scythe,Whip",
+        "Passive: Recruit +100%,Slayer Boost 100%,Whip Mastery",
+        "",
+      ]],
+    61 => # デビルサマナー / Devil Summoner
+      [[
+        "闇の力で悪魔を従える、外法の魔物使い",
+        "妖魔の使役や、その討伐を得意とする",
+        "また、闇の力を帯びた鞭技を習得する事が可能",
+        "HPの消費と引き替えに、卓越した破壊力を発揮する",
+      ],
+      [
+        "Equip: Dagger,Scythe,Whip,Boomerang",
+        "Skills: Scythe,Whip",
+        "Passive: Recruit +100%,Slayer Boost 100%,",
+		"       Resist Dark 75%,Dual-Wield",
+        "",
+      ]],
+    62 => # シーフ
+      [[
+        "Thieves make their living by taking from others, including stealing items from enemies and opening treasure chests. Other than agility, their stats are very low. Despite being poor at combat, they learn many skills useful in an adventure.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Dagger,Sickle,Whip,Boomerang",
+        "Skills: Dagger,Throwing,Thievery",
+        "Passive: Steal Rate +50%,Crit +10%,Eva +20%,Null Ambush",
+        "   Preemptive Strike Up",
+        "",
+      ]],
+    63 => # マスターシーフ / Master Thief
+      [[
+        "Expert thief with enhanced thievery prowess. They can even steal HP and unlock green chests. More knife skills are acquired as well, but only as a last resort due to low fighting stats.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Dagger,Scythe,Whip,Boomerang",
+        "Skills: Dagger,Throwing,Thievery",
+        "Passive: Steal Rate +100%,Crit +15%,Eva +20%,Null Ambush",
+        "   Preemptive Strike Up",
+        "",
+      ]],
+    64 => # トリックスター / Trickster
+      [[
+        "神の腕前を持つとされる究極のシーフ",
+        "盗みの能力は卓越し、その手に盗めないものはないという",
+        "習得できるナイフ技も鋭さを増し、複数の敵を即死させる事も可能",
+        "それでも、同クラスの戦闘職と比べれば戦力は劣る事に注意",
+      ],
+      [
+        "Equip: Dagger,Scythe,Whip,Boomerang",
+        "Skills: Dagger,Throwing,Thievery",
+        "Passive: Steal Rate +200%,Crit/Eva +20%,Null Ambush",
+        "   Preemptive Strike Up,Dagger Mastery",
+        "",
+      ]],
+    65 => # 忍者
+      [[
+        "Elusive assassin from the far East cloaked in darkness, severing lives swiftly and efficiently with Ninjutsu. Paired with dual-wielding, the attack options only grow. High evasion makes up for paper-thin defenses and low attack.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Dagger,Ninja Sword,Scythe,Gi",
+        "Skills: Ninjutsu",
+        "Passive: Dual-Wield,Crit +15%,Eva +20%",
+        "",
+      ]],
+    66 => # 極忍 / Master Shinobi
+      [[
+        "厳しい修行を重ね、技を極めた究極の忍者",
+        "殺傷力の高い数々の忍術により、魔物を殲滅する",
+        "二刀流による攻撃力の高さは、極めて心強い",
+        "やはり防御面では脆いので、注意したい",
+      ],
+      [
+        "Equip: Dagger,Ninja Sword,Scythe,Gi",
+        "Skills: Ninjutsu",
+        "Passive: Dual-Wield,Crit/Eva +20%",
+        "",
+      ]],
+    67 => # 淫流くのいち / Erotic Kunoichi
+      [[
+        "男女を問わず骨抜きにする淫技を習得した、最上位の女忍者",
+        "修行によって身につけた淫術で、どんな敵をも無力化する",
+        "また快感を耐える術も心得ており、快楽攻撃に高い耐性を示す",
+        "器用さは高いが、正面きっての戦闘は不得手なので注意",
+      ],
+      [
+        "Equip: Dagger,Ninja Sword,Scythe,Sex Toy,Gi",
+        "Skills: Ninjutsu,Sexcraft",
+        "Passive: Dual-Wield,Hor/Tra/Sed/Inc Strike 5%",
+        "　　　　　　Null Hor/Tra/Sed/Inc,Crit/Eva +20%",
+		"       Resist Pleasure 75%",
+        "",
+      ]],
+    68 => # 海賊 / Pirate
+      [[
+        "自由を尊ぶ、誇り高い海の戦士",
+        "肉弾戦の能力に優れ、属性や状態異常の耐性も高い",
+        "また燃え立つ闘争心により、戦技の消費SPが減少する",
+        "攻撃技も多く覚え、攻め手として最適である",
+      ],
+      [
+        "Equip: Dagger,Sword,Great Sword,Axe,Club,Flail,Gun",
+        "Skills: Sword,Gun,Pirating",
+        "Passive: SP Cost 75%,Sea Strength,Crit +15%,Null Water",
+		"       Res Fire/Ice/Lightning/Wind/Earth 75%",
+        "",
+      ]],
+    69 => # 海賊王 / Pirate King
+      [[
+        "全ての海賊達の頂点に君臨する、誇り高き海の皇帝",
+        "当然ながら卓越した戦闘能力を持ち、攻防共に隙はない",
+        "特に体力や属性防御は極めて高く、生存性に優れる",
+        "習得できる海賊技も非常に強力で、攻撃役として超一流",
+      ],
+      [
+        "Equip: Dagger,Sword,Great Sword,Axe,Club,Flail,Gun",
+        "Skills: Sword,Gun,Pirating",
+        "Passive: SP Cost 50%,Super Sea Strength,Dual-Wield,Crit +20%",
+		"       Res Fire/Ice/Lightning/Wind/Earth 50%, Null Water",
+        "",
+      ]],
+
+    72 => # 兵士
+      [[
+        "Protects towns and castles, your average Guard. Learns skills to weaken and disable enemies. Average stats for a fighter-type, but bad with magic and not able to equip many types of weapons or armor.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Dagger,Sword,Rapier,Spear,Boomerang,Armor,Helmet,Shield",
+        "Skills: Sword,Spear",
+        "Passive: City Strength",
+        "",
+      ]],
+    73 => # 王宮騎士 / Palace Guard
+      [[
+        "Senior Guard charged with protecting top VIPs and sites. Learns more skills to further weaken foes. Attack and defense stats are fit for the offensive and are further bulked by heavy equipment.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Dagger,Sword,Knight Sword,Rapier,Spear,Heavy Spear",
+        "   Boomerang,Armor,Heavy Armor,Helmet,Heavy Helmet,Shield",
+        "   Heavy Shield",
+        "Skills: Dagger,Sword,Rapier,Spear",
+        "Passive: City Strength",
+      ]],
+
+    75 => # 海兵 / Marine
+      [[
+        "海の秩序を守り、正義を貫く特別な兵士",
+        "一般兵士より格段に頑強で、過酷な環境での戦闘に適する",
+        "燃え立つ闘争心により、戦闘開始時のSPが普段よりアップ",
+        "海での戦いでは特に強く、攻撃役として非常に頼りになる",
+      ],
+      [
+        "Equip: Dagger,Sword,Great Sword,Spear,Heavy Spear,Bow,Gun",
+        "Skills: Sword,Gun,Pirating",
+        "Passive: Battle Start SP 75%,Sea Strength,Crit +10%,Null Water",
+		"       Res Fire/Ice/Lightning/Wind/Earth 75%",
+        "",
+      ]],
+    76 => # 海軍大将 / Admiral
+      [[
+        "海兵達を統べる、豪壮にして勇猛な大将",
+        "自身も歴戦の猛者であり、単独武力も並外れている",
+        "凄まじい闘争心により、SPが最大の状態で戦闘を開始",
+        "豪快な攻撃技を連発し、海の罪人を容赦なく打ちのめす",
+      ],
+      [
+        "Equip: Dagger,Sword,Great Sword,Spear,Heavy Spear,Bow,Gun",
+        "Skills: Sword,Gun,Pirating",
+        "Passive: Battle Start SP 100%,Super Sea Strength,Crit +20%",
+        "　　　　　　Sword Mastery,Gun Mastery,Null Water",
+		"        Res Fire/Ice/Lightning/Wind/Earth 50%",
+        "",
+      ]],
+    77 => # 正義のヒーロー / Hero of Justice
+      [[
+        "Strange masked warrior with a heart of justice. Stats are average all around but certain skills can only be used when transformed. Smite evildoers with all sorts of embarrassingly named attacks!",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Fist",
+        "Skills: Unarmed,Justice",
+        "Passive: Strength in Solitude,Unyielding Fighting Spirit",
+        "",
+      ]],
+
+    79 => # 商人
+      [[
+        "Traveling salesmen enthusiastic about business. Increases the amount of gold acquired after battle. Not suited for combat, but nonetheless hearty and tenacious. Can purchase items in combat and use them immediately.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Dagger,Sickle,Boomerang,Abacus",
+        "Skills: Throwing,Mercantile,EX-Item",
+        "Passive: Gold Drop +50%,Medicine Lore I",
+        "",
+      ]],
+    80 => # 闇商人 / Black Marketeer
+      [[
+        "Accomplished merchant with lucrative but dubious connections. Get party members out of a jam with swift under-the-table dealings. High defense aside, direct combat is not recommended. Better items can be bought too.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Dagger,Scythe,Boomerang,Abacus",
+        "Skills: Throwing,Mercantile,EX-Item",
+        "Passive: Gold Drop +100%,Medicine Lore I",
+        "",
+      ]],
+    81 => # 神の見えざる手 / Invisible Hand of God
+      [[
+        "政財界からフィクサーと崇められる財界のトップ",
+        "まるで市場を操っているような手腕で、莫大な富を築く",
+        "戦闘中に希少なアイテムを購入し、即座に使用可能",
+        "特有のルートを生かした商売スキルを多く習得する",
+      ],
+      [
+        "Equip: Dagger,Scythe,Boomerang,Abacus",
+        "Skills: Throwing,Mercantile,EX-Item",
+        "Passive: Gold Drop +200%,Medicine Lore I",
+        "　　　　　　Abacus Mastery",
+        "",
+      ]],
+    82 => # アイテム士 / Item User
+      [[
+        "Innovative user of many items and traveling faux-doctor for adventurers. The item's true essence is drawn out and divided across the party or reversed against foes. Learns boomerang skills but otherwise powerless.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Dagger,Boomerang,Abacus",
+        "Skills: Throwing,Mercantile,EX-Item",
+        "Passive: Medicine Lore II",
+        "",
+      ]],
+    83 => # マスターアイテム / Item Master
+      [[
+        "アイテムの使い方を極めた究極の薬師",
+        "その技能は、ありふれた薬草さえ驚異の霊薬に変える",
+        "MPを使用しない回復の腕は、長旅の助けになるだろう",
+        "護身用のブーメラン技も覚えるが、直接戦闘は不向き",
+      ],
+      [
+        "Equip: Dagger,Boomerang,Abacus",
+        "Skills: Throwing,Mercantile,EX-Item",
+        "Passive: Medicine Lore III,Boomerang Master",
+        "",
+      ]],
+    84 => # 冒険家 / Adventurer
+      [[
+        "Classic traveler of uncharted lands. Learns skills that'll lessen the stress and dangers of long journeys. Robust, adaptable, and won't mind fighting in harsh environments. Learns a few boomerang skills as well.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Dagger,Ninja Sword,Scythe,Bow,Boomerang",
+        "Skills: Dagger,Throwing,Thievery,EX-Item",
+        "Passive: Field Dmg 50%,Desert/Cave Strength,Crit +5%,Eva +10%",
+        "   Res Fire/Ice/Lightning/Wind/Earth/Water 75%",
+      ]],
+    85 => # レンジャー / Ranger
+      [[
+        "極限の環境でも戦えるよう訓練された特殊な兵士",
+        "忍者や海賊の経験さえ積み、どんな状況でも生還可能",
+        "冒険に役立つ技能の他、習得できるブーメラン技も強力",
+        "パーティにいれば、戦闘とサポートの両面で心強い",
+      ],
+      [
+        "Equip: Dagger,Ninja Sword,Scythe,Bow,Boomerang",
+        "Skills: Dagger,Throwing,Thievery,Ninjutsu,Pirating",
+        "　　　　EX-Item",
+        "Passive: Null Field Dmg,Super Desert/Cave Strength,Crit/Eva +10%",
+        "　　  Res Fire/Ice/Lightning/Wind/Earth/Water 50%",
+		"　　  Boomerang Mastery",
+        "",
+      ]],
+    86 => # 占い師
+      [[
+        "A soothsaying expert of mysterious forces. Uses tarot cards that bring out random effects. Physical stats are subpar but magic skills are passable. Besides tarot cards, many luck-based skills can be learned.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Dagger,Staff,Rod,Cards",
+        "Skills: Oracle",
+        "Passive: Item Drop +50%,Gambling Luck I",
+        "",
+      ]],
+    87 => # ギャンブラー / Gambler
+      [[
+        "Edge-teetering soothsayer gambling with fate. Disrupt the flow of battle with random events. Lady Luck may either bless your friends or empower your foes, so don't push your luck and use with caution.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Dagger,Staff,Rod,Cards",
+        "Skills: Oracle",
+        "Passive: Item Drop +100%,Gambling Luck II,Crit +30%",
+        "",
+      ]],
+    88 => # 闇の賭博師 / Dark Gambler
+      [[
+        "闇世界で語り継がれる、伝説のギャンブラー",
+        "裏のルールに通じ、破滅的なギャンブルにも身を投じる",
+        "ランダム性の高い習得スキルは、ますます危険性を増した",
+        "一発逆転を求める際には、頼りにするのも悪くない",
+      ],
+      [
+        "Equip: Dagger,Staff,Rod,Cards",
+        "Skills: Oracle",
+        "Passive: Item Drop +200%,Gambling Luck III,Crit +40%,",
+		"       Card Mastery",
+        "",
+      ]],
+    89 => # カードバトラー / Card Battler
+      [[
+        "Ex-fortune teller turned full-time card battler. Each card drawn possesses magical power that may shuffle the tide of battle. Effects range from attack to recovery. Magic may be decent, but best suited for support.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Dagger,Staff,Rod,Cards",
+        "Skills: Oracle",
+        "Passive: None",
+        "",
+      ]],
+    90 => # カードサマナー / Card Summoner
+      [[
+        "魔法のカードから魔物召喚が出来るカードバトラー",
+        "ただし召喚対象は選べず、ランダムに召喚する事になる",
+        "その分、MPやSPの消費は非常に少なく連発可能",
+        "運が絡むものの、長旅では特に頼りになるだろう",
+      ],
+      [
+        "Equip: Dagger,Staff,Rod,Cards",
+        "Skills: Oracle",
+        "Passive: Card Mastery",
+        "",
+      ]],
+    91 => # ゴッドファーザー / Godfather
+      [[
+        "悪を極め、裏社会に君臨する帝王",
+        "銃の扱いを得意とし、戦闘能力は非常に高い",
+        "敵にケジメを取らせる、独特の銃撃スキルを習得",
+        "また、味方への攻撃も得意とする",
+      ],
+      [
+        "Equip: Dagger,Fist,Gun",
+        "Skills: Gun,Mercantile,Unarmed",
+        "Passive: Counter +50%,Dual-Wield,Gambling Luck III",
+        "",
+      ]],
+    92 => # 遊び人
+      [[
+        "遊ぶことに情熱を傾ける、役立たずの職業",
+        "戦闘が苦手どころか、足を引っ張る事も多い",
+        "踊りや歌など、サポートスキルを習得可能",
+        "この職業で培った一芸は、きっと上位職の糧となるだろう",
+      ],
+      [
+        "Equip: Fan,Whip,Boomerang,Sex Toy",
+        "Skills: Oracle,Dancing,Singing",
+        "Passive: Crit/Eva +20%,Gambling Luck I",
+        "",
+      ]],
+    93 => # 踊り子 / Dancer
+      [[
+        "Confound and disturb the hearts of both man and monster. Learn alluring and magical dances to buff one side and debilitate the other. Has high evasion and picks up a few fan skills but due to low attack they serve as a last resort only.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Dagger,Rapier,Whip,Fan",
+        "Skills: Fan,Dancing",
+        "Passive: Eva +20%",
+        "",
+      ]],
+    94 => # 戦巫女 / War Miko
+      [[
+        "神を讃えるための踊りを極めた戦巫女",
+        "その踊りは奇跡をもたらし、邪悪を滅する",
+        "強力な扇技を習得し、直接戦闘でも引けは取らない",
+        "魔力も平均以上だが、打たれ弱いので注意",
+      ],
+      [
+        "Equip: Dagger,Rapier,Whip,Fan",
+        "Skills: Fan,Dancing",
+        "Passive: Eva +20%,Fan Mastery",
+        "",
+      ]],
+    95 => # 吟遊詩人 / Minstrel
+      [[
+        "Vocalist whose songs shake the hearts of both man and monster. Alter the tone to awaken hidden abilities in allies. Excellent at support during drawn out battles but a poor fighter.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Boomerang,Harp",
+        "Skills: Singing",
+        "Passive: Mag Eva +20%",
+        "",
+      ]],
+    96 => # 神唱の歌姫 / Divine Songstress
+      [[
+        "世界中の人々や魔物を魅了する、神の歌声を持った歌姫",
+        "その歌声は仲間に奇跡を、敵に対しては破滅をもたらす",
+        "攻撃から回復、補助までの歌が揃い、非常に心強い",
+        "能力値は全般的に高くないので、注意が必要",
+      ],
+      [
+        "Equip: Boomerang,Harp",
+        "Skills: Singing",
+        "Passive: Mag Eva +20%,Harp Mastery",
+        "",
+      ]],
+    97 => # 娼婦 / Prostitute
+      [[
+        "Sexcraft specialist aiming to melt body and mind in pleasure. Inflict pleasure 'damage' with lewd skills that leave foes moist and quivering for more. While resistant against the same type of damage, don't expect anyone in this job to throw punches.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Whip,Sex Toy",
+        "Skills: Sexcraft",
+        "Passive: Hor/Tra Strike 5%,Res Hor/Tra/Sed/Inc 50%",
+        "",
+      ]],
+    98 => # 慈愛の聖娼 / Saintly Prostitute
+      [[
+        "全ての男性に慈愛を与え、甘い快楽に導く娼婦",
+        "その淫技は男も女も恍惚に浸らせ、じっくり昇天させる",
+        "恍惚効果を主体とした快楽スキルを多く習得可能",
+        "淫技は卓越しているが、直接戦闘は不向きなのに注意",
+      ],
+      [
+        "Equip: Whip,Sex Toy",
+        "Skills: Sexcraft",
+        "Passive: Hor/Tra/Inc Strike 5%,Res Hor/Tra/Sed/Inc 25%",
+        "　　　　　　Sex Toy Mastery",
+        "",
+      ]],
+    99 => # 傾国の魔娼 / Devilish Prostitute
+      [[
+        "全ての男性を虜にし、理性を奪う魔性の娼婦",
+        "指の動きだけで男女を狂わせ、腰の振りだけで魂を奪う",
+        "誘惑効果を主体とした快楽スキルを多く習得可能",
+        "淫技は卓越しているが、直接戦闘は不向きなのに注意",
+      ],
+      [
+        "Equip: Whip,Sex Toy",
+        "Skills: Sexcraft",
+        "Passive: Hor/Tra/Sed Strike 5%,Res Hor/Tra/Sed/Inc 25%",
+        "　　　　　　Sex Toy Mastery",
+        "",
+      ]],
+    100 => # スーパースター / Superstar
+      [[
+        "Singing, dancing, and all-around captivating idol. Distract foes with songs while allies are encouraged by dances. Special stage skills can be learned as well. Support capabilities are virtually peerless.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Dagger,Rapier,Whip,Harp,Fan",
+        "Skills: Fan,Dancing,Singing",
+        "Passive: Sed Strike 20%,Eva/Mag Eva +15%",
+        "",
+      ]],
+    101 => # バトルファッカー / Battle Fucker
+      [[
+        "Lewd fighter who incorporates sex acts into battle. The foe's privates are erotically tortured by hands, feet, and other body parts. Apart from greater resistance against pleasure-based attacks, new abilities increase the odds of addling foes into a rapturous stupor.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Whip,Fist,Sex Toy",
+        "Skills: Whip,Unarmed,Sexcraft",
+        "Passive: Hor/Tra Strike 5%,Crit +15%,Eva +10%,Res Pleasure 75%",
+        "   Res Hor/Tra/Sed/Inc 25%",
+      ]],
+
+    103 => # 学者
+      [[
+        "Ambitious student on the pursuit of truth. Utilizes a new form of magic to fend off enemies. This type of magic uses SP as opposed to MP, making it a versatile skill set useful in future jobs.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Rod,Scalpel,Grimoire,Gun",
+        "Skills: Magic Science,Alchemy,Grimoire",
+        "Passive: None",
+        "",
+      ]],
+    104 => # 魔導学者 / Magical Scholar
+      [[
+        "Scholar fully immersed in the next level of magic science, mixing and matching various compounds to wreak havoc upon Dolls and other artificial monsters. The conversion rate between SP and MP has increased as well.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Rod,Scalpel,Grimoire,Gun",
+        "Skills: Magic Science,Alchemy,Grimoire",
+        "Passive: None",
+        "",
+      ]],
+    105 => # マスターアルケミスト / Master Scholar
+      [[
+        "魔導科学を極めた究極の求道者",
+        "極まった科学は、もはや魔法と区別がつかない",
+        "科学の力で強烈な破壊事象を引き起こす",
+        "SPとMPの相互変換も能率的で、魔導師にも転用可能",
+      ],
+      [
+        "Equip: Rod,Scalpel,Grimoire,Gun",
+        "Skills: Magic Science,Alchemy,Grimoire",
+        "Passive: Magic Mastery",
+        "",
+      ]],
+    106 => # 錬金術士 / Alchemist
+      [[
+        "無から物質を造り出す技術を探究する術師",
+        "アイテムと錬金素材を組み合わせ未知の道具を精製する",
+        "錬金素材は、戦闘中に自動的に生み出される",
+        "魔導師向けの能力値で、魔法攻撃役としても活躍する",
+      ],
+      [
+        "Equip: Dagger,Staff,Rod,Grimoire",
+        "Skills: Magic Science,Alchemy,Grimoire",
+        "アビリティ：錬金素材自動ゲット",
+        "",
+      ]],
+    107 => # 錬金宝貝士 / Golden Alchemist
+      [[
+        "伝説の武具を精製する事に命を捧げた究極の錬金術",
+        "アイテムと錬金素材を組み合わせ未知の武器や防具を精製する",
+        "精製した武具はその戦闘のみ有効だが、極めて有用",
+        "能力値は戦闘向きではなく、伝説武器の力を過信はできない",
+      ],
+      [
+        "Equip: Dagger,Staff,Rod,Grimoire",
+        "Skills: Magic Science,Alchemy,Grimoire",
+        "アビリティ：錬金素材自動ゲット　魔法マスタリー",
+        "",
+      ]],
+    108 => # 魔導司書 / Magical Librarian
+      [[
+        "Scholar and researcher of magical books. By sacrificing a page of the grimoire, a powerful phenomenon occurs at no extra cost. Besides the basic elements, the pages contain spells for every occasion...if you have enough to spare.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Staff,Rod,Grimoire",
+        "Skills: Magic Science,Alchemy,Grimoire",
+        "Passive: None",
+        "",
+      ]],
+    109 => # ロードライブラリ / Library Lord
+      [[
+        "魔導書の扱いを極めた、最上級の魔導科学者",
+        "魔導書のページを消費し、絶大な威力の攻撃魔法を発動可能",
+        "習得できる回復技や補助技も強力で、あらゆる局面で活躍",
+        "ページのストックだけは切らさないように注意",
+      ],
+      [
+        "Equip: Staff,Rod,Grimoire",
+        "Skills: Magic Science,Alchemy,Grimoire",
+        "Passive: Magic Mastery",
+        "",
+      ]],
+    110 => # 技師
+      [[
+        "Job that uses cutting-edge weaponry to dispatch whole swaths of enemies. Despite the boost in SP its general status still falls short of the more traditional warrior-based jobs.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Dagger,Club,Gun",
+        "Skills: Makina",
+        "Passive: None",
+        "",
+      ]],
+    111 => # マキナマイスター / Makina Master
+      [[
+        "Advanced engineer skilled with higher-grade tech, wielding their destructive power in the heat of battle. Some makina are designed to explicitly mow down certain types of enemies, while others are aligned towards self-defense.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Dagger,Club,Gun",
+        "Skills: Makina",
+        "Passive: None",
+        "",
+      ]],
+    112 => # マスターマシーナリー / Makina Master
+      [[
+        "あらゆるマキナの扱いを極めた究極の技師",
+        "解析不能のマキナさえ使いこなし、敵の群れを駆逐",
+        "レアなマキナを入手していれば、戦士系以上に活躍する",
+        "能力値も高めなので、様々な局面に対応が可能",
+      ],
+      [
+        "Equip: Dagger,Club,Gun",
+        "Skills: Makina",
+        "Passive: Gun Mastery",
+        "",
+      ]],
+    113 => # 魔芸師
+      [[
+        "Novice necromancer who seeks mastery of the three arts. Learns a few fledgling skills of each school and armed with high magic stats. As a branch of the Summoning arts, this job must be mastered in order to settle into a true profession.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Scythe,Rod,Whip,Grimoire,Robe,Magic Hat",
+        "Skills: Scythe,Summoning",
+        "Passive: None",
+        "",
+      ]],
+    114 => # ネクロマンサー / Necromancer
+      [[
+        "Unique summoner that turns corpses into minions fueled by life. Countless experiments with many bodies indirectly allows for the dubious use of Medicine skills as well. Juggle syringes and impromptu graverobbing effectively for complete reliability.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Scythe,Rod,Whip,Scalpel,Grimoire,Robe,Magic Hat",
+        "Skills: Scythe,Summoning,Medicine,Corpse",
+        "Passive: None",
+        "",
+      ]],
+    115 => #  / Necromaster
+      [[
+        "死体を操る術を極めた最上位のネクロマンサー",
+        "操るゾンビも極めて強力で、伝説の妖魔クラスを召喚",
+        "医術の知識をもって、仲間を癒やすこともできる",
+        "攻撃役としても回復役としても超一流の存在である",
+      ],
+      [
+        "Equip: Scythe,Rod,Whip,Scalpel,Grimoire,Robe,Magic Hat",
+        "Skills: Scythe,Summoning,Medicine,Corpse",
+        "Passive: Magic Mastery",
+        "",
+      ]],
+    116 => # 降霊術師 / Medium
+      [[
+        "Unique summoner that calls ghosts from the afterlife lured by mana. With a few nibbles of the Medium's MP, they'll fight alongside with the party and even impart life in return. Black Magic is a less costly alternative, provided that there's MP to spare.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Scythe,Stave,Rod,Grimoire,Robe,Magic Hat",
+        "Skills: Scythe,Black Magic,Summoning,Corpse",
+        "Passive: None",
+        "",
+      ]],
+    117 => # マスターシャーマン / Master Shaman
+      [[
+        "降霊術を極めた最上位の降霊術師",
+        "召喚する霊は、伝説の英霊や悪霊クラスとなる",
+        "その強大な力は、戦場において心強いだろう",
+        "魔力も高く、魔法攻撃役としても非常に優秀",
+      ],
+      [
+        "Equip: Scythe,Stave,Rod,Grimoire,Robe,Magic Hat",
+        "Skills: Scythe,Black Magic,Summoning,Corpse",
+        "Passive: Resist Dark 75%,Magic Mastery",
+        "",
+      ]],
+    118 => # からくり人形師 / Puppeteer
+      [[
+        "Unique summoner that controls dolls built from scratch with great care. Controlling the dolls takes neither magic nor life, but very high concentration to perform well. Ergo, Machines serve as a viable backup.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Scythe,Rod,Grimoire,Gun,Robe,Magic Hat",
+        "Skills: Scythe,Summoning,Makina,Artificial",
+        "Passive: None",
+        "",
+      ]],
+    119 => # マスタードーラー / Puppet Master
+      [[
+        "人形術を極めた最上位のからくり人形師",
+        "操る人形は兵器とも言えるもので、非常に強力",
+        "その上、マキナが使用可能なのも心強い",
+        "攻撃役として無類の働きをするだろう",
+      ],
+      [
+        "Equip: Scythe,Rod,Grimoire,Gun,Robe,Magic Hat",
+        "Skills: Scythe,Summoning,Makina,Artificial",
+        "Passive: Magic Mastery",
+        "",
+      ]],
+    120 => # 情報屋
+      [[
+        "Words become weapons in this unorthodox job. Distract the enemy with stories and idle gossip. Despite subpar efforts in both forms of combat, this job is invaluable for gathering more allies.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Dagger,Rapier,Boomerang,Gun",
+        "Skills: Throwing,Talk",
+        "Passive: None",
+        "",
+      ]],
+    121 => # 話術士 / Smooth Talker
+      [[
+        "Master wordsmith who fights without throwing a punch. Suave fast-talking can coax money and items from foes. Failing that, colorful phrases can induce abnormal status. Not fit for fighting and would prefer to use words as weapons.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Dagger,Rapier,Boomerang,Gun",
+        "Skills: Throwing,Talk",
+        "Passive: None",
+        "",
+      ]],
+    122 => # 話神 / God of Speech
+      [[
+        "言葉を極めた究極の話術師で、言霊使いとも呼ばれる",
+        "その話術は、もはや魔術の域に達しているという",
+        "祝福の言葉で味方を復活させ、呪いの言葉で敵を即死させる",
+        "敵の友好度を上げる際にも、その能力は非常に役立つだろう",
+      ],
+      [
+        "Equip: Dagger,Rapier,Boomerang,Gun",
+        "Skills: Throwing,Talk",
+        "Passive: Boomerang Master",
+        "",
+      ]],
+    123 => # 料理人
+      [[
+        "Devoted foodie in pursuit of unique recipes. Skilled hands and a passionate heart craft splendid meals in the heat of battle, buffing allies and smiting foes. Completed dishes are stored in the inventory.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Dagger,Scythe,Kitchen Knife",
+        "Skills: Dagger,Cooking",
+        "Passive: None",
+        "",
+      ]],
+    124 => # トリプルコック / Three Star Chef
+      [[
+        "Master chef capable of whipping out divine meals. The recipe list is expanded with cuisines that dish out spectacular effects on the tongue and battlefield. Kitchen knives are handy in a pinch, but are unreliable compared to real weapons.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Dagger,Scythe,Kitchen Knife",
+        "Skills: Dagger,Cooking",
+        "Passive: None",
+        "",
+      ]],
+    125 => # 味皇
+      [[
+        "料理の腕を極め、業界において神と称される料理人",
+        "あらゆるレシピを極め、パーティに活力をもたらす",
+        "他の技では得られない補助効果は、大いに助けになるだろう",
+        "また食材がなくても、余り物でランダムに調理する事が可能",
+      ],
+      [
+        "Equip: Dagger,Scythe,Kitchen Knife",
+        "Skills: Dagger,Cooking",
+        "Passive: Kitchen Knife Mastery",
+        "",
+      ]],
+    126 => # ナース
+      [[
+        "Assistant doctor armed with basic first aid. Mend wounds, inoculate against status ailments, and improve general health with skills based on SP. Speed and dexterity are decent, but subpar for the front lines.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Staff,Scalpel",
+        "Skills: Dagger,Medicine",
+        "Passive: Eva +10%",
+        "",
+      ]],
+    127 => # 医者 / Doctor
+      [[
+        "Accomplished battle physician fully loaded with the basics. Mends wounds without the use of items or magic. Even resuscitation is possible without using a hint of mana. Overall, an acceptable substitute for White Mages when MP support is low.",
+        "",
+        "",
+        "",
+        "",
+	  ],
+      [
+        "Equip: Staff,Scalpel",
+        "Skills: Dagger,Medicine",
+        "Passive: Eva +10%",
+        "",
+      ]],
+    128 => # 神医 / Godly Doctor
+      [[
+        "古今東西の医術を極めた神医",
+        "その治療はまさに神業で、究極の癒しをもたらす",
+        "特別な投薬で、状態異常や即死を予防も可能",
+        "回復役として申し分のない活躍を見せるだろう",
+      ],
+      [
+        "Equip: Staff,Scalpel",
+        "Skills: Dagger,Medicine",
+        "Passive: Scalpel Mastery",
+        "",
+      ]],
+    129 => # メイド / Maid
+      [[
+        "Dutifully performs household tasks with utmost care. Improvises housekeeping skills for combat to support allies and cripple enemies. Uses special skills to eliminate pesky bugs and weeds.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Fan,Whip,Plate,Sex Toy",
+        "Skills: Whip,Service",
+        "Passive: Eva/Mag Eva +10%",
+        "",
+      ]],
+    130 => # マスターメイド / Master Maid
+      [[
+        "An expert maid that provides service without delay. In addition to keeping allies cozy, maids of this caliber can jump into the fray with secret self-defense techniques. Also obtains an ability that boosts job XP acquisition.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Fan,Whip,Plate,Sex Toy",
+        "Skills: Whip,Service",
+        "Passive: Eva/Mag Eva +10%",
+        "",
+      ]],
+    131 => # パーフェクトメイド / Grandmaster Maid
+      [[
+        "全てのメイドの頂点に立つ、最高位のメイド",
+        "その奉仕は究極にして至高であり、味方を完全サポートする",
+        "性の技術も卓越し、敵への奉仕で昇天させる事も可能",
+        "最強のメイド奥義も修得し、戦闘の場でも引けを取らない",
+      ],
+      [
+        "Equip: Fan,Whip,Plate,Sex Toy",
+        "Skills: Whip,Service",
+        "Passive: Eva/Mag Eva +10%,Plate Mastery",
+        "",
+      ]],
+
+    134 => # 貴族 / Noble
+      [[
+        "Members of the nobility who appear on the battlefield to fulfill the obligations that accompany their high-born status. Use rapiers and rapier skills along with skills to increase XP and recover HP automatically. Good in combat with overall high stats.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Dagger,Rapier,Bow",
+        "Skills: Dagger,Rapier,Ruling",
+        "Passive: HP Regen 5%,Eva +10%",
+        "",
+      ]],
+    135 => # 王 / King
+      [[
+        "Unequaled ruler of an entire country. Capable of taking control of the battlefield while fighting on the front lines. Fierce with a sword imbued with secret techniques. Heavy equipment can also even the odds.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Dagger,Sword,Knight Sword,Rapier,Spear,Heavy Spear,Bow",
+        "   Armor,Heavy Armor,Helmet,Heavy Healmet,Shield,Heavy Shield",
+        "Skills: Dagger,Sword,Rapier,Ruling",
+        "Passive: HP Regen 10%,Crit +10%",
+        "",
+      ]],
+
+    137 => # 魔導王 / Magus King
+      [[
+        "王家に伝わる魔導の血脈を開花させた魔術の帝王",
+        "迸る魔力を用い、王族のみに伝わる魔導を行使する",
+        "敵の魔法に対する抵抗力も高く、属性ダメージも半減",
+        "魔法スキルのほとんどを使用でき、その魔導に穴はない",
+      ],
+      [
+        "Equip: Dagger,Magic Sword　Staff,Rod,Grimoire",
+        "Skills: White Magic,Black Magic,Time Magic,Summoning",
+        "　　　　Magic Science,Alchemy,Grimoire,Ruling,Robe,Magic Hat",
+        "Passive: MP Regen 4% Res Fire/Ice/Lightning/Wind/Earth/Water 50%",
+        "　　　　　　Magic Mastery",
+        "",
+      ]],
+    138 => # 法王 / Pope
+      [[
+        "Traveling founder preaching the good word across the world. Dutiful prayers call upon miracles to heal allies and smite enemies at the Goddess' behest. Good tidings shall come to those who bring a Pope along.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Dagger,Magic Sword,Club,Staff,Grimoire,Robe,Magic Hat",
+        "Skills: White Magic,Holy,Ruling",
+        "Passive: Mag Ref +30%,Mag Eva +20%,Resist Holy 75%",
+        "",
+      ]],
+    141 => # 見習い勇者 / Apprentice Hero
+      [[
+        "A hero-in-training who has not received the blessing of the Goddess. Aims to be a true hero, wields a sword but without experience. Average stats, poor at magic. Has personal sword skills and minor divine protection.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Dagger,Sword,Rapier,Spear,Axe,Club,Scythe,Boomerang",
+        "   Armor,Helmet,Shield",
+        "Skills: Dagger,Sword,Heroism",
+        "Passive: None",
+        "",
+      ]],
+	142 => # 勇者 / Hero
+      [[
+        "A genuine hero blessed by the Goddess Ilias. Few in number, these sanctified warriors purge spirits and demons with blazing techniques, reducing them to ashes. Many stats are well above average and worthy of the title.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Dagger,Sword,Knight Sword,Rapier,Spear,Axe,Club,Scythe",
+        "   Boomerang,Armor,Heavy Armor,Helmet,Heavy Helmet,Shield",
+        "   Heavy Shield",
+        "Skills: Dagger,Sword,Heroism",
+        "Ability: SP Regen 10%,Crit +10%",
+        "",
+	  ]],
+    143 => # 女神の使徒
+      [[
+        "創世の女神に認められた、心正しき勇者の中の勇者",
+        "その技には聖なる力さえ宿り、魔物の存在を許さない",
+        "能力値も圧倒的であり、いかなる局面でも優れた力を発揮",
+        "習得アビリティも非常に有用で、戦場の主役として活躍する",
+      ],
+      [
+        "Equip: Dagger,Sword,Knight Sword,Great Sword,Rapier,Spear,Heavy Spear",
+        "　　　　　Axe,Club,Scythe,Boomerang",
+        "Skills: Dagger,Sword,Holy,Heroism",
+        "Passive: SP Regen 20%,Crit +20%,Resist Holy 75%,Sword Mastery",
+        "",
+      ]],
+    144 => # 汚れし勇者
+      [[
+        "女神の御心に従わず、反逆者の烙印を押された元勇者",
+        "神の意に沿わない剣には闇の力が宿り、破壊をもたらす",
+        "能力値も圧倒的であり、いかなる局面でも優れた力を発揮",
+        "習得アビリティも非常に有用で、戦場の主役として活躍する",
+      ],
+      [
+        "Equip: Dagger,Sword,Knight Sword,Great Sword,Rapier,Spear,Heavy Spear",
+        "　　　　　Axe,Club,Scythe,Boomerang",
+        "Skills: Dagger,Sword,Dark,Heroism",
+        "Passive: SP Regen 20%,Crit +20%,Resist Dark 75%,Sword Mastery",
+        "",
+      ]],
+
+    149 => # 無職 / Unemployed
+      [[
+        "Unemployed bum with no job. There are no advantages or skills associated with being unemployed. Mastering it does nothing, either.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Dagger",
+        "Skills: None",
+        "Passive: None",
+        "",
+      ]],
+    151 => # 人間 / Human
+      [[
+        "A pure, commonplace human. Fairly talkative, armour that can be equipped depends on the individual. Humans learn many abilities related to experience point acquisition.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Character Specific",
+        "Skills: Talk",
+        "Passive: None",
+        "",
+      ]],
+    152 => # 魔人 / Demonoid
+      [[
+        "A descendant of man who has awakened to their dark powers. Can manipulate time and learns exclusive scythe skills. Extremely high stats allow them to excel in all situations.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Character Specific",
+        "Skills: Scythe,Time Magic,Holy,Dark",
+        "Passive: HP Cost 50%",
+        "",
+      ]],
+	153 => # 魔神 / Archfiend
+      [[
+        "A demonoid manifesting the bloodline of a fallen angel. Posesses power rivaling that of a god. Strong dark and time magic allows them to control time and space. Learns strong abilities and has overwhelming stats.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Character Specific",
+        "Skills: Scythe,Time Magic,Holy,Dark",
+        "Passive: No HP Cost",
+        "",
+      ]],
+    154 => # カオス
+      [[
+        "意志を持った混沌であり、時空を運行する神",
+        "時間と空間の管理者として、混沌の狭間に存在する",
+        "闇技や鎌技の最終奥義を修得し、時間を自在に操作可能",
+        "神に相応しい、絶対にして究極の力を誇る",
+      ],
+      [
+        "Equip: Character Specific",
+        "Skills: Scythe,Time Magic,Holy,Dark",
+        "Passive: 生命回帰　三回行動",
+        "",
+      ]],
+    155 => # ワームサマナー / Worm Summoner
+      [[
+        "A human mage who has integrated a homunculus into their body at a cellular level and is no longer human. Attacks with tentacle skills and HP draining attacks. Can also automatically regenerate MP during battle.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Clothes,Breastplate,Robe,Dress,Skimpy,Hat,Magic Hat",
+        "   Buckler",
+        "Skills: Black Magic,Summoning,Slime,Tentacle",
+        "Passive: MP Regen 1%,Mag Eva +20%",
+        "",
+      ]],
+    156 => # マスターホムンクルス / Master Homunculus
+      [[
+        "さらに強力なホムンクルスを身に宿した魔導士",
+        "全身の細胞がホムンクルスと混じり、人間以上の力を誇る",
+        "その触手は、HPばかりかMPまで吸収可能",
+        "触手で敵を捕食する事もでき、まさに異形の存在である",
+      ],
+      [
+        "Equip: Clothes,Breastplate,Robe,Dress,Skimpy,Hat,Magic Hat",
+        "   Buckler",
+        "Skills: Black Magic,Summoning,Slime,Tentacle",
+        "Passive: MP Regen 2%,Mag Eva +20%",
+        "",
+      ]],
+
+    158 => # 妖魔 / Yoma
+      [[
+        "The monster race with the highest magical power and intelligence. Yoma are strong and utilize magnificent rapier skills. Their magical prowess is often put to use in fire magic, roasting their enemies alive. They wear heavy armor and have no particular weaknesses.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Clothes,Armor,Heavy Armor,Robe,Dress,Skimpy,Hat,Helmet",
+        "   Heavy Helmet,Fancy Cap,Buckler,Shield,Heavy Shield",
+        "Skills: Rapier,Black Magic,Dark,Demon Arts",
+        "Passive: Rapier Booster 20%,Res Fire 50%,Null Burn",
+        "",
+      ]],
+    159 => # 上級妖魔 / High Yoma
+      [[
+        "A race with a prestigious pedigree among the yoma. Proud of their high combat efficiency with rapiers and fire magic. Learns more effective magic eyes and numerous other attacks. An all-purpose race that excels in any combat situation.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Clothes,Armor,Heavy Armor,Robe,Dress,Skimpy,Hat,Helmet",
+        "   Heavy Helmet,Fancy Cap,Buckler,Shield,Heavy Shield",
+        "Skills: Rapier,Black Magic,Dark,Demon Arts",
+        "Passive: Rapier Booster 20%,Res Fire 25%,Null Burn",
+        "",
+      ]],
+    160 => # 妖魔貴族 / Noble Yoma
+      [[
+        "The highest rank of yoma, boasting a noble lineage. They hold tremendous magic power capable of reducing any foe to ash. Their ability with a rapier is superb, having acquired the yoma secrets of the weapon. Extraordinary stats.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Clothes,Armor,Heavy Armor,Robe,Dress,Skimpy,Hat,Helmet",
+        "   Heavy Helmet,Fancy Cap,Buckler,Shield,Heavy Shield",
+        "Skills: Rapier,Black Magic,Dark,Demon Arts",
+        "Passive: Rapier Booster 20%,Null Fire/Burn/Death",
+        "",
+      ]],
+	161 => # 聖魔 / Holy Yoma
+      [[
+        "An unusual yoma who acquired holy power through mutation. Learns holy attacks in addition to white magic. Can use magic eyes to heal allies. Attack power is less than a yoma, but their magic is extremely strong.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Clothes,Armor,Robe,Dress,Skimpy,Hat,Helmet,Magic Hat",
+        "   Fancy Cap,Buckler,Shield",
+        "Skills: Rapier,White Magic,Black Magic,Holy,Dark,Demon Arts",
+        "Passive: Rapier Booster 20%,Res Ascension 25%,Null Burn",
+        "",
+      ]],
+    162 => # 神魔 / Divine Yoma
+      [[
+        #"地域によっては神として崇拝されている、聖なる妖魔",
+        #"聖属性の魔法で敵を消滅させるほか、強力な雷魔法も習得",
+        #"その魔眼は死者をも蘇らせ、癒しの力も頂点に達している",
+        #"魔法攻撃と回復の両面に秀で、大いに頼りになるだろう",
+		"A holy yoma that has gained a cult following in some regions. Learns stronger holy and lightning attacks to smite enemies and can achieve the pinnacle of ocular-based healing magic. Attack power is more becoming of a typical yoma, but their true strength lies in their magic.",
+		"",
+		"",
+		"",
+		"",
+      ],
+      [
+        "Equip: Clothes,Armor,Robe,Dress,Skimpy,Hat,Helmet,Magic Hat",
+        "   Fancy Cap,Buckler,Shield",
+        "Skills: Rapier,White Magic,Black Magic,Holy,Dark,Demon Arts",
+        "Passive: Rapier Booster 20%,Null Fire/Burn/Ascension",
+        "",
+      ]],
+    163 => # 半獣妖魔 / Bestial Yoma
+      [[
+        "A subspecies of yoma with the lower half of a beast. The bestial parts such as claws and fangs can shred foes, while the yoma parts provide strong magic, especially ice. A reliable species in all aspects of combat.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Fang,Clothes,Breastplate,Armor,Robe,Dress,Skimpy,Hat",
+        "   Helmet,Fancy Cap,Buckler,Shield",
+        "Skills: Rapier,Black Magic,Dark,Demon Arts,Beast",
+        "Passive: Rumble,Rapier Booster 20%,Res Fire 25%,Null Burn",
+		"   Crit +15%,Eva +20%",
+        "",
+      ]],
+    164 => # 邪獣妖魔 / Feral Yoma
+      [[
+        "魔獣の力を肉体に秘めた、最上級の妖魔",
+        "強靱な肉体能力を駆使した攻撃技の破壊力は凄まじい",
+        "また魔力も引けを取らず、強力な氷魔法を使いこなす",
+        "攻めに特化した性能は心強く、大いに活躍するだろう",
+      ],
+      [
+        "Equip: Clothes,Breastplate,Armor,Robe,Dress,Skimpy,Hat",
+        "   Helmet,Fancy Cap,Buckler,Shield",
+        "Skills: Rapier,Black Magic,Dark,Demon Arts,Beast",
+        "Passive:　War Rumble,Rapier Booster 20%,Null Fire/Burn",
+		"   Crit +15%,Eva +20%",
+        "",
+      ]],
+    165 => # スフィンクス / Sphinx
+      [[
+        "太古の遺伝子をその身に宿す、半魔半獣の妖魔",
+        "失われた古魔術を習得し、聖闇を問わず使用可能",
+        "また淫欲を好む性質ゆえに、淫技を多く習得できる",
+        "強力な物理攻撃技も覚え、その強さは比類ない",
+      ],
+      [
+        "Equip: Clothes,Breastplate,Armor,Robe,Dress,Skimpy,Hat",
+        "   Helmet,Fancy Cap,Buckler,Shield",
+        "Skills: Rapier,White Magic,Black Magic,Holy,Dark,Demon Arts",
+        "　　　　Beast",
+        "Passive: Rapier Booster 30%,Null Fire/Burn/Dea/Asc/Cli",
+		"   Eva +20%",
+        "",
+      ]],
+
+    167 => # 亜人 / Demi-Human
+      [[
+        "Monsters that resemble humans. Aside from HP and magic, their stats are mostly identical to humans. Draining hair, frisky tongue, and oriental ice magic sets them apart. A similar build to humans allows for similar equipment.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Clothes,Gi,Breastplate,Armor,Dress,Skimpy,Hat,Helmet",
+        "   Buckler,Shield",
+        "Skills: Scythe,Taoism,Demon Arts",
+        "Passive: Scythe Booster 20%,Res Ice 50%,Null Freeze",
+        "",
+      ]],
+    168 => # 妖怪 / Youkai
+      [[
+        "Also called mononoke, youkai are demi-humans with stronger magic. They mostly live to the east, coexisting with humans. Other than using their hair and tongues as weapons, they can learn ice magic. A useful species with balanced physical and magical capabilities.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Clothes,Gi,Breastplate,Armor,Dress,Skimpy,Hat,Helmet",
+        "   Buckler,Shield",
+        "Skills: Scythe,Taoism,Demon Arts",
+        "Passive: SP Cost 75%,Scythe Booster 20%,Res Ice 25%,Null Freeze",
+        "",
+      ]],
+    169 => # 妖神 / Elder Youkai
+      [[
+        "最上級の妖怪で、東方では神として崇められる",
+        "その魔力は周囲を凍てつかせ、敵を氷中に葬り去る",
+        "その髪や舌は、敵に苦痛や快楽を与えるという",
+        "物理、魔法、快楽と強力なスキルが揃う最上位種",
+      ],
+      [
+        "Equip: Clothes,Gi,Breastplate,Armor,Dress,Skimpy,Hat,Helmet",
+        "   Buckler,Shield",
+        "Skills: Scythe,Taoism,Demon Arts",
+        "Passive: SP Cost 50%,Scythe Booster 20%,Null Ice/Freeze/Dea/Zom",
+        "",
+      ]],
+    170 => # 妖鬼 / Oni
+      [[
+        "A subspecies of youkai known for their strength. Experts at using clubs and crushing foes with strong skills. They learn ice attacks and full-body techniques which never leave them wanting for physical skills. High attack power and defense, but comparatively weak to magic and pleasure.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Clothes,Gi,Breastplate,Armor,Heavy Armor,Dress,Skimpy",
+        "   Hat,Helmet,Heavy Helmet,Buckler,Shield,Heavy Shield",
+        "Skills: Axe,Club,Demon Arts",
+        "Passive: Battle Start SP 75%,Res Dea/Zom 50%,Crit +15%",
+      ]],
+    171 => # 鬼神 / Kishin
+      [[
+        "凄まじい剛力を備え、神と崇められる最上級の鬼",
+        "その腕力を棍棒に込め、強力な技で全てを破壊する",
+        "完全なパワータイプであり、魔法は非常に苦手",
+        "物理攻撃役として、この上なく頼りになるだろう",
+      ],
+      [
+        "Equip: Clothes,Gi,Breastplate,Armor,Heavy Armor,Dress,Skimpy",
+        "   Hat,Helmet,Heavy Helmet,Buckler,Shield,Heavy Shield",
+        "Skills: Axe,Club,Demon Arts",
+        "Passive: Battle Start SP 100%,Res Dea/Zom 25%,Crit +15%",
+        "",
+      ]],
+    172 => # 夜叉 / Yasha
+      [[
+        "複数の腕を備えた妖鬼の一種",
+        "多腕に武器を携え、正確無比な連続斬撃を繰り出す",
+        "攻撃面では圧倒的だが、防御面では脆いので注意",
+        "強力な刀技や、アビリティ「二回攻撃」を習得可能",
+      ],
+      [
+        "Equip: Clothes,Gi,Breastplate,Armor,Dress,Skimpy,Hat,Helmet",
+        "Skills: Katana,Multiweapon,Demon Arts",
+        "Passive: Dual-Wield,Eva +10%",
+        "",
+      ]],
+    173 => # 阿修羅 / Ashura
+      [[
+        "多腕を備え、無数の刃を携えた鬼神の一種",
+        "圧倒的な連続斬撃を繰り出し、無慈悲に敵を葬る",
+        "強力な刀技や多武器技、多腕での快楽技を習得可能",
+        "習得できるアビリティ「三回攻撃」は極めて強力",
+      ],
+      [
+        "Equip: Clothes,Gi,Breastplate,Armor,Dress,Skimpy,Hat,Helmet",
+        "Skills: Katana,Multiweapon,Demon Arts",
+        "Passive: Dual-Wield,Eva +10%,Null Death/Freeze/Zombie",
+        "",
+      ]],
+    175 => # インプ / Imp
+      [[
+        "Small demons who subsist on human semen; not quite skilled enough yet to be called succubi. Imps use pleasure attacks, drowning their enemies in bliss. They specialize in wind techniques, but are otherwise poor fighters.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Sex Toy,Clothes,Robe,Dress,Skimpy,Hat,Magic Hat,Fancy Cap",
+        "   Buckler",
+        "Skills: Black Magic,Sexcraft,Demon Arts,Nature",
+        "Passive: Hor/Tra Strike 5%,Eva +10%,Res Pleasure/Wind 50%",
+        "   Res Cli/Sli/Hor/Tra/Sed/Inc 25%",
+      ]],
+	176 => # サキュバス / Succubus
+      [[
+        "Imps who become proficient at sexual skills become full-fledged succubi capable of taking away their foe's will to fight through pleasure. They can also act as mages with their high magic power, but weak attack and defense make them poor in direct combat.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Sex Toy,Clothes,Robe,Dress,Skimpy,Hat,Magic Hat,Fancy Cap",
+        "   Buckler",
+        "Skills: Black Magic,Sexcraft,Demon Arts,Nature",
+        "Passive: Hor/Tra/Sed Strike 5%,Eva +10%",
+        "   Res Pleasure/Wind/Cli/Sli/Hor/Tra/Sed/Inc 25%",
+		"   Res Death 75%",
+      ]],
+    177 => # エルダーサキュバス / Elder Succubus
+      [[
+        "狂おしいほどの搾精能力を誇る最高位の淫魔",
+        "卓越した性技で、男女を問わず精を搾り尽くす",
+        "最高クラスの快楽技や、強力な風の術を習得可能",
+        "また、眠っている敵を即死させるスキルは極めて強力",
+      ],
+      [
+        "Equip: Sex Toy,Clothes,Robe,Dress,Skimpy,Hat,Magic Hat,Fancy Cap",
+        "   Buckler",
+        "Skills: Black Magic,Sexcraft,Demon Arts,Nature",
+        "Passive: Hor/Tra/Sed/Inc Strike 5%,Eva +10%",
+        "   Null Wind/Cli/Sli/Hor/Tra/Sed/Inc",
+        "   Res Death 50%,Res Pleasure 25%",
+      ]],
+    178 => # モンクサキュバス / Succubus Monk
+      [[
+        #"肉体を磨き、闘士として生きる珍しい淫魔",
+        #"淫魔種でありながら攻撃力が高く、攻め手として活躍する",
+        #"気を込めたビンタや、流れるような愛撫技を習得可能",
+        #"敵の乳を搾る特殊技や、快楽に耐える防御スキルも覚える",
+		"An unusual succubus that has refined their body as a fighter. High attack power for a succubus, they can take an active role in combat. Learns special sexual skills including milking foes and can endure pleasure damage well.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Sex Toy,Clothes,Gi,Robe,Dress,Skimpy,Hat,Fancy Cap",
+        "Skills: Unarmed,Sexcraft,Demon Arts,Nature",
+        "Passive: Hor/Tra Strike 5%,Crit +15%,Eva +20%,Res Pleasure 50%",
+        "   Res Wind/Cli/Sli/Hor/Tra/Sed/Inc 25%",
+		"   Res Death 50%",
+      ]],
+    179 => # 淫闘サキュバス / Lewdfighter Succubus
+      [[
+        "古代の淫闘技を修めたサキュバスの闘士",
+        "己の肉体を淫らな凶器とし、快楽奥義で敵を圧倒する",
+        "強力な快楽技や、敵を失禁させる特技を習得可能",
+        "また、快楽を完全に遮断する防御スキルも覚える",
+      ],
+      [
+        "Equip: Sex Toy,Clothes,Gi,Robe,Dress,Skimpy,Hat,Fancy Cap",
+        "Skills: Unarmed,Sexcraft,Demon Arts,Nature",
+        "Passive:　Hor/Tra Strike 10%,Crit +15%,Eva +20%,Res Pleasure 50%",
+        "   Null Wind/Cli/Sli/Hor/Tra/Sed/Inc",
+		"   Res Death 50%",
+      ]],
+    180 => # ウィッチサキュバス / Succubus Witch
+      [[
+        #"魔力を高め、淫らな魔術を習得したサキュバスの魔導師",
+        #"珍しい快楽魔法や、快楽状態異常を起こす魔眼も習得可能",
+        #"風の魔法も覚えるほか、通常の黒魔法も使用できる",
+        #"魔導師として一流だが、防御には難があるので注意",
+        "A magical succubus that has greater magic power and learns lewd magic. Also learns eye skills that inflict erotic status ailments, wind magic and some black magic. While a first class magic user, be careful of their low defense.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Sex Toy,Clothes,Robe,Dress,Skimpy,Hat,Magic Hat,Fancy Cap",
+        "Skills: Black Magic,Summoning,Sexcraft,Demon Arts,Nature",
+        "Passive: Hor/Tra Strike 5%,Mag Eva +10%,Res Pleasure 50%",
+        "   Res Wind/Cli/Sli/Hor/Tra/Sed/Inc 25%",
+      ]],
+    181 => # アークサキュバス / Arc Succubus
+      [[
+        "快楽魔導を極めたサキュバスの最高位魔導士",
+        "現存しない快楽魔法を再興し、自在に使いこなす",
+        "また黒魔法のみならず、召喚魔法も使用可能",
+        "触手生物を魔界から召喚し、敵を快楽に悶えさせる",
+      ],
+      [
+        "Equip: Sex Toy,Clothes,Robe,Dress,Skimpy,Hat,Magic Hat,Fancy Cap",
+        "Skills: Black Magic,Summoning,Sexcraft,Demon Arts,Nature",
+        "Passive: Hor/Tra Strike 10%,Mag Eva +10%,Res Pleasure 50%",
+        "   Null Wind/Cli/Sli/Hor/Tra/Sed/Inc",
+		"   Res Death 50%",
+      ]],
+    182 => # クイーンサキュバス / Queen Succubus
+      [[
+        "古今東西の快楽技を知り尽くすサキュバスの女王",
+        "卓越した性技を誇り、その技で昇天しない者はいない",
+        "また均整の取れた肉体は美しく、凄まじい筋力を誇る",
+        "淫闘技や最上位の風術など、豊富な技を習得可能",
+      ],
+      [
+        "Equip: Sex Toy,Clothes,Robe,Dress,Skimpy,Hat,Magic Hat,Fancy Cap",
+        "   Buckler",
+        "Skills: Unarmed,Black Magic,Summoning,Sexcraft,Demon Arts,Nature",
+        "Passive: Hor/Tra/Sed/Inc Strike 10%,Eva +20%,Mag Eva +10%",
+        "   Null Wind/Cli/Sli/Hor/Tra/Sed/Inc",
+        "   Res Death 25%",
+      ]],
+    184 => # ヴァンパイア / Vampire
+      [[
+        "Nocturnal monster that feeds on blood. Boasting strong bodies and even stronger magic, they can absorb HP and more via bloodsucking. Daggers are at their deadliest in their hands.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Fang,Clothes,Armor,Heavy Armor,Robe,Dress,Hat,Helmet",
+        "   Heavy Helmet,Fancy Cap,Buckler,Shield,Heavy Shield",
+        "Skills: Dagger,Black Magic,Dark,Demon Arts",
+        "Passive: Dagger Booster 20%,Res Lightning 50%",
+        "   Null Dea/Bli/Sho/Zom",
+      ]],
+    185 => # ノスフェラトゥ / Nosferatu
+      [[
+        #"大量の血を吸い、さらに力を高めた吸血鬼",
+        #"短剣の扱いにも磨きを掛け、強力な技を習得可能",
+        #"その吸血技は、敵のHPのみならずMPまで吸収する",
+        #"吸収技を駆使すれば、回復なしで戦い続ける事も可能",
+        "A vampire that has fed on a large amount of blood, gaining great power. Learns powerful dagger skills, and can feed on blood to drain not only life, but mana as well. If used well, they can fight on their own with no need for healing from allies.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Fang,Clothes,Armor,Heavy Armor,Robe,Dress,Hat,Helmet",
+        "   Heavy Helmet,Fancy Cap,Buckler,Shield,Heavy Shield",
+        "Skills: Dagger,Black Magic,Dark,Demon Arts",
+        "Passive: Dagger Booster 20%,Res Lightning 25%",
+        "   Null Dea/Bli/Sho/Zom",
+      ]],
+    186 => # 夜の帝王 / Night Emperor
+      [[
+        "夜の世界に君臨する最上位のヴァンパイア",
+        "短剣の奥義を覚える他、強力な雷術を修得可能",
+        "その吸血技はHPやMPに加え、SPまで吸収できる",
+        "極めて戦闘能力が高く、頼りになる種族である",
+      ],
+      [
+        "Equip: Fang,Clothes,Armor,Heavy Armor,Robe,Dress,Hat,Helmet",
+        "   Heavy Helmet,Fancy Cap,Buckler,Shield,Heavy Shield",
+        "Skills: Dagger,Black Magic,Dark,Demon Arts",
+        "Passive: Dagger Booster 20%,Null Lightning/Dea/Bli/Sho/Zom",
+      ]],
+    187 => # マージヴァンパイア / Vampire Magus
+      [[
+        #"様々な魔法を習得した魔導士タイプのヴァンパイア",
+        #"高い魔力により、様々な全体属性術を使いこなす",
+        #"また魔眼を修得し、敵に状態異常をもたらす事も可能",
+        #"魔導師タイプとしては防御力が高く、非常に頼りになる",
+        "A vampire that has learned powerful magic. Learns a wide variety of magic skills, including demon eyes that inflict various status ailments. Has great defensive stats for a magician, and is very reliable.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Fang,Clothes,Armor,Robe,Dress,Hat,Helmet,Magic Hat",
+        "   Fancy Cap,Buckler,Shield",
+        "Skills: Dagger,Black Magic,Summoning,Dark,Demon Arts",
+        "Passive: Res Lightning 25%,Null Dea/Bli/Sho/Zom",
+        "",
+      ]],
+    188 => # アークヴァンパイア / Arc Vampire
+      [[
+        "高度な魔術を極めた、最上位の魔導士ヴァンパイア",
+        "固有の全体攻撃術を使いこなし、あらゆる敵を滅する",
+        "また強力な魔眼で、敵の群れを即死させることも可能",
+        "能力値も高く、魔法攻撃役として絶大な力を発揮する",
+      ],
+      [
+        "Equip: Fang,Clothes,Armor,Robe,Dress,Hat,Helmet,Magic Hat",
+        "   Fancy Cap,Buckler,Shield",
+        "Skills: Dagger,Black Magic,Summoning,Dark,Demon Arts",
+        "Passive: Null Lightning/Dea/Bli/Sho/Zom",
+        "",
+      ]],
+    189 => # シノビヴァンパイア / Vampire Shinobi
+      [[
+        "影に生きる者として、忍の修行を積んだ異色の吸血鬼",
+        "持ち前の魔力と肉体能力により、無類の強さを誇る",
+        "一般忍術の属性の穴を埋める、独自の忍術を習得可能",
+        "攻撃には優れているが、守りは弱いので注意",
+      ],
+      [
+        "Equip: Clothes,Armor,Robe,Dress,Hat,Helmet,Magic Hat",
+        "Skills: Dagger,Dark,Ninjutsu,Demon Arts",
+        "Passive: Dual-Wield,Eva +20%,Null Lightning/Dea/Bli/Sho/Zom",
+        "",
+      ]],
+    190 => # クノイチナイトメア / Nightmare Kunoichi
+      [[
+        "修行を重ね、忍びの道を極めたヴァンパイア",
+        "膨大な魔力と優れた肉体能力を駆使し、敵を葬る",
+        "一般の忍者では習得できない、数々の奥義を修得",
+        "攻め手として無類の強さを発揮するだろう",
+      ],
+      [
+        "Equip: Clothes,Armor,Robe,Dress,Hat,Helmet,Fancy Cap",
+        "Skills: Dagger,Dark,Ninjutsu,Demon Arts",
+        "Passive: Dual-Wield,Eva +20%,Null Lightning/Dea/Bli/Sho/Zom",
+        "",
+      ]],
+    192 => # クイーンヴァンパイア / Queen Vampire
+      [[
+        "あらゆるヴァンパイアの頂点に立つ夜の女王",
+        "何百人もの侍女に傅かれ、居城に鎮座するという",
+        "その短剣で極大奥義を繰り出し、敵も討ち滅ぼす",
+        "また膨大な魔力は、自然法則をもねじ曲げるという",
+      ],
+      [
+        "Equip: Clothes,Gi,Armor,Heavy Armor,Robe,Dress,Hat,Helmet",
+        "   Heavy Helmet,Fancy Cap,Buckler,Shield,Heavy Shield",
+        "Skills: Dagger,Ninjutsu,Black Magic,Summoning,Dark,Demon Arts",
+        "Passive: Dagger Booster 20%,Eva +20%",
+		"   Null Lightning/Dea/Bli/Sho/Zom",
+      ]],
+
+    194 => # マーメイド / Mermaid
+      [[
+        "Beautiful monster with the lower body of a fish. Controls water at will to attack enemies and heal allies. Despite their weak bodies, spells and songs alike make up for their physical shortcomings.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Clothes,Breastplate,Robe,Hat,Magic Hat,Fancy Cap,Buckler",
+        "Skills: White Magic,Black Magic,Singing,Ocean",
+        "Passive: Sle Strike 5%,Sea Strength,Recovery Booster 50%",
+        "   Null Water/Sonic/Con/Sle/Sed",
+      ]],
+    195 => # ハイマーメイド / High Mermaid
+      [[
+        #"より強い力を持った、位の高いマーメイド",
+        #"その魔力で大海嘯を呼び、敵の群れを押し流す",
+        #"水魔法や癒しの術、波を呼ぶ歌などを習得可能",
+        #"魔力が高く、魔導師として活躍できるだろう",
+        "A high-ranked mermaid with greater power. They can magically call forth tsunamis to wash foes away, and also learn various songs and healing skills. Well suited as magicians due to high magic power.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Clothes,Breastplate,Robe,Hat,Magic Hat,Fancy Cap",
+        "   Buckler",
+        "Skills: White Magic,Black Magic,Singing,Ocean",
+        "Passive: Sle Strike 10%,Sea Strength,Recovery Booster 50%",
+        "   Null Water/Sonic/Con/Sle/Sed",
+      ]],
+    196 => # ローレライ / Lorelei
+      [[
+        "マーメイドの中でも最上位に相当する種族",
+        "水流を操る力は、町一つを水没させるほどである",
+        "回復術も強力で、癒しの力は仲間全員に及ぶ",
+        "魔法全般が得意で、攻撃も回復も担えるだろう",
+      ],
+      [
+        "Equip: Clothes,Breastplate,Robe,Hat,Magic Hat,Fancy Cap",
+        "   Buckler",
+        "Skills: White Magic,Black Magic,Singing,Ocean",
+        "Passive: Sle Strike 20%,Super Sea Strength,Recovery Booster 50%",
+		"   Null Water/Sonic/Con/Sle/Sed",
+        "",
+      ]],
+    197 => # 海賊マーメイド / Pirate Mermaid
+      [[
+        "武勇に長け、海賊稼業を営むマーメイド",
+        "剣の扱いに長け、海賊固有の剣技を使用する",
+        "仲間を暴走させる歌や、暴風雨を呼ぶ術も習得",
+        "人魚としては肉弾戦に強く、攻撃役に向く",
+      ],
+      [
+        "Equip: Clothes,Breastplate,Armor,Robe,Hat,Helmet,Magic Hat",
+        "   Fancy Cap,Buckler,Shield",
+        "Skills:,White Magic,Pirating,Singing,Ocean",
+        "Passive: Sle Strike 5%,SP Cost 75%,Sea Strength",
+		"   Null Water/Sonic/Con/Sle/Sed",
+        "",
+      ]],
+    198 => # 海賊王ローレライ / Pirate King Lorelei
+      [[
+        "人魚海賊団のトップに君臨する偉大な海賊王",
+        "その圧倒的な武力で、七つの海を制覇する",
+        "習得できる海賊技は、いずれも強力なものばかり",
+        "能力値も肉弾戦に向き、乱戦で頼りになるだろう",
+      ],
+      [
+        "Equip: Clothes,Breastplate,Armor,Robe,Hat,Helmet,Magic Hat",
+        "   Fancy Cap,Buckler,Shield",
+        "Skills: White Magic,Pirating,Singing,Ocean",
+        "Passive: Sle Strike 5%,SP Cost 50%,Super Sea Strength",
+		"   Null Water/Sonic/Con/Sle/Sed",
+        "",
+      ]],
+    199 => # 行商マーメイド / Mermaid Merchant
+      [[
+        #"人間に友好的であり、商売を営んでいる人魚",
+        #"特別なルートで仕入れた商品は、人間の町でも評判が良い",
+        #"金銭に関わるスキルを覚え、冒険をサポートする",
+        #"生存性以外の能力は低いので、戦闘向きではない",
+        "A friendly mermaid that does business with humans. Can gain unique merchandise via special routes, so they are popular in human towns. Learns several skills revolving around money, and is good at support. Their stats are fairly low, so they're not very useful in combat.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Clothes,Breastplate,Robe,Hat,Magic Hat,Fancy Cap",
+        "   Buckler",
+        "Skills: White Magic,Mercantile,Singing,Ocean",
+        "Passive: Sle Strike 5%,Sea Strength,Null Water/Sonic/Con/Sle/Sed",
+        "   Gold Drop +100%",
+      ]],
+    200 => # 海運王ローレライ / Shipping Magnate Lorelei
+      [[
+        "金の力で七つの海を制した大海商マーメイド",
+        "どんな事態でも、財力にモノを言わせて切り抜ける",
+        "特有の商売ルートで、希少物を入手可能",
+        "他にも、便利な商売スキルを多数習得できる",
+      ],
+      [
+        "Equip: Clothes,Breastplate,Robe,Hat,Magic Hat,Fancy Cap",
+        "   Buckler",
+        "Skills: White Magic,Mercantile,Singing,Ocean",
+        "Passive: Sle Strike 5%,Super Sea Strength",
+        "   Null Water/Sonic/Con/Sle/Sed,Gold Drop +200%",
+        "",
+      ]],
+    201 => # クィーンマーメイド / Queen Mermaid
+      [[
+        "全ての人魚の頂点に立つ女王",
+        "その魔力は並外れており、大洪水で全てを飲み込む",
+        "癒しの力も高く、海賊技や商技の奥義も修得可能",
+        "回復役として無類の力を誇り、パーティを癒やすだろう",
+      ],
+      [
+        "Equip: Clothes,Breastplate,Armor,Robe,Hat,Helmet,Magic Hat",
+        "   Fancy Cap,Buckler,Shield",
+        "Skills: White Magic,Black Magic,Pirating,Mercantile",
+		"   Singing,Ocean",
+        "Passive: Sle Strike 20%,Super Sea Strength",
+		"   Null Water/Sonic/Con/Sle/Sed,Recovery Booster 50%",
+        "",
+      ]],
+
+    203 => # エルフ / Elf
+      [[
+        "De facto forest guardians resembling humans, they pride themselves on always hitting their mark. Unfortunately, despite natural buffers against status ailments they're rather weak to pleasure.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Clothes,Gi,Robe,Dress,Skimpy,Hat,Fancy Cap",
+        "Skills: Bow,Sexcraft,Demon Arts,Nature",
+        "Passive: Forest Strength,Slayer Boost 100%,Eva +10%",
+        "   Res Wind/Earth/Water/Bur/Fre/Sho 50%",
+        "",
+      ]],
+    204 => # ハイエルフ / High Elf
+      [[
+        #"高い能力を擁するエルフ族のエリート",
+        #"弓の腕前も極めて高く、強力な弓技を修得",
+        #"また敵を麻痺させる矢や、眠らせる矢も発射可能",
+        #"淫技も複数を習得し、手数はかなり広い",
+        "An elite elf with refined skills. Highly skilled with a bow, they can fire arrows that deal great damage or inflict crippling status ailments, as well as some lewd skills.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Clothes,Gi,Robe,Dress,Skimpy,Hat,Fancy Cap",
+        "Skills: Bow,Sexcraft,Demon Arts,Nature",
+        "Passive: Forest Strength,Slayer Boost 100%,Eva +10%",
+        "   Res Wind/Earth/Water/Bur/Fre/Sho 50%",
+        "",
+      ]],
+    205 => # マスターエルフ / Master Elf
+      [[
+        #"極めて優れた力を持つ最高位のエルフ",
+        #"弓の腕は神業の域に達し、全体攻撃弓技も習得",
+        #"石化の矢や即死させる矢等、状態異常も極めて強力",
+        #"快楽防御以外は全能力が高く、戦場で活躍する",
+		"The strongest among the common elves, wielding exceptional power. Their grand feats of archery can pin down entire mobs at once, as well as petrify or outright kill any stragglers. Provided they don't get molested, their high stats and resistances make them very active on any battlefield.",
+		"",
+		"",
+		"",
+		"",
+      ],
+      [
+        "Equip: Clothes,Gi,Robe,Dress,Skimpy,Hat,Fancy Cap",
+        "Skills: Bow,Sexcraft,Demon Arts,Nature",
+        "Passive: Forest Strength,Slayer Boost 100%,Eva +10%",
+		"   Res Wind/Earth/Water/Bur/Fre/Sho 25%",
+        "",
+      ]],
+    206 => # フォレストエルフ / Forest Elf
+      [[
+        #"自然の力を操る事のできるエルフ",
+        #"元来エルフは妖精と近縁であり、自然との感応が可能",
+        #"その感応力が特に強く、自然現象を自在に引き起こす",
+        #"また、森と交信して癒しの力を引き出す事もできる",
+        "As elves are originally related to fairies, some elves are able to manipulate the forces of nature. Those that are capable can call on natural energies to strike their foes, and can communicate with the forest and heal allies with its power.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Clothes,Gi,Robe,Dress,Skimpy,Hat,Magic Hat,Fancy Cap",
+        "Skills: Bow,Sexcraft,White Magic,Demon Arts,Plant,Nature",
+        "Passive: Super Forest Strength,Res Wind/Earth/Water 25%",
+        "   Res Bur/Fre/Sho 50%",
+      ]],
+    207 => # ワンダーエルフ / Wonder Elf
+      [[
+        #"自然と交信し、奇跡を呼び起こす最上位エルフ",
+        #"その祈りは地震や突風を巻き起こし、敵を滅ぼし尽くす",
+        #"また治癒の力にも通じ、森の加護を得ることも可能",
+        #"能力値は全般的に高く、いかなる局面でも活躍できる",
+		"An elf that is completely devoted to the miracles of nature. Their prayers can summon earthquakes, squalls, and other animist forces to destroy their foes and to heal their allies. Combined with their immunity to the natural powers, they can do well in any role.",
+		"",
+		"",
+		"",
+		"",
+      ],
+      [
+        "Equip: Clothes,Gi,Robe,Dress,Skimpy,Hat,Magic Hat,Fancy Cap",
+        "Skills: Bow,Sexcraft,White Magic,Demon Arts,Plant,Nature",
+        "Passive: Super Forest Strength,Null Wind/Earth/Water",
+		"   Res Bur/Fre/Sho 25%",
+        "",
+      ]],
+    208 => # ダークエルフ / Dark Elf
+      [[
+        #"悪の心に染まり、闇に堕ちたエルフ",
+        #"より戦闘的になり、弓を剣に持ち替えて敵を討つ",
+        #"また魔力も増大し、触手器官を召喚する事も可能",
+        #"防御はやや低いが、物理と魔法の両方を使いこなす",
+        "An elf whose mind has been tainted by corruption and fallen into darkness. They are better at combat, wielding bow and sword to defeat foes. Their magic is also greater, and they can call forth tentacles to attack. While their defenses are weak, they have great strength and magic.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Clothes,Gi,Armor,Robe,Dress,Skimpy,Hat,Helmet,Magic Hat",
+        "   Fancy Cap,Buckler,Shield",
+        "Skills: Sword,Black Magic,Dark,Sexcraft,Demon Arts,Tentacle",
+        "   Nature",
+        "Passive: Forest Strength,Res Wind/Earth/Water/Bur/Fre/Sho 50%",
+      ]],
+    209 => # アークエルフ / Arc Elf
+      [[
+        #"高濃度の魔素をその身に蓄えた漆黒のエルフ",
+        #"膨大な魔力は破壊を巻き起こし、また剣の腕も格段に向上",
+        #"殺傷力の高い剣技や、強力な触手技を習得できる",
+        #"物理攻撃と魔法の両面で活躍するが、防御力は低い",
+		"An elf whose complexion has been further darkened by corruption, enhancing their destructive magic. Their physical strength has been similarly enhanced, gaining powerful sword and tentacle skills. Despite the upgrades in both offenses, their defensive power is rather low.",
+		"",
+		"",
+		"",
+		"",
+      ],
+      [
+        "Equip: Clothes,Gi,Armor,Robe,Dress,Skimpy,Hat,Helmet,Magic Hat",
+        "   Fancy Cap,Buckler,Shield",
+        "Skills: Sword,Black Magic,Dark,Sexcraft,Demon Arts,Tentacle",
+        "   Nature",
+        "Passive: Forest Strength,Res Wind/Earth/Water/Bur/Fre/Sho 25%",
+      ]],
+    210 => # デュラハン / Dullahan
+      [[
+        #"首が分離できる騎士系妖魔で、エルフと近縁にある",
+        #"剣の腕前は卓越し、強力な剣技スキルを修得可能",
+        #"さらに魔法剣を使用でき、刃の切れ味を魔力で倍加させる",
+        #"また、胴体と頭を分離させ二回行動する固有技を覚える",
+        "A knight whose head is detatched from their body, closely related to elves. Learns powerful sword skills, and can even enhance their weapons with magic. They also learn a unique skill to strike separately with their head and body.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Clothes,Gi,Armor,Heavy Armor,Robe,Dress,Skimpy,Hat",
+        "   Helmet,Heavy Helmet,Fancy Cap,Buckler,Shield,Heavy Shield",
+        "Skills: Sword,Spellblade,Demon Arts",
+        "Passive: None",
+      ]],
+    211 => # ロードデュラハン / Dullahan Lord
+      [[
+        "剣を極め、戦闘に長けた最高位のデュラハン",
+        "習得できる剣技は、最高クラスのものばかり",
+        "魔法剣も使用でき、弱点を持つ敵には大いに有用",
+        "魔力はやや低いが、それ以外に目立った弱点はない",
+      ],
+      [
+        "Equip: Clothes,Gi,Armor,Heavy Armor,Robe,Dress,Skimpy,Hat",
+        "   Helmet,Heavy Helmet,Fancy Cap,Buckler,Shield,Heavy Shield",
+        "Skills: Sword,Spellblade,Demon Arts",
+        "Passive: None",
+        "",
+      ]],
+    212 => # クィーンエルフ / Queen Elf
+      [[
+        "全てのエルフの頂点に立つ女王",
+        "弓技を極め、エルフ族に伝わる奥義を修得可能",
+        "癒しの感応力にも通じ、強力な回復スキルも覚える",
+        "最高クラスの快楽技も習得し、攻め手に困る事はない",
+      ],
+      [
+        "Equip: Clothes,Gi,Armor,Robe,Dress,Skimpy,Hat,Helmet,Magic Hat",
+        "   Fancy Cap,Buckler,Shield",
+        "Skills: Sword,Bow,White Magic,Black Magic,Dark,Spellblade",
+        "   Sexcraft,Demon Arts,Plant,Nature",
+        "Passive: Super Forest Strength,Slayer Boost 100%",
+		"   Null Wind/Earth/Water/Bur/Fre/Sho/Dea",
+        "",
+      ]],
+
+    214 => # フェアリー / Fairy
+      [[
+        "Playful forest-dwellers resembling humans. Although physically powerless, their alignment with nature calls forth natural forces to attack and heal. High evasion and magic mitigates their pitiful defenses.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Robe,Fancy Cap",
+        "Skills: White Magic,Black Magic,Dancing,Nature",
+        "Passive: MP Regen 1%,Gambling Luck I,Eva/Mag Eva +50%",
+        "   Res Wind/Earth/Water/Dea/Asc/Poi/Bli/Par/Bur/Fre/Sho 50%",
+        "   Res Bin 25%,Null Min/Zom/Pet",
+      ]],
+    215 => # 風精 / Wind Sprite
+      [[
+        #"風との感応力を増した上位フェアリー",
+        #"自然への感応力により、魔法の力はさらに高まっている",
+        #"癒しの技や、竜巻を呼び起こす踊りも習得可能",
+        #"やはり防御面では脆弱で、直接戦闘は苦手なのに注意",
+        "A fairy that has attuned to the power of the wind and increased their magic power even further. Learns healing dances and can call powerful gales. Defense is still incredibly low, so be careful in direct combat.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Robe,Fancy Cap",
+        "Skills: White Magic,Black Magic,Dancing,Nature",
+        "Passive: MP Regen 2%,Gambling Luck I,Eva/Mag Eva +50%",
+        "   Res Earth/Water/Bin 25%,Null Wind/Min/Zom/Pet",
+        "   Res Dea/Asc/Poi/Bli/Par/Bur/Fre/Sho 50%",
+      ]],
+    216 => # 風の精霊 / Wind Spirit
+      [[
+        "風と一体になり、精霊と呼ばれる最高位の妖精",
+        "その風は破壊をもたらし、あらゆるものを破壊する",
+        "またその踊りは、自然の怒りを呼び覚ますという",
+        "MPの自動回復力も増し、魔法の連続使用が可能",
+      ],
+      [
+        "Equip: Robe,Fancy Cap",
+        "Skills: White Magic,Black Magic,Dancing,Nature",
+        "Passive: MP Regen 2%,Gambling Luck I,Eva/Mag Eva +50%",
+		"   Null Wind/Earth/Water/Min/Zom/Pet,Res Bind 25%",
+		"   Res Dea/Asc/Poi/Bli/Par/Bur/Fre/Sho 50%",
+        "",
+      ]],
+    217 => # 土精 / Earth Sprite
+      [[
+        #"土との感応力を増した上位フェアリー",
+        #"大地のパワーで、攻撃力や防御力が格段に向上",
+        #"斧や棍を使いこなし、直接戦闘に向く",
+        #"しかし魔力は低く、魔法はあまり期待できない",
+        "A fairy that has attuned to the power of the earth and greatly increased their strength and defense. Learns powerful axe skills and is great in direct combat, but has far lower magic power than a normal fairy.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Clothes,Gi,Breastplate,Armor,Hat,Helmet,Buckler,Shield",
+        "Skills: Axe,Club,Dancing,Nature",
+        "Passive: Battle Start SP 75%,Crit +15%,Eva/Mag Eva +10%",
+        "   Res Wind/Water/Bin 25%,Null Earth/Min/Zom/Pet",
+        "   Res Dea/Asc/Poi/Sil/Par/Bur/Fre/Sho 50%",
+      ]],
+    218 => # 土の精霊 / Earth Spirit
+      [[
+        "大地と一体になり、精霊と呼ばれる最高位の妖精",
+        "その剛力により、修羅のような働きを見せるだろう",
+        "防御力も高く、斧や棍の大技を連発可能",
+        "しかし魔法は苦手であり、直接戦闘に特化している",
+      ],
+      [
+        "Equip: Clothes,Gi,Breastplate,Armor,Hat,Helmet,Buckler,Shield",
+        "Skills: Axe,Club,Dancing,Nature",
+        "Passive: Battle Start SP 100%,Crit +15%,Eva/Mag Eva +10%",
+		"   Null Wind/Earth/Water/Min/Zom/Pet,Res Bind 25%",
+		"   Res Dea/Asc/Poi/Sil/Par/Bur/Fre/Sho 50%",
+        "",
+      ]],
+    219 => # ダークフェアリー / Dark Fairy
+      [[
+        #"魔素を蓄え、心を闇に染めたフェアリー",
+        #"自然感応の力は、より攻撃的な現象を引き起こす",
+        #"また悪い遊びにも手を染め、ギャンブルを愛好",
+        #"さらに幻獣を召喚し、使役する能力を備えている",
+        "A fairy whose mind has fallen into darkness, allowing them to cause more volatile natural phenomena. Enjoys gambling and other sketchy acts, and can also learn summoning skills.",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Robe,Fancy Cap",
+        "Skills: White Magic,Black Magic,Summoning,Dark,Dancing,Oracle",
+        "   Nature",
+        "Passive: MP Regen 1%,Gambling Luck II,Eva/Mag Eva +40%",
+        "   Res Wind/Earth/Water/Poi/Bli/Par/Bur/Fre/Sho 50%",
+        "   Res Dea/Bin 25%,Null Min/Zom/Pet,Item Drop +100%",
+      ]],
+    220 => # アークフェアリー / Arc Fairy
+      [[
+        "闇の力を備えた漆黒のフェアリー",
+        "その自然感応力は、大規模な災害を呼び起こす",
+        "トランプの効力も強まり、敵全体を即死させる事も",
+        "肉弾戦は苦手だが、魔法攻撃役として活躍するだろう",
+      ],
+      [
+        "Equip: Robe,Fancy Cap",
+        "Skills: White Magic,Black Magic,Summoning,Dark,Dancing,Oracle",
+        "   Nature",
+        "Passive: MP Regen 2%,Gambling Luck III,Eva/Mag Eva +40%",
+		"   Res Wind/Earth/Water/Poi/Bli/Par/Bur/Fre/Sho 50%",
+		"   Res Dea/Bin 25%,Null Min/Zom/Pet,Item Drop +200%",
+        "",
+      ]],
+    221 => # クィーンフェアリー / Queen Fairy
+      [[
+        "全てのフェアリーの頂点に君臨する妖精王",
+        "絶大な魔力を備え、自然を自分の手足のように扱える",
+        "また妖精王に伝わる踊りの奥義を修得可能",
+        "MPの軽減・回復効果も凄まじく、大魔法が連発できる",
+      ],
+      [
+        "Equip: Robe,Fancy Cap",
+        "Skills:,White Magic,Black Magic,Dark,Summoning,Oracle,Dancing",
+        "   Plant,Nature",
+        "Passive: MP Regen 4%,MP Cost 50%,Gambling Luck III",
+        "   Eva/Mag Eva +50%,Null Wind/Earth/Water/Bin/Min/Zom/Pet",
+		"   Res Dea/Asc/Poi/Bli/Par/Bur/Fre/Sho 25%,Item Drop +200%",
+        "",
+      ]],
+
+    223 => # スライム / Slime
+      [[
+        "A monster composed entirely of slime. Besides using their slimy bodies as a weapon, they're proficient with boomerangs. They can heal allies with slime too. Their bodies are resistant to physical attacks, but susceptible to magic.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Shell,Robe,Fancy Cap",
+        "Skills: Throwing,Slime",
+        "Passive: Sli Strike 10%,Boomerang Booster 20%",
+        "   Null Water/Bin/Par/Zom/Sli,Res Dig 50%",
+        "",
+      ]],
+    224 => # メガスライム / Mega Slime
+      [[
+        #"分裂も可能になった上位のスライム系モンスター",
+        #"自身の体を武器とし、粘液の体でダメージを与える",
+        #"投擲技も習得し、敵全体をブーメランで攻撃可能",
+        #"やはり魔法は非常に苦手で、属性攻撃に脆い",
+        "A stronger slime that is capable of dividing themselves. Can use their own body as a weapon and can attack whole groups with boomerang skills. They still aren't very good with magic, and are fragile versus elemental attacks.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Shell,Robe,Fancy Cap",
+        "Skills: Throwing,Slime",
+        "Passive: Sli Strike 20%,Boomerang Booster 20%",
+        "   Null Water/Bin/Par/Zom/Sli,Res Dig 50%",
+      ]],
+    225 => # ギガスライム / Giga Slime
+      [[
+        #"さらに力を蓄えた、最高クラスのスライム",
+        #"自身の中に複数の生命を持ち、分裂行動が可能",
+        #"粘液の肉体を用いた強力な技や、投擲技が習得できる",
+        #"属性攻撃には弱いので、HPの残量には注意",
+		"A powerful slime that has accumilated great power. The numerous lives within their core allows them to divide both body and action, unleashing powerful techniques with boomerang and body alike. Even so, their raw power still isn't up to par so keep an eye on their HP.",
+		"",
+		"",
+		"",
+		"",
+      ],
+      [
+        "Equip: Shell,Robe,Fancy Cap",
+        "Skills: Throwing,Slime",
+        "Passive: Sli Strike 30%,Boomerang Booster 20%",
+		"   Null Water/Bin/Par/Zom/Sli,Res Dig 25%",
+        "",
+      ]],
+    226 => # 癒しのスライム / Heal Slime
+      [[
+        #"他者の体を癒す事のできる心優しいスライム",
+        #"粘液によって他者の代謝を活性化させ、傷を癒やす",
+        #"他にもスライムを盾にするなど、補助技を習得",
+        #"攻撃役としては頼りないが、回復や補助は一流である",
+        "A kind-hearted slime that wishes to heal others. Can use slime to accelerate allies' metabolism and heal their wounds, as well as use their own slime to defend from attacks. They aren't good in combat, but are great for healing and support.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Shell,Robe,Fancy Cap",
+        "Skills: White Magic,Throwing,Slime",
+        "Passive: Sli Strike 20%,Boomerang Booster 20%",
+        "   Null Water/Bin/Par/Zom/Sli,Res Dig 50%",
+      ]],
+    227 => # 破邪の粘妖 / Purifying Slime
+      [[
+        "癒しの力を高め、破邪の力を身につけた上級スライム",
+        "邪悪を滅ぼすブーメラン技を習得可能",
+        "また上位の回復技を覚え、回復役として活躍できる",
+        "味方を守護する技も多く習得し、補助役として万能",
+      ],
+      [
+        "Equip: Shell,Robe,Fancy Cap",
+        "Skills:,White Magic,Throwing,Slime",
+        "Passive: Sli Strike 30%,Boomerang Booster 20%",
+		"   Null Water/Bin/Par/Zom/Sli,Res Dig 25%",
+        "",
+      ]],
+    228 => # 肉食スライム / Carnivorous Slime
+      [[
+        #"その粘液に消化作用を帯びた、肉食のスライム",
+        #"相手を包んで捕食する、強力な消化技を使用する",
+        #"また敵を消化しやすくするブーメラン技も使用可能",
+        #"カウンターや自爆など、攻撃技を多く習得できる",
+        "A slime whose body has changed to easily digest meat, they can wrap around foes to dissolve and eat them alive. Learns skills that coat foes in digestive juices, and also gains the power to counter attack or self-destruct.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Shell,Robe,Fancy Cap",
+        "Skills: Throwing,Slime",
+        "Passive: Dig Strike 10%,Boomerang Booster 20%",
+        "   Null Water/Bin/Par/Zom/Dig/Sli",
+        "",
+      ]],
+    229 => # 淫酷の粘妖 / Malicious Slime
+      [[
+        "あらゆるものを貪り、取り込んでしまう上位スライム",
+        "敵の集団をまとめて捕食するなど、残酷さを増している",
+        "攻撃的なスキルを中心に修得、捕食効果のある技も多い",
+        "ブーメラン技も強力で、攻撃方面に特化している",
+      ],
+      [
+        "Equip: Shell,Robe,Fancy Cap",
+        "Skills: Throwing,Slime",
+        "Passive: Dig Strike 20%,Boomerang Booster 20%",
+        "   Null Water/Bin/Par/Zom/Dig/Sli",
+        "",
+      ]],
+
+    232 => # 魔獣 / Beast
+      [[
+        "A type of monster with pronounced animal features. Beasts are fast and tear at their enemies with fang and claw. Their attack power, agility, and evasion are excellent, but their defense is low, especially against pleasure. They specialize in attacking.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Fang,Breastplate,Fancy Cap",
+        "Skills: Beast",
+        "Passive: Counter +25%,Crit +15%,Eva +20%,Fang Booster 20%",
+        "",
+      ]],
+    233 => # ルナティックビースト / Lunatic Beast
+      [[
+        #"より強靱な力を持った獣系のモンスター",
+        #"感情の赴くがままに暴れ回り、獲物の体を引き裂く",
+        #"パワーに優れる分、瞬発力はあまり高くない",
+        #"理性を失い、その肉体能力をさらに強化する事が可能",
+        "A beast that has grown even stronger, they can tear foes to shreds in an instant. While they have great power, but their agility isn't as good. They can also go berserk at will, strengthening themselves even further, but losing all control during battle.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Fang,Breastplate,Fancy Cap",
+        "Skills: Beast",
+        "Passive: Counter +25%,Crit +30%,Eva +20%,Fang Booster 20%",
+        "",
+      ]],
+    234 => # 血塗られた狂獣 / Blood-Crazed Beast
+      [[
+        "最高の筋力を誇る獣系モンスター",
+        "圧倒的なパワーで、あらゆるものを粉砕する",
+        "破壊的な威力の物理攻撃スキルを習得可能",
+        "防御力に難がある分、攻撃力は極めて高い",
+      ],
+      [
+        "Equip: Fang,Breastplate,Fancy Cap",
+        "Skills: Beast",
+        "Passive: Counter +25%,Crit +30%,Eva +20%,Fang Booster 20%",
+        "   Preemptive War Cry 50%,Fang Mastery",
+        "",
+      ]],
+    235 => # スピードビースト / Speed Beast
+      [[
+        #"スピードに長けた俊足の魔獣",
+        #"圧倒的な速度を活かした連続攻撃で敵を仕留める",
+        #"また回避率にも優れ、敵の攻撃力を高確率で回避",
+        #"その素早い身のこなしは、盗賊技にも向く",
+        "A beast whose body is well developed for speed and agility, they use rapid attacks that make great use of their overwhelming speed. They can easily evade physical attacks, and are fast enough to steal from foes as well.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Fang,Breastplate,Fancy Cap",
+        "Skills: Thievery,Beast",
+        "Passive: Counter +50%,Bli Strike 10%,Crit +15%,Eva +30%",
+		"   Fang Booster 20%",
+        "",
+      ]],
+    236 => # 疾空の魔獣 / Sonic Beast
+      [[
+        "風のように疾走する魔獣",
+        "目にも止まらない動きから連続攻撃を繰り出す",
+        "覚える盗賊技も非常に有用で、アイテムをむしり取る",
+        "防御力が低い分、回避率は極めて高い",
+      ],
+      [
+        "Equip: Fang,Breastplate,Fancy Cap",
+        "Skills: Thievery,Beast",
+        "Passive: Counter +75%,Bli Strike 20%,Crit +15%,Eva +30%",
+        "   Fang Booster 20%,Fang Mastery",
+        "",
+      ]],
+    237 => # ミノタウロス / Minotaur
+      [[
+        #"猛牛のパワーを備えた剛力モンスター",
+        #"斧の扱いを得意とし、怪力で大ダメージを与える",
+        #"防御力は高いが、素早さや魔法防御に劣る戦士タイプ",
+        #"肉弾戦担当として、大いに活躍するだろう",
+        "A beast with the immense physical strength of a bull, they can handle axes well, and have herculean strength. They have impressive defense, but are slow and weak to magic. They can charge head first into battles, and do well on the front lines.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Gi,Breastplate,Hat,Fancy Cap",
+        "Skills: Axe,Club,Flail,Beast",
+        "Passive: Crit +30%",
+        "",
+      ]],
+    238 => # ギガタウロス / Giga Minotaur
+      [[
+        "凄まじい剛力を秘めた最上位のミノタウロス",
+        "肉体能力は極めて高く、卓越した攻撃力と防御力を誇る",
+        "修得する斧技も強烈な破壊力を秘め、全てを粉砕する",
+        "魔法の使用には全く向かないが、攻撃役として最高峰",
+      ],
+      [
+        "Equip: Gi,Breastplate,Hat,Fancy Cap",
+        "Skills: Axe,Club,Flail,Beast",
+        "Passive: Crit +30%",
+        "",
+      ]],
+    239 => # ケンタウロス / Centaur
+      [[
+        #"下半身が馬となっている、俊足のモンスター",
+        #"その脚力は卓越した速度をもたらし、高い戦闘能力を誇る",
+        #"槍技を得意とし、脚力を活かした突進技などを習得可能",
+        #"防御力はやや低いが、回避率の高さでカバーする",
+        "A beast with the lower body of a horse, their legs grant them superior speed and they are well suited for battle. They are skilled with spears, and learn skills that let them rush foes with their great speed. They have lower defense than most, but they compensate with high evasion.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Gi,Breastplate,Armor,Hat,Helmet,Fancy Cap,Buckler,Shield",
+        "Skills: Rapier,Spear,Beast",
+        "Passive: Crit +15%,Eva +30%",
+        "",
+      ]],
+    240 => # グランセントール / Grand Centaur
+      [[
+        "抜群の脚力と戦闘能力を誇る最上級のケンタウロス",
+        "疾風のように大地を駆け、強力な槍技を繰り出す",
+        "特殊スキルにより、1ターンに二回行動する事も可能",
+        "俊足で敵を圧倒する、攻撃型の種族である",
+      ],
+      [
+        "Equip: Gi,Breastplate,Armor,Hat,Helmet,Fancy Cap,Buckler,Shield",
+        "Skills: Rapier,Spear,Beast",
+        "Passive: Crit +15%,Eva +30%",
+        "",
+      ]],
+    241 => # ねこまた / Nekomata
+      [[
+        #"しなやかな肉体を持った猫の魔物",
+        #"のんびりした性格だが、優れた敏捷性と格闘センスを誇る",
+        #"猫族に伝わる格闘技を覚える他、踊りも修得可能",
+        #"防御は低く魔法も苦手だが、回避率は高い",
+		"A beast with a flexible cat body, their lazy nature masks their excellent fighting sense and agility. They are proficient in feline martial arts, and learn unique dances that boost their allies' counterattack capabilities. Their high evasion makes up for low magic and poor defense.",
+		"",
+		"",
+		"",
+		"",
+      ],
+      [
+        "Equip: Fang,Gi,Breastplate,Hat,Fancy Cap",
+        "Skills: Unarmed,Dancing,Beast",
+        "Passive: Counter +50%,Bli Strike 10%,Crit +15%,Eva +20%",
+        "   Fang Booster 20%",
+        "",
+      ]],
+    242 => # 武神キャット / Martial God Cat
+      [[
+        "並外れた身体能力を誇る最上級のねこまた",
+        "しなやかな肉体から放たれる格闘技は、敵を圧倒する",
+        "敏捷性が極めて高く、敵の攻撃を高確率で回避可能",
+        "固有の踊りも有用で、攻め手として大活躍する",
+      ],
+      [
+        "Equip: Fang,Gi,Breastplate,Hat,Fancy Cap",
+        "Skills: Unarmed,Dancing,Beast",
+        "Passive: Counter +75%,Bli Strike 20%,Crit +15%,Eva +20%",
+        "   Fang Booster 20%,Fang Mastery",
+        "",
+      ]],
+
+    245 => # 妖狐 / Kitsune
+      [[
+        "Mysterious and mischievous fox girl. Makes for a decent magician with an adequate magic stat and spells from Yamatai. Learns a wide array of fluffy pleasure skills in addition to earth spells.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Clothes,Gi,Breastplate,Armor,Robe,Dress,Skimpy,Hat,Helmet",
+        "   Magic Hat,Fancy Cap,Buckler,Shield",
+        "Skills: Fan,Black Magic,Taoism,Ninjutsu,Beast,Nature",
+        "Passive: SP Regen 5%,Mag Eva +10%,Fan Booster 20%",
+        "   Res Earth/Dea/Bur/Fre/Sho 50%",
+        "",
+      ]],
+    246 => # 中級妖狐 / Mid-Rank Kitsune
+      [[
+        #"修行を積み、より高い霊性を蓄えた妖狐",
+        #"魔力が高く、特徴的な尻尾を用いた攻撃も得意",
+        #"修得できる陰陽術や忍術も、戦闘的なものとなった",
+        #"属性や状態異常耐性も高く、頼りになる種族である",
+        "A kitsune that has increased their spiritual power through harsh training. They have great magical power, and learn taoism and ninjutsu skills, as well as ones that utilize their tail. They have above average stats and resistances, and are quite reliable.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Clothes,Gi,Breastplate,Armor,Robe,Dress,Skimpy,Hat",
+        "   Helmet,Magic Hat,Fancy Cap,Buckler,Shield",
+        "Skills: Fan,Black Magic,Taoism,Ninjutsu,Beast,Nature",
+        "Passive: SP Regen 5%,Mag Eva +10%,Fan Booster 20%,Res Earth 25%",
+        "   Res Dea/Bur/Fre/Sho 50%",
+        "",
+      ]],
+    247 => # 上級妖狐 / High-Rank Kitsune
+      [[
+        "極めて高い霊性を誇る最上級の妖狐",
+        "非常に強力な陰陽術や、戦闘的な忍術を使用できる",
+        "土を操る力も高く、大地の息吹を身に宿す事も可能",
+        "能力値はいずれも優秀で、あらゆる局面で活躍できる",
+      ],
+      [
+        "Equip: Clothes,Gi,Breastplate,Armor,Robe,Dress,Skimpy,Hat,",
+        "   Helmet,Magic Hat,Fancy Cap,Buckler,Shield",
+        "Skills: Fan,Black Magic,Taoism,Ninjutsu,Beast,Nature",
+        "Passive: SP Regen 5%,Mag Eva +10%,Fan Booster 20%,Null Earth",
+		"   Res Dea/Bur/Fre/Sho 25%",
+        "",
+      ]],
+    248 => # 狐魔獣 / Bestial Kitsune
+      [[
+        #"魔獣の特質が強く発現している妖狐",
+        #"魔力は控え目だが、肉体能力は卓越している",
+        #"強力な牙や爪を駆使して戦い、獣系スキルを習得",
+        #"スピードも一級品で、回避率も極めて高い",
+        "A kitsune that has developed strong bestial characteristics. While they have only average magic power, their physical stats are excellent. They learn beast skills that make full use of their claws and fangs. They have great speed, and good evasion as well.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Fang,Clothes,Gi,Breastplate,Robe,Dress,Skimpy,Hat",
+        "   Fancy Cap",
+        "Skills: Taoism,Ninjutsu,Beast,Nature",
+        "Passive: SP Regen 10%,Rumble,Crit +15%,Eva +20%,Res Earth 25%",
+        "   Res Dea/Bur/Fre/Sho 50%,Fang Booster 20%",
+        "",
+      ]],
+    249 => # 上級狐魔獣 / Feral Kitsune
+      [[
+        "より強靱な肉体を備えた、最上位の狐魔獣",
+        "獣の肉体を活かした強力な物理スキルを使用できる",
+        "魔力も決して低くはなく、土の陰陽術を修得可能",
+        "肉弾戦に向くが、魔法も使えるオールマイティな種族",
+      ],
+      [
+        "Equip: Fang,Clothes,Gi,Breastplate,Robe,Dress,Skimpy,Hat",
+        "   Fancy Cap",
+        "Skills: Taoism,Ninjutsu,Beast,Nature",
+        "Passive: SP Regen 20%,War Rumble,Crit +15%,Eva +20%,Null Earth",
+        "   Res Dea/Bur/Fre/Sho 25%,Fang Booster 20%",
+        "",
+      ]],
+    250 => # 狐芸者 / Kitsune Geisha
+      [[
+        #"非常に多芸な妖狐の芸者",
+        #"狐族に伝わる歌や舞踊を覚える他、特別な料理も習得可能",
+        #"さらに扇の扱いを得意とし、強力な扇技を覚える",
+        #"直接戦闘はやや苦手だが、補助役としては申し分ない",
+        "A kitsune with a variety of skills. Learns special songs and dances, and can learn special cooking recipes as well. They also learn special fan skills, and are experts in fan usage. While not great in direct combat, their versatility is top class.",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Clothes,Gi,Robe,Dress,Skimpy,Hat,Magic Hat,Fancy Cap",
+        "   Buckler",
+        "Skills: Fan,Taoism,Ninjutsu,Dancing,Singing,Cooking,Sexcraft",
+        "   Beast,Nature",
+        "Passive: SP Regen 5%,Fan Booster 20%,Eva/Mag Eva +10%",
+        "   Res Earth 25%,Res Dea/Bur/Fre/Sho 50%",
+        "",
+      ]],
+    251 => # 狐花魁 / Kitsune Courtesan
+      [[
+        "最高位の芸者であり、芸の道を極めた上位妖狐",
+        "魔性を帯びた歌や舞踊を習得し、敵に大ダメージを与える",
+        "料理の腕も優れており、扇技の奥義も修得可能",
+        "習得スキルは極めて多彩で、補助役として大活躍する",
+      ],
+      [
+        "Equip: Clothes,Gi,Robe,Dress,Skimpy,Hat,Magic Hat,Fancy Cap",
+        "   Buckler",
+        "Skills: Fan,Taoism,Ninjutsu,Dancing,Singing,Cooking,Sexcraft",
+        "   Beast,Nature",
+        "Passive: SP Regen 5%,Fan Booster 20%,Eva/Mag Eva +10%",
+		"   Null Earth,Res Dea/Bur/Fre/Sho 25%",
+        "",
+      ]],
+
+    254 => # ラミア / Lamia
+      [[
+        "A type of monster with the lower body of a snake. They use their giant tails as a weapon, and their thick, scaly hide provides good defense. They excel with flails and learn powerful attack skills.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Clothes,Gi,Breastplate,Armor,Robe,Skimpy,Hat,Helmet",
+        "   Fancy Cap,Buckler,Shield",
+        "Skills: Flail,Demon Arts,Snake",
+        "Passive: Stun Strike 10%,Flail Booster 20%",
+        "   Res Bin/Pet/Stun 50%",
+      ]],
+    255 => # ラミアンボア / Boa Lamia
+      [[
+        #"獲物を嫐る事に悦びを覚える残酷なラミア",
+        #"敵を尻尾で締め付けたり、丸呑みにするなどの技を好む",
+        #"鉄球の扱いにも長け、己の尻尾のように振るう事が可能",
+        #"防御力も極めて高く、乱戦に適した種族である",
+        "A cruel lamia that enjoys toying with prey. They coil around foes, and then swallow them whole. Their skill with a flail has improved to the point where it's like striking with their own tail. Their defense is extremely high, so they are great during a head on fight.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Clothes,Gi,Breastplate,Armor,Robe,Skimpy,Hat,Helmet",
+        "   Fancy Cap,Buckler,Shield",
+        "Skills: Flail,Demon Arts,Snake",
+        "Passive: Stun Strike 20%,Flail Booster 20%",
+        "   Res Bin/Pet/Stun 25%",
+      ]],
+    256 => # ラミアンナイトメア / Nightmare Lamia
+      [[
+        "さらに残酷さを増した最上位のラミア",
+        "敵に巻き付き、締め付け、そして丸呑みにする事が悦び",
+        "また豪快な鉄球技を覚え、敵の群れを薙ぎ倒す",
+        "防御性能は卓越し、高い生命力は頼りになる",
+      ],
+      [
+        "Equip: Clothes,Gi,Breastplate,Armor,Robe,Skimpy,Hat,Helmet",
+        "   Fancy Cap,Buckler,Shield",
+        "Skills: Flail,Demon Arts,Snake",
+        "Passive: Stun Strike 30%,Flail Booster 20%",
+		"   Null Bin/Pet/Stun",
+        "",
+      ]],
+    257 => # シスターラミア / Lamia Nun
+      [[
+        #"癒しの力を身につけた敬虔深きラミア",
+        #"回復技のみならず、聖なる波動の攻撃技も覚える",
+        #"優しく抱き締めるように巻き付く拘束技も習得可能",
+        #"物理攻撃よりは魔法に優れ、魔導師としても有能",
+        "A lamia that has awakened healing powers through piety. Learns not only healing magic, but also can attack with holy light, and can also gently coil around foes in a loving embrace. They have high defense and magic power, so they are great as mages.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Clothes,Gi,Breastplate,Armor,Robe,Skimpy,Hat,Helmet",
+        "   Fancy Cap,Buckler,Shield",
+        "Skills: Flail,White Magic,Demon Arts,Snake",
+        "Passive: Stun Strike 10%,Flail Booster 30%",
+        "   Res Bin/Pet/Stun 25%",
+      ]],
+    258 => # 慈愛の聖蛇 / Lamia Saint
+      [[
+        "慈愛を振りまき、全ての者に癒しをもたらすラミア",
+        "神の奇跡を引き起こす回復技で、味方をサポートする",
+        "また聖属性の奥義を覚え、邪悪を滅する事が可能",
+        "防御力が非常に高いので、回復役として頼りになる",
+      ],
+      [
+        "Equip: Clothes,Gi,Breastplate,Armor,Robe,Skimpy,Hat,Helmet",
+        "   Fancy Cap,Buckler,Shield",
+        "Skills: Flail,White Magic,Demon Arts,Snake",
+        "Passive: Stun Strike 20%,Flail Booster 20%",
+		"   Null Bin/Pet/Stun",
+        "",
+      ]],
+    259 => # 蛇巫女 / Snake Miko
+      [[
+        #"心身を鍛練した、心清き巫女のラミア",
+        #"神に捧げる舞踊を得意とし、様々な恩恵をもたらす",
+        #"また、踊りによって大自然を荒れ狂わせる事も可能",
+        #"舞うような鉄球技を習得し、物理攻撃も他に劣らない",
+        "A lamia that has trained their mind and body to become a miko. Their dances can bring divine favor, as well as summon natural elements. They can strike with a flail as if dancing, and are just as good as a warrior when it comes to attack power.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Clothes,Gi,Breastplate,Robe,Skimpy,Hat,Fancy Cap,Buckler",
+        "Skills: Flail,Dancing,Demon Arts,Snake",
+        "Passive: Stun Strike 10%,Flail Booster 20%",
+        "   Res Bin/Pet/Stun 25%",
+      ]],
+    260 => # 白蛇神楽 / White Snake Kagura
+      [[
+        "神に身も心も捧げた最上級の巫女ラミア",
+        "様々な恩恵をもたらす神秘の踊りを修得可能",
+        "また鉄球さばきも神業で、舞うように敵を叩き潰す",
+        "踊りの補助効果は卓越しており、補助役として最上",
+      ],
+      [
+        "Equip: Clothes,Gi,Breastplate,Robe,Skimpy,Hat,Fancy Cap,Buckler",
+        "Skills: Flail,Dancing,Demon Arts,Snake",
+        "Passive: Stun Strike 20%,Flail Booster 20%",
+		"   Null Bin/Pet/Stun",
+        "",
+      ]],
+    261 => # メデューサ / Medusa
+      [[
+        #"下半身の代わりに、髪が蛇になっている蛇妖の亜種",
+        #"敵を石にする魔力を備え、石化スキルを修得できる",
+        #"またパワフルな鉄球技を覚え、敵を薙ぎ倒すことが可能",
+        #"頭の蛇が文句を言うので、帽子や兜は装備できない",
+        "A lamia species that has snakes for hair instead of a serpentine lower body. Can petrify foes with various abilities and skills, and learns powerful flail skills. Because their hair would complain, they can't wear hats or helmets.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Clothes,Gi,Breastplate,Armor,Robe,Skimpy,Buckler,Shield",
+        "Skills: Flail,Demon Arts,Snake",
+        "Passive: Counter +50%,Flail Booster 20%",
+        "   Res Bin/Stun 25%,Null Pet",
+        "",
+      ]],
+    262 => # ロードメデューサ / Medusa Lord
+      [[
+        "下半身と髪に邪蛇を備えた最上位のメデューサ",
+        "強力な石化スキルで、敵集団をまとめて石にする",
+        "また鉄球技の奥義を覚え、複数の敵を粉砕可能",
+        "能力値はいずれも高く、万能の活躍が期待できる",
+      ],
+      [
+        "Equip: Clothes,Gi,Breastplate,Armor,Robe,Skimpy,Buckler,Shield",
+        "Skills: Flail,Demon Arts,Snake",
+        "Passive: Counter +75%,Flail Booster 20%",
+		"   Null Bin/Pet/Stun",
+        "",
+      ]],
+    263 => # クィーンラミア / Queen Lamia
+      [[
+        "あらゆる蛇妖の頂点に君臨する女王",
+        "強力な魔力を備え、多彩なスキルを修得できる",
+        "鉄球の奥義や、一族に伝わる舞は非常に強力",
+        "能力値も卓越しており、縦横無尽の活躍が可能",
+      ],
+      [
+        "Equip: Clothes,Gi,Breastplate,Armor,Robe,Skimpy,Hat,Helmet",
+        "   Fancy Cap,Buckler,Shield",
+        "Skills: Flail,White Magic,Dancing,Demon Arts,Snake",
+        "Passive: Stun Strike 30%,Flail Booster 20%",
+		"   Null Bin/Pet/Stun",
+        "",
+      ]],
+
+    265 => # スキュラ / Scylla
+      [[
+        "A monster with multiple soft tentacles for a lower body. They can use their tentacles like whips, attacking enemies repeatedly. Scylla also learn very powerful dual-wielding skills. However, their defense is poor.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Clothes,Gi,Breastplate,Robe,Skimpy,Hat,Fancy Cap",
+        "Skills: Multiweapon,Tentacle",
+        "Passive: Triple Attack,Res Bin 50%,Null Sli,Whip Booster +20%",
+        "",
+      ]],
+    266 => # ハイスキュラ / High Scylla
+      [[
+        #"より触手の扱いに長けた上位のスキュラ",
+        #"連続攻撃にも磨きが掛かり、敵に大ダメージを与える",
+        #"また触手で敵を愛撫し、快楽を与える技も修得可能",
+        #"やはり防御には難があり、極めて脆い一面がある",
+        "A scylla that has gained greater expertise with their tentacles. Can unleash rapid attacks that deal great damage to foes. Is also a master at using their tentacles to lewdly caress foes. They still have low defense, so they're a bit fragile.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Clothes,Gi,Breastplate,Robe,Skimpy,Hat,Fancy Cap",
+        "Skills: Multiweapon,Tentacle",
+        "Passive: Triple Attack,Tentacle Skill *2,Res Bin 50%,Null Sli",
+		"   Whip Booster +20%",
+      ]],
+    267 => # エルダースキュラ / Elder Scylla
+      [[
+        "強靱な触手を自在に使いこなす最上位のスキュラ",
+        "嵐のような連続攻撃の他、触手による快楽攻撃も修得",
+        "拘束攻撃も強力で、まさに触手のエキスパートである",
+        "アビリティ「三回攻撃」も修得し、攻撃面では完璧",
+      ],
+      [
+        "Equip: Clothes,Gi,Breastplate,Robe,Skimpy,Hat,Fancy Cap",
+        "Skills: Multiweapon,Tentacle",
+        "Passive: Triple Attack,Tentacle Skill *2,Res Bin 50%,Null Sli",
+		"   Whip Booster +20%",
+        "",
+      ]],
+    268 => # サムライスキュラ / Scylla Samurai
+      [[
+        "触手の腕に複数の剣を携えたスキュラの剣士",
+        "嵐のような乱れ斬りで、敵集団を一気に殲滅可能",
+        "敵味方を問わず撫で斬りにする迷惑なスキルも修得",
+        "防御を捨てて攻撃に特化しており、極めて脆い",
+      ],
+      [
+        "Equip: Clothes,Gi,Breastplate,Armor,Robe,Skimpy,Hat,Helmet",
+        "   Fancy Cap",
+        "Skills: Katana,Multiweapon,Tentacle",
+        "Passive: Dual-Wield,Double Attack,Res Bin 50%,Null Sli",
+        "",
+      ]],
+    269 => # 天下無双スキュラ / Peerless Scylla Samurai
+      [[
+        "触手で複数の刀を扱うスキュラの侍",
+        "圧倒的な連続斬撃を繰り出し、敵を微塵切りにする",
+        "非常に強力な多段攻撃技を、いくつも修得可能",
+        "やはり防御面では脆いので、注意が必要である",
+      ],
+      [
+        "Equip: Clothes,Gi,Breastplate,Armor,Robe,Skimpy,Hat,Helmet",
+        "   Fancy Cap",
+        "Skills: Katana,Multiweapon,Tentacle",
+        "Passive: Dual-Wield,Double Attack,Res Bin 50%,Null Sli",
+        "",
+      ]],
+    270 => # スキュラメイド / Scylla Maid
+      [[
+        #"無数の触手をフルに使って働くメイドのスキュラ",
+        #"触手を駆使した連続御奉仕技で、無類の働きを見せる",
+        #"回復技も習得し、オールマィティな活躍が可能",
+        #"器用さ以外の能力は高くないが、サポート役に最適",
+        "A scylla that uses their tentacles to perform maid duties. With so many tentacles, their service abilities are peerless. They can heal allies, and also provide lewd night service. They're low in stats other than dexterity, but are great at support.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Clothes,Gi,Breastplate,Robe,Skimpy,Hat,Fancy Cap",
+        "Skills: Service,Tentacle",
+        "Passive: Triple Attack,Eva +10%,Res Bin 50%,Null Sli",
+      ]],
+    271 => # スキュラサーバント / Scylla Servant
+      [[
+        "無数の触手で奉仕を行う最上級のスキュラメイド",
+        "触手を駆使した御奉仕技にも磨きが掛かっている",
+        "また触手を用いた性的奉仕で、敵を快楽に浸らせる",
+        "補助役として適しており、直接戦闘は苦手",
+      ],
+      [
+        "Equip: Clothes,Gi,Breastplate,Robe,Skimpy,Hat,Fancy Cap",
+        "Skills: Service,Tentacle",
+        "Passive: Triple Attack,Eva +10%,Res Bin 50%,Null Sli",
+        "",
+      ]],
+    272 => # クィーンスキュラ / Queen Scylla
+      [[
+        "あらゆるスキュラの頂点に君臨する女王",
+        "触手を使いこなし、打撃や拘束、快楽まで自由自在",
+        "また複数の武器を用いた奥義を修得できる",
+        "防御には難があるものの、戦闘能力は極めて高い",
+      ],
+      [
+        "Equip: Clothes,Gi,Breastplate,Armor,Robe,Skimpy,Hat,Helmet",
+        "   Fancy Cap",
+        "Skills: Katana,Multiweapon,Service,Tentacle",
+        "Passive: Chaotic Attack,Tentacle Skill *3,Res Bin 25%,Null Sli",
+		"   Whip Booster +20%",
+        "",
+      ]],
+
+    274 => # ハーピー / Harpy
+      [[
+        "Flying monster girls with big wings, they glide around enemy attacks with ease. They also learn energetic dances to boost stats and morale. Proficient at stealing too, but can't take a lot of hits.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Clothes,Gi,Skimpy,Hat,Fancy Cap",
+        "Skills: Fan,Thievery,Dancing,Wing",
+        "Passive: Eva/Mag Eva +40%,Res Wind 50%,Fan Booster +20",
+        "",
+      ]],
+    275 => # ウィングハーピー / Wing Harpy
+      [[
+        #"高速飛行に適した大型の翼を備えたハーピー",
+        #"素早さが非常に高く、回避能力にも優れている",
+        #"ハーピー族特有の踊りを覚える他、特別な盗賊技も修得",
+        #"やはり戦闘性能は高くなく、サポート向き",
+        "A harpy with large wings suitable for high-speed flight. They have superior agility and evasion to match. They learn special dances and thievery skills unique to them. While their combat ability isn't high, they're good at support.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Clothes,Gi,Skimpy,Hat,Fancy Cap",
+        "Skills: Fan,Thievery,Dancing,Wing",
+        "Passive: Eva/Mag Eva +40%,Res Wind 25%,Fan Booster +20",
+        "",
+      ]],
+    276 => # エルダーハーピー / Elder Harpy
+      [[
+        "天空を制する翼を持った最上級のハーピー",
+        "回避率は非常に高く、その翼で突風を巻き起こす",
+        "強力な盗み技を覚え、その踊りで味方を鼓舞",
+        "戦闘能力は高くないが、多彩な特技で仲間をサポートする",
+      ],
+      [
+        "Equip: Clothes,Gi,Skimpy,Hat,Fancy Cap",
+        "Skills: Fan,Thievery,Dancing,Wing",
+        "Passive: Eva/Mag Eva +40%,Null Wind,Fan Booster +20",
+        "",
+      ]],
+    277 => # ハーピーナイト / Harpy Knight
+      [[
+        #"争いが苦手なハーピーには珍しく、武芸を身につけた戦士",
+        #"素早さを活かした豊富な槍技で敵を圧倒する",
+        #"また、ハーピー戦士に伝わる特別な踊りが修得可能",
+        #"重装備が可能なものの、やはり防御力が低いので注意",
+        "An unusual harpy that has trained as a warrior. They smite foes with rapid spear strikes that make the best use of their agility. They also learn a special war dance of the harpy race to enhance allies. Although they can wear heavier equipment, they still have low defense.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Clothes,Gi,Breastplate,Armor,Skimpy,Hat,Helmet",
+        "   Fancy Cap",
+        "Skills: Spear,Thievery,Dancing,Wing",
+        "Passive: Eva/Mag Eva +30%,Res Wind 50%",
+        "",
+      ]],
+    278 => # スカイハイ / Sky Knight
+      [[
+        "ハーピー族の中でも最上位の天翔ける戦士",
+        "槍技にも磨きが掛かり、疾風の槍さばきで敵を討つ",
+        "また英雄の踊りは、味方全体の力を高めることが可能",
+        "攻撃性能に特化しており、防御にはやはり難が残る",
+      ],
+      [
+        "Equip: Clothes,Gi,Breastplate,Armor,Skimpy,Hat,Helmet",
+        "   Fancy Cap",
+        "Skills: Spear,Thievery,Dancing,Wing",
+        "Passive: Eva/Mag Eva +30%,Res Wind 25%",
+        "",
+      ]],
+    279 => # エイビス / Aevis
+      [[
+        #"魔獣の特質が強く発現している亜種の怪鳥モンスター",
+        #"肉体的能力が非常に高く、牙や爪で敵を引き裂く",
+        #"また羽根で巻き起こす突風や、吐き出す炎で攻撃可能",
+        #"魔法は苦手なものの、戦闘能力は極めて高い",
+        "A harpy subspecies with strong beast characteristics. With their powerful bodies, they rend foes with fang and claw. In addition to creating powerful gales with their wings, they can breathe gouts of flame on foes. Although bad with magic, their combat capabilities are extremely high.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Fang,Breastplate,Hat,Fancy Cap",
+        "Skills: Thievery,Beast,Wing,Breath",
+        "Passive: Crit +15%,Eva +30%,Res Fire 50%,Res Wind 25%",
+		"   Fang Booster +20%",
+        "",
+      ]],
+    280 => # ガルーダ / Garuda
+      [[
+        "神鳥とも呼ばれる最上位の怪鳥系ハーピー",
+        "その圧倒的な肉体能力により、敵を容赦なく滅する",
+        "羽や牙での攻撃、口から吐き出す炎など攻撃技は多彩",
+        "攻撃役として優れた力を秘め、大いに頼りになるだろう",
+      ],
+      [
+        "Equip: Fang,Breastplate,Hat,Fancy Cap",
+        "Skills: Thievery,Beast,Wing,Breath",
+        "Passive: Crit +15%,Eva +30%,Res Fire 25%,Null Wind",
+		"   Fang Booster +20%",
+        "",
+      ]],
+    281 => # クィーンハーピー / Queen Harpy
+      [[
+        "全てのハーピーを束ねる麗しき女王",
+        "扇や槍の扱いに長じており、それらの奥義を修得できる",
+        "また女王の踊りは味方全体に奇跡をもたらすという",
+        "特殊な盗賊技も習得し、攻撃からサポートまで活躍する",
+      ],
+      [
+        "Equip: Clothes,Gi,Breastplate,Armor,Skimpy,Hat,Helmet",
+        "   Fancy Cap",
+        "Skills: Spear,Fan,Thievery,Dancing,Beast,Wing,Breath",
+        "Passive: Eva/Mag Eva +40%,Most Status 50%,Null Wind",
+		"   Fan Booster +20",
+        "",
+      ]],
+
+    283 => # ドラゴン / Dragon
+      [[
+        "Powerful monster girl famed for their strength. Fangs and claws alike wield fantastic power. With its trademark fire breath and excellent stats, this race screams reliability.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Fang,Clothes,Breastplate,Armor,Heavy Armor,Hat,Helmet",
+        "   Heavy Helmet,Buckler,Shield,Heavy Shield",
+        "Skills: Beast,Breath",
+        "Passive: Res Ice/Lightning/Most Status 50%,Null Fire",
+		"   Fang Booster +20%",
+        "",
+      ]],
+    284 => # 竜人 / Dragonkin
+      [[
+        #"人型の要素が強く発現しているドラゴン系モンスター",
+        #"その肉体能力の高さは健在で、並外れた武技を誇る",
+        #"剛力を活かした剣技や、竜族に伝わる格闘技を習得",
+        #"またアビリティ「SPチャージ2倍」は、特に心強い",
+        "A dragon that has a human-like body. Their physical capabilities are top class, and they are excellent fighters. They learn powerful combat skills that make great use of their bodies, and can even learn an ability that charges their SP twice as fast.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Clothes,Breastplate,Armor,Heavy Armor,Hat,Helmet",
+        "   Heavy Helmet,Buckler,Shield,Heavy Shield",
+        "Skills: Dagger,Sword,Unarmed,Beast,Breath",
+        "Passive: Res Ice/Lightning/Most Status 50%,Null Fire",
+      ]],
+    285 => # 覇竜 / Dragon Conqueror
+      [[
+        "圧倒的な力を備えた最上級の竜人",
+        "並外れた攻撃力と防御力、俊敏性を誇る",
+        "炎を伴った武技は全てを粉砕し、あらゆる敵を殲滅",
+        "攻撃役として、この上もないほど頼りになるだろう",
+      ],
+      [
+        "Equip: Clothes,Breastplate,Armor,Heavy Armor,Hat,Helmet",
+        "   Heavy Helmet,Buckler,Shield,Heavy Shield",
+        "Skills: Dagger,Sword,Unarmed,Beast,Breath",
+        "Passive: Res Ice/Lightning 50%,Most Status 25%,Null Fire",
+        "",
+      ]],
+    286 => # 竜神 / Divine Dragon
+      [[
+        "強大な魔力を備えた異色の竜人",
+        "炎を主体とした強力な魔法で、全てを焼き尽くす",
+        "黒魔法のみならず、白魔法や時魔法も使用可能",
+        "頑強な魔導士として、大いに活躍するだろう",
+      ],
+      [
+        "Equip: Clothes,Breastplate,Armor,Heavy Armor,Robe,Hat,Helmet",
+        "   Heavy Helmet,Buckler,Shield,Heavy Shield",
+        "Skills: White Magic,Black Magic,Time Magic,Holy,Dark,Beast",
+        "   Breath",
+        "Passive: Res Ice/Lightning/Most Status 25%,Null Fire",
+		"   Res Dar/Cli/Slow/Sto/Min/Sli/Hor/Tra/Sed/Inc 75%",
+        "",
+      ]],
+    287 => # 飛竜 / Wyvern
+      [[
+        #"竜の要素が強く発現しているドラゴン系モンスター",
+        #"翼を持った個体が多いが、必ずしも空を飛ばない",
+        #"激しい炎や、翼を用いた突風で敵を攻撃する",
+        #"肉弾戦の能力が極めて高く、物理スキルも強力",
+        "A dragon subspecies greatly in tune with their dragon heritage. Although many dragons have wings, only wyverns can fly through the sky. They can breathe intense flames and create intense gales with a flap of their wings to destroy foes.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Fang,Clothes,Breastplate,Armor,Hat,Helmet",
+        "Skills: Beast,Wing,Breath",
+        "Passive: Eva +10%,Res Ice/Lightning/Most Status 50%",
+        "   Null Fire/Wind,Fang Booster +20%",
+      ]],
+    288 => # バハムート / Bahamut
+      [[
+        "神とも同一視される、天空を支配する竜",
+        "あらゆる竜の頂点に立ち、戦闘能力は極めて高い",
+        "轟炎で全てを焼き尽くし、翼で全てを破壊する",
+        "快楽に弱いのを除いて、ほとんど弱点もない",
+      ],
+      [
+        "Equip: Fang,Clothes,Breastplate,Armor,Hat,Helmet",
+        "Skills: Beast,Wing,Breath",
+        "Passive: Eva +10%,Res Ice/Lightning 50%,Most Status 25%",
+		"   Null Fire/Wind,Fang Booster +20%,Fang Mastery",
+        "",
+      ]],
+    289 => # 海竜 / Sea Dragon
+      [[
+        #"船乗り達に畏怖される海の巨大竜",
+        #"大津波を起こし、その息は全てを凍てつかせる",
+        #"一般の竜族よりは、若干ながら魔力が高い",
+        #"防御力も高く、あらゆる局面で活躍できる",
+        "A dragon of the sea feared by sailors. They can conjure tsunamis, and exhale a freezing breath. Has high magic power for a dragon, while still having the high defense of a dragon. With their high stats, they can take an active part in all manner of combat.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Fang,Clothes,Breastplate,Armor,Hat,Helmet",
+        "Skills: Beast,Nature,Breath",
+        "Passive: Sea Strength,Res Fire/Lightning/Most Status 50%",
+        "   Null Ice/Water,Fang Booster +20%",
+      ]],
+    290 => # リヴァイアサン / Leviathan
+      [[
+        "世界の海を支配する伝説の海竜",
+        "巨大な海嘯で、全てを海の底に沈めるという",
+        "また氷のブレスは、生物全てを凍てつかせる",
+        "全能力も非常に高く、攻撃役として不足しない",
+      ],
+      [
+        "Equip: Fang,Clothes,Breastplate,Armor,Hat,Helmet",
+        "Skills: Beast,Nature,Breath",
+        "Passive: Super Sea Strength,Res Fire/Lightning 50%",
+		"   Most Status 25%,Null Ice/Water,Fang Booster +20%",
+		"   Fang Mastery",
+        "",
+      ]],
+
+    293 => # 陸棲種 / Land-Dweller
+      [[
+        "A general term for reptilian and amphibian monsters who live on land. They typically have breath skills and other toxic attacks along with skills to use their bodies as weapons. HP and defense are high, but other stats are mediocre.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Clothes,Breastplate,Shell,Robe,Hat,Fancy Cap,Buckler",
+        "Skills: Slime,Beast,Tentacle,Breath",
+        "Passive: Metabolism Up,Null Bio/Poi",
+        "",
+      ]],
+    294 => # 陸上魔類 / High Land-Dweller
+      [[
+        #"強靱な肉体を持った陸棲モンスターの上位種",
+        #"炎を吐く他、肉体を用いた様々な攻撃を修得する",
+        #"また、体内の毒素を攻撃に用いることも可能、",
+        #"バランスの取れた能力値で、特に生命力が高い",
+        "A land-dweller that has developed a tougher body. Can breathe flames and use the toxins in their body to attack. Their stats are generally balanced, with particularly high vitality.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Clothes,Breastplate,Shell,Robe,Hat,Fancy Cap,Buckler",
+        "Skills: Slime,Beast,Tentacle,Breath",
+        "Passive: Super Metabolism,Null Bio/Poi",
+        "",
+      ]],
+    295 => # エビルスピーシーズ / Evil Species
+      [[
+        "強力な能力を備えた陸棲モンスターの最上位種",
+        "強力なブレスや猛毒技など、様々な攻撃を覚える",
+        "敵全体を複数の状態異常にするブレスも修得可能",
+        "総合能力も高く、オールマイティな活躍ができる",
+      ],
+      [
+        "Equip: Clothes,Breastplate,Shell,Robe,Hat,Fancy Cap,Buckler",
+        "Skills: Slime,Beast,Tentacle,Breath",
+        "Passive: Ultimate Metabolism,Null Bio/Poi",
+        "",
+      ]],
+    296 => # 軟体搾精種 / Leech
+      [[
+        #"軟体と粘膜のボディを備えた、独特の陸棲種",
+        #"全身から滴る粘液を武器として使う技を習得可能",
+        #"快楽攻撃も得意で、軟体や粘液で相手に快楽を与える",
+        #"その体は衝撃を受け流し、防御力は高い",
+        "A land-dweller with a soft body coated in slime. They can learn to use the slime on their body to fight conventionally and in lewd ways. Their body can ward off weaker hits, and their defense is high.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Clothes,Breastplate,Shell,Robe,Hat,Fancy Cap,Buckler",
+        "Skills: Slime,Beast,Tentacle,Breath",
+        "Passive: Sli Strike 20%,Metabolism Up,Null Damage <= 100",
+        "   Res Phys 50%,Null Bio/Poi/Sli",
+      ]],
+    297 => # ハイクリーチャー / High Creature
+      [[
+        "軟体搾精種の最上位モンスター",
+        "その体から分泌される粘液は、極上の快楽をもたらす",
+        "また消化液を含んだ粘液で、敵を溶かす事も可能",
+        "能力値に穴はなく、どんな役割もそつなくこなす",
+      ],
+      [
+        "Equip: Clothes,Breastplate,Shell,Robe,Hat,Fancy Cap,Buckler",
+        "Skills: Slime,Beast,Tentacle,Breath",
+        "Passive: Sli Strike 30%,Super Metabolism,Null Damage <= 300",
+        "   Res Phys 50%,Null Bio/Poi/Sli",
+        "",
+      ]],
+    298 => # 魔物狩り狩り / Monster Hunter
+      [[
+        #"魔物ハンターを狩る、逆ハントのエキスパート",
+        #"弓を得意とし、狩人を返り討ちにするスキルを修得する",
+        #"人間やエルフには特に強く、種族特攻ダメージを強化可能",
+        #"魔法は苦手だが、弓の扱いに向いている",
+        "A monster that is an expert at hunting other monsters. Skilled with a bow, they learn skills especially powerful against elves and humans, and are good with slayer skills. Though weak with magic, they can rely on their bow.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Clothes,Gi,Breastplate,Shell,Robe,Hat,Fancy Cap",
+        "Skills: Bow,Slime,Beast,Tentacle,Breath",
+        "Passive: Eva +10%,Metabolism Up,Null Bio,Nullify Ambush",
+        "   Preemptive Strike Up,Endure,Slayer Boost 100%",
+      ]],
+    299 => # 巨人殺し / Giant Slayer
+      [[
+        "巨体モンスターの駆逐に練達した最上位の狩人",
+        "巨大な敵に対して有効な弓技を中心に覚える",
+        "その他、狩りに有効なアビリティを複数修得可能",
+        "弓の扱いに長け、攻撃役として優秀である",
+      ],
+      [
+        "Equip: Clothes,Gi,Breastplate,Shell,Robe,Hat,Fancy Cap",
+        "Skills: Bow,Slime,Beast,Tentacle,Breath",
+        "Passive: Eva +10%,Super Metabolism,Null Bio,Nullify Ambush",
+        "   Preemptive Strike Up,Super Endure,Slayer Boost 100%",
+        "",
+      ]],
+
+    301 => # 海棲種 / Sea-Dweller
+      [[
+        "A general term for monsters who live in and around the seas and oceans. They use tentacles as weapons, and some spew ink or bubbles. Their defense is better than the land-dwellers, but attack power is somewhat inferior.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Breastplate,Shell,Robe,Fancy Cap,Buckler",
+        "Skills: Ocean,Tentacle",
+        "Passive: Sea Strength,Null Water",
+        "",
+      ]],
+    302 => # 海洋搾精種 / Sea Leech
+      [[
+        #"大洋を住処とした海棲モンスター",
+        #"主に触手攻撃を得意し、剛力で敵を撫ぎ倒す",
+        #"またその魔力で大海嘯を起こす事も可能",
+        #"肉体は頑強で、ほとんどの能力が平均より高い",
+        "A sea-dweller that makes the ocean their home. They can mow down foes with their tentacles, and call forth tsunamis with magic power. They have a durable body, and most stats are above average.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Breastplate,Shell,Robe,Fancy Cap,Buckler",
+        "Skills: Ocean,Tentacle",
+        "Passive: Sea Strength,Null Water",
+        "",
+      ]],
+    303 => # マリンプリンセス / Marine Princess
+      [[
+        "強大な力を持った海洋の支配種",
+        "その触手の力は圧倒的で、思いのままに敵を破壊する",
+        "触手は打撃だけでなく、拘束や快楽攻撃も可能",
+        "他にも水属性の奥義やスミなど、修得スキルは多彩",
+      ],
+      [
+        "Equip: Breastplate,Shell,Robe,Fancy Cap,Buckler",
+        "Skills: Ocean,Tentacle",
+        "Passive: Super Sea Strength,Null Water",
+        "",
+      ]],
+    304 => # 深海搾精種 / Deep-Sea Leech
+      [[
+        #"深海での生活に順応した海棲種",
+        #"触手に仕込んだ麻痺針や、敵を恍惚に浸らせる技を覚える",
+        #"また海中で放電することで、敵全体を電撃攻撃可能",
+        #"水圧に耐えられるよう、通常海棲種より体が頑丈",
+        "A sea-dweller adapted well to life in the deep-sea. They can paralyze with their tentacles, and can drown foes in ecstasy. They can also unleash electric currents to zap foes. Their body is far stronger than normal, in order to endure the pressure of the deep-sea.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Breastplate,Shell,Robe,Fancy Cap,Buckler",
+        "Skills: Ocean,Tentacle",
+        "Passive: Sea Strength,Deep Sea Strength,Res Phys 75%",
+        "   Null Water/Blind",
+      ]],
+    305 => # 深淵の主 / Abyss Lord
+      [[
+        "深海の奥深くに潜む深淵の支配者",
+        "触手を用いた強力な技の他、強烈な電撃を放つ事が可能",
+        "また海中で大渦を起こす、強力な水属性攻撃を覚える",
+        "他にも捕食技や快楽技など、修得スキルは非常に多彩",
+      ],
+      [
+        "Equip: Breastplate,Shell,Robe,Fancy Cap,Buckler",
+        "Skills: Ocean,Tentacle",
+        "Passive: Super Sea Strength,Super Deep Sea Strength",
+		"   Res Phys 75%,Null Water/Blind,Res Most Status 50%",
+        "",
+      ]],
+    306 => # 竜宮舞妓 / Sea Palace Maiko
+      [[
+        #"海中の竜宮城に仕える可憐な歌姫",
+        #"竜宮に伝わる様々な踊りや歌を修得する",
+        #"また、波に舞うような扇技を修得可能",
+        #"器用さを除いて能力値は低く、肉弾戦は不向き",
+        "Beautiful idol of the sea that serves in the sea palace. Learns various songs and dances to serve the master of the sea palace. They also learn special fan skills that summon water. With low stats aside from dexterity, they must be used tactically.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Breastplate,Shell,Robe,Skimpy,Magic Hat,Fancy Cap",
+        "   Buckler",
+        "Skills: Dancing,Singing,Sexcraft,Ocean,Tentacle",
+        "Passive: Sea Strength,Eva/Mag Eva +10%,Null Water/Sonic",
+        "  Res Pleasure/Sli/Hor/Tra/Sed/Inc 75%,Fan Booster 20%",
+      ]],
+    307 => # 竜宮姫 / Sea Palace Princess
+      [[
+        "竜宮城に住まう深淵の姫",
+        "秘伝の踊りや歌を継承し、戦いの場において貢献する",
+        "また、竜宮に伝わる扇技の奥義も修得可能",
+        "サポート能力は高く、パーティに救いをもたらす",
+      ],
+      [
+        "Equip: Breastplate,Shell,Robe,Skimpy,Magic Hat,Fancy Cap",
+        "   Buckler",
+        "Skills: Singing,Dancing,Sexcraft,Ocean,Tentacle",
+        "Passive: Super Sea Strength,Eva/Mag Eva +10%,Null Water/Sonic",
+		"  Res Pleasure 75%,Res Sli/Hor/Tra/Sed/Inc 50%,Fan Booster 20%",
+        "",
+      ]],
+
+    309 => # 妖虫 / Insect
+      [[
+        "Taut and firm insect girl. Brandishes stingers and scales to attack and weaken enemies. A sturdy carapace provides high defense but little protection against status ailments.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Shell,Hat,Fancy Cap",
+        "Skills: Insect",
+        "Passive: Desert Strength,Great Defense",
+        "   Res Fire/Ice/Lightning 50%",
+      ]],
+    310 => # 闇蟲 / Dark Insect
+      [[
+        #"非常に強固な外骨格を備えた昆虫系モンスター",
+        #"体に備わった鎌や針を武器とし、多くの特技を覚える",
+        #"また、超震動を発生させて敵全体を攻撃可能",
+        #"魔法は苦手だが、攻撃力や防御力は極めて高い",
+        "An insect with an incredibly strong exoskeleton. Learns several skills to strike with sickle-like claws and stingers. They can also vibrate their exoskeleton to strike groups with sonic waves. Though weak with magic, their physical strength is high and they are extremely resistant to all attacks.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Shell,Hat,Fancy Cap",
+        "Skills: Insect",
+        "Passive: Desert Strength,Ultimate Defense",
+        "   Res Fire/Ice/Lightning 50%",
+      ]],
+    311 => # 冥蟲 / Underworld Insect
+      [[
+        "冥界から現れたという、最上級の昆虫モンスター",
+        "その肉体は、いかなる武器よりも強力である",
+        "鱗粉は凄まじい毒性を持ち、装甲は極めて強固",
+        "状態異常には脆いものの、その頑丈さは頼りになる",
+      ],
+      [
+        "Equip: Shell,Hat,Fancy Cap",
+        "Skills: Insect",
+        "Passive: Super Desert Strength,Ultimate Defense",
+		"   Res Phys/Fire/Ice/Lightning 50%",
+        "",
+      ]],
+    312 => # レギオン / Legion
+      [[
+        #"蜂や蟻など、集団で行動する社会性昆虫モンスター",
+        #"群れでの攻撃が得意で、戦闘中に仲間を呼ぶ事が可能",
+        #"腹部の針も武器となる他、格闘技も修得している",
+        #"体格は人間に近い分、一般の虫系より防御力は少し劣る",
+        "A type of insect that works as a group, like a bee or ant. Learns skills to attack as a group, and can use their stinger or martial arts. Has weaker defense than other insects, but can equip better armor.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Breastplate,Shell,Hat,Fancy Cap",
+        "Skills: Unarmed,Insect",
+        "Passive: Desert Strength,Res Fire/Ice/Lightning 50%",
+      ]],
+    313 => # マザーレギオン / Legion Mother
+      [[
+        "集団で行動する社会性昆虫モンスターの支配者",
+        "働き蜂や働き蟻を手足のように扱い、一斉攻撃を指揮する",
+        "また自身に備わった毒針も強力で、敵を一撃死させる事も",
+        "修得できる特技は多く、戦場での活躍が大いに期待できる",
+      ],
+      [
+        "Equip: Breastplate,Shell,Hat,Fancy Cap",
+        "Skills: Unarmed,Insect",
+        "Passive: Desert Strength,Res Phys/Fire/Ice/Lightning 50%",
+        "",
+      ]],
+    314 => # アラクネ / Arachne
+      [[
+        #"虫系の亜種とされる蜘蛛型のモンスター",
+        #"同種に比べて魔力が高く、時を自在に紡ぐと言われる",
+        #"時魔法を使用可能で、サポート能力は非常に高い",
+        #"また腹部から吐き出す粘糸は、攻撃や拘束など多岐に使用可能",
+        "An insect subspecies that is like a spider. Has high magic power, and can manipulate time with a natural talent for time magic. Can also spin silk from their abdomen to bind and attack foes.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Clothes,Breastplate,Robe,Dress,Skimpy,Hat,Magic Hat",
+        "   Fancy Cap",
+        "Skills: Time Magic,Insect",
+        "Passive: Mag Eva +10%,Res Fire/Ice/Lightning 50%",
+        "   Res Most Status 50%,Null Bin/Slo/Sto",
+      ]],
+    315 => # アトラク＝ナクア / Atlach-Nacha
+      [[
+        "現在過去未来を糸で紡ぐというアラクネの最上種",
+        "強力な時魔法で時間の運行を歪め、空間を支配する",
+        "また、八本足での物理攻撃技も非常に破壊力が高い",
+        "さらに捕食技も習得するなど、その特技は多岐に渡る",
+      ],
+      [
+        "Equip: Clothes,Breastplate,Robe,Dress,Skimpy,Hat,Magic Hat",
+        "   Fancy Cap",
+        "Skills: Time Magic,Insect",
+        "Passive: Mag Eva +10%,Res Phys/Fire/Ice/Lightning 50%",
+		"   Res Most Status 50%,Null Bin/Slo/Sto",
+        "",
+      ]],
+    317 => # クィーンインセクト / Queen Insect
+      [[
+        "あらゆる昆虫系モンスターの頂点に君臨する女王",
+        "極めて強固な甲殻を持ち、いかなる攻撃もはねのける",
+        "全身が武器であり、腕のクローや超震動器官を使用可能",
+        "高い戦闘能力を誇り、女王の名に相応しい活躍を見せる",
+      ],
+      [
+        "Equip: Clothes,Gi,Breastplate,Shell,Robe,Dress,Skimpy,Hat",
+        "   Magic Hat,Fancy Cap",
+        "Skills: Unarmed,Time Magic,Insect",
+        "Passive: Super Desert Strength,Ultimate Defense",
+		"   Res Phys/Fire/Ice/Lightning/Most Status 50%",
+		"   Null Bin/Slo/Sto",
+        "",
+      ]],
+
+    319 => # アルラウネ / Alraune
+      [[
+        "Gently seductive flower monsters with healing power. Using things like ivy and pollen, Alraunes use their bodies offensively. They are also skilled with whips and learn basic whip skills, but are best suited using their nectar in a healing role for the party.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Gi,Breastplate,Robe,Hat,Magic Hat,Fancy Cap,Buckler",
+        "Skills: Whip,White Magic,Plant",
+        "Passive: Poi/Con/Par Strike 5%,Medicine Lore I,Whip Booster +20%",
+        "   Res Dea/Asc/Cli/Bli/Con/Sle/Par/Sli/Hor/Tra/Sed/Inc 50%",
+        "",
+      ]],
+    320 => # ハイアルラウネ / High Alraune
+      [[
+        #"さらに癒しの能力を増した、心優しい妖花",
+        #"ツタは強力な武器であり、敵への打撃や拘束が可能",
+        #"癒しの力も増し、その蜜は味方を大きく回復させる",
+        #"直接戦闘は苦手だが、回復役としては申し分ない",
+        "An alraune with a gentle heart that has strengthened their healing power. Their ivy is a powerful weapon, able to lash and restrain foes, and they can heal allies with honey. Though not great at combat, they are perfectly suited as healers.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Gi,Breastplate,Robe,Hat,Magic Hat,Fancy Cap,Buckler",
+        "Skills: Whip,White Magic,Plant",
+        "Passive: Poi/Con/Par Strike 5%,Medicine Lore II,Res Asc 25%",
+        "   Res Dea/Cli/Bli/Con/Sle/Par/Sli/Hor/Tra/Sed/Inc 50%",
+		"   Recovery Booster +50%,Whip Booster +20%",
+        "",
+      ]],
+    321 => # 慈愛の聖花 / Alraune Saint
+      [[
+        "慈愛の精神を備えた最上位のアルラウネ",
+        "鞭さばきやツタの扱いは卓越し、強力なスキルを修得",
+        "また癒しの力も増し、その蜜は死者さえ蘇らせる",
+        "回復役として万全で、非常に頼りになるだろう",
+      ],
+      [
+        "Equip: Gi,Breastplate,Robe,Hat,Magic Hat,Fancy Cap,Buckler",
+        "Skills: Whip,White Magic,Plant",
+        "Passive: Poi/Con/Par Strike 5%,Medicine Lore III",
+        "   Null Asc,Res Dea/Cli/Bli/Con/Sle/Par/Sli/Hor/Tra/Sed/Inc 25%",
+		"   Recovery Booster +50%,Whip Booster +20%",
+        "",
+      ]],
+    322 => # ワルラウネ / War Alraune
+      [[
+        #"闇に目覚めた邪悪なアルラウネ",
+        #"敵を嫐るような技を覚え、胞子や妖花で精気を搾り取る",
+        #"また攻撃的な鞭技を習得し、敵に損害をもたらす",
+        #"一般アルラウネよりも戦闘的なスキルを多く修得可能",
+        "A wicked alraune with a dark mind. They learn skills to drain energy and cripple foes with toxic spores. They also learn powerful whip skills, and are better suited to combat than most alraune.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Gi,Breastplate,Robe,Hat,Magic Hat,Fancy Cap,Buckler",
+        "Skills: Whip,Black Magic,Plant",
+        "Passive: Poi/Con/Par Strike 7%,Whip Booster +20%",
+        "   Plant Ailment Booster +50%,Res Dea 25%",
+        "   Res Asc/Cli/Bli/Con/Sle/Par/Sli/Hor/Tra/Sed/Inc 50%",
+        "",
+      ]],
+    323 => # 彼岸の魔花 / Flower of Nirvana
+      [[
+        "破壊本能を開花させた漆黒のアルラウネ",
+        "その花粉は敵を彼岸に誘い、即死させる事ができる",
+        "また強力な鞭技や、無慈悲な妖花スキルを修得する",
+        "状態異常で敵を乱す事に長け、戦闘に貢献するだろう",
+      ],
+      [
+        "Equip: Gi,Breastplate,Robe,Hat,Magic Hat,Fancy Cap,Buckler",
+        "Skills: Whip,Black Magic,Plant",
+        "Passive: Poi/Con/Par Strike 10%,Whip Booster +20%",
+        "   Plant Ailment Booster +50%,Null Asc",
+        "   Res Dea/Cli/Bli/Con/Sle/Par/Sli/Hor/Tra/Sed/Inc 25%",
+        "",
+      ]],
+    324 => # 食虫淫花 / Carnivorous Flower
+      [[
+        #"食虫植物の特性を強く発現させたアルラウネの亜種",
+        #"敵を溶解したり、捕食したりする技を覚える",
+        #"また、拘束した敵を消化する特有の鞭技を習得",
+        #"植物族の中では攻撃力が高く、直接戦闘も可能",
+        "Alraune subspecies with the characteristics of insectivorous plants. They can dissolve foes and even eat them alive. They also learn special whip skills that partially digest foes. They have high attack power among alraunes, so they can do well in combat.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Gi,Breastplate,Robe,Hat,Magic Hat,Fancy Cap,Buckler",
+        "Skills: Whip,Slime,Plant",
+        "Passive: Dig/Tra Strike 10%,Whip Booster +20%,Null Dig",
+        "   Res Dea/Asc/Cli/Bli/Con/Sle/Par/Sli/Hor/Tra/Sed/Inc 50%",
+        "",
+      ]],
+    325 => # ビーナスネペンテス / Venus Nepenthes
+      [[
+        "無数の生物を餌食にした、食虫植物型のアルラウネ",
+        "強力な捕食技を修得し、敵の群れを一気に捕食できる",
+        "その鞭技は相手を溶かし、より捕食しやすくする",
+        "能力値のバランスが良く、オールマイティに活躍可能",
+      ],
+      [
+        "Equip: Gi,Breastplate,Robe,Hat,Magic Hat,Fancy Cap,Buckler",
+        "Skills: Whip,Slime,Plant",
+        "Passive: Dig/Tra Strike 10%,Whip Booster +20%,Res Dig 50%",
+        "   Res Dea/Asc/Cli/Bli/Con/Sle/Par/Sli/Hor/Tra/Sed/Inc 25%",
+        "",
+      ]],
+    326 => # クィーンアルラウネ / Queen Alraune
+      [[
+        "全てのアルラウネの頂点に立つ女王",
+        "ツタや花粉での攻撃は、敵集団に致命的な損害を与える",
+        "鞭の扱いも卓越しており、鞭技の奥義を修得可能",
+        "白魔法も黒魔法も使用でき、回復役も攻撃役もこなせる",
+      ],
+      [
+        "Equip: Gi,Breastplate,Robe,Hat,Magic Hat,Fancy Cap,Buckler",
+        "Skills: Whip,White Magic,Black Magic,Slime,Plant",
+        "Passive: Poi/Con/Par/Dig/Tra Strike 15%,Whip Booster +20%",
+        "   Res/Null Most Status,Plant Ailment Booster +50%",
+        "   Ultimate Medicine,Recovery Booster +50%",
+        "",
+      ]],
+
+    328 => # ゾンビ / Zombie
+      [[
+        "Shambling corpse reanimated by unknown means. With no memory or sense of self to speak of, its stats amount to little else but endurance and brute force. Preferably with a club.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Clothes,Breastplate,Armor,Heavy Armor,Hat,Helmet",
+        "   Heavy Helmet",
+        "Skills: Club,Dancing,Corpse,Breath",
+        "Passive: Poi/Zom Strike 5%,Res Pleasure/Sil/Con/Sle/Par/Dig 50%",
+        "   Null Bio/Sonic/Dea/Poi/Zom,Res Cli/Sli/Hor/Tra/Sed/Inc 25%",
+      ]],
+    329 => # ハイアンデッド / High Undead
+      [[
+        #"ただのゾンビより位の高いアンデッドモンスター",
+        #"やはり複雑な思考は苦手であり、棍で敵を叩き伏せる",
+        #"体内の毒素も殺傷力を増し、攻撃技として使用可能",
+        #"攻撃力は高いが、魔法は全くの不得手である",
+        "A zombie that has grown even stronger. They still aren't very intelligent, and continue to rely on brute force. They can use the stronger toxins in their bodies for various attacks. While their attack power is great, they're very weak with and against magic.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Clothes,Breastplate,Armor,Heavy Armor,Hat,Helmet",
+        "   Heavy Helmet",
+        "Skills: Club,Dancing,Corpse,Breath",
+        "Passive: Poi/Zom Strike 10%,Res Pleasure/Sil/Con/Sle/Par/Dig 50%",
+        "   Null Bio/Sonic/Dea/Poi/Zom,Res Cli/Sli/Hor/Tra/Sed/Inc 25%",
+      ]],
+    330 => # マスターアンデッド / Master Undead
+      [[
+        "高い霊性が宿った、最上位のアンデッドモンスター",
+        "知能は低くないが、根で敵を叩き潰すのが性に合っている",
+        "また猛毒の攻撃や、敵をゾンビ化させる技も習得可能",
+        "やはり魔法は苦手だが、物理攻撃は極めて強力である",
+      ],
+      [
+        "Equip: Clothes,Breastplate,Armor,Heavy Armor,Hat,Helmet",
+		"   Heavy Helmet",
+        "Skills: Club,Dancing,Corpse,Breath",
+        "Passive: Poi/Zom Strike 15%,Res Pleasure 50%",
+		"   Res Sil/Con/Sle/Par/Dig 25%",
+		"   Null Bio/Sonic/Dea/Poi/Zom/Cli/Sli/Hor/Tra/Sed/Inc",
+        "",
+      ]],
+    331 => # マミー / Mummy
+      [[
+        #"符呪の包帯を用いて魔導蘇生させた特殊なアンデッド",
+        #"一般のゾンビに比べて魔力が高く、強力な呪法を使用する",
+        #"また呪具の包帯を伸ばし、敵を拘束することも可能",
+        #"魔力が高いので、魔法攻撃役に向いている",
+        "A special type of undead wrapped in cursed bandages. Has much stronger magical power than a zombie, and can control their bandages to bind foes. Because of their high magical power, they are well suited as casters.",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Clothes,Breastplate,Armor,Robe,Hat,Helmet,Magic Hat",
+        "Skills: Club,Black Magic,Demon Arts,Corpse",
+        "Passive: Min/Pet Strike 5%,Mag Eva +10%",
+        "   Res Pleasure/Con/Sle/Par/Fre/Sho/Slo/Sto/Dig/Stu 50%",
+        "   Null Bio/Sonic/Dea/Poi/Bli/Sil/Min/Zom/Pet",
+        "   Res Cli/Sli/Hor/Tra/Sed/Inc 25%",
+      ]],
+    332 => # イシス / Isis
+      [[
+        "さらに高度な魔術で再生した最上位のマミー",
+        "強力な呪法を使いこなし、敵集団を葬り去る事が可能",
+        "また敵を包帯で拘束し、その精を吸い尽くす",
+        "魔法攻撃役として遜色なく、非常に役に立つだろう",
+      ],
+      [
+        "Equip: Clothes,Breastplate,Armor,Robe,Hat,Helmet,Magic Hat",
+        "Skills: Club,Black Magic,Demon Arts,Corpse",
+        "Passive: Min/Pet Strike 10%,Mag Eva +10%,Res Pleasure 50%",
+		"   Res Con/Sle/Par/Fre/Sho/Slo/Sto/Dig/Stu 25%",
+		"   Null Most Status",
+        "",
+      ]],
+    333 => # ゾンビドクター / Zombie Doctor
+      [[
+        #"自分自身も死んだ肉体を備えた、狂気の医師",
+        #"医学的知識で生物汚染を起こし、周囲に毒を撒き散らす",
+        #"また敵にウィルスを注射し、ゾンビ化させる事も可能",
+        #"能力値は高くなく、回復役やサポート役に向いている",
+        "A mad doctor that has revived as a living corpse. Their knowledge of toxins lets them scatter poison on the battlefield or inject a zombification virus into foes. They have low stats, but are good in a support or healing role.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Clothes,Breastplate,Armor,Robe,Hat,Helmet,Magic Hat",
+        "Skills: Magic Science,Alchemy,Medicine,Corpse",
+        "Passive: Poi/Zom Strike 15%,Null Bio/Sonic/Dea/Poi/Zom",
+        "   Res Pleasure/Bli/Sil/Con/Sle/Par/Dig 50%",
+        "   Res Cli/Sli/Hor/Tra/Sed/Inc 25%",
+      ]],
+    334 => # デスプロフェッサー / Death Professor
+      [[
+        "様々な魔導知識を蓄積したマッドサイエンティスト",
+        "魔導科学によってバイオハザードを引き起こす事が可能",
+        "またメスさばきも一流で、強力な乱撃技を覚える",
+        "強力な魔導科学技も習得し、攻撃役としても優秀",
+      ],
+      [
+        "Equip: Clothes,Breastplate,Armor,Robe,Hat,Helmet,Magic Hat",
+        "Skills: Magic Science,Alchemy,Medicine,Corpse",
+        "Passive: Poi/Zom Strike 20%,Res Pleasure 50%",
+		"   Null Bio/Sonic/Dea/Poi/Zom/Cli/Sli/Hor/Tra/Sed/Inc",
+		"   Res Bli/Sil/Con/Sle/Par/Dig 25%",
+        "",
+      ]],
+
+    336 => # ゴースト / Ghost
+      [[
+        "Ethereal being made of dark magic and souls. These undead creatures are masters of haunted flames. Deadly with scythes and strong against physical attacks, but poor against magic.",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Robe,Magic Cap",
+        "Skills: Scythe,Black Magic,Corpse",
+        "Passive: Dea Strike 5%,Eva +30%,Mag Ref +10%",
+        "   Scythe Booster 20%,Res Phys/Dark 75%,Res Pleasure 50%",
+        "   Null Bio/Dea/Poi/Bli/Par/Min/Zom/Pet/Dig",
+        "   Res Cli/Bin/Sli/Hor/Tra/Sed/Inc 25%",
+      ]],
+    337 => # エビルミスト / Evil Mist
+      [[
+        #"高濃度の魔素を蓄積した上位のゴースト",
+        #"その魔力による発火現象で、敵全体を焼き尽くす",
+        #"鎌の扱いにも長け、より上位の鎌技を習得できる",
+        #"その性技は敵のHPを吸収可能で、攻めの幅は広い",
+        "Powerful ghost formed of highly concentrated dark magic. Can burn foes with dark magic or reap them with scythe skills. They can use lewd skills to drain life from entire groups of foes as well.",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Robe,Magic Cap",
+        "Skills: Scythe,Black Magic,Corpse",
+        "Passive: Dea Strike 10%,Eva +30%,Mag Ref +30%",
+        "   Scythe Booster 20%,Res Dark 75%,Res Phys/Pleasure 50%",
+        "   Null Bio/Dea/Poi/Bli/Par/Min/Zom/Pet/Dig",
+        "   Res Cli/Bin/Sli/Hor/Tra/Sed/Inc 25%",
+      ]],
+    338 => # マスターシャドウ / Master Shadow
+      [[
+        "闇の魔力を蓄えた最上位のゴースト",
+        "その鎌は敵を冥界に誘い、たちまち絶命させる",
+        "また、魔界の業火を呼び起こすスキルを修得可能",
+        "魔法中心の攻め役として、大いに活躍するだろう",
+      ],
+      [
+        "Equip: Robe,Magic Hat",
+        "Skills: Scythe,Black Magic,Corpse",
+        "Passive: Dea Strike 30%,Eva +30%,Mag Ref +50%",
+		"   Scythe Booster 20%,Res Dark 75%,Res Phys/Pleasure 50%",
+		"   Null Most Status",
+        "",
+      ]],
+    339 => # 魔棲の書物 / Grimoire
+      [[
+        #"書物に取り憑いたゴーストの亜種",
+        #"珍しい魔本術を修得し、攻撃から回復まで多芸",
+        #"また、自身の肉体からページを創出する事も可能",
+        #"魔導師型の能力だが、防御が高く魔法防御が低い",
+        "Subspecies of ghost that possesses a book. Learns versatile grimoire skills, and can fuel them with pages formed from their own body. Works well as a caster, but oddly has high defense and low willpower.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Robe,Magic Cap",
+        "Skills: Alchemy,Grimoire,Corpse",
+        "Passive: Eva +20%,Null Bio/Dea/Poi/Bli/Par/Min/Zom/Pet/Dig",
+        "   Res Cli/Bin/Sli/Hor/Tra/Sed/Inc 25%",
+        "",
+      ]],
+    340 => # ページオブロード / Page Lord
+      [[
+        "高い霊性を宿した、書物系の最上位ゴースト",
+        "何百年にもわたって蓄積した強大な魔力を誇る",
+        "古代の魔本術を修得可能で、多彩な効果を発動可能",
+        "魔力が高い分、魔法防御が低いので注意",
+      ],
+      [
+        "Equip: Robe,Magic Hat",
+        "Skills: Alchemy,Grimoire,Corpse",
+        "Passive: Eva +20%,Null Most Status",
+        "",
+      ]],
+    341 => # ミミック / Mimic
+      [[
+        #"宝箱に取り憑いたトラップ系のゴースト",
+        #"鋭い牙で攻撃する他、捕食系のスキルを修得可能",
+        #"また粘液も扱うことができ、消化の助けとする",
+        #"ゴースト系の中では防御力が高め",
+        "A ghost that possesses a treasure chest. Attacks with fangs and slime, and can partially digest foes and swallow them whole. Has high defense for a ghost monster.",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Robe,Magic Cap",
+        "Skills: Black Magic,Slime,Corpse",
+        "Passive: Dea Strike 20%,Cave Strength",
+        "  Preemptive Surprise Box,Res Phys/Dark 75%",
+        "   Res Bin/Sli/Hor/Tra/Sed/Inc 25%",
+        "   Null Dea/Cli/Asc/Poi/Bli/Par/Min/Zom/Pet/Dig",
+      ]],
+    342 => # パンドラ / Pandora
+      [[
+        "ミミック系モンスターの最上位種",
+        "非常に残酷な捕食技を修得し、敵を餌食にする",
+        "全体即死魔法や噛み付き技も習得し、非常に攻撃的",
+        "能力のバランスも良く、多彩な戦い方が可能",
+      ],
+      [
+        "Equip: Robe,Magic Hat",
+        "Skills: Black Magic,Slime,Corpse",
+        "Passive: Dea Strike 30%,Super Cave Strength",
+        "  Preemptive Surprise Box,Res Phys/Dark 75%",
+		"  Null Most Status",
+        "",
+      ]],
+
+    344 => # ドール / Doll
+      [[
+        "Basic construct with free will. Fights with weapons implanted within its body. In accordance with the Laws of Robotics, it gladly serves others and learns as it goes. Its artificial body blocks most ailments.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Clothes,Robe,Dress,Skimpy,Hat,Fancy Cap,Buckler",
+        "Skills: Service,Demon Arts,Artificial",
+        "Passive: Res Pleasure/Fire/Ice/Lightning/Bin/Stun 75%",
+        "   Null Bio/Sonic/Most Status",
+      ]],
+    345 => # エビルマータ / Evilmaton
+      [[
+        #"霊的要因により力が強まった人形系モンスター",
+        #"作り物の体を武器とし、仕込まれたギミックで攻撃",
+        #"また、伸びた髪で敵の精を啜ることもできる",
+        #"能力値はそう高くないが、多彩なスキルは有用",
+        "A doll that has gained strong spiritual power. Can attack with internal weaponry or use their hair to drain energy from foes. Though their stats are average, they have a variety of useful skills.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Clothes,Robe,Dress,Skimpy,Hat,Fancy Cap,Buckler",
+        "Skills: Service,Demon Arts,Artificial",
+        "Passive: Res Fire/Ice/Lightning/Bin/Stun 75%",
+        "   Res Pleasure 50%,Null Bio/Sonic/Most Status",
+      ]],
+    346 => # フォースドール / Force Doll
+      [[
+        "極めて強い霊力を蓄積した最高位の人形",
+        "強力な攻撃兵器を備え、自爆も可能である",
+        "性的奉仕も得意で、強力な快楽技も使用可能",
+        "状態異常が通用しない特徴は、極めて心強い",
+      ],
+      [
+        "Equip: Clothes,Robe,Dress,Skimpy,Hat,Fancy Cap,Buckler",
+        "Skills: Service,Demon Arts,Artificial",
+        "Passive: Res Pleasure/Fire/Ice/Lightning/Bin/Stun 50%",
+		"   Res Pleasure/Fire/Ice/Lightning/Bin/Stun 50%",
+        "",
+      ]],
+    347 => # ボーカロイド / Vocaloid
+      [[
+        #"歌唱能力を備えた芸能ドール",
+        #"様々な歌により、敵に状態異常をもたらす",
+        #"また、音を武器にしてダメージを与える事も可能",
+        #"サポート役として優秀だが、肉弾戦には向かない",
+        "A doll made to entertain with songs. Can inflict various ailments on foes with songs or deal sonic damage. Is excellent in a supportive role, but not great for combat.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Clothes,Robe,Dress,Skimpy,Hat,Fancy Cap",
+        "Skills: Singing,Service,Artificial",
+        "Passive: Eva/Mag Eva +10%,Res Fire/Ice/Bin/Stun 75%",
+        "   Res Pleasure 50%,Null Bio/Sonic/Most Status",
+      ]],
+    348 => # アカデミードール / Academy Doll
+      [[
+        "歌って踊れる最高位の魔導ドール",
+        "正確無比なダンスや歌は、様々な特殊効果をもたらす",
+        "修得できる補助技や攻撃技は心強く、非常に有用",
+        "多彩なスキルは、戦局に大いに貢献するだろう",
+      ],
+      [
+        "Equip: Clothes,Robe,Dress,Skimpy,Hat,Fancy Cap",
+        "Skills: Dancing,Singing,Service,Artificial",
+        "Passive: Eva/Mag Eva +10%,Res Fire/Ice 75%",
+		"   Res Ple/Bin/Stun 50%,Null Bio/Sonic/Most Status",
+        "",
+      ]],
+    349 => # ゴーレム / Golem
+      [[
+        #"魔導科学により製造された大型人造生命体",
+        #"石や金属で造られており、その体は非常に頑丈",
+        #"またパワーも凄まじく、圧倒的な力を見せ付ける",
+        #"巨体を武器にした物理スキルを複数修得可能",
+        "Giant doll-like creature manufactured via magic science. Has a durable body made of stone or metal, and has tremendous physical strength. Learns several skills that make great use of its massive body.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Clothes,Breastplate,Heavy Armor,Helmet,Fancy Cap",
+        "Skills: Artificial",
+        "Passive: Endure,Res Phys/Fire/Ice/Lightning/Bin/Stun 75%",
+        "   Res Pleasure 50%,Null Bio/Sonic/Most Status",
+      ]],
+    350 => # マスターゴーレム / Master Golem
+      [[
+        "魔導で強化された最上位のゴーレム",
+        "その肉体が生み出すパワーは圧倒的である",
+        "非常に強力な物理スキルを複数修得",
+        "防御力も極めて高く、肉弾戦に向いている",
+      ],
+      [
+        "Equip: Clothes,Breastplate,Heavy Armor,Helmet,Fancy Cap",
+        "Skills: Artificial",
+        "Passive: Super Endure,Res Ple/Fire/Ice/Lightning/Bin/Stun 50%",
+		"   Res Phys/Bur/Fre/Sho/Slo/Sto/Min 75%",
+		"   Null Bio/Sonic/Most Status",
+        "",
+      ]],
+    351 => # 下位アポトーシス / Lowly Apoptosis
+      [[
+        #"タルタロスに出現する未知の存在",
+        #"正体は全くの不明で、生命体であるかも疑わしい",
+        #"機械兵器を自在に使いこなすほか、闇の力を使用",
+        #"能力は極めて高く、属性や状態異常にも強い",
+        "Anomalous entity that appears in Tartarus Rifts. Their true nature is unknown, and it's uncertain if they're even a living creature. They can use makina, as well as dark magic. They have high stats and incredible elemental and ailment resistance.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Clothes,Breastplate,Shell,Robe,Dress,Skimpy,Hat",
+        "   Fancy Cap,Helmet,Buckler,Shield",
+        "Skills: Gun,Time Magic,Dark,Makina,Artificial",
+        "Passive: Res Fire/Ice/Lightning 75%,Res Pleasure/Bin/Stu 50%",
+        "   Null Bio/Sonic/Almost All Status",
+      ]],
+    352 => # 上位アポトーシス / High Apoptosis
+      [[
+        "アポトーシスの中でも支配級に属する個体",
+        "その正体も存在意義も、全くの不明である",
+        "機械兵器や闇の力を使いこなし、時間にも干渉",
+        "能力は多岐に渡り、戦闘能力も非常に高い",
+      ],
+      [
+        "Equip: Clothes,Breastplate,Shell,Robe,Dress,Skimpy,Hat",
+        "   Fancy Cap,Helmet,Buckler,Shield",
+        "Skills: Gun,Time Magic,Dark,Makina,Artificial",
+        "Passive: Res Fire/Ice/Lightning 75%,Res Pleasure/Stu 50%",
+		"   Null Bio/Sonic/Almost All Status",
+        "",
+      ]],
+
+    354 => # キメラ / Chimera
+      [[
+        "Artificial monster made by state-of-the-art biotechnology. Amalgamation of superior parts grants it superb fighting power. Can breath fire, ice, and even lightning. Comes with basic self-repair systems and fantastic vitality.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Breastplate,Shell,Skimpy,Hat,Helmet,Buckler,Shield",
+        "Skills: Beast,Artificial,Breath",
+        "Passive: Res Fire/Ice/Lightning/Bio/Sonic/Bin 75%",
+        "   Res Most Status 50%,Null Poi",
+      ]],
+    355 => # 三種混合体 / Tri Chimera
+      [[
+        #"複数のモンスターを元にして造り出された複合キメラ",
+        #"選り抜かれた肉体を持ち、強力な破壊ブレスを放射可能",
+        #"また他の生命体を取り込み、吸収する事ができる",
+        #"能力値も非常に高く、大いに活躍するだろう",
+        "A stronger chimera formed from multiple powerful monsters. It has a strong body and powerful breath attacks, and can assimilate foes into its body. Has overall high stats, and can take an active role in combat.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Breastplate,Shell,Skimpy,Hat,Helmet,Buckler,Shield",
+        "Skills: Beast,Artificial,Breath",
+        "Passive: Res Fire/Ice/Lightning/Bio/Sonic/Bin 75%",
+        "   Res Most Status 50%,Null Poi",
+      ]],
+    356 => # ギガミュータント / Giga Mutant
+      [[
+        "完全なる生命体として造り出された最高のキメラ",
+        "その完成度は極めて高く、圧倒的な戦闘能力を誇る",
+        "また闇の波動を凝縮したブレスは、極めて強力",
+        "魔力以外の能力も極めて高く、非常に頼りになる",
+      ],
+      [
+        "Equip: Breastplate,Shell,Skimpy,Hat,Helmet,Buckler,Shield",
+        "Skills: Beast,Artificial,Breath",
+        "Passive: Res Fire/Ice/Lightning/Bio/Sonic 75%,Res Bind 50%",
+		"   Res Most Status 25%,Null Dea/Asc/Cli/Poi/Zom/Pet/Dig",
+        "",
+      ]],
+    357 => # 魔導キメラ / Magical Chimera
+      [[
+        #"妖魔の遺伝子を加え、魔力を主眼に造られたキメラ",
+        #"その施術により、強大な魔力を与えられている",
+        #"人造精霊の召喚機能も備わり、戦闘能力は高い",
+        #"魔力以外の能力も低くなく、肉弾戦にも対応可能",
+        "A chimera with yoma genes that grant it greater magical power. Can use various types of magic, including summoning magic. They are great in combat, and while focusing on magic they don't slouch in their other stats either.",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Breastplate,Shell,Robe,Skimpy,Hat,Helmet,Magic Hat",
+        "   Buckler,Shield",
+        "Skills: White Magic,Black Magic,Summoning,Demon Arts,Artificial",
+        "   Breath",
+        "Passive: Res Fire/Ice/Lightning/Bio/Sonic/Bin 75%",
+        "   Res Most Status 50%,Null Poi",
+      ]],
+    358 => # フォースミュータント / Force Mutant
+      [[
+        "さらに魔力を高めた最上位の魔導キメラ",
+        "生きた魔導炉と言えるほどの出力を発揮する",
+        "人造精霊を召喚するほか、特殊電磁場を構成可能",
+        "また、聖エネルギーを凝縮したブレスを使用できる",
+      ],
+      [
+        "Equip: Breastplate,Shell,Robe,Skimpy,Hat,Helmet,Magic Hat",
+        "   Buckler,Shield",
+        "Skills: White Magic,Black Magic,Summoning,Demon Arts,Artificial",
+        "   Breath",
+        "Passive: Res Fire/Ice/Lightning/Bio/Sonic 50%,Res Bind 50%",
+		"   Res Most Status 25%,Null De/Asc/Cli/Poi/Zom/Pet/Dig",
+        "",
+      ]],
+    359 => # キメラロイド / Chimeraroid
+      [[
+        #"機械組織を多く組み込んだ特殊なタイプのキメラ",
+        #"全身に機械兵器を備え、圧倒的な火力で敵を滅ぼす",
+        #"修復機能も備わり、戦闘性能は極めて高い",
+        #"攻撃と防御に優れているが、鈍重で魔法は苦手",
+        "A special chimera merged with mechanical body parts. Can destroy foes with integrated weaponry or overwhelming heat. Has self restoration functions, and high combat ability. Has excellent physical stats, but weak magic and willpower.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Breastplate,Shell,Skimpy,Hat,Helmet,Buckler,Shield",
+        "Skills: Gun,Makina,Artificial",
+        "Passive: Res Pleasure/Fire/Ice 50%,Null Bio/Sonic/Most Status",
+      ]],
+    360 => # 機神 / Machine God
+      [[
+        "最高峰の技術で産み出された究極の機械キメラ",
+        "全身の機械兵器により、際限ない破壊をもたらす",
+        "銃器の使用にも優れ、銃奥義を修得可能",
+        "能力値や耐性も極めて高く、戦場で敵はいない",
+      ],
+      [
+        "Equip: Breastplate,Shell,Skimpy,Hat,Helmet,Buckler,Shield",
+        "Skills: Gun,Makina,Artificial",
+        "Passive: Res Pleasure/Fire/Ice 50%,Null Bio/Sonic/Most Status",
+        "",
+      ]],
+
+    362 => # 下位天使 / Lowly Angel
+      [[
+        "The vanguard in the armies of Heaven. Their holy power can be used for both attacking and healing. Skilled with swords and holy techniques. Balanced stats and excellent resistances.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Clothes,Armor,Heavy Armor,Robe,Dress,Skimpy,Hat,Helmet",
+        "   Heavy Helmet,Magic Hat,Fancy Cap,Buckler,Shield,Heavy Shield",
+        "Skills: Dagger,Sword,Rapier,White Magic,Holy",
+        "Passive: Body of Divine Protection,Eva/Mag Eva +10%",
+        "   Res Fire/Ice/Lightning/Holy/Bio/Sonic 50%,Res/Null Most Status",
+      ]],
+    363 => # 上位天使 / High Angel
+      [[
+        #"通常は地上に現界しない上位天使",
+        #"神より授かった聖なる力で邪悪に裁きを与える",
+        #"また、神敵を滅ぼす強力な剣技も修得可能",
+        #"攻撃と回復の両面で優れ、戦闘に貢献するだろう",
+        "A high ranking angel that rarely comes to the mortal realm. Uses powerful holy arts and sword skills to deliver judgment unto foes. Great at both attacking and healing, is a force to reckon with on the battlefield.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Clothes,Armor,Heavy Armor,Robe,Dress,Skimpy,Hat,Helmet",
+        "   Heavy Helmet,Magic Hat,Fancy Cap,Buckler,Shield,Heavy Shield",
+        "Skills: Dagger,Sword,Rapier,White Magic,Holy",
+        "Passive: Body of Grace,Eva/Mag Eva +10%",
+        "   Res Fire/Ice/Lightning/Holy/Bio/Sonic 50%,Res/Null Most Status",
+      ]],
+    364 => # 熾天使 / Seraph
+      [[
+        "神に認められ、最上級の位に就いた天使",
+        "その力は邪悪を滅ぼし、善なる者に奇跡をもたらす",
+        "修得できる強力な剣技は、正義の執行そのものである",
+        "全能力値が極めて高く、万能の働きを見せるだろう",
+      ],
+      [
+        "Equip: Clothes,Armor,Heavy Armor,Robe,Dress,Skimpy,Hat,Helmet",
+        "   Heavy Helmet,Magic Hat,Fancy Cap,Buckler,Shield,Heavy Shield",
+        "Skills: Dagger,Sword,Rapier,White Magic,Holy",
+        "Passive: Body of Miracles,Eva/Mag Eva +10%",
+		"   Res Fire/Ice/Lightning/Bio/Sonic 25%,Res/Null Most Status",
+        "",
+      ]],
+    365 => # 堕天使 / Fallen Angel
+      [[
+        #"最上位でありながら、神に反逆し地に堕ちた天使",
+        #"その剣は聖なる力を備えながらも、神の意に沿わない",
+        #"攻撃的なスキルを複数修得し、高い戦闘力を誇る",
+        #"また、己の体を思念で癒やす事も可能だという",
+        "A high angel that rebelled against the goddess and fell from Heaven. Though they still hold holy power, they don't follow the will of the goddess. They gain mighty offensive skills with the power to back them up. They can also heal themselves through force of will alone.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Clothes,Armor,Heavy Armor,Robe,Dress,Skimpy,Hat,Helmet",
+        "   Heavy Helmet,Magic Hat,Fancy Cap,Buckler,Shield,Heavy Shield",
+        "Skills: Dagger,Sword,Rapier,Black Magic,Holy,Dark",
+        "Passive: Body of Miracles,Eva/Mag Eva +10%,Res Bio/Sonic 25%",
+        "   Res Fire/Ice/Lightning/Dark 50%,Res/Null Most Status",
+		"   Res Holy 50%",
+      ]],
+    366 => # ヴァルキリー / Valkyrie
+      [[
+        #"神敵を滅ぼす役目が与えられた戦天使",
+        #"天使の中でも武芸に特化し、強力な槍技を習得可能",
+        #"その一撃一撃に聖なる力がこもり、悪を討ち滅ぼす",
+        #"またMPを消費し、SPを一気にチャージする事が可能",
+        "An angel of war that smites the foes of the goddess. Learns powerful holy arts to turn evil to dust with a single blow. They can also consume MP to gain a burst of SP.",
+        "",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Clothes,Armor,Heavy Armor,Robe,Dress,Skimpy,Hat,Helmet",
+        "   Heavy Helmet,Magic Hat,Fancy Cap,Buckler,Shield,Heavy Shield",
+        "Skills: Dagger,Sword,Rapier,Spear,Holy,Spellblade",
+        "Passive: Body of Grace,Eva/Mag Eva +10%,Res Physical 75%",
+        "   Res Fire/Ice/Lightning/Holy/Bio/Sonic 50%,Res/Null Most Status",
+      ]],
+    367 => # ロードヴァルキリア / Valkyrie Lord
+      [[
+        "武勇の頂点を極めた最上位のヴァルキリー",
+        "その槍技は、あらゆる神敵を討ち滅ぼすという",
+        "SPチャージのスキルも強力で、槍技を連発可能",
+        "アビリティ「全体攻撃」も修得し、無類の力を誇る",
+      ],
+      [
+        "Equip: Clothes,Armor,Heavy Armor,Robe,Dress,Skimpy,Hat,Helmet",
+        "   Heavy Helmet,Magic Hat,Fancy Cap,Buckler,Shield,Heavy Shield",
+        "Skills: Dagger,Sword,Rapier,Spear,Holy,Spellblade",
+        "Passive: Body of Miracles,Eva/Mag Eva +10%,Res Physical 75%",
+		"   Res Fire/Ice/Lightning/Holy/Bio/Sonic 50%,Res/Null Most Status",
+        "",
+      ]],
+    368 => # キューピッド / Cupid
+      [[
+        #"人間の感情や情欲を司る愛天使",
+        #"その弓矢は、射られた相手の心をかき乱す",
+        #"また、邪悪を滅ぼす攻撃弓技も習得可能",
+        #"癒しの力にも優れ、回復技も得意としている",
+        "An angel of love that controls human lust and desire. Can use a bow to control a foe's heart or smite them with holy power. Also learns powerful healing skills.",
+        "",
+        "",
+        "",
+      ],
+      [
+        "Equip: Clothes,Gi,Armor,Robe,Dress,Skimpy,Hat,Helmet,Magic Hat",
+        "   Fancy Cap,Buckler",
+        "Skills: Bow,White Magic,Black Magic,Holy,Sexcraft",
+        "Passive: Sed Strike 10%,Body of Grace,Eva/Mag Eva +30%",
+        "   Res Holy 50%,Res Fire/Ice/Lightning/Bio/Sonic 25%",
+        "   Res/Null Most Status",
+      ]],
+    369 => # 淫欲のクピド / Cupid of Lust
+      [[
+        "非常に高い聖力を備えた最上位のキューピッド",
+        "弓の腕前も神業であり、あらゆる邪悪を射貫く",
+        "聖なる攻撃技や回復技など、修得技は極めて多彩",
+        "性技まで修得し、その手数は非常に幅広い",
+      ],
+      [
+        "Equip: Clothes,Gi,Armor,Robe,Dress,Skimpy,Hat,Helmet,Magic Hat",
+        "   Fancy Cap,Buckler",
+        "Skills: Bow,White Magic,Black Magic,Holy,Sexcraft",
+        "Passive: Sed Strike 20%,Body of Miracles,Eva/Mag Eva +30%",
+		"   Res Holy 50%,Res Fire/Ice/Lightning/Bio/Sonic 25%",
+		"   Res/Null Most Status",
+        "",
+      ]],
+
+  }
+end
+

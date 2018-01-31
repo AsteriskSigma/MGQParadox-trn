@@ -1,0 +1,262 @@
+#==============================================================================
+# ■ Game_Action
+#------------------------------------------------------------------------------
+# It is a class dealing with battle behavior. This class is Game_Battler Used inside class
+# I will.
+#==============================================================================
+
+class Game_Action
+  #--------------------------------------------------------------------------
+  # ● Public instance variables
+  #--------------------------------------------------------------------------
+  attr_reader   :subject                  # Action entity
+  attr_reader   :forcing                  # Force flag of battle action
+  attr_reader   :item                     # Skill/ item
+  attr_accessor :target_index             # Target index
+  attr_reader   :value                    # Evaluation value for automatic battle
+  #--------------------------------------------------------------------------
+  # ● Object initialization
+  #--------------------------------------------------------------------------
+  def initialize(subject, forcing = false)
+    @subject = subject
+    @forcing = forcing
+    clear
+  end
+  #--------------------------------------------------------------------------
+  # ● Clear
+  #--------------------------------------------------------------------------
+  def clear
+    @item = Game_BaseItem.new
+    @target_index = -1
+    @value = 0
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire ally unit
+  #--------------------------------------------------------------------------
+  def friends_unit
+    subject.friends_unit
+  end
+  #--------------------------------------------------------------------------
+  # ● Obtain enemy units
+  #--------------------------------------------------------------------------
+  def opponents_unit
+    subject.opponents_unit
+  end
+  #--------------------------------------------------------------------------
+  # ● Set battle behavior of enemy characters
+  #     action : RPG::Enemy::Action
+  #--------------------------------------------------------------------------
+  def set_enemy_action(action)
+    if action
+      set_skill(action.skill_id)
+    else
+      clear
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Set normal attack
+  #--------------------------------------------------------------------------
+  def set_attack
+    set_skill(subject.attack_skill_id)
+    self
+  end
+  #--------------------------------------------------------------------------
+  # ● Set Defense
+  #--------------------------------------------------------------------------
+  def set_guard
+    set_skill(subject.guard_skill_id)
+    self
+  end
+  #--------------------------------------------------------------------------
+  # ● Set skills
+  #--------------------------------------------------------------------------
+  def set_skill(skill_id)
+    @item.object = $data_skills[skill_id]
+    self
+  end
+  #--------------------------------------------------------------------------
+  # ● Set items
+  #--------------------------------------------------------------------------
+  def set_item(item_id)
+    @item.object = $data_items[item_id]
+    self
+  end
+  #--------------------------------------------------------------------------
+  # ● Retrieve item object
+  #--------------------------------------------------------------------------
+  def item
+    @item.object
+  end
+  #--------------------------------------------------------------------------
+  # ● Normal attack determination
+  #--------------------------------------------------------------------------
+  def attack?
+    item == $data_skills[subject.attack_skill_id]
+  end
+  #--------------------------------------------------------------------------
+  # ● Random target
+  #--------------------------------------------------------------------------
+  def decide_random_target
+    if item.for_dead_friend?
+      target = friends_unit.random_dead_target
+    elsif item.for_friend?
+      target = friends_unit.random_target
+    else
+      target = opponents_unit.random_target
+    end
+    if target
+      @target_index = target.index
+    else
+      clear
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Set confused behavior
+  #--------------------------------------------------------------------------
+  def set_confusion
+    set_attack
+  end
+  #--------------------------------------------------------------------------
+  # ● Action Preparation
+  #--------------------------------------------------------------------------
+  def prepare
+    set_confusion if subject.confusion? && !forcing
+  end
+  #--------------------------------------------------------------------------
+  # ● Determining whether action is valid or not
+  #    By event command[Force battle behavior] When not, state restriction
+  #    If the scheduled action can not be performed due to out of items or items, false is returned.
+  #--------------------------------------------------------------------------
+  def valid?
+    (forcing && item) || subject.usable?(item)
+  end
+  #--------------------------------------------------------------------------
+  # ● Calculation of behavioral speed
+  #--------------------------------------------------------------------------
+  def speed
+    speed = subject.agi + rand(5 + subject.agi / 4)
+    speed += item.speed if item
+    speed += subject.atk_speed if attack?
+    speed
+  end
+  #--------------------------------------------------------------------------
+  # ● Arranging targets
+  #--------------------------------------------------------------------------
+  def make_targets
+    if !forcing && subject.confusion?
+      [confusion_target]
+    elsif item.for_opponent?
+      targets_for_opponents
+    elsif item.for_friend?
+      targets_for_friends
+    else
+      []
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Target during confusion
+  #--------------------------------------------------------------------------
+  def confusion_target
+    case subject.confusion_level
+    when 1
+      opponents_unit.random_target
+    when 2
+      if rand(2) == 0
+        opponents_unit.random_target
+      else
+        friends_unit.random_target
+      end
+    else
+      friends_unit.random_target
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Targets against enemies
+  #--------------------------------------------------------------------------
+  def targets_for_opponents
+    if item.for_random?
+      Array.new(item.number_of_targets) { opponents_unit.random_target }
+    elsif item.for_one?
+      num = 1 + (attack? ? subject.atk_times_add.to_i : 0)
+      if @target_index < 0
+        [opponents_unit.random_target] * num
+      else
+        [opponents_unit.smooth_target(@target_index)] * num
+      end
+    else
+      opponents_unit.alive_members
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Target for ally
+  #--------------------------------------------------------------------------
+  def targets_for_friends
+    if item.for_user?
+      [subject]
+    elsif item.for_dead_friend?
+      if item.for_one?
+        [friends_unit.smooth_dead_target(@target_index)]
+      else
+        friends_unit.dead_members
+      end
+    elsif item.for_friend?
+      if item.for_one?
+        [friends_unit.smooth_target(@target_index)]
+      else
+        friends_unit.alive_members
+      end
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Value evaluation of action (for automatic battle)
+  #    @value and @target_index Automatically.
+  #--------------------------------------------------------------------------
+  def evaluate
+    @value = 0
+    evaluate_item if valid?
+    @value += rand if @value > 0
+    self
+  end
+  #--------------------------------------------------------------------------
+  # ● Skill / item rating
+  #--------------------------------------------------------------------------
+  def evaluate_item
+    item_target_candidates.each do |target|
+      value = evaluate_item_with_target(target)
+      if item.for_all?
+        @value += value
+      elsif value > @value
+        @value = value
+        @target_index = target.index
+      end
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Obtain skill / item usage target candidates
+  #--------------------------------------------------------------------------
+  def item_target_candidates
+    if item.for_opponent?
+      opponents_unit.alive_members
+    elsif item.for_user?
+      [subject]
+    elsif item.for_dead_friend?
+      friends_unit.dead_members
+    else
+      friends_unit.alive_members
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Skill / item evaluation (target specification)
+  #--------------------------------------------------------------------------
+  def evaluate_item_with_target(target)
+    target.result.clear
+    target.make_damage_value(subject, item)
+    if item.for_opponent?
+      return target.result.hp_damage.to_f / [target.hp, 1].max
+    else
+      recovery = [-target.result.hp_damage, target.mhp - target.hp].min
+      return recovery.to_f / target.mhp
+    end
+  end
+end
+

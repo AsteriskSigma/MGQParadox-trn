@@ -1,0 +1,9 @@
+// EVENT 1381
+Name "Conversation: Queen Harpy"
+
+ChangeVariable(25,25,0,0,0)
+ShowMessageFace("",0,0,2,1)
+ShowMessage("I am rejecting the conversation!")
+EndEventProcessing()
+0()
+

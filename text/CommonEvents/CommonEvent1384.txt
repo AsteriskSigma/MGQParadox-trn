@@ -1,0 +1,4 @@
+"会話：玉藻" -> "Conversation: Ball algae"
+"【玉藻】" -> "【Tamago Algae】"
+"問答は無用よ……" -> "Question is useless ......"
+"玉藻は会話を拒絶している！" -> "Tamako is rejecting the conversation!"

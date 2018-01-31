@@ -1,0 +1,1009 @@
+=begin
+=Infrastructure system/Enchantment name
+
+
+
+
+==Change log
+  Date     Version Author Comment
+==15/09/03 2.0.2   Tris integration J to U Q T
+==17/05/16 2.0.4   Tris integrated V ~ W V
+==17/09/21 2.2.0   Adjustment for sunflower enchant
+=end
+
+#==============================================================================
+# ■ RPG::BaseItem
+#==============================================================================
+class RPG::BaseItem
+	#--------------------------------------------------------------------------
+	# ● Get enchantment name array
+	#--------------------------------------------------------------------------
+	
+	#~ def enchant_names
+	#~ names = []
+	
+	#~ method_table = {
+	#~ FEATURE_ELEMENT_RATE      => :element_rate_name,
+	#~ FEATURE_DEBUFF_RATE       => :debuff_rate_name,
+	#~ FEATURE_STATE_RATE        => :state_rate_name,
+	#~ FEATURE_STATE_RESIST      => :state_resist_name,
+	#~ FEATURE_PARAM             => :param_name,
+	#~ FEATURE_XPARAM            => :xparam_name,
+	#~ FEATURE_SPARAM            => :sparam_name,
+	#~ FEATURE_ATK_ELEMENT       => :atk_element_name,
+	#~ FEATURE_ATK_STATE         => :atk_state_name,
+	#~ FEATURE_ATK_SPEED         => :atk_speed_name,
+	#~ FEATURE_ATK_TIMES         => :atk_times_name,
+	#~ FEATURE_STYPE_ADD         => :stype_add_name,
+	#~ FEATURE_STYPE_SEAL        => :stype_seal_name,
+	#~ FEATURE_EQUIP_WTYPE       => :equip_wtype_name,
+	#~ FEATURE_EQUIP_ATYPE       => :equip_atype_name,
+	#~ FEATURE_EQUIP_FIX         => :equip_fix_name,
+	#~ FEATURE_EQUIP_SEAL        => :equip_seal_name,
+	#~ FEATURE_SLOT_TYPE         => :slot_type_name,
+	#~ FEATURE_ACTION_PLUS       => :action_plus_name,
+	#~ FEATURE_SPECIAL_FLAG      => :special_flag_name,
+	#~ FEATURE_COLLAPSE_TYPE     => :collaplse_type_name,
+	#~ FEATURE_PARTY_ABILITY     => :party_ability_name,
+	#~ FEATURE_XPARAM_EX         => :xparam_ex_name,
+	#~ FEATURE_PARTY_EX_ABILITY  => :party_ex_ability_name,
+	#~ FEATURE_BATTLER_ABILITY   => :battler_ability_name,
+	#~ FEATURE_MULTI_BOOSTER     => :multi_booster_name,
+	#~ FEATURE_DUMMY_ENCHANT     => :dummy_enchant_name,  
+	#~ FEATURE_TERRAIN_BOOSTER   => :terrain_booster_name,
+	#~ FEATURE_EQUIP_MASTERY     => :equip_mastery_name,
+	#~ }
+	
+	#~ dummy = nil
+	#~ self.features.sort_by{|ft| [ft.code, ft.data_id]}.each{|ft|
+	#~ method_name = method_table[ft.code]
+	#~ if method_name == :dummy_enchant_name
+	#~ dummy ||=[]
+	#~ dummy += (send(method_name, ft))
+	#~ elsif method_name
+	#~ data = send(method_name, ft)
+	#~ names.push(data) if data
+	#~ end
+	#~ }
+	#~ names = dummy if dummy
+	#~ return names.flatten.compact
+	#~ end
+	
+	def enchant_names
+		enchant_item? ? get_enchant_dummy(@base_features)+ @enchant_features.map{|features|get_enchant_names(features)}.flatten: get_enchant_names(self.features)
+	end
+	
+	def get_enchant_names(features)
+		names = []
+		dummy = nil
+		features.sort_by{|ft| [ft.code, ft.data_id]}.each{|ft|
+			method_name = enchant_method_table[ft.code]
+			if method_name == :dummy_enchant_name
+				dummy ||=[]
+				dummy += (send(method_name, ft))
+			elsif method_name
+				data = send(method_name, ft)
+				names.push(data) if data
+			end
+		}
+		names = dummy if dummy
+		return names.flatten.compact
+	end
+	
+	def get_enchant_dummy(features)
+		dummy = []
+		features.sort_by{|ft| [ft.code, ft.data_id]}.each{|ft|
+			method_name = enchant_method_table[ft.code]
+			if method_name == :dummy_enchant_name
+				dummy ||=[]
+				dummy += (send(method_name, ft))
+			end
+		}
+		return dummy.flatten.compact
+	end
+	
+	def enchant_method_table
+		{
+			FEATURE_ELEMENT_RATE      => :element_rate_name,
+			FEATURE_DEBUFF_RATE       => :debuff_rate_name,
+			FEATURE_STATE_RATE        => :state_rate_name,
+			FEATURE_STATE_RESIST      => :state_resist_name,
+			FEATURE_PARAM             => :param_name,
+			FEATURE_XPARAM            => :xparam_name,
+			FEATURE_XPARAM_EX         => :xparam_name,
+			FEATURE_SPARAM            => :sparam_name,
+			FEATURE_ATK_ELEMENT       => :atk_element_name,
+			FEATURE_ATK_STATE         => :atk_state_name,
+			FEATURE_ATK_SPEED         => :atk_speed_name,
+			FEATURE_ATK_TIMES         => :atk_times_name,
+			FEATURE_STYPE_ADD         => :stype_add_name,
+			FEATURE_STYPE_SEAL        => :stype_seal_name,
+			FEATURE_EQUIP_WTYPE       => :equip_wtype_name,
+			FEATURE_EQUIP_ATYPE       => :equip_atype_name,
+			FEATURE_EQUIP_FIX         => :equip_fix_name,
+			FEATURE_EQUIP_SEAL        => :equip_seal_name,
+			FEATURE_SLOT_TYPE         => :slot_type_name,
+			FEATURE_ACTION_PLUS       => :action_plus_name,
+			FEATURE_SPECIAL_FLAG      => :special_flag_name,
+			FEATURE_COLLAPSE_TYPE     => :collaplse_type_name,
+			FEATURE_PARTY_ABILITY     => :party_ability_name,
+			FEATURE_XPARAM_EX         => :xparam_ex_name,
+			FEATURE_PARTY_EX_ABILITY  => :party_ex_ability_name,
+			FEATURE_BATTLER_ABILITY   => :battler_ability_name,
+			FEATURE_MULTI_BOOSTER     => :multi_booster_name,
+			FEATURE_DUMMY_ENCHANT     => :dummy_enchant_name,  
+			FEATURE_TERRAIN_BOOSTER   => :terrain_booster_name,
+			FEATURE_EQUIP_MASTERY     => :equip_mastery_name,
+		}
+	end
+	#--------------------------------------------------------------------------
+	# ● Retrieve the number of sockets character string
+	#--------------------------------------------------------------------------  
+	def socket_name
+		return "Sockets:#{@socket_num}"
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquisition of attribute validity name
+	#--------------------------------------------------------------------------  
+	def element_rate_name(ft)
+		name = $data_system.elements[ft.data_id]
+		rate = (ft.value * 100.0).to_i
+		return ft.value == 0.0 ? "Nullify #{name}" : "#{100 < rate ?  "#{name} ""Weak" : "Resist"" #{name}"} #{rate}%"
+	end
+	#--------------------------------------------------------------------------
+	# ● Obtaining weakness validity name
+	#--------------------------------------------------------------------------  
+	def debuff_rate_name(ft)
+		name = Vocab::param(ft.data_id)
+		rate = (ft.value * 100.0).to_i
+		return ft.value == 0.0 ? "Nullify Lower #{name}" : "#{100 < rate ?  "Lower #{name} ""Weak" : "Resist Lower"" #{name}"} #{rate}%"
+	end
+	#--------------------------------------------------------------------------
+	# ● Obtaining the state validity name
+	#--------------------------------------------------------------------------  
+	def state_rate_name(ft)
+		name = $data_states[ft.data_id].name
+		rate = (ft.value * 100.0).to_i
+		return ft.value == 0.0 ? "Nullify #{name}" : "#{100 < rate ?  "#{name} ""Weak" : "Resist"" #{name}"} #{rate}%"
+	end
+	#--------------------------------------------------------------------------
+	# ● Obtain state invalidation name
+	#--------------------------------------------------------------------------  
+	def state_resist_name(ft)
+		name = $data_states[ft.data_id].name
+		return "Nullify #{name}"
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquisition of normal ability correction name
+	#--------------------------------------------------------------------------  
+	def param_name(ft)
+		name = Vocab::param(ft.data_id)
+		rate = (ft.value * 100.0).to_i
+		return "#{name} #{100 < rate ? "+" : ""}#{rate-100}%"
+	end  
+	#--------------------------------------------------------------------------
+	# ● Acquisition of added ability correction name
+	#--------------------------------------------------------------------------  
+	def xparam_name(ft)
+		xparam_name_table = [
+			"Hit Rate", 
+			"Evasion Rate",
+			"Crit Rate",
+			"Crit Evasion Rate",
+			"Magic Evasion Rate",
+			"Magic Reflect",
+			"Counter Rate",
+			"HP Regen",
+			"MP Regen",
+			"SP Regen",
+		]
+		name = xparam_name_table[ft.data_id]
+		rate = (ft.value * 100.0).to_i
+		return "#{name} #{rate}%"
+	end  
+	#--------------------------------------------------------------------------
+	# ● Acquisition of Special Ability Correction Name
+	#--------------------------------------------------------------------------  
+	def sparam_name(ft)
+		sparam_name_table = [
+			"Target Rate", 
+			"Guard Effect",
+			"Metabolism",
+			"Healing Item Power",
+			"MP Cost",
+			"SP Charge",
+			"Physical Damage",
+			"Magical Damage",
+			"Environmental Damage",
+			"Exp Value",
+		]
+		name = sparam_name_table[ft.data_id]
+		rate = (ft.value * 100.0).to_i
+		return "#{name} #{rate}%"
+	end
+	#--------------------------------------------------------------------------
+	# ● Obtain attribute name at attack time
+	#--------------------------------------------------------------------------  
+	def atk_element_name(ft)
+		return nil unless (2..37).include?(ft.data_id)
+		name = $data_system.elements[ft.data_id]
+		suffix = ((2..10).to_a + [35, 36]).include?(ft.data_id) ? " Strike" : " Killer"
+		return "#{name}#{suffix}"
+	end
+	#--------------------------------------------------------------------------
+	# Obtaining state name when attacking
+	#--------------------------------------------------------------------------  
+	def atk_state_name(ft)
+		name = $data_states[ft.data_id].name
+		return "#{name} Strike"
+	end
+	#--------------------------------------------------------------------------
+	# Acquisition of attack speed correction name
+	#--------------------------------------------------------------------------  
+	def atk_speed_name(ft)
+		return "Attack Priority"
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquisition of additional attack number name
+	#--------------------------------------------------------------------------  
+	def atk_times_name(ft)
+		return "#{ft.value.to_i + 1} Normal Attacks"
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire skill type additional name
+	#--------------------------------------------------------------------------  
+	def stype_add_name(ft)
+		name = $data_system.skill_types[ft.data_id]
+		return "Skill Use:#{name}"
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire Skill Type Seal Name
+	#--------------------------------------------------------------------------  
+	def stype_seal_name(ft)
+		name = $data_system.skill_types[ft.data_id]
+		return "Seal:#{name}"
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire weapon-equipped name
+	#--------------------------------------------------------------------------  
+	def equip_wtype_name(ft)
+		name = $data_system.weapon_types[ft.data_id]
+		return "Equip:#{name}"
+	end
+	#--------------------------------------------------------------------------
+	# ● Obtain armor equipable possible name
+	#--------------------------------------------------------------------------  
+	def equip_atype_name(ft)
+		name = $data_system.armor_types[ft.data_id]
+		return "Equip:#{name}"
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquisition of equipment fixed name
+	#--------------------------------------------------------------------------  
+	def equip_fix_name(ft)
+		name = Vocab.etype(ft.data_id)
+		return "Equip Only:#{name}"
+	end
+	#--------------------------------------------------------------------------
+	# ● Equipment acquisition of seal name
+	#--------------------------------------------------------------------------  
+	def equip_seal_name(ft)
+		name = Vocab.etype(ft.data_id)
+		return "Block Equip:#{name}"
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire slot type name
+	#--------------------------------------------------------------------------  
+	def slot_type_name(ft)
+		return ft.data_id == 1 ? "Dual-Wield" : "Empty Slot"
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquisition of additional name of action number
+	#--------------------------------------------------------------------------  
+	def action_plus_name(ft)
+		return "#{ft.value.floor + 1} Actions"
+	end
+	#--------------------------------------------------------------------------
+	# ● Get special flag name
+	#--------------------------------------------------------------------------  
+	def special_flag_name(ft)
+		flag_name_table = {
+		AUTO_BATTLE => "Auto Battle",
+		GUARD       => "Damage Reduction",
+		SUBSTITUTE  => "Victim",
+		PRESERVE_TP => "SP Carry Over",
+		}
+		return flag_name_table[ft.data_id]
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire extinction effect name
+	#--------------------------------------------------------------------------  
+	def collaplse_type_name(ft)
+		type_name = "Immortal"
+		type_name = "Boss" if ft.data_id == 1
+		type_name = "Instant" if ft.data_id == 2
+		return "Death Effect:#{type_name}"
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire Party Ability Name
+	#--------------------------------------------------------------------------  
+	def party_ability_name(ft)
+		ability_name_table = {
+		ENCOUNTER_HALF    => "Encounter Half",
+		ENCOUNTER_NONE    => "Encounter None",
+		CANCEL_SURPRISE   => "Nullify Ambush",
+		RAISE_PREEMPTIVE  => "Preemptive Strike Up",
+		GOLD_DOUBLE       => "Double Gold Drop",
+		DROP_ITEM_DOUBLE  => "Double Item Drop",      
+		}
+		return ability_name_table[ft.data_id]
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquisition of Extended Addition Capability Correction Name
+	#--------------------------------------------------------------------------  
+	def xparam_ex_name(ft)
+		xparam_name_table = [
+			"Hit Rate", 
+			"Evasion Rate",
+			"Crit Rate",
+			"Crit Evasion Rate",
+			"Magic Evasion Rate",
+			"Magic Reflection",
+			"Counter Rate",
+			"HP Regen",
+			"MP Regen",
+			"SP Regen",
+		]
+		name = xparam_name_table[ft.data_id]
+		rate = (ft.value * 100.0).to_i
+		return "#{name} +#{rate}%"
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire Extended Party Ability Name
+	#--------------------------------------------------------------------------  
+	def party_ex_ability_name(ft)
+		method_table = {
+			GET_GOLD_RATE   => :get_gold_rate_name,
+			GET_ITEM_RATE   => :get_item_rate_name,
+			ENCOUNTER_RATE  => :encounter_rate_name,
+			COLLECT_RATE    => :collect_rate_name,
+			SLOT_CHANCE     => :slot_chance_name,
+			UNLOCK_LEVEL    => :unlock_level_name,
+		}
+		method_name = method_table[ft.data_id]
+		return method_name ? send(method_name, ft) : "UNKNOWN:PartyExAbility"
+	end
+	#--------------------------------------------------------------------------
+	# Acquisition amount acquisition of magnification name
+	#--------------------------------------------------------------------------  
+	def get_gold_rate_name(ft)
+	    rate = (ft.value * 100.0).to_i
+	    return "#{rate}% Gold Drop"
+	end  
+	#--------------------------------------------------------------------------
+	# ● Acquisition item magnification name acquisition
+	#--------------------------------------------------------------------------  
+	def get_item_rate_name(ft)
+		rate = (ft.value * 100.0).to_i
+		return "#{rate}% Item Drop"
+	end  
+	#--------------------------------------------------------------------------
+	# ● Acquisition of Encount Magnification Name
+	#--------------------------------------------------------------------------  
+	def encounter_rate_name(ft)
+		rate = (ft.value * 100.0).to_i
+		return "Encounter None" if ft.value == 0.0
+		return "Encounter Rate #{rate}%"
+	end  
+	#--------------------------------------------------------------------------
+	# ● Acquire fellow subscription magnification name
+	#--------------------------------------------------------------------------  
+	def collect_rate_name(ft)
+		rate = (ft.value * 100.0).to_i - 100
+		return "Recruit Rate #{0 < rate ? "+" : "-"}#{rate}%"
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire Slot Chance Name
+	#--------------------------------------------------------------------------  
+	def slot_chance_name(ft)
+		return "Slots Luck Up"
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquisition of unlock level name
+	#--------------------------------------------------------------------------  
+	def unlock_level_name(ft)
+		return "Unlock #{ft.value}"
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquisition of Butler Ability Name
+	#--------------------------------------------------------------------------  
+	def battler_ability_name(ft)    
+		method_table = {
+			STEAL_SUCCESS           => :steal_success_name,
+			AUTO_STAND              => :auto_stand_name,
+			HEEL_REVERSE            => :heel_reverse_name,
+			AUTO_STATE              => :auto_state_names,
+			TRIGGER_STATE           => :trigger_state_name,
+			METAL_BODY              => :metal_body_name,
+			DEFENSE_WALL            => :defense_wall_name,
+			INVALIDATE_WALL         => :invalidate_wall_name,
+			DAMAGE_MP_CONVERT       => :damage_mp_convert_name,
+			DAMAGE_GOLD_CONVERT     => :damage_gold_convert_name,
+			DAMAGE_MP_DRAIN         => :damage_mp_drain_name,
+			DAMAGE_GOLD_DRAIN       => :damage_gold_drain_name,
+			DEAD_SKILL              => :dead_skill_name,
+			BATTLE_START_SKILL      => :battle_start_skill_name,
+			TURN_START_SKILL        => :turn_start_skill_name,
+			TURN_END_SKILL          => :turn_end_skill_name,
+			CHANGE_ACTION           => :change_action_names,
+			STYPE_COST_RATE         => :stype_cost_rate_name,
+			SKILL_COST_RATE         => :skill_cost_rate_name,
+			TP_COST_RATE            => :tp_cost_rate_name,
+			HP_COST_RATE            => :hp_cost_rate_name,
+			GOLD_COST_RATE          => :gold_cost_rate_name,
+			INCREASE_TP             => :increase_tp_name,
+			START_TP_RATE           => :start_tp_rate_name,
+			BATTLE_END_HEEL_HP      => :battle_end_heel_hp_name,
+			BATTLE_END_HEEL_MP      => :battle_end_heel_mp_name,
+			Battler::NORMAL_ATTACK  => :normal_attack_name,
+			COUNTER_SKILL           => :counter_skill_names,
+			FINAL_INVOKE            => :final_invoke_names,
+			CERTAIN_COUNTER         => :certain_counter_name,
+			MAGICAL_COUNTER         => :magical_counter_name,
+			PHYSICAL_COUNTER_EX     => :physical_counter_ex_name,
+			MAGICAL_COUNTER_EX      => :magical_counter_ex_name,
+			CERTAIN_COUNTER_EX      => :certain_counter_ex_name,
+			CONSIDERATE             => :considerate_name,
+			GET_EXP_RATE            => :get_exp_rate_name,
+			GET_CLASSEXP_RATE       => :get_classexp_rate_name,
+			INVOKE_REPEATS_TYPE     => :invoke_repeats_type_names,
+			INVOKE_REPEATS_SKILL    => :invoke_repeats_skill_names,
+			OWN_CRUSH_RESIST        => :own_crush_resist_name,
+			ELEMENT_DRAIN           => :element_drain_names,
+			IGNORE_OVER_DRIVE       => :ignore_over_drive_name,
+			INSTANT_DEAD_REVERSE    => :instant_dead_reverse_name,
+			CHANGE_SKILL            => :change_skill_name,
+			PHYSICAL_REFLECTION     => :physical_reclection_name,
+			SLOT_CANNOT_DUAL_WIELD  => :slot_cannot_dual_wield_name,
+		}
+		method_name = method_table[ft.data_id]
+		return method_name ? send(method_name, ft) : nil
+		#return method_name ? send(method_name, ft) : "UNKNOWN:BattlerAbility #{ft.data_id}"★
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquisition of stealing success rate name
+	#--------------------------------------------------------------------------    
+	def steal_success_name(ft)
+		rate = (ft.value * 100.0).to_i - 100
+		return "Stealing success rate#{rate}%#{0 < rate ? "up" : "down"}"
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquisition of stepping stone name
+	#--------------------------------------------------------------------------    
+	def auto_stand_name(ft)
+		return "Endure"
+	end  
+	#--------------------------------------------------------------------------
+	# ● Acquisition of recovery inversion name
+	#--------------------------------------------------------------------------    
+	def heel_reverse_name(ft)
+		return "Healing Inversion"
+	end  
+	#--------------------------------------------------------------------------
+	# ● Obtaining Auto State Name Array
+	#--------------------------------------------------------------------------    
+	def auto_state_names(ft)
+		names = ft.value.collect{|state_id| $data_states[state_id].name}
+		return names.collect{|name| "Battle Start:Auto #{name}"}
+	end  
+	#--------------------------------------------------------------------------
+	# ● Obtain trigger state name
+	#--------------------------------------------------------------------------    
+	def trigger_state_name(ft)
+		name = $data_states[ft.value[:state_id]].name
+		return "Critical State:Auto #{name}"
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquisition of metal body name
+	#--------------------------------------------------------------------------    
+	def metal_body_name(ft)
+		return "Metal Body"
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquisition of defensive wall expansion name
+	#--------------------------------------------------------------------------    
+	def defense_wall_name(ft)
+		return "Defense Wall"
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire invalidation barrier name
+	#--------------------------------------------------------------------------    
+	def invalidate_wall_name(ft)
+		return "Nullification Barrier <= #{ft.value}"
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire damage MP conversion name
+	#--------------------------------------------------------------------------    
+	def damage_mp_convert_name(ft)
+		return "Mana Barrier"
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire Damaged Gold Transformation Name
+	#--------------------------------------------------------------------------    
+	def damage_gold_convert_name(ft)
+		return "Gold Barrier"
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire damage MP absorption name
+	#--------------------------------------------------------------------------    
+	def damage_mp_drain_name(ft)
+		return "Damage Regens MP"
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire Damaged Gold Collection Name
+	#--------------------------------------------------------------------------    
+	def damage_gold_drain_name(ft)
+		return "Damage Regens Gold"
+	end
+	#--------------------------------------------------------------------------
+	# ● Obtain skill name when death
+	#--------------------------------------------------------------------------    
+	def dead_skill_name(ft)
+		name = $data_skills[ft.value].name
+		return "Death Skill Use:#{name}"
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire skill name at start of battle
+	#--------------------------------------------------------------------------    
+	def battle_start_skill_name(ft)
+		name   = $data_skills[ft.value[:id]].name
+		prefix = ft.value[:per] == 1.0 ? "" : ft.value[:per].to_s + "%"
+		return "Battle Start:#{prefix}Auto #{name}"
+	end
+	#--------------------------------------------------------------------------
+	# ● Obtain skill name at start of turn
+	#--------------------------------------------------------------------------    
+	def turn_start_skill_name(ft)
+		name = $data_skills[ft.value[:id]].name
+		prefix = ft.value[:per] == 1.0 ? "" : ft.value[:per].to_s + "%"
+		return "Turn Start:#{prefix}Auto #{name}"
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire skill name at end of turn
+	#--------------------------------------------------------------------------    
+	def turn_end_skill_name(ft)
+		name = $data_skills[ft.value[:id]].name
+		prefix = ft.value[:per] == 1.0 ? "" : ft.value[:per].to_s + "%"
+		return "Turn End:#{prefix}Auto #{name}"
+	end
+	#--------------------------------------------------------------------------
+	# ● Obtain behavior change name array
+	#--------------------------------------------------------------------------    
+	def change_action_names(ft)
+		return nil
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire skill type consumption rate name
+	#--------------------------------------------------------------------------
+	def stype_cost_rate_name(ft)
+		name = $data_system.skill_types[ft.value[:id]]
+		type = ft.value[:type].to_s
+		type = "SP" if type == "TP"
+		rate = (ft.value[:rate] * 100.0).to_i
+		return "#{name} #{type} Cost #{rate}%"    
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire skill consumption rate name
+	#--------------------------------------------------------------------------
+	def skill_cost_rate_name(ft)
+		name = $data_skills[ft.value[:id]].name
+		type = ft.value[:type].to_s
+		type = "SP" if type == "TP"
+		rate = (ft.value[:rate] * 100.0).to_i
+		return "#{name} #{type} Cost #{rate}%"    
+	end
+	#--------------------------------------------------------------------------
+	# ● Get TP consumption rate name
+	#--------------------------------------------------------------------------
+	def tp_cost_rate_name(ft)
+		rate = (ft.value * 100.0).to_i
+		return "SP Cost #{rate}%"
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire HP consumption rate name
+	#--------------------------------------------------------------------------
+	def hp_cost_rate_name(ft)
+		rate = (ft.value * 100.0).to_i
+		return "HP Cost #{rate}%"
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire gold consumption rate name
+	#--------------------------------------------------------------------------
+	def gold_cost_rate_name(ft)
+		rate = (ft.value * 100.0).to_i
+		return "Gold Cost #{rate}%"
+	end
+	#--------------------------------------------------------------------------
+	# ● Get maximum TP increase / decrease name
+	#--------------------------------------------------------------------------
+	def increase_tp_name(ft)
+		return "Max SP #{ft.value[:plus] ? "+" : "-"}#{ft.value[:num]}%"
+	end
+	#--------------------------------------------------------------------------
+	# ● Get start TP name
+	#--------------------------------------------------------------------------
+	def start_tp_rate_name(ft)
+		rate = (ft.value * 100.0).to_i
+		return "Battle Start:#{rate}% SP"
+	end
+	#--------------------------------------------------------------------------
+	# ● Obtain HP recovery name after battle
+	#--------------------------------------------------------------------------
+	def battle_end_heel_hp_name(ft)
+		rate = (ft.value * 100.0).to_i
+		return "Post Battle:#{rate}% HP Regen"
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire MP recovery name after battle
+	#--------------------------------------------------------------------------
+	def battle_end_heel_mp_name(ft)
+		rate = (ft.value * 100.0).to_i
+		return "Post Battle:#{rate}% MP Regen"
+	end
+	#--------------------------------------------------------------------------
+	# ● Obtain normal attack name
+	#--------------------------------------------------------------------------
+	def normal_attack_name(ft)
+		return $data_skills[ft.value].name
+	end
+	#--------------------------------------------------------------------------
+	# ● Get counterattack skill name array
+	#--------------------------------------------------------------------------
+	def counter_skill_names(ft)
+		return ft.value.collect{|skill_id| $data_skills[skill_id].name}
+	end
+	#--------------------------------------------------------------------------
+	# ● Get the final counterattack name array
+	#--------------------------------------------------------------------------
+	def final_invoke_names(ft)
+		names = ft.value.collect{|skill_id| $data_skills[skill_id].name}
+		return names.collect{|name| "Death Skill Use:\"#{name}\""}
+	end
+	#--------------------------------------------------------------------------
+	# ● Must acquire counterattack name
+	#--------------------------------------------------------------------------
+	def certain_counter_name(ft)
+		rate = (ft.value * 100.0).to_i
+		return "Physical Counter +#{rate}%"
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire Magic Counterattack Name
+	#--------------------------------------------------------------------------
+	def magical_counter_name(ft)
+		rate = (ft.value * 100.0).to_i
+		return "Magic Counter +#{rate}%"
+	end
+	#--------------------------------------------------------------------------
+	# ● Get extended physical counter attack name
+	#--------------------------------------------------------------------------
+	def physical_counter_ex_name(ft)
+		return nil
+	end
+	#--------------------------------------------------------------------------
+	# ● Get Extended Magic Counterattack Name
+	#--------------------------------------------------------------------------
+	def magical_counter_ex_name(ft)
+		return nil
+	end
+	#--------------------------------------------------------------------------
+	# ● Extended Necessary Counterfeit Name Acquired
+	#--------------------------------------------------------------------------
+	def certain_counter_ex_name(ft)
+		return nil
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire fellow feelings name
+	#--------------------------------------------------------------------------
+	def considerate_name(ft)
+		return "Vengeance Attack Boost"
+	end  
+	#--------------------------------------------------------------------------
+	# ● Acquired acquisition experience value magnification name
+	#--------------------------------------------------------------------------
+	def get_exp_rate_name(ft)
+		rate = (ft.value * 100.0).to_i
+		return "#{rate}% XP"
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquired occupational experience value acquisition magnification name
+	#--------------------------------------------------------------------------
+	def get_classexp_rate_name(ft)
+		rate = (ft.value * 100.0).to_i
+		return "#{rate}% Job XP"
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire continuous activation type name array
+	#--------------------------------------------------------------------------
+	def invoke_repeats_type_names(ft)
+		names = []
+		ft.value.each{|key, val|
+		names.push("#{$data_system.skill_types[key]} Multi Strike")
+		}
+		return names
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire continuous activation skill name array
+	#--------------------------------------------------------------------------
+	def invoke_repeats_skill_names(ft)
+		names = []
+		ft.value.each{|key, val|
+		names.push("#{$data_skills[key].name} Multi Strike")
+		}
+		return names
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire self-destructive resistance name
+	#--------------------------------------------------------------------------
+	def own_crush_resist_name(ft)
+		return "Self Destruct Immune"
+	end
+	#--------------------------------------------------------------------------
+	# ● Get attribute absorption name array
+	#--------------------------------------------------------------------------
+	def element_drain_names(ft)
+		names = ft.value.collect{|element_id| $data_system.elements[element_id]}
+		return names.collect{|name| "#{name} Absorb"}
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire ignorance of time stop
+	#--------------------------------------------------------------------------
+	def ignore_over_drive_name(ft)
+		return "Nullify Time Stop"
+	end
+	#--------------------------------------------------------------------------
+	# ● Get instant death reversal
+	#--------------------------------------------------------------------------
+	def instant_dead_reverse_name(ft)
+		return nil
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire skill change
+	#--------------------------------------------------------------------------
+	def change_skill_name(ft)
+		return nil
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquisition of Multi Booster Name
+	#--------------------------------------------------------------------------  
+	def multi_booster_name(ft)    
+		method_table = {
+			ELEMENT                => :booster_element_name,
+			WEAPON_PHYSICAL        => :booster_weapon_physical_name,
+			WEAPON_MAGICAL         => :booster_weapon_magical_name,
+			WEAPON_CERTAIN         => :booster_weapon_certain_name,
+			Booster::NORMAL_ATTACK => :booster_normal_attack_name,
+			STATE_RATIO_TYPE       => :booster_state_ratio_type_name,
+			STATE_FIX_TYPE         => :booster_state_fix_type_name,
+			SKILL_TYPE             => :booster_skill_type_name,
+			STATE_RATIO_SKILL      => :booster_state_ratio_skill_name,
+			SKILL                  => :booster_skill_name,
+			WTYPE_SKILL            => :booster_wtype_skill_name,
+			COUNTER                => :booster_counter_name,
+			FALL_HP                => :booster_fall_hp_name,
+			OVER_SOUL              => :over_soul_name,
+		}
+		method_name = method_table[ft.data_id]
+		return method_name ? send(method_name, ft) : nil
+		#return method_name ? send(method_name, ft) : "UNKNOWN:MultiBooster" ★
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire attribute booster magnification name
+	#--------------------------------------------------------------------------
+	def booster_element_name(ft)
+		names = []
+		ft.value.each{|key, val|
+		rate = (val * 100.0).to_i
+		names.push("#{$data_system.elements[key]} Booster #{rate}%")
+		}
+		return names
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire weapon reinforcement physical magnification name
+	#--------------------------------------------------------------------------
+	def booster_weapon_physical_name(ft)
+		names = []
+		ft.value.each{|key, val|
+		rate = (val * 100.0).to_i
+		names.push("#{$data_system.weapon_types[key]} Physical Booster #{rate}%")
+		}
+		return names
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire weapon enhanced magic magnification name
+	#--------------------------------------------------------------------------
+	def booster_weapon_magical_name(ft)
+		names = []
+		ft.value.each{|key, val|
+		rate = (val * 100.0).to_i
+		names.push("#{$data_system.weapon_types[key]} Magic Booster #{rate}%")
+		}
+		return names
+	end
+	#--------------------------------------------------------------------------
+	# ● Weapon Reinforcement Necessary magnification name acquired
+	#--------------------------------------------------------------------------
+	def booster_certain_magical_name(ft)
+		names = []
+		ft.value.each{|key, val|
+		rate = (val * 100.0).to_i
+		names.push("#{$data_system.weapon_types[key]} Booster #{rate}%")
+		}
+		return names
+	end
+	#--------------------------------------------------------------------------
+	# ● Obtain normal attack reinforcement magnification name
+	#--------------------------------------------------------------------------
+	def booster_normal_attack_name(ft)
+		return nil
+	end
+	#--------------------------------------------------------------------------
+	# ● State ratio reinforcement type Acquire magnification name
+	#--------------------------------------------------------------------------
+	def booster_state_ratio_type_name(ft)
+		names = []
+		ft.value.each{|key, val|
+		rate = (val * 100.0).to_i
+		names.push("#{$data_system.skill_types[key]} Status Inflict Booster #{rate}%")
+		}
+		return names
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire state fixed reinforced type magnification name
+	#--------------------------------------------------------------------------
+	def booster_state_fix_type_name(ft)
+		names = []
+		ft.value.each{|key, val|
+		rate = (val * 100.0).to_i
+		names.push("#{$data_system.skill_types[key]} Status Inflict Booster #{rate}%")
+		}
+		return names
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire skill type reinforcement magnification name
+	#--------------------------------------------------------------------------
+	def booster_skill_type_name(ft)
+		names = []
+		ft.value.each{|key, val|
+		rate = (val * 100.0).to_i
+		names.push("#{$data_system.skill_types[key]} Booster #{rate}%")
+		}
+		return names
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire state ratio enhancement skill magnification name
+	#--------------------------------------------------------------------------
+	def booster_state_ratio_skill_name(ft)
+		names = []
+		ft.value.each{|key, val|
+		rate = (val * 100.0).to_i
+		names.push("#{$data_skills[key].name} Status Inflict Booster #{rate}%")
+		}
+		return names
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire skill reinforcement magnification name
+	#--------------------------------------------------------------------------
+	def booster_skill_name(ft)
+		names = []
+		ft.value.each{|key, val|
+		rate = (val * 100.0).to_i
+		names.push("#{$data_skills[key].name} Booster #{rate}%")
+		}
+		return names
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire weapon skill enhancement magnification name
+	#--------------------------------------------------------------------------
+	def booster_wtype_skill_name(ft)
+		names = []
+		ft.value.each{|key, val|
+			rate = (val * 100.0).to_i
+			name = key[0] == 0 ? "No Weapon" : "#{$data_system.weapon_types[key[0]]} Equipped:"
+			name += "#{$data_system.skill_types[key[1]]} Booster #{rate}%"
+			names.push(name)
+		}
+		return names
+	end
+	#--------------------------------------------------------------------------
+	# ● Obtain counter reinforcement magnification name
+	#--------------------------------------------------------------------------
+	def booster_counter_name(ft)
+		return "Counter Damage Up"
+	end
+	#--------------------------------------------------------------------------
+	# ● Obtain reinforcement magnification name when decreasing HP
+	#--------------------------------------------------------------------------
+	def booster_fall_hp_name(ft)
+		return "Critical Stats Up"
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire overseul name
+	#--------------------------------------------------------------------------
+	def over_soul_name(ft)
+		return "Vengeance Stats Up"
+	end
+	#--------------------------------------------------------------------------
+	# ● Explanation Acquire additional name
+	#--------------------------------------------------------------------------  
+	def dummy_enchant_name(ft)
+		value = ft.value
+		if enchant_item?
+			value = value.gsub(/\\e\[(\d+|\d+\-\d+)\]/i){ 
+				e = Enchant_Value.new(:int,$1)
+				v = @enchants_variance
+				if !v.key?(ft.enchant_id) || !v[ft.enchant_id].key?(e.calc_id) || !v[ft.enchant_id][e.calc_id].key?(e.variance_id)
+					p "\e[#{e.calc_id}-#{e.variance_id}]There is no corresponding data. Enchant_id=> #{ft.enchant_id}"
+					next -1
+				end
+				data = NWConst::Enchantment::FEATURE_CALCULATION[e.calc_id]
+				n = e.calculation(rarity_num,@enchants_variance[ft.enchant_id][e.calc_id][e.variance_id])
+				next data.key?(:txt_value) ? eval(data[:txt_value]) : n
+			}
+		end
+		return value.split("\\n")
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire terrain enhancement name
+	#--------------------------------------------------------------------------  
+	def terrain_booster_name(ft)
+		return "#{0.2 < ft.value ? "Super " : ""} #{ft.data_id.to_s}Strength"
+	end
+	#--------------------------------------------------------------------------
+	# ● Get physical reflectance name
+	#--------------------------------------------------------------------------    
+	def physical_reclection_name(ft)
+		rate = (ft.value * 100.0).to_i
+		return "Reflect Physical #{0 < rate ? "Up " : "Down "}#{rate.abs}%"
+	end
+	#--------------------------------------------------------------------------
+	# ● Equipment Mastery name acquired
+	#--------------------------------------------------------------------------
+	def equip_mastery_name(ft)
+		return "Mastery"
+	end
+	#--------------------------------------------------------------------------
+	# ● Dual Sword Slot Obtainable Impossible Name
+	#--------------------------------------------------------------------------  
+	def slot_cannot_dual_wield_name(ft)
+		return nil
+	end
+end
+
+#==============================================================================
+# ■ RPG::EquipItem
+#==============================================================================
+class RPG::EquipItem < RPG::BaseItem
+	#--------------------------------------------------------------------------
+	# ● Get parameter name array
+	#--------------------------------------------------------------------------  
+	def param_names
+		names = []
+		self.params.each_with_index{|param, i|
+			next if param == 0
+			names.push(sprintf("%s:%d", Vocab::param(i), param))
+		}  
+		return names
+	end
+end
+
+
+
+
+
+
+
+
+
+
+
+

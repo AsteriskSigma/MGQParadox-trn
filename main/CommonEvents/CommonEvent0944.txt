@@ -1,0 +1,27 @@
+// EVENT 0944
+Name "Event: Merchants 1"
+
+PictureDisplay(5,"80_s_mermaid_st01",0,0,0,0,100,100,0,0)
+PictureMove(5,null,0,0,0,0,100,100,255,0,60,true)
+ShowMessageFace("s_mermaid_fc1",0,0,2,1)
+ShowMessage("\\n<Peddler Mermaid>Welcome to the Peddler Mermaid Shop.\nAre you running low on items?")
+Shop(0,2,0,0,false)
+605(0,7,0,0)
+605(0,11,0,0)
+605(0,13,0,0)
+605(0,14,0,0)
+605(0,15,0,0)
+605(0,16,0,0)
+605(0,17,0,0)
+605(0,18,0,0)
+605(0,19,0,0)
+605(0,20,0,0)
+605(0,21,0,0)
+605(0,102,0,0)
+605(0,109,0,0)
+ShowMessageFace("s_mermaid_fc1",0,0,2,2)
+ShowMessage("\\n<Peddler Mermaid>Thank you, come back again!")
+PictureClear(5)
+EndEventProcessing()
+0()
+

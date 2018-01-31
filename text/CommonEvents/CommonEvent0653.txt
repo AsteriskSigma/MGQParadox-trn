@@ -1,0 +1,8 @@
+"イベント：ねこまた" -> "Event: Nekomata"
+"【ねこまた】" -> "【Nekomata】"
+"にゃっ♪　にゃっ♪" -> "Nyah ♪ ♪"
+"ねこまたはゴロンゴロンしている……" -> "I have a cat or goront goron ......"
+"【ねこまた】" -> "【Nekomata】"
+"にゃ～♪　ぺろぺろ……" -> "Well ~ ♪ lady ... ..."
+"ねこまたから不思議な力が与えられた！" -> "A magical power was given from a cat!"
+"次のボスフロアまで、獣技の威力が二倍になる！" -> "The power of animal skill doubles until the next boss floor!"

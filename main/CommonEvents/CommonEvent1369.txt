@@ -1,0 +1,12 @@
+// EVENT 1369
+Name "Conversation: Soniamanu"
+
+ChangeVariable(25,25,0,0,0)
+ShowMessageFace("soniamanyu_fc1",0,0,2,1)
+ShowMessage("【Sonia Mamoyu】")
+ShowMessage("■■■■■■■■■■■■■■■■ ......")
+ShowMessageFace("",0,0,2,2)
+ShowMessage("Soniamanu has rejected the conversation!")
+EndEventProcessing()
+0()
+

@@ -1,0 +1,1182 @@
+
+
+
+EVENT   1
+ PAGE   1
+  0()
+
+
+
+EVENT   2
+ PAGE   1
+  0()
+
+
+
+EVENT   3
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,680,13,6,0,0)
+  0()
+
+
+
+EVENT   4
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,680,14,6,0,0)
+  0()
+
+
+
+EVENT   5
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,680,12,33,0,0)
+  0()
+
+
+
+EVENT   6
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,680,13,33,0,0)
+  0()
+
+
+
+EVENT   7
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,667,35,25,0,0)
+  0()
+
+
+
+EVENT   8
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,667,35,25,0,0)
+  0()
+
+
+
+EVENT   9
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,667,35,25,0,0)
+  0()
+
+
+
+EVENT   10
+ PAGE   1
+  ShowMessageFace("tatunoko_k_fc1",2,0,2,1)
+  ShowMessage("\\n<Sea Horse Marine>This is one of our storerooms. If you assure my safety, you can take whatever you want.")
+  0()
+
+
+
+EVENT   11
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<blacksmith>Hey, I'm sorry about the dispute!")
+  ShowMessage("I work but do pay for it properly!")
+  355("call_synthesize(13)")
+  0()
+
+
+
+EVENT   12
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<null>")
+  ShowMessage("")
+  Shop(0,2,0,0,false)
+  605(0,7,0,0)
+  605(0,11,0,0)
+  605(0,13,0,0)
+  605(0,14,0,0)
+  605(0,15,0,0)
+  605(0,16,0,0)
+  605(0,17,0,0)
+  605(0,18,0,0)
+  605(0,19,0,0)
+  605(0,23,0,0)
+  605(0,35,0,0)
+  605(0,102,0,0)
+  0()
+
+
+
+EVENT   13
+ PAGE   1
+  If(0,2151,1)
+   241(bytes(0x04,0x08,0x6f,0x3a,0x0d,0x52,0x50,0x47,0x3a,0x3a,0x42,0x47,0x4d,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x62,0x6f,0x73,0x73,0x30,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69))
+   PictureDisplay(5,"80_levia_st01",0,0,0,0,100,100,0,0)
+   PictureMove(5,null,0,0,0,0,100,100,255,0,30,true)
+   ShowMessageFace("levia_fc1",0,0,2,1)
+   ShowMessage("\\n<>I never expected this level of violence...\nIt seems I was mistaken to consider you a puny band of pirates.")
+   ShowMessageFace("bonny_fc1",0,0,2,2)
+   ShowMessage("\\n<Bonnie>Whoa, Luka!\nYou can't mean to challenge the Navy Admiral!?")
+   If(0,4,0)
+    ShowMessageFace("alice_fc5",2,0,2,3)
+    ShowMessage("\\n<Alice>Leviathan's power is equal to a queen. Do we really have any chance of success?")
+    0()
+   EndIf()
+   If(0,5,0)
+    ShowMessageFace("iriasu_fc4",7,0,2,4)
+    ShowMessage("\\n<Iliad>Leviathan is equal to a Yoma queen. Do we really have any chance of success?")
+    0()
+   EndIf()
+   ShowChoices(strings("Challenge her","Run away"),0)
+   IfPlayerPicksChoice(0,null)
+    ShowMessageFace("ruka_fc1",0,0,2,5)
+    ShowMessage("\\n<Luke>The pirates are coming for you!")
+    ShowMessageFace("levia_fc1",0,0,2,6)
+    ShowMessage("\\n<Leviathan>Mere pirates would dare challenge me?\nThen let me enlighten you as to why I'm the admiral of the navy!")
+    If(4,205,0)
+     ShowMessageFace("levia_fc1",1,0,2,7)
+     ShowMessage("\\n<Revere>Seriously? A test of skill against myself?\nActually, this might be interesting!")
+     ShowMessageFace("levia_fc1",2,0,2,8)
+     ShowMessage("\\n<>How queer, there's another one of me... I know not what trickery this is, but I will not lose to it!")
+     0()
+    EndIf()
+    PictureClear(5)
+    SetBattleBGM(bytes(0x04,0x08,0x6f,0x3a,0x0d,0x52,0x50,0x47,0x3a,0x3a,0x42,0x47,0x4d,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x62,0x6f,0x73,0x73,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69))
+    ChangeSwitch(22,22,0)
+    Battle(0,592,false,false)
+    ChangeSwitch(22,22,1)
+    SetBattleBGM(bytes(0x04,0x08,0x6f,0x3a,0x0d,0x52,0x50,0x47,0x3a,0x3a,0x42,0x47,0x4d,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0b,0x62,0x61,0x74,0x74,0x6c,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69))
+    ChangeSwitch(2151,2151,0)
+    355("gain_medal(3006)")
+    241(bytes(0x04,0x08,0x6f,0x3a,0x0d,0x52,0x50,0x47,0x3a,0x3a,0x42,0x47,0x4d,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x6b,0x69,0x6b,0x69,0x34,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69))
+    PictureDisplay(5,"80_levia_st03",0,0,0,0,100,100,0,0)
+    PictureMove(5,null,0,0,0,0,100,100,255,0,30,true)
+    ShowMessageFace("levia_fc1",2,0,2,9)
+    ShowMessage("\\n<Leviathan>Unbelievable! How could I lose to pirates...")
+    ShowMessageFace("bonny_fc1",1,0,2,10)
+    ShowMessage("\\n<Bonnie>We did it! We beat the Admiral of the navy!")
+    ShowMessageFace("ashel_fc1",1,0,2,11)
+    ShowMessage("\\n<Asher>The Fishy Pirates will be famous all over the world!")
+    If(4,53,0)
+     ShowMessageFace("slime_fc1",0,0,2,12)
+     ShowMessage("\\n<lime>Aye aye! Aye aye!")
+     0()
+    EndIf()
+    ShowMessageFace("levia_fc1",0,0,2,13)
+    ShowMessage("\\n<Leviathan>As much as it pains me, history is written by the victors. Spread the news of my defeat to your heart's desire.")
+    ShowMessageFace("levia_fc1",0,0,2,14)
+    ShowMessage("\\n<>Will my loss here today usher in a new age of piracy? Or is that no more than a flight of fancy...")
+    If(4,134,0)
+     ShowMessageFace("chrom_fc2",0,0,2,15)
+     ShowMessage("\\n<chromium>Keep your chin up. If your influence wanes, you can always build it back up.")
+     0()
+    EndIf()
+    ShowMessageFace("",0,0,2,16)
+    ShowMessage("Leviathan appears downcast...")
+    PictureClear(5)
+    EndEventProcessing()
+    0()
+   IfPlayerPicksChoice(1,null)
+    ShowMessageFace("ruka_fc1",0,0,2,17)
+    ShowMessage("\\n<Luke>I just remembered I have important business to attend to! I'll let you off easy today!")
+    ShowMessageFace("",0,0,2,18)
+    ShowMessage("Luka and party run away...")
+    241(bytes(0x04,0x08,0x6f,0x3a,0x0d,0x52,0x50,0x47,0x3a,0x3a,0x42,0x47,0x4d,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x6b,0x69,0x6b,0x69,0x34,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69))
+    PictureClear(5)
+    EndEventProcessing()
+    0()
+   404()
+   0()
+  EndIf()
+  If(0,2151,0)
+   PictureDisplay(5,"80_levia_st01",0,0,0,0,100,100,0,0)
+   PictureMove(5,null,0,0,0,0,100,100,255,0,30,true)
+   ShowMessageFace("levia_fc1",0,0,2,19)
+   ShowMessage("\\n<Leviathan>Despite my defeat, this is not the end of the navy. I must still lead the marines as their admiral.")
+   ShowMessageFace("levia_fc1",0,0,2,20)
+   ShowMessage("\\n<>Herald of the age of piracy, what business do you have with me?")
+   ShowChoices(strings("Join my party","Nothing"),2)
+   IfPlayerPicksChoice(0,null)
+    RunCommonEvent(332)
+    0()
+   IfPlayerPicksChoice(1,null)
+    ShowMessageFace("levia_fc1",0,0,2,21)
+    ShowMessage("\\n<Leviathan>In that case, leave...")
+    PictureClear(5)
+    EndEventProcessing()
+    0()
+   404()
+   0()
+  EndIf()
+  0()
+ PAGE   2
+  // condition: switch 2186 is ON
+  0()
+
+
+
+EVENT   14
+ PAGE   1
+  ChangeSelfSwitch("A",0)
+  ShowMessageFace("bonny_fc1",1,0,2,1)
+  ShowMessage("\\n<Bonnie>There's our flag!")
+  If(4,53,0)
+   ShowMessageFace("slime_fc1",0,0,2,2)
+   ShowMessage("\\n<lime>Yay, we did it!")
+   0()
+  EndIf()
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeInventory_Item(529,0,0,1)
+  ShowMessageFace("ashel_fc1",1,0,2,3)
+  ShowMessage("\\n<Asher>Here's the [Oceanic Business Permit] too!\nYou can change to a few seafaring jobs with this!")
+  If(4,171,0)
+   ShowMessageFace("lizardboss_fc1",0,0,2,4)
+   ShowMessage("\\n<Miranda>Haha, we'll take that then!")
+   0()
+  EndIf()
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeInventory_Item(608,0,0,1)
+  ShowMessageFace("ashel_fc1",1,0,2,5)
+  ShowMessage("\\n<Asher>Breaking into the navy headquarters and recovering our flag is going to increase the reputation of the Fishy Pirates even more!")
+  ShowMessageFace("bonny_fc1",1,0,2,6)
+  ShowMessage("\\n<Bonnie>The day we conquer the seas is now closer than ever! The supremacy of the Fishy Pirates is nearly at hand!")
+  If(4,53,0)
+   ShowMessageFace("slime_fc1",0,0,2,7)
+   ShowMessage("\\n<lime>Aye aye, cap'n!")
+   ShowMessageFace("bonny_fc1",1,0,2,8)
+   ShowMessage("\\n<Bonnie>You too, Lime. Great job!")
+   0()
+  EndIf()
+  If(0,4,0)
+   ShowMessageFace("alice_fc5",1,0,2,9)
+   ShowMessage("\\n<Alice>Kicking up a fuss every once in a while isn't so bad, but now it's time to get out of here.")
+   0()
+  EndIf()
+  If(0,5,0)
+   ShowMessageFace("iriasu_fc4",0,0,2,10)
+   ShowMessage("\\n<Iliad>This was a rather thrilling raid. Now that we have accomplished our objective, it would be prudent to make our escape.")
+   0()
+  EndIf()
+  If(0,2151,1)
+   ShowMessageFace("ashel_fc1",1,0,2,11)
+   ShowMessage("\\n<Asher>Yeah... It wouldn't be funny if the Admiral showed up. It's pointless to stick around any longer, so let's skedaddle!")
+   0()
+  Else()
+   ShowMessageFace("ashel_fc1",1,0,2,12)
+   ShowMessage("\\n<Asher>Seeing as how we beat the Admiral, there's nothing left to do here. It's pointless to stick around any longer, so let's skedaddle!")
+   0()
+  EndIf()
+  If(4,62,0)
+   ShowMessageFace("gob_fc1",0,0,2,13)
+   ShowMessage("\\n<A gob>Run away at the speed of light!")
+   0()
+  EndIf()
+  If(4,79,0)
+   ShowMessageFace("nuruko_fc1",0,0,2,14)
+   ShowMessage("\\n<Nurco>Kyuu!")
+   0()
+  EndIf()
+  ShowMessageFace("",0,0,2,15)
+  ShowMessage("Thus, we've finished our business at the navy headquarters. Let's get out of here--")
+  ChangeVariable(1051,1051,0,0,6)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   15
+ PAGE   1
+  0()
+ PAGE   2
+  // condition: switch 2171 is ON
+  0()
+
+
+
+EVENT   16
+ PAGE   1
+  ShowMessageFace("umiusi_k_fc1",2,0,2,1)
+  ShowMessage("\\n<Slug Marine>We-we're under attack by pirates!!")
+  ShowMessageFace("tatunoko_k_fc1",0,0,2,2)
+  ShowMessage("\\n<Sea Horse Marine>I'll try my best!")
+  If(4,68,0)
+   ShowMessageFace("dragonp_fc1",0,0,2,3)
+   ShowMessage("\\n<Papi>Rawr! Out of our way!")
+   0()
+  EndIf()
+  Battle(0,591,false,false)
+  ChangeSwitch(2171,2171,0)
+  ShowMessageFace("umiusi_k_fc1",2,0,2,4)
+  ShowMessage("\\n<Slug Marine>Why me...")
+  0()
+ PAGE   2
+  // condition: switch 2171 is ON
+  0()
+
+
+
+EVENT   17
+ PAGE   1
+  0()
+ PAGE   2
+  // condition: switch 2171 is ON
+  0()
+
+
+
+EVENT   18
+ PAGE   1
+  ShowMessageFace("umiusi_k_fc1",0,0,2,1)
+  ShowMessage("\\n<Slug Marine>We will not let you past this point!")
+  If(4,62,0)
+   ShowMessageFace("gob_fc1",0,0,2,2)
+   ShowMessage("\\n<A gob>Then we'll just have to make you!")
+   0()
+  EndIf()
+  Battle(0,590,false,false)
+  ChangeSwitch(2172,2172,0)
+  ShowMessageFace("umiusi_k_fc1",2,0,2,3)
+  ShowMessage("\\n<Slug Marine>I'm going home early today...")
+  0()
+ PAGE   2
+  // condition: switch 2172 is ON
+  0()
+
+
+
+EVENT   19
+ PAGE   1
+  ShowMessageFace("umiusi_k_fc1",0,0,2,1)
+  ShowMessage("\\n<Slug Marine>We will not let you past this point!")
+  If(4,62,0)
+   ShowMessageFace("gob_fc1",0,0,2,2)
+   ShowMessage("\\n<A gob>Then we'll just have to make you!")
+   0()
+  EndIf()
+  Battle(0,590,false,false)
+  ChangeSwitch(2172,2172,0)
+  ShowMessageFace("umiusi_k_fc1",2,0,2,3)
+  ShowMessage("\\n<Slug Marine>I'm going home early today...")
+  0()
+ PAGE   2
+  // condition: switch 2172 is ON
+  0()
+
+
+
+EVENT   20
+ PAGE   1
+  ShowMessageFace("umiusi_k_fc1",0,0,2,1)
+  ShowMessage("\\n<Slug Marine>We keep valuable goods and documents here. You absolutely cannot enter!")
+  ShowMessageFace("tatunoko_k_fc1",2,0,2,2)
+  ShowMessage("\\n<Sea Horse Marine>Please go easy on us poor sea horses pressed into service...")
+  ShowMessageFace("ashel_fc1",1,0,2,3)
+  ShowMessage("\\n<Asher>Let's get our flag back! Come on!")
+  ShowMessageFace("bonny_fc1",0,0,2,4)
+  ShowMessage("\\n<Bonnie>Crew, charge!")
+  If(4,53,0)
+   ShowMessageFace("slime_fc1",0,0,2,5)
+   ShowMessage("\\n<lime>Aye aye, cap'n!")
+   0()
+  EndIf()
+  Battle(0,591,false,false)
+  ChangeSwitch(2173,2173,0)
+  ShowMessageFace("umiusi_k_fc1",2,0,2,6)
+  ShowMessage("\\n<Slug Marine>I'm getting a pay cut for this...")
+  ShowMessageFace("bonny_fc1",1,0,2,7)
+  ShowMessage("\\n<Bonnie>Okay, get to searching!")
+  If(4,53,0)
+   ShowMessageFace("slime_fc1",0,0,2,8)
+   ShowMessage("\\n<lime>Is it here? Or over here...?")
+   0()
+  EndIf()
+  0()
+ PAGE   2
+  // condition: switch 2173 is ON
+  0()
+
+
+
+EVENT   21
+ PAGE   1
+  0()
+ PAGE   2
+  // condition: switch 2173 is ON
+  0()
+
+
+
+EVENT   22
+ PAGE   1
+  0()
+ PAGE   2
+  // condition: switch 2173 is ON
+  0()
+
+
+
+EVENT   24
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventoryWeapon(20,0,0,1,false)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   25
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<null>")
+  ShowMessage("")
+  Shop(2,1162,0,0,false)
+  605(2,1167,0,0)
+  605(2,1560,0,0)
+  605(2,1562,0,0)
+  605(2,1564,0,0)
+  605(2,1566,0,0)
+  605(2,1568,0,0)
+  605(2,1570,0,0)
+  605(2,1715,0,0)
+  0()
+
+
+
+EVENT   26
+ PAGE   1
+  ShowMessageFace("tatunoko_k_fc1",2,0,2,1)
+  ShowMessage("\\n<Sea Horse Marine>The [Oceanic Business Permit] is in the second floor document storage room! So please let me go!")
+  0()
+
+
+
+EVENT   27
+ PAGE   1
+  ShowMessageFace("tatunoko_k_fc1",2,0,2,1)
+  ShowMessage("\\n<Sea Horse Marine>Zzz...")
+  ShowMessageFace("bonny_fc1",0,0,2,2)
+  ShowMessage("\\n<Bonnie>You're clearly awake...")
+  ShowMessageFace("tatunoko_k_fc1",2,0,2,3)
+  ShowMessage("\\n<Sea Horse Marine>...*gulp*")
+  0()
+
+
+
+EVENT   28
+ PAGE   1
+  ShowMessageFace("tatunoko_k_fc1",2,0,2,1)
+  ShowMessage("\\n<Sea Horse Marine>Zzz...")
+  ShowMessageFace("bonny_fc1",0,0,2,2)
+  ShowMessage("\\n<Bonnie>Are you really asleep?\nDoesn't look like you're faking it...")
+  ShowMessageFace("tatunoko_k_fc1",2,0,2,3)
+  ShowMessage("\\n<Sea Horse Marine>...*shiver*")
+  0()
+
+
+
+EVENT   29
+ PAGE   1
+  ShowMessageFace("umiusi_k_fc1",0,0,2,1)
+  ShowMessage("\\n<Slug Marine>I have pride in the marine!")
+  ShowMessage("")
+  If(4,80,0)
+   ShowMessageFace("orc_fc1",1,0,2,2)
+   ShowMessage("\\n<Hip>")
+   ShowMessage("")
+   0()
+  EndIf()
+  Battle(0,590,false,false)
+  ChangeSelfSwitch("A",0)
+  ShowMessageFace("umiusi_k_fc1",2,0,2,3)
+  ShowMessage("\\n<Slug Marine>")
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   30
+ PAGE   1
+  ShowMessageFace("umiusi_k_fc1",2,0,2,1)
+  ShowMessage("\\n<Slug Marine>The pirate of prison has escaped, being confused by bogs!")
+  ShowMessageFace("tatunoko_k_fc1",2,0,2,2)
+  ShowMessage("\\n<Sea Horse Marine>")
+  ShowMessageFace("k_mermaid_fc1",0,0,2,3)
+  ShowMessage("\\n<Mermaid Pirate>")
+  0()
+ PAGE   2
+  // condition: variable 1051 >= 6
+  0()
+
+
+
+EVENT   31
+ PAGE   1
+  ShowMessageFace("tatunoko_k_fc1",2,0,2,1)
+  ShowMessage("\\n<Sea Horse Marine>")
+  ShowMessage("")
+  ShowMessageFace("bonny_fc1",0,0,2,2)
+  ShowMessage("\\n<Bonnie>")
+  0()
+
+
+
+EVENT   32
+ PAGE   1
+  ShowMessageFace("k_mermaid_fc1",0,0,2,1)
+  ShowMessage("\\n<Mermaid Pirate>")
+  ShowMessageFace("tatunoko_k_fc1",2,0,2,2)
+  ShowMessage("\\n<Sea Horse Marine>Two people living is cowardly!")
+  0()
+ PAGE   2
+  // condition: variable 1051 >= 6
+  0()
+
+
+
+EVENT   33
+ PAGE   1
+  ShowMessageFace("k_mermaid_fc1",0,0,2,1)
+  ShowMessage("\\n<Mermaid Pirate>")
+  ShowMessageFace("tatunoko_k_fc1",2,0,2,2)
+  ShowMessage("\\n<Sea Horse Marine>Two people living is cowardly!")
+  0()
+ PAGE   2
+  // condition: variable 1051 >= 6
+  0()
+
+
+
+EVENT   34
+ PAGE   1
+  ShowMessageFace("k_mermaid_fc1",0,0,2,1)
+  ShowMessage("\\n<Mermaid Pirate>")
+  ShowMessageFace("tatunoko_k_fc1",2,0,2,2)
+  ShowMessage("\\n<Sea Horse Marine>")
+  0()
+ PAGE   2
+  // condition: variable 1051 >= 6
+  0()
+
+
+
+EVENT   35
+ PAGE   1
+  ShowMessageFace("umiusi_k_fc1",2,0,2,1)
+  ShowMessage("\\n<Slug Marine>The pirate of prison has escaped, being confused by bogs!")
+  ShowMessageFace("tatunoko_k_fc1",2,0,2,2)
+  ShowMessage("\\n<Sea Horse Marine>I eat too much food, I do not have the power ......")
+  ShowMessageFace("k_mermaid_fc1",0,0,2,3)
+  ShowMessage("\\n<Mermaid Pirate>")
+  0()
+ PAGE   2
+  // condition: variable 1051 >= 6
+  0()
+
+
+
+EVENT   36
+ PAGE   1
+  ShowMessageFace("umiusi_k_fc1",2,0,2,1)
+  ShowMessage("\\n<Slug Marine>The pirate of prison has escaped, being confused by bogs!")
+  ShowMessageFace("tatunoko_k_fc1",2,0,2,2)
+  ShowMessage("\\n<Sea Horse Marine>I eat too much food, I do not have the power ......")
+  ShowMessageFace("k_mermaid_fc1",0,0,2,3)
+  ShowMessage("\\n<Mermaid Pirate>")
+  0()
+ PAGE   2
+  // condition: variable 1051 >= 6
+  0()
+
+
+
+EVENT   37
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Shihama Imperator>")
+  ShowMessage("")
+  ShowMessageFace("ashel_fc1",0,0,2,2)
+  ShowMessage("\\n<Asher>")
+  0()
+
+
+
+EVENT   38
+ PAGE   1
+  0()
+
+
+
+EVENT   39
+ PAGE   1
+  If(1,822,0,2,1)
+   If(0,1571,1)
+    ShowMessageFace("mob_kaihei_fc1",0,0,2,1)
+    ShowMessage("\\n<Millio>Hey, please make me a friend too.")
+    ShowMessage("I want to go on a wide world ~!")
+    ShowChoices(strings("To make friends","Do not companion"),0)
+    IfPlayerPicksChoice(0,null)
+     ShowMessageFace("mob_kaihei_fc1",0,0,2,2)
+     ShowMessage("\\n<Millio>I did it! Overall!")
+     PictureClear(5)
+     205(0,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x09,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x2a,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x0f,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x2c,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+     355("add_actor_ex(571)")
+     249(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0c,0x66,0x61,0x6e,0x66,0x61,0x6c,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69))
+     ShowMessageFace("",0,0,2,3)
+     ShowMessage("Milio joined the group!")
+     Wait(60)
+     EndEventProcessing()
+     0()
+    IfPlayerPicksChoice(1,null)
+     ShowMessageFace("mob_kaihei_fc1",0,0,2,4)
+     ShowMessage("\\n<Millio>I'll be waiting here ...")
+     0()
+    404()
+    0()
+   EndIf()
+   0()
+  EndIf()
+  RunCommonEvent(7211)
+  0()
+ PAGE   2
+  // condition: party contains actor #571
+  0()
+
+
+
+EVENT   40
+ PAGE   1
+  0()
+
+
+
+EVENT   41
+ PAGE   1
+  0()
+
+
+
+EVENT   42
+ PAGE   1
+  ShowMessageFace("tatunoko_k_fc1",1,0,2,1)
+  ShowMessage("\\n<Sea Horse Marine>")
+  ShowMessage("")
+  If(4,132,0)
+   ShowMessageFace("zonbe_fc2",0,0,2,2)
+   ShowMessage("\\n<null>")
+   0()
+  EndIf()
+  Battle(0,589,false,false)
+  ChangeSelfSwitch("A",0)
+  ShowMessageFace("tatunoko_k_fc1",2,0,2,3)
+  ShowMessage("\\n<Sea Horse Marine>")
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   43
+ PAGE   1
+  ShowMessageFace("tatunoko_k_fc1",2,0,2,1)
+  ShowMessage("\\n<Sea Horse Marine>")
+  ShowMessage("")
+  ShowChoices(strings("Listen to lectures","unnecessary"),2)
+  IfPlayerPicksChoice(0,null)
+   ShowMessageFace("tatunoko_k_fc1",0,0,2,2)
+   ShowMessage("\\n<Sea Horse Marine>")
+   ShowMessage("")
+   ShowMessageFace("tatunoko_k_fc1",0,0,2,3)
+   ShowMessage("\\n<Sea Horse Marine>")
+   ShowMessage("Actually, the headmen, somehow, draw the blood of Grand Noah's royal home ... ...")
+   ShowMessageFace("tatunoko_k_fc1",0,0,2,4)
+   ShowMessage("\\n<Sea Horse Marine>")
+   ShowMessage("")
+   ShowMessageFace("tatunoko_k_fc1",0,0,2,5)
+   ShowMessage("\\n<Sea Horse Marine>")
+   ShowMessage("Someday it became a power to protect the security of the sea.")
+   ShowMessageFace("tatunoko_k_fc1",1,0,2,6)
+   ShowMessage("\\n<Sea Horse Marine>")
+   ShowMessage("It is a proud organization that keeps the sea safe by sharing the pirates.")
+   If(0,6,0)
+    ShowMessageFace("sonia_fc1",0,0,2,7)
+    ShowMessage("\\n<Sonia>")
+    0()
+   Else()
+    ShowMessageFace("ruka_fc1",0,0,2,8)
+    ShowMessage("\\n<Luke>")
+    0()
+   EndIf()
+   ShowMessageFace("tatunoko_k_fc1",0,0,2,9)
+   ShowMessage("\\n<Sea Horse Marine>")
+   ShowMessage("Both are called \"pirate technique\".")
+   ShowMessageFace("tatunoko_k_fc1",1,0,2,10)
+   ShowMessage("\\n<Sea Horse Marine>")
+   0()
+  IfPlayerPicksChoice(1,null)
+   ShowMessageFace("tatunoko_k_fc1",2,0,2,11)
+   ShowMessage("\\n<Sea Horse Marine>........................")
+   EndEventProcessing()
+   0()
+  404()
+  0()
+ PAGE   2
+  // condition: variable 1051 >= 6
+  0()
+
+
+
+EVENT   44
+ PAGE   1
+  ShowMessageFace("tatunoko_k_fc1",2,0,2,1)
+  ShowMessage("\\n<Sea Horse Marine>Don't bully the tutorial sea horses...")
+  ShowMessage("Well, do do want to know more about the [Marine]?")
+  ShowChoices(strings("Aye","Nay"),2)
+  IfPlayerPicksChoice(0,null)
+   ShowMessageFace("tatunoko_k_fc1",0,0,2,2)
+   ShowMessage("\\n<Sea Horse Marine>The occupation [Marine] is a profession for battle.")
+   ShowMessage("With high attack and defense, we are though and strong!")
+   ShowMessageFace("tatunoko_k_fc1",0,0,2,3)
+   ShowMessage("\\n<Sea Horse Marine>We can equip swords and guns and use them in battle.")
+   ShowMessage("With [Pirating] skills, we have a lot of attack powers.")
+   ShowMessageFace("tatunoko_k_fc1",0,0,2,4)
+   ShowMessage("\\n<Sea Horse Marine>We also have access to a special ability that grants us more starting SP in a battle.")
+   ShowMessage("With those, we can use many war skills.")
+   ShowMessageFace("tatunoko_k_fc1",0,0,2,5)
+   ShowMessage("\\n<Sea Horse Marine>We don't take damage from water attacks and our other elemental resistances are high.")
+   ShowMessage("Furthermore, we are stronger when fighting at sea, since we are naval experts.")
+   ShowMessageFace("tatunoko_k_fc1",0,0,2,6)
+   ShowMessage("\\n<Sea Horse Marine>We are strong on the land, and even stronger at sea...")
+   ShowMessage("For a though fight, you'd do well to bring the Marines.")
+   ShowMessageFace("tatunoko_k_fc1",0,0,2,7)
+   ShowMessage("\\n<Sea Horse Marine>In order to change to this job, you need a [Oceanic Business Permit]...")
+   ShowMessage("In addition, you'll have to master the [Guard] profession.")
+   EndEventProcessing()
+   0()
+  IfPlayerPicksChoice(1,null)
+   EndEventProcessing()
+   0()
+  404()
+  0()
+ PAGE   2
+  // condition: variable 1051 >= 6
+  0()
+
+
+
+EVENT   45
+ PAGE   1
+  ShowMessageFace("tatunoko_k_fc1",2,0,2,1)
+  ShowMessage("\\n<Sea Horse Marine>")
+  ShowMessage("")
+  ShowChoices(strings("","unnecessary"),2)
+  IfPlayerPicksChoice(0,null)
+   ShowMessageFace("tatunoko_k_fc1",0,0,2,2)
+   ShowMessage("\\n<Sea Horse Marine>What are the three biggest pirates in the world ... ...")
+   ShowMessage("")
+   ShowMessageFace("tatunoko_k_fc1",0,0,2,3)
+   ShowMessage("\\n<Sea Horse Marine>")
+   ShowMessage("")
+   ShowMessageFace("tatunoko_k_fc1",0,0,2,4)
+   ShowMessage("\\n<Sea Horse Marine>")
+   ShowMessage("")
+   ShowMessageFace("tatunoko_k_fc1",0,0,2,5)
+   ShowMessage("\\n<Sea Horse Marine>")
+   ShowMessage("For details, ask him.")
+   ShowMessageFace("tatunoko_k_fc1",0,0,2,6)
+   ShowMessage("\\n<Sea Horse Marine>")
+   ShowMessage("")
+   ShowMessageFace("tatunoko_k_fc1",2,0,2,7)
+   ShowMessage("\\n<Sea Horse Marine>")
+   ShowMessage("")
+   ShowMessageFace("tatunoko_k_fc1",0,0,2,8)
+   ShowMessage("\\n<Sea Horse Marine>And the Selene pirates.")
+   ShowMessage("Captain Selene, the headmaster, is a man of women.")
+   ShowMessageFace("tatunoko_k_fc1",0,0,2,9)
+   ShowMessage("\\n<Sea Horse Marine>")
+   ShowMessage("Finally, we established the Great Pirate Union to which 70% of the pirates are a member.")
+   ShowMessageFace("tatunoko_k_fc1",2,0,2,10)
+   ShowMessage("\\n<Sea Horse Marine>")
+   ShowMessage("Along with the disappearance of Captain Selene, the coalition was dismantled.")
+   If(0,6,0)
+    ShowMessageFace("sonia_fc2",2,0,2,11)
+    ShowMessage("\\n<Sonia>Pirate Queen Rosa, Captain Selene ......")
+    ShowMessage("Both of them are mysterious disappearances.")
+    0()
+   Else()
+    ShowMessageFace("ruka_fc1",0,0,2,12)
+    ShowMessage("\\n<Luke>Pirate Queen Rosa, Captain Selene ......")
+    ShowMessage("Both of them are mysterious disappearances.")
+    0()
+   EndIf()
+   ShowMessageFace("tatunoko_k_fc1",2,0,2,13)
+   ShowMessage("\\n<Sea Horse Marine>")
+   ShowMessage("")
+   ShowMessageFace("tatunoko_k_fc1",0,0,2,14)
+   ShowMessage("\\n<Sea Horse Marine>That was the lecture of the three major pirates.")
+   ShowMessage("")
+   ShowMessageFace("tatunoko_k_fc1",2,0,2,15)
+   ShowMessage("\\n<Sea Horse Marine>... ... It was a stupid thing.")
+   ShowMessage("")
+   EndEventProcessing()
+   0()
+  IfPlayerPicksChoice(1,null)
+   ShowMessageFace("tatunoko_k_fc1",2,0,2,16)
+   ShowMessage("\\n<Sea Horse Marine>........................")
+   EndEventProcessing()
+   0()
+  404()
+  0()
+ PAGE   2
+  // condition: variable 1051 >= 6
+  0()
+
+
+
+EVENT   46
+ PAGE   1
+  ShowMessageFace("umiusi_k_fc1",2,0,2,1)
+  ShowMessage("\\n<Slug Marine>The pirate of prison has escaped, being confused by bogs!")
+  ShowMessageFace("tatunoko_k_fc1",2,0,2,2)
+  ShowMessage("\\n<Sea Horse Marine>I eat too much food, I do not have the power ......")
+  ShowMessageFace("k_mermaid_fc1",0,0,2,3)
+  ShowMessage("\\n<Mermaid Pirate>")
+  0()
+ PAGE   2
+  // condition: variable 1051 >= 6
+  0()
+
+
+
+EVENT   47
+ PAGE   1
+  0()
+
+
+
+EVENT   48
+ PAGE   1
+  0()
+
+
+
+EVENT   49
+ PAGE   1
+  0()
+
+
+
+EVENT   50
+ PAGE   1
+  // condition: variable 1051 >= 6
+  ShowMessageFace("tatunoko_k_fc1",2,0,2,1)
+  ShowMessage("\\n<Sea Horse Marine>")
+  ShowMessage("")
+  ShowChoices(strings("Listen to lectures","unnecessary"),2)
+  IfPlayerPicksChoice(0,null)
+   ShowMessageFace("tatunoko_k_fc1",0,0,2,2)
+   ShowMessage("\\n<Sea Horse Marine>")
+   ShowMessage("")
+   ShowMessageFace("tatunoko_k_fc1",0,0,2,3)
+   ShowMessage("\\n<Sea Horse Marine>")
+   ShowMessage("Actually, the headmen, somehow, draw the blood of Grand Noah's royal home ... ...")
+   ShowMessageFace("tatunoko_k_fc1",0,0,2,4)
+   ShowMessage("\\n<Sea Horse Marine>")
+   ShowMessage("")
+   ShowMessageFace("tatunoko_k_fc1",0,0,2,5)
+   ShowMessage("\\n<Sea Horse Marine>")
+   ShowMessage("Someday it became a power to protect the security of the sea.")
+   ShowMessageFace("tatunoko_k_fc1",1,0,2,6)
+   ShowMessage("\\n<Sea Horse Marine>")
+   ShowMessage("It is a proud organization that keeps the sea safe by sharing the pirates.")
+   If(0,6,0)
+    ShowMessageFace("sonia_fc1",0,0,2,7)
+    ShowMessage("\\n<Sonia>")
+    0()
+   Else()
+    ShowMessageFace("ruka_fc1",0,0,2,8)
+    ShowMessage("\\n<Luke>")
+    0()
+   EndIf()
+   ShowMessageFace("tatunoko_k_fc1",0,0,2,9)
+   ShowMessage("\\n<Sea Horse Marine>")
+   ShowMessage("Both are called \"pirate technique\".")
+   ShowMessageFace("tatunoko_k_fc1",1,0,2,10)
+   ShowMessage("\\n<Sea Horse Marine>")
+   0()
+  IfPlayerPicksChoice(1,null)
+   ShowMessageFace("tatunoko_k_fc1",2,0,2,11)
+   ShowMessage("\\n<Sea Horse Marine>........................")
+   EndEventProcessing()
+   0()
+  404()
+  0()
+
+
+
+EVENT   51
+ PAGE   1
+  // condition: variable 1051 >= 6
+  ShowMessageFace("tatunoko_k_fc1",2,0,2,1)
+  ShowMessage("\\n<Sea Horse Marine>I never have anything to do...")
+  ShowMessage("Well, do do want to know more about the [Marine]?")
+  ShowChoices(strings("Aye","Nay"),2)
+  IfPlayerPicksChoice(0,null)
+   ShowMessageFace("tatunoko_k_fc1",0,0,2,2)
+   ShowMessage("\\n<Sea Horse Marine>The occupation [Marine] is a profession for battle.")
+   ShowMessage("With high attack and defense, we are though and strong!")
+   ShowMessageFace("tatunoko_k_fc1",0,0,2,3)
+   ShowMessage("\\n<Sea Horse Marine>We can equip swords and guns and use them in battle.")
+   ShowMessage("With [Pirating] skills, we have a lot of attack powers.")
+   ShowMessageFace("tatunoko_k_fc1",0,0,2,4)
+   ShowMessage("\\n<Sea Horse Marine>We also have access to a special ability that grants us more starting SP in a battle.")
+   ShowMessage("With those, we can use many war skills.")
+   ShowMessageFace("tatunoko_k_fc1",0,0,2,5)
+   ShowMessage("\\n<Sea Horse Marine>We don't take damage from water attacks and our other elemental resistances are high.")
+   ShowMessage("Furthermore, we are stronger when fighting at sea, since we are naval experts.")
+   ShowMessageFace("tatunoko_k_fc1",0,0,2,6)
+   ShowMessage("\\n<Sea Horse Marine>We are strong on the land, and even stronger at sea...")
+   ShowMessage("For a though fight, you'd do well to bring the Marines.")
+   ShowMessageFace("tatunoko_k_fc1",0,0,2,7)
+   ShowMessage("\\n<Sea Horse Marine>In order to change to this job, you need a [Oceanic Business Permit]...")
+   ShowMessage("In addition, you'll have to master the [Guard] profession.")
+   EndEventProcessing()
+   0()
+  IfPlayerPicksChoice(1,null)
+   EndEventProcessing()
+   0()
+  404()
+  0()
+
+
+
+EVENT   52
+ PAGE   1
+  // condition: variable 1051 >= 6
+  ShowMessageFace("tatunoko_k_fc1",2,0,2,1)
+  ShowMessage("\\n<Sea Horse Marine>")
+  ShowMessage("")
+  ShowChoices(strings("","unnecessary"),2)
+  IfPlayerPicksChoice(0,null)
+   ShowMessageFace("tatunoko_k_fc1",0,0,2,2)
+   ShowMessage("\\n<Sea Horse Marine>What are the three biggest pirates in the world ... ...")
+   ShowMessage("")
+   ShowMessageFace("tatunoko_k_fc1",0,0,2,3)
+   ShowMessage("\\n<Sea Horse Marine>")
+   ShowMessage("")
+   ShowMessageFace("tatunoko_k_fc1",0,0,2,4)
+   ShowMessage("\\n<Sea Horse Marine>")
+   ShowMessage("")
+   ShowMessageFace("tatunoko_k_fc1",0,0,2,5)
+   ShowMessage("\\n<Sea Horse Marine>")
+   ShowMessage("For details, ask him.")
+   ShowMessageFace("tatunoko_k_fc1",0,0,2,6)
+   ShowMessage("\\n<Sea Horse Marine>")
+   ShowMessage("")
+   ShowMessageFace("tatunoko_k_fc1",2,0,2,7)
+   ShowMessage("\\n<Sea Horse Marine>")
+   ShowMessage("")
+   ShowMessageFace("tatunoko_k_fc1",0,0,2,8)
+   ShowMessage("\\n<Sea Horse Marine>")
+   ShowMessage("Captain Selene, the headmaster, is a man of women.")
+   ShowMessageFace("tatunoko_k_fc1",0,0,2,9)
+   ShowMessage("\\n<Sea Horse Marine>")
+   ShowMessage("Finally, we established the Great Pirate Union to which 70% of the pirates are a member.")
+   ShowMessageFace("tatunoko_k_fc1",2,0,2,10)
+   ShowMessage("\\n<Sea Horse Marine>")
+   ShowMessage("Along with the disappearance of Captain Selene, the coalition was dismantled.")
+   If(0,6,0)
+    ShowMessageFace("sonia_fc2",2,0,2,11)
+    ShowMessage("\\n<Sonia>Pirate Queen Rosa, Captain Selene ......")
+    ShowMessage("")
+    0()
+   Else()
+    ShowMessageFace("ruka_fc1",0,0,2,12)
+    ShowMessage("\\n<Luke>")
+    ShowMessage("Both of them are mysterious disappearances.")
+    0()
+   EndIf()
+   ShowMessageFace("tatunoko_k_fc1",2,0,2,13)
+   ShowMessage("\\n<Sea Horse Marine>")
+   ShowMessage("")
+   ShowMessageFace("tatunoko_k_fc1",0,0,2,14)
+   ShowMessage("\\n<Sea Horse Marine>That was the lecture of the three major pirates.")
+   ShowMessage("")
+   ShowMessageFace("tatunoko_k_fc1",2,0,2,15)
+   ShowMessage("\\n<Sea Horse Marine>... ... It was a stupid thing.")
+   ShowMessage("")
+   EndEventProcessing()
+   0()
+  IfPlayerPicksChoice(1,null)
+   ShowMessageFace("tatunoko_k_fc1",2,0,2,16)
+   ShowMessage("\\n<Sea Horse Marine>........................")
+   EndEventProcessing()
+   0()
+  404()
+  0()
+
+
+
+EVENT   53
+ PAGE   1
+  // condition: variable 1051 >= 6
+  0()
+ PAGE   2
+  // condition: variable 1051 >= 6
+  0()
+
+
+
+EVENT   54
+ PAGE   1
+  // condition: variable 1051 >= 6
+  ShowMessageFace("k_mermaid_fc1",0,0,2,1)
+  ShowMessage("\\n<Mermaid Pirate>Liberty is good, is not it ~ ♪")
+  ShowMessageFace("ashel_fc1",1,0,2,2)
+  ShowMessage("\\n<Asher>")
+  0()
+
+
+
+EVENT   55
+ PAGE   1
+  // condition: variable 1051 >= 6
+  ShowMessageFace("k_mermaid_fc1",0,0,2,1)
+  ShowMessage("\\n<Mermaid Pirate>Thank you very much!")
+  ShowMessageFace("bonny_fc1",1,0,2,2)
+  ShowMessage("\\n<Bonnie>")
+  0()
+
+
+
+EVENT   56
+ PAGE   1
+  // condition: variable 1051 >= 6
+  ShowMessageFace("k_mermaid_fc1",0,0,2,1)
+  ShowMessage("\\n<Mermaid Pirate>I'm a free mermaid now!")
+  ShowMessage("By the way, do you want to know about the [Pirate]?")
+  ShowChoices(strings("Aye","Nay"),2)
+  IfPlayerPicksChoice(0,null)
+   ShowMessageFace("k_mermaid_fc1",0,0,2,2)
+   ShowMessage("\\n<Mermaid Pirate>The occupation [Pirate] is a profession for battle.")
+   ShowMessage("We have high attack and defense and are good at fist fighting!")
+   ShowMessageFace("k_mermaid_fc1",0,0,2,3)
+   ShowMessage("\\n<Mermaid Pirate>We are also adept at using swords and guns.")
+   ShowMessage("Also, [Pirating] has many powerful attack skills.")
+   ShowMessageFace("k_mermaid_fc1",0,0,2,4)
+   ShowMessage("\\n<Mermaid Pirate>We also have access to a special ability that reduces the SP consumption of our skills.")
+   ShowMessage("With it, we can use a lot of powerful warfare skills♪")
+   ShowMessageFace("k_mermaid_fc1",0,0,2,5)
+   ShowMessage("\\n<Mermaid Pirate>We are not damaged by water attacks and also have high resistances to other elements.")
+   ShowMessage("When fighting on the ocean, our abilities increase, making us perfect for maritime warfare.")
+   ShowMessageFace("k_mermaid_fc1",0,0,2,6)
+   ShowMessage("\\n<Mermaid Pirate>Because we have the same roots, our performance is quite similar to Marines.")
+   ShowMessage("But pirates also learn some techniques for stealing♪")
+   ShowMessageFace("k_mermaid_fc1",0,0,2,7)
+   ShowMessage("\\n<Mermaid Pirate>In order to change to this job, you need an [Oceanic Business Permit]...")
+   ShowMessage("And you'll also have to master being a [Thief].")
+   EndEventProcessing()
+   0()
+  IfPlayerPicksChoice(1,null)
+   EndEventProcessing()
+   0()
+  404()
+  0()
+
+
+
+EVENT   57
+ PAGE   1
+  // condition: variable 1051 >= 6
+  ShowMessageFace("k_mermaid_fc1",0,0,2,1)
+  ShowMessage("\\n<Mermaid Pirate>Thankfully, I was able to get out of prison!")
+  ShowMessageFace("bonny_fc1",1,0,2,2)
+  ShowMessage("\\n<Bonnie>")
+  0()
+
+
+
+EVENT   58
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(2,0,0,3)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   59
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventoryArmor(188,0,0,1,false)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   60
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventoryArmor(64,0,0,1,false)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   61
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  125(0,0,10000)
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("10000\\G acquired!")
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   62
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventoryWeapon(451,0,0,1,false)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   63
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(405,0,0,3)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+

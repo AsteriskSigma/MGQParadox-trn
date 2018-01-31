@@ -1,0 +1,51 @@
+#==============================================================================
+# ■ Game_BaseItem
+#------------------------------------------------------------------------------
+# It is a class that handles skills, items, weapons, and armor uniformly. Include in save data
+# As we can do, we do not keep a reference to the database object itself.
+#==============================================================================
+
+class Game_BaseItem
+  #--------------------------------------------------------------------------
+  # ● Object initialization
+  #--------------------------------------------------------------------------
+  def initialize
+    @class = nil
+    @item_id = 0
+  end
+  #--------------------------------------------------------------------------
+  # ● Class determination
+  #--------------------------------------------------------------------------
+  def is_skill?;   @class == RPG::Skill;   end
+  def is_item?;    @class == RPG::Item;    end
+  def is_weapon?;  @class == RPG::Weapon;  end
+  def is_armor?;   @class == RPG::Armor;   end
+  def is_nil?;     @class == nil;          end
+  #--------------------------------------------------------------------------
+  # ● Retrieve item objects
+  #--------------------------------------------------------------------------
+  def object
+    return $data_skills[@item_id]  if is_skill?
+    return $data_items[@item_id]   if is_item?
+    return $data_weapons[@item_id] if is_weapon?
+    return $data_armors[@item_id]  if is_armor?
+    return nil
+  end
+  #--------------------------------------------------------------------------
+  # ● Setting item objects
+  #--------------------------------------------------------------------------
+  def object=(item)
+    @class = item ? item.class : nil
+    @item_id = item ? item.id : 0
+  end
+  #--------------------------------------------------------------------------
+  # ● Equipment set with ID
+  #     is_weapon : Whether weapons or not
+  #     item_id   : Weapon / armor ID
+  #--------------------------------------------------------------------------
+  def set_equip(is_weapon, item_id)
+    @class = is_weapon ? RPG::Weapon : RPG::Armor
+    @item_id = item_id
+  end
+end
+

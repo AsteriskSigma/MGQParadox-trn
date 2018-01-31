@@ -1,0 +1,119 @@
+#==============================================================================
+# ■ Window_EquipSlot
+#------------------------------------------------------------------------------
+# On the equipment screen, this is the window that displays the items currently acted on by the actor.
+#==============================================================================
+
+class Window_EquipSlot < Window_Selectable
+  #--------------------------------------------------------------------------
+  # ● Public instance variables
+  #--------------------------------------------------------------------------
+  attr_reader   :status_window            # Status window
+  attr_reader   :item_window              # Item window
+  #--------------------------------------------------------------------------
+  # ● Object initialization
+  #--------------------------------------------------------------------------
+  def initialize(x, y, width)
+    super(x, y, width, window_height)
+    @actor = nil
+    refresh
+  end
+  #--------------------------------------------------------------------------
+  # ● Obtain window height
+  #--------------------------------------------------------------------------
+  def window_height
+    fitting_height(visible_line_number)
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire number of display lines
+  #--------------------------------------------------------------------------
+  def visible_line_number
+    return 5
+  end
+  #--------------------------------------------------------------------------
+  # ● Actor settings
+  #--------------------------------------------------------------------------
+  def actor=(actor)
+    return if @actor == actor
+    @actor = actor
+    refresh
+  end
+  #--------------------------------------------------------------------------
+  # ● Frame update
+  #--------------------------------------------------------------------------
+  def update
+    super
+    @item_window.slot_id = index if @item_window
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of number of items
+  #--------------------------------------------------------------------------
+  def item_max
+    @actor ? @actor.equip_slots.size : 0
+  end
+  #--------------------------------------------------------------------------
+  # ● Item acquisition
+  #--------------------------------------------------------------------------
+  def item
+    @actor ? @actor.equips[index] : nil
+  end
+	#--------------------------------------------------------------------------
+  # ● Item selection
+  #--------------------------------------------------------------------------
+  def select(index)
+    self.index = index if index
+  end
+  #--------------------------------------------------------------------------
+  # ● Drawing items
+  #--------------------------------------------------------------------------
+  def draw_item(index)
+    return unless @actor
+    rect = item_rect_for_text(index)
+    change_color(system_color, enable?(index))
+    draw_text(rect.x, rect.y, 92, line_height, slot_name(index))
+    draw_item_name(@actor.equips[index], rect.x + 92, rect.y, enable?(index))
+  end
+  #--------------------------------------------------------------------------
+  # ● Get the name of equipment slot
+  #--------------------------------------------------------------------------
+  def slot_name(index)
+    @actor ? Vocab::etype(@actor.equip_slots[index]) : ""
+  end
+  #--------------------------------------------------------------------------
+  # ● Whether or not to display equipment slot in permitted state
+  #--------------------------------------------------------------------------
+  def enable?(index)
+    @actor ? @actor.equip_change_ok?(index) : false
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire the effective state of the selected item
+  #--------------------------------------------------------------------------
+  def current_item_enabled?
+    enable?(index)
+  end
+  #--------------------------------------------------------------------------
+  # ● Status Window Settings
+  #--------------------------------------------------------------------------
+  def status_window=(status_window)
+    @status_window = status_window
+    call_update_help
+  end
+  #--------------------------------------------------------------------------
+  # ● Item window setting
+  #--------------------------------------------------------------------------
+  def item_window=(item_window)
+    @item_window = item_window
+    update
+  end
+
+
+  #--------------------------------------------------------------------------
+  # ● Help text update
+  #--------------------------------------------------------------------------
+  def update_help
+    super
+    @help_window.set_item(item) if @help_window
+    @status_window.set_temp_actor(nil) if @status_window
+  end
+end
+

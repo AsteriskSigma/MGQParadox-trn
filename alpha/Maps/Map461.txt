@@ -1,0 +1,819 @@
+
+DisplayName "Iliasville"
+
+
+
+EVENT   1
+ PAGE   1
+  ChangeSelfSwitch("A",0)
+  205(-1,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x07,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x18,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  241(bytes(0x04,0x08,0x6f,0x3a,0x0d,0x52,0x50,0x47,0x3a,0x3a,0x42,0x47,0x4d,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x6b,0x69,0x6b,0x69,0x32,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69))
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("The simple grave is marked 'Sonya'.")
+  If(0,6,0)
+   ShowMessageFace("sonia_fc3",7,0,2,2)
+   ShowMessage("\\n<Sonya>Mine!? This has to be a joke! Why is there a grave with my name on it?")
+   0()
+  EndIf()
+  ShowMessageFace("ruka_fc1",0,0,2,3)
+  ShowMessage("\\n<Luka>What in the world is going on...")
+  241(bytes(0x04,0x08,0x6f,0x3a,0x0d,0x52,0x50,0x47,0x3a,0x3a,0x42,0x47,0x4d,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x14,0x73,0x63,0x65,0x6e,0x65,0x5f,0x6b,0x61,0x6e,0x61,0x73,0x69,0x6d,0x69,0x32,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69))
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   2
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  125(0,0,750)
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("750\\G obtained!")
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+EVENT   7
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,196,59,53,0,0)
+  0()
+
+
+
+EVENT   8
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,196,60,53,0,0)
+  0()
+
+
+
+EVENT   9
+ PAGE   1
+  ChangeSelfSwitch("A",0)
+  205(-1,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x0a,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x09,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x09,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x09,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x09,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  ShowMessageFace("ruka_fc1",0,0,2,1)
+  ShowMessage("\\n<Luka>Wh-what happened here!?")
+  If(0,6,0)
+   ShowMessageFace("sonia_fc3",7,0,2,2)
+   ShowMessage("\\n<Sonya>No way, Iliasville was destroyed!?")
+   0()
+  EndIf()
+  ShowMessageFace("ruka_fc1",0,0,2,3)
+  ShowMessage("\\n<Luka>What became of all the villagers!? Who in the world would do this?!")
+  If(0,4,0)
+   ShowMessageFace("alice_fc5",2,0,2,4)
+   ShowMessage("\\n<Alice>Calm down, Luka, nothing here adds up. Do you really think all of this could have happened in the short time we were gone?")
+   ShowMessageFace("alice_fc5",0,0,2,5)
+   ShowMessage("\\n<Alice>It looks like it's been quite awhile since the village was destroyed as well. I doubt this is the Iliasville where you were born.")
+   0()
+  EndIf()
+  If(0,5,0)
+   ShowMessageFace("iriasu_fc4",7,0,2,6)
+   ShowMessage("\\n<Ilias>Calm down, Luka, nothing here adds up. Do you really think all of this could have happened in the short time we were gone?")
+   ShowMessageFace("iriasu_fc4",7,0,2,7)
+   ShowMessage("\\n<Ilias>On top of that, it has clearly been months, if not years, since the village was destroyed. This is not your Iliasville.")
+   0()
+  EndIf()
+  ShowMessageFace("ruka_fc1",0,0,2,8)
+  ShowMessage("\\n<Luka>But it looks so familiar...")
+  If(0,6,0)
+   ShowMessageFace("sonia_fc3",7,0,2,9)
+   ShowMessage("\\n<Sonya>Either way, let's not stand around!")
+   0()
+  Else()
+   ShowMessageFace("",0,0,2,10)
+   ShowMessage("Either way, I guess we should look around...")
+   0()
+  EndIf()
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   10
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("The bones of some unknown villager... A weathered hoe lies beside them.")
+  If(0,6,0)
+   ShowMessageFace("sonia_fc3",7,0,2,2)
+   ShowMessage("\\n<Sonya>Oh no, Ms. Rena...?")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   11
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("The bones of some unknown villager...")
+  0()
+
+
+
+EVENT   12
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("The bones of some unknown villager. An axe lies on the ground nearby.")
+  If(0,6,0)
+   ShowMessageFace("sonia_fc3",7,0,2,2)
+   ShowMessage("\\n<Sonya>Hans the lumberjack...")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   13
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("The bones of some unknown villager...")
+  If(0,6,0)
+   ShowMessageFace("sonia_fc3",7,0,2,2)
+   ShowMessage("\\n<Sonya>The nice old lady who sold vegetables? Poor soul...")
+   0()
+  EndIf()
+  If(4,53,0)
+   ShowMessageFace("slime_fc1",2,0,2,3)
+   ShowMessage("\\n<Lime>Vegetable lady is gone? No, that's not fair...")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   14
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("The bones of some unknown villager...")
+  0()
+
+
+
+EVENT   15
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("The bones of some unknown villager...")
+  0()
+
+
+
+EVENT   16
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("The bones of some unknown villager...")
+  0()
+
+
+
+EVENT   17
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("The building is completely destroyed.")
+  ShowMessageFace("ruka_fc1",0,0,2,2)
+  ShowMessage("\\n<Luka>My house... How did this happen...")
+  0()
+
+
+
+EVENT   18
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("The bones of some unknown villager...")
+  If(0,6,0)
+   ShowMessageFace("sonia_fc3",7,0,2,2)
+   ShowMessage("\\n<Sonya>Probably the village chief, judging from the bend in his back. I gave him enough shoulder and back rubs to recognize him even like this...")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   19
+ PAGE   1
+  ShowMessageFace("ruka_fc1",0,0,2,1)
+  ShowMessage("\\n<Luka>There are so many bones piled up that I can't tell how many died...")
+  0()
+
+
+
+EVENT   20
+ PAGE   1
+  ShowMessageFace("ruka_fc1",0,0,2,1)
+  ShowMessage("\\n<Luka>There are so many bones piled up that I can't tell how many died...")
+  0()
+
+
+
+EVENT   21
+ PAGE   1
+  ShowMessageFace("ruka_fc1",0,0,2,1)
+  ShowMessage("\\n<Luka>There are so many bones piled up that I can't tell how many died...")
+  0()
+
+
+
+EVENT   22
+ PAGE   1
+  ShowMessageFace("ruka_fc1",0,0,2,1)
+  ShowMessage("\\n<Luka>There are so many bones piled up that I can't tell how many died...")
+  0()
+
+
+
+EVENT   23
+ PAGE   1
+  ShowMessageFace("ruka_fc1",0,0,2,1)
+  ShowMessage("\\n<Luka>There are so many bones piled up that I can't tell how many died...")
+  0()
+
+
+
+EVENT   24
+ PAGE   1
+  ShowMessageFace("ruka_fc1",0,0,2,1)
+  ShowMessage("\\n<Luka>There are so many bones piled up that I can't tell how many died...")
+  0()
+
+
+
+EVENT   25
+ PAGE   1
+  ShowMessageFace("ruka_fc1",0,0,2,1)
+  ShowMessage("\\n<Luka>There are so many bones piled up that I can't tell how many died...")
+  0()
+
+
+
+EVENT   26
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Fish bones are scattered all around the destroyed Slime Girl store.")
+  If(0,6,0)
+   ShowMessageFace("sonia_fc3",7,0,2,2)
+   ShowMessage("\\n<Sonya>I wonder what happened to the Slime Girl herself...")
+   0()
+  EndIf()
+  If(4,53,0)
+   ShowMessageFace("slime_fc1",2,0,2,3)
+   ShowMessage("\\n<Lime>Waaaaa! Waaaaa!")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   27
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("The remnants of the vegetable stand. Shreds of dessicated vegetables lay scattered on the ground.")
+  0()
+
+
+
+EVENT   28
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("The remnants of the vegetable stand. Shreds of dessicated vegetables lay scattered on the ground.")
+  0()
+
+
+
+EVENT   29
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("The remnants of the vegetable stand. Shreds of dessicated vegetables lay scattered on the ground.")
+  0()
+
+
+
+EVENT   30
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Innumerable human bones can be seen at the bottom of the well.")
+  If(0,6,0)
+   ShowMessageFace("sonia_fc3",7,0,2,2)
+   ShowMessage("\\n<Sonya>This is horrible...")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   31
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("The bones of some unknown villager...")
+  0()
+
+
+
+EVENT   32
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("The bones of some unknown villager...")
+  If(0,6,0)
+   ShowMessageFace("sonia_fc3",7,0,2,2)
+   ShowMessage("\\n<Sonya>Large build, deformed right arm... These definitely belong to Uncle Lazarus...")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   33
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Words are written on the wall:")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("'There are so many bodies, we can't bury them all. The village is finished.'")
+  If(0,6,0)
+   ShowMessageFace("sonia_fc3",7,0,2,3)
+   ShowMessage("\\n<Sonya>This wasn't an epidemic. Was the village attacked?")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   34
+ PAGE   1
+  ChangeSwitch(2046,2046,0)
+  ShowMessageFace("ruka_fc1",0,0,2,1)
+  ShowMessage("\\n<Luka>How can there be so many graves?")
+  If(0,6,0)
+   ShowMessageFace("sonia_fc3",7,0,2,2)
+   ShowMessage("\\n<Sonya>There must be one for almost every villager...")
+   0()
+  EndIf()
+  0()
+ PAGE   2
+  // condition: switch 2046 is ON
+  0()
+
+
+
+EVENT   35
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("The simple grave is marked 'Sonya'.")
+  If(0,6,0)
+   ShowMessageFace("sonia_fc3",7,0,2,2)
+   ShowMessage("\\n<Sonya>Mine!? This has to be a joke! Why is there a grave with my name on it?")
+   0()
+  EndIf()
+  ShowMessageFace("ruka_fc1",0,0,2,3)
+  ShowMessage("\\n<Luka>What in the world is going on...")
+  0()
+ PAGE   2
+  // condition: variable 1001 >= 10
+  0()
+
+
+
+EVENT   36
+ PAGE   1
+  241(bytes(0x04,0x08,0x6f,0x3a,0x0d,0x52,0x50,0x47,0x3a,0x3a,0x42,0x47,0x4d,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x6b,0x69,0x6b,0x69,0x32,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69))
+  PictureDisplay(5,"iv_ruka1",0,0,0,0,100,100,0,0)
+  PictureMove(5,null,0,0,0,0,100,100,255,0,30,true)
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("The simple grave is marked 'Luka'.")
+  ShowMessageFace("ruka_fc1",0,0,2,2)
+  ShowMessage("\\n<Luka>No way! There's even one for me!?")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("A diary lays in front of the tombstone.")
+  ShowMessageFace("ruka_fc1",0,0,2,4)
+  ShowMessage("\\n<Luka>This is my diary...")
+  DefineLabel("0")
+  ShowMessageFace("",0,0,2,5)
+  ShowMessage("Start reading from where?")
+  355("unlimited_choices(11, [\"Beginning\",")
+  655("\"A while back\",\"Recent\",\"???\",")
+  655("\"Close the diary\"])")
+  If(1,11,0,0,0)
+   ShowMessageFace("",0,0,2,6)
+   ShowMessage("Johannes Calendar 14xx/1/1")
+   ShowMessageFace("",0,0,2,7)
+   ShowMessage("Inside is a record of my, Luka's, growth to adulthood. Luka, please start making entries after this one.")
+   ShowMessage("                                        Your Mother, Lucifina")
+   ShowMessageFace("ruka_fc1",0,0,2,8)
+   ShowMessage("\\n<Luka>This is the very first entry that my mother wrote for me. I made all the ones after it...")
+   ShowMessageFace("",0,0,2,9)
+   ShowMessage("Johannes Calendar 14xx/4/15")
+   ShowMessageFace("",0,0,2,10)
+   ShowMessage("I climbed the mountain with my mom. Sonya climbed it with us.")
+   ShowMessageFace("",0,0,2,11)
+   ShowMessage("The view was nice, and the food was good. The rice balls Sonya made were bad though.")
+   ShowMessageFace("",0,0,2,12)
+   ShowMessage("I want my father to go with us next time. Please come home soon father.")
+   ShowMessageFace("",0,0,2,13)
+   ShowMessage("Johannes Calendar 14xx/10/20")
+   ShowMessageFace("",0,0,2,14)
+   ShowMessage("I explored the mountains today. I wanted to go alone, but Sonya came for some reason.")
+   ShowMessageFace("",0,0,2,15)
+   ShowMessage("I fell and hurt myself, but Sonya healed me with magic. She's violent, but good with healing magic.")
+   ShowMessageFace("",0,0,2,16)
+   ShowMessage("After that, we got turned around and lost. Me and Sonya cried, but Uncle came and found us")
+   ShowMessageFace("",0,0,2,17)
+   ShowMessage("Everyone in the village got really mad at us. My mother, uncle, and Betty too.")
+   ShowMessageFace("",0,0,2,18)
+   ShowMessage("I never want to get lost again. Ilias, please guide my way.")
+   ShowMessageFace("",0,0,2,19)
+   ShowMessage("Johannes Calendar 14xx/3/4")
+   ShowMessageFace("",0,0,2,20)
+   ShowMessage("My dad didn't come back today either. He hasn't even sent a letter since he left.")
+   ShowMessageFace("",0,0,2,21)
+   ShowMessage("But my mom and I believe in him. We know he'll return from his adventure one day.")
+   ShowMessageFace("",0,0,2,22)
+   ShowMessage("Today, I prayed to Ilias that he'd come back to us. I hope my prayers reach her one of these days.")
+   JumpToLabel("0")
+   0()
+  EndIf()
+  If(1,11,0,1,0)
+   ShowMessageFace("",0,0,2,23)
+   ShowMessage("Johannes Calendar 14xx/7/21")
+   ShowMessageFace("",0,0,2,24)
+   ShowMessage("My mother got sick and died. It happened over a month ago, but I was too scared to write it down.")
+   ShowMessageFace("",0,0,2,25)
+   ShowMessage("Even Sonya cried at her funeral. Everyone in the village has been kind to me.")
+   ShowMessageFace("",0,0,2,26)
+   ShowMessage("Betty asked me if I wanted to live with her, but I decided to keep living here.")
+   ShowMessageFace("",0,0,2,27)
+   ShowMessage("Since I learned to take care of the inn from my mother, I can handle most of the housework by myself.")
+   ShowMessageFace("",0,0,2,28)
+   ShowMessage("That doesn't stop Betty and uncle from bothering me though. Sonya tries to 'help' too, which is even worse.")
+   ShowMessageFace("",0,0,2,29)
+   ShowMessage("I don't plan on crying anymore. Perhaps if my father hears the news, he'll come home...")
+   ShowMessageFace("",0,0,2,30)
+   ShowMessage("Ilias, and mom in Heaven: Please watch over me.")
+   ShowMessageFace("",0,0,2,31)
+   ShowMessage("Johannes Calendar 14xx/1/1")
+   ShowMessageFace("",0,0,2,32)
+   ShowMessage("Today I did 200 practice swings and ran as usual. It's important to train my legs as well as my sword skill.")
+   ShowMessageFace("",0,0,2,33)
+   ShowMessage("Someday I'm going to become a hero and leave the village. I'll set off on my own adventure and find my dad.")
+   ShowMessageFace("",0,0,2,34)
+   ShowMessage("Johannes Calendar 14xx/4/6")
+   ShowMessageFace("",0,0,2,35)
+   ShowMessage("It seems like Sonya is against my plan to leave. She's been following me everywhere and complaining.")
+   ShowMessageFace("",0,0,2,36)
+   ShowMessage("But I've already made up my mind, and she isn't changing it. I'm going on an adventure and finding my dad.")
+   ShowMessageFace("",0,0,2,37)
+   ShowMessage("Johannes Calendar 14xx/8/2")
+   ShowMessageFace("",0,0,2,38)
+   ShowMessage("I was bored and reopened the inn last week. No guests, but I guess that's normal.")
+   ShowMessageFace("",0,0,2,39)
+   ShowMessage("I have plenty of savings and no worries for living expenses. But running the inn should provide me with experience.")
+   ShowMessageFace("",0,0,2,40)
+   ShowMessage("Plus, I should get lots of adventurers in here. I can ask them for advice and maybe pick up a skill or two.")
+   ShowMessageFace("",0,0,2,41)
+   ShowMessage("This is all for my eventual journey. If I want to catch up to my father, I have to work hard.")
+   ShowMessageFace("",0,0,2,42)
+   ShowMessage("Johannes Calendar 14xx/12/2")
+   ShowMessageFace("",0,0,2,43)
+   ShowMessage("Sonya's tyranny has reached a new high. This time she hid the sword I use for practice.")
+   ShowMessageFace("",0,0,2,44)
+   ShowMessage("She told me I had to defeat her if I wanted to travel. I challenged her, but she kicked my ass instead...")
+   ShowMessageFace("",0,0,2,45)
+   ShowMessage("Sonya is not fair. She's learning club skills directly from uncle...")
+   ShowMessageFace("ruka_fc1",0,0,2,46)
+   ShowMessage("\\n<Luka>......")
+   JumpToLabel("0")
+   0()
+  EndIf()
+  If(1,11,0,2,0)
+   ShowMessageFace("",0,0,2,47)
+   ShowMessage("Johannes Calendar 1454/5/1")
+   ShowMessageFace("",0,0,2,48)
+   ShowMessage("Today's my birthday, which marks one year until my departure. One year from today, I'll be baptized as a hero!")
+   ShowMessageFace("",0,0,2,49)
+   ShowMessage("Although no one has seen Ilias since the Great Disaster. So it's not really a baptism, just a simple ceremony.")
+   ShowMessageFace("",0,0,2,50)
+   ShowMessage("I don't care though. I'm still looking forward to the day.")
+   ShowMessageFace("",0,0,2,51)
+   ShowMessage("Wait for me, father. I'm going to become a hero and go see you!")
+   ShowMessageFace("",0,0,2,52)
+   ShowMessage("Johannes Calendar 1454/8/3")
+   ShowMessageFace("",0,0,2,53)
+   ShowMessage("Strange things are apparently happening all over the world. We've even heard about them in this peaceful, remote village.")
+   ShowMessageFace("",0,0,2,54)
+   ShowMessage("Monsters are growing restless. Entire villages are suddenly found deserted. Natural disasters have been more frequent, and major countries are going to war for no reason...")
+   ShowMessageFace("",0,0,2,55)
+   ShowMessage("This is different from the Great Disaster that shook the world 30 years ago. These recent oddities are more like a disease slowly spreading and infecting everyone.")
+   ShowMessageFace("",0,0,2,56)
+   ShowMessage("Rumors are that the Monster Lord is up to something. Just what is going on, and where is Ilias?")
+   ShowMessageFace("",0,0,2,57)
+   ShowMessage("It's possible that my father is out there fighting this. The day I leave is approaching. I need to get motivated and train harder!")
+   ShowMessageFace("",0,0,2,58)
+   ShowMessage("Johannes Calendar 1454/11/4")
+   ShowMessageFace("",0,0,2,59)
+   ShowMessage("Sonya's been cold ever since she joined the temple and became a priest. I feel like she's distancing herself from me for some reason.")
+   ShowMessageFace("",0,0,2,60)
+   ShowMessage("I asked her if she met someone she likes... and she beat me up with her club.")
+   ShowMessageFace("",0,0,2,61)
+   ShowMessage("I desperately fought back with my training sword, but I couldn't beat her. Are six more months going to be enough?")
+   ShowMessageFace("",0,0,2,62)
+   ShowMessage("Johannes Calendar 1455/4/30")
+   ShowMessageFace("",0,0,2,63)
+   ShowMessage("It's finally here! Tomorrow is the day I leave. I'll get baptized and start my adventure!")
+   ShowMessageFace("",0,0,2,64)
+   ShowMessage("I'm all packed and ready to go. I've closed up the inn for the time being too.")
+   ShowMessageFace("",0,0,2,65)
+   ShowMessage("Even though I leave tomorrow, Sonya didn't come see me. I guess she's busy with her priestly duties.")
+   ShowMessageFace("",0,0,2,66)
+   ShowMessage("Anyway, I'm heading to bed. The next time I wake up, it'll be time for my first step!")
+   ShowMessageFace("",0,0,2,67)
+   ShowMessage("Wait for me, father. Watch over me, mother.")
+   JumpToLabel("0")
+   0()
+  EndIf()
+  If(1,11,0,3,0)
+   ShowMessageFace("",0,0,2,68)
+   ShowMessage("Johannes Calendar 1455/5/20")
+   ShowMessageFace("ruka_fc1",0,0,2,69)
+   ShowMessage("\\n<Luka>Huh? Why are there more entries? I don't remember making any after I left...")
+   ShowMessageFace("",0,0,2,70)
+   ShowMessage("I couldn't do anything when faced with the Monster Swordswoman Granberia. That setback at Iliasburg was a setback for my adventure itself.")
+   ShowMessageFace("",0,0,2,71)
+   ShowMessage("I kept telling myself I couldn't be expected to beat her then, but surely someday... Anyway, my adventure ended almost as soon as it began.")
+   ShowMessageFace("",0,0,2,72)
+   ShowMessage("But still... That was just bad luck. Eventually I'll get back on track.")
+   ShowMessageFace("ruka_fc1",0,0,2,73)
+   ShowMessage("\\n<Luka>I met Granberia in Iliasburg then returned to the village a failure?")
+   ShowMessageFace("ruka_fc1",0,0,2,74)
+   ShowMessage("\\n<Luka>I don't get it. This looks like my handwriting, but that never happened!")
+   ShowMessageFace("ruka_fc1",0,0,2,75)
+   ShowMessage("\\n<Luka>There's a final entry after that one... What the hell!?")
+   ShowMessageFace("",0,0,2,76)
+   ShowMessage("Johannes Calendar 1456/8/8")
+   If(0,6,0)
+    ShowMessageFace("sonia_fc3",7,0,2,77)
+    ShowMessage("\\n<Sonya>What! That's over a year from now!")
+    0()
+   Else()
+    ShowMessageFace("ruka_fc1",0,0,2,78)
+    ShowMessage("\\n<Luka>This one is over a year in the future!")
+    0()
+   EndIf()
+   ShowMessageFace("",0,0,2,79)
+   ShowMessage("The angel army razed the village to the ground. So many people died in just one attack.")
+   ShowMessageFace("",0,0,2,80)
+   ShowMessage("I plan to fight if they come back. I'll pick my sword back up and defend the people of the village.")
+   ShowMessageFace("",0,0,2,81)
+   ShowMessage("...the final three lines were written by someone else. The handwriting is precise and resembles that of an elderly writer.")
+   ShowMessageFace("",0,0,2,82)
+   ShowMessage("Luka fought bravely to the very end. In his final moments, he showed that he was really a hero. Rest in peace, true hero.")
+   ShowMessageFace("",0,0,2,83)
+   ShowMessage("That's the end of the diary.")
+   PictureMove(5,null,0,0,0,0,100,100,0,0,30,true)
+   PictureClear(5)
+   ShowMessageFace("ruka_fc1",0,0,2,84)
+   ShowMessage("\\n<Luka>The angel army? And I... What in the world does this mean...")
+   If(0,4,0)
+    ShowMessageFace("alice_fc5",0,0,2,85)
+    ShowMessage("\\n<Alice>This proves once and for all that we aren't in the Iliasville you know.")
+    ShowMessageFace("ruka_fc1",0,0,2,86)
+    ShowMessage("\\n<Luka>Not in Iliasville? Look around us and tell me how this isn't Iliasville!")
+    ShowMessageFace("alice_fc5",0,0,2,87)
+    ShowMessage("\\n<Alice>It is, but not the one you're from. It must be a different Iliasville.")
+    ShowMessageFace("alice_fc5",0,0,2,88)
+    ShowMessage("\\n<Alice>On top of that, we've changed our point in time. This place was destroyed in 1456, which is still months away.")
+    ShowMessageFace("alice_fc5",0,0,2,89)
+    ShowMessage("\\n<Alice>In other words, we've traveled to another dimension. Passing through Tartarus brought us to a different place in space and time.")
+    If(0,6,0)
+     ShowMessageFace("sonia_fc3",7,0,2,90)
+     ShowMessage("\\n<Sonya>Another dimension? Is that even possible?")
+     0()
+    Else()
+     ShowMessageFace("ruka_fc1",0,0,2,91)
+     ShowMessage("\\n<Luka>Another dimension? Is that even possible?")
+     0()
+    EndIf()
+    ShowMessageFace("alice_fc5",3,0,2,92)
+    ShowMessage("\\n<Alice>It must be, otherwise none of this makes sense. I'm not sure I remember Tamamo ever talking about other worlds...")
+    ShowMessageFace("alice_fc5",0,0,2,93)
+    ShowMessage("\\n<Alice>This dimension is very similar, though. It has an Iliasville, and both you and Sonya existed.")
+    ShowMessageFace("ruka_fc1",0,0,2,94)
+    ShowMessage("\\n<Luka>So we came to a different dimension from inside Tartarus? Is it really that easy to travel between dimensions?")
+    ShowMessageFace("alice_fc5",0,0,2,95)
+    ShowMessage("\\n<Alice>That white rabbit said you could come and go through your own volition, something not even a god can do.")
+    ShowMessageFace("alice_fc5",3,0,2,96)
+    ShowMessage("\\n<Alice>Then again, it's rather suspicious that she was able to come here too. At any rate, I don't think we're going to learn anything more by talking about it.")
+    If(0,6,0)
+     ShowMessageFace("sonia_fc3",7,0,2,97)
+     ShowMessage("\\n<Sonya>So Tartarus led us to another dimension in which Iliasville was destroyed in the near future...")
+     ShowMessageFace("sonia_fc4",0,0,2,98)
+     ShowMessage("\\n<Sonya>...I give up. My head hurts from trying to understand.")
+     0()
+    Else()
+     ShowMessageFace("ruka_fc1",0,0,2,99)
+     ShowMessage("\\n<Luka>So Tartarus led us to another dimension in which Iliasville was destroyed in the near future...")
+     ShowMessageFace("ruka_fc1",0,0,2,100)
+     ShowMessage("\\n<Luka>Honestly, I'm having a hard time wrapping my head around it...")
+     0()
+    EndIf()
+    If(4,53,0)
+     ShowMessageFace("slime_fc1",2,0,2,101)
+     ShowMessage("\\n<Lime>......???")
+     0()
+    EndIf()
+    ShowMessageFace("alice_fc5",3,0,2,102)
+    ShowMessage("\\n<Alice>It's hard for me to believe too, but it's the only explanation given the circumstances.")
+    ShowMessageFace("alice_fc5",0,0,2,103)
+    ShowMessage("\\n<Alice>Anyway, what do we do now? Should we explore this world some more or get out of here?")
+    If(0,6,0)
+     ShowMessageFace("sonia_fc2",2,0,2,104)
+     ShowMessage("\\n<Sonya>Let's leave. Every extra second here makes me more depressed...")
+     ShowMessageFace("alice_fc5",0,0,2,105)
+     ShowMessage("\\n<Alice>All right. There probably isn't anything left for us here anyway, and it's cruel to subject you two to more of this village.")
+     0()
+    Else()
+     ShowMessageFace("ruka_fc1",0,0,2,106)
+     ShowMessage("\\n<Luka>I'd rather get back to our world as soon as possible. This place is heartbreaking...")
+     ShowMessageFace("alice_fc5",0,0,2,107)
+     ShowMessage("\\n<Alice>All right. There probably isn't anything left for us here anyway, and it's cruel to subject you to more of this village.")
+     0()
+    EndIf()
+    ShowMessageFace("alice_fc5",0,0,2,108)
+    ShowMessage("\\n<Alice>I wonder if we can use a Harpy Feather to get home? Let's try... tch.")
+    ShowMessageFace("",0,0,2,109)
+    ShowMessage("Alice uses a Harpy Feather! But nothing happens...")
+    ShowMessageFace("alice_fc5",0,0,2,110)
+    ShowMessage("\\n<Alice>They don't work. Actually, you try to use one, Luka.")
+    ShowMessageFace("ruka_fc1",0,0,2,111)
+    ShowMessage("\\n<Luka>I imagine the same thing will happen. Oh well, let's see...")
+    ShowMessageFace("",0,0,2,112)
+    ShowMessage("Luka uses a Harpy Feather!")
+    TeleportPlayer(0,2,296,356,0,0)
+    ShowMessageFace("ruka_fc1",0,0,2,113)
+    ShowMessage("\\n<Luka>We're home!?")
+    ShowMessageFace("alice_fc5",3,0,2,114)
+    ShowMessage("\\n<Alice>I knew it. It seems as though you have the ability to cross through different dimensions.")
+    ShowMessageFace("alice_fc5",0,0,2,115)
+    ShowMessage("\\n<Alice>Like the White Rabbit said, that's something even a god can't do. Geez, just who are you anyway?")
+    ShowMessageFace("ruka_fc1",0,0,2,116)
+    ShowMessage("\\n<Luka>I don't even know that myself lately...")
+    ShowMessageFace("alice_fc5",0,0,2,117)
+    ShowMessage("\\n<Alice>Well, we aren't going to figure it out without more information. Let's head back to the Pocket Castle for now.")
+    If(0,6,0)
+     ShowMessageFace("sonia_fc2",2,0,2,118)
+     ShowMessage("\\n<Sonya>We need time to process what we saw. My head is still a mess, after all...")
+     0()
+    Else()
+     ShowMessageFace("ruka_fc1",0,0,2,119)
+     ShowMessage("\\n<Luka>Yeah, we need to discuss what to do next. My head is still messed up though...")
+     0()
+    EndIf()
+    ShowMessageFace("alice_fc5",0,0,2,120)
+    ShowMessage("\\n<Alice>All right. Take a rest and then we'll hold a meeting to discuss strategy.")
+    0()
+   EndIf()
+   If(0,5,0)
+    ShowMessageFace("iriasu_fc4",7,0,2,121)
+    ShowMessage("\\n<Ilias>It is as I thought. This place is not the Iliasville you know.")
+    ShowMessageFace("ruka_fc1",0,0,2,122)
+    ShowMessage("\\n<Luka>Not Iliasville? Look around us and tell me how this isn't Iliasville!")
+    ShowMessageFace("iriasu_fc4",7,0,2,123)
+    ShowMessage("\\n<Ilias>It certainly is AN Iliasville, but not YOUR Iliasville.")
+    ShowMessageFace("iriasu_fc4",7,0,2,124)
+    ShowMessage("\\n<Ilias>Not only is the place different, but the time too. This is Iliasville a decade after it was destroyed in 1456.")
+    ShowMessageFace("iriasu_fc4",7,0,2,125)
+    ShowMessage("\\n<Ilias>In other words, this is another dimension. Tartarus appears to be a tunnel to alternate points in spacetime.")
+    If(0,6,0)
+     ShowMessageFace("sonia_fc3",7,0,2,126)
+     ShowMessage("\\n<Sonya>Another dimension? Is that even possible?")
+     0()
+    Else()
+     ShowMessageFace("ruka_fc1",0,0,2,127)
+     ShowMessage("\\n<Luka>Another dimension? Is that even possible?")
+     0()
+    EndIf()
+    ShowMessageFace("iriasu_fc4",7,0,2,128)
+    ShowMessage("\\n<Ilias>It is certainly not out of the question. Parallel worlds can potentially arise from disturbances in spacetime.")
+    ShowMessageFace("iriasu_fc4",2,0,2,129)
+    ShowMessage("\\n<Ilias>In theory, at least. But I never expected one so similar to our own...")
+    If(0,6,0)
+     ShowMessageFace("sonia_fc3",7,0,2,130)
+     ShowMessage("\\n<Sonya>So Tartarus led us to another dimension in which Iliasville was destroyed in the near future...")
+     ShowMessageFace("sonia_fc4",0,0,2,131)
+     ShowMessage("\\n<Sonya>...I give up. My head hurts from trying to understand.")
+     0()
+    Else()
+     ShowMessageFace("ruka_fc1",0,0,2,132)
+     ShowMessage("\\n<Luka>So Tartarus led us to another dimension in which Iliasville was destroyed in the near future...")
+     ShowMessageFace("ruka_fc1",0,0,2,133)
+     ShowMessage("\\n<Luka>Honestly, I'm having a hard time wrapping my head around it...")
+     0()
+    EndIf()
+    If(4,53,0)
+     ShowMessageFace("slime_fc1",2,0,2,134)
+     ShowMessage("\\n<Lime>......???")
+     0()
+    EndIf()
+    ShowMessageFace("iriasu_fc4",2,0,2,135)
+    ShowMessage("\\n<Ilias>This must be difficult for you, I know. Even I cannot fathom how this paradox has come to pass.")
+    ShowMessageFace("iriasu_fc4",2,0,2,136)
+    ShowMessage("\\n<Ilias>What matters now is our next step, however. Shall we explore this world more, or perhaps we should leave...")
+    If(0,6,0)
+     ShowMessageFace("sonia_fc2",2,0,2,137)
+     ShowMessage("\\n<Sonya>Let's leave. Every extra second here makes me more depressed...")
+     ShowMessageFace("iriasu_fc4",2,0,2,138)
+     ShowMessage("\\n<Ilias>We are in agreement then. I do not think there is anything more here to discover, and seeing this village is unhealthy for you...")
+     0()
+    Else()
+     ShowMessageFace("ruka_fc1",0,0,2,139)
+     ShowMessage("\\n<Luka>I'd rather get back to our world as soon as possible. This place is heartbreaking...")
+     ShowMessageFace("iriasu_fc4",2,0,2,140)
+     ShowMessage("\\n<Ilias>We are in agreement then. I do not think there is anything more here to discover, and seeing this village is unhealthy for you...")
+     0()
+    EndIf()
+    ShowMessageFace("iriasu_fc4",2,0,2,141)
+    ShowMessage("\\n<Ilias>How do we return to our world, though? Can we use a Harpy Feather in a parallel world?")
+    ShowMessageFace("",0,0,2,142)
+    ShowMessage("Ilias uses a Harpy Feather! But nothing happens...")
+    ShowMessageFace("iriasu_fc4",2,0,2,143)
+    ShowMessage("\\n<Ilias>I didn't think so. Actually... Luka, why don't you try?")
+    ShowMessageFace("ruka_fc1",0,0,2,144)
+    ShowMessage("\\n<Luka>I imagine the same thing will happen. Oh well, let's see...")
+    ShowMessageFace("",0,0,2,145)
+    ShowMessage("Luka uses a Harpy Feather!")
+    250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x57,0x69,0x6e,0x64,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+    TeleportPlayer(0,2,296,356,0,0)
+    205(-1,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x07,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x15,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+    ShowSpeechBalloon(-1,1,false)
+    ShowMessageFace("ruka_fc1",0,0,2,146)
+    ShowMessage("\\n<Luka>We're home!?")
+    ShowMessageFace("iriasu_fc4",7,0,2,147)
+    ShowMessage("\\n<Ilias>I knew it. It seems as though you have the ability to cross through different dimensions.")
+    ShowMessageFace("iriasu_fc4",7,0,2,148)
+    ShowMessage("\\n<Ilias>That's a trick even I cannot perform. How can a human made of flesh and blood travel to parallel worlds...")
+    ShowMessageFace("ruka_fc1",0,0,2,149)
+    ShowMessage("\\n<Luka>I wish I knew...")
+    ShowMessageFace("iriasu_fc4",2,0,2,150)
+    ShowMessage("\\n<Ilias>Given your bloodline, I could understand if you were able to distort spacetime, but opening doors to parallel worlds? Unfathomable.")
+    ShowMessageFace("iriasu_fc4",2,0,2,151)
+    ShowMessage("\\n<Ilias>The more I think about it, the more tired I become. Let's return to the Pocket Castle for now.")
+    If(0,6,0)
+     ShowMessageFace("sonia_fc2",2,0,2,152)
+     ShowMessage("\\n<Sonya>Yeah, we need time to process what we saw. My head is still a mess, after all...")
+     0()
+    Else()
+     ShowMessageFace("ruka_fc1",0,0,2,153)
+     ShowMessage("\\n<Luka>Yeah, we need to discuss what to do next. My head is still messed up though...")
+     0()
+    EndIf()
+    ShowMessageFace("iriasu_fc4",2,0,2,154)
+    ShowMessage("\\n<Ilias>Off we go then. After we rest up, shall we hold a meeting to discuss our strategy?")
+    0()
+   EndIf()
+   ChangeVariable(1001,1001,0,0,10)
+   ChangeVariable(1009,1009,0,0,8)
+   221()
+   211(0)
+   TeleportPlayer(0,586,6,6,0,2)
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(0,4,0)
+   ShowMessageFace("alice_fc5",2,0,2,155)
+   ShowMessage("\\n<Alice>Look through the diary more thoroughly. Perhaps something in there will give us a hint to what happened here.")
+   0()
+  EndIf()
+  If(0,5,0)
+   ShowMessageFace("iriasu_fc4",2,0,2,156)
+   ShowMessage("\\n<Ilias>Please read it again, Luka. If I am not mistaken, then...")
+   0()
+  EndIf()
+  JumpToLabel("0")
+  0()
+ PAGE   2
+  // condition: variable 1001 >= 10
+  0()
+
+
+
+EVENT   37
+ PAGE   1
+  ChangeSwitch(2046,2046,0)
+  ShowMessageFace("ruka_fc1",0,0,2,1)
+  ShowMessage("\\n<Luka>How can there be so many graves?")
+  If(0,6,0)
+   ShowMessageFace("sonia_fc3",7,0,2,2)
+   ShowMessage("\\n<Sonya>There must be one for almost every villager...")
+   0()
+  EndIf()
+  0()
+ PAGE   2
+  // condition: switch 2046 is ON
+  0()
+
+
+

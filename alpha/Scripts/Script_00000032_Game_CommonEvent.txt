@@ -1,0 +1,42 @@
+#==============================================================================
+# ■ Game_CommonEvent
+#------------------------------------------------------------------------------
+# It is a class dealing with common events. It has a function to execute parallel processing events.
+# . This class is Game_Map class($game_map) Used internally.
+#==============================================================================
+
+class Game_CommonEvent
+  #--------------------------------------------------------------------------
+  # ● Object initialization
+  #--------------------------------------------------------------------------
+  def initialize(common_event_id)
+    @event = $data_common_events[common_event_id]
+    refresh
+  end
+  #--------------------------------------------------------------------------
+  # ● Refresh
+  #--------------------------------------------------------------------------
+  def refresh
+    if active?
+      @interpreter ||= Game_Interpreter.new
+    else
+      @interpreter = nil
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Valid state determination
+  #--------------------------------------------------------------------------
+  def active?
+    @event.parallel? && $game_switches[@event.switch_id]
+  end
+  #--------------------------------------------------------------------------
+  # ● Frame update
+  #--------------------------------------------------------------------------
+  def update
+    if @interpreter
+      @interpreter.setup(@event.list) unless @interpreter.running?
+      @interpreter.update
+    end
+  end
+end
+

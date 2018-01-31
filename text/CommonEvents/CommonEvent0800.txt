@@ -1,0 +1,4 @@
+"レジェンドゲット" -> "Legend get"
+"ランダム" -> "random"
+"ランダム" -> "random"
+"ランダム" -> "random"

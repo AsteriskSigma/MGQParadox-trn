@@ -1,0 +1,8 @@
+"イベント：ボニー" -> "Event: Bonnie"
+"【ボニー】" -> "【Bonnie】"
+"いつか、七つの海を支配してみせるぞ！" -> "Someday, I will dominate the seven seas!"
+"【ボニー】" -> "【Bonnie】"
+"お前、気に入ったぞ！" -> "You liked it!"
+"おさかな海賊団が助けてやろう！" -> "Oshikana pirates will help you!"
+"おさかな海賊団のボニーに気に入られた！" -> "I liked Bunny of the fish pirates!"
+"次のボスフロアまで、支援砲撃が飛んでくる！" -> "Assistive artillery flying comes to the next boss floor!"

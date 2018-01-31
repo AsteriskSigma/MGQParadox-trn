@@ -1,0 +1,5 @@
+"？" -> "What?"
+"　Aaaah" -> "Aaaah"
+"＊＊＊The rest of the vore scene is being skipped" -> "*** The rest of the vore scene is being skipped"
+"＊＊＊" -> "***"
+"　H" -> "H"

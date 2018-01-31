@@ -1,0 +1,4 @@
+"ノーマルゲット" -> "Normal get"
+"ランダム" -> "random"
+"ランダム" -> "random"
+"ランダム" -> "random"

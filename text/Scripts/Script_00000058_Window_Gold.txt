@@ -1,0 +1,8 @@
+"■ Window" -> "■ Window"
+"　所持金を表示するウィンドウです。" -> "It is a window that displays money held."
+"● オブジェクト初期化" -> "● Object initialization"
+"● ウィンドウ幅の取得" -> "● Obtain window width"
+"● リフレッシュ" -> "● Refresh"
+"● 所持金の取得" -> "● Acquisition of possession money"
+"● 通貨単位の取得" -> "● Acquisition of currency unit"
+"● ウィンドウを開く" -> "● Open the window"

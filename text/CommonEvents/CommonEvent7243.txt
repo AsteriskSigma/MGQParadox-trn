@@ -1,0 +1,8 @@
+"さつき：敗北" -> "Satsuki: Defeat"
+"【さつき】" -> "Satsuki"
+"うふふっ、私の勝ちですね。" -> "Refuge, I'm the winner."
+"それじゃあ、お金を払ってもらいますよ……" -> "Well then, we will have to pay you ...."
+"ルカは 700G 支払った！" -> "Luke paid 700 G!"
+"【さつき】" -> "Satsuki"
+"それじゃあ、またバトルファックしに来て下さいね。" -> "Well then, please come back to the battle fuck again."
+"いくらでも相手をして差し上げますから……" -> "I will give you as many opponents as possible ... ..."

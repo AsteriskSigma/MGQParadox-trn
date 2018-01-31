@@ -1,0 +1,7 @@
+"■ Window" -> "■ Window"
+"　イベントコマンド［アイテム選択の処理］に使用するウィンドウです。" -> "This is the window used for the event command [item selection processing]."
+"● オブジェクト初期化" -> "● Object initialization"
+"● 入力処理の開始" -> "● Start input processing"
+"● ウィンドウ位置の更新" -> "● Update window position"
+"● 決定時の処理" -> "● Process at decision"
+"● キャンセル時の処理" -> "● Process at Cancellation"

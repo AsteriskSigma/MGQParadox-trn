@@ -1,0 +1,8 @@
+"イベント：ミミック娘" -> "Event: Mimic girl"
+"【ミミック娘】" -> "【Mimic Girl】"
+"いやー！" -> "Well!"
+"【ミミック娘】" -> "【Mimic Girl】"
+"移動中の姿を見られてしまうなんて……" -> "I can not see the figure while moving ......"
+"これをあげるから、見逃して。" -> "I'll give you this, so do not miss it."
+"【ミミック娘】" -> "【Mimic Girl】"
+"移動中よ……" -> "Moving ......"

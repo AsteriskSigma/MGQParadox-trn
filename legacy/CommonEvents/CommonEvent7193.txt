@@ -1,0 +1,22 @@
+﻿// EVENT 7193
+Name "Orlan: Defeat"
+
+RunCommonEvent(7000)
+PictureDisplay(5,"80_mob_bukiya1_st01",0,0,0,0,100,100,255,0)
+PictureClear(6)
+ShowMessageFace("mob_bukiya1_fc1",0,0,2,1)
+ShowMessage("\\n<Orlan>Looks like it's my win.\nI'll be taking that bet...")
+125(1,0,350)
+ShowMessageFace("",0,0,2,2)
+ShowMessage("Luka hands over 350G!")
+ShowMessageFace("mob_bukiya1_fc1",0,0,2,3)
+ShowMessage("\\n<Orlan>If you're annoyed at losin, challenge me again.\nI'll squeeze it out with my hand every time.")
+If(0,2331,1)
+ PictureClear(5)
+ 281(1)
+ TeleportPlayer(0,43,12,36,2,0)
+ 216(0)
+ 0()
+EndIf()
+EndEventProcessing()
+0()

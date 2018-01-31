@@ -1,0 +1,4 @@
+"ジーナ：会話" -> "Gina: Conversation"
+"バトルファックを挑む" -> "Challenge battle fuck"
+"【Gina】" -> "【Gina】"
+"やめておく" -> "To give up"

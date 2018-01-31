@@ -1,0 +1,8 @@
+"もんむす・くえすと！ＲＰＧ" -> "Troublesome · ___ ___ 0 RPG"
+"　セーブ消失任意発生 ver1  2015" -> "Save lost arbitrary occurrence ver1 2015"
+"設定の USE を true にすると、必ずセーブ失敗します。" -> "If USE of the setting is set to true, saving fails without fail."
+"有効　false" -> "Valid false"
+"無効" -> "Disabled"
+"■ Scene" -> "■ Scene"
+"● 開始処理" -> "● Start processing"
+"スクリプト「セーブ消失任意発生」が有効　製品版では抜くこと" -> "Script \"save lost option arbitrary occurrence\" is valid Avoid in product version"

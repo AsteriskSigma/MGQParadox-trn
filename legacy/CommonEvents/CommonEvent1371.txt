@@ -1,0 +1,9 @@
+// EVENT 1371
+ChangeVariable(25,25,0,0,0)
+ShowMessageFace("soniamazda_fc1",0,0,2,1)
+ShowMessage("【ソニアマズダ】")
+ShowMessage("■■■■■■■■■■■■■■■■……")
+ShowMessageFace("",0,0,2,2)
+ShowMessage("ソニアマズダは会話を拒絶している！")
+EndEventProcessing()
+0()

@@ -1,0 +1,285 @@
+
+
+
+EVENT   1
+ PAGE   1
+  // condition: variable 148 >= 1
+  RunCommonEvent(627)
+  0()
+ PAGE   2
+  // condition: variable 148 >= 2
+  RunCommonEvent(626)
+  0()
+ PAGE   3
+  // condition: variable 148 >= 4
+  RunCommonEvent(602)
+  0()
+ PAGE   4
+  // condition: variable 148 >= 7
+  RunCommonEvent(625)
+  0()
+ PAGE   5
+  // condition: variable 148 >= 9
+  RunCommonEvent(607)
+  Wait(15)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0d,0x6d,0x6f,0x6e,0x5f,0x77,0x61,0x72,0x70,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69))
+  TemporaryRemoveEvent()
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Nero disappeared ... ...")
+  0()
+ PAGE   6
+  // condition: variable 148 >= 11
+  RunCommonEvent(634)
+  0()
+ PAGE   7
+  // condition: variable 148 >= 13
+  RunCommonEvent(637)
+  0()
+ PAGE   8
+  // condition: variable 148 >= 15
+  RunCommonEvent(638)
+  0()
+ PAGE   9
+  // condition: variable 148 >= 17
+  RunCommonEvent(639)
+  0()
+ PAGE   10
+  // condition: variable 148 >= 19
+  RunCommonEvent(633)
+  0()
+ PAGE   11
+  // condition: variable 148 >= 21
+  RunCommonEvent(629)
+  0()
+ PAGE   12
+  // condition: variable 148 >= 23
+  RunCommonEvent(636)
+  0()
+ PAGE   13
+  // condition: variable 148 >= 25
+  RunCommonEvent(635)
+  0()
+ PAGE   14
+  // condition: variable 148 >= 27
+  RunCommonEvent(628)
+  0()
+ PAGE   15
+  // condition: variable 148 >= 28
+  RunCommonEvent(644)
+  0()
+ PAGE   16
+  // condition: variable 148 >= 29
+  RunCommonEvent(663)
+  0()
+ PAGE   17
+  // condition: variable 148 >= 30
+  RunCommonEvent(664)
+  0()
+ PAGE   18
+  // condition: variable 148 >= 31
+  RunCommonEvent(665)
+  0()
+ PAGE   19
+  // condition: variable 148 >= 32
+  RunCommonEvent(666)
+  0()
+ PAGE   20
+  // condition: variable 148 >= 33
+  RunCommonEvent(667)
+  0()
+ PAGE   21
+  // condition: variable 148 >= 34
+  RunCommonEvent(668)
+  0()
+ PAGE   22
+  // condition: variable 148 >= 35
+  RunCommonEvent(669)
+  0()
+ PAGE   23
+  // condition: variable 148 >= 36
+  RunCommonEvent(670)
+  0()
+ PAGE   24
+  // condition: variable 148 >= 37
+  RunCommonEvent(671)
+  0()
+ PAGE   25
+  // condition: variable 148 >= 38
+  RunCommonEvent(672)
+  0()
+ PAGE   26
+  // condition: variable 148 >= 39
+  RunCommonEvent(673)
+  0()
+ PAGE   27
+  // condition: variable 148 >= 40
+  RunCommonEvent(674)
+  0()
+ PAGE   28
+  // condition: variable 148 >= 41
+  RunCommonEvent(675)
+  0()
+ PAGE   29
+  // condition: variable 148 >= 42
+  RunCommonEvent(676)
+  0()
+ PAGE   30
+  // condition: variable 148 >= 43
+  RunCommonEvent(677)
+  0()
+ PAGE   31
+  // condition: variable 148 >= 44
+  RunCommonEvent(678)
+  0()
+ PAGE   32
+  // condition: variable 148 >= 45
+  RunCommonEvent(679)
+  0()
+ PAGE   33
+  // condition: variable 148 >= 46
+  RunCommonEvent(680)
+  0()
+ PAGE   34
+  // condition: variable 148 >= 47
+  If(1,607,0,5,2)
+   RunCommonEvent(681)
+   EndEventProcessing()
+   0()
+  Else()
+   ChangeVariable(14,14,0,2,1,4)
+   If(1,14,0,3,2)
+    RunCommonEvent(681)
+    EndEventProcessing()
+    0()
+   EndIf()
+   If(1,14,0,4,0)
+    RunCommonEvent(682)
+    EndEventProcessing()
+    0()
+   EndIf()
+   0()
+  EndIf()
+  0()
+ PAGE   35
+  // condition: variable 148 >= 48
+  RunCommonEvent(683)
+  0()
+ PAGE   36
+  // condition: variable 148 >= 49
+  ChangeSwitch(73,73,0)
+  If(1,129,0,0,0)
+   ShowMessageFace("domeima_fc1",0,0,2,1)
+   ShowMessage("【Dormea】")
+   ShowMessage("Like this one, let 's teach abilities that are always dying.")
+   ShowMessage("Besides being dying, there is also the merit of increasing the full capacity value.")
+   ShowMessageFace("domeima_fc1",0,0,2,2)
+   ShowMessage("【Dormea】")
+   ShowMessage("This ability also invalidates the turn recovery HP effect.")
+   ShowMessage("It is good when you want to maintain moribund state.")
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("Who will acquire \"the backwaters\"?")
+   DefineLabel("Choice")
+   355("names = party_members.collect{|m|m.name}")
+   655("unlimited_choices(11, names)")
+   655("actor = party_members[$game_variables[11]]")
+   655("$game_variables[10] = actor ? actor.id : 0")
+   If(1,10,0,0,0)
+    ChangeSwitch(73,73,1)
+    ShowMessageFace("domeima_fc1",0,0,2,4)
+    ShowMessage("【Dormea】")
+    ShowMessage("Gua! !")
+    TemporaryRemoveEvent()
+    241(bytes(0x04,0x08,0x6f,0x3a,0x0d,0x52,0x50,0x47,0x3a,0x3a,0x42,0x47,0x4d,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x14,0x73,0x63,0x65,0x6e,0x65,0x5f,0x6b,0x61,0x6e,0x61,0x73,0x69,0x6d,0x69,0x32,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69))
+    ShowMessageFace("",0,0,2,5)
+    ShowMessage("Dormeyma is exhausted ... ...")
+    EndEventProcessing()
+    0()
+   EndIf()
+   If(12,"actor_skill_have?(v(10),863)")
+    ShowMessageFace("",0,0,2,6)
+    ShowMessage("That character already has \"master of the backwater\" ......")
+    JumpToLabel("Choice")
+    0()
+   EndIf()
+   ChangeVariable(129,129,0,0,1)
+   318(1,10,0,863)
+   250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+   ShowMessageFace("",0,0,2,7)
+   ShowMessage("\\I[99]\\C[1]Backwater camp\\C[0]Learned!")
+   ChangeSwitch(73,73,1)
+   ShowMessageFace("domeima_fc1",0,0,2,8)
+   ShowMessage("【Dormea】")
+   ShowMessage("Gua! !")
+   TemporaryRemoveEvent()
+   241(bytes(0x04,0x08,0x6f,0x3a,0x0d,0x52,0x50,0x47,0x3a,0x3a,0x42,0x47,0x4d,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x14,0x73,0x63,0x65,0x6e,0x65,0x5f,0x6b,0x61,0x6e,0x61,0x73,0x69,0x6d,0x69,0x32,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69))
+   ShowMessageFace("",0,0,2,9)
+   ShowMessage("Dormeyma is exhausted ... ...")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+ PAGE   37
+  // condition: variable 148 >= 50
+  ChangeSwitch(73,73,0)
+  If(1,129,0,0,0)
+   ShowMessageFace("jeraira_fc1",0,0,2,1)
+   ShowMessage("【Jeala】")
+   ShowMessage("Let's tell you the ultimate sonic mystery.")
+   ShowMessage("However, if \"singing\" can not be used, it can not be activated.")
+   ShowMessageFace(binary"",0,0,2,2)
+   ShowMessage("Who will acquire \"Hellcry\"?")
+   DefineLabel("Choice")
+   355("names = party_members.collect{|m|m.name}")
+   655("unlimited_choices(11, names)")
+   655("actor = party_members[$game_variables[11]]")
+   655("$game_variables[10] = actor ? actor.id : 0")
+   If(1,10,0,0,0)
+    ChangeSwitch(73,73,1)
+    EndEventProcessing()
+    0()
+   EndIf()
+   If(12,"actor_skill_have?(v(10),2106)")
+    ShowMessageFace(binary"",0,0,2,3)
+    ShowMessage("That character has already acquired \"Hellcry\" ...")
+    JumpToLabel("Choice")
+    0()
+   EndIf()
+   ChangeVariable(129,129,0,0,1)
+   318(1,10,0,2106)
+   250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+   ShowMessageFace(binary"",0,0,2,4)
+   ShowMessage("\\I[184]\\C[1]Hercully\\C[0]Learned!")
+   ChangeSwitch(73,73,1)
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,129,0,1,0)
+   ShowMessageFace("jeraira_fc1",0,0,2,5)
+   ShowMessage("【Jeala】")
+   ShowMessage("From now on, please be careful.")
+   ShowMessage("The violent sounds are filled ...")
+   ChangeSwitch(73,73,1)
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   2
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Would you like to go to the next floor?")
+  ShowChoices(strings("I have not gone yet.","Proceed to the next floor"),1)
+  IfPlayerPicksChoice(0,null)
+   205(-1,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x07,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x09,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+   EndEventProcessing()
+   0()
+  IfPlayerPicksChoice(1,null)
+   ChangeVariable(121,121,2,0,1)
+   RunCommonEvent(901)
+   EndEventProcessing()
+   0()
+  404()
+  0()
+

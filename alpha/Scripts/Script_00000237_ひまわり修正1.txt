@@ -1,0 +1,64 @@
+=begin
+
+==Change log
+  Date
+	17/7/12		New: Correction 1,2,3Addition 1,2,3,4
+	17/7/18		Correction:Addition 4
+	17/8/2		Correction:Addition 4
+==
+	Correction 1:When descending to land, BGM does not switch silently as it is.
+	Correction 2:Autostate does not work in battle.
+	Correction 3:Damage abnormally increases during two swords.
+	Addition 1:To forget occupation
+	Addition 2:Mastery and Dual Sword
+	Addition 3:Labyrinth of chaos Enemy's skill use line
+	Addition 4:Change calculation formula of extended feature
+=end
+
+#Correction 1:When descending to land, BGM does not switch silently as it is.
+
+#Correction 2:Autostate does not work in battle.
+
+#Addition 1:To forget occupation
+#==============================================================================
+# ■ Game_Interpreter
+#==============================================================================
+class Game_Interpreter
+  #--------------------------------------------------------------------------
+  # ● Forget occupation (tribe)
+  #--------------------------------------------------------------------------
+	def erase_class_level(actor_id, class_id)
+		return unless $game_actors.exist?(actor_id)
+		$game_actors[actor_id].erase_class(class_id)
+	end
+end
+
+#==============================================================================
+# ■ Game_Actor
+#==============================================================================
+class Game_Actor < Game_Battler
+	#--------------------------------------------------------------------------
+  # ● Forget occupation (tribe)
+  #--------------------------------------------------------------------------
+	def erase_class(class_id)
+		return unless @level_list.key?(class_id)
+		kind = NWConst::Class::JOB_RANGE.include?(class_id) ? :class : :tribe
+		@exp[class_id] = 0
+		@level_list.delete(class_id) 
+		current_class_id = kind == :class ? @class_id : @tribe_id
+		if current_class_id == class_id
+		@level_list[class_id] = 1
+		end 
+	end
+end
+
+#Addition 2:Mastery and Dual Sword
+
+#Addition 3:Labyrinth of chaos Enemy's skill use line
+
+
+
+#Addition 4:Change of extended feature calculation formula
+
+
+#Correction 3:Damage abnormally increases during two swords. .

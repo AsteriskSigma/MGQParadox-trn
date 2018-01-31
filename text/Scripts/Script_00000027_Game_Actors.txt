@@ -1,0 +1,6 @@
+"■ Game" -> "■ Game"
+"　アクターの配列のラッパーです。このクラスのインスタンスは " -> "It is a wrapper around the array of actors. An instance of this class"
+"で参" -> "At"
+"照されます。" -> "It is illuminated."
+"● オブジェクト初期化" -> "● Object initialization"
+"● アクターの取得" -> "● Acquisition of Actors"

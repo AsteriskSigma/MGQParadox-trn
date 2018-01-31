@@ -1,0 +1,160 @@
+#==============================================================================
+# ■ Game_ActionResult
+#------------------------------------------------------------------------------
+# It is a class dealing with the result of battle behavior. This class is Game_Battler Inside the class
+# will be used.
+#==============================================================================
+
+class Game_ActionResult
+  #--------------------------------------------------------------------------
+  # ● Public instance variables
+  #--------------------------------------------------------------------------
+  attr_accessor :used                     # Usage flag
+  attr_accessor :missed                   # Hit fault flag
+  attr_accessor :evaded                   # Avoidance success flag
+  attr_accessor :critical                 # Critical Flag
+  attr_accessor :success                  # Success flag
+  attr_accessor :hp_damage                # HP damage
+  attr_accessor :mp_damage                # MP damage
+  attr_accessor :tp_damage                # TP damage
+  attr_accessor :hp_drain                 # HP absorption
+  attr_accessor :mp_drain                 # MP absorption
+  attr_accessor :added_states             # Added state
+  attr_accessor :removed_states           # The released state
+  attr_accessor :added_buffs              # Additional capacity enhancement
+  attr_accessor :added_debuffs            # Attached capacity weak
+  attr_accessor :removed_buffs            # Reinforced / weak body released
+  #--------------------------------------------------------------------------
+  # ● Object initialization
+  #--------------------------------------------------------------------------
+  def initialize(battler)
+    @battler = battler
+    clear
+  end
+  #--------------------------------------------------------------------------
+  # ● Clear
+  #--------------------------------------------------------------------------
+  def clear
+    clear_hit_flags
+    clear_damage_values
+    clear_status_effects
+  end
+  #--------------------------------------------------------------------------
+  # ● Clear the hit system flag
+  #--------------------------------------------------------------------------
+  def clear_hit_flags
+    @used = false
+    @missed = false
+    @evaded = false
+    @critical = false
+    @success = false
+  end
+  #--------------------------------------------------------------------------
+  # ● Clear damage value
+  #--------------------------------------------------------------------------
+  def clear_damage_values
+    @hp_damage = 0
+    @mp_damage = 0
+    @tp_damage = 0
+    @hp_drain = 0
+    @mp_drain = 0
+  end
+  #--------------------------------------------------------------------------
+  # ● Create damage
+  #--------------------------------------------------------------------------
+  def make_damage(value, item)
+    @critical = false if value == 0
+    @hp_damage = value if item.damage.to_hp?
+    @mp_damage = value if item.damage.to_mp?
+    @mp_damage = [@battler.mp, @mp_damage].min
+    @hp_drain = @hp_damage if item.damage.drain?
+    @mp_drain = @mp_damage if item.damage.drain?
+    @hp_drain = [@battler.hp, @hp_drain].min
+    @success = true if item.damage.to_hp? || @mp_damage != 0
+  end
+  #--------------------------------------------------------------------------
+  # ● Clear status effect
+  #--------------------------------------------------------------------------
+  def clear_status_effects
+    @added_states = []
+    @removed_states = []
+    @added_buffs = []
+    @added_debuffs = []
+    @removed_buffs = []
+  end
+  #--------------------------------------------------------------------------
+  # ● Obtain the added state as an array of objects
+  #--------------------------------------------------------------------------
+  def added_state_objects
+    @added_states.collect {|id| $data_states[id] }
+  end
+  #--------------------------------------------------------------------------
+  # ● Obtain the released state as an array of objects
+  #--------------------------------------------------------------------------
+  def removed_state_objects
+    @removed_states.collect {|id| $data_states[id] }
+  end
+  #--------------------------------------------------------------------------
+  # ● Determine if any status (ability value or state) was affected
+  #--------------------------------------------------------------------------
+  def status_affected?
+    !(@added_states.empty? && @removed_states.empty? &&
+      @added_buffs.empty? && @added_debuffs.empty? && @removed_buffs.empty?)
+  end
+  #--------------------------------------------------------------------------
+  # ● Determine whether or not you eventually hit
+  #--------------------------------------------------------------------------
+  def hit?
+    @used && !@missed && !@evaded
+  end
+  #--------------------------------------------------------------------------
+  # ● Obtain sentences of HP damage
+  #--------------------------------------------------------------------------
+  def hp_damage_text
+    if @hp_drain > 0
+      fmt = @battler.actor? ? Vocab::ActorDrain : Vocab::EnemyDrain
+      sprintf(fmt, @battler.name, @hp_drain, Vocab::hp)
+    elsif @hp_damage > 0
+      fmt = @battler.actor? ? Vocab::ActorDamage : Vocab::EnemyDamage
+      sprintf(fmt, @battler.name, @hp_damage)
+    elsif @hp_damage < 0
+      fmt = @battler.actor? ? Vocab::ActorRecovery : Vocab::EnemyRecovery
+      sprintf(fmt, @battler.name, -hp_damage, Vocab::hp)
+    else
+      fmt = @battler.actor? ? Vocab::ActorNoDamage : Vocab::EnemyNoDamage
+      sprintf(fmt, @battler.name)
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Obtain sentences of MP damage
+  #--------------------------------------------------------------------------
+  def mp_damage_text
+    if @mp_drain > 0
+      fmt = @battler.actor? ? Vocab::ActorDrain : Vocab::EnemyDrain
+      sprintf(fmt, @battler.name, @mp_drain, Vocab::mp)
+    elsif @mp_damage > 0
+      fmt = @battler.actor? ? Vocab::ActorLoss : Vocab::EnemyLoss
+      sprintf(fmt, @battler.name, @mp_damage, Vocab::mp)
+    elsif @mp_damage < 0
+      fmt = @battler.actor? ? Vocab::ActorRecovery : Vocab::EnemyRecovery
+      sprintf(fmt, @battler.name, -@mp_damage, Vocab::mp)
+    else
+      ""
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Obtain sentences of TP damage
+  #--------------------------------------------------------------------------
+  def tp_damage_text
+    if @tp_damage > 0
+      fmt = @battler.actor? ? Vocab::ActorLoss : Vocab::EnemyLoss
+      sprintf(fmt, @battler.name, @tp_damage, Vocab::tp)
+    elsif @tp_damage < 0
+      fmt = @battler.actor? ? Vocab::ActorGain : Vocab::EnemyGain
+      sprintf(fmt, @battler.name, -@tp_damage, Vocab::tp)
+    else
+      ""
+    end
+  end
+end
+

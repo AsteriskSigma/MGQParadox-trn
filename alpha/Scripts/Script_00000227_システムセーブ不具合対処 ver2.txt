@@ -1,0 +1,202 @@
+
+=begin
+
+Troublesome · ___ ___ 0 RPG
+System save troubleshooting ver 2 2015/03/26
+
+
+the term
+System data SystemSave.rvdata2  SystemSave2.rvdata2
+Save to either side at a specific timing
+Backup system data SystemSaveBackup.rvdata2
+The contents are the same as the system data
+Save the system a certain number of times Save
+
+For the function list explanation below, what newly added with this ver is ● What you changed is ○
+· Initialization measures by setting two system data files
+· Change the timing of system save
+· Message display on system save failure
+· When system loading fails, display a message and kill it
+· Change system backup backup interval
+
+Feature Description
+· Initialization measures by setting two system data files
+SystemSave.rvdata2  SystemSave2.rvdata2  Two of
+Save the file with few \"save times\"
+Files with many 'save times' to load
+Even if saving fails and one side is initialized,
+Loading is done in \"Who did not initialize\", Save is done on \"Initialized one\"
+It is prevented that both data are completely initialized
+
+· Change the timing of system save
+Eliminate the execution of \"at game end\" and execute every time \"scene change\"
+Example of scene change Map -> Battle -> picture book menu -> save
+
+=end
+
+module SaveSystemData
+  
+  # Message displayed in message box when system save fails
+  # Since [System] comes at the top, \"Save\" at the beginning
+  FailureMes1 = [
+    "Save failed",
+    "Please immediately close the game and restart the PC",
+    "",
+    "It is caused by the environment of the PC, and it seems that it will not occur for a while if it restarts",
+  ]
+  
+  # Message displayed in message box when system loading fails
+  # Since [System] comes at the top, the beginning is \"Load\"
+  # Since the game is automatically closed, instructions to close the game are unnecessary
+  FailureMes2 = [
+    "Loading failed",
+    "Please restart the PC immediately",
+    "",
+    "It is caused by the environment of the PC, and it seems that it will not occur for a while if it restarts",
+  ]
+  
+  # Changing the storage interval of backup system data Previously 3
+  # If the remainder of \"save count ÷ this value\" is 0 at the time of save, a backup is created
+  BackUpNum = 1
+  
+end
+
+#==============================================================================
+# ■ Scene_Base
+#==============================================================================
+class Scene_Base
+  #--------------------------------------------------------------------------
+  # ● Termination processing
+  #--------------------------------------------------------------------------
+  alias :systemsavedata_pre_terminate :pre_terminate
+  def pre_terminate
+    SaveSystemData.auto_save
+    systemsavedata_pre_terminate
+  end
+end
+#==============================================================================
+# ■ SaveSystemData
+#==============================================================================
+class << SaveSystemData
+  #--------------------------------------------------------------------------
+  # ● Auto Save
+  #--------------------------------------------------------------------------
+  def auto_save
+    DataManager.save_system
+  end
+  #--------------------------------------------------------------------------
+  # ● Load file name
+  #--------------------------------------------------------------------------
+  def load_filename
+    r = filename_with_save_count.max_by {|name_count| name_count[1] }
+    puts "★ Execute system load:#{r[0]}"
+    return r[0]
+  end
+  #--------------------------------------------------------------------------
+  # ● Save file name
+  #--------------------------------------------------------------------------
+  def save_filename
+    r = filename_with_save_count.min_by {|name_count| name_count[1] }
+    puts "★ Execute system save:#{r[0]}"
+    return r[0]
+  end
+  #--------------------------------------------------------------------------
+  # ● File name candidate
+  #--------------------------------------------------------------------------
+  def filename_set
+    return ["Save/SystemSave.rvdata2", "Save/SystemSave2.rvdata2"]
+  end
+  #--------------------------------------------------------------------------
+  # ● Get file name and save count
+  #--------------------------------------------------------------------------
+  def filename_with_save_count
+    name = filename_set
+    count = []
+    for i in 0..1
+      begin
+        File.open(name[i], "rb") do |file|
+          count[i] = Marshal.load(file)[:system_save_count]
+        end
+      rescue
+      end
+      count[i] ||= -1
+    end
+    return name.zip(count)
+  end
+end
+#==============================================================================
+# ■ DataManager
+#==============================================================================
+class << DataManager
+  #--------------------------------------------------------------------------
+  # ● Acquire system file name
+  #--------------------------------------------------------------------------
+  def system_filename
+    raise "Error system_filename"
+  end
+  #--------------------------------------------------------------------------
+  # ● System file exists?
+  #--------------------------------------------------------------------------
+  def system_file_exist?
+    return SaveSystemData.filename_set.any? {|name| File.exist?(name) }
+  end
+  #--------------------------------------------------------------------------
+  # ● Execute System Save
+  #--------------------------------------------------------------------------
+  def save_system
+    return false unless system_object_exist?
+    
+    begin
+      Dir.mkdir("Save") unless Dir.exist?("Save")
+      @system_save_count += 1
+      save_system_without_rescue
+      save_system_backup_without_rescue if @system_save_count % SaveSystemData::BackUpNum == 0
+      true
+    rescue
+      msgbox save_failure_word("system") +
+             SaveSystemData::FailureMes1.inject("") { |r, text| r += text + "\n" }
+      false
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Execute system load
+  #--------------------------------------------------------------------------
+  def load_system
+    begin
+      return load_system_without_rescue
+    rescue
+      msgbox save_failure_word("system") +
+             SaveSystemData::FailureMes2.inject("") { |r, text| r += text + "\n" }
+      Kernel.exit
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● System save execution (no exception processing)
+  #--------------------------------------------------------------------------
+  def save_system_without_rescue
+    File.open(SaveSystemData.save_filename, "wb") do |file|
+      Marshal.dump(make_system_save_contents, file)
+    end
+    return true
+  end
+  #--------------------------------------------------------------------------
+  # ● Execute system load (no exception handling)
+  #--------------------------------------------------------------------------
+  def load_system_without_rescue
+    File.open(SaveSystemData.load_filename, "rb") do |file|
+      extract_system_save_contents(Marshal.load(file))
+    end
+    return true
+  end
+end
+#==============================================================================
+# ◆ Exit
+#==============================================================================
+module Exit
+  # ---------------------------------------------------------------------------
+  # ◆ Write customization point release processing.
+  # ---------------------------------------------------------------------------
+  def self.dispose
+  end
+end
+

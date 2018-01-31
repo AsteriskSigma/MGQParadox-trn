@@ -1,0 +1,4 @@
+"【娘】" -> "【Daughter】"
+"・・・" -> "..."
+"こうして僕は、個室へと招き入れられた――" -> "In this way I was invited into a private room -"
+"・・・" -> "..."

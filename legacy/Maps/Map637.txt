@@ -1,0 +1,234 @@
+
+
+
+EVENT   1
+ PAGE   1
+  0()
+
+
+
+EVENT   2
+ PAGE   1
+  0()
+
+
+
+EVENT   3
+ PAGE   1
+  0()
+
+
+
+EVENT   4
+ PAGE   1
+  0()
+
+
+
+EVENT   5
+ PAGE   1
+  0()
+
+
+
+EVENT   6
+ PAGE   1
+  0()
+
+
+
+EVENT   7
+ PAGE   1
+  0()
+
+
+
+EVENT   8
+ PAGE   1
+  0()
+
+
+
+EVENT   9
+ PAGE   1
+  0()
+
+
+
+EVENT   10
+ PAGE   1
+  0()
+
+
+
+EVENT   11
+ PAGE   1
+  0()
+
+
+
+EVENT   12
+ PAGE   1
+  0()
+
+
+
+EVENT   13
+ PAGE   1
+  0()
+
+
+
+EVENT   14
+ PAGE   1
+  0()
+
+
+
+EVENT   15
+ PAGE   1
+  0()
+
+
+
+EVENT   16
+ PAGE   1
+  0()
+
+
+
+EVENT   17
+ PAGE   1
+  0()
+
+
+
+EVENT   18
+ PAGE   1
+  0()
+
+
+
+EVENT   19
+ PAGE   1
+  0()
+
+
+
+EVENT   20
+ PAGE   1
+  0()
+
+
+
+EVENT   22
+ PAGE   1
+  // condition: switch 649 is ON
+  0()
+
+
+
+EVENT   30
+ PAGE   1
+  // condition: switch 649 is ON
+  241(bytes(0x04,0x08,0x6f,0x3a,0x0d,0x52,0x50,0x47,0x3a,0x3a,0x42,0x47,0x4d,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x16,0x64,0x75,0x6e,0x67,0x65,0x6f,0x6e,0x5f,0x74,0x61,0x72,0x75,0x74,0x61,0x72,0x6f,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69))
+  ShowMessageFace("valt_fc1",0,0,2,1)
+  ShowMessage("\\n<Valto>The chaos has grown denser in here...")
+  ShowMessageFace("liot_fc1",0,0,2,2)
+  ShowMessage("\\n<Riot>Everything will turn into chaos, and then into nothingness... So, it's coming...")
+  ShowMessageFace("syuree_fc1",0,0,2,3)
+  ShowMessage("\\n<Sully>Look, even our words are chaosiz■■■■! Isn't this getti■■■■■■■■■■■■?")
+  ShowMessageFace("jeid_fc1",0,0,2,4)
+  ShowMessage("\\n<Jaide>■■■■■■■■■■■■■■■■■■■■■■■■ ■■■■■■■■■■■■■■■■■■■■■■■")
+  ShowMessageFace("syesta_fc1",0,0,2,5)
+  ShowMessage("\\n<Shesta>■■■■■■■■■■■■■■■■■■■■■■■■ ■■■■■■■■■■■■■■■■■■■■■■■")
+  ShowMessageFace("",0,0,2,6)
+  ShowMessage("\\n<Audience A>Hey, what's with this J■ PiP ■■ DL IC ■ bByj ■ B ■ Iyx ■ ■ xa ■ ■ k ■ Bece ■ I ■ z ■■ KNGiL?")
+  ShowMessageFace("",0,0,2,7)
+  ShowMessage("\\n<Audience B>What's■■■■■■■■■■■■■■■■■■■■■■ ■■■■■■■■■■■■■■■■■■■■■■■")
+  ShowMessageFace("",0,0,2,8)
+  ShowMessage("■■■■■■■■■■■■■■■!")
+  Wait(30)
+  221()
+  242(1)
+  Wait(60)
+  211(1)
+  281(1)
+  TeleportPlayer(0,624,63,27,6,2)
+  ChangeSwitch(2119,2119,0)
+  222()
+  ShowMessageFace("",0,0,2,9)
+  ShowMessage("\\n<Manager>Sta■■■■■■■■■■■■■■■■■■■■■■ ■■■■■■■■■■■■■■■■■■■■■■■")
+  If(2,"A",1)
+   ChangeSelfSwitch("A",0)
+   250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+   ChangeInventoryArmor(1076,0,0,1,false)
+   0()
+  EndIf()
+  ChangeSwitch(2119,2119,1)
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   31
+ PAGE   1
+  // condition: switch 649 is ON
+  0()
+
+
+
+EVENT   53
+ PAGE   1
+  // condition: switch 649 is ON
+  0()
+
+
+
+EVENT   54
+ PAGE   1
+  // condition: switch 649 is ON
+  0()
+
+
+
+EVENT   55
+ PAGE   1
+  // condition: switch 649 is ON
+  0()
+
+EVENT   56
+ PAGE   1
+  // condition: switch 649 is ON
+  0()
+
+
+
+EVENT   57
+ PAGE   1
+  // condition: switch 649 is ON
+  0()
+
+
+
+EVENT   58
+ PAGE   1
+  // condition: switch 649 is ON
+  0()
+
+
+
+EVENT   59
+ PAGE   1
+  // condition: switch 649 is ON
+  0()
+
+
+
+EVENT   60
+ PAGE   1
+  // condition: switch 649 is ON
+  0()
+
+
+

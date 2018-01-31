@@ -1,0 +1,446 @@
+
+DisplayName "Luddite Village"
+
+
+
+EVENT   1
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,2,257,249,2,0)
+  0()
+
+
+
+EVENT   2
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,2,257,249,2,0)
+  0()
+
+
+
+EVENT   3
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,220,55,31,4,0)
+  0()
+
+
+
+EVENT   4
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,220,55,30,4,0)
+  0()
+
+
+
+EVENT   5
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,221,7,21,0,0)
+  0()
+
+
+
+EVENT   6
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,221,59,17,0,0)
+  0()
+
+
+
+EVENT   7
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,221,85,16,0,0)
+  0()
+
+
+
+EVENT   8
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,221,41,42,0,0)
+  0()
+
+
+
+EVENT   9
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,221,7,40,0,0)
+  0()
+
+
+
+EVENT   10
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,221,27,38,0,0)
+  0()
+
+
+
+EVENT   11
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,221,14,67,0,0)
+  0()
+
+
+
+EVENT   12
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,221,41,62,0,0)
+  0()
+
+
+
+EVENT   13
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,221,67,62,0,0)
+  0()
+
+
+
+EVENT   14
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Dog>Woof! Woof!")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("60")
+  ShowMessageFace("dog_fc1",4,0,2,2)
+  ShowMessage("\\n<Pochi>Wooof! Wooof!")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   15
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Priest>People all over the world are depraved. They don't keep the teachings of Ilias, and there are many who conspire with monsters.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Priest>Such fools should burn in hell!")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("26")
+  ShowMessageFace("iriasu_fc4",2,0,2,3)
+  ShowMessage("\\n<Ilias>Well, that may be true, but this guy's attitude rubs me the wrong way.")
+  ShowMessageFace("iriasu_fc4",2,0,2,4)
+  ShowMessage("\\n<Ilias>Is it because he hides behind my words so that he can behave like a god himself?")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   16
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Youth>In the forest far west from here, my friend saw something strange. Tiny girls with wings like those of butterflies were dancing in a ring.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Youth>Is it because his faith is weak that he has seen such devils? I cut my ties with him the other day because of his foolishness.")
+  If(0,6,0)
+   ShowMessageFace("sonia_fc4",0,0,2,3)
+   ShowMessage("\\n<Sonya>This is repulsive even for me, an upright and proper priestess of the church...")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   17
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Man>The Forest of Spirits should be burned to ash. I mean, all that's inside are filthy monsters.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("12")
+  ShowMessageFace("sylph_fc1",4,0,2,2)
+  ShowMessage("\\n<Sylph>You caaan't!")
+  EndEventProcessing()
+  DefineLabel("136")
+  ShowMessageFace("elf_fc1",0,0,2,3)
+  ShowMessage("\\n<Claudia>Try it if you want... I'll shoot an arrow through your face.")
+  EndEventProcessing()
+  DefineLabel("138")
+  ShowMessageFace("tfairy_fc1",2,0,2,4)
+  ShowMessage("\\n<Milly & Liru>Why would you do that? We didn't do anything bad...")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   18
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Youth>Sometimes fairies appear in this village to spy. Surely it's some monster plot so we drive them off by throwing stones at them.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("137")
+  ShowMessageFace("braunys_fc2",0,0,2,2)
+  ShowMessage("\\n<Love & Lamb>We cooome to help out craftsmen!")
+  EndEventProcessing()
+  DefineLabel("139")
+  ShowMessageFace("fairys_fc1",3,0,2,3)
+  ShowMessage("\\n<Fairies>We just come to play...")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   19
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Man>This village was built on sacred land near the Ancient Temple's Ruins.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Man>As true heirs of the righteous faith, we are here to protect this land. The blasphemers in San Ilia have abandoned the true faith and are just clinging to power.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("531")
+  ShowMessageFace("saniria_fc2",0,0,2,3)
+  ShowMessage("\\n<King of San Ilia>......")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   20
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Youth>Listen, what awaits modern civilization is nothing but ruin. We humans need to return to the Goddess' teachings.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Youth>And to think that those blasphemers in the church tolerate makina... While they'll face ruin, we shall survive with the Goddess' blessing.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("41")
+  ShowMessageFace("stein_fc2",0,0,2,3)
+  ShowMessage("\\n<Promestein>So what they call faith can numb reason to this extent. It's like a drug...")
+  EndEventProcessing()
+  DefineLabel("94")
+  ShowMessageFace("luksl_fc1",0,0,2,4)
+  ShowMessage("\\n<Luxuru>There are ignorant people in every era, aren't there...")
+  EndEventProcessing()
+  DefineLabel("102")
+  ShowMessageFace("youko_fc1",0,0,2,5)
+  ShowMessage("\\n<Kitsu>Tamamo once told me that no matter what the tool is, how it's used is up to the user!")
+  EndEventProcessing()
+  DefineLabel("129")
+  ShowMessageFace("brunhild_fc1",0,0,2,6)
+  ShowMessage("\\n<Hild>This civilization will perish...? The world will be destroyed and only people who don't use makina will survive...?")
+  ShowMessageFace("brunhild_fc1",0,0,2,7)
+  ShowMessage("\\n<Hild>It's different from what Master said... Master is the correct one... You are wrong...")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   21
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Middle-Aged Man>The arrogance of the human race is at its peak. If this goes on we will all suffer the Goddess' wrath.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Middle-Aged Man>No, the Goddess' judgment has already begun! You too should wake up and renounce the evils of civilization!")
+  If(0,6,0)
+   If(0,1041,0)
+    ShowMessageFace("sonia_fc2",2,0,2,3)
+    ShowMessage("\\n<Sonya>Not going to take the bait, Promestein? Normally you'd speak your mind...")
+    ShowMessageFace("stein_fc2",0,0,2,4)
+    ShowMessage("\\n<Promestein>To have a debate, the other side has to possess a certain level of intelligence. These people aren't even close.")
+    0()
+   EndIf()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   22
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Youth>There are rumors that the ones who attempted to assassinate the Pope are with the anti-makina faction. However, that's a completely false accusation.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Youth>...Well, we do wish that the Pope had died, though.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("525")
+  ShowMessageFace("sonia_fc2",5,0,2,3)
+  ShowMessage("\\n<Sonya>That's a horrible remark! How can you say that!")
+  EndEventProcessing()
+  DefineLabel("531")
+  ShowMessageFace("saniria_fc2",0,0,2,4)
+  ShowMessage("\\n<King of San Ilia>......")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   23
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Youth>Forgoing secular life and living modestly... This is so wonderful.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Youth>Compared to this, people in cities are pitiful. They don't even realize that they defy the Goddess...")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("26")
+  ShowMessageFace("iriasu_fc4",2,0,2,3)
+  ShowMessage("\\n<Ilias>For people that think they are the chosen ones, their methods of faith couldn't be farther from correct.")
+  EndEventProcessing()
+  DefineLabel("122")
+  ShowMessageFace("sisterlamia_fc1",2,0,2,4)
+  ShowMessage("\\n<Sofia>There's nothing righteous in faith that looks down upon others. Aren't we all equal beneath the Goddess...?")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   24
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Youth>There's an entrance to the Ancient Temple's Ruins up ahead, but the soldiers dispatched from the church are blocking the way.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Youth>I don't think we can beat them and if it turns into a full-scale war, we'd really have no chance.")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Youth>Damn, filthy laymen who forgot their faith and cling to power...")
+  0()
+
+
+
+EVENT   25
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Man>Listen, the system of private ownership gives birth to luxuries and corruption. A small segment of society monopolizes wealth and suppresses the weak.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Man>However, things in this village are everyone's joint property. Houses, gold, food, and of course...")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Man>...whoops, I can't tell this to outsiders.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("5")
+  ShowMessageFace("alice_fc5",3,0,2,4)
+  ShowMessage("\\n<Alice>...damn scum.")
+  ShowMessageFace("ruka_fc1",0,0,2,5)
+  ShowMessage("\\n<Luka>Eh, what is it?")
+  ShowMessageFace("alice_fc5",0,0,2,6)
+  ShowMessage("\\n<Alice>I can't tell you or you'd be furious. If you went on a rampage around here it wouldn't do us any good.")
+  ShowMessageFace("alice_fc5",3,0,2,7)
+  ShowMessage("\\n<Alice>This kind of problem can't be solved by swinging a sword around. If you don't change their way of thinking, the problem will never truly go away.")
+  EndEventProcessing()
+  DefineLabel("26")
+  ShowMessageFace("iriasu_fc4",2,0,2,8)
+  ShowMessage("\\n<Ilias>Once I return back to normal, I shall destroy this village first and foremost.")
+  ShowMessageFace("ruka_fc1",0,0,2,9)
+  ShowMessage("\\n<Luka>Eh, why?")
+  ShowMessageFace("iriasu_fc4",2,0,2,10)
+  ShowMessage("\\n<Ilias>I will not tell you. At worst, you'll stain your hands with blood...")
+  EndEventProcessing()
+  DefineLabel("41")
+  ShowMessageFace("stein_fc2",0,0,2,11)
+  ShowMessage("\\n<Promestein>...It's a system I've seen in old fashioned villages. In this era, nearly none who use it remain.")
+  ShowMessageFace("stein_fc2",0,0,2,12)
+  ShowMessage("\\n<Promestein>For such a tradition to reappear because of a religious sense of equality... this is quite interesting, yet at the same time unpleasant.")
+  EndEventProcessing()
+  DefineLabel("531")
+  ShowMessageFace("saniria_fc2",0,0,2,13)
+  ShowMessage("\\n<King of San Ilia>We need to dismantle this village as soon as possible...")
+  EndEventProcessing()
+  0()
+  
+
+
+EVENT   26
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Priest>You there, do you know of the attempted assassination on the Pope? The Pope's carriage was blown up with a bomb a while back.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Priest>Well, this is the Goddess' judgment for the Pope's approval of makina. He should have been sent to the other world back then...")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("525")
+  ShowMessageFace("sonia_fc1",5,0,2,3)
+  ShowMessage("\\n<Sonya>What is this guy saying?! Is this how a priest should speak?")
+  EndEventProcessing()
+  DefineLabel("531")
+  ShowMessageFace("saniria_fc2",0,0,2,4)
+  ShowMessage("\\n<King of San Ilia>......")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   27
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Youth>This is Luddite, a village where we live in accordance to the Goddess' teachings. I'd rather not let non-believers enter...")
+  281(1)
+  355("unlimited_choices(11, [\"Inn\",")
+  655("\"Weapon - Item Shop\",\"Nothing\"])")
+  If(1,11,0,0,0)
+   TeleportPlayer(0,11,54,44,2,0)
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,11,0,1,0)
+   TeleportPlayer(0,11,36,18,2,0)
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,11,0,2,0)
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   28
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Chicken>Cuckoo!")
+  0()
+
+
+
+
+EVENT   29
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(32,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   30
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,220,55,32,4,0)
+  0()
+
+
+
+EVENT   31
+ PAGE   1
+  // condition: switch 1080 is ON
+  ShowMessageFace("orc_fc1",2,0,2,1)
+  ShowMessage("\\n<Hip>This village is creepy...")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("Our orc seems scared...")
+  0()
+ PAGE   2
+  // condition: party contains actor #80
+  0()
+
+

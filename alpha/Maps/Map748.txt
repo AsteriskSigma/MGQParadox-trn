@@ -1,0 +1,129 @@
+
+
+
+EVENT   1
+ PAGE   1
+  0()
+
+
+
+EVENT   2
+ PAGE   1
+  0()
+
+
+
+EVENT   3
+ PAGE   1
+  ShowMessageFace("sonia_fc2",4,0,2,1)
+  ShowMessage("【Sonia】")
+  ShowMessage("A little……!")
+  ShowMessage("These guys, what is it ~! !")
+  ShowMessageFace("nuruko_fc1",0,0,2,2)
+  ShowMessage("【NURCO】")
+  ShowMessage("Cut! Cut!")
+  ShowMessageFace("sirousagi_fc1",0,0,2,3)
+  ShowMessage("【White rabbit】")
+  ShowMessage("Do your best!")
+  221()
+  Wait(60)
+  211(1)
+  TeleportPlayer(0,394,19,48,8,2)
+  222()
+  ShowMessageFace("sonia_fc2",2,0,2,4)
+  ShowMessage("【Sonia】")
+  ShowMessage("Such a feeling, being walked around ... ...")
+  ShowMessage("This time I was brought here.")
+  ShowMessageFace("sirousagi_fc1",0,0,2,5)
+  ShowMessage("【White rabbit】")
+  ShowMessage("Please be thankful for me.")
+  ShowMessage("Well then, join ♪ confluence ♪")
+  ChangeSwitch(6,6,0)
+  ChangeSwitch(2009,2009,1)
+  ChangeSwitch(2015,2015,0)
+  ChangeSwitch(2010,2010,0)
+  ChangeSwitch(2007,2007,0)
+  ChangeSwitch(2028,2028,0)
+  ChangeSwitch(2125,2125,0)
+  ChangeVariable(1013,1013,0,0,2)
+  ChangeSwitch(101,101,0)
+  ChangeSwitch(241,241,0)
+  PictureClear(5)
+  355("add_actor_ex(525)")
+  355("add_actor_ex(79)")
+  249(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0c,0x66,0x61,0x6e,0x66,0x61,0x6c,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69))
+  ShowMessageFace("",0,0,2,6)
+  ShowMessage("Sonia and Nurco join the group!")
+  Wait(60)
+  355("gain_medal(66)")
+  If(0,4,0)
+   ShowMessageFace("alice_fc5",2,0,2,7)
+   ShowMessage("【Alice】")
+   ShowMessage("Why did you bring Luke's childhood friend?")
+   ShowMessage("Besides, this mysterious thing is ....")
+   0()
+  EndIf()
+  If(0,5,0)
+   ShowMessageFace("iriasu_fc4",7,0,2,8)
+   ShowMessage("【Iliad】")
+   ShowMessage("Why did you bring Luka's childhood friend?")
+   ShowMessage("Besides, this mysterious thing is ....")
+   0()
+  EndIf()
+  ShowMessageFace("sirousagi_fc1",0,0,2,9)
+  ShowMessage("【White rabbit】")
+  ShowMessage("Well, Sasamasu ...")
+  If(0,4,0)
+   ShowMessageFace("alice_fc6",1,0,2,10)
+   ShowMessage("【Alice】")
+   ShowMessage("Listen to the story!")
+   ShowMessageFace("alice_fc5",0,0,2,11)
+   ShowMessage("【Alice】")
+   ShowMessage("...... Anyhow it became a large household.")
+   ShowMessage("I will hand this over to you.")
+   ChangeInventory_Item(501,0,0,1)
+   ShowMessageFace("alice_fc5",0,0,2,12)
+   ShowMessage("【Alice】")
+   ShowMessage("Members who have fallen out of the party can be packed in this.")
+   ShowMessage("How to use ... Well you will understand.")
+   0()
+  EndIf()
+  If(0,5,0)
+   ShowMessageFace("iriasu_fc5",0,0,2,13)
+   ShowMessage("【Iliad】")
+   ShowMessage("Listen to the story!")
+   ShowMessageFace("iriasu_fc4",2,0,2,14)
+   ShowMessage("【Iliad】")
+   ShowMessage("...... Anyway, the number of heads has increased.")
+   ShowMessage("Let me pass this on to you.")
+   ChangeInventory_Item(501,0,0,1)
+   ShowMessageFace("iriasu_fc4",0,0,2,15)
+   ShowMessage("【Iliad】")
+   ShowMessage("Fellows who do not need are housed here.")
+   ShowMessage("How do you know how to use it?")
+   0()
+  EndIf()
+  ShowMessageFace("sirousagi_fc1",0,0,2,16)
+  ShowMessage("【White rabbit】")
+  ShowMessage("Shamasami ......")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   4
+ PAGE   1
+  0()
+
+
+
+EVENT   5
+ PAGE   1
+  0()
+
+
+
+EVENT   6
+ PAGE   1
+  0()
+

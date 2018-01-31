@@ -1,0 +1,2 @@
+"♪" -> "♪"
+"　You're so tight inside" -> "You're so tight inside"

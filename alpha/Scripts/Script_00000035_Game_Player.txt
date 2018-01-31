@@ -1,0 +1,487 @@
+#==============================================================================
+# ■ Game_Player
+#------------------------------------------------------------------------------
+# It is a class dealing with players. Determine the start of the event, scroll the map
+# It has a function. An instance of this class$game_player It is referred to.
+#==============================================================================
+
+class Game_Player < Game_Character
+  #--------------------------------------------------------------------------
+  # ● Public instance variables
+  #--------------------------------------------------------------------------
+  attr_reader   :followers                # Followers (rolling members)
+  #--------------------------------------------------------------------------
+  # ● Object initialization
+  #--------------------------------------------------------------------------
+  def initialize
+    super
+    @vehicle_type = :walk           # Types of rides currently on board
+    @vehicle_getting_on = false     # Mid-flag of riding action
+    @vehicle_getting_off = false    # Mid-flag of descending motion
+    @followers = Game_Followers.new(self)
+    @transparent = $data_system.opt_transparent
+    clear_transfer_info
+  end
+  #--------------------------------------------------------------------------
+  # ● Clear location movement information
+  #--------------------------------------------------------------------------
+  def clear_transfer_info
+    @transferring = false           # Location movement flag
+    @new_map_id = 0                 # Destination map ID
+    @new_x = 0                      # Destination X coordinate
+    @new_y = 0                      # Destination Y coordinate
+    @new_direction = 0              # Orientation after movement
+  end
+  #--------------------------------------------------------------------------
+  # ● Refresh
+  #--------------------------------------------------------------------------
+  def refresh
+    @character_name = actor ? actor.character_name : ""
+    @character_index = actor ? actor.character_index : 0
+    @followers.refresh
+  end
+  #--------------------------------------------------------------------------
+  # Acquisition of corresponding actor
+  #--------------------------------------------------------------------------
+  def actor
+    $game_party.battle_members[0]
+  end
+  #--------------------------------------------------------------------------
+  # ● During stop determination
+  #--------------------------------------------------------------------------
+  def stopping?
+    return false if @vehicle_getting_on || @vehicle_getting_off
+    return super
+  end
+  #--------------------------------------------------------------------------
+  # ● Reserving place movements
+  #     d : Orientation after movement (2,4,6,8)
+  #--------------------------------------------------------------------------
+  def reserve_transfer(map_id, x, y, d = 2)
+    @transferring = true
+    @new_map_id = map_id
+    @new_x = x
+    @new_y = y
+    @new_direction = d
+  end
+  #--------------------------------------------------------------------------
+  # ● During reservation for location movements
+  #--------------------------------------------------------------------------
+  def transfer?
+    @transferring
+  end
+  #--------------------------------------------------------------------------
+  # ● Perform location movements
+  #--------------------------------------------------------------------------
+  def perform_transfer
+    if transfer?
+      set_direction(@new_direction)
+      if @new_map_id != $game_map.map_id
+        $game_map.setup(@new_map_id)
+        $game_map.autoplay
+      end
+      moveto(@new_x, @new_y)
+      clear_transfer_info
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Map passability judgment
+  #     d : Direction (2,4,6,8)
+  #--------------------------------------------------------------------------
+  def map_passable?(x, y, d)
+    case @vehicle_type
+    when :boat
+      $game_map.boat_passable?(x, y)
+    when :ship
+      $game_map.ship_passable?(x, y)
+    when :airship
+      true
+    else
+      super
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire the current ride
+  #--------------------------------------------------------------------------
+  def vehicle
+    $game_map.vehicle(@vehicle_type)
+  end
+  #--------------------------------------------------------------------------
+  # ● State determination on a small boat
+  #--------------------------------------------------------------------------
+  def in_boat?
+    @vehicle_type == :boat
+  end
+  #--------------------------------------------------------------------------
+  # ● State determination on a large ship
+  #--------------------------------------------------------------------------
+  def in_ship?
+    @vehicle_type == :ship
+  end
+  #--------------------------------------------------------------------------
+  # ● State determination on board an airship
+  #--------------------------------------------------------------------------
+  def in_airship?
+    @vehicle_type == :airship
+  end
+  #--------------------------------------------------------------------------
+  # ● Normal gait status determination
+  #--------------------------------------------------------------------------
+  def normal_walk?
+    @vehicle_type == :walk && !@move_route_forcing
+  end
+  #--------------------------------------------------------------------------
+  # Dash status determination
+  #--------------------------------------------------------------------------
+  def dash?
+    return false if @move_route_forcing
+    return false if $game_map.disable_dash?
+    return false if vehicle
+    return Input.press?(:A)
+  end
+  #--------------------------------------------------------------------------
+  # ● Determine the state of debugging slipping through
+  #--------------------------------------------------------------------------
+  def debug_through?
+    $TEST && Input.press?(:CTRL)
+  end
+  #--------------------------------------------------------------------------
+  # Collision determination (including followers)
+  #--------------------------------------------------------------------------
+  def collide?(x, y)
+    !@through && (pos?(x, y) || followers.collide?(x, y))
+  end
+  #--------------------------------------------------------------------------
+  # ● X coordinate of the center of the screen
+  #--------------------------------------------------------------------------
+  def center_x
+    (Graphics.width / 32 - 1) / 2.0
+  end
+  #--------------------------------------------------------------------------
+  # Y coordinate of the center of the screen
+  #--------------------------------------------------------------------------
+  def center_y
+    (Graphics.height / 32 - 1) / 2.0
+  end
+  #--------------------------------------------------------------------------
+  # ● Set the display position of the map so that it comes to the center of the screen
+  #--------------------------------------------------------------------------
+  def center(x, y)
+    $game_map.set_display_pos(x - center_x, y - center_y)
+  end
+  #--------------------------------------------------------------------------
+  # ● Move to specified position
+  #--------------------------------------------------------------------------
+  def moveto(x, y)
+    super
+    center(x, y)
+    make_encounter_count
+    vehicle.refresh if vehicle
+    @followers.synchronize(x, y, direction)
+  end
+  #--------------------------------------------------------------------------
+  # ● Increase the number of steps
+  #--------------------------------------------------------------------------
+  def increase_steps
+    super
+    $game_party.increase_steps if normal_walk?
+  end
+  #--------------------------------------------------------------------------
+  # ● Create an encount count
+  #--------------------------------------------------------------------------
+  def make_encounter_count
+    n = $game_map.encounter_step
+    @encounter_count = rand(n) + rand(n) + 1
+  end
+  #--------------------------------------------------------------------------
+  # ● Create ID of enemy group to be counted
+  #--------------------------------------------------------------------------
+  def make_encounter_troop_id
+    encounter_list = []
+    weight_sum = 0
+    $game_map.encounter_list.each do |encounter|
+      next unless encounter_ok?(encounter)
+      encounter_list.push(encounter)
+      weight_sum += encounter.weight
+    end
+    if weight_sum > 0
+      value = rand(weight_sum)
+      encounter_list.each do |encounter|
+        value -= encounter.weight
+        return encounter.troop_id if value < 0
+      end
+    end
+    return 0
+  end
+  #--------------------------------------------------------------------------
+  # ● Available judgment of encounter items
+  #--------------------------------------------------------------------------
+  def encounter_ok?(encounter)
+    return true if encounter.region_set.empty?
+    return true if encounter.region_set.include?(region_id)
+    return false
+  end
+  #--------------------------------------------------------------------------
+  # ● Execute the encounter processing
+  #--------------------------------------------------------------------------
+  def encounter
+    return false if $game_map.interpreter.running?
+    return false if $game_system.encounter_disabled
+    return false if @encounter_count > 0
+    make_encounter_count
+    troop_id = make_encounter_troop_id
+    return false unless $data_troops[troop_id]
+    BattleManager.setup(troop_id)
+    BattleManager.on_encounter
+    return true
+  end
+  #--------------------------------------------------------------------------
+  # ● Activate map event
+  #     triggers : Trigger array
+  #     normal   : Priority [same as normal character] or not
+  #--------------------------------------------------------------------------
+  def start_map_event(x, y, triggers, normal)
+    $game_map.events_xy(x, y).each do |event|
+      if event.trigger_in?(triggers) && event.normal_priority? == normal
+        event.start
+      end
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Event activation judgment at the same position
+  #--------------------------------------------------------------------------
+  def check_event_trigger_here(triggers)
+    start_map_event(@x, @y, triggers, false)
+  end
+  #--------------------------------------------------------------------------
+  # ● Front Event Evaluation
+  #--------------------------------------------------------------------------
+  def check_event_trigger_there(triggers)
+    x2 = $game_map.round_x_with_direction(@x, @direction)
+    y2 = $game_map.round_y_with_direction(@y, @direction)
+    start_map_event(x2, y2, triggers, true)
+    return if $game_map.any_event_starting?
+    return unless $game_map.counter?(x2, y2)
+    x3 = $game_map.round_x_with_direction(x2, @direction)
+    y3 = $game_map.round_y_with_direction(y2, @direction)
+    start_map_event(x3, y3, triggers, true)
+  end
+  #--------------------------------------------------------------------------
+  # Determination of contact event activation
+  #--------------------------------------------------------------------------
+  def check_event_trigger_touch(x, y)
+    start_map_event(x, y, [1,2], true)
+  end
+  #--------------------------------------------------------------------------
+  # ● Movement processing by direction button input
+  #--------------------------------------------------------------------------
+  def move_by_input
+    return if !movable? || $game_map.interpreter.running?
+    move_straight(Input.dir4) if Input.dir4 > 0
+  end
+  #--------------------------------------------------------------------------
+  # ● Moveable judgment
+  #--------------------------------------------------------------------------
+  def movable?
+    return false if moving?
+    return false if @move_route_forcing || @followers.gathering?
+    return false if @vehicle_getting_on || @vehicle_getting_off
+    return false if $game_message.busy? || $game_message.visible
+    return false if vehicle && !vehicle.movable?
+    return true
+  end
+  #--------------------------------------------------------------------------
+  # ● Frame update
+  #--------------------------------------------------------------------------
+  def update
+    last_real_x = @real_x
+    last_real_y = @real_y
+    last_moving = moving?
+    move_by_input
+    super
+    update_scroll(last_real_x, last_real_y)
+    update_vehicle
+    update_nonmoving(last_moving) unless moving?
+    @followers.update
+  end
+  #--------------------------------------------------------------------------
+  # ● Scroll processing
+  #--------------------------------------------------------------------------
+  def update_scroll(last_real_x, last_real_y)
+    ax1 = $game_map.adjust_x(last_real_x)
+    ay1 = $game_map.adjust_y(last_real_y)
+    ax2 = $game_map.adjust_x(@real_x)
+    ay2 = $game_map.adjust_y(@real_y)
+    $game_map.scroll_down (ay2 - ay1) if ay2 > ay1 && ay2 > center_y
+    $game_map.scroll_left (ax1 - ax2) if ax2 < ax1 && ax2 < center_x
+    $game_map.scroll_right(ax2 - ax1) if ax2 > ax1 && ax2 > center_x
+    $game_map.scroll_up   (ay1 - ay2) if ay2 < ay1 && ay2 < center_y
+  end
+  #--------------------------------------------------------------------------
+  # ● Vehicle treatment
+  #--------------------------------------------------------------------------
+  def update_vehicle
+    return if @followers.gathering?
+    return unless vehicle
+    if @vehicle_getting_on
+      update_vehicle_get_on
+    elsif @vehicle_getting_off
+      update_vehicle_get_off
+    else
+      vehicle.sync_with_player
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Updating the behavior of getting on a vehicle
+  #--------------------------------------------------------------------------
+  def update_vehicle_get_on
+    if !@followers.gathering? && !moving?
+      @direction = vehicle.direction
+      @move_speed = vehicle.speed
+      @vehicle_getting_on = false
+      @transparent = true
+      @through = true if in_airship?
+      vehicle.get_on
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Update actions to get off the vehicle
+  #--------------------------------------------------------------------------
+  def update_vehicle_get_off
+    if !@followers.gathering? && vehicle.altitude == 0
+      @vehicle_getting_off = false
+      @vehicle_type = :walk
+      @transparent = false
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Processing when not moving
+  #     last_moving : Was it moving just before
+  #--------------------------------------------------------------------------
+  def update_nonmoving(last_moving)
+    return if $game_map.interpreter.running?
+    if last_moving
+      $game_party.on_player_walk
+      return if check_touch_event
+    end
+    if movable? && Input.trigger?(:C)
+      return if get_on_off_vehicle
+      return if check_action_event
+    end
+    update_encounter if last_moving
+  end
+  #--------------------------------------------------------------------------
+  # ● Update count
+  #--------------------------------------------------------------------------
+  def update_encounter
+    return if $TEST && Input.press?(:CTRL)
+    return if $game_party.encounter_none?
+    return if in_airship?
+    return if @move_route_forcing
+    @encounter_count -= encounter_progress_value
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of encounter progress value
+  #--------------------------------------------------------------------------
+  def encounter_progress_value
+    value = $game_map.bush?(@x, @y) ? 2 : 1
+    value *= 0.5 if $game_party.encounter_half?
+    value *= 0.5 if in_ship?
+    value
+  end
+  #--------------------------------------------------------------------------
+  # ● Event activation judgment by contact (overlap)
+  #--------------------------------------------------------------------------
+  def check_touch_event
+    return false if in_airship?
+    check_event_trigger_here([1,2])
+    $game_map.setup_starting_event
+  end
+  #--------------------------------------------------------------------------
+  # ● Event activation judgment by decision button
+  #--------------------------------------------------------------------------
+  def check_action_event
+    return false if in_airship?
+    check_event_trigger_here([0])
+    return true if $game_map.setup_starting_event
+    check_event_trigger_there([0,1,2])
+    $game_map.setup_starting_event
+  end
+  #--------------------------------------------------------------------------
+  # ● Getting on and off the vehicle
+  #--------------------------------------------------------------------------
+  def get_on_off_vehicle
+    if vehicle
+      get_off_vehicle
+    else
+      get_on_vehicle
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Take a ride
+  #    It is premised that it is not currently riding a vehicle.
+  #--------------------------------------------------------------------------
+  def get_on_vehicle
+    front_x = $game_map.round_x_with_direction(@x, @direction)
+    front_y = $game_map.round_y_with_direction(@y, @direction)
+    @vehicle_type = :boat    if $game_map.boat.pos?(front_x, front_y)
+    @vehicle_type = :ship    if $game_map.ship.pos?(front_x, front_y)
+    @vehicle_type = :airship if $game_map.airship.pos?(@x, @y)
+    if vehicle
+      @vehicle_getting_on = true
+      force_move_forward unless in_airship?
+      @followers.gather
+    end
+    @vehicle_getting_on
+  end
+  #--------------------------------------------------------------------------
+  # ● Get off the vehicle
+  #    It is premised that you are currently riding a vehicle.
+  #--------------------------------------------------------------------------
+  def get_off_vehicle
+    if vehicle.land_ok?(@x, @y, @direction)
+      set_direction(2) if in_airship?
+      @followers.synchronize(@x, @y, @direction)
+      vehicle.get_off
+      unless in_airship?
+        force_move_forward
+        @transparent = false
+      end
+      @vehicle_getting_off = true
+      @move_speed = 4
+      @through = false
+      make_encounter_count
+      @followers.gather
+    end
+    @vehicle_getting_off
+  end
+  #--------------------------------------------------------------------------
+  # ● Forward one step forward
+  #--------------------------------------------------------------------------
+  def force_move_forward
+    @through = true
+    move_forward
+    @through = false
+  end
+  #--------------------------------------------------------------------------
+  # Damaged floor judgment
+  #--------------------------------------------------------------------------
+  def on_damage_floor?
+    $game_map.damage_floor?(@x, @y) && !in_airship?
+  end
+  #--------------------------------------------------------------------------
+  # ● Move straight
+  #--------------------------------------------------------------------------
+  def move_straight(d, turn_ok = true)
+    @followers.move if passable?(@x, @y, d)
+    super
+  end
+  #--------------------------------------------------------------------------
+  # ● Move diagonally
+  #--------------------------------------------------------------------------
+  def move_diagonal(horz, vert)
+    @followers.move if diagonal_passable?(@x, @y, horz, vert)
+    super
+  end
+end
+

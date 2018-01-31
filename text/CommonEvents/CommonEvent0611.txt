@@ -1,0 +1,7 @@
+"イベント：ウンディーネ" -> "Event: Undine"
+"【ウンディーネ】" -> "【Undine】"
+"私の力、すでに作用しているはずよ……" -> "My power, it should already be working ... ..."
+"【ウンディーネ】" -> "【Undine】"
+"私の力、使いなさい……" -> "Use my power, use ... ..."
+"ウンディーネが力を貸してくれるようだ！" -> "Undine seems to lend a help!"
+"次のボスフロアまで、水の加護が与えられる！" -> "Water protection will be given until the next boss floor!"

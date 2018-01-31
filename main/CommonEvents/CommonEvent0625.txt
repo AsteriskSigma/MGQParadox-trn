@@ -1,0 +1,26 @@
+// EVENT 0625
+Name "Event: Warp 10th"
+
+ChangeSwitch(73,73,0)
+ShowMessageFace("neris_fc1",0,0,2,1)
+ShowMessage("\\n<Neris>Hey Luka, I want an allowance!♪")
+ShowMessage("Give me 1000G and, as your reward, I'll send you up 10 floors!♪\nWhat do you say?")
+ShowChoices(strings("Be sent 10 floors forward","Stay where we are"),2)
+IfPlayerPicksChoice(0,"Be sent to the 10th floor")
+ 125(1,0,1000)
+ ShowMessageFace("neris_fc1",0,0,2,2)
+ ShowMessage("\\n<Neris>Yay! Let's goooo!♪")
+ ChangeVariable(121,121,1,0,9)
+ RunCommonEvent(901)
+ ChangeSwitch(73,73,1)
+ EndEventProcessing()
+ 0()
+IfPlayerPicksChoice(1,"Stay where we are")
+ ShowMessageFace("neris_fc1",2,0,2,3)
+ ShowMessage("\\n<Neris>Oh... Well... ok")
+ ChangeSwitch(73,73,1)
+ EndEventProcessing()
+ 0()
+404()
+0()
+

@@ -1,0 +1,27 @@
+// EVENT 7253
+Name "Yayoi: Defeat"
+
+RunCommonEvent(7000)
+PictureDisplay(5,"80_mob_samurai_st01",0,0,0,0,100,100,255,0)
+PictureClear(6)
+ShowMessageFace("mob_samurai_fc1",0,0,2,1)
+ShowMessage("[Yayoi]")
+ShowMessage("I will win ...")
+ShowMessage("Let's get a bet.")
+125(1,0,700)
+ShowMessageFace("",0,0,2,2)
+ShowMessage("Luke paid 700 G!")
+ShowMessageFace("mob_samurai_fc1",0,0,2,3)
+ShowMessage("[Yayoi]")
+ShowMessage("If you feel bad, try again.")
+ShowMessage("Anyway, I guess it's going to scatter semen over and over ... ....")
+If(0,2331,1)
+ PictureClear(5)
+ 281(1)
+ TeleportPlayer(0,53,47,22,2,0)
+ 216(0)
+ 0()
+EndIf()
+EndEventProcessing()
+0()
+

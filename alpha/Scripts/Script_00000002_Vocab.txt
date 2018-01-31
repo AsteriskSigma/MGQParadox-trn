@@ -1,0 +1,146 @@
+#==============================================================================
+# ■ Vocab
+#------------------------------------------------------------------------------
+# A module that defines terms and messages. Define messages etc. directly with constants
+# Rule, global variable$data_system To acquire the term data from.
+#==============================================================================
+
+module Vocab
+
+  # Shop screen
+  ShopBuy         = "Buy"
+  ShopSell        = "Sell"
+  ShopCancel      = "Leave"
+  Possession      = "Number Owned"
+
+  # Status screen
+  ExpTotal        = "Current XP"
+  ExpNext         = "%s to Next Lv"
+
+  # Save / load screen
+  SaveMessage     = "Save to which file?"
+  LoadMessage     = "Load from which file?"
+  File            = "File"
+
+  # Display for multiple members
+  PartyName       = "%s's party"
+
+  # Combat Basic Message
+  Emerge          = "%s appears!"
+  Preemptive      = "%s took the enemy by surprise!"
+  Surprise        = "%s was caught off guard!"
+  EscapeStart     = "%s runs away!"
+  EscapeFailure   = "But they were unable to escape!"
+
+  # Battle end message
+  Victory         = "%s was victorious!"
+  Defeat          = "%s was defeated."
+  ObtainExp       = "%s XP gained."
+  ObtainGold      = "%s\\G obtained."
+  ObtainItem      = "%s obtained!"
+  LevelUp         = "%s has reached %s %s!"
+  ObtainSkill     = "%s learned!"
+
+  # Use the item
+  UseItem         = "%s used %s!"
+
+  # critical hit
+  CriticalToEnemy = "Critical hit!"
+  CriticalToActor = "Critical hit!"
+
+  # Behavioral result of actor target
+  ActorDamage     = "%s takes %s damage!"
+  ActorRecovery   = "%s recovers %s %s!"
+  ActorGain       = "%s gains %s %s!"
+  ActorLoss       = "%s loses %s %s!"
+  ActorDrain      = "%s is drained of %s %s!"
+  ActorNoDamage   = "%s takes no damage!"
+  ActorNoHit      = "Miss!In case%s takes no damage!"
+
+  # Behavior result of enemy character target
+  EnemyDamage     = "%s takes %s damage!"
+  EnemyRecovery   = "%s recovers %s %s!"
+  EnemyGain       = "%s gains %s %s!"
+  EnemyLoss       = "%s loses %s %s!"
+  EnemyDrain      = "%s drains %s %s!"
+  EnemyNoDamage   = "%s doesn't take any damage!"
+  EnemyNoHit      = "Miss!In case%s takes no damage!"
+
+  # Avoidance / reflection
+  Evasion         = "%s evades the attack!"
+  MagicEvasion    = "%s resists the spell!"
+  MagicReflection = "%s reflects the spell!"
+  CounterAttack   = "%s counters!"
+  Substitute      = "%s covers for %s!"
+
+  # Enhance ability / weak body
+  BuffAdd         = "%s's %s increased!"
+  DebuffAdd       = "%s's %s decreased!"
+  BuffRemove      = "%s's %s returns to normal."
+
+  # Skill, there was no item effect
+  ActionFailure   = "It was not effective against %s!"
+
+  # Error message
+  PlayerPosError  = "Player initial position not set."
+  EventOverflow   = "Common event limit exceeded."
+
+  # Basic status
+  def self.basic(basic_id)
+    $data_system.terms.basic[basic_id]
+  end
+
+  # Ability value
+  def self.param(param_id)
+    $data_system.terms.params[param_id]
+  end
+
+  # Equipment type
+  def self.etype(etype_id)
+    $data_system.terms.etypes[etype_id]
+  end
+
+  # command
+  def self.command(command_id)
+    $data_system.terms.commands[command_id]
+  end
+
+  # Currency unit
+  def self.currency_unit
+    $data_system.currency_unit
+  end
+
+  #--------------------------------------------------------------------------
+  def self.level;       basic(0);     end   # level
+  def self.level_a;     basic(1);     end   # Level(Short)
+  def self.hp;          basic(2);     end   # HP
+  def self.hp_a;        basic(3);     end   # HP (Short)
+  def self.mp;          basic(4);     end   # MP
+  def self.mp_a;        basic(5);     end   # MP (Short)
+  def self.tp;          basic(6);     end   # TP
+  def self.tp_a;        basic(7);     end   # TP (Short)
+  def self.fight;       command(0);   end   # fight
+  def self.escape;      command(1);   end   # escape
+  def self.attack;      command(2);   end   # attack
+  def self.guard;       command(3);   end   # defense
+  def self.item;        command(4);   end   # item
+  def self.skill;       command(5);   end   # skill
+  def self.equip;       command(6);   end   # Equipment
+  def self.status;      command(7);   end   # status
+  def self.formation;   command(8);   end   # sort
+  def self.save;        command(9);   end   # save
+  def self.game_end;    command(10);  end   # Game over
+  def self.weapon;      command(12);  end   # weapon
+  def self.armor;       command(13);  end   # Armor
+  def self.key_item;    command(14);  end   # Important things
+  def self.equip2;      command(15);  end   # Equipment change
+  def self.optimize;    command(16);  end   # Strongest equipment
+  def self.clear;       command(17);  end   # Remove all
+  def self.new_game;    command(18);  end   # New game
+  def self.continue;    command(19);  end   # Continue
+  def self.shutdown;    command(20);  end   # shut down
+  def self.to_title;    command(21);  end   # go to Title
+  def self.cancel;      command(22);  end   # quit
+  #--------------------------------------------------------------------------
+end
+

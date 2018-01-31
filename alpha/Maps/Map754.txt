@@ -1,0 +1,112 @@
+
+DisplayName "What? What? What?"
+
+
+
+EVENT   1
+ PAGE   1
+  ChangeSwitch(2318,2318,0)
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("There is an old-fashioned journal ......")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\"A drift on this island, half a month passed.")
+  ShowMessage("The foods that were loaded on the ship were exhausted and only waited for death. \"")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\"There is no way to wander around the island.")
+  ShowMessage("It seems that when a long long slope is rising, fog comes around. \"")
+  ShowMessageFace("",0,0,2,4)
+  ShowMessage("\"The magnet showed no direction and it stopped working properly.")
+  ShowMessage("There are unusual indications around us. \"")
+  ShowMessageFace("",0,0,2,5)
+  ShowMessage("\"As I climbed a long long slope there was a stone monument.")
+  ShowMessage("It looks pretty old, but the inscription is somehow legible. \"")
+  ShowMessageFace("",0,0,2,6)
+  ShowMessage("\"........................\"")
+  ShowMessageFace("",0,0,2,7)
+  ShowMessage("\"The inscription was very creepy content.")
+  ShowMessage("Why on earth who made such a thing? \"")
+  ShowMessageFace("",0,0,2,8)
+  ShowMessage("\"The eerie sign becomes increasingly darker and the fog covers the surroundings.")
+  ShowMessage("Whether it was an adventurer's saga, I hastily felt this sentence. \"")
+  ShowMessageFace("",0,0,2,9)
+  ShowMessage("\"If someone reads this diary ... ...")
+  ShowMessage("Get away from this island immediately \"")
+  ShowMessageFace("",0,0,2,10)
+  ShowMessage("Here the sentences are broken ......")
+  If(0,6,0)
+   ShowMessageFace("sonia_fc2",2,0,2,11)
+   ShowMessage("【Sonia】")
+   ShowMessage("There is no stone monument anywhere.")
+   ShowMessage("I do not have such a long slope on such a narrow island ......")
+   0()
+  Else()
+   ShowMessageFace("ruka_fc1",0,0,2,12)
+   ShowMessage("【Luke】")
+   ShowMessage("There is no stone monument anywhere ......")
+   ShowMessage("In the first place, there is not a long slope on such a narrow island.")
+   0()
+  EndIf()
+  If(0,4,0)
+   ShowMessageFace("alice_fc5",3,0,2,13)
+   ShowMessage("【Alice】")
+   ShowMessage("I faced death and I was visiting a vision ......")
+   ShowMessage("Or ...")
+   0()
+  EndIf()
+  If(0,5,0)
+   ShowMessageFace("iriasu_fc4",2,0,2,14)
+   ShowMessage("【Iliad】")
+   ShowMessage("I faced death and I was visiting a vision ......")
+   ShowMessage("Or ...")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   2
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("It seems to be just a corpse ... ...")
+  0()
+
+
+
+EVENT   3
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("There is not much in the tool box ... ...")
+  0()
+
+
+
+EVENT   4
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("There is no big thing in the tool bag ......")
+  0()
+
+
+
+EVENT   5
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,2,87,207,2,0)
+  0()
+
+
+
+EVENT   6
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,2,87,207,2,0)
+  0()
+
+
+
+EVENT   7
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,2,87,207,2,0)
+  0()
+

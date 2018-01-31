@@ -1,0 +1,17 @@
+// EVENT 0205
+Name "Talk Seduction 5 Assign Enemy ID To Variable 14"
+
+108("● var_id = 29 + $game_variables[112] - 1")
+408("Var_idInto(29 + variable[112]The value of the - 1)Substitute")
+408("●$game_variables[14] = $game_variables[var_id]")
+408("Variable[14]To a variable[var_id]Substitute value of")
+108("If variable 112 is 1")
+408("Var_id = (29 + Variable 112- 1) = (29 + 1 - 1) = 29")
+408("→ Variable[14]To a variable[29:ID of enemy 1]Substitute value of")
+408("If variable 112 is 6")
+408("Var_id = (29 + Variable 112- 1) = (29 + 6 - 1) = 34")
+408("→ Variable[14]To a variable[34:ID of enemy 6]Substitute value of")
+355("var_id = 29 + $game_variables[112] - 1")
+655("$game_variables[14] = $game_variables[var_id]")
+0()
+

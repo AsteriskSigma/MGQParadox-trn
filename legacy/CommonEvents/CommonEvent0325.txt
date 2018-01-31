@@ -1,0 +1,17 @@
+// EVENT 0325
+Name "Panties Teacher Medal"
+
+ChangeVariable(1048,1048,1,0,1)
+If(1,1048,0,1,0)
+ 355("gain_medal(2031)")
+ 0()
+EndIf()
+If(1,1048,0,50,0)
+ 355("gain_medal(2032)")
+ 0()
+EndIf()
+If(1,1048,0,120,0)
+ 355("gain_medal(2033)")
+ 0()
+EndIf()
+0()

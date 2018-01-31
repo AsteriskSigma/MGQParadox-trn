@@ -1,0 +1,24 @@
+// EVENT 7206
+Name "Gina: Ejaculation 2"
+
+ShowMessageFace("ruka_fc1",0,0,2,1)
+ShowMessage("\\n<Luka>Ah... I'm coming...")
+PictureDisplay(10,"sys_white",0,0,0,0,100,100,0,0)
+PictureMove(10,null,0,0,0,0,100,100,255,0,20,true)
+PictureDisplay(6,"ev_mob_kensi_ct22",0,0,240,50,100,100,255,0)
+250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0f,0x6d,0x6f,0x6e,0x5f,0x73,0x79,0x61,0x73,0x65,0x69,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69))
+PictureMove(10,null,0,0,0,0,100,100,0,0,25,true)
+PictureMove(10,null,0,0,0,0,100,100,255,0,20,true)
+PictureMove(10,null,0,0,0,0,100,100,0,0,25,true)
+PictureMove(10,null,0,0,0,0,100,100,255,0,6,true)
+PictureMove(10,null,0,0,0,0,100,100,0,0,60,true)
+ShowMessageFace("",0,0,2,2)
+ShowMessage("Forcibly rubbed against her clothes, I'm forced to come.")
+ShowMessage("My semen slowly rolls down her crotch...")
+ShowMessageFace("mob_kensi_fc1",0,0,2,3)
+ShowMessage("\\n<Gina>Ahaha, you came.")
+ShowMessage("How does it feel to defile my clothes with your semen?")
+RunCommonEvent(7203)
+EndEventProcessing()
+0()
+

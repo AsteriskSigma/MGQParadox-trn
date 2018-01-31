@@ -1,0 +1,133 @@
+#==============================================================================
+# ■ Scene_Base
+#------------------------------------------------------------------------------
+# It is a super class of all the scenes in the game.
+#==============================================================================
+
+class Scene_Base
+  #--------------------------------------------------------------------------
+  # ● Main
+  #--------------------------------------------------------------------------
+  def main
+    start
+    post_start
+    update until scene_changing?
+    pre_terminate
+    terminate
+  end
+  #--------------------------------------------------------------------------
+  # ● Start processing
+  #--------------------------------------------------------------------------
+  def start
+    create_main_viewport
+  end
+  #--------------------------------------------------------------------------
+  # ● After start
+  #--------------------------------------------------------------------------
+  def post_start
+    perform_transition
+    Input.update
+  end
+  #--------------------------------------------------------------------------
+  # ● Judgment during scene change
+  #--------------------------------------------------------------------------
+  def scene_changing?
+    SceneManager.scene != self
+  end
+  #--------------------------------------------------------------------------
+  # ● Frame update
+  #--------------------------------------------------------------------------
+  def update
+    update_basic
+  end
+  #--------------------------------------------------------------------------
+  # ● Frame update (basic)
+  #--------------------------------------------------------------------------
+  def update_basic
+    Graphics.update
+    Input.update
+    update_all_windows
+  end
+  #--------------------------------------------------------------------------
+  # ● Pre-processing
+  #--------------------------------------------------------------------------
+  def pre_terminate
+  end
+  #--------------------------------------------------------------------------
+  # ● Termination processing
+  #--------------------------------------------------------------------------
+  def terminate
+    Graphics.freeze
+    dispose_all_windows
+    dispose_main_viewport
+  end
+  #--------------------------------------------------------------------------
+  # ● Transition execution
+  #--------------------------------------------------------------------------
+  def perform_transition
+    Graphics.transition(transition_speed)
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of transition speed
+  #--------------------------------------------------------------------------
+  def transition_speed
+    return 10
+  end
+  #--------------------------------------------------------------------------
+  # ● Create viewport
+  #--------------------------------------------------------------------------
+  def create_main_viewport
+    @viewport = Viewport.new
+    @viewport.z = 200
+  end
+  #--------------------------------------------------------------------------
+  # ● Release the viewport
+  #--------------------------------------------------------------------------
+  def dispose_main_viewport
+    @viewport.dispose
+  end
+  #--------------------------------------------------------------------------
+  # ● Update all windows
+  #--------------------------------------------------------------------------
+  def update_all_windows
+    instance_variables.each do |varname|
+      ivar = instance_variable_get(varname)
+      ivar.update if ivar.is_a?(Window)
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Release of all windows
+  #--------------------------------------------------------------------------
+  def dispose_all_windows
+    instance_variables.each do |varname|
+      ivar = instance_variable_get(varname)
+      ivar.dispose if ivar.is_a?(Window)
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Return to caller's scene
+  #--------------------------------------------------------------------------
+  def return_scene
+    SceneManager.return
+  end
+  #--------------------------------------------------------------------------
+  # ● Batch fade out of various sounds and graphics
+  #--------------------------------------------------------------------------
+  def fadeout_all(time = 1000)
+    RPG::BGM.fade(time)
+    RPG::BGS.fade(time)
+    RPG::ME.fade(time)
+    Graphics.fadeout(time * Graphics.frame_rate / 1000)
+    RPG::BGM.stop
+    RPG::BGS.stop
+    RPG::ME.stop
+  end
+  #--------------------------------------------------------------------------
+  # ● Game over determination
+  #    If the party is in an extinction state, it transits to the game over screen.
+  #--------------------------------------------------------------------------
+  def check_gameover
+    SceneManager.goto(Scene_Gameover) if $game_party.all_dead?
+  end
+end
+

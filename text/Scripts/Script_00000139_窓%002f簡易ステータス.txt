@@ -1,0 +1,7 @@
+"窓" -> "window"
+"簡易ステータス" -> "Simple status"
+"更新履歴" -> "Change log"
+"■ Window" -> "■ Window"
+"● オブジェクト初期化" -> "● Object initialization"
+"● フレーム更新" -> "● Frame update"
+"● リフレッシュ" -> "● Refresh"

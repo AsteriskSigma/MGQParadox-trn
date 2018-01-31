@@ -1,0 +1,814 @@
+=begin
+=Companion system
+
+
+
+
+==Change log
+  Date     Version Author Comment
+==15/09/03 2.0.2   Tris integration J to U O
+==16/03/21 2.0.3   Edit Tris special subscription director Add picture function of special subscription director
+==16/04/03 2.0.3   Edit Tris Special Subscription Director
+==16/04/19 2.0.3   Edit Tris Special Subscription Director
+==17/02/05 2.0.3   Edit Tris Special Subscription Director(IDChange)
+==17/02/12 2.0.3   Edit Tris Special Subscription Director(Coordinate adjustment)
+==17/03/18 2.0.4   Tris buddy refusal switch to two
+==17/04/16 2.0.5   Tris program organization
+
+=end
+
+#==============================================================================
+# ■ NWConst::Follow
+#==============================================================================
+module NWConst::Follow
+  SPECIAL = [ 78,  87,
+             158, 168, 197, 200, 206, 208, 216, 230, 241,
+             268, 321, 358]
+end
+
+#==============================================================================
+# ■ BattleManager
+#==============================================================================
+class << BattleManager
+  #--------------------------------------------------------------------------
+  # ● Processing of companions
+  #--------------------------------------------------------------------------
+  def process_follow
+    return if $game_switches[NWConst::Sw::FOLLOWER_DISABLE_1]
+    return if $game_switches[NWConst::Sw::FOLLOWER_DISABLE_2]
+    $game_troop.check_getup
+    return unless $game_troop.follower_enemy    
+    
+    if NWConst::Follow::SPECIAL.include?($game_troop.follower_enemy.id)
+      send("process_follow_enemy#{$game_troop.follower_enemy.id}".to_sym)
+    else
+      process_follow_normal
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Question processing when joining fellows
+  #--------------------------------------------------------------------------  
+  def process_follow_question
+    e = $game_troop.follower_enemy    
+    e.follow_question_word.execute
+    wait_for_message
+  end
+  #--------------------------------------------------------------------------
+  # ● Option handling when joining a group
+  #--------------------------------------------------------------------------  
+  def process_follow_choice(follower_name = nil)
+    e = $game_troop.follower_enemy
+    follower_name = e.original_name unless follower_name
+    $game_message.add("#{follower_name} manages to rise back up.")
+    $game_message.add("She looks like she wants to join your party!\f")
+    $game_message.add("Add her as a companion?")
+    choice = 0
+    ["Yes","No"].each {|s| $game_message.choices.push(s) }
+    $game_message.choice_cancel_type = 2
+    $game_message.choice_proc = Proc.new {|n| choice = n }
+    wait_for_message
+    
+    return choice == 0 ? true : false
+  end
+  #--------------------------------------------------------------------------
+  # ● Acceptance process when joining a group
+  #--------------------------------------------------------------------------  
+  def process_follow_ok(follower_name = nil)
+    e = $game_troop.follower_enemy
+    follower_name = e.original_name unless follower_name
+    e.follow_yes_word.execute
+    wait_for_message
+    $game_message.add("#{follower_name} has joined the party!")
+    wait_for_message
+    if $game_party.party_member_full?
+      process_follow_ok_member_full(e.follower_actor_id, follower_name)
+    end
+    # Save a friend Enemy
+    $game_actors[e.follower_actor_id].setup(e.follower_actor_id)
+    $game_party.add_actor(e.follower_actor_id)
+    $game_temp.getup_enemy = e.follower_actor_id
+    $game_switches[NWConst::Sw::ADD_ACTOR_BASE + e.follower_actor_id] = true
+  end
+  #--------------------------------------------------------------------------
+  # ● Selection when packing a party
+  #--------------------------------------------------------------------------
+  def process_follow_ok_member_full(follower_id, follower_name = nil)
+      $game_message.add("The party is full. ")
+      $game_message.add("Please choose a member to remove from the party.")
+    wait_for_message
+    stand_actor = $game_party.choice_stand_actor_on_member_full(follower_id, follower_name)
+    $game_party.move_stand_actor(stand_actor.id) if stand_actor
+    wait_member_name = stand_actor ? stand_actor.name : follower_name
+    $game_message.add("#{wait_member_name} heads back to the castle.")
+    wait_for_message
+  end
+  #--------------------------------------------------------------------------
+  # ● Rejection process when joining a group
+  #--------------------------------------------------------------------------  
+  def process_follow_no
+    e = $game_troop.follower_enemy
+    e.follow_no_word.execute
+    wait_for_message
+  end
+  #--------------------------------------------------------------------------
+  # ● Processing to leave when joining a group
+  #--------------------------------------------------------------------------  
+  def process_follow_bye(follower_name = nil)
+    e = $game_troop.follower_enemy
+    follower_name = e.original_name unless follower_name
+    $game_troop.follower_enemy = nil
+    $game_message.add("#{follower_name} sulks away...")
+    wait_for_message
+  end
+  #--------------------------------------------------------------------------
+  # ● Production when joining a group (regular pattern)
+  #--------------------------------------------------------------------------  
+  def process_follow_normal
+    process_follow_question
+    if process_follow_choice
+      process_follow_ok
+    else
+      process_follow_no
+      process_follow_bye
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Simple operation of picture
+  #--------------------------------------------------------------------------
+  def pic_easy_setup(num, name, x, y)
+    name = "../Battlers/#{name}"
+    $game_troop.screen.pictures[num].easy_setup(name, x, y)
+  end
+  def pic_easy_appear_move(num, x, y)
+    $game_troop.screen.pictures[num].easy_appear_move(x, y)
+  end
+  def pic_easy_appear(num)
+    $game_troop.screen.pictures[num].easy_appear
+  end
+  def pic_easy_erase(num)
+    $game_troop.screen.pictures[num].easy_erase
+  end
+  #--------------------------------------------------------------------------
+  # ● Picture display
+  #--------------------------------------------------------------------------    
+  def pic_show(num, name, ori, x, y, zx, zy, op, bl)
+    name = "../Battlers/#{name}"
+    $game_troop.screen.pictures[num].show(name, ori, x, y, zx, zy, op, bl)
+  end
+  #--------------------------------------------------------------------------
+  # ● Picture movement
+  #--------------------------------------------------------------------------    
+  def pic_move(num, ori, x, y, zx, zy, op, bl, dur)
+    $game_troop.screen.pictures[num].move(ori, x, y, zx, zy, op, bl, dur)
+  end
+  #--------------------------------------------------------------------------
+  # ● Clear picture
+  #--------------------------------------------------------------------------    
+  def pic_clear
+    $game_troop.screen.clear_pictures
+  end  
+  #--------------------------------------------------------------------------
+  # ● Production when joining a friend (enemy 78)
+  #--------------------------------------------------------------------------  
+  def process_follow_enemy78
+    pic_show(20, "80_zonbe_st21", 0, 210, 40, 100, 100, 0, 0)
+    pic_show(19, "80_zonbe_st31", 0, 100,  0, 100, 100, 0, 0)
+    pic_show(18, "80_zonbe_st41", 0, 300,  0, 100, 100, 0, 0)
+    pic_show(17, "80_zonbe_st01", 0,  70,  0, 100, 100, 0, 0)
+    pic_move(20, 0, 210, 40, 100, 100, 255, 0, 30)
+    process_follow_question
+    if process_follow_choice
+      pic_move(20, 0, 240, 40, 100, 100, 255, 0, 30)
+      pic_move(19, 0, 100,  0, 100, 100, 255, 0, 30)
+      pic_move(18, 0, 300,  0, 100, 100, 255, 0, 30)
+      pic_move(17, 0,  70,  0, 100, 100, 255, 0, 30)
+      Word.new("Zombies have gathered!", "", 0).execute
+      wait_for_message
+      Word.new("【Zombie Girl】\nOoooo ...", "zonbe_fc3", 2).execute
+      wait_for_message
+      Word.new("【Zombie Girl】\nnice to meet you……", "zonbe_fc3", 3).execute      
+      wait_for_message
+      Word.new("【Luke】\nEr, hey ....", "ruka_fc1", 0).execute      
+      wait_for_message
+      process_follow_ok("A group of zombies")
+    else
+      process_follow_no
+      pic_move(20, 0, 210, 40, 100, 100, 0, 0, 30)
+      process_follow_bye
+    end
+    pic_clear
+  end  
+  #--------------------------------------------------------------------------
+  # ● Production when joining a friend (enemy 87)
+  #--------------------------------------------------------------------------  
+  def process_follow_enemy87
+    pic_show(20, "50_fairys_st01", 0, 230, 120, 100, 100, 0, 0)
+    pic_show(19, "50_fairys_st41", 0, 140, 120, 100, 100, 0, 0)
+    pic_show(18, "50_fairys_st21", 0, 320, 140, 100, 100, 0, 0)
+    pic_show(17, "50_fairys_st11", 0, 220,  20, 100, 100, 0, 0)
+    pic_show(16, "50_fairys_st51", 0, 100,  20, 100, 100, 0, 0)
+    pic_show(15, "50_fairys_st31", 0, 360,  20, 100, 100, 0, 0)
+    pic_move(20, 0, 230, 120, 100, 100, 255, 0, 30)
+    process_follow_question
+    if process_follow_choice
+      pic_move(20, 0, 230, 120, 100, 100, 255, 0, 30)
+      pic_move(19, 0, 140, 120, 100, 100, 255, 0, 30)
+      pic_move(18, 0, 320, 140, 100, 100, 255, 0, 30)
+      pic_move(17, 0, 220,  20, 100, 100, 255, 0, 30)
+      pic_move(16, 0, 100,  20, 100, 100, 255, 0, 30)
+      pic_move(15, 0, 360,  20, 100, 100, 255, 0, 30)      
+      Word.new("Fairies have gathered!", "", 0).execute
+      wait_for_message
+      Word.new("【Fairy】\nThis person takes me to the outside ... ...?", "fairys_fc2", 0).execute
+      wait_for_message
+      Word.new("【Fairy】\nOh my good luck!", "fairys_fc3", 0).execute      
+      wait_for_message
+      Word.new("【Luke】\nWait a minute ... ...!\nThis is so full ... ...! What?", "ruka_fc1", 0).execute      
+      wait_for_message
+      process_follow_ok("Fairy group")
+    else
+      process_follow_no
+      pic_move(20, 0, 230, 120, 100, 100, 0, 0, 30)
+      process_follow_bye
+    end
+    pic_clear
+  end  
+  #--------------------------------------------------------------------------
+  # ● Production when joining a friend (enemy 158)
+  #--------------------------------------------------------------------------  
+  def process_follow_enemy158
+    pic_show(20, "80_ittanmomen_st01", 0, 0, 0, 100, 100, 0, 0)
+    pic_show(19, "80_ittanmomen_st11", 0, 0, 0, 100, 100, 0, 0)
+    pic_show(18, "80_ittanmomen_st21", 0, 0, 0, 100, 100, 0, 0)
+    pic_move(20, 0, 0, 0, 100, 100, 255, 0, 30)
+    process_follow_question
+    if process_follow_choice
+      pic_move(19, 0, 0, 0, 100, 100, 255, 0, 30)
+      pic_move(18, 0, 0, 0, 100, 100, 255, 0, 30)
+      Word.new("Momentary cotton girls gathered!", "", 0).execute
+      wait_for_message
+      Word.new("【Kimono cotton girl】\nLet me also go.", "ittanmomen_fc2", 0).execute
+      wait_for_message
+      Word.new("【Kimono cotton girl】\nThanks!", "ittanmomen_fc3", 0).execute
+      wait_for_message
+      process_follow_ok("Momentary cotton girls")
+    else
+      process_follow_no
+      pic_move(20, 0, 0, 0, 100, 100, 0, 0, 30)
+      pic_move(19, 0, 0, 0, 100, 100, 0, 0, 30)
+      pic_move(18, 0, 0, 0, 100, 100, 0, 0, 30)      
+      process_follow_bye
+    end
+    pic_clear
+  end  
+  #--------------------------------------------------------------------------
+  # ● Production when joining fellows (enemy 168)
+  #--------------------------------------------------------------------------  
+  def process_follow_enemy168
+    pic_easy_setup(20, "50_kaeru_st01", 200,  60)
+    pic_easy_setup(19, "50_kaeru_st11",  50,  10)
+    pic_easy_setup(18, "50_kaeru_st21", 300,  70)
+    pic_easy_appear(20)
+    process_follow_question
+    if process_follow_choice
+      pic_easy_appear(19)
+      pic_easy_appear(18)
+      Word.new("Frog girls gathered!", "", 0).execute
+      wait_for_message
+      Word.new("【Frog girl】\nWell then, I will follow along.", "kaeru_fc2", 0).execute
+      wait_for_message
+      Word.new("【Frog girl】\n........................", "kaeru_fc3", 0).execute  
+      wait_for_message
+      process_follow_ok("Frog girls")
+    else
+      process_follow_no
+      pic_easy_erase(20)
+      pic_easy_erase(19)
+      pic_easy_erase(18)    
+      process_follow_bye
+    end
+    pic_clear
+  end  
+  #--------------------------------------------------------------------------
+  # ● Production when joining a group (enemy 197)
+  #--------------------------------------------------------------------------  
+  def process_follow_enemy197
+    pic_easy_setup(20, "50_m_batterfly_st01", 160,  110)
+    pic_easy_setup(19, "50_m_dragonfly_st01",   0,   70)
+    pic_easy_setup(18, "50_m_tento_st01",     400,   70)
+    pic_easy_appear(20)
+    process_follow_question
+    if process_follow_choice
+      pic_easy_appear(19)
+      pic_easy_appear(18)
+      Word.new("The lower grade students gathered!", "", 0).execute
+      wait_for_message
+      Word.new("【Magical Fly】\nMay you inconvenience it, but ...\nThank you.", "m_dragonfly_fc1", 0).execute
+      wait_for_message
+      Word.new("【Magical Tento】\nLet's play a lot ♪", "m_tento_fc1", 0).execute  
+      wait_for_message
+      process_follow_ok("Bug Staff")
+    else
+      process_follow_no
+      pic_easy_erase(20)
+      pic_easy_erase(19)
+      pic_easy_erase(18)    
+      process_follow_bye
+    end
+    pic_clear
+  end  
+  #--------------------------------------------------------------------------
+  # ● Production when joining a friend (enemy 200)
+  #--------------------------------------------------------------------------  
+  def process_follow_enemy200
+    pic_easy_setup(20, "50_m_fairy_st01",    220,  60)
+    pic_easy_setup(19, "50_m_elf_st01",      100,  60)
+    pic_easy_setup(18, "50_m_succubus_st01", 350,  60)
+    pic_easy_appear(20)
+    process_follow_question
+    if process_follow_choice
+      pic_easy_appear(19)
+      pic_easy_appear(18)
+      Word.new("Senior students gathered!", "", 0).execute
+      wait_for_message
+      Word.new("【Magical Elf】\nIt can not be helped, I will take care of it.", "m_elf_fc1", 0).execute
+      wait_for_message
+      Word.new("【Magical Succubus】\nUhufu ... ... Let's play ♪","m_succubus_fc1", 0).execute
+      wait_for_message
+      process_follow_ok("Magistanes")
+    else
+      process_follow_no
+      pic_easy_erase(20)
+      pic_easy_erase(19)
+      pic_easy_erase(18)    
+      process_follow_bye
+    end
+    pic_clear
+  end  
+  #--------------------------------------------------------------------------
+  # ● Production when joining a friend (enemy 206)
+  #--------------------------------------------------------------------------  
+  def process_follow_enemy206
+    pic_easy_setup(20, "50_a_alm_st01",   220,  60)
+    pic_easy_setup(19, "50_a_looty_st01",  90,  60)
+    pic_easy_appear(20)
+    process_follow_question
+    if process_follow_choice
+      pic_easy_appear(19)
+      Word.new("Arla Rooty got up too!", "", 0).execute
+      wait_for_message
+      Word.new("【Arla Ruthie】\nAlmu, do not leave me!\nI am also with you!", "a_looty_fc1", 0).execute
+      wait_for_message
+      process_follow_ok("Plan Twin")
+    else
+      process_follow_no
+      pic_easy_erase(20)
+      pic_easy_erase(19)  
+      process_follow_bye
+    end
+    pic_clear
+  end  
+  #--------------------------------------------------------------------------
+  # ● Production when joining a friend (enemy 208)
+  #--------------------------------------------------------------------------  
+  def process_follow_enemy208
+    pic_easy_setup(20, "50_a_vore_st01",    220, 100)
+    pic_easy_setup(19, "50_a_parasol_st01", 120,  60)
+    pic_easy_setup(18, "50_a_prison_st01",  390,  70)
+    pic_easy_setup(17, "50_a_mash_st01",     20,  80)
+    pic_easy_appear(20)
+    process_follow_question
+    if process_follow_choice
+      pic_easy_appear(19)
+      pic_easy_appear(18)
+      pic_easy_appear(17)
+      Word.new("Subspecies Arlaune has gathered!", "", 0).execute
+      wait_for_message
+      Word.new("【Arla · Parasol】\nWell then, let me get involved.", "a_parasol_fc1", 0).execute
+      wait_for_message
+      Word.new("【Arla Prison】\nIs there anything delicious?", "a_prison_fc1", 0).execute
+      wait_for_message
+      Word.new("【Arla · Mash】\n...... Mushrooms, are you going to eat?", "a_mash_fc1", 0).execute
+      wait_for_message
+      process_follow_ok("Al plants")
+    else
+      process_follow_no
+      pic_easy_erase(20)
+      pic_easy_erase(19)
+      pic_easy_erase(18) 
+      pic_easy_erase(17)    
+      process_follow_bye
+    end
+    pic_clear
+  end  
+  #--------------------------------------------------------------------------
+  # ● Production when joining a friend (enemy 216)
+  #--------------------------------------------------------------------------  
+  def process_follow_enemy216
+    pic_easy_setup(20, "50_moss_st01",     220,  60)
+    pic_easy_setup(19, "50_mosquito_st01",  60,  60)
+    pic_easy_setup(18, "50_imomusi_st01",  370, 110)
+    pic_easy_appear(20)
+    process_follow_question
+    if process_follow_choice
+      pic_easy_appear(19)
+      pic_easy_appear(18)
+      Word.new("Insect girls have gathered!", "", 0).execute
+      wait_for_message
+      Word.new("【Mosquito daughter】\nAlso look at me too.", "mosquito_fc1", 0).execute
+      wait_for_message
+      Word.new("【Caterpillar girl】\nI'm a caterpillar, but thanks!", "imomusi_fc1", 0).execute
+      wait_for_message
+      process_follow_ok("INSECTS")
+    else
+      process_follow_no
+      pic_easy_erase(20)
+      pic_easy_erase(19)
+      pic_easy_erase(18)
+      process_follow_bye
+    end
+    pic_clear
+  end  
+  #--------------------------------------------------------------------------
+  # ● Production when joining a friend (enemy 230)
+  #--------------------------------------------------------------------------  
+  def process_follow_enemy230
+    pic_show(20, "50_slime_purple_st01", 0, 170,  90, 100, 100, 0, 0)
+    pic_show(19, "50_slime_blue_st01",   0, 310,  90, 100, 100, 0, 0)
+    pic_show(18, "50_slime_red_st01",    0,  40,  90, 100, 100, 0, 0)
+    pic_show(17, "50_slime_green_st01",  0, 450, 110, 100, 100, 0, 0)
+    pic_move(20, 0, 170,  90, 100, 100, 255, 0, 30)
+    process_follow_question
+    if process_follow_choice
+      pic_move(19, 0, 310,  90, 100, 100, 255, 0, 30)
+      pic_move(18, 0,  40,  90, 100, 100, 255, 0, 30)
+      pic_move(17, 0, 450, 110, 100, 100, 255, 0, 30)
+      Word.new("The slime gathered!", "", 0).execute
+      wait_for_message
+      Word.new("【Green Slime】\nPlease feed me ♪", "slime_green_fc1", 0).execute
+      wait_for_message
+      Word.new("【Red Slime】\nBecause you will be fed up!", "slime_red_fc1", 0).execute
+      wait_for_message
+      Word.new("【Blue Slime】\nPlease feed me ...", "slime_blue_fc1", 0).execute
+      wait_for_message
+      process_follow_ok("Slime's")
+    else
+      process_follow_no
+      pic_move(20, 0, 170,  90, 100, 100, 0, 0, 30)
+      pic_move(19, 0, 310,  90, 100, 100, 0, 0, 30) 
+      pic_move(18, 0,  40,  90, 100, 100, 0, 0, 30)     
+      pic_move(17, 0, 450, 110, 100, 100, 0, 0, 30)      
+      process_follow_bye
+    end
+    pic_clear
+  end  
+  #--------------------------------------------------------------------------
+  # ● Production when joining a friend (enemy 241)
+  #--------------------------------------------------------------------------  
+  def process_follow_enemy241
+    pic_show(20, "50_gool_st01", 0, 240,  90, 100, 100, 0, 0)
+    pic_show(19, "50_gool_st21", 0, 370,  90, 100, 100, 0, 0)
+    pic_show(18, "50_gool_st11", 0, 100, 110, 100, 100, 0, 0)
+    pic_move(20, 0, 240,  90, 100, 100, 255, 0, 30)
+    process_follow_question
+    if process_follow_choice
+      pic_move(19, 0, 370,  90, 100, 100, 255, 0, 30)
+      pic_move(18, 0, 100, 110, 100, 100, 255, 0, 30)
+      Word.new("The girls have gathered!", "", 0).execute
+      wait_for_message
+      Word.new("【Goole】\nOhh ....", "gool_fc1", 1).execute
+      wait_for_message
+      Word.new("【Goole】\nOh, Uu ... ...", "gool_fc1", 2).execute
+      wait_for_message
+      process_follow_ok("Goals")
+    else
+      process_follow_no
+      pic_move(20, 0, 240,  90, 100, 100, 0, 0, 30)
+      pic_move(19, 0, 370,  90, 100, 100, 0, 0, 30)  
+      pic_move(18, 0, 100, 110, 100, 100, 0, 0, 30)    
+      process_follow_bye
+    end
+    pic_clear
+  end  
+  #--------------------------------------------------------------------------
+  # ● Production when joining a friend (enemy 268)
+  #--------------------------------------------------------------------------  
+  def process_follow_enemy268
+    pic_show(20, "80_succubuses_st01", 0, 0, 0, 100, 100, 0, 0)
+    pic_show(19, "80_succubuses_st11", 0, 0, 0, 100, 100, 0, 0)
+    pic_show(18, "80_succubuses_st21", 0, 0, 0, 100, 100, 0, 0)
+    pic_show(17, "80_succubuses_st31", 0, 0, 0, 100, 100, 0, 0)
+    pic_move(20, 0, 0, 0, 100, 100, 255, 0, 30)
+    process_follow_question
+    if process_follow_choice
+      pic_move(19, 0, 0, 0, 100, 100, 255, 0, 30)
+      pic_move(18, 0, 0, 0, 100, 100, 255, 0, 30)
+      pic_move(17, 0, 0, 0, 100, 100, 255, 0, 30)
+      Word.new("Succubus gathered!", "", 0).execute
+      wait_for_message
+      Word.new("【Succubus】\nErr, please give ♪", "succubuses_fc3", 0).execute
+      wait_for_message
+      Word.new("【Succubus】\nLet's enjoy, let's have fun ......", "succubuses_fc4", 0).execute
+      wait_for_message
+      Word.new("【Succubus】\nHurry up tonight ...... ♪", "succubuses_fc5", 0).execute
+      wait_for_message
+      process_follow_ok("Succubus Harlem")
+    else
+      process_follow_no
+      pic_move(20, 0, 0, 0, 100, 100, 0, 0, 30)
+      pic_move(19, 0, 0, 0, 100, 100, 0, 0, 30)
+      pic_move(18, 0, 0, 0, 100, 100, 0, 0, 30)      
+      pic_move(17, 0, 0, 0, 100, 100, 0, 0, 30)      
+      process_follow_bye
+    end
+    pic_clear
+  end  
+  #--------------------------------------------------------------------------
+  # ● Production when joining fellows (enemy 321)
+  #--------------------------------------------------------------------------  
+  def process_follow_enemy321
+    pic_easy_setup(20, "50_arachnes_st01", 220, 70)
+    pic_easy_setup(19, "50_arachnes_st11",  70,  0)
+    pic_easy_setup(18, "50_arachnes_st21", 390,  0)
+    pic_easy_appear(20)
+    process_follow_question
+    if process_follow_choice
+      pic_easy_appear(19)
+      pic_easy_appear(18)
+      Word.new("Arakune gathered!", "", 0).execute
+      wait_for_message
+      Word.new("【Arachne】\nThanks ♪", "arachnes_fc3", 0).execute
+      wait_for_message
+      Word.new("【Arachne】\nThanks ♪", "arachnes_fc4", 0).execute
+      wait_for_message
+      process_follow_ok("Arachnaise")
+    else
+      process_follow_no
+      pic_easy_erase(20)
+      pic_easy_erase(19)
+      pic_easy_erase(18)
+      process_follow_bye
+    end
+    pic_clear
+  end  
+  #--------------------------------------------------------------------------
+  # ● Production when joining a friend (enemy 358)
+  #--------------------------------------------------------------------------  
+  def process_follow_enemy358
+    pic_show(20, "50_trinity_st01", 0, 180, 70, 100, 100, 0, 0)
+    pic_show(19, "50_trinity_st11", 0, 120, 70, 100, 100, 0, 0)
+    pic_show(18, "50_trinity_st21", 0, 350, 70, 100, 100, 0, 0)
+   pic_easy_appear(20)
+    process_follow_question
+    if process_follow_choice
+      pic_easy_appear(19)
+      pic_easy_appear(18)
+      Word.new("The two remaining people also got up!", "", 0).execute
+      wait_for_message
+      Word.new("【Trinity】\nIf you want to taste pleasure, please tell us.", "trinity_fc2", 0).execute
+      wait_for_message
+      Word.new("【Trinity】\nThis power, this body with you ... ...", "trinity_fc3", 0).execute
+      wait_for_message
+      process_follow_ok("Trinity")
+    else
+      process_follow_no
+      pic_easy_erase(20)
+      pic_easy_erase(19)
+      pic_easy_erase(18)       
+      process_follow_bye
+    end
+    pic_clear
+  end  
+end
+
+#==============================================================================
+# ■ Game_Picture
+#==============================================================================
+class Game_Picture
+  #--------------------------------------------------------------------------
+  # Display of simplified created picture
+  #--------------------------------------------------------------------------
+  def easy_setup(name, x, y)
+    show(name, 0, x, y, 100, 100, 0, 0)
+  end
+  #--------------------------------------------------------------------------
+  # ● Moving Simple Moving Picture
+  #--------------------------------------------------------------------------
+  def easy_appear_move(x, y)
+    move(@origin, x, y, @zoom_x, @zoom_y, 255, @blend_type, 30)
+  end
+  #--------------------------------------------------------------------------
+  # ● Moving Simple Appearance Pictures
+  #--------------------------------------------------------------------------
+  def easy_appear
+    easy_appear_move(@x, @y)
+  end
+  #--------------------------------------------------------------------------
+  # ● Moving a quick erase picture
+  #--------------------------------------------------------------------------
+  def easy_erase
+    move(@origin, @x, @y, @zoom_x, @zoom_y, 0, @blend_type, 30)
+  end
+end
+
+#==============================================================================
+# ■ RPG::Enemy
+#==============================================================================
+class RPG::Enemy < RPG::BaseItem
+  #--------------------------------------------------------------------------
+  # ● Can you become friends?
+  #--------------------------------------------------------------------------
+  def follower?
+    return NWConst::Follower::SETTINGS.key?(self.id)
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of data for companionization
+  #--------------------------------------------------------------------------
+  def follower_data
+    NWConst::Follower::SETTINGS[self.id]
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire actor ID to become a friend
+  #--------------------------------------------------------------------------
+  def follower_actor_id
+    follower_data[:actor_id]
+  end  
+  #--------------------------------------------------------------------------
+  # ● Probabilistic denominator to make friends
+  #--------------------------------------------------------------------------
+  def follower_denominator
+    follower_data[:denominator]
+  end  
+end
+
+
+#==============================================================================
+# ■ Game_Enemy
+#==============================================================================
+class Game_Enemy < Game_Battler
+  #--------------------------------------------------------------------------
+  # ○ Execution of collapse effect
+  #--------------------------------------------------------------------------
+  alias nw_follower_perform_collapse_effect perform_collapse_effect  
+  def perform_collapse_effect
+    nw_follower_perform_collapse_effect
+    $game_troop.dead_enemies.push(self)
+  end
+  #--------------------------------------------------------------------------
+  # ● Can you become friends?
+  #--------------------------------------------------------------------------
+  def follower?
+    return enemy.follower?
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of data for companionization
+  #--------------------------------------------------------------------------
+  def follower_data
+    enemy.follower_data
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire actor ID to become a friend
+  #--------------------------------------------------------------------------
+  def follower_actor_id
+    enemy.follower_actor_id
+  end  
+  #--------------------------------------------------------------------------
+  # ● Probabilistic denominator to make friends
+  #--------------------------------------------------------------------------
+  def follower_denominator
+    enemy.follower_denominator
+  end
+  #--------------------------------------------------------------------------
+  # ● Ask questions when making friends Serif
+  #--------------------------------------------------------------------------
+  def follow_question_word
+    data = enemy.follower_data[:question]
+    Word.new(data[0], data[1], data[2])
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of consent serifs at the time of companion
+  #--------------------------------------------------------------------------
+  def follow_yes_word
+    data = enemy.follower_data[:yes]
+    Word.new(data[0], data[1], data[2])
+  end
+  #--------------------------------------------------------------------------
+  # ● Accept refusal dialogue when making friends
+  #--------------------------------------------------------------------------
+  def follow_no_word
+    data = enemy.follower_data[:no]
+    Word.new(data[0], data[1], data[2])
+  end
+  #--------------------------------------------------------------------------
+  # ● Setting of friendship
+  #--------------------------------------------------------------------------  
+  def friend=(value)
+    enemy.friend = value
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of friendship
+  #--------------------------------------------------------------------------  
+  def friend
+    return enemy.friend
+  end
+  #--------------------------------------------------------------------------
+  # ● Special production will occur at the time of companion processing?
+  #--------------------------------------------------------------------------
+  def follow_special?
+    return NWConst::Follow::SPECIAL.include?(self.id)
+  end    
+end
+
+#==============================================================================
+# ■ Game_Troop
+#==============================================================================
+class Game_Troop < Game_Unit
+  #--------------------------------------------------------------------------
+  # ● Public instance variables
+  #--------------------------------------------------------------------------
+  attr_accessor   :follower_enemy
+  attr_accessor   :dead_enemies
+  #--------------------------------------------------------------------------
+  # ● Clear
+  #--------------------------------------------------------------------------
+  alias nw_follower_clear clear
+  def clear
+    nw_follower_clear
+    @follower_enemy = nil
+    @dead_enemies = []
+  end
+  #--------------------------------------------------------------------------
+  # ● draw for friendship
+  #--------------------------------------------------------------------------
+  def check_getup
+    e = @dead_enemies.reverse.uniq.select{|enemy|
+      enemy.follower?
+    }.reject{|enemy|
+      $game_party.exist_all_actor_id?(enemy.follower_actor_id)
+    }.first
+    return unless e
+    
+    base   = 1.0 / e.follower_denominator
+    second = base * $game_party.collect_rate
+    last   = second * (e.friend / 100.0)
+	#last = 1
+    # Test application In progress display
+    if $TEST
+      print "ID#{e.id} #{e.name}\n"
+      print "Basic probability:#{Integer(base * 100.0)}%\n"
+      print "Companion enrollment magnification:*#{$game_party.collect_rate}\n"
+      print "Friendliness correction magnification:*#{e.friend / 100.0}\n"
+      print "Final probability:#{Integer(last * 100)}%\n"
+    end
+    @follower_enemy = e if rand < last
+  end  
+end
+
+
+#==============================================================================
+# ■ Sprite_Follower
+#==============================================================================
+class Sprite_Follower < Sprite_Base
+  #--------------------------------------------------------------------------
+  # ● Release
+  #--------------------------------------------------------------------------
+  def dispose
+    self.bitmap.dispose if self.bitmap
+    super
+  end
+  #--------------------------------------------------------------------------
+  # ● Frame update
+  #--------------------------------------------------------------------------
+  def update
+    super
+    refresh if $game_troop.follower_enemy != @enemy
+    update_opacity
+  end  
+  #--------------------------------------------------------------------------
+  # ● Refresh
+  #--------------------------------------------------------------------------
+  def refresh
+    @enemy  = $game_troop.follower_enemy
+    return unless @enemy && !@enemy.follow_special?
+    self.bitmap = Cache.battler(@enemy.enemy.battler_name, @enemy.enemy.battler_hue)
+    self.ox = self.bitmap.width / 2
+    self.oy = self.bitmap.height
+    self.x = Graphics.width / 2
+    self.y = @enemy.screen_y
+    self.z = @enemy.screen_z
+    self.opacity = 0
+  end
+  #--------------------------------------------------------------------------
+  # ● Update opacity
+  #--------------------------------------------------------------------------
+  def update_opacity
+    self.opacity += @enemy ? 10 : -10
+  end
+end
+
+
+
+
+
+
+

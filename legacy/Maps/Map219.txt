@@ -1,0 +1,1701 @@
+
+
+
+EVENT   1
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,13,6,11,0,0)
+  0()
+
+
+
+EVENT   2
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,13,17,7,0,0)
+  0()
+
+
+
+EVENT   3
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,13,30,6,0,0)
+  ChangeSwitch(31,31,1)
+  0()
+
+
+
+EVENT   4
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,13,31,12,0,0)
+  0()
+
+
+
+EVENT   5
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,13,20,21,0,0)
+  0()
+
+
+
+EVENT   6
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,13,42,5,0,0)
+  0()
+
+
+
+EVENT   7
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,219,78,45,2,0)
+  0()
+
+
+
+EVENT   8
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,219,78,19,2,0)
+  0()
+
+
+
+EVENT   9
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,13,58,7,0,0)
+  0()
+
+
+
+EVENT   10
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,13,58,21,0,0)
+  0()
+
+
+
+EVENT   11
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,13,52,23,0,0)
+  0()
+
+
+
+EVENT   12
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,13,54,16,0,0)
+  0()
+
+
+
+EVENT   13
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Man>If you're heading to Sabasa, this will be the last place you can equip yourselves. Prepare yourself first.")
+  ShowChoices(strings("Purchase equipment","Synthesis","Do nothing"),3)
+  IfPlayerPicksChoice(0,null)
+   Shop(1,11,0,0,false)
+   605(1,91,0,0)
+   605(1,211,0,0)
+   605(1,300,0,0)
+   605(1,369,0,0)
+   605(1,409,0,0)
+   605(1,670,0,0)
+   605(2,1090,0,0)
+   605(2,1149,0,0)
+   0()
+  IfPlayerPicksChoice(1,null)
+   355("call_synthesize(10)")
+   0()
+  IfPlayerPicksChoice(2,null)
+   0()
+  404()
+  0()
+
+
+
+EVENT   14
+ PAGE   1
+  ShowMessageFace("Actor4",2,0,2,1)
+  ShowMessage("\\n<Terence>Mmm... Main Gauche, you say?")
+  ShowMessageFace("Actor4",0,0,2,2)
+  ShowMessage("\\n<Eric>You know of it, Terence?!")
+  ShowMessageFace("Actor4",2,0,2,3)
+  ShowMessage("\\n<Terence>It has a unique structure which allows it to withstand many blows. It also serves as a dagger, increasing your evasion rate.")
+  ShowMessageFace("Actor4",2,0,2,4)
+  ShowMessage("\\n<Terence>However, their crafting process has been long since lost to us and they're no longer for sale. If you get your hands on one, you better take good care of it.")
+  ShowMessageFace("Actor4",2,0,2,5)
+  ShowMessage("\\n<Terence>Keep that in mind when you visit the blacksmith and you have materials. If remodeled sufficiently, this weapon can become very powerful, indeed.")
+  ShowMessageFace("Actor4",2,0,2,6)
+  ShowMessage("\\n<Terence>It can be improved further by imbuing it with the power of the wind or poison. Depending on whether you choose wind or poison, the weapon's final form will be decided.")
+  ShowMessageFace("Actor4",2,0,2,7)
+  ShowMessage("\\n<Terence>You could charge it with power of wind in this very shop. But if you do that, the path to improving the weapon with poison will be closed forever.")
+  ShowMessageFace("Actor4",2,0,2,8)
+  ShowMessage("\\n<Terence>You need to decide whether you want to synthesize your Main Gauche here. Think of the final form when you're deciding whether to synthesize it, as the decision is final.")
+  ShowMessageFace("Actor4",2,0,2,9)
+  ShowMessage("\\n<Terence>By the way, against dark enemies, wind is the better choice. But against holy enemies, poison would be better.")
+  ShowMessageFace("Actor4",0,0,2,10)
+  ShowMessage("\\n<Eric>All right, I'll synthesize it after considering that. Just one problem. We don't even have a Main Gauche!")
+  ShowMessageFace("Actor4",2,0,2,11)
+  ShowMessage("\\n<Terence>A few hundred years ago they were rare and valuable. At the time, many skilled warriors owned one.")
+  ShowMessageFace("Actor4",2,0,2,12)
+  ShowMessage("\\n<Terence>These warriors are either in their graves now or are still walking on this world, too old to use them effectively.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("95")
+  ShowMessageFace("delh_a_fc1",0,0,2,13)
+  ShowMessage("\\n<Lona>I'm on the younger side among elves so... I don't know about any, unfortunately.")
+  EndEventProcessing()
+  DefineLabel("132")
+  ShowMessageFace("zonbe_fc2",0,0,2,14)
+  ShowMessage("\\n<Ellie>......")
+  EndEventProcessing()
+  0()
+ PAGE   2
+  // condition: party contains actor #564
+  ShowMessageFace("Actor4",2,0,2,1)
+  ShowMessage("\\n<John>...Brother?")
+  ShowMessageFace("Actor4",2,0,2,2)
+  ShowMessage("\\n<Terence>Oh, hello John. How's your job as a Knight Leader?")
+  ShowMessageFace("Actor4",2,0,2,3)
+  ShowMessage("\\n<John>For other reasons, I'm traveling the world now. I'm glad you're in good health, brother.")
+  ShowMessageFace("Actor4",2,0,2,4)
+  ShowMessage("\\n<Terence>Wow, you're certainly the best of our brothers. If you meet the others, tell them I send my regards.")
+  ShowMessageFace("Actor4",2,0,2,5)
+  ShowMessage("\\n<John>I will. Take care of yourself, brother.")
+  ShowMessageFace("ruka_fc1",0,0,2,6)
+  ShowMessage("\\n<Luka>He's a literal clone of you...")
+  ShowMessageFace("Actor4",2,0,2,7)
+  ShowMessage("\\n<John>I have seven older brothers, all of us look the same. Even our parents couldn't distinguish us.")
+  0()
+
+
+
+EVENT   15
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Master>Welcome to the Outskirts Tavern. Come, have a drink...")
+  Shop(0,428,0,0,false)
+  605(0,431,0,0)
+  0()
+
+
+
+EVENT   16
+ PAGE   1
+  ShowMessageFace("Actor4",2,0,2,1)
+  ShowMessage("\\n<Terence>Mmm... Main Gauche, you say?")
+  ShowMessageFace("Actor4",0,0,2,2)
+  ShowMessage("\\n<Eric>You know of it, Terence?!")
+  ShowMessageFace("Actor4",2,0,2,3)
+  ShowMessage("\\n<Terence>It has a unique structure which allows it to withstand many blows. It also serves as a dagger, increasing your evasion rate.")
+  ShowMessageFace("Actor4",2,0,2,4)
+  ShowMessage("\\n<Terence>However, their crafting process has been long since lost to us and they're no longer for sale. If you get your hands on one, you better take good care of it.")
+  ShowMessageFace("Actor4",2,0,2,5)
+  ShowMessage("\\n<Terence>Keep that in mind when you visit the blacksmith and you have materials. If remodeled sufficiently, this weapon can become very powerful, indeed.")
+  ShowMessageFace("Actor4",2,0,2,6)
+  ShowMessage("\\n<Terence>It can be improved further by imbuing it with the power of wind or poison. Depending on whether you choose wind or poison, the weapon's final form will be decided.")
+  ShowMessageFace("Actor4",2,0,2,7)
+  ShowMessage("\\n<Terence>You could imbue it with the power of wind in this very shop. But if you do that, the path to imbuing the weapon with poison will be closed forever.")
+  ShowMessageFace("Actor4",2,0,2,8)
+  ShowMessage("\\n<Terence>You need to decide whether you want to synthesize your Main Gauche here. Think of the final form when you're deciding whether to synthesize it, as the decision is final.")
+  ShowMessageFace("Actor4",2,0,2,9)
+  ShowMessage("\\n<Terence>By the way, against dark enemies, wind is the better choice. But against holy enemies, poison would be better.")
+  ShowMessageFace("Actor4",0,0,2,10)
+  ShowMessage("\\n<Eric>All right, I'll synthesize it after considering that. Just one problem. We don't even have a Main Gauche!")
+  ShowMessageFace("Actor4",2,0,2,11)
+  ShowMessage("\\n<Terence>A few hundred years ago they were rare and valuable. At the time, many skilled warriors owned one.")
+  ShowMessageFace("Actor4",2,0,2,12)
+  ShowMessage("\\n<Terence>These warriors are either in their graves now or are still walking on this world, too old to use them effectively.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("95")
+  ShowMessageFace("delh_a_fc1",0,0,2,13)
+  ShowMessage("\\n<Lona>I'm on the younger side among elves so... I don't know about any, unfortunately.")
+  EndEventProcessing()
+  DefineLabel("132")
+  ShowMessageFace("zonbe_fc2",0,0,2,14)
+  ShowMessage("\\n<Ellie>......")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   17
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Guard>This shop is rather messy. Well, the looks aren't really a problem.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("66")
+  ShowMessageFace("vgirl_fc1",0,0,2,2)
+  ShowMessage("\\n<Vanilla>Still, it's not one I would aspire to.")
+  EndEventProcessing()
+  DefineLabel("125")
+  ShowMessageFace("grizzly_fc1",0,0,2,3)
+  ShowMessage("\\n<Aisha>Why is it so messy in the first place? Did you let a bear loose in here or something?")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   18
+ PAGE   1
+  // condition: variable 1024 >= 4
+  241(bytes(0x04,0x08,0x6f,0x3a,0x0d,0x52,0x50,0x47,0x3a,0x3a,0x42,0x47,0x4d,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x68,0x65,0x72,0x6f,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69))
+  PictureDisplay(5,"80_justice_st01",0,0,0,0,100,100,0,0)
+  PictureMove(5,null,0,0,0,0,100,100,255,0,30,true)
+  If(1,1024,0,4,0)
+   ChangeVariable(1024,1024,0,0,5)
+   ShowMessageFace("justice_fc1",0,0,2,1)
+   ShowMessage("\\n<Justice Kaiser>Thanks for coming! I'm Justice Kaiser, a\\*\\fi hero\\*\\fi.")
+   ShowChoices(strings("Amazing!","So silly..."),0)
+   IfPlayerPicksChoice(0,null)
+    If(4,68,0)
+     ShowMessageFace("dragonp_fc1",0,0,2,2)
+     ShowMessage("\\n<Papi>Amazing! So cooool!")
+     0()
+    EndIf()
+    ShowMessageFace("justice_fc1",0,0,2,3)
+    ShowMessage("\\n<Justice Kaiser>Fufu, thank you. Everyone's voice turns into my\\*\\fi power.\\*\\fi")
+    0()
+   IfPlayerPicksChoice(1,null)
+    If(4,62,0)
+     ShowMessageFace("gob_fc1",3,0,2,4)
+     ShowMessage("\\n<Gob>Onee-chan... stop doing embarrassing things and find some proper work.")
+     0()
+    EndIf()
+    ShowMessageFace("justice_fc1",0,0,2,5)
+    ShowMessage("\\n<Justice Kaiser>Heroes are never understood. Therefore, they are\\*\\fi lonely.\\*\\fi")
+    0()
+   404()
+   ShowMessageFace("justice_fc1",0,0,2,6)
+   ShowMessage("\\n<Justice Kaiser>Now, I actually have a request for you. Earlier, you saw that succubus Eva, right?")
+   ShowMessageFace("justice_fc1",0,0,2,7)
+   ShowMessage("\\n<Justice Kaiser>For a while now I've been fighting with her, but she keeps escaping. She always runs off to Carlos Hill so I don't chase her any further.")
+   If(4,129,0)
+    ShowMessageFace("brunhild_fc1",0,0,2,8)
+    ShowMessage("\\n<Hild>Is she that fast? I compared her to your physical abilities and I think you could easily catch up with her.")
+    0()
+   EndIf()
+   ShowMessageFace("justice_fc1",0,0,2,9)
+   ShowMessage("\\n<Justice Kaiser>This suit gets stuffy with my sweat if I wear it for too long... It's fine for short fights, but it's not ideal for protracted ones.")
+   If(0,6,0)
+    ShowMessageFace("sonia_fc2",2,0,2,10)
+    ShowMessage("\\n<Sonya>...then take it off?")
+    0()
+   EndIf()
+   ShowMessageFace("justice_fc1",0,0,2,11)
+   ShowMessage("\\n<Justice Kaiser>And so, I want you to defeat Eva. I can't afford to go chasing after her anymore.")
+   ShowMessageFace("justice_fc1",0,0,2,12)
+   ShowMessage("\\n<Justice Kaiser>Eva lives somewhere on Carlos Hill, it seems. As long as I wear this suit I can't stay outside for very long.")
+   If(0,6,0)
+    ShowMessageFace("sonia_fc4",0,0,2,13)
+    ShowMessage("\\n<Sonya>...then take it off?")
+    0()
+   EndIf()
+   ShowMessageFace("justice_fc1",0,0,2,14)
+   ShowMessage("\\n<Justice Kaiser>I can see you have the spirit of justice blazing in your heart and great skill within you. Surely you'll be able to bring peace back to this town by ridding it of Eva.")
+   ShowMessageFace("justice_fc1",0,0,2,15)
+   ShowMessage("\\n<Justice Kaiser>Then once a new hero is born, I will finally be able to take off this suit.")
+   If(0,6,0)
+    ShowMessageFace("sonia_fc1",2,0,2,16)
+    ShowMessage("\\n<Sonya>...then take it off?")
+    0()
+   EndIf()
+   ShowMessageFace("justice_fc1",0,0,2,17)
+   ShowMessage("\\n<Justice Kaiser>I beg of you, inherit the spirit of\\*\\fi justice\\*\\fi and defeat Eva.")
+   ShowChoices(strings("Yes","No"),2)
+   IfPlayerPicksChoice(0,null)
+    ShowMessageFace("justice_fc1",0,0,2,18)
+    ShowMessage("\\n<Justice Kaiser>Thank you, I was hoping you would say that. I can see the\\*\\fi spirit\\*\\fi of justice in your eyes.")
+    ShowMessageFace("ruka_fc1",0,0,2,19)
+    ShowMessage("\\n<Luka>Oh, it's nothing... eheeh, ehehehehe....")
+    0()
+   IfPlayerPicksChoice(1,null)
+    ShowMessageFace("justice_fc1",0,0,2,20)
+    ShowMessage("\\n<Justice Kaiser>Thank you, I was hoping you would say that. I can see the\\*\\fi spirit\\*\\fi of justice in your eyes.")
+    ShowMessageFace("ruka_fc1",0,0,2,21)
+    ShowMessage("\\n<Luka>(She doesn't even listen to what we have to say...)")
+    0()
+   404()
+   ShowMessageFace("justice_fc1",0,0,2,22)
+   ShowMessage("\\n<Justice Kaiser>As I said earlier, Eva is lurking on Carlos Hill. It's southeast of this town.")
+   ShowMessageFace("justice_fc1",0,0,2,23)
+   ShowMessage("\\n<Justice Kaiser>I wish you good fortune in the coming battle. Succeed and you will inherit... the\\*\\fi spirit\\*\\fi of justice.")
+   If(0,6,0)
+    ShowMessageFace("sonia_fc1",2,0,2,24)
+    ShowMessage("\\n<Sonya>...take it off?")
+    0()
+   EndIf()
+   241(bytes(0x04,0x08,0x6f,0x3a,0x0d,0x52,0x50,0x47,0x3a,0x3a,0x42,0x47,0x4d,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x6d,0x75,0x72,0x61,0x33,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69))
+   PictureClear(5)
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1024,0,5,0)
+   ShowMessageFace("justice_fc1",0,0,2,25)
+   ShowMessage("\\n<Justice Kaiser>As I said earlier, Eva is lurking on Carlos Hill. It's southeast of this town.")
+   ShowMessageFace("justice_fc1",0,0,2,26)
+   ShowMessage("\\n<Justice Kaiser>I wish you good fortune in the coming battle. Succeed and you will inherit... the\\*\\fi spirit\\*\\fi of justice.")
+   241(bytes(0x04,0x08,0x6f,0x3a,0x0d,0x52,0x50,0x47,0x3a,0x3a,0x42,0x47,0x4d,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x6d,0x75,0x72,0x61,0x33,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69))
+   PictureClear(5)
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1024,0,6,0)
+   ChangeVariable(1024,1024,0,0,7)
+   ShowMessageFace("justice_fc1",0,0,2,27)
+   ShowMessage("\\n<Justice Kaiser>You defeated Eva... and you have inherited, the\\*\\fi spirit\\*\\fi of justice!")
+   ShowMessageFace("justice_fc1",0,0,2,28)
+   ShowMessage("\\n<Justice Kaiser>Congratulations, you are a splendid hero! Your\\*\\fi heart\\*\\fi that despises evil is proof you're a hero!")
+   250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+   ChangeInventory_Item(609,0,0,1)
+   If(4,68,0)
+    ShowMessageFace("dragonp_fc1",0,0,2,29)
+    ShowMessage("\\n<Papi>OOOOHHH!! I can feel the burning spiriiiit!!")
+    0()
+   EndIf()
+   ShowMessageFace("justice_fc1",0,0,2,30)
+   ShowMessage("\\n<Justice Kaiser>You can now change your job to 'Hero of Justice'. But you need to master the Guard job first.")
+   ShowMessageFace("justice_fc1",0,0,2,31)
+   ShowMessage("\\n<Justice Kaiser>The 'Hero of Justice' normally has low stats. It also doesn't have any special skills so it isn't very useful.")
+   ShowMessageFace("justice_fc1",0,0,2,32)
+   ShowMessage("\\n<Justice Kaiser>But if one uses the SP required to 'Transform'... all your stats will increase explosively!")
+   ShowMessageFace("justice_fc1",0,0,2,33)
+   ShowMessage("\\n<Justice Kaiser>Additionally, when you have transformed you can use the 'Justice' skills! They're powerful finishing moves so use them to sweep down evil!")
+   ShowMessageFace("justice_fc1",0,0,2,34)
+   ShowMessage("\\n<Justice Kaiser>Your transformation will wear off after a few turns and you will go back to having mediocre stats again, so be careful.")
+   ShowMessageFace("justice_fc1",0,0,2,35)
+   ShowMessage("\\n<Justice Kaiser>Do you understand now how a hero fights? Don't get the timing wrong when you transform, and victory will be yours.")
+   ShowMessageFace("justice_fc1",0,0,2,36)
+   ShowMessage("\\n<Justice Kaiser>Now that you have inherited the heroic spirit, I'll go back to being a mere civilian... a woman called Juska.")
+   If(0,6,0)
+    ShowMessageFace("sonia_fc2",3,0,2,37)
+    ShowMessage("\\n<Sonya>Juska, that's simplistic. Isn't it just an abbreviation from Justice Kaiser?")
+    ShowMessageFace("justice_fc1",0,0,2,38)
+    ShowMessage("\\n<Juska>Just the opposite. Juska is my real name. I devised Justice Kaiser from it.")
+    ShowMessageFace("justice_fc1",0,0,2,39)
+    ShowMessage("\\n<Juska>I was also considering June Skarlet but... well, that's all in the past now.")
+    0()
+   EndIf()
+   ShowMessageFace("justice_fc1",0,0,2,40)
+   ShowMessage("\\n<Juska>Well then, Justice Luka. I wish you good fortune in future battles.")
+   If(0,6,0)
+    ShowMessageFace("sonia_fc1",0,0,2,41)
+    ShowMessage("\\n<Sonya>I'm glad that headache is dealt with, at least. Let's continue our journey to Sabasa.")
+    0()
+   EndIf()
+   241(bytes(0x04,0x08,0x6f,0x3a,0x0d,0x52,0x50,0x47,0x3a,0x3a,0x42,0x47,0x4d,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x6d,0x75,0x72,0x61,0x33,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69))
+   PictureClear(5)
+   355("gain_medal(24)")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1024,0,7,0)
+   If(1,814,0,2,1)
+    If(0,1557,1)
+     ShowMessageFace("justice_fc1",0,0,2,42)
+     ShowMessage("\\n<Juska>It's not like me to rot in a place like this! A hero is meant to save the world!")
+     ShowChoices(strings("Let her join","Decline for now"),0)
+     IfPlayerPicksChoice(0,null)
+      ShowMessageFace("justice_fc1",0,0,2,43)
+      ShowMessage("\\n<Juska>My fist of justice fights for the sake of the world! Haa!!")
+      PictureClear(5)
+      205(0,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x09,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x2a,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x0f,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x2c,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+      355("add_actor_ex(557)")
+      249(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0c,0x66,0x61,0x6e,0x66,0x61,0x6c,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69))
+      ShowMessageFace("",0,0,2,44)
+      ShowMessage("Juska has joined the party!")
+      Wait(60)
+      241(bytes(0x04,0x08,0x6f,0x3a,0x0d,0x52,0x50,0x47,0x3a,0x3a,0x42,0x47,0x4d,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x6d,0x75,0x72,0x61,0x33,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69))
+      EndEventProcessing()
+      0()
+     IfPlayerPicksChoice(1,null)
+      ShowMessageFace("justice_fc1",0,0,2,45)
+      ShowMessage("\\n<Juska>This is no time to be daunted!")
+      0()
+     404()
+     0()
+    EndIf()
+    0()
+   EndIf()
+   If(0,2321,1)
+    ShowMessageFace("justice_fc1",0,0,2,46)
+    ShowMessage("\\n<Justice Kaiser>Your justice is unclouded as always, Justice Luka. Do you need anything from me?")
+    0()
+   Else()
+    ShowMessageFace("justice_fc1",0,0,2,47)
+    ShowMessage("\\n<Justice Kaiser>I can see the fire of justice burning in your eyes. Do you need anything from me?")
+    0()
+   EndIf()
+   ShowChoices(strings("'Justice Hero' job description","Challenge to Battle Fuck","Nothing"),3)
+   IfPlayerPicksChoice(0,null)
+    ShowMessageFace("justice_fc1",0,0,2,48)
+    ShowMessage("\\n<Justice Kaiser>The 'Hero of Justice' normally has low stats. It also doesn't have any special skills so it isn't very useful.")
+    ShowMessageFace("justice_fc1",0,0,2,49)
+    ShowMessage("\\n<Justice Kaiser>But if one uses the SP required to 'Transform'... all stats will increase explosively!")
+    ShowMessageFace("justice_fc1",0,0,2,50)
+    ShowMessage("\\n<Justice Kaiser>Additionally, when you have transformed you can use the 'Justice' skills! They're powerful finishing moves so use them to sweep down evil!")
+    ShowMessageFace("justice_fc1",0,0,2,51)
+    ShowMessage("\\n<Justice Kaiser>Your transformation will wear off after a few turns and you will go back to having mediocre stats again, so be careful.")
+    ShowMessageFace("justice_fc1",0,0,2,52)
+    ShowMessage("\\n<Justice Kaiser>Do you understand what it means to fight like a hero now? Get your transformation timing correct and victory will surely be yours.")
+    241(bytes(0x04,0x08,0x6f,0x3a,0x0d,0x52,0x50,0x47,0x3a,0x3a,0x42,0x47,0x4d,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x6d,0x75,0x72,0x61,0x33,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69))
+    PictureClear(5)
+    EndEventProcessing()
+    0()
+   IfPlayerPicksChoice(1,null)
+    RunCommonEvent(7131)
+    0()
+   IfPlayerPicksChoice(2,null)
+    241(bytes(0x04,0x08,0x6f,0x3a,0x0d,0x52,0x50,0x47,0x3a,0x3a,0x42,0x47,0x4d,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x6d,0x75,0x72,0x61,0x33,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69))
+    PictureClear(5)
+    EndEventProcessing()
+    0()
+   404()
+   0()
+  EndIf()
+  0()
+ PAGE   2
+  // condition: party contains actor #557
+  0()
+
+
+
+EVENT   19
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Mage>It's good to have at least one Time Mage in the party. They seem boring because they only acquire support based skills.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Mage>But the Time Mage can be very effective against bosses. They're a great ally when fighting against the toughest monsters.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("104")
+  ShowMessageFace("kumo_fc1",0,0,2,3)
+  ShowMessage("\\n<Rachnee>Arachne specialize particularly in Time Magic. Make sure we use it effectively.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   20
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Thief>There are two types of items you can steal from monsters. Normal items and rare items.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Thief>Of course, the chance of stealing a rare item is considerably lower than a normal item. Consider yourself lucky if you manage to steal one.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("169")
+  ShowMessageFace("lizardthief_fc1",0,0,2,3)
+  ShowMessage("\\n<Liru>Naturally, I aim for the rare ones!")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   21
+ PAGE   1
+  If(1,1027,0,0,0)
+   ChangeVariable(1027,1027,0,0,1)
+   0()
+  EndIf()
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Guard>There's a small fishing village some ways southwest of here.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Guard>It's called Rubiana, but it's uninhabited now. What's eerie about it is that all of the residents disappeared overnight.")
+  If(1,1001,0,30,2)
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("\\n<Guard>Even now, no one knows what happened. Even if this world is riddled with things which shouldn't be possible, that's one of the most confusing anomalies.")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("68")
+   ShowMessageFace("dragonp_fc1",5,0,2,4)
+   ShowMessage("\\n<Papi>That's scary!")
+   EndEventProcessing()
+   DefineLabel("80")
+   ShowMessageFace("orc_fc1",0,0,2,5)
+   ShowMessage("\\n<Hip>Maybe a group of orcs was there... never mind.")
+   EndEventProcessing()
+   DefineLabel("121")
+   ShowMessageFace("page65537_fc1",0,0,2,6)
+   ShowMessage("\\n<Cornelia>How strange. We should investigate that village on the way to Sabasa.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,31,1)
+   ShowMessageFace("",0,0,2,7)
+   ShowMessage("Warrior")
+   ShowMessage("Perhaps, there was a raid of the Satan army.")
+   ShowMessage("For quite some time, the hands of the Devil have stretched all over the world and it is a story.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   22
+ PAGE   1
+  If(1,1027,0,0,0)
+   ChangeVariable(1027,1027,0,0,1)
+   0()
+  EndIf()
+  If(1,1001,0,30,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Gruff Man>We went to visit Rubiana a few weeks ago, but aside from the small expedition from Sabasa, it was completely deserted.")
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Gruff Man>Honestly, it was rather creepy. There was no proof that any violence had occurred there. I wonder what that could mean.")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("83")
+   ShowMessageFace("hapy_a_fc1",2,0,2,3)
+   ShowMessage("\\n<Reina>Maybe like in our case, they left of their own free will.")
+   ShowMessageFace("",0,0,2,4)
+   ShowMessage("\\n<Gruff Man>Rubiana's villagers were normal humans. They didn't have any wings growing out of their backs, y'know? They just disappeared overnight and not a single person noticed.")
+   EndEventProcessing()
+   DefineLabel("136")
+   ShowMessageFace("elf_fc1",0,0,2,5)
+   ShowMessage("\\n<Claudia>And there's not a single bit of evidence of a struggle within the village, correct? It can't have been monsters, even the most discreet would have trouble with the corpses.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,31,1)
+   ShowMessageFace("",0,0,2,6)
+   ShowMessage("Hurry up")
+   ShowMessage("We also went to Rubyana a while ago ......")
+   ShowMessage("There are only a few investigators from Sabasa, it is a fake color.")
+   ShowMessageFace("",0,0,2,7)
+   ShowMessage("Hurry up")
+   ShowMessage("Now the investigation team may have raised.")
+   ShowMessage("I guess they have all been killed by Magus' army ... ...?")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   23
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Thief>Heck, why doesn't this inn have a lobby?! Why do we have to chat in a place like this!? The hell's this, a pajama party?!")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Thief>...Honestly though, it's kinda fun.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("103")
+  ShowMessageFace("kamuro_fc1",0,0,2,3)
+  ShowMessage("\\n<Kamuro>Reminds me of a field trip we went on in kitsune village.")
+  EndEventProcessing()
+  DefineLabel("139")
+  ShowMessageFace("fairys_fc1",3,0,2,4)
+  ShowMessage("\\n<Fairies>It's fuun. ♪ We want to join iiin. ♪")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   24
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Sleazy Man>These are Elka Company's supplies. Try stealing them, and you won't get off easily.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("92")
+  ShowMessageFace("eater_fc1",0,0,2,2)
+  ShowMessage("\\n<Eater>Can I eat them? They look delicious.")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Sleazy Man>I told you, don't... Umm, what are you looking at? Eh? ME?!")
+  EndEventProcessing()
+  DefineLabel("136")
+  ShowMessageFace("elf_fc1",0,0,2,4)
+  ShowMessage("\\n<Claudia>Don't worry, I won't. Unlike you, I'm not a thief.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   25
+ PAGE   1
+  If(1,1027,0,0,0)
+   ChangeVariable(1027,1027,0,0,1)
+   0()
+  EndIf()
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Gruff Man>The disappearance of Rubiana's residents... I assure you, there was absolutely no evidence of any fighting there.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Gruff Man>Which means they must have left by their own free will. But why? And where did they go?")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Gruff Man>Whatever happened there, it affected the entire village. If such a large group moved, they would have definitely been seen.")
+  ShowMessageFace("",0,0,2,4)
+  ShowMessage("\\n<Gruff Man>Adventurers and merchants in the surrounding area didn't see a group of that size, though. It's as if they simply vanished.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("56")
+  ShowMessageFace("inp_fc1",2,0,2,5)
+  ShowMessage("\\n<Rami>So scaryyy!Let's sleep with Rumi-chan tonight.")
+  EndEventProcessing()
+  DefineLabel("12")
+  ShowMessageFace("sylph_fc1",4,0,2,6)
+  ShowMessage("\\n<Sylph>That sounds scary.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   26
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Mage>The wastelands begin southwest of here. They're very extensive, and there's a mountain range in the center.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Mage>There is also a highland in the center of those mountains. Within that, there are plains surrounded by the mountains.")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Mage>In the center of that highland there is a strange tower. Apparently a powerful yoma who hails from abroad goes in and out of it occasionally.")
+  ShowMessageFace("",0,0,2,4)
+  ShowMessage("\\n<Mage>Getting to the tower is simple enough. There's a cave at the southern part of the mountain range, and you can enter the highland through there.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("134")
+  ShowMessageFace("chrom_fc2",5,0,2,5)
+  ShowMessage("\\n<Chrome>Puppeteer's Tower, huh? I don't specialize in puppets so I don't really care.")
+  ShowMessageFace("chrom_fc1",5,0,2,6)
+  ShowMessage("\\n<Chrome>...I-it's not like I'm afraid of Kagetsumugi.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   27
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Female Priest>There's a tower in the center of the mountain plateau highlands to the southwest... According to old texts, it's called the 'Puppeteers Tower.'")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Female Priest>Also, the cave in the southern part of that mountain range is also mentioned. It's called the 'Seekers Cave.'")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Female Priest>From what I've heard, it's a place for Spiritualists to train themselves. I've also seen a yoma carrying a puppet into that cave before.")
+  If(8,518)
+   EndEventProcessing()
+   0()
+  Else()
+   If(1,1023,0,2,0)
+    If(1,1026,0,0,0)
+     ChangeVariable(1026,1026,0,0,1)
+     ShowMessageFace("ruka_fc1",0,0,2,4)
+     ShowMessage("\\n<Luka>You saw a puppeteer? This could be a clue to finding the Magical Thread Chrome wanted.")
+     EndEventProcessing()
+     0()
+    EndIf()
+    0()
+   EndIf()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   28
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Traveling Warrior>The road leading to Sabasa is a long one, but at the same time a simple one. First, go southwest from here to Rubiana.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Traveling Warrior>From Rubiana, go directly west through the desert to Sabasa Castle. So if you're going to Sabasa, your next destination is Rubiana.")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Traveling Warrior>Right now, Rubiana is uninhabited. The buildings haven't gone anywhere though, so it's better to rest there than under clear sky.")
+  0()
+
+
+
+EVENT   29
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Craftsman>Apparently a succubus showed up on Carlos Hill and has been living there ever since. Maybe I can finally get laid...")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("143")
+  ShowMessageFace("eva_fc1",0,0,2,2)
+  ShowMessage("\\n<Eva>I'm not feeling hungry right now. How about next time?")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   30
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Middle-Aged Man>No matter how much work I do, my life doesn't get easier. My enthusiasm from having a job is starting to fade.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Middle-Aged Man>I'm fed up with working all day.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("98")
+  ShowMessageFace("minikani_fc1",0,0,2,3)
+  ShowMessage("\\n<Amy>I guess you could say... you're in a crabby mood.")
+  EndEventProcessing()
+  DefineLabel("109")
+  ShowMessageFace("kani_fc1",0,0,2,4)
+  ShowMessage("\\n<Soapy>Want me to wash you?")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   31
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Woman>If anything, the Elka Company is keeping this town running. If they disappeared, the thugs would go on a complete rampage.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Woman>That Aizer whatever woman. If anything, she's only disturbing this town's peace.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("540")
+  ShowMessageFace("amira_fc1",0,0,2,3)
+  ShowMessage("\\n<Amira>I see. So your opinions vary.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   32
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Man>I used to go fishing in Rubiana every summer. What am I gonna do this year?")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Man>Everyone I went fishing with disappeared with the rest of 'em. They were tough people, but also simple and deeply faithful. They were a good bunch, y'know?")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("82")
+  ShowMessageFace("suzume_fc1",2,0,2,3)
+  ShowMessage("\\n<Chirp>It must be hard on you to have lost your friends so suddenly.")
+  EndEventProcessing()
+  DefineLabel("118")
+  ShowMessageFace("meia_fc1",3,0,2,4)
+  ShowMessage("\\n<Meia>After hearing of fishermen disappearing, bad memories come to mind. This time it wasn't me, I swear.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   33
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Guard>Zzz...Zzz...")
+  0()
+
+
+
+EVENT   34
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Guard>The guy beside me sure is something to sleep on a bed like this. Damn, the floor is so hard that it makes my back hurt.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("112")
+  ShowMessageFace("utubo_fc1",0,0,2,2)
+  ShowMessage("\\n<Kazura>Hey, I have a verrrry comfortable sleeping bag right here for you...")
+  EndEventProcessing()
+  DefineLabel("147")
+  ShowMessageFace("saboten_fc1",0,0,2,3)
+  ShowMessage("\\n<Casta>I'd rather sleep in a flower pot than on that floor.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   35
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Old Guard>If you're heading for Sabasa, you'll need to pass through the highlands and then through the desert. The highlands are simple enough. Just stick to the road until you reach Rubiana.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Old Guard>The desert is where it starts to get rough. My old bones aren't up for it any more.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("99")
+  ShowMessageFace("namazu_fc1",2,0,2,3)
+  ShowMessage("\\n<Gigi>I'd rather have old bones than moist skin when it comes to deserts. Catfish simply aren't supposed to be out in the desert.")
+  EndEventProcessing()
+  DefineLabel("101")
+  ShowMessageFace("cent2_fc1",0,0,2,4)
+  ShowMessage("\\n<Lihitinu>I'll probably be all right with my legs. Probably.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   36
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Guard>If you receive the Berserk status effect, you won't follow any instructions.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Guard>With that said, you won't attack allies. You can still only attack enemies so there's no need to worry about that.")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Guard>But if you do go Berserk, your Attack stat increases for the duration. So it makes up for the disadvantage with an advantage.")
+  ShowMessageFace("",0,0,2,4)
+  ShowMessage("\\n<Guard>The 'Reckless Mask' sold in this very shop forces the wearer into a Berserk state. If you equip a companion who has high strength with it, they might become really powerful.")
+  0()
+
+
+
+EVENT   37
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Villain>Did you hear about that strange cosplay woman? Not only does she get in my way, but she's also hella strong.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Villain>I feel like I'm starting to enjoy getting beat up by her.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("72")
+  ShowMessageFace("phoenix_fc1",2,0,2,3)
+  ShowMessage("\\n<Mini>Pervert!")
+  EndEventProcessing()
+  DefineLabel("125")
+  ShowMessageFace("grizzly_fc1",0,0,2,4)
+  ShowMessage("\\n<Aisha>You like being beat up? I can help with that.")
+  ShowMessageFace("",0,0,2,5)
+  ShowMessage("\\n<Villain>I think I'll pass on getting torn apart.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   38
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Bunny>Uffuun, booy, wanna play with sis?")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("525")
+  ShowMessageFace("sonia_fc1",5,0,2,2)
+  ShowMessage("\\n<Sonya>Luka, don't you dare get any closer to her!")
+  EndEventProcessing()
+  DefineLabel("75")
+  ShowMessageFace("hituzi_fc1",3,0,2,3)
+  ShowMessage("\\n<Mary>Uiii! I'll plaaay. ♪")
+  ShowMessageFace("",0,0,2,4)
+  ShowMessage("\\n<Bunny>A-a sheep? Even if you strip me of everything, you won't find any hair clippers.")
+  EndEventProcessing()
+  DefineLabel("103")
+  ShowMessageFace("kamuro_fc1",0,0,2,5)
+  ShowMessage("\\n<Kamuro>That's um... jailbait? Isn't it?")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   39
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Hooligan>Don't let yourself be seduced by that woman. The last guy who did is now lying outside the pub.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("74")
+  ShowMessageFace("usagi_fc1",2,0,2,2)
+  ShowMessage("\\n<Barbun>How stupid of him, allowing himself to be seduced by someone like her.")
+  EndEventProcessing()
+  DefineLabel("143")
+  ShowMessageFace("eva_fc1",0,0,2,3)
+  ShowMessage("\\n<Eva>That's a genius idea.")
+  If(0,6,0)
+   ShowMessageFace("sonia_fc1",5,0,2,4)
+   ShowMessage("\\n<Sonya>Don't even think about it.")
+   0()
+  EndIf()
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   40
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Guard>This town is just a dirty slum. Why bother to guard it?")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Guard>*gulp* *gulp*... old man, one more!")
+  0()
+
+
+
+EVENT   41
+ PAGE   1
+  If(1,1001,0,30,2)
+   If(1,1028,0,7,2)
+    ShowMessageFace("",0,0,2,1)
+    ShowMessage("\\n<Man>The future of the Great War has become uncertain. Now that Sabasa has left the alliance, Grand Noah might be in trouble.")
+    0()
+   EndIf()
+   If(1,1028,0,8,1)
+    ShowMessageFace("",0,0,2,2)
+    ShowMessage("\\n<Man>Sabasa returned to the alliance and the allied forces morale has returned. But it seems like the Great War will continue for some time.")
+    0()
+   EndIf()
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("\\n<Man>Well, if the war continues, the Elka Company will continue to profit. I'm not complaining. It will likely restore this town.")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("121")
+   ShowMessageFace("page65537_fc1",0,0,2,4)
+   ShowMessage("\\n<Cornelia>An economy based on a war is usually dependent on that war. That's what I heard, at least.")
+   EndEventProcessing()
+   DefineLabel("531")
+   ShowMessageFace("saniria_fc2",0,0,2,5)
+   ShowMessage("\\n<King of San Ilia>War corrupts people's hearts. We need to end this pointless war soon.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,31,1)
+   ShowMessageFace("",0,0,2,6)
+   ShowMessage("【Man】")
+   ShowMessage("I do not mind making money in war, but if human beings are destroyed they are in trouble.")
+   ShowMessage("I hope that you will be exterminated sooner, by Maou.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   42
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Overly Drunk Man>I don't want to work anymore...")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("143")
+  ShowMessageFace("eva_fc1",2,0,2,2)
+  ShowMessage("\\n<Eva>Agreed.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   43
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Overly Drunk Man>Theahh... blaarghh...")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("74")
+  ShowMessageFace("usagi_fc1",2,0,2,2)
+  ShowMessage("\\n<Barbun>Oh dear, you'll catch a cold. Why do drunks have to make life so much harder for everyone else?")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   44
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Inn>Want to stay? 10G per night.\\$")
+  ShowChoices(strings("Yes","No"),2)
+  IfPlayerPicksChoice(0,null)
+   If(7,10,0)
+    125(1,0,10)
+    221()
+    249(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x08,0x49,0x6e,0x6e,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69))
+    Wait(150)
+    314(0,0)
+    222()
+    0()
+   Else()
+    ShowMessageFace("",0,0,2,2)
+    ShowMessage("\\n<Inn>You don't have enough gold.")
+    0()
+   EndIf()
+   0()
+  IfPlayerPicksChoice(1,null)
+   0()
+  404()
+  0()
+
+
+
+EVENT   45
+ PAGE   1
+  If(1,1001,0,25,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Man>I've been exiled from Sabasa. That country has turned into a huge mess ever since the new queen was crowned.")
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Man>Those who try to advise Queen Sara are all exiled. Her father would be depressed if he saw her like this.")
+   If(1,1028,0,7,2)
+    355("actor_label_jump")
+    EndEventProcessing()
+    DefineLabel("5")
+    ShowMessageFace("alice_fc5",0,0,2,3)
+    ShowMessage("\\n<Alice>Nothing good ever comes out of an unsuitable person claiming the throne.")
+    EndEventProcessing()
+    DefineLabel("531")
+    ShowMessageFace("saniria_fc2",0,0,2,4)
+    ShowMessage("\\n<King of San Ilia>We have to go to Sabasa. I made a promise to the previous king, after all.")
+    EndEventProcessing()
+    0()
+   EndIf()
+   0()
+  EndIf()
+  If(1,1001,0,26,1)
+   ShowMessageFace("",0,0,2,5)
+   ShowMessage("【Man】")
+   ShowMessage("Queen Sabatha returns to sanity and thinks the war with the Grand Gord is over ... ...")
+   ShowMessage("This time it is a war with the demon king, but days that can not return to my hometown continue.")
+   0()
+  EndIf()
+  0()
+ PAGE   2
+  // condition: variable 1028 >= 8
+  0()
+
+
+
+EVENT   46
+ PAGE   1
+  If(1,1001,0,25,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Middle-Aged Man>The war between Grangold and the alliance... it has to be the Elka Company that's been manipulating it from behind the scenes.")
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Middle-Aged Man>I mean, have you seen how much they've profited from this war? They have to be the masterminds behind it!")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,26,1)
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("【middle aged】")
+   ShowMessage("It is a war with the Magus Army, but it is Elka 's company that is manipulating behind the scenes.")
+   ShowMessage("There is no doubt, they are the masterpieces of war!")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   47
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Guard>A skilled informant is running a stall in the south part of town. You should notice it right away. It's just next to the tool shop.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("540")
+  ShowMessageFace("amira_fc1",0,0,2,2)
+  ShowMessage("\\n<Amira>There's no better Informant than me. When it comes to stunning appearance, that is.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   49
+ PAGE   1
+  If(1,1005,0,12,0)
+   If(4,66,0)
+    If(0,2065,0)
+     If(0,2104,0)
+      ShowMessageFace("vgirl_fc1",0,0,2,1)
+      ShowMessage("\\n<Vanilla>Nice to meet you, I am Vanilla, a traveling merchant. I'd like to start selling the items you deal in my shop.")
+      ShowMessageFace("",0,0,2,2)
+      ShowMessage("\\n<Elka>Well, if it's a request from a friend of Lazarus. But don't you try to exploit this kindness!")
+      ShowMessageFace("vgirl_fc1",0,0,2,3)
+      ShowMessage("\\n<Vanilla>Of course I won't.")
+      ShowMessageFace("",0,0,2,4)
+      ShowMessage("Vanilla negotiates an arrangement with Elka. The business experience she's gained so far really shows.")
+      ShowMessageFace("",0,0,2,5)
+      ShowMessage("\\n<Elka>OK, let's go with that. This would be much more expensive if you weren't acquainted with Lazarus!")
+      ShowMessageFace("vgirl_fc1",0,0,2,6)
+      ShowMessage("\\n<Vanilla>Thank you very much! I look forward to dealing with you more in the future!")
+      249(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0c,0x66,0x61,0x6e,0x66,0x61,0x6c,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69))
+      ShowMessageFace("",0,0,2,7)
+      ShowMessage("Vanilla can now sell high class medicinal plants at her shop!")
+      ChangeVariable(1005,1005,0,0,13)
+      ChangeSwitch(2065,2065,1)
+      Wait(60)
+      EndEventProcessing()
+      0()
+     EndIf()
+     0()
+    EndIf()
+    0()
+   EndIf()
+   0()
+  EndIf()
+  If(4,557,0)
+   ShowMessageFace("",0,0,2,8)
+   ShowMessage("\\n<Elka>Juska... you're still doing that at your age? Stop screwing around and get a real life...")
+   ShowMessageFace("justice_fc1",1,0,2,9)
+   ShowMessage("\\n<Juska>Same to you, you're still playing the villain at your age!")
+   ShowMessageFace("",0,0,2,10)
+   ShowMessage("\\n<Elka>You can earn money as a villain. So, does that hobby of yours earn you money?")
+   ShowMessageFace("justice_fc1",1,0,2,11)
+   ShowMessage("\\n<Juska>......")
+   ShowMessageFace("",0,0,2,12)
+   ShowMessage("\\n<Elka>If this game of yours is aimed at me, then stop it right now. There's no need for your life to turn to shit as well.")
+   ShowMessageFace("justice_fc1",0,0,2,13)
+   ShowMessage("\\n<Juska>This is my way of life! Unlike you, I'm protecting countless people free of charge!")
+   ShowMessageFace("",0,0,2,14)
+   ShowMessage("\\n<Elka>Hero, please take care of this pain-in-the-ass for me. As you can see, she's a dumbass, but she's a talented dumbass.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,25,2)
+   If(1,1025,0,0,0)
+    ChangeVariable(1025,1025,0,0,1)
+    ShowMessageFace("",0,0,2,15)
+    ShowMessage("\\n<Elka>Business has been booming recently. Because the war is intensifying, there's an increased demand for certain goods.")
+    ShowMessageFace("",0,0,2,16)
+    ShowMessage("\\n<Elka>Hehe... Are you suspecting my company of pulling the strings behind the war? That's only something that happens in third-rate novels.")
+    ShowMessageFace("",0,0,2,17)
+    ShowMessage("\\n<Elka>Think of war as a living creature. It can't be conveniently manipulated at a whim. You never know when you'll get lucky, however.")
+    ShowMessageFace("",0,0,2,18)
+    ShowMessage("\\n<Elka>Stable business is more suitable for the long term. We're doing better because of what this war demands, but there's no knowing what's ahead for us.")
+    ShowMessageFace("",0,0,2,19)
+    ShowMessage("\\n<Elka>If the war spreads, it'll have a serious impact on distribution. Even the lowest of society is the same when it comes to war. We want it to end.")
+    If(4,66,0)
+     ShowMessageFace("vgirl_fc1",0,0,2,20)
+     ShowMessage("\\n<Vanilla>I see. That's really interesting!")
+     0()
+    EndIf()
+    EndEventProcessing()
+    0()
+   EndIf()
+   If(1,1025,0,1,1)
+    ChangeVariable(1025,1025,0,0,2)
+    ShowMessageFace("",0,0,2,21)
+    ShowMessage("\\n<Elka>The rumor that we're the masterminds behind the war is just a conspiracy theory. A narrow-minded delusion of people who don't understand the world around them.")
+    ShowMessageFace("",0,0,2,22)
+    ShowMessage("\\n<Elka>When it comes to conspiracy theories, time and time again it's the suckers who believe in them who end up getting hurt.")
+    ShowMessageFace("",0,0,2,23)
+    ShowMessage("\\n<Elka>Oh well, that's just another of the complexities of life. It's another way for the unscrupulous to earn a living, too.")
+    If(4,531,0)
+     ShowMessageFace("saniria_fc2",0,0,2,24)
+     ShowMessage("\\n<King of San Ilia>So true. Even the church often finds itself the victim of conspiracy theories.")
+     If(0,6,0)
+      ShowMessageFace("sonia_fc4",0,0,2,25)
+      ShowMessage("\\n<Sonya>Uhh, with all due respect, you're concealing a lot of actual conspiracies underneath those robes.")
+      0()
+     EndIf()
+     0()
+    EndIf()
+    EndEventProcessing()
+    0()
+   EndIf()
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,26,1)
+   If(0,2196,1)
+    ShowMessageFace("",0,0,2,26)
+    ShowMessage("【Elka】")
+    ShowMessage("Oh, it was actually a success.")
+    ShowMessage("As expected, Mr. Lazarus' s secret girl, it is a tremendous skill.")
+    ShowMessageFace("",0,0,2,27)
+    ShowMessage("【Elka】")
+    ShowMessage("From now on, will you fight as a brave man?")
+    ShowMessage("For those who failed to do justice, do not go through justice.")
+    EndEventProcessing()
+    0()
+   EndIf()
+   If(0,2196,0)
+    ShowMessageFace("lazarus3_fc1",1,0,2,28)
+    ShowMessage("【Lazarus】")
+    ShowMessage("Yo, Elka.")
+    ShowMessage("How is the economy?")
+    ShowMessageFace("",0,0,2,29)
+    ShowMessage("【Elka】")
+    ShowMessage("Yeah, thanks to you ....")
+    ShowMessage("By the way, is Mr. Lazarus also entering the brave party?")
+    ShowMessageFace("lazarus3_fc1",1,0,2,30)
+    ShowMessage("【Lazarus】")
+    ShowMessage("What is it, funny ...?")
+    ShowMessageFace("",0,0,2,31)
+    ShowMessage("【Elka】")
+    ShowMessage("But, because ...... Lazarus is a brave man and adventure ......")
+    ShowMessage("Besides, with her daughter who raised herself ... ... It will be too hushagi ... ...")
+    ShowMessageFace("lazarus3_fc1",0,0,2,32)
+    ShowMessage("【Lazarus】")
+    ShowMessage("I want ... the adventurer's career is longer.")
+    ShowMessage("You too, do yourself with a daughter on a justice side.")
+    ShowMessageFace("",0,0,2,33)
+    ShowMessage("【Elka】")
+    ShowMessage("Mum, my daughter would not matter ...!")
+    ShowMessageFace("lazarus3_fc1",1,0,2,34)
+    ShowMessage("【Lazarus】")
+    ShowMessage("Then, do not mess with people!")
+    EndEventProcessing()
+    0()
+   EndIf()
+   0()
+  EndIf()
+  0()
+
+EVENT   50
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Youth>When I was attacked by thugs, a hero saved me. Amazing, right? I look up to her.")
+  0()
+
+
+
+EVENT   51
+ PAGE   1
+  If(1,1001,0,30,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Woman>Recently a lone succubus has been violating this town. It looks as if she drifted here from somewhere else. I wonder if she has anywhere to stay?")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("56")
+   ShowMessageFace("inp_fc1",0,0,2,2)
+   ShowMessage("\\n<Rami>A lone succubus? Doesn't she have friends?")
+   If(4,143,0)
+    ShowMessageFace("eva_fc1",2,0,2,3)
+    ShowMessage("\\n<Eva>I-I do! Nurcubus, for example!")
+    0()
+   EndIf()
+   EndEventProcessing()
+   DefineLabel("143")
+   ShowMessageFace("eva_fc1",1,0,2,4)
+   ShowMessage("\\n<Eva>Now I have a room of my own. Fufu. ♪")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,31,1)
+   ShowMessageFace("",0,0,2,5)
+   ShowMessage("【Aunt】")
+   ShowMessage("It seems that the towns and towns are being attacked by Magus' army.")
+   ShowMessage("Well, as long as you attack such a slum, the devil is not too crowded ... ...")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   52
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Guard>I saw that succubus fight with the cosplay woman in the back alley yesterday. I think the cosplay woman was meant to be a hero? That's how she was dressed...")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Guard>Despite her appearance, she was immensely strong. I mean, she fought on even grounds with a succubus.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("136")
+  ShowMessageFace("elf_fc1",0,0,2,3)
+  ShowMessage("\\n<Claudia>To fight evenly against a succubus. She must have some skill. I wonder where she trained herself?")
+  EndEventProcessing()
+  DefineLabel("143")
+  ShowMessageFace("eva_fc1",2,0,2,4)
+  ShowMessage("\\n<Eva>That was because I was hungry. I'd beat her easily with a full stomach!")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   53
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Bodyguard>Elka himself is a surprisingly skilled warrior. He doesn't actually need bodyguards, but it's just his way of displaying authority.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("98")
+  ShowMessageFace("minikani_fc1",0,0,2,2)
+  ShowMessage("\\n<Amy>So you just stand behind him and scowl at every visitor, do you?")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   54
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Strong Man>Elka told us to let that justice whatever woman be. But she's been interfering with deals and getting in our way.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Strong Man>And what's with her clothing? Even if she's skilled, why is she so shameless?")
+  0()
+
+
+
+EVENT   55
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Black Marketeer>If this war continues any longer, it'll start to affect the wheat market. If wheat production declines, there might not be enough food to go around.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Black Marketeer>A business like ours will suffer along with the market. Manipulating the market through war is a fantasy.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("66")
+  ShowMessageFace("vgirl_fc1",0,0,2,3)
+  ShowMessage("\\n<Vanilla>So the black market has it rough too.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   56
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Thief>A succubus came to our town recently and has been disrupting it ever since. She was seen fighting with that cosplay woman yesterday.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Thief>She is often seen by the well to the west of the town, apparently. I'm talking about the deserted well right next to the inn.")
+  If(1,1024,0,3,0)
+   ShowMessageFace("ruka_fc1",0,0,2,3)
+   ShowMessage("\\n<Luka>A succubus in Monte Carlo? We might want to have a look around that well at some point.")
+   0()
+  EndIf()
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("143")
+  ShowMessageFace("eva_fc1",0,0,2,4)
+  ShowMessage("\\n<Eva>No need to now. I'm getting enough support traveling with you guys.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   57
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Priest>It's my job to deliver holy water to the church. Under a fake company's name, of course. I don't mention the Elka Company.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Priest>...Please keep that a secret from the church.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("531")
+  ShowMessageFace("saniria_fc2",0,0,2,3)
+  ShowMessage("\\n<King of San Ilia>......")
+  ShowMessageFace("",0,0,2,4)
+  ShowMessage("\\n<Priest>I-it can't be. Are you...?!")
+  ShowMessageFace("saniria_fc2",0,0,2,5)
+  ShowMessage("\\n<King of San Ilia>I'm just a passing mecha. Keep the bad deeds in moderation.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   58
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Black Marketeer>I'm responsible for managing the item trade within the Elka Company. Originally, I was a mere merchant, but then Elka took notice of me.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Black Marketeer>I've come this far all thanks to Elka. I'm going to do whatever I can to repay him.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("66")
+  ShowMessageFace("vgirl_fc1",0,0,2,3)
+  ShowMessage("\\n<Vanilla>Because of who I am, I also look up to the black market. But I need to become more skilled in normal trade, too.")
+  EndEventProcessing()
+  DefineLabel("124")
+  ShowMessageFace("arikui_fc1",0,0,2,4)
+  ShowMessage("\\n<Kyona>Hey, do you deal in ants?")
+  ShowMessageFace("",0,0,2,5)
+  ShowMessage("\\n<Black Marketeer>No. Probably because there wouldn't be any buyers...")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   59
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Guard>The only one on the Ilias Continent who can hold a candle to Elka is probably Don Dahlia.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Guard>There were a few skirmishes between them around Port Natalia a while ago, but people are uncertain whether that still goes on over there.")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Guard>Damn, I get horny just remembering her. I'll fap tonight while thinking about those boobs.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("64")
+  ShowMessageFace("pramia_fc1",0,0,2,4)
+  ShowMessage("\\n<Teeny>Boobs boobs boobs. All men ever talk about is boobs.")
+  EndEventProcessing()
+  DefineLabel("72")
+  ShowMessageFace("phoenix_fc1",3,0,2,5)
+  ShowMessage("\\n<Mini>Don is pretty scary. Even though she's sensitive enough to cry when reading romance novels.")
+  ShowMessageFace("",0,0,2,6)
+  ShowMessage("\\n<Guard>Eh? Is that true?!")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   60
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Female Guard>I can't cook for the life of me, but I've been training to be a warrior since I was a child.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Female Guard>Even the men are better than me at cooking. Maybe I should train in housekeeping instead?")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("108")
+  ShowMessageFace("kai_fc1",0,0,2,3)
+  ShowMessage("\\n<Shelly>Even if you train in housekeeping, if you don't have a groom...")
+  ShowMessageFace("",0,0,2,4)
+  ShowMessage("\\n<Female Soldier>Oh, there's men all around me, I'll woo someone in. Ow! Don't squeeze me with your shell!")
+  EndEventProcessing()
+  DefineLabel("136")
+  ShowMessageFace("elf_fc1",2,0,2,5)
+  ShowMessage("\\n<Claudia>Housekeeping? Ah, you mean your skills in bed.")
+  ShowMessageFace("",0,0,2,6)
+  ShowMessage("\\n<Female Soldier>I mean cleaning and cooking! Are perverted things all you think about?")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   61
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Maid>I'm a full-fledged member here. Not only can I wait tables, but I can also participate in combat.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("64")
+  ShowMessageFace("pramia_fc1",0,0,2,2)
+  ShowMessage("\\n<Teeny>Now this is how a proper maid should act.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   62
+ PAGE   1
+  If(1,1001,0,25,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Black Marketeer>The people we are trading with are Grand Noah's army. We ain't gonna sell even a grain of rice to Grangold.")
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Black Marketeer>Our moral code is to not trade with both sides of the same war. Even the black market has its morals.")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("66")
+   ShowMessageFace("vgirl_fc1",0,0,2,3)
+   ShowMessage("\\n<Vanilla>Whether it's the black market or the normal one, trust is important. It's better if your customers don't leave you.")
+   EndEventProcessing()
+   DefineLabel("171")
+   ShowMessageFace("lizardboss_fc1",0,0,2,4)
+   ShowMessage("\\n<Miranda>Rather, trust is even more important in the black market because it's all shady work.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,26,1)
+   ShowMessageFace("",0,0,2,5)
+   ShowMessage("[A dark merchant]")
+   ShowMessage("If it is the war of the devil opponent, all four major powers are counterparties.")
+   ShowMessage("Do not say you are happy with the boom, if you lose, the market is destroyed.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   63
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(181,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   64
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(16,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   65
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(2,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   66
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(357,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   67
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(32,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   68
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(326,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   69
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(334,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   70
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(14,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   71
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventoryArmor(149,0,0,1,false)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   72
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(44,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   73
+ PAGE   1
+  // condition: switch 1075 is ON
+  // condition: switch 1074 is ON
+  If(2,"A",1)
+   ChangeSelfSwitch("A",0)
+   ChangeVariable(1037,1037,1,0,1)
+   0()
+  EndIf()
+  ShowMessageFace("hituzi_fc1",3,0,2,1)
+  ShowMessage("\\n<Mary>MEeeee!!")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("That's our sheep...")
+  ShowMessageFace("hituzi_fc1",3,0,2,3)
+  ShowMessage("\\n<Mary>Uehehehehe...")
+  ShowMessageFace("hituzi_fc1",7,0,2,4)
+  ShowMessage("\\n<Mary>*gulp**gulp*gulp*...")
+  ShowMessageFace("hituzi_fc1",3,0,2,5)
+  ShowMessage("\\n<Mary>Uehehehehe...")
+  ChangeSwitch(31,31,0)
+  If(6,-1,8)
+   205(-1,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x46,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x08,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x08,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x16,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+   0()
+  EndIf()
+  217()
+  205(74,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x13,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x2a,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x08,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x08,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x08,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x08,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x08,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x08,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x08,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x08,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x08,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x08,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x09,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x09,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  205(0,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x08,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x29,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x15,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  RunCommonEvent(312)
+  205(74,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x46,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x22,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x2a,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x06,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x06,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x09,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x09,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x09,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x06,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x06,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x06,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x06,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x06,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x06,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x31,0x3b,0x0c,0x5b,0x06,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x21,0x3b,0x0c,0x5b,0x06,0x69,0x24,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  205(0,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x46,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x22,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x2a,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x06,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x06,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x06,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x09,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x09,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x09,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x06,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x06,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x06,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x06,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x06,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x06,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x2c,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  RunCommonEvent(313)
+  0()
+ PAGE   2
+  // condition: party contains actor #74
+  0()
+ PAGE   3
+  // condition: party contains actor #75
+  0()
+
+
+
+EVENT   74
+ PAGE   1
+  // condition: switch 31 is ON
+  0()
+
+
+
+EVENT   75
+ PAGE   1
+  // condition: variable 1024 >= 7
+  If(0,6,0)
+   ShowMessageFace("sonia_fc1",0,0,2,1)
+   ShowMessage("\\n<Sonya>Eh? Is this a picture?")
+   0()
+  Else()
+   ShowMessageFace("ruka_fc1",0,0,2,2)
+   ShowMessage("\\n<Luka>This... is this meant to be a picture?")
+   0()
+  EndIf()
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("A projector Makina is something only filthy rich people can afford. Moreover, what was reflected in the photo was...")
+  If(0,6,0)
+   ShowMessageFace("sonia_fc3",7,0,2,4)
+   ShowMessage("\\n<Sonya>A red-haired girl and a man. This man... is this a younger Elka?")
+   0()
+  Else()
+   ShowMessageFace("",0,0,2,5)
+   ShowMessage("A red-haired girl and a man... this man looks like a younger Elka.")
+   0()
+  EndIf()
+  ShowMessageFace("ruka_fc1",0,0,2,6)
+  ShowMessage("\\n<Luka>Then, this red-haired girl is...")
+  0()
+
+
+

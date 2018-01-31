@@ -1,0 +1,3 @@
+"ページ自動ゲット" -> "Page automatic get"
+"魔導書のページを手に入れた！" -> "I got a magical book page!"
+"魔導書のページを2つ手に入れた！" -> "I got two pages of magical books!"

@@ -1,0 +1,4 @@
+"いYaa" -> "Ya"
+"移動中の姿を見られてしまうなんて……" -> "I can not see the figure while moving ......"
+"これをあげるから、見逃して。" -> "I'll give you this, so do not miss it."
+"移動中よ……" -> "Moving ......"

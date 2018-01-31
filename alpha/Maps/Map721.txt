@@ -1,0 +1,2411 @@
+
+DisplayName "Grangold"
+
+
+
+EVENT   1
+ PAGE   1
+  0()
+
+
+
+EVENT   2
+ PAGE   1
+  0()
+
+
+
+EVENT   3
+ PAGE   1
+  0()
+
+
+
+EVENT   4
+ PAGE   1
+  0()
+
+
+
+EVENT   5
+ PAGE   1
+  0()
+
+
+
+EVENT   6
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("The door is tightly closed ......")
+  0()
+
+
+
+EVENT   7
+ PAGE   1
+  0()
+
+
+
+EVENT   8
+ PAGE   1
+  0()
+
+
+
+EVENT   9
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("The door is tightly closed ......")
+  0()
+
+
+
+EVENT   10
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("The door is tightly closed ......")
+  0()
+
+
+
+EVENT   11
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("The door is tightly closed ......")
+  0()
+
+
+
+EVENT   12
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("The door is tightly closed ......")
+  0()
+
+
+
+EVENT   13
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("The door is tightly closed ......")
+  0()
+
+
+
+EVENT   14
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("The door is tightly closed ......")
+  0()
+
+
+
+EVENT   15
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("The door is tightly closed ......")
+  0()
+
+
+
+EVENT   16
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("The door is tightly closed ......")
+  0()
+
+
+
+EVENT   17
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("The door is tightly closed ......")
+  0()
+
+
+
+EVENT   18
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("The door is tightly closed ......")
+  0()
+
+
+
+EVENT   19
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,2,234,153,2,0)
+  0()
+
+
+
+EVENT   20
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,2,234,153,2,0)
+  0()
+
+
+
+EVENT   21
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,2,234,153,2,0)
+  0()
+
+
+
+EVENT   22
+ PAGE   1
+  0()
+
+
+
+EVENT   23
+ PAGE   1
+  ShowMessageFace("ant_fc1",0,0,2,1)
+  ShowMessage("【Ali Girl】")
+  ShowMessage("Coco-Cola Ha Ha Sunaai!")
+  0()
+
+
+
+EVENT   24
+ PAGE   1
+  ShowMessageFace("ant_fc1",0,0,2,1)
+  ShowMessage("【Ali Girl】")
+  ShowMessage("Coco-Cola Ha Ha Sunaai!")
+  0()
+
+
+
+EVENT   25
+ PAGE   1
+  ShowMessageFace("ant_fc1",0,0,2,1)
+  ShowMessage("【Ali Girl】")
+  ShowMessage("Coco-Cola Ha Ha Sunaai!")
+  0()
+
+
+
+EVENT   26
+ PAGE   1
+  ShowMessageFace("taran_fc1",0,0,2,1)
+  ShowMessage("【Tarantula girl】")
+  ShowMessage("........................")
+  0()
+
+
+
+EVENT   27
+ PAGE   1
+  ShowMessageFace("arachnes_fc2",0,0,2,1)
+  ShowMessage("【Arachne】")
+  ShowMessage("... ....")
+  0()
+
+
+
+EVENT   28
+ PAGE   1
+  ShowMessageFace("kumo_fc1",0,0,2,1)
+  ShowMessage("【Spider girl】")
+  ShowMessage("........................")
+  0()
+
+
+
+EVENT   29
+ PAGE   1
+  ShowMessageFace("arachnes_fc2",0,0,2,1)
+  ShowMessage("【Arachne】")
+  ShowMessage("... ....")
+  0()
+
+
+
+EVENT   30
+ PAGE   1
+  ShowMessageFace("taran_fc1",0,0,2,1)
+  ShowMessage("【Tarantula girl】")
+  ShowMessage("........................")
+  0()
+
+
+
+EVENT   31
+ PAGE   1
+  ShowMessageFace("arachnes_fc2",0,0,2,1)
+  ShowMessage("【Arachne】")
+  ShowMessage("... ....")
+  0()
+
+
+
+EVENT   32
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("The door is tightly closed ......")
+  0()
+
+
+
+EVENT   34
+ PAGE   1
+  // condition: switch 33 is ON
+  0()
+
+
+
+EVENT   35
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,2,234,153,2,0)
+  0()
+
+
+
+EVENT   36
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,2,234,153,2,0)
+  0()
+
+
+
+EVENT   37
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,2,234,153,2,0)
+  0()
+
+
+
+EVENT   38
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,2,234,153,2,0)
+  0()
+
+
+
+EVENT   39
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,2,234,153,2,0)
+  0()
+
+
+
+EVENT   40
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,2,234,153,2,0)
+  0()
+
+
+
+EVENT   41
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,2,234,153,2,0)
+  0()
+
+
+
+EVENT   42
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,2,234,153,2,0)
+  0()
+
+
+
+EVENT   43
+ PAGE   1
+  If(0,2243,1)
+   ShowMessageFace("oogumo_fc1",0,0,2,1)
+   ShowMessage("【Great spider】")
+   ShowMessage("Hello, come out early.")
+   ShowMessage("I'll pull your body fluid slowly ......")
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("【A woman selling bread】")
+   ShowMessage("No……")
+   0()
+  EndIf()
+  If(0,2243,0)
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("【A woman selling bread】")
+   ShowMessage("Evacuate, you can escape ... ...")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   44
+ PAGE   1
+  ShowMessageFace("ruka_fc1",0,0,2,1)
+  ShowMessage("【Luke】")
+  ShowMessage("The spiders' demons have invaded the castle town!")
+  ShowMessage("Ali girls seem to be stepping on, but the flag color is bad ...!")
+  If(4,268,0)
+   ShowMessageFace("queenant_fc1",1,0,2,2)
+   ShowMessage("【Antine Aun】")
+   ShowMessage("What is that ... ....")
+   ShowMessage("Immediately, I have to save my girls!")
+   0()
+  EndIf()
+  If(4,45,0)
+   ShowMessageFace("alicetromeria_fc1",4,0,2,3)
+   ShowMessage("【Aristo Romelia】")
+   ShowMessage("Ali girl is defending this town, does not he?")
+   ShowMessage("That it is a dispute with Arakune ... .... Uhu.")
+   0()
+  EndIf()
+  If(0,4,0)
+   ShowMessageFace("alice_fc5",2,0,2,4)
+   ShowMessage("【Alice】")
+   ShowMessage("It is troubling whether Arakune's army.")
+   ShowMessage("High magical power among the magic system to excellent physical ability, nothing more than extraordinary cruelty ......")
+   ShowMessageFace("alice_fc5",2,0,2,5)
+   ShowMessage("【Alice】")
+   ShowMessage("From this sign, Spider's Princess who is Queen of Arakune should have come.")
+   ShowMessage("Tear him down and drop off his head!")
+   0()
+  EndIf()
+  If(0,5,0)
+   ShowMessageFace("iriasu_fc4",7,0,2,6)
+   ShowMessage("【Iliad】")
+   ShowMessage("Arakune's army, it is really awkward.")
+   ShowMessage("Magical power excelled among magmas to excellent physical ability, and cruel nature ......")
+   ShowMessageFace("iriasu_fc4",7,0,2,7)
+   ShowMessage("【Iliad】")
+   ShowMessage("From the signs, there must be Spider Princess who is Queen of Arachne.")
+   ShowMessage("If you challenge those, you should turn it into a crowded crowd like a spider corps!")
+   0()
+  EndIf()
+  If(4,104,0)
+   ShowMessageFace("kumo_fc1",2,0,2,8)
+   ShowMessage("【Raccoon】")
+   ShowMessage("Do you fight Spider Princess ... ...")
+   ShowMessage("Too much, I do not feel like it.")
+   0()
+  EndIf()
+  If(0,6,0)
+   ShowMessageFace("sonia_fc2",2,0,2,9)
+   ShowMessage("【Sonia】")
+   ShowMessage("But is not the enemy army heading for the castle of Grangolde?")
+   ShowMessage("Over there, the inside has completely collapsed in the previous battle ......")
+   0()
+  Else()
+   ShowMessageFace("ruka_fc1",0,0,2,10)
+   ShowMessage("【Luke】")
+   ShowMessage("But is not the enemy army heading for the castle of Grangolde?")
+   ShowMessage("Over there, the inside has completely collapsed in the previous battle ......")
+   0()
+  EndIf()
+  If(0,4,0)
+   ShowMessageFace("alice_fc5",0,0,2,11)
+   ShowMessage("【Alice】")
+   ShowMessage("Spiders' guys probably do not know that the castle is not functioning.")
+   ShowMessage("It is fortunate that the strategic goal is wrong ... ...")
+   ShowMessageFace("alice_fc5",2,0,2,12)
+   ShowMessage("【Alice】")
+   ShowMessage("If you know that government functions are in that warehouse, you will be destroyed at once.")
+   ShowMessage("Before that happens, a spider's princess will be avenged!")
+   0()
+  EndIf()
+  If(0,5,0)
+   ShowMessageFace("iriasu_fc4",2,0,2,13)
+   ShowMessage("【Iliad】")
+   ShowMessage("The enemy army probably does not know that the castle is not functioning.")
+   ShowMessage("Although it is convenient to mistake strategy goals ... ...")
+   ShowMessageFace("iriasu_fc4",7,0,2,14)
+   ShowMessage("【Iliad】")
+   ShowMessage("If we are informed that the government function is in that warehouse, it will be destroyed immediately.")
+   ShowMessage("Before that happens, let 's catch the Spider' s Princess!")
+   0()
+  EndIf()
+  If(4,275,0)
+   ShowMessageFace("beelzebub_fc1",0,0,2,15)
+   ShowMessage("【Barrela】")
+   ShowMessage("Eight-legged buddies have made their bread so far ... ...")
+   ShowMessage("I have to educate a little.")
+   0()
+  EndIf()
+  If(4,268,0)
+   ShowMessageFace("queenant_fc1",1,0,2,16)
+   ShowMessage("【Antine Aun】")
+   ShowMessage("Now, I will slash the enemy 's head.")
+   ShowMessage("It is a bit more patience, my girls ......")
+   0()
+  EndIf()
+  ShowMessageFace("ruka_fc1",0,0,2,17)
+  ShowMessage("【Luke】")
+  ShowMessage("OK, let's go!")
+  ChangeSelfSwitch("A",0)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   45
+ PAGE   1
+  If(0,2245,1)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("【Magic Engineer】")
+   ShowMessage("It is bad, there are too many numbers ...!")
+   0()
+  EndIf()
+  If(0,2245,0)
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("【Magic Engineer】")
+   ShowMessage("Even trying for maintenance, the material is very few ... ...")
+   ShowMessage("I wonder if I fell back and forth ... ...")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   46
+ PAGE   1
+  ShowMessageFace("ant_fc1",0,0,2,1)
+  ShowMessage("【Ali Girl】")
+  ShowMessage("Coco-Cola Ha Ha Sunaai!")
+  0()
+
+
+
+EVENT   47
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("[Soldier]")
+  ShowMessage("Fortunately the enemy does not know that the castle is not working ......")
+  ShowMessage("So it dares to strengthen the defense of the castle, letting the enemy's attention to it ... ...")
+  If(0,4,0)
+   ShowMessageFace("alice_fc5",2,0,2,2)
+   ShowMessage("【Alice】")
+   ShowMessage("The positive movement is going well ...")
+   ShowMessage("In this gap, I will avert Spider Princess!")
+   0()
+  EndIf()
+  If(0,5,0)
+   ShowMessageFace("iriasu_fc4",7,0,2,3)
+   ShowMessage("【Iliad】")
+   ShowMessage("The positive movement, it is going well.")
+   ShowMessage("Let 's catch the Spider' s Princess in this gap!")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   48
+ PAGE   1
+  ShowMessageFace("ant_fc1",1,0,2,1)
+  ShowMessage("【Ali Girl】")
+  ShowMessage("Moving Kenai ...")
+  0()
+
+
+
+EVENT   49
+ PAGE   1
+  ShowMessageFace("ant_fc1",0,0,2,1)
+  ShowMessage("【Ali Girl】")
+  ShowMessage("Enemy, Attack Sleep ......")
+  ShowMessageFace("arachnes_fc2",2,0,2,2)
+  ShowMessage("【Arachne】")
+  ShowMessage("Why is Ali girls defending the castle of man ...?")
+  0()
+
+
+
+EVENT   50
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【middle aged】")
+  ShowMessage("Grangold is a series of sufferings ... ...")
+  0()
+
+
+
+EVENT   51
+ PAGE   1
+  ShowMessageFace("ant_fc1",1,0,2,1)
+  ShowMessage("【Ali Girl】")
+  ShowMessage("Scratches ...... Heavy ... ....")
+  0()
+
+
+
+EVENT   52
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("[Soldier]")
+  ShowMessage("Haha ... ...")
+  ShowMessage("Here for a while, is it okay ...?")
+  0()
+
+
+
+EVENT   53
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("State warehouse")
+  ShowMessage("no Trespassing")
+  0()
+
+
+
+EVENT   54
+ PAGE   1
+  0()
+
+
+
+EVENT   55
+ PAGE   1
+  ShowMessageFace("kumo_fc1",0,0,2,1)
+  ShowMessage("【Spider girl】")
+  ShowMessage("You too will make cocoon with a sticky thread and eat it!")
+  If(4,235,0)
+   ShowMessageFace("kaiko_fc1",0,0,2,2)
+   ShowMessage("【silk】")
+   ShowMessage("Let's make it a cocoon there ... ...")
+   0()
+  EndIf()
+  Battle(0,124,false,false)
+  TemporaryRemoveEvent()
+  0()
+
+
+
+EVENT   56
+ PAGE   1
+  ShowMessageFace("ant_fc1",0,0,2,1)
+  ShowMessage("【Ali Girl】")
+  ShowMessage("Enemy, Attack Sleep ......")
+  ShowMessageFace("arachnes_fc2",2,0,2,2)
+  ShowMessage("【Arachne】")
+  ShowMessage("Why is Ali girls defending the castle of man ...?")
+  0()
+
+
+
+EVENT   57
+ PAGE   1
+  ShowMessageFace("ant_fc1",0,0,2,1)
+  ShowMessage("【Ali Girl】")
+  ShowMessage("Kono Road H sealed up!")
+  0()
+
+
+
+EVENT   58
+ PAGE   1
+  ShowMessageFace("bgolem_fc1",1,0,2,1)
+  ShowMessage("【Black Golem Musume】")
+  ShowMessage("Do not lick the magic skill of Grangold!")
+  ShowMessageFace("arachnes_fc2",2,0,2,2)
+  ShowMessage("【Arachne】")
+  ShowMessage("There are a lot of golems on the ground ... ... Do not disturb!")
+  0()
+
+
+
+EVENT   59
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Bard")
+  ShowMessage("I hear a song of destruction ...")
+  0()
+
+
+
+EVENT   60
+ PAGE   1
+  ShowMessageFace("atlach_fc1",0,0,2,1)
+  ShowMessage("【Nakua】")
+  ShowMessage("... ....")
+  0()
+
+
+
+EVENT   61
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("[Old Man]")
+  ShowMessage("Welcome back ...")
+  0()
+
+
+
+EVENT   62
+ PAGE   1
+  If(0,2241,1)
+   ShowMessageFace("kumo_fc1",0,0,2,1)
+   ShowMessage("【Spider girl】")
+   ShowMessage("I will roll it round and we will squeeze out semen ... ...")
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("Youth")
+   ShowMessage("Or stop ... ...!! Oh, the spider's thread is ... Ah! !")
+   0()
+  EndIf()
+  If(0,2241,0)
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("Youth")
+   ShowMessage("The body is sticky with spider thread ... ...")
+   ShowMessage("It feels as if it is going to be addicted ... ...")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   63
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Town girl")
+  ShowMessage("Please have herbs ...!")
+  0()
+
+
+
+EVENT   64
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("[Soldier]")
+  ShowMessage("I could not be a force, pulled my feet ......")
+  ShowMessage("Oh, I am miserable ... ...")
+  0()
+
+
+
+EVENT   65
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Girl】")
+  ShowMessage("Ali, all right! What?")
+  0()
+
+
+
+EVENT   66
+ PAGE   1
+  ShowMessageFace("ant_fc1",0,0,2,1)
+  ShowMessage("【Ali Girl】")
+  ShowMessage("Coco-Cola Ha Ha Sunaai!")
+  0()
+
+
+
+EVENT   67
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Youth")
+  ShowMessage("Ahuuuu ...")
+  0()
+
+
+
+EVENT   68
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("[Soldier]")
+  ShowMessage("Cut ...... The spider thread is entwined and can not be taken ... ...")
+  0()
+
+
+
+EVENT   69
+ PAGE   1
+  If(0,2242,1)
+   ShowMessageFace("taran_fc1",1,0,2,1)
+   ShowMessage("【Tarantula girl】")
+   ShowMessage("It feels good ...")
+   ShowMessage("I still have plenty to go out ...")
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("【Man】")
+   ShowMessage("Huh ...! Stop it ... ...! !")
+   0()
+  EndIf()
+  If(0,2242,0)
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("【Man】")
+   ShowMessage("To be fucked by demons ......")
+   ShowMessage("Is it such amazing ...?")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   70
+ PAGE   1
+  ShowMessageFace("ant_fc1",0,0,2,1)
+  ShowMessage("【Ali Girl】")
+  ShowMessage("Coco-Cola Ha Ha Sunaai!")
+  0()
+
+
+
+EVENT   71
+ PAGE   1
+  ShowMessageFace("ant_fc1",0,0,2,1)
+  ShowMessage("【Ali Girl】")
+  ShowMessage("Coco-Cola Ha Ha Sunaai!")
+  0()
+
+
+
+EVENT   72
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【middle aged】")
+  ShowMessage("Being cocoon ......, Feeling comfortable ......")
+  0()
+
+
+
+EVENT   73
+ PAGE   1
+  ShowMessageFace("ant_fc1",0,0,2,1)
+  ShowMessage("【Ali Girl】")
+  ShowMessage("Kono Road H sealed up!")
+  0()
+
+
+
+EVENT   74
+ PAGE   1
+  ShowMessageFace("ant_fc1",0,0,2,1)
+  ShowMessage("【Ali Girl】")
+  ShowMessage("Coco-Cola Ha Ha Sunaai!")
+  0()
+
+EVENT   75
+ PAGE   1
+  ShowMessageFace("arachnes_fc2",0,0,2,1)
+  ShowMessage("【Arachne】")
+  ShowMessage("... ....")
+  0()
+
+
+
+EVENT   76
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Travel warrior】")
+  ShowMessage("In such a fuss ... ... to get caught ... ...")
+  0()
+
+
+
+EVENT   77
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【clown】")
+  ShowMessage("With sticky thread ...... It can not move ...")
+  0()
+
+
+
+EVENT   78
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Youth")
+  ShowMessage("The cocoon of viscous yarn, it feels too good ...")
+  ShowMessage("Oh, oooh ......")
+  0()
+
+
+
+EVENT   79
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("[Soldier]")
+  ShowMessage("Going through ... ...")
+  0()
+
+
+
+EVENT   80
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("[Soldier]")
+  ShowMessage("Is it possible for a human soldier to fight properly ...?")
+  0()
+
+
+
+EVENT   81
+ PAGE   1
+  ShowMessageFace("ant_fc1",0,0,2,1)
+  ShowMessage("【Ali Girl】")
+  ShowMessage("Kono Road H sealed up!")
+  0()
+
+
+
+EVENT   82
+ PAGE   1
+  // condition: switch 37 is ON
+  0()
+
+
+
+EVENT   83
+ PAGE   1
+  ShowMessageFace("taran_fc1",0,0,2,1)
+  ShowMessage("【Tarantula girl】")
+  ShowMessage("You can prey on you ... ....?")
+  If(4,536,0)
+   ShowMessageFace("serene_fc1",3,0,2,2)
+   ShowMessage("【Selene】")
+   ShowMessage("I will reduce the number of legs.")
+   0()
+  EndIf()
+  Battle(0,215,false,false)
+  TemporaryRemoveEvent()
+  0()
+
+
+
+EVENT   84
+ PAGE   1
+  ShowMessageFace("mikoarachne_fc1",0,0,2,1)
+  ShowMessage("【Maiden Arachne】")
+  ShowMessage("A heroic brave, it's found ♪")
+  ShowMessage("Can I wrap up your body, or ...?")
+  If(4,226,0)
+   ShowMessageFace("sirohebisama_fc1",0,0,2,2)
+   ShowMessage("【White Snake】")
+   ShowMessage("Well, I will take it back!")
+   0()
+  EndIf()
+  Battle(0,643,false,false)
+  TemporaryRemoveEvent()
+  0()
+
+
+
+EVENT   85
+ PAGE   1
+  ShowMessageFace("ant_fc1",0,0,2,1)
+  ShowMessage("【Ali Girl】")
+  ShowMessage("Coco-Cola Ha Ha Sunaai!")
+  0()
+
+
+
+EVENT   86
+ PAGE   1
+  ShowMessageFace("oogumo_fc1",0,0,2,1)
+  ShowMessage("【Great spider】")
+  ShowMessage("Hello, come out early.")
+  ShowMessage("I'll pull your body fluid slowly ......")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("【A woman selling bread】")
+  ShowMessage("No……")
+  ShowMessageFace("ruka_fc1",0,0,2,3)
+  ShowMessage("【Luke】")
+  ShowMessage("Stop it!")
+  If(4,266,0)
+   ShowMessageFace("kunoitisanbi_fc1",0,0,2,4)
+   ShowMessage("【Minamo】")
+   ShowMessage("Those who hurt the innocent people ... ... rebuke them.")
+   0()
+  EndIf()
+  Battle(0,257,false,false)
+  ChangeSwitch(2243,2243,0)
+  ShowMessageFace("",0,0,2,5)
+  ShowMessage("【A woman selling bread】")
+  ShowMessage("Thank you!")
+  ShowMessage("It is bread for sale, but please accept it!")
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeInventory_Item(343,0,0,3)
+  ChangeInventory_Item(345,0,0,5)
+  ChangeInventory_Item(346,0,0,2)
+  ChangeInventory_Item(348,0,0,2)
+  ChangeInventory_Item(350,0,0,3)
+  ChangeInventory_Item(351,0,0,3)
+  ChangeInventory_Item(352,0,0,2)
+  EndEventProcessing()
+  0()
+ PAGE   2
+  // condition: switch 2243 is ON
+  0()
+
+
+
+EVENT   87
+ PAGE   1
+  ShowMessageFace("oogumo_fc1",0,0,2,1)
+  ShowMessage("【Great spider】")
+  ShowMessage("Is he a brave ...? I'll make you prey, too!")
+  If(4,196,0)
+   ShowMessageFace("s_mermaid_fc1",0,0,2,2)
+   ShowMessage("【mink】")
+   ShowMessage("Is that all I want to say?")
+   ShowMessage("Hara, if!")
+   0()
+  EndIf()
+  Battle(0,257,false,false)
+  TemporaryRemoveEvent()
+  0()
+
+
+
+EVENT   88
+ PAGE   1
+  ShowMessageFace("golem_fc1",0,0,2,1)
+  ShowMessage("【Golem girl】")
+  ShowMessage("Gogogogogo ......")
+  ShowMessageFace("arachnes_fc2",2,0,2,2)
+  ShowMessage("【Arakune A】")
+  ShowMessage("A little, why are there giants ...?!")
+  ShowMessageFace("arachnes_fc3",0,0,2,3)
+  ShowMessage("【Arakune B】")
+  ShowMessage("But if everyone wants it ...!")
+  ShowMessageFace("",0,0,2,4)
+  ShowMessage("【Magic Engineer】")
+  ShowMessage("It is bad, there are too many numbers ...!")
+  ShowMessageFace("ruka_fc1",0,0,2,5)
+  ShowMessage("【Luke】")
+  ShowMessage("I am the opponent!")
+  If(4,262,0)
+   ShowMessageFace("golem_fc1",0,0,2,6)
+   ShowMessage("【Emesu】")
+   ShowMessage("Gogogogogo ......")
+   0()
+  EndIf()
+  Battle(0,803,false,false)
+  ChangeSwitch(2245,2245,0)
+  ShowMessageFace("",0,0,2,7)
+  ShowMessage("【Magic Engineer】")
+  ShowMessage("It was saved, we made use of this ... ...")
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeInventory_Item(9,0,0,1)
+  EndEventProcessing()
+  0()
+ PAGE   2
+  // condition: switch 2245 is ON
+  0()
+
+
+
+EVENT   89
+ PAGE   1
+  ShowMessageFace("arachnes_fc2",0,0,2,1)
+  ShowMessage("【Arachne】")
+  ShowMessage("... ....")
+  0()
+
+
+
+EVENT   90
+ PAGE   1
+  ShowMessageFace("arachnes_fc2",0,0,2,1)
+  ShowMessage("【Arakune A】")
+  ShowMessage("Hey, do me a partner of you!")
+  ShowMessageFace("arachnes_fc3",0,0,2,2)
+  ShowMessage("【Arakune B】")
+  ShowMessage("Everyone, I will roll around in a circle ... right?")
+  If(4,237,0)
+   ShowMessageFace("alplants_fc1",0,0,2,3)
+   ShowMessage("【Al plants】")
+   ShowMessage("If it is number of heads, we will not lose this ... ...!")
+   0()
+  EndIf()
+  Battle(0,803,false,false)
+  TemporaryRemoveEvent()
+  0()
+
+
+
+EVENT   91
+ PAGE   1
+  ShowMessageFace("ant_fc1",0,0,2,1)
+  ShowMessage("【Ali Girl】")
+  ShowMessage("Kono Road H sealed up!")
+  0()
+
+
+
+EVENT   92
+ PAGE   1
+  ShowMessageFace("ant_fc1",0,0,2,1)
+  ShowMessage("【Ali Girl】")
+  ShowMessage("Kono Road H sealed up!")
+  0()
+
+
+
+EVENT   93
+ PAGE   1
+  ShowMessageFace("ant_fc1",0,0,2,1)
+  ShowMessage("【Ali Girl】")
+  ShowMessage("Kono Road H sealed up!")
+  0()
+
+
+
+EVENT   94
+ PAGE   1
+  ShowMessageFace("atlach_fc1",0,0,2,1)
+  ShowMessage("【Nakua】")
+  ShowMessage("... ....")
+  0()
+
+
+
+EVENT   95
+ PAGE   1
+  If(0,2245,1)
+   ShowMessageFace("golem_fc1",0,0,2,1)
+   ShowMessage("【Golem girl】")
+   ShowMessage("Gogogogogo ......")
+   ShowMessageFace("arachnes_fc2",2,0,2,2)
+   ShowMessage("【Arakune A】")
+   ShowMessage("A little, why are there giants ...?!")
+   ShowMessageFace("arachnes_fc3",0,0,2,3)
+   ShowMessage("【Arakune B】")
+   ShowMessage("But if everyone wants it ...!")
+   ShowMessageFace("",0,0,2,4)
+   ShowMessage("【Magic Engineer】")
+   ShowMessage("It is bad, there are too many numbers ...!")
+   0()
+  EndIf()
+  If(0,2245,0)
+   ShowMessageFace("golem_fc1",0,0,2,5)
+   ShowMessage("【Golem girl】")
+   ShowMessage("Gogogogogo ......")
+   ShowMessageFace("",0,0,2,6)
+   ShowMessage("【Magic Engineer】")
+   ShowMessage("I'm covered with mucilage and it has poor movement ... ...")
+   ShowMessage("I have to do maintenance ......")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   96
+ PAGE   1
+  ShowMessageFace("kumo_fc1",0,0,2,1)
+  ShowMessage("【Spider girl】")
+  ShowMessage("I will roll it round and we will squeeze out semen ... ...")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("Youth")
+  ShowMessage("Or stop ... ...!! Oh, the spider's thread is ... Ah! !")
+  ShowMessageFace("ruka_fc1",0,0,2,3)
+  ShowMessage("【Luke】")
+  ShowMessage("Stop it!")
+  If(4,289,0)
+   ShowMessageFace("maidscyulla_fc1",1,0,2,4)
+   ShowMessage("【run】")
+   ShowMessage("Let's train a bit ... ...")
+   0()
+  EndIf()
+  Battle(0,124,false,false)
+  ChangeSwitch(2241,2241,0)
+  ShowMessageFace("",0,0,2,5)
+  ShowMessage("Youth")
+  ShowMessage("A little more, it was about to be rolled around ... ...")
+  ShowMessage("Please accept this, thank you.")
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeInventory_Item(27,0,0,1)
+  EndEventProcessing()
+  0()
+ PAGE   2
+  // condition: switch 2241 is ON
+  0()
+
+
+
+EVENT   97
+ PAGE   1
+  ShowMessageFace("golem_fc1",0,0,2,1)
+  ShowMessage("【Golem girl】")
+  ShowMessage("Gogogogogo ......")
+  ShowMessageFace("arachnes_fc2",2,0,2,2)
+  ShowMessage("【Arakune A】")
+  ShowMessage("A little, why are there giants ...?!")
+  ShowMessageFace("arachnes_fc3",0,0,2,3)
+  ShowMessage("【Arakune B】")
+  ShowMessage("But if everyone wants it ...!")
+  ShowMessageFace("",0,0,2,4)
+  ShowMessage("【Magic Engineer】")
+  ShowMessage("It is bad, there are too many numbers ...!")
+  ShowMessageFace("ruka_fc1",0,0,2,5)
+  ShowMessage("【Luke】")
+  ShowMessage("I am the opponent!")
+  If(4,262,0)
+   ShowMessageFace("golem_fc1",0,0,2,6)
+   ShowMessage("【Emesu】")
+   ShowMessage("Gogogogogo ......")
+   0()
+  EndIf()
+  Battle(0,803,false,false)
+  ChangeSwitch(2245,2245,0)
+  ShowMessageFace("",0,0,2,7)
+  ShowMessage("【Magic Engineer】")
+  ShowMessage("It was saved, we made use of this ... ...")
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeInventory_Item(9,0,0,1)
+  EndEventProcessing()
+  0()
+ PAGE   2
+  // condition: switch 2245 is ON
+  0()
+
+
+
+EVENT   98
+ PAGE   1
+  ShowMessageFace("ant_fc1",0,0,2,1)
+  ShowMessage("【Ali Girl】")
+  ShowMessage("Kono Road H sealed up!")
+  0()
+
+
+
+EVENT   99
+ PAGE   1
+  ShowMessageFace("taran_fc1",1,0,2,1)
+  ShowMessage("【Tarantula girl】")
+  ShowMessage("It feels good ...")
+  ShowMessage("I still have plenty to go out ...")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("【Man】")
+  ShowMessage("Huh ...! Stop it ... ...! !")
+  ShowMessageFace("ruka_fc1",0,0,2,3)
+  ShowMessage("【Luke】")
+  ShowMessage("Stop it!")
+  If(4,245,0)
+   ShowMessageFace("queenbee_fc1",2,0,2,4)
+   ShowMessage("【Honey Riba】")
+   ShowMessage("Such barbarity, do not impress ... ...")
+   0()
+  EndIf()
+  Battle(0,215,false,false)
+  ChangeSwitch(2242,2242,0)
+  ShowMessageFace("",0,0,2,5)
+  ShowMessage("【Man】")
+  ShowMessage("Oh, thank you ....")
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeInventory_Item(22,0,0,1)
+  EndEventProcessing()
+  0()
+ PAGE   2
+  // condition: switch 2242 is ON
+  0()
+
+
+
+EVENT   100
+ PAGE   1
+  ShowMessageFace("mikoarachne_fc1",0,0,2,1)
+  ShowMessage("【Maiden Arachne】")
+  ShowMessage("Hey, let's copulate with me ...")
+  ShowMessage("Because I will wind up plenty ... ... right?")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("Youth")
+  ShowMessage("Do not do it! No ... !")
+  ShowMessageFace("ruka_fc1",0,0,2,3)
+  ShowMessage("【Luke】")
+  ShowMessage("Stop it!")
+  If(4,301,0)
+   ShowMessageFace("tora_fc1",0,0,2,4)
+   ShowMessage("【Teenan】")
+   ShowMessage("Such lord, forgive me!")
+   0()
+  EndIf()
+  Battle(0,643,false,false)
+  ChangeSwitch(2244,2244,0)
+  ShowMessageFace("",0,0,2,5)
+  ShowMessage("Youth")
+  ShowMessage("Oh, it was a dangerous place ......")
+  ShowMessage("Sorry for a moment.")
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeInventory_Item(4,0,0,1)
+  EndEventProcessing()
+  0()
+ PAGE   2
+  // condition: switch 2244 is ON
+  0()
+
+
+
+EVENT   101
+ PAGE   1
+  If(0,2244,1)
+   ShowMessageFace("mikoarachne_fc1",0,0,2,1)
+   ShowMessage("【Maiden Arachne】")
+   ShowMessage("Hey, let's copulate with me ...")
+   ShowMessage("Because I will wind up plenty ... ... right?")
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("Youth")
+   ShowMessage("Do not do it! No ... !")
+   0()
+  EndIf()
+  If(0,2244,0)
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("Youth")
+   ShowMessage("Perhaps I wanted to be rolled a bit ......")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   102
+ PAGE   1
+  ShowMessageFace("ant_fc1",0,0,2,1)
+  ShowMessage("【Ali Girl】")
+  ShowMessage("Kono Road H sealed up!")
+  0()
+
+
+
+EVENT   103
+ PAGE   1
+  If(0,4,0)
+   ShowMessageFace("alice_fc5",2,0,2,1)
+   ShowMessage("【Alice】")
+   ShowMessage("The struggle with enemy ally, the road is blocked.")
+   ShowMessage("I will go from another place!")
+   0()
+  EndIf()
+  If(0,5,0)
+   ShowMessageFace("iriasu_fc4",7,0,2,2)
+   ShowMessage("【Iliad】")
+   ShowMessage("The struggle with enemy ally, the road is in a blocked state ...")
+   ShowMessage("Let's proceed from another place!")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   104
+ PAGE   1
+  If(0,4,0)
+   ShowMessageFace("alice_fc5",2,0,2,1)
+   ShowMessage("【Alice】")
+   ShowMessage("The struggle with enemy ally, the road is blocked.")
+   ShowMessage("I will go from another place!")
+   0()
+  EndIf()
+  If(0,5,0)
+   ShowMessageFace("iriasu_fc4",7,0,2,2)
+   ShowMessage("【Iliad】")
+   ShowMessage("The struggle with enemy ally, the road is in a blocked state ...")
+   ShowMessage("Let's proceed from another place!")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   105
+ PAGE   1
+  If(0,4,0)
+   ShowMessageFace("alice_fc5",2,0,2,1)
+   ShowMessage("【Alice】")
+   ShowMessage("The struggle with enemy ally, the road is blocked.")
+   ShowMessage("I will go from another place!")
+   0()
+  EndIf()
+  If(0,5,0)
+   ShowMessageFace("iriasu_fc4",7,0,2,2)
+   ShowMessage("【Iliad】")
+   ShowMessage("The struggle with enemy ally, the road is in a blocked state ...")
+   ShowMessage("Let's proceed from another place!")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   106
+ PAGE   1
+  0()
+
+
+
+EVENT   107
+ PAGE   1
+  ShowMessageFace("golem_fc1",0,0,2,1)
+  ShowMessage("【Golem girl】")
+  ShowMessage("Gogogogogo ......")
+  ShowMessageFace("arachnes_fc2",2,0,2,2)
+  ShowMessage("【Arakune A】")
+  ShowMessage("A little, why are there giants ...?!")
+  ShowMessageFace("arachnes_fc3",0,0,2,3)
+  ShowMessage("【Arakune B】")
+  ShowMessage("But if everyone wants it ...!")
+  ShowMessageFace("",0,0,2,4)
+  ShowMessage("【Magic Engineer】")
+  ShowMessage("It is bad, there are too many numbers ...!")
+  ShowMessageFace("ruka_fc1",0,0,2,5)
+  ShowMessage("【Luke】")
+  ShowMessage("I am the opponent!")
+  If(4,262,0)
+   ShowMessageFace("golem_fc1",0,0,2,6)
+   ShowMessage("【Emesu】")
+   ShowMessage("Gogogogogo ......")
+   0()
+  EndIf()
+  Battle(0,803,false,false)
+  ChangeSwitch(2245,2245,0)
+  ShowMessageFace("",0,0,2,7)
+  ShowMessage("【Magic Engineer】")
+  ShowMessage("It was saved, we made use of this ... ...")
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeInventory_Item(9,0,0,1)
+  EndEventProcessing()
+  0()
+ PAGE   2
+  // condition: switch 2245 is ON
+  0()
+
+
+
+EVENT   108
+ PAGE   1
+  0()
+
+
+
+EVENT   109
+ PAGE   1
+  0()
+
+
+
+EVENT   110
+ PAGE   1
+  0()
+
+
+
+EVENT   111
+ PAGE   1
+  ShowMessageFace("ant_fc1",0,0,2,1)
+  ShowMessage("【Ali Girl】")
+  ShowMessage("Coco-Cola Ha Ha Sunaai!")
+  0()
+
+
+
+EVENT   113
+ PAGE   1
+  ShowMessageFace("ant_fc1",0,0,2,1)
+  ShowMessage("【Ali Girl】")
+  ShowMessage("Kono Road H sealed up!")
+  0()
+
+
+
+EVENT   114
+ PAGE   1
+  ShowMessageFace("kumo_fc1",0,0,2,1)
+  ShowMessage("【Spider girl】")
+  ShowMessage("........................")
+  0()
+
+
+
+EVENT   115
+ PAGE   1
+  ShowMessageFace("taran_fc1",0,0,2,1)
+  ShowMessage("【Tarantula girl】")
+  ShowMessage("........................")
+  0()
+
+
+
+EVENT   116
+ PAGE   1
+  ShowMessageFace("arachnes_fc2",0,0,2,1)
+  ShowMessage("【Arachne】")
+  ShowMessage("... ....")
+  0()
+
+
+
+EVENT   117
+ PAGE   1
+  ShowMessageFace("arachnes_fc2",0,0,2,1)
+  ShowMessage("【Arachne】")
+  ShowMessage("... ....")
+  0()
+
+
+
+EVENT   118
+ PAGE   1
+  ShowMessageFace("arachnes_fc2",0,0,2,1)
+  ShowMessage("【Arachne】")
+  ShowMessage("... ....")
+  0()
+
+
+
+EVENT   119
+ PAGE   1
+  ShowMessageFace("oogumo_fc1",0,0,2,1)
+  ShowMessage("【Great spider】")
+  ShowMessage("........................")
+  0()
+
+
+
+EVENT   120
+ PAGE   1
+  ShowMessageFace("arachnes_fc2",0,0,2,1)
+  ShowMessage("【Arachne】")
+  ShowMessage("... ....")
+  0()
+
+
+
+EVENT   121
+ PAGE   1
+  ShowMessageFace("arachnes_fc2",0,0,2,1)
+  ShowMessage("【Arachne】")
+  ShowMessage("... ....")
+  0()
+
+
+
+EVENT   122
+ PAGE   1
+  ShowMessageFace("arachnes_fc2",0,0,2,1)
+  ShowMessage("【Arachne】")
+  ShowMessage("... ....")
+  0()
+
+
+
+EVENT   123
+ PAGE   1
+  ShowMessageFace("taran_fc1",0,0,2,1)
+  ShowMessage("【Tarantula girl】")
+  ShowMessage("........................")
+  0()
+
+
+
+EVENT   125
+ PAGE   1
+  ShowMessageFace("oogumo_fc1",0,0,2,1)
+  ShowMessage("【Great spider】")
+  ShowMessage("........................")
+  0()
+
+
+
+EVENT   126
+ PAGE   1
+  ShowMessageFace("arachnes_fc2",0,0,2,1)
+  ShowMessage("【Arachne】")
+  ShowMessage("... ....")
+  0()
+
+
+
+EVENT   127
+ PAGE   1
+  ShowMessageFace("arachnes_fc2",0,0,2,1)
+  ShowMessage("【Arachne】")
+  ShowMessage("... ....")
+  0()
+
+
+
+EVENT   128
+ PAGE   1
+  ShowMessageFace("arachnes_fc2",0,0,2,1)
+  ShowMessage("【Arachne】")
+  ShowMessage("... ....")
+  0()
+
+
+
+EVENT   129
+ PAGE   1
+  ShowMessageFace("kumo_fc1",0,0,2,1)
+  ShowMessage("【Spider girl】")
+  ShowMessage("........................")
+  0()
+
+
+
+EVENT   130
+ PAGE   1
+  ShowMessageFace("arachnes_fc2",0,0,2,1)
+  ShowMessage("【Arachne】")
+  ShowMessage("... ....")
+  0()
+
+
+
+EVENT   131
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("[Soldier]")
+  ShowMessage("I did not use it ... ....")
+  0()
+
+
+
+EVENT   132
+ PAGE   1
+  ShowMessageFace("ant_fc1",1,0,2,1)
+  ShowMessage("【Ali Girl】")
+  ShowMessage("........................")
+  0()
+
+
+
+EVENT   133
+ PAGE   1
+  ShowMessageFace("ant_fc1",1,0,2,1)
+  ShowMessage("【Ali Girl】")
+  ShowMessage("A negative digit ...")
+  0()
+
+
+
+EVENT   134
+ PAGE   1
+  ShowMessageFace("ant_fc1",1,0,2,1)
+  ShowMessage("【Ali Girl】")
+  ShowMessage("Gugg ...")
+  0()
+
+
+
+EVENT   135
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("[Soldier]")
+  ShowMessage("When entangled with the viscous thread ......")
+  ShowMessage("It's too pleasant, no power ...")
+  0()
+
+
+
+EVENT   136
+ PAGE   1
+  ShowMessageFace("ant_fc1",1,0,2,1)
+  ShowMessage("【Ali Girl】")
+  ShowMessage("........................")
+  0()
+
+
+
+EVENT   137
+ PAGE   1
+  ShowMessageFace("ant_fc1",1,0,2,1)
+  ShowMessage("【Ali Girl】")
+  ShowMessage("........................")
+  0()
+
+
+
+EVENT   138
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Thugs】")
+  ShowMessage("I brought a wounded Ali girl to a medical office and treated ...!")
+  ShowMessage("...... heavy, heavy ......")
+  0()
+
+
+
+EVENT   139
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Aunt】")
+  ShowMessage("Do not vomit softly, now you are resting ...!")
+  0()
+
+
+
+EVENT   140
+ PAGE   1
+  ShowMessageFace("ant_fc1",1,0,2,1)
+  ShowMessage("【Ali Girl】")
+  ShowMessage("........................")
+  0()
+
+
+
+EVENT   141
+ PAGE   1
+  ShowMessageFace("ant_fc1",1,0,2,1)
+  ShowMessage("【Ali Girl】")
+  ShowMessage("Queen summer ......")
+  0()
+
+
+
+EVENT   142
+ PAGE   1
+  ShowMessageFace("ant_fc1",1,0,2,1)
+  ShowMessage("【Ali Girl】")
+  ShowMessage("........................")
+  0()
+
+
+
+EVENT   143
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Sister】")
+  ShowMessage("Oh, I do not have enough medicine ......")
+  0()
+
+
+
+EVENT   144
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Shinto priest")
+  ShowMessage("My magical power is also limited.")
+  ShowMessage("Oh, the effect of recovery magic is also diminishing ......")
+  0()
+
+
+
+EVENT   145
+ PAGE   1
+  ShowMessageFace("ant_fc1",1,0,2,1)
+  ShowMessage("【Ali Girl】")
+  ShowMessage("........................")
+  0()
+
+
+
+EVENT   146
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("[Soldier]")
+  ShowMessage("Well ...")
+  0()
+
+
+
+EVENT   147
+ PAGE   1
+  ShowMessageFace("arachnes_fc2",0,0,2,1)
+  ShowMessage("【Arachne】")
+  ShowMessage("... ....")
+  0()
+
+
+
+EVENT   148
+ PAGE   1
+  ShowMessageFace("arachnes_fc2",0,0,2,1)
+  ShowMessage("【Arachne】")
+  ShowMessage("... ....")
+  0()
+
+
+
+EVENT   149
+ PAGE   1
+  ShowMessageFace("arachnes_fc2",0,0,2,1)
+  ShowMessage("【Arachne】")
+  ShowMessage("... ....")
+  0()
+
+
+
+EVENT   150
+ PAGE   1
+  ShowMessageFace("arachnes_fc2",0,0,2,1)
+  ShowMessage("【Arachne】")
+  ShowMessage("... ....")
+  0()
+
+
+
+EVENT   151
+ PAGE   1
+  ShowMessageFace("arachnes_fc2",0,0,2,1)
+  ShowMessage("【Arachne】")
+  ShowMessage("... ....")
+  0()
+
+
+
+EVENT   152
+ PAGE   1
+  ShowMessageFace("arachnes_fc2",0,0,2,1)
+  ShowMessage("【Arachne】")
+  ShowMessage("... ....")
+  0()
+
+
+
+EVENT   153
+ PAGE   1
+  ShowMessageFace("arachnes_fc2",0,0,2,1)
+  ShowMessage("【Arachne】")
+  ShowMessage("... ....")
+  0()
+
+
+
+EVENT   154
+ PAGE   1
+  ShowMessageFace("arachnes_fc2",0,0,2,1)
+  ShowMessage("【Arachne】")
+  ShowMessage("... ....")
+  0()
+
+
+
+EVENT   155
+ PAGE   1
+  ShowMessageFace("arachnes_fc2",0,0,2,1)
+  ShowMessage("【Arachne】")
+  ShowMessage("... ....")
+  0()
+
+
+
+EVENT   156
+ PAGE   1
+  ShowMessageFace("arachnes_fc2",0,0,2,1)
+  ShowMessage("【Arachne】")
+  ShowMessage("... ....")
+  0()
+
+
+
+EVENT   157
+ PAGE   1
+  ShowMessageFace("arachnes_fc1",0,0,2,1)
+  ShowMessage("【Arachnea】")
+  ShowMessage("Hey, what's going on? What?")
+  ShowMessage("It is not too crowded! What?")
+  If(0,4,0)
+   ShowMessageFace("alice_fc5",2,0,2,2)
+   ShowMessage("【Alice】")
+   ShowMessage("Spider's Princess, you are not good at battle ...")
+   ShowMessage("You will soak your army in the castle too much and you will not be able to move.")
+   0()
+  EndIf()
+  If(0,5,0)
+   ShowMessageFace("iriasu_fc4",2,0,2,3)
+   ShowMessage("【Iliad】")
+   ShowMessage("The Spider's Princess' s soldier is a childish child ... ...")
+   ShowMessage("Armament power is concentrated too much in the castle, and I can not move.")
+   0()
+  EndIf()
+  ShowMessageFace("ruka_fc1",0,0,2,4)
+  ShowMessage("【Luke】")
+  ShowMessage("In any case, I do not seem to be approaching from my side ...")
+  0()
+
+
+
+EVENT   158
+ PAGE   1
+  ShowMessageFace("arachnes_fc2",0,0,2,1)
+  ShowMessage("【Arachne】")
+  ShowMessage("... ....")
+  0()
+
+
+
+EVENT   159
+ PAGE   1
+  ShowMessageFace("arachnes_fc2",0,0,2,1)
+  ShowMessage("【Arachne】")
+  ShowMessage("... ....")
+  0()
+
+
+
+EVENT   160
+ PAGE   1
+  ShowMessageFace("arachnes_fc2",0,0,2,1)
+  ShowMessage("【Arachne】")
+  ShowMessage("... ....")
+  0()
+
+
+
+EVENT   161
+ PAGE   1
+  ShowMessageFace("arachnes_fc2",0,0,2,1)
+  ShowMessage("【Arachne】")
+  ShowMessage("... ....")
+  0()
+
+
+
+EVENT   162
+ PAGE   1
+  ShowMessageFace("arachnes_fc1",0,0,2,1)
+  ShowMessage("【Arachnea】")
+  ShowMessage("Hey, what's going on? What?")
+  ShowMessage("It is not too crowded! What?")
+  If(0,4,0)
+   ShowMessageFace("alice_fc5",2,0,2,2)
+   ShowMessage("【Alice】")
+   ShowMessage("Spider's Princess, you are not good at battle ...")
+   ShowMessage("You will soak your army in the castle too much and you will not be able to move.")
+   0()
+  EndIf()
+  If(0,5,0)
+   ShowMessageFace("iriasu_fc4",2,0,2,3)
+   ShowMessage("【Iliad】")
+   ShowMessage("The Spider's Princess' s soldier is a childish child ... ...")
+   ShowMessage("Armament power is concentrated too much in the castle, and I can not move.")
+   0()
+  EndIf()
+  ShowMessageFace("ruka_fc1",0,0,2,4)
+  ShowMessage("【Luke】")
+  ShowMessage("In any case, I do not seem to be approaching from my side ...")
+  0()
+
+
+
+EVENT   163
+ PAGE   1
+  ShowMessageFace("arachnes_fc2",0,0,2,1)
+  ShowMessage("【Arachne】")
+  ShowMessage("... ....")
+  0()
+
+
+
+EVENT   164
+ PAGE   1
+  ShowMessageFace("taran_fc1",0,0,2,1)
+  ShowMessage("【Tarantula girl】")
+  ShowMessage("........................")
+  0()
+
+
+
+EVENT   165
+ PAGE   1
+  ShowMessageFace("taran_fc1",0,0,2,1)
+  ShowMessage("【Tarantula girl】")
+  ShowMessage("........................")
+  0()
+
+
+
+EVENT   166
+ PAGE   1
+  ShowMessageFace("taran_fc1",0,0,2,1)
+  ShowMessage("【Tarantula girl】")
+  ShowMessage("........................")
+  0()
+
+
+
+EVENT   167
+ PAGE   1
+  ShowMessageFace("kumo_fc1",0,0,2,1)
+  ShowMessage("【Spider girl】")
+  ShowMessage("........................")
+  0()
+
+
+
+EVENT   168
+ PAGE   1
+  ShowMessageFace("kumo_fc1",0,0,2,1)
+  ShowMessage("【Spider girl】")
+  ShowMessage("........................")
+  0()
+
+
+
+EVENT   169
+ PAGE   1
+  ShowMessageFace("kumo_fc1",0,0,2,1)
+  ShowMessage("【Spider girl】")
+  ShowMessage("........................")
+  0()
+
+
+
+EVENT   170
+ PAGE   1
+  ShowMessageFace("oogumo_fc1",0,0,2,1)
+  ShowMessage("【Great spider】")
+  ShowMessage("........................")
+  0()
+
+
+
+EVENT   171
+ PAGE   1
+  ShowMessageFace("oogumo_fc1",0,0,2,1)
+  ShowMessage("【Great spider】")
+  ShowMessage("........................")
+  0()
+
+
+
+EVENT   172
+ PAGE   1
+  ShowMessageFace("oogumo_fc1",0,0,2,1)
+  ShowMessage("【Great spider】")
+  ShowMessage("........................")
+  0()
+
+
+
+EVENT   173
+ PAGE   1
+  ShowMessageFace("oogumo_fc1",0,0,2,1)
+  ShowMessage("【Great spider】")
+  ShowMessage("........................")
+  0()
+
+
+
+EVENT   174
+ PAGE   1
+  ShowMessageFace("mikoarachne_fc1",0,0,2,1)
+  ShowMessage("【Maiden Arachne】")
+  ShowMessage("... ....")
+  0()
+
+
+
+EVENT   175
+ PAGE   1
+  ShowMessageFace("mikoarachne_fc1",0,0,2,1)
+  ShowMessage("【Maiden Arachne】")
+  ShowMessage("... ....")
+  0()
+
+
+
+EVENT   176
+ PAGE   1
+  ShowMessageFace("mikoarachne_fc1",0,0,2,1)
+  ShowMessage("【Maiden Arachne】")
+  ShowMessage("... ....")
+  0()
+
+
+
+EVENT   177
+ PAGE   1
+  ShowMessageFace("arachnes_fc1",0,0,2,1)
+  ShowMessage("【Arachnea】")
+  ShowMessage("Hey, what's going on? What?")
+  ShowMessage("It is not too crowded! What?")
+  If(0,4,0)
+   ShowMessageFace("alice_fc5",2,0,2,2)
+   ShowMessage("【Alice】")
+   ShowMessage("Spider's Princess, you are not good at battle ...")
+   ShowMessage("You will soak your army in the castle too much and you will not be able to move.")
+   0()
+  EndIf()
+  If(0,5,0)
+   ShowMessageFace("iriasu_fc4",2,0,2,3)
+   ShowMessage("【Iliad】")
+   ShowMessage("The Spider's Princess' s soldier is a childish child ... ...")
+   ShowMessage("Armament power is concentrated too much in the castle, and I can not move.")
+   0()
+  EndIf()
+  ShowMessageFace("ruka_fc1",0,0,2,4)
+  ShowMessage("【Luke】")
+  ShowMessage("In any case, I do not seem to be approaching from my side ...")
+  0()
+
+
+
+EVENT   178
+ PAGE   1
+  ShowMessageFace("arachnes_fc1",0,0,2,1)
+  ShowMessage("【Arachnea】")
+  ShowMessage("Hey, what's going on? What?")
+  ShowMessage("It is not too crowded! What?")
+  If(0,4,0)
+   ShowMessageFace("alice_fc5",2,0,2,2)
+   ShowMessage("【Alice】")
+   ShowMessage("Spider's Princess, you are not good at battle ...")
+   ShowMessage("You will soak your army in the castle too much and you will not be able to move.")
+   0()
+  EndIf()
+  If(0,5,0)
+   ShowMessageFace("iriasu_fc4",2,0,2,3)
+   ShowMessage("【Iliad】")
+   ShowMessage("The Spider's Princess' s soldier is a childish child ... ...")
+   ShowMessage("Armament power is concentrated too much in the castle, and I can not move.")
+   0()
+  EndIf()
+  ShowMessageFace("ruka_fc1",0,0,2,4)
+  ShowMessage("【Luke】")
+  ShowMessage("In any case, I do not seem to be approaching from my side ...")
+  0()
+
+
+
+EVENT   179
+ PAGE   1
+  ShowMessageFace("arachnes_fc1",0,0,2,1)
+  ShowMessage("【Arachnea】")
+  ShowMessage("Hey, what's going on? What?")
+  ShowMessage("It is not too crowded! What?")
+  If(0,4,0)
+   ShowMessageFace("alice_fc5",2,0,2,2)
+   ShowMessage("【Alice】")
+   ShowMessage("Spider emperor girl, bad game is not good ...")
+   ShowMessage("You will soak your army in the castle too much and you will not be able to move.")
+   0()
+  EndIf()
+  If(0,5,0)
+   ShowMessageFace("iriasu_fc4",2,0,2,3)
+   ShowMessage("【Iliad】")
+   ShowMessage("The soldier of Spider's Emperor is childish ... ...")
+   ShowMessage("Armament power is concentrated too much in the castle, and I can not move.")
+   0()
+  EndIf()
+  ShowMessageFace("ruka_fc1",0,0,2,4)
+  ShowMessage("【Luke】")
+  ShowMessage("Anyway, it does not seem to get close at this time ...")
+  0()
+
+
+
+EVENT   180
+ PAGE   1
+  ShowMessageFace("taran_fc1",0,0,2,1)
+  ShowMessage("【Tarantula girl】")
+  ShowMessage("........................")
+  0()
+
+
+
+EVENT   181
+ PAGE   1
+  ShowMessageFace("artm_fc1",0,0,2,1)
+  ShowMessage("【Automata girl】")
+  ShowMessage("Eliminate intruders ...")
+  ShowMessageFace("arachnes_fc2",2,0,2,2)
+  ShowMessage("【Arachne】")
+  ShowMessage("Karakuri doll, being disturbed ...!")
+  0()
+
+
+
+EVENT   182
+ PAGE   1
+  ShowMessageFace("artm_fc1",0,0,2,1)
+  ShowMessage("【Automata girl】")
+  ShowMessage("Eliminate intruders ...")
+  ShowMessageFace("arachnes_fc2",2,0,2,2)
+  ShowMessage("【Arachne】")
+  ShowMessage("Karakuri doll, being disturbed ...!")
+  0()
+
+
+
+EVENT   183
+ PAGE   1
+  ShowMessageFace("ant_fc1",1,0,2,1)
+  ShowMessage("【Ali Girl】")
+  ShowMessage("City D 4 ... ... Enemy, Takusan invasion ......")
+  0()
+
+
+
+EVENT   184
+ PAGE   1
+  ShowMessageFace("ant_fc1",1,0,2,1)
+  ShowMessage("【Ali Girl】")
+  ShowMessage("Battle Enai ......")
+  0()
+
+
+
+EVENT   185
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("[Soldier]")
+  ShowMessage("A large group of enemies in the castle ......")
+  0()
+
+
+
+EVENT   186
+ PAGE   1
+  0()
+
+
+
+EVENT   187
+ PAGE   1
+  ShowMessageFace("paizuridoll_fc1",0,0,2,1)
+  ShowMessage("【Fucking puppet A】")
+  ShowMessage("...... Puyuu.")
+  ShowMessageFace("paizuridoll_fc1",0,0,2,2)
+  ShowMessage("【Fucking Doll B】")
+  ShowMessage("Muuu, muyuu ...")
+  ShowMessageFace("arachnes_fc3",2,0,2,3)
+  ShowMessage("【Arachne】")
+  ShowMessage("Oh ...... This boob's tits, soft ......")
+  0()
+
+
+
+EVENT   188
+ PAGE   1
+  ShowMessageFace("paizuridoll_fc1",0,0,2,1)
+  ShowMessage("【Fucking puppet A】")
+  ShowMessage("...... Puyuu.")
+  ShowMessageFace("paizuridoll_fc1",0,0,2,2)
+  ShowMessage("【Fucking Doll B】")
+  ShowMessage("Muuu, muyuu ...")
+  ShowMessageFace("arachnes_fc3",2,0,2,3)
+  ShowMessage("【Arachne】")
+  ShowMessage("Oh ...... This boob's tits, soft ......")
+  0()
+
+
+
+EVENT   189
+ PAGE   1
+  ShowMessageFace("paizuridoll_fc1",0,0,2,1)
+  ShowMessage("【Fucking puppet A】")
+  ShowMessage("...... Puyuu.")
+  ShowMessageFace("paizuridoll_fc1",0,0,2,2)
+  ShowMessage("【Fucking Doll B】")
+  ShowMessage("Muuu, muyuu ...")
+  ShowMessageFace("arachnes_fc3",2,0,2,3)
+  ShowMessage("【Arachne】")
+  ShowMessage("Oh ...... This boob's tits, soft ......")
+  0()
+
+
+
+EVENT   190
+ PAGE   1
+  ShowMessageFace("bgolem_fc1",1,0,2,1)
+  ShowMessage("【Black Golem Musume】")
+  ShowMessage("Do not lick the magic skill of Grangold!")
+  ShowMessageFace("arachnes_fc2",2,0,2,2)
+  ShowMessage("【Arachne】")
+  ShowMessage("There are a lot of golems on the ground ... ... Do not disturb!")
+  0()
+
+
+
+EVENT   191
+ PAGE   1
+  ShowMessageFace("ant_fc1",1,0,2,1)
+  ShowMessage("【Ali Girl】")
+  ShowMessage("I'm sorry ....")
+  0()
+
+
+
+EVENT   192
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("[Soldier]")
+  ShowMessage("How many this, how to stop pushing ......")
+  0()
+
+
+
+EVENT   193
+ PAGE   1
+  ShowMessageFace("ant_fc1",1,0,2,1)
+  ShowMessage("【Ali Girl】")
+  ShowMessage("I'm sorry ....")
+  0()
+
+
+
+EVENT   194
+ PAGE   1
+  0()
+ PAGE   2
+  // condition: switch 31 is ON
+  0()
+
+
+
+EVENT   195
+ PAGE   1
+  // condition: switch 32 is ON
+  0()
+
+
+
+EVENT   196
+ PAGE   1
+  0()
+ PAGE   2
+  // condition: switch 34 is ON
+  0()
+
+
+
+EVENT   197
+ PAGE   1
+  0()
+ PAGE   2
+  // condition: switch 34 is ON
+  0()
+
+
+
+EVENT   198
+ PAGE   1
+  0()
+ PAGE   2
+  // condition: switch 34 is ON
+  0()
+
+
+
+EVENT   200
+ PAGE   1
+  0()
+
+
+
+EVENT   201
+ PAGE   1
+  If(0,4,0)
+   ShowMessageFace("alice_fc5",2,0,2,1)
+   ShowMessage("【Alice】")
+   ShowMessage("The struggle with enemy ally, the road is blocked.")
+   ShowMessage("I will go from another place!")
+   0()
+  EndIf()
+  If(0,5,0)
+   ShowMessageFace("iriasu_fc4",7,0,2,2)
+   ShowMessage("【Iliad】")
+   ShowMessage("The struggle with enemy ally, the road is in a blocked state ...")
+   ShowMessage("Let's proceed from another place!")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   202
+ PAGE   1
+  0()
+ PAGE   2
+  // condition: switch 34 is ON
+  0()
+
+
+
+EVENT   206
+ PAGE   1
+  0()
+ PAGE   2
+  // condition: switch 34 is ON
+  0()
+
+
+
+EVENT   209
+ PAGE   1
+  0()
+ PAGE   2
+  // condition: switch 34 is ON
+  0()
+
+
+
+EVENT   210
+ PAGE   1
+  0()
+ PAGE   2
+  // condition: switch 34 is ON
+  0()
+
+
+
+EVENT   212
+ PAGE   1
+  0()
+
+
+
+EVENT   213
+ PAGE   1
+  0()
+
+
+
+EVENT   214
+ PAGE   1
+  // condition: switch 35 is ON
+  0()
+
+
+
+EVENT   215
+ PAGE   1
+  // condition: switch 36 is ON
+  0()
+
+
+
+EVENT   216
+ PAGE   1
+  RunCommonEvent(350)
+  0()
+
+
+
+EVENT   217
+ PAGE   1
+  RunCommonEvent(350)
+  0()
+
+
+
+EVENT   218
+ PAGE   1
+  RunCommonEvent(350)
+  0()
+
+
+
+EVENT   219
+ PAGE   1
+  RunCommonEvent(350)
+  0()
+
+
+
+EVENT   220
+ PAGE   1
+  RunCommonEvent(350)
+  0()
+
+
+

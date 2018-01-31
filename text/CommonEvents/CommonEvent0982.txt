@@ -1,0 +1,3 @@
+"♪" -> "♪"
+"♪" -> "♪"
+"銀狐二尾から妖狐の加護が与えられた！" -> "Gin fox protection was given from two foxes."

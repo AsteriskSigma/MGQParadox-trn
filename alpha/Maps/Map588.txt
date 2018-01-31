@@ -1,0 +1,328 @@
+
+DisplayName "San Ilia Castle Laboratory"
+
+
+
+EVENT   1
+ PAGE   1
+  0()
+
+
+
+EVENT   2
+ PAGE   1
+  0()
+
+
+
+EVENT   3
+ PAGE   1
+  0()
+
+
+
+EVENT   4
+ PAGE   1
+  0()
+
+
+
+EVENT   5
+ PAGE   1
+  0()
+
+
+
+EVENT   6
+ PAGE   1
+  0()
+
+
+
+EVENT   7
+ PAGE   1
+  281(0)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,355,9,32,8,0)
+  0()
+
+
+
+EVENT   8
+ PAGE   1
+  If(1,1001,0,28,2)
+   If(2,"A",1)
+    ChangeSelfSwitch("A",0)
+    ShowMessageFace("",0,0,2,1)
+    ShowMessage("\\n<Director>Ah, it's you. I've already heard of your exploits.")
+    ShowMessageFace("",0,0,2,2)
+    ShowMessage("\\n<Director>This is where we gather and study the Out of Place Artifacts, or OOPArts, that are found in Ruins, as well as makina that have been excavated from Tartarus.")
+    ShowMessageFace("",0,0,2,3)
+    ShowMessage("\\n<Director>I've been told to provide you with our full support. Please, accept these fruits of our research.")
+    250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+    ChangeInventory_Item(710,0,0,1)
+    ChangeInventory_Item(711,0,0,1)
+    ShowMessageFace("",0,0,2,4)
+    ShowMessage("\\n<Director>One day we want to make these standard equipment for the anti-undead suppressive teams, but it'll take some time before we can prepare them for mass production. ")
+    0()
+   EndIf()
+   If(1,1022,0,6,2)
+    If(0,1041,0)
+     If(2,"B",1)
+      ChangeSelfSwitch("B",0)
+      ShowMessageFace("stein_fc2",0,0,2,5)
+      ShowMessage("\\n<Promestein>Um, could I please take a look at your research?")
+      ShowMessageFace("",0,0,2,6)
+      ShowMessage("\\n<Director>I don't mind, but I doubt a civilian could make much of it.")
+      ShowMessageFace("stein_fc2",2,0,2,7)
+      ShowMessage("\\n<Promestein>Amazing... It's a quantum computer adapted for practical use. The best I could ever do was compose the basic theory for this.")
+      ShowMessageFace("",0,0,2,8)
+      ShowMessage("\\n<Director>Wait, so you do understand? Who on earth are you?")
+      ShowMessageFace("stein_fc2",1,0,2,9)
+      ShowMessage("\\n<Promestein>Er, Luka, could you please escort me back to the Ruins at some point? There's something I need to investigate anew.")
+      ShowMessageFace("ruka_fc1",0,0,2,10)
+      ShowMessage("\\n<Luka>Sure, we'll do it when we have a free moment.")
+      ShowMessageFace("",0,0,2,11)
+      ShowMessage("Promestein's investigations might uncover something. When we have the time, it might be a good idea to revisit the Ancient Temple's Ruins.")
+      EndEventProcessing()
+      0()
+     EndIf()
+     0()
+    EndIf()
+    0()
+   EndIf()
+   355("actor_label_jump")
+   ShowMessageFace("",0,0,2,12)
+   ShowMessage("\\n<Director>We spend day and night researching what's been uncovered. Little by little, they're letting us make great strides.")
+   ShowMessageFace("",0,0,2,13)
+   ShowMessage("\\n<Director>You can visit whenever you want. I'm looking forward to working with you.")
+   EndEventProcessing()
+   DefineLabel("531")
+   ShowMessageFace("saniria_fc2",0,0,2,14)
+   ShowMessage("\\n<King of San Ilia>Director, has there been any progress?")
+   ShowMessageFace("",0,0,2,15)
+   ShowMessage("\\n<Director>Oh, hello Pope. Well, regarding the Gatling gun in your torso, we've increased the number of bullets your prototype can hold!")
+   ShowMessageFace("saniria_fc2",0,0,2,16)
+   ShowMessage("\\n<King of San Ilia>This part, here, it's moved by gas pressure, correct? How about directly connecting it to its core to draw power from it?")
+   ShowMessageFace("",0,0,2,17)
+   ShowMessage("\\n<Director>That's a wonderful idea! However, if the core heats up too much, the gun will cease functioning.")
+   ShowMessageFace("saniria_fc2",0,0,2,18)
+   ShowMessage("\\n<King of San Ilia>Yes, it does take some time to restart, doesn't it... But, is this part really inseparable from my spinal system?")
+   ShowMessageFace("",0,0,2,19)
+   ShowMessage("\\n<Director>I thought you might ask about that. We've just begun testing, but it seems that if it's separated for more than three seconds, there is a possibility that Your Holiness will cease functioning...")
+   ShowMessageFace("",0,0,2,20)
+   ShowMessage("They seem to be enjoying their conversation.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,29,1)
+   If(1,1071,0,3,1)
+    If(2,"C",1)
+     ChangeSelfSwitch("C",0)
+     ShowMessageFace("",0,0,2,21)
+     ShowMessage("【chief】")
+     ShowMessage("It is told by the Pope to hand it over.")
+     ShowMessage("If you can handle higher Makina, it will help traveling.")
+     250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+     ChangeInventory_Item(629,0,0,1)
+     If(0,4,0)
+      ShowMessageFace("alice_fc5",1,0,2,22)
+      ShowMessage("【Alice】")
+      ShowMessage("If you have this, do not go to the top job of the technician profession!")
+      0()
+     EndIf()
+     If(0,5,0)
+      ShowMessageFace("iriasu_fc4",0,0,2,23)
+      ShowMessage("【Iliad】")
+      ShowMessage("With this, you can be in the top position in a technician profession!")
+      0()
+     EndIf()
+     ShowMessageFace("",0,0,2,24)
+     ShowMessage("【chief】")
+     ShowMessage("In addition, a very powerful Makina which seems to be military was excavated.")
+     ShowMessage("I succeeded in repairing, so let's hand it over again.")
+     250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+     ChangeInventory_Item(715,0,0,1)
+     ShowMessageFace("",0,0,2,25)
+     ShowMessage("【chief】")
+     ShowMessage("We are studying day and night.")
+     ShowMessage("Let 's do our best for each other and the world!")
+     EndEventProcessing()
+     0()
+    EndIf()
+    0()
+   EndIf()
+   ShowMessageFace("",0,0,2,26)
+   ShowMessage("【chief】")
+   ShowMessage("Currently under development \"8.8cmAlthough it is a demonic church gun, \"...")
+   ShowMessage("Only one shot was used in the mermaid invasion game, the barrel was damaged.")
+   ShowMessageFace("",0,0,2,27)
+   ShowMessage("【chief】")
+   ShowMessage("If you do not increase strength, it will not be used ... ...")
+   ShowMessage("I have to do more research.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   9
+ PAGE   1
+  If(2,"A",1)
+   ChangeSelfSwitch("A",0)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Researcher>I specialize in studying firearms. By the way, I've got something for you.")
+   250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+   ChangeInventory_Item(606,0,0,1)
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Researcher>Thanks to this license, you can now change your job to [Gunner]. However, you'll need to have Hunter mastered first.")
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("\\n<Researcher>Just as their title implies, Gunners wield firearms. So long as their Dexterity is high, they can deal a lot of damage.")
+   ShowMessageFace("",0,0,2,4)
+   ShowMessage("\\n<Researcher>In addition, Attack doesn't affect firearms, so even someone with a weak Attack can become strong if he's dexterous.")
+   ShowMessageFace("",0,0,2,5)
+   ShowMessage("\\n<Researcher>I hope you're able to make good use of the license.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  355("actor_label_jump")
+  ShowMessageFace("",0,0,2,6)
+  ShowMessage("\\n<Researcher>At the moment we're still relying entirely on OOPArts. We still need to figure out how exactly they operate, so we're pretty far from researching application and development.")
+  ShowMessageFace("",0,0,2,7)
+  ShowMessage("\\n<Researcher>I wonder who on earth made all this. They must have been a hundred steps ahead of our civilization...")
+  EndEventProcessing()
+  DefineLabel("129")
+  ShowMessageFace("",0,0,2,8)
+  ShowMessage("\\n<Researcher>Ohh, the Sleeping Beauty! And she's moving! How on earth did you start her up?")
+  ShowMessageFace("brunhild_fc1",0,0,2,9)
+  ShowMessage("\\n<Hild>Hild woke up on her own.")
+  ShowMessageFace("",0,0,2,10)
+  ShowMessage("\\n<Researcher>Amazing. I'd love to examine you, but... I can't, can I?")
+  ShowMessageFace("brunhild_fc1",0,0,2,11)
+  ShowMessage("\\n<Hild>You may not. Only master may touch Hild's body.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   10
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Researcher>My family thinks that I'm in charge of managing the castle's air conditioning. It's hard to lie about your job...")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("531")
+  ShowMessageFace("saniria_fc2",0,0,2,2)
+  ShowMessage("\\n<King of San Ilia>I promise, one day you will be able to speak of your profession with pride. Until then, please bear with this.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   11
+ PAGE   1
+  If(1,1001,0,28,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Researcher>We found a lot of abandoned records in the ruins. Thanks to them, we're able to operate most of what we've uncovered.")
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Researcher>However, the principles behind the operation remain elusive. We still have a lot left to reverse engineer.")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("41")
+   ShowMessageFace("stein_fc2",0,0,2,3)
+   ShowMessage("\\n<Promestein>Am I to take it that the former inhabitants of the ruins shared our language?")
+   ShowMessageFace("",0,0,2,4)
+   ShowMessage("\\n<Researcher>Mostly. The records are in our world's standard language, but the grammar is a little different.")
+   ShowMessageFace("",0,0,2,5)
+   ShowMessage("\\n<Researcher>I've tried comparing the records to various ancient texts, but the exact grammar and usage doesn't match with any from a past era.")
+   ShowMessageFace("",0,0,2,6)
+   ShowMessage("\\n<Researcher>However, projections of the future usage of our standard language's abbreviations seem to largely match the records' contractions.")
+   ShowMessageFace("stein_fc2",2,0,2,7)
+   ShowMessage("\\n<Promestein>In other words... the records are from the future?")
+   ShowMessageFace("",0,0,2,8)
+   ShowMessage("\\n<Researcher>It's just my speculation as a language scholar. But, considering how advanced their technology was, it does seem plausible...")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,29,1)
+   ShowMessageFace("",0,0,2,9)
+   ShowMessage("【researcher】")
+   ShowMessage("Study is naming, actually confirmation of the manuals and techniques that remained in the ruins ... ...")
+   ShowMessage("... and so on, those who laugh at us are also in the upper level.")
+   ShowMessageFace("",0,0,2,10)
+   ShowMessage("【researcher】")
+   ShowMessage("Well, it is not wrong.")
+   ShowMessage("It is a difficult spot to follow.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   12
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Researcher>These clothes are really just a disguise. We aren't actually believers, much less priests.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Researcher>But our white lab coats would draw a lot of attention in this castle, so we have to wear this instead.")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Researcher>We've actually gotten pretty used to these outfits. Every once in a while we even start acting like priests and listen to people's confessions.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("525")
+  ShowMessageFace("sonia_fc4",0,0,2,4)
+  ShowMessage("\\n<Sonya>Isn't that criminal impersonation...?")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   13
+ PAGE   1
+  If(1,1001,0,28,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Researcher>Wooaah, inspiration is welling up inside me! Oh, my apologies. You're visitors, aren't you?")
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Researcher>We study cutting-edge technology here. Of course, only the church's higher-ups are aware of our activities.")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("41")
+   ShowMessageFace("stein_fc2",0,0,2,3)
+   ShowMessage("\\n<Promestein>So you've analyzed the recovered technology to this extent... It seems that I can't underestimate human research.")
+   EndEventProcessing()
+   DefineLabel("525")
+   ShowMessageFace("sonia_fc3",2,0,2,4)
+   ShowMessage("\\n<Sonya>There's a room like this right below the holy city?!")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,29,1)
+   ShowMessageFace("",0,0,2,5)
+   ShowMessage("【researcher】")
+   ShowMessage("Since the fight with the demon king started, a lot of budget went down to the weapons development department.")
+   ShowMessage("Completion of the final weapon \"Massacre church cannon\" is gradually approaching!")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   14
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Researcher>His Holiness the Pope is actually an amazing researcher too. When it comes to understanding makina, he's the best of us.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("72")
+  ShowMessageFace("phoenix_fc1",1,0,2,2)
+  ShowMessage("\\n<Mini>Pooope's amazing! Machine stuff all sounds like nonsense to me!")
+  EndEventProcessing()
+  DefineLabel("531")
+  ShowMessageFace("saniria_fc2",0,0,2,3)
+  ShowMessage("\\n<King of San Ilia>When I was young, I was a mechanic of sorts, so I'd undergone some training even before all this.")
+  EndEventProcessing()
+  0()
+

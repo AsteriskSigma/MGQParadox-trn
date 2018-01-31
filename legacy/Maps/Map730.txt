@@ -1,0 +1,507 @@
+
+
+
+EVENT   1
+ PAGE   1
+  ShowMessageFace("sirousagi_fc1",0,0,2,1)
+  ShowMessage("【White rabbit】")
+  ShowMessage("")
+  ShowMessage("")
+  0()
+
+
+
+EVENT   2
+ PAGE   1
+  ShowMessageFace("sirousagi_fc1",0,0,2,1)
+  ShowMessage("【White rabbit】")
+  ShowMessage("")
+  ShowMessage("")
+  0()
+
+
+
+EVENT   3
+ PAGE   1
+  ShowMessageFace("sirousagi_fc1",0,0,2,1)
+  ShowMessage("【White rabbit】")
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessageFace("sirousagi_fc1",0,0,2,2)
+  ShowMessage("【White rabbit】")
+  ShowMessage("")
+  ShowMessage("")
+  0()
+
+
+
+EVENT   4
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessageFace("sirousagi_fc1",0,0,2,2)
+  ShowMessage("【White rabbit】")
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessageFace("sirousagi_fc1",0,0,2,3)
+  ShowMessage("【White rabbit】")
+  ShowMessage("")
+  ShowMessage("")
+  If(0,5,0)
+   ShowMessageFace("iriasu_fc4",7,0,2,4)
+   ShowMessage("【Iliad】")
+   ShowMessage("")
+   ShowMessage("")
+   ShowMessageFace("sirousagi_fc1",0,0,2,5)
+   ShowMessage("【White rabbit】")
+   ShowMessage("")
+   ShowMessage("")
+   ShowMessageFace("sirousagi_fc1",0,0,2,6)
+   ShowMessage("【White rabbit】")
+   ShowMessage("")
+   ShowMessage("")
+   ShowMessageFace("iriasu_fc4",2,0,2,7)
+   ShowMessage("【Iliad】")
+   ShowMessage("........................")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   5
+ PAGE   1
+  ShowMessageFace("sirousagi_fc1",0,0,2,1)
+  ShowMessage("【White rabbit】")
+  ShowMessage("")
+  ShowMessage("")
+  0()
+
+
+
+EVENT   6
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessageFace("",0,0,2,4)
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessageFace("sirousagi_fc1",0,0,2,5)
+  ShowMessage("【White rabbit】")
+  ShowMessage("")
+  ShowMessage("")
+  0()
+
+
+
+EVENT   7
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessageFace("",0,0,2,4)
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessageFace("sirousagi_fc1",0,0,2,5)
+  ShowMessage("【White rabbit】")
+  ShowMessage("")
+  ShowMessage("")
+  0()
+
+
+
+EVENT   8
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("")
+  ShowMessage("........................")
+  0()
+
+
+
+EVENT   9
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("")
+  ShowMessage("........................")
+  0()
+
+
+
+EVENT   10
+ PAGE   1
+  ChangeSwitch(2307,2307,0)
+  ShowMessageFace("ruka_fc1",0,0,2,1)
+  ShowMessage("【Luke】")
+  ShowMessage("")
+  If(0,4,0)
+   ShowMessageFace("alice_fc6",0,0,2,2)
+   ShowMessage("【Alice】")
+   ShowMessage("")
+   0()
+  EndIf()
+  If(0,5,0)
+   ShowMessageFace("iriasu_fc4",7,0,2,3)
+   ShowMessage("【Iliad】")
+   ShowMessage("")
+   0()
+  EndIf()
+  PictureDisplay(5,"80_sirousagi_st01",0,0,0,0,100,100,255,0)
+  ShowMessageFace("sirousagi_fc1",0,0,2,4)
+  ShowMessage("【White rabbit】")
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessageFace("ruka_fc1",0,0,2,5)
+  ShowMessage("【Luke】")
+  ShowMessage("")
+  ShowMessageFace("sirousagi_fc1",0,0,2,6)
+  ShowMessage("【White rabbit】")
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessageFace("sonia_fc3",7,0,2,7)
+  ShowMessage("【Sonia】")
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessageFace("sirousagi_fc1",0,0,2,8)
+  ShowMessage("【White rabbit】")
+  ShowMessage("")
+  ShowMessage("")
+  If(4,41,0)
+   ShowMessageFace("stein_fc2",2,0,2,9)
+   ShowMessage("【Promotin】")
+   ShowMessage("")
+   0()
+  EndIf()
+  ShowMessageFace("sirousagi_fc1",0,0,2,10)
+  ShowMessage("【White rabbit】")
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessageFace("sirousagi_fc1",0,0,2,11)
+  ShowMessage("【White rabbit】")
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessageFace("sirousagi_fc1",0,0,2,12)
+  ShowMessage("【White rabbit】")
+  ShowMessage("")
+  ShowMessage("")
+  PictureClear(5)
+  If(0,4,0)
+   ShowMessageFace("alice_fc5",0,0,2,13)
+   ShowMessage("【Alice】")
+   ShowMessage("")
+   ShowMessage("")
+   0()
+  EndIf()
+  If(0,5,0)
+   ShowMessageFace("iriasu_fc4",2,0,2,14)
+   ShowMessage("【Iliad】")
+   ShowMessage("")
+   ShowMessage("")
+   0()
+  EndIf()
+  ShowMessageFace("ruka_fc1",0,0,2,15)
+  ShowMessage("【Luke】")
+  ShowMessage("")
+  0()
+ PAGE   2
+  // condition: switch 2307 is ON
+  0()
+
+
+
+EVENT   11
+ PAGE   1
+  If(0,4,0)
+   ShowMessageFace("alice_fc5",2,0,2,1)
+   ShowMessage("【Alice】")
+   ShowMessage("")
+   0()
+  EndIf()
+  If(0,5,0)
+   ShowMessageFace("iriasu_fc4",7,0,2,2)
+   ShowMessage("【Iliad】")
+   ShowMessage("")
+   0()
+  EndIf()
+  ShowMessageFace("ruka_fc1",0,0,2,3)
+  ShowMessage("【Luke】")
+  ShowMessage("")
+  ShowMessage("")
+  ChangeSaveEnabled(1)
+  ChangeSwitch(31,31,1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,727,12,23,0,0)
+  0()
+
+
+
+EVENT   12
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessage("")
+  0()
+
+
+
+EVENT   13
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessage("")
+  0()
+
+
+
+EVENT   14
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessage("")
+  0()
+
+
+
+EVENT   15
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessage("")
+  0()
+
+
+
+EVENT   16
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessage("")
+  0()
+
+
+
+EVENT   17
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessage("")
+  0()
+
+
+
+EVENT   18
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("")
+  0()
+
+EVENT   19
+ PAGE   1
+  ChangeSwitch(2308,2308,0)
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("")
+  ShowMessage("")
+  If(0,4,0)
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("")
+   ShowMessage("")
+   250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+   ChangeInventory_Item(557,0,0,1)
+   ShowMessageFace("ruka_fc1",0,0,2,3)
+   ShowMessage("【Luke】")
+   ShowMessage("")
+   ShowMessage("")
+   0()
+  EndIf()
+  If(0,5,0)
+   ShowMessageFace("",0,0,2,4)
+   ShowMessage("")
+   ShowMessageFace("iriasu_fc4",1,0,2,5)
+   ShowMessage("【Iliad】")
+   ShowMessage("")
+   ShowMessageFace("",0,0,2,6)
+   ShowMessage("")
+   250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+   ChangeInventory_Item(557,0,0,1)
+   ShowMessageFace("ruka_fc1",0,0,2,7)
+   ShowMessage("【Luke】")
+   ShowMessage("")
+   0()
+  EndIf()
+  ShowMessageFace("sirousagi_fc1",0,0,2,8)
+  ShowMessage("【White rabbit】")
+  ShowMessage("")
+  ShowMessage("")
+  EndEventProcessing()
+  0()
+ PAGE   2
+  // condition: switch 2308 is ON
+  0()
+
+
+
+EVENT   30
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessageFace("sirousagi_fc1",0,0,2,2)
+  ShowMessage("【White rabbit】")
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessageFace("sirousagi_fc1",0,0,2,3)
+  ShowMessage("【White rabbit】")
+  ShowMessage("")
+  ShowMessage("")
+  0()
+
+
+
+EVENT   31
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessageFace("sirousagi_fc1",0,0,2,3)
+  ShowMessage("【White rabbit】")
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessageFace("sirousagi_fc1",0,0,2,4)
+  ShowMessage("【White rabbit】")
+  ShowMessage("")
+  ShowMessage("")
+  If(0,4,0)
+   ShowMessageFace("alice_fc5",2,0,2,5)
+   ShowMessage("【Alice】")
+   ShowMessage("")
+   0()
+  EndIf()
+  If(0,5,0)
+   ShowMessageFace("iriasu_fc4",2,0,2,6)
+   ShowMessage("【Iliad】")
+   ShowMessage("")
+   0()
+  EndIf()
+  ShowMessageFace("sirousagi_fc1",0,0,2,7)
+  ShowMessage("【White rabbit】")
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessageFace("sirousagi_fc1",0,0,2,8)
+  ShowMessage("【White rabbit】")
+  ShowMessage("")
+  ShowMessage("")
+  0()
+
+
+
+EVENT   32
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessageFace("sirousagi_fc1",0,0,2,3)
+  ShowMessage("【White rabbit】")
+  ShowMessage("")
+  ShowMessage("")
+  ShowMessageFace("sirousagi_fc1",0,0,2,4)
+  ShowMessage("【White rabbit】")
+  ShowMessage("")
+  ShowMessage("")
+  If(0,4,0)
+   ShowMessageFace("alice_fc5",2,0,2,5)
+   ShowMessage("【Alice】")
+   ShowMessage("")
+   ShowMessage("")
+   ShowMessageFace("sirousagi_fc1",0,0,2,6)
+   ShowMessage("【White rabbit】")
+   ShowMessage("")
+   ShowMessage("")
+   ShowMessageFace("sirousagi_fc1",0,0,2,7)
+   ShowMessage("【White rabbit】")
+   ShowMessage("")
+   ShowMessage("")
+   0()
+  EndIf()
+  If(0,5,0)
+   ShowMessageFace("iriasu_fc4",2,0,2,8)
+   ShowMessage("【Iliad】")
+   ShowMessage("")
+   ShowMessage("")
+   ShowMessageFace("iriasu_fc4",2,0,2,9)
+   ShowMessage("【Iliad】")
+   ShowMessage("")
+   ShowMessage("")
+   ShowMessageFace("iriasu_fc4",2,0,2,10)
+   ShowMessage("【Iliad】")
+   ShowMessage("")
+   ShowMessage("")
+   ShowMessageFace("sirousagi_fc1",0,0,2,11)
+   ShowMessage("【White rabbit】")
+   ShowMessage("")
+   ShowMessage("")
+   0()
+  EndIf()
+  0()
+
+
+

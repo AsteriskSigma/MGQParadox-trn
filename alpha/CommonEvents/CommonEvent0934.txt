@@ -1,0 +1,18 @@
+// EVENT 0934
+Name "Rank 2 Reward"
+
+355("gain_medal(3082)")
+ShowMessageFace("",0,0,2,1)
+ShowMessage("The party gains 30,000 XP!")
+355("gain_party_exp(30000,true)")
+ShowMessageFace("",0,0,2,2)
+ShowMessage("The party gains 300 Job XP!")
+355("gain_party_class_exp(300,true)")
+655("gain_party_tribe_exp(300,true)")
+355("gain_party_friend(150)")
+125(0,0,100000)
+ShowMessageFace("",0,0,2,3)
+ShowMessage("The party gains 100,000G!")
+ShowMessage("Affection from all party members increases by 150!")
+0()
+

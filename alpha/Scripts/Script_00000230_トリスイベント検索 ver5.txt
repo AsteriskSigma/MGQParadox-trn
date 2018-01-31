@@ -1,0 +1,667 @@
+
+=begin
+
+Troublesome · ___ ___ 0 RPG
+Tris event search ver 5 2015/02/11
+
+
+
+○ When starting the game in the test play,
+Search for the following and display it on the console
+· Each line of the specific command of all common events and all map events
+· Specific elements of the database
+· Each line of all files in the SettingData folder
+From which the set character string is included
+· Each line of the specific command of all common events and all map events
+· Trigger of all common events(Automatic execution/Parallel processing)Condition Switch
+· Page appearance condition of all map events
+, A specific switch ID/Concerning variable ID
+Also search the displayed content.txt Save to
+
+Event related information to be searched for ↓ \"Type\" name of console display
+· Script String: Content Script
+· Display text of sentences: display contents of sentences
+· Display character string of scroll text: content scroll
+- Text display character string: face Graphic name Sentence GR name
+- Picture display character string: Picture file name Picture name
+● Label character string: label name label setting
+● Label jump character string: label name label jump
+· Conditional branch (switch) ID: Variable to be compared Branch with ID switch
+· Conditional branch (variable) ID: Variable to be compared Branch with variable ID
+• Operation ID of the switch: Operation of the variable ID switch
+· Variable operation ID: Manipulate variable ID variable to be manipulated
+· Map event page appearance condition: switch page:Switch
+· Page appearance condition of map event: variable page:variable
+· Trigger condition of common event Switch trigger:Switch
+
+
+● Setting items added with ver 5
+BY_EVENTInside :label :label_j
+
+
+○ Disable setting
+Partial setting is at the left end of the line \"#Can be invalidated by attaching
+Hover over the line and press Ctrl+ Q When you press# Can turn on / off
+Select multiple lines by dragging and press Ctrl+ Q Pressing, all lines are effective
+Settings that can be invalidated
+USE
+EVENT_STRING_LIST
+DATABASE_LIST
+SETTING_LIST
+BY_EVENT
+BY_DATA
+(USE and BY_EVENT, The invalidated row is the same as false)
+
+
+=end
+
+module Event_Search
+  
+  # Whether to use this function or not:Use false:do not use
+  USE_ALL = false
+  
+  # Enable setting true:Search false:do not do
+  USE = {
+    :common    =>  true,  # Common event
+    :map       =>  true,  # Map Event
+    :database  =>  true,  # Database
+    :setting   =>  true,  # SettingDatafolder
+  }
+  
+  # Search range of common event ID and map ID \"a..bSpecified in the format of
+  #   11 if you want to search only one ID..1 To
+  COMMON_ID  = 1..9999  # Common event ID
+  MAP_ID     = 1..999   # Map ID
+  
+  
+  
+  
+  # Search pattern of event string//Alone(Described later)Also available
+  EVENT_STRING_LIST = [/Parallel world/
+
+  ]
+  
+  # Event switch ID/Search target of variable ID
+  # A single designation such as \"1\" or \"2..4Batch designation like
+  EVENT_SWITCH_LIST   = [] # switch
+  EVENT_VARIABLE_LIST = [] # variable
+  
+  # Event switch ID/Console display of variable ID
+  EVENT_VAR_PUT_IF   = 0  # Conditional branch(variable/switch)Comparative expression
+                          #   0:"Equivalent to" "Less than"1:"==" "<="
+  EVENT_VAR_PUT_SET  = 0  # Operation formula of variable manipulation
+                          #   0:"Substitution" "Addition"1:"=" "+="
+  EVENT_VAR_NAME = 3  # \"variable/Whether or not to display the name on the switch
+                          # 1~ 3 differ only in \"bulk operation by manipulating variables\"
+                          #   0:Bulk"[0006~ 0008"]"Alone"[0001]"  
+                          #   1:Bulk"[0006~ 0008"]"Alone"[0001:Mistake! Fix it!]"
+                          #   2:Bulk"[0006:Item Generic 1 to 0008"]"
+                          #   3:Bulk"[0006:Item Generic 1 to 0008:Item Generic 3"]"
+  EVENT_VAR_PUT_PLUS = ["{", "}"]   # EVENT_VAR_PUT_IF And EVENT_VAR_PUT_SET But
+                                    # 0In case of letters before and after
+                                    # ["{", "}"]  According to"{that's all}"become that way
+                                    
+  # Enable setting for each type of event related information true:Include in search target false:exclude
+  BY_EVENT = {
+    :script   =>  true,   # command:Script String: Contents
+    :message  =>  true,   # command:String display character string: contents
+    :scroll   =>  true,   # command:Display character string of scrolling text: contents
+    :mes_face =>  true,   # command:Statement display character string: face Gura name
+    :picture  =>  true,   # command:Picture display string: Picture name
+    
+    :label    =>  true,   # command:Label string: label name
+    :label_j  =>  true,   # command:Label jump character string: label name
+    
+    :var_if   =>  true,   # command:Conditional branch (variable) ID: Variable ID to be compared
+    :swi_if   =>  true,   # command:Conditional branch (switch) ID: Switch ID to be compared
+    :var_set  =>  true,   # command:Variable operation ID: Variable ID to be operated
+    :swi_set  =>  true,   # command:Switch operation ID: Switch ID to be operated
+    
+    :map_var  =>  true,   # Page appearance condition of map event: variable
+    :map_swi  =>  true,   # Map event page appearance condition: switch
+    :com_swi  =>  true,   # Common event condition switch
+  }
+  
+  
+  
+  # Database pattern search pattern
+  DATABASE_LIST = [
+  ]
+  
+  # SettingDataSearch pattern of folder string
+  SETTING_LIST = [
+  ]
+    # Search pattern/【Alice Fies XVI】.*"alice_fc2"/,
+    # \".\"Represents any character,\".*\"Represents any character string
+    # In other words, \"[Alice Fies XVI]\" and \""alice_fc2"Search for a line containing \"
+  
+  # Effective setting for each element of the database
+  #   BY_DATA.push [:group, :type] To specify with
+  #   :Groups, such as actors and occupations
+  #   :Types, names and notes Console display this:name :note Use
+  #   
+  #   All the elements that can be searched are shown below, that is, they are all enabled
+  # Invalidate each line(Ctrl + Q)By doing so, that element becomes invalid
+  BY_DATA = []  # Do not change this line
+  BY_DATA.push [:actor , :name]           # Actor name
+  BY_DATA.push [:class , :name]           # Professional name
+  BY_DATA.push [:skill , :name]           # Skill name
+  BY_DATA.push [:item  , :name]           # Item name
+  BY_DATA.push [:weapon, :name]           # Weapon name
+  BY_DATA.push [:armor , :name]           # Armor name
+  BY_DATA.push [:enemy , :name]           # Enemy character name
+  BY_DATA.push [:state , :name]           # State Name
+  
+  BY_DATA.push [:actor , :note]           # Actor memo
+  BY_DATA.push [:class , :note]           # Occupation memo
+  BY_DATA.push [:skill , :note]           # Skill note
+  BY_DATA.push [:item  , :note]           # Item memo
+  BY_DATA.push [:weapon, :note]           # Weapon note
+  BY_DATA.push [:armor , :note]           # Protector memo
+  BY_DATA.push [:enemy , :note]           # Enemy character memo
+  BY_DATA.push [:state , :note]           # State memo
+  
+  BY_DATA.push [:actor , :description]    # Actor explanation
+  BY_DATA.push [:skill , :description]    # Skill explanation
+  BY_DATA.push [:item  , :description]    # Item Description
+  BY_DATA.push [:weapon, :description]    # Weapon explanation
+  BY_DATA.push [:armor , :description]    # Protective gear
+  
+  BY_DATA.push [:actor , :nickname]       # Actor 2 names
+  BY_DATA.push [:actor , :face_name]      # Actor face graph file name
+  BY_DATA.push [:actor , :character_name] # Actor walking grav file name
+  
+  BY_DATA.push [:enemy , :battler_name]   # Enemy character graphic name
+  
+  BY_DATA.push [:skill , :message1]       # Skill use message 1st line
+  BY_DATA.push [:skill , :message2]       # Skill use message 2nd line
+  
+  BY_DATA.push [:state , :message1]       # State ally addition message
+  BY_DATA.push [:state , :message2]       # State enemy attachment message
+  BY_DATA.push [:state , :message3]       # State continuation message
+  BY_DATA.push [:state , :message4]       # State release message
+  
+end
+
+=begin
+
+Regular expression: \"Numeric character(0~ 9)Any expression \"which of\"
+By specifying this in the search pattern, flexible search is possible
+  \d : Numeric characters
+  \S : Non-blank character
+  .  : Every character
+  +  : One or more repetitions of the previous one (\"character\d \S .Immediately after)
+  *  : 0 or more repetitions of the previous one (\"character\d \S .Immediately after)
+  
+  The following symbols are not \"ordinary letters\" but \"characters with special meaning of regular expressions\"
+    ( ) [ ] { } . ? + * | \ /
+  When you want to search these symbols as \"ordinary letters\" from the character string,
+  Within the search pattern\\ \+ \] like\"\It matches that character by attaching \"
+  Example:/1\+2/ And"1+2" To be consistent with
+  Example:/\\V\[\d+\]/ And"\V[1]" "\V[10]" Match with
+  
+    
+For example, x is a character string that does not match the search pattern, o is a character string that matches the search pattern
+· Search pattern/Ah+There/
+×"xxxYes xxx"
+○"xxxDa xxx"
+○"xxxOh ah yes xxx"
+· Search pattern/Ah\dThere/
+×"Love"
+○"Aomori"
+×"あ あ"
+· Search pattern/Ah\d\S\d\dThere/
+×"あ あ 123"
+○"あ あ 1234"
+○"Ah 41"
+×"Ah 12345"
+· Search pattern/Ah\d+There/
+×"Love"
+○"Aomori"
+○"Ah 123456"
+· Search pattern/Ah\d*There/
+○"Love"
+○"Aomori"
+○"Ah 123456"
+· Search pattern/all_\S+_had/
+×"all__had/"
+×"all_ _had/"
+○"all_actor_had"
+○"all_clear_actor_had"
+· Search pattern/all_.+_had
+×"all__had/"
+○"all_ _had/"
+○"all_actor_had"
+○"all_clear_actor_had"
+
+=end
+
+#==============================================================================
+# ■ USE_SEARCH
+#==============================================================================
+module Event_Search
+  
+  def self.search
+    @data_system = load_data("Data/System.rvdata2")
+    clear_text
+    hit1 = 0
+    hit2 = 0
+    hit3 = 0
+    hit4 = 0
+    hit5 = 0
+    hit6 = 0
+    putex ""
+    putex "★ \"Tris event search\" starts searching"
+    putex ""
+    if USE[:common]
+      putex "Common event search start"
+      puts "<Start of loading common event data>"
+      commondata = load_data("Data/CommonEvents.rvdata2")
+      puts "<Completion of loading of common event data>"
+      search_report_flag = false
+      for event_index in COMMON_ID
+        if (event_index - 1) % 2000 == 0 and search_report_flag
+          puts sprintf("<Common%dSearch finished>", event_index - 1)
+          search_report_flag = false
+        end
+        event = commondata[event_index]
+        next unless event
+        search_report_flag = true
+        f = "○ Common Event%d"
+        m = sprintf(f, event_index)
+        hit5 += self.common_event_trigger_search(m, event.trigger, event.switch_id)
+        hit1 += self.event_page_list_search(m, event.list)
+      end
+      putex ""
+    end
+    if USE[:map]
+      putex "☆ Start map event search"
+      mapinfodata = load_data("Data/MapInfos.rvdata2")
+      search_report_flag = false
+      for map_id in MAP_ID
+        if (map_id - 1) % 100 == 0 and search_report_flag
+          puts sprintf("<Map%dSearch finished>", map_id - 1)
+          search_report_flag = false
+        end
+        filename = sprintf("Data/Map%03d.rvdata2", map_id)
+        next unless File.exist?(filename)
+        search_report_flag = true
+        mapdata = load_data(filename)
+        mapname = mapinfodata[map_id].name
+        mapdata.events.each_value do |event|
+          next unless event
+          event.pages.each_with_index do |page, page_index|
+            f = "○ Map%d(%s)\nEvent%d(x%d y%d) page number%d"
+            m = sprintf(f, map_id, mapname, event.id, event.x, event.y, page_index+1)
+            hit6 += self.map_event_page_condition_search(m, page.condition)
+            hit2 += self.event_page_list_search(m, page.list)
+          end
+        end
+      end
+      putex ""
+    end
+    if USE[:database]
+      putex "☆ Start database search"
+      data_kind.each do |kind|
+        message = sprintf("○%s", database_name(kind))
+        hit3 += database_search(message, load_database(kind), data_methods(kind))
+      end
+      putex ""
+    end
+    if USE[:setting] and Dir.exist?(NWConst::Data::DIRECTORY_PATH)
+      putex "☆ SettingData search start"
+      Dir.entries(NWConst::Data::DIRECTORY_PATH).each do |file_name|
+        next if file_name == "." || file_name == ".."
+        path = sprintf("%s\/%s", NWConst::Data::DIRECTORY_PATH, file_name)
+        File.open(path) do |file|
+          file.each_with_index do |s, index|
+            SETTING_LIST.each do |pattern|
+              if s =~ pattern
+                putex sprintf("○%s line number:%d\nContents: %s", path, index+1, s)
+                hit4 += 1
+              end
+            end
+          end
+        end
+      end
+      putex ""
+    end
+    putex "★ \"Tris Event Search\" Search Completed"
+    putex sprintf("Number of hits for common event condition:%d", hit5) if USE[:common]
+    putex sprintf("Number of hits for common event command:%d", hit1) if USE[:common]
+    putex sprintf("Hit count of map event condition:%d", hit6) if USE[:map]
+    putex sprintf("Hit count of map event command:%d", hit2) if USE[:map]
+    putex sprintf("Database hits:%d", hit3) if USE[:database]
+    putex sprintf("Number of hits of SettingData:%d", hit4) if USE[:setting]
+    save_text
+    putex ""
+  end
+  
+  def self.common_event_trigger_search(message, trigger, switch_id)
+    hit = 0
+    if BY_EVENT[:com_swi] and trigger != 0
+      hit += 1
+      f = " type:#{DATA_EVENT_SYMBOL[:map_swi][1][0]}\nTrigger: %s"
+      m = ["", "Automatic execution", "Parallel processing"]
+      name = sprintf("Switch[%s] When it is ON<%s>", swi_name(switch_id), m[trigger])
+      putex message + sprintf(f, name)
+    end
+    return hit
+  end
+  def self.map_event_page_condition_search(message, c)
+    hit = 0
+    if BY_EVENT[:map_swi] and c.switch1_valid and swi_id_include?(c.switch1_id)
+      hit += 1
+      f = " type:#{DATA_EVENT_SYMBOL[:map_swi][1][0]}\nPage: %s"
+      name = sprintf("Switch[%s] Is ON", swi_name(c.switch1_id))
+      putex message + sprintf(f, name)
+    end
+    if BY_EVENT[:map_swi] and c.switch2_valid and swi_id_include?(c.switch2_id)
+      hit += 1
+      f = " type:#{DATA_EVENT_SYMBOL[:map_swi][1][0]}\nPage: %s"
+      name = sprintf("Switch[%s] Is ON", swi_name(c.switch2_id))
+      putex message + sprintf(f, name)
+    end
+    if BY_EVENT[:map_var] and c.variable_valid and var_id_include?(c.variable_id)
+      hit += 1
+      f = " type:#{DATA_EVENT_SYMBOL[:map_var][1][0]}\nPage: %s"
+      name = sprintf("variable[%s] But %d that's all", var_name(c.variable_id), c.variable_value)
+      putex message + sprintf(f, name)
+    end
+    return hit
+  end
+  def self.event_page_list_search(message, list)
+    hit = 0
+    list.each_with_index do |command, command_index|
+      if search_codes.include?(command.code)
+        param = command.parameters
+        kind = code_kind(command.code)
+        f = " line number#{command_index+1} type:#{kind[0]}\nIn case%s: %s"
+        case kind[2]
+        when :string
+          EVENT_STRING_LIST.each do |pattern|
+            if param[kind[3]] =~ pattern
+              str = param[kind[3]]
+              hit += 1
+              putex message + sprintf(f, kind[1], str)
+              break
+            end
+          end
+        when :if
+          if param[0] == 0 and swi_id_include?(param[1])
+            if param[2] == 0
+              k1 = "ON"
+            else
+              k1 = "OFF"
+            end
+            case EVENT_VAR_PUT_IF
+            when 0
+              m = "Switch[%s]  #{var_plus("But")}  #{k1}"
+            when 1
+              m = "Switch[%s]  ==  #{k1}"
+            end
+            str = sprintf(m, swi_name(param[1]))
+            hit += 1
+            f = " line number#{command_index+1}In case#{"Switch" + kind[0]}\nIn case%s: %s"
+            putex message + sprintf(f, kind[1], str)
+          end
+          if param[0] == 1 and var_id_include?(param[1])
+            if param[2] == 0
+              k1 = sprintf("constant%d", param[3])
+            else
+              k1 = sprintf("variable[%s]", var_name(param[3]))
+            end
+            k2 = var_if_type(param[4])
+            case EVENT_VAR_PUT_IF
+            when 0
+              m = "variable[%s]  #{var_plus("But")}  #{k1}  #{k2}"
+            when 1
+              m = "variable[%s]  #{k2}  #{k1}"
+            end
+            str = sprintf(m, var_name(param[1]))
+            hit += 1
+            f = " line number#{command_index+1}In case#{"By variable" + kind[0]}\nIn case%s: %s"
+            putex message + sprintf(f, kind[1], str)
+          end
+        when :swi_set
+          if swi_id_include?(param[0]..param[1])
+            k  = EVENT_VAR_PUT_SET ? "=" : "But"
+            k += param[2] == 0 ? "  ON" : "  OFF"
+            if param[0] == param[1]
+              str = sprintf("Switch[%s]  #{k}", swi_name(param[0]))
+            else
+              case EVENT_VAR_NAME
+              when 0..1
+                str = sprintf("Switch[%04d~%04d]  #{k}", param[0], param[1])
+              when 2
+                str = sprintf("Switch[%s~%04d]  #{k}", swi_name(param[0]), param[1])
+              when 3
+                str = sprintf("Switch[%s~%s]  #{k}", swi_name(param[0]), swi_name(param[1]))
+              end
+            end
+            hit += 1
+            putex message + sprintf(f, kind[1], str)
+          end
+        when :var_set
+          if var_id_include?(param[0]..param[1])
+            k = var_set_type(param)
+            if param[0] == param[1]
+              str = sprintf("variable[%s]  #{k}", var_name(param[0]))
+            else
+              case EVENT_VAR_NAME
+              when 0..1
+                str = sprintf("variable[%04d~%04d]  #{k}", param[0], param[1])
+              when 2
+                str = sprintf("variable[%s~%04d]  #{k}", var_name(param[0]), param[1])
+              when 3
+                str = sprintf("variable[%s~%s]  #{k}", var_name(param[0]), var_name(param[1]))
+              end
+              str.gsub!("<<<<<<>>>>>>=") { "%=" }
+            end
+            hit += 1
+            putex message + sprintf(f, kind[1], str)
+          end
+        end
+      end
+    end
+    return hit
+  end
+  
+  def self.database_search(message, database, methods)
+    hit = 0
+    database.each_with_index do |item, item_index|
+      next unless item
+      methods.each do |method|
+        DATABASE_LIST.each do |pattern|
+          param = item.send(method)
+          if param =~ pattern
+            hit += 1
+            f = "%d(%s) type:%s"
+            putex message + sprintf(f, item_index, item.send(:name), method)
+            if method == :note
+              putex "    Contents: " + param.gsub(/\n/) {|matched| matched + "    Contents: " }
+            else
+              putex "    Contents: " + param
+            end
+          end
+        end
+      end
+    end
+    return hit
+  end
+  
+  def self.setting_search(file_name)
+  end
+
+
+
+  DATA_EVENT_SYMBOL = {
+    :script   =>  [[355, 655], ["script", "A sentence", :string, 0]],
+    :message  =>  [[     401], ["Display sentences", "A sentence", :string, 0]],
+    :scroll   =>  [[     405], ["scroll", "A sentence", :string, 0]],
+    :mes_face =>  [[101     ], ["Text Graphic name", "name", :string, 0]],
+    :picture  =>  [[231     ], ["Picture name", "name", :string, 1]],
+    
+    :label    =>  [[118     ], ["Label setting", "Label", :string, 0]],
+    :label_j  =>  [[119     ], ["Label jump", "Label", :string, 0]],
+    
+    :swi_if   =>  [[111     ], ["Branch", "Branch", :if]],
+    :var_if   =>  [[111     ], ["Branch", "Branch", :if]],
+    :swi_set  =>  [[121     ], ["Switch operation", "operation", :swi_set]],
+    :var_set  =>  [[122     ], ["Manipulating Variables", "operation", :var_set]],
+    
+    :map_swi  =>  [[], ["Page:variable", nil, nil]],
+    :map_var  =>  [[], ["Page:Switch", nil, nil]],
+    :com_swi  =>  [[], ["Trigger:Switch", nil, nil]],
+  }
+  DATA_EVENT_KIND = {}
+  DATA_EVENT_CODE = []
+  DATA_EVENT_SYMBOL.each do |key, data|
+    next unless BY_EVENT[key]
+    DATA_EVENT_CODE += data[0]
+    data[0].each do |code|
+      DATA_EVENT_KIND[code] = data[1]
+    end
+  end
+  def self.search_codes
+    return DATA_EVENT_CODE
+  end
+  def self.code_kind(code)
+    return DATA_EVENT_KIND[code]
+  end
+  
+  DATA_EVENT_SWI_ID = []
+  DATA_EVENT_VAR_ID = []
+  EVENT_SWITCH_LIST.each do |d|
+    d = d..d if d.is_a?(Integer)
+    d.each {|id| DATA_EVENT_SWI_ID.push(id) }
+  end
+  EVENT_VARIABLE_LIST.each do |d|
+    d = d..d if d.is_a?(Integer)
+    d.each {|id| DATA_EVENT_VAR_ID.push(id) }
+  end
+  def self.swi_id_include?(d)
+    d = d..d if d.is_a?(Integer)
+    d.any? {|id| DATA_EVENT_SWI_ID.include?(id) }
+  end
+  def self.var_id_include?(d)
+    d = d..d if d.is_a?(Integer)
+    d.any? {|id| DATA_EVENT_VAR_ID.include?(id) }
+  end
+  def self.swi_name(id)
+    if EVENT_VAR_NAME == 0
+      sprintf("%04d", id)
+    else
+      sprintf("%04d:%s", id, @data_system.switches[id])
+    end
+  end
+  def self.var_name(id)
+    if EVENT_VAR_NAME == 0
+      sprintf("%04d", id)
+    else
+      sprintf("%04d:%s", id, @data_system.variables[id])
+    end
+  end
+  
+  def self.var_plus(s)
+    return "#{EVENT_VAR_PUT_PLUS[0]}#{s}#{EVENT_VAR_PUT_PLUS[1]}"
+  end
+  def self.var_if_type(param4)
+    if EVENT_VAR_PUT_IF == 1
+      case param4
+      when 0; c = "=="
+      when 1; c = ">="
+      when 2; c = "<="
+      when 3; c = ">"
+      when 4; c = "<"
+      when 5; c = "!="
+      end
+    else
+      case param4
+      when 0; c = var_plus("Equivalent to")
+      when 1; c = var_plus("that's all")
+      when 2; c = var_plus("Less than")
+      when 3; c = var_plus("Super")
+      when 4; c = var_plus("Less than")
+      when 5; c = var_plus("Other than")
+      end
+    end
+    return c
+  end
+  def self.var_set_type(params)
+    if EVENT_VAR_PUT_SET == 1
+      case params[2]
+      when 0; c = "="
+      when 1; c = "+="
+      when 2; c = "-="
+      when 3; c = "*="
+      when 4; c = "/="
+      when 5; c = "<<<<<<>>>>>>="
+      end
+    else
+      case params[2]
+      when 0; c = var_plus("Substitution")
+      when 1; c = var_plus("Addition")
+      when 2; c = var_plus("Subtraction")
+      when 3; c = var_plus("Multiplication")
+      when 4; c = var_plus("division")
+      when 5; c = var_plus("Remainder")
+      end
+    end
+    case params[3]
+    when 0; t = "constant#{params[4]}"
+    when 1; t = "variable[%s]" % var_name(params[4])
+    when 2; t = "random number#{params[4]}~#{params[5]}"
+    when 3; t = "Game data(Required confirmation)"
+      # value = game_data_operand(@params[4], @params[5], @params[6])
+    when 4; t = "script:#{params[4]}"
+    end
+    return "#{c}  #{t}"
+  end
+  
+  def self.data_kind
+    return BY_DATA.inject([]) {|kind, data| kind.push(data[0]) }.uniq
+  end
+  def self.data_methods(kind)
+    return BY_DATA.select {|data| data[0] == kind }.map {|data| data[1] }
+  end
+  def self.load_database(kind)
+    case kind
+    when :actor  ; load_data("Data/Actors.rvdata2")
+    when :class  ; load_data("Data/Classes.rvdata2")
+    when :skill  ; load_data("Data/Skills.rvdata2")
+    when :item   ; load_data("Data/Items.rvdata2")
+    when :weapon ; load_data("Data/Weapons.rvdata2")
+    when :armor  ; load_data("Data/Armors.rvdata2")
+    when :enemy  ; load_data("Data/Enemies.rvdata2")
+    when :state  ; load_data("Data/States.rvdata2")
+    end
+  end
+  def self.database_name(kind)
+    case kind
+    when :actor  ; "actor"
+    when :class  ; "Profession"
+    when :skill  ; "skill"
+    when :item   ; "item"
+    when :weapon ; "weapon"
+    when :armor  ; "Armor"
+    when :enemy  ; "Enemy character"
+    when :state  ; "State"
+    end
+  end
+  
+  def self.putex(mes)
+    puts(mes)
+    @@text += mes.gsub(/\n$/) { "" }
+    @@text += "\n"
+  end
+  def self.clear_text
+    @@text = ""
+  end
+  def self.save_text
+    File.open("search.txt", "w") {|f| f.write @@text }
+  end
+  
+end
+
+Event_Search.search if $TEST and !$BTEST and Event_Search::USE_ALLL

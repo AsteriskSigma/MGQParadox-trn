@@ -1,0 +1,238 @@
+=begin
+=改造/エラー処理
+
+
+
+
+==更新履歴
+  Date     Version Author Comment
+==15/09/03 2.0.2   トリス 統合J～U R移植
+==17/10/21 2.2.0   ひまわり　バグ修正
+=end
+
+#==============================================================================
+# ■ Window_ItemList
+#==============================================================================
+class Window_ItemList < Window_Selectable
+	#--------------------------------------------------------------------------
+	# ○ 指定されたアイテムにカーソルを移動　なければ0番にカーソルを移動
+	#--------------------------------------------------------------------------
+	def select_item(s_item)
+		@data.each_with_index do |d_item, i|
+			return select(i) if s_item == d_item
+		end
+		return select(0)
+	end
+end
+
+#==============================================================================
+# ■ FavoriteItem
+#==============================================================================
+module FavoriteItem
+	#--------------------------------------------------------------------------
+	# ○ 選択中のアイテムのお気に入り状態を変更
+	#--------------------------------------------------------------------------
+	def process_set_favorite_item
+		Input.update
+		return Sound.play_buzzer if @item_window.item.nil?
+		Sound.play_ok
+		@item_window.set_favorite_item
+		@item_window.refresh
+		if @item_window.favorite_mode
+			@item_window.select([@item_window.index - 1 ,0].max)
+			
+		end
+		
+		@item_window.refresh
+	end
+	#--------------------------------------------------------------------------
+	# ○ お気に入り表示モードを変更
+	#--------------------------------------------------------------------------
+	def process_change_favorite_mode
+		Input.update
+		Sound.play_ok
+		last_item = @item_window.item
+		@item_window.change_favorite_mode
+		@item_window.refresh
+		if @item_window.active
+			@item_window.select_item(last_item)
+		else
+			@item_window.select(-1)
+		end
+	end
+	#--------------------------------------------------------------------------
+	# ○ フレーム更新
+	#--------------------------------------------------------------------------
+	def update
+		if enable_set_favorite_item?
+			return process_set_favorite_item if Input.trigger?(:Y)
+		end
+		if enable_change_favorite_mode?
+			return process_change_favorite_mode if Input.trigger?(:Z)
+		end
+		if off_favorite_mode? and @item_window.favorite_mode
+			@item_window.change_favorite_mode
+		end
+		super
+	end
+	#--------------------------------------------------------------------------
+	# ○ 可否　選択中のアイテムのお気に入り状態を変更
+	#--------------------------------------------------------------------------
+	def enable_set_favorite_item?
+		false
+	end
+	#--------------------------------------------------------------------------
+	# ○ 可否　お気に入り表示モードを変更
+	#--------------------------------------------------------------------------
+	def enable_change_favorite_mode?
+		false
+	end
+	#--------------------------------------------------------------------------
+	# ○ 有無　お気に入り表示モードをオフ
+	#--------------------------------------------------------------------------
+	def off_favorite_mode?
+		!@item_window.visible
+	end
+end
+
+#==============================================================================
+# ■ Scene_Item
+#==============================================================================
+class Scene_Item < Scene_ItemBase
+	include FavoriteItem
+	#--------------------------------------------------------------------------
+	# ○ 可否　選択中のアイテムのお気に入り状態を変更
+	#--------------------------------------------------------------------------
+	def enable_set_favorite_item?
+		@item_window.active
+	end
+	#--------------------------------------------------------------------------
+	# ○ 可否　お気に入り表示モードを変更
+	#--------------------------------------------------------------------------
+	def enable_change_favorite_mode?
+		@item_window.active or @category_window.active
+	end
+end
+#==============================================================================
+# ■ Scene_Equip
+#==============================================================================
+class Scene_Equip < Scene_MenuBase
+	include FavoriteItem
+	#--------------------------------------------------------------------------
+	# ○ 可否　選択中のアイテムのお気に入り状態を変更
+	#--------------------------------------------------------------------------
+	def enable_set_favorite_item?
+		@item_window.active
+	end
+	#--------------------------------------------------------------------------
+	# ○ 可否　お気に入り表示モードを変更
+	#--------------------------------------------------------------------------
+	def enable_change_favorite_mode?
+		@item_window.active or @slot_window.active
+	end
+end
+#==============================================================================
+# ■ Scene_Battle
+#==============================================================================
+class Scene_Battle < Scene_Base
+	include FavoriteItem
+	#--------------------------------------------------------------------------
+	# ○ 可否　選択中のアイテムのお気に入り状態を変更
+	#--------------------------------------------------------------------------
+	def enable_set_favorite_item?
+		@item_window.active
+	end
+	#--------------------------------------------------------------------------
+	# ○ 可否　お気に入り表示モードを変更
+	#--------------------------------------------------------------------------
+	def enable_change_favorite_mode?
+		@item_window.active
+	end
+end
+#==============================================================================
+# ■ Window_ItemList
+#==============================================================================
+class Window_ItemList < Window_Selectable
+	#--------------------------------------------------------------------------
+	# ● 公開インスタンス変数
+	#--------------------------------------------------------------------------
+	attr_reader   :favorite_mode            # お気に入りモード
+	#--------------------------------------------------------------------------
+	# ○ 選択中のアイテムのお気に入り状態を取得
+	#--------------------------------------------------------------------------
+	def get_favorite_item_state
+		$game_party.favorite_item?(item)
+	end
+	#--------------------------------------------------------------------------
+	# ○ 選択中のアイテムのお気に入り状態を変更
+	#--------------------------------------------------------------------------
+	def set_favorite_item
+		$game_party.set_favorite_item(item)
+		update_help
+	end
+	#--------------------------------------------------------------------------
+	# ○ お気に入り表示モードを変更
+	#--------------------------------------------------------------------------
+	def change_favorite_mode
+		@favorite_mode = !@favorite_mode
+	end
+	#--------------------------------------------------------------------------
+	# ● アイテムリストの作成
+	#--------------------------------------------------------------------------
+	def make_item_list
+		@data = $game_party.all_items.select {|item| include?(item) }
+		@data.reject! {|item| !$game_party.favorite_item?(item) } if @favorite_mode
+		@data.push(nil) if include?(nil)
+	end
+	
+	#--------------------------------------------------------------------------
+	# ● アイテム名の描画
+	#     enabled : 有効フラグ。false のとき半透明で描画
+	#--------------------------------------------------------------------------
+	#~ def draw_item_name(item, x, y, enabled = true, width = 236)
+		#~ return unless item
+		#~ draw_icon(item.icon_index, x, y, enabled)
+		#~ color = $game_party.favorite_item?(item) ? tp_gauge_color2 : normal_color
+		#~ change_color(color, enabled)
+		#~ draw_text(x + 24, y, width, line_height, item.name)
+	#~ end
+end
+
+#==============================================================================
+# ■ Game_Party
+#==============================================================================
+class Game_Party < Game_Unit
+	#--------------------------------------------------------------------------
+	# ○ アイテムのお気に入りキー
+	#--------------------------------------------------------------------------
+	def favorite_key(item)
+		return [:item,   item.id] if item.is_a?(RPG::Item)
+		return [:weapon, item.id] if item.is_a?(RPG::Weapon)
+		return [:armor,  item.id] if item.is_a?(RPG::Armor)
+		return nil
+	end
+	#--------------------------------------------------------------------------
+	# ○ アイテムのお気に入り状態を変更
+	#--------------------------------------------------------------------------
+	def set_favorite_item(item)
+		return if item.nil?
+		key = favorite_key(item)
+		symbol = key[0]
+		id = key[1]
+		@favorite_item ||= {}
+		@favorite_item[symbol] ||= []
+		@favorite_item[symbol][id] = !@favorite_item[symbol][id]
+	end
+	#--------------------------------------------------------------------------
+	# ○ お気に入りかどうか
+	#--------------------------------------------------------------------------
+	def favorite_item?(item)
+		return nil if item.nil?
+		key = favorite_key(item)
+		symbol = key[0]
+		id = key[1]
+		@favorite_item ||= {}
+		@favorite_item[symbol] ||= []
+		return @favorite_item[symbol][id]
+	end
+end

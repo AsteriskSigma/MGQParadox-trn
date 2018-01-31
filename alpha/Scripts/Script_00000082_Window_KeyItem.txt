@@ -1,0 +1,56 @@
+#==============================================================================
+# ■ Window_KeyItem
+#------------------------------------------------------------------------------
+# This is the window used for the event command [item selection processing].
+#==============================================================================
+
+class Window_KeyItem < Window_ItemList
+  #--------------------------------------------------------------------------
+  # ● Object initialization
+  #--------------------------------------------------------------------------
+  def initialize(message_window)
+    @message_window = message_window
+    super(0, 0, Graphics.width, fitting_height(4))
+    self.openness = 0
+    deactivate
+    set_handler(:ok,     method(:on_ok))
+    set_handler(:cancel, method(:on_cancel))
+  end
+  #--------------------------------------------------------------------------
+  # ● Start input processing
+  #--------------------------------------------------------------------------
+  def start
+    self.category = :key_item
+    update_placement
+    refresh
+    select(0)
+    open
+    activate
+  end
+  #--------------------------------------------------------------------------
+  # ● Update window position
+  #--------------------------------------------------------------------------
+  def update_placement
+    if @message_window.y >= Graphics.height / 2
+      self.y = 0
+    else
+      self.y = Graphics.height - height
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Process at decision
+  #--------------------------------------------------------------------------
+  def on_ok
+    result = item ? item.id : 0
+    $game_variables[$game_message.item_choice_variable_id] = result
+    close
+  end
+  #--------------------------------------------------------------------------
+  # ● Process at Cancellation
+  #--------------------------------------------------------------------------
+  def on_cancel
+    $game_variables[$game_message.item_choice_variable_id] = 0
+    close
+  end
+end
+

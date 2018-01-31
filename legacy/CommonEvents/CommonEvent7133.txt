@@ -1,0 +1,22 @@
+﻿// EVENT 7133
+Name "Jasuka: Defeat"
+
+RunCommonEvent(7000)
+PictureDisplay(5,"80_justice_st01",0,0,0,0,100,100,255,0)
+PictureClear(6)
+ShowMessageFace("justice_fc1",0,0,2,1)
+ShowMessage("\\n<Jessica>That makes it my win!\nHand over the bet!")
+125(1,0,250)
+ShowMessageFace("",0,0,2,2)
+ShowMessage("Luka hands over 250G!")
+ShowMessageFace("justice_fc1",0,0,2,3)
+ShowMessage("\\n<Jessica>Of course, you're going to challenge me to a rematch soon aren't you!?\nI'll keep dueling you until my suit is too sticky to move in!")
+If(0,2331,1)
+ PictureClear(5)
+ 281(1)
+ TeleportPlayer(0,13,17,7,2,0)
+ 216(0)
+ 0()
+EndIf()
+EndEventProcessing()
+0()

@@ -1,0 +1,28 @@
+// EVENT 0345
+Name "Nightmare breakthrough"
+
+ChangeSwitch(2214,2214,0)
+If(0,4,0)
+ ShowMessageFace("alice_fc5",0,0,2,1)
+ ShowMessage("【Alice】")
+ ShowMessage("I passed through the nightmare wilderness and finally got into the desert zone.")
+ ShowMessage("If you go to the west, you have Tartarus ... ...")
+ ShowMessageFace("alice_fc5",0,0,2,2)
+ ShowMessage("【Alice】")
+ ShowMessage("Before that, will you head to the gods of the gods northwest from here?")
+ ShowMessage("There is something I'd like to check in advance, and there may be places to rest my body.")
+ 0()
+EndIf()
+If(0,5,0)
+ ShowMessageFace("iriasu_fc4",0,0,2,3)
+ ShowMessage("【Iliad】")
+ ShowMessage("Passing through the wilderness of the nightmare, it finally enters the desert zone.")
+ ShowMessage("If you go to the west, you have Tartarus ... ...")
+ ShowMessageFace("iriasu_fc4",0,0,2,4)
+ ShowMessage("【Iliad】")
+ ShowMessage("Before that, will not you go to the rust of the monster in the northwest from here?")
+ ShowMessage("I have something I'd like to check, and I have to rest my body ......")
+ 0()
+EndIf()
+0()
+

@@ -1,0 +1,142 @@
+#==============================================================================
+# ■ Game_Actor
+#==============================================================================
+class Game_Actor < Game_Battler  
+	#--------------------------------------------------------------------------
+	# ○ 通常能力値の加算値取得
+	#--------------------------------------------------------------------------
+	def param_plus(param_id)
+		base = [@param_plus[param_id] , max_param_plus(param_id)].min
+		equips.compact.inject(base) do |r, item|
+			value = item.params[param_id]
+			value *= item_mastery_rate(item) if value > 0
+			r += value # to_iは不要
+		end
+	end
+	
+end
+
+#==============================================================================
+# ■ RPG::Weapon
+#==============================================================================
+class RPG::Weapon < RPG::EquipItem
+	#--------------------------------------------------------------------------
+	# ● メモ欄解析処理
+	#--------------------------------------------------------------------------
+	def nw_note_analyze
+		nw_kure_weapon_note_analyze
+		
+		self.note.each_line do |line|
+			if NWRegexp::Weapon::NOT_DUAL_WIELD.match(line)
+				@data_ex[:not_dual_wield?] = true
+			end
+		end 
+		
+		change_weapon features
+	end
+	
+	def change_weapon features
+		@features = 
+		features.reject{|feature|
+			feature.code == FEATURE_XPARAM && feature.data_id == 0
+		} + features.select{|feature|
+			feature.code == FEATURE_XPARAM && feature.data_id == 0
+		}.map{|feature| 
+			RPG::BaseItem::Feature.new(
+				FEATURE_XPARAM_EX, 0, feature.value )
+		}
+		@add_features = []
+		
+	end
+	
+end
+
+class Game_BattlerBase
+	
+	#--------------------------------------------------------------------------
+	# ○ 追加能力値の取得
+	#--------------------------------------------------------------------------
+	def xparam(xparam_id)
+		case xparam_id
+		when 0
+			xparam_ex(xparam_id) + features_sum(FEATURE_XPARAM, xparam_id)
+		when 3
+			features_sum(FEATURE_XPARAM, xparam_id)
+		else
+			features_xparam_rate(FEATURE_XPARAM, xparam_id)
+		end
+		
+	end
+	
+	def xparam_ex(xparam_id)
+		case xparam_id
+		when 0
+			values = features_with_id(FEATURE_XPARAM_EX, xparam_id).map(&:value)
+			return 0.8 if values.empty?
+			return values.inject(&:+) / values.size
+		else
+			features_sum(FEATURE_XPARAM_EX, xparam_id)
+		end
+	end
+end
+#==============================================================================
+# ■ BattleManager
+#==============================================================================
+class << BattleManager
+  #--------------------------------------------------------------------------
+  # ● 戦闘開始スキルの設定
+  #--------------------------------------------------------------------------
+  def set_battle_start_skill
+    @action_game_masters = []
+    return if giveup?
+    return if not $game_party.in_battle
+    return if $game_troop.interpreter.running?
+    ($game_troop.alive_members + $game_party.alive_members).each{|member|
+			skills = []
+      member.battle_start_skill.each{|obj|
+        if rand < obj[:per]
+					skills << obj[:id]
+        end
+      }
+			skill_interrupt(member, skills.sample) unless skills.empty?
+    }
+  end
+  #--------------------------------------------------------------------------
+  # ● ターン開始スキルの設定
+  #--------------------------------------------------------------------------
+  def set_turn_start_skill
+    @action_game_masters = []
+    return if giveup?
+    return if not $game_party.in_battle
+    return if $game_troop.interpreter.running?
+    ($game_troop.alive_members + $game_party.alive_members).each{|member|
+			skills = []
+      member.turn_start_skill.each{|obj|
+        if rand < obj[:per]
+					skills << obj[:id]
+        end
+      }
+			skill_interrupt(member, skills.sample) unless skills.empty?
+    }
+  end
+  #--------------------------------------------------------------------------
+  # ● ターン終了スキルの設定
+  #--------------------------------------------------------------------------
+  def set_turn_end_skill
+    @action_game_masters = []
+    return if giveup?
+    return if not $game_party.in_battle
+    return if $game_troop.interpreter.running?
+    ($game_troop.alive_members + $game_party.alive_members).each{|member|
+			skills = []
+      member.turn_end_skill.each{|obj|
+				
+        if rand < obj[:per]
+					skills << obj[:id]
+        end
+				
+      }
+			skill_interrupt(member, skills.sample) unless skills.empty?
+    }
+  end
+end

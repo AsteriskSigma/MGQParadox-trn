@@ -1,0 +1,8 @@
+"犯す" -> "commit"
+"射精1" -> "Ejaculation 1"
+"射精1" -> "Ejaculation 1"
+"なすがまま" -> "Nameless"
+"射精1" -> "Ejaculation 1"
+"射精1" -> "Ejaculation 1"
+"　Your penis is twitching" -> "Your penis is twitching"
+"射精2" -> "Ejaculation 2"

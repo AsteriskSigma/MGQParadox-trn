@@ -1,0 +1,713 @@
+#Detail display adjustment
+#==============================================================================
+# Help
+#==============================================================================
+class << Help
+	#--------------------------------------------------------------------------
+	# ● Equipment information change text
+	#--------------------------------------------------------------------------  
+	def equip_info_change
+		"←/→,#{Vocab.key_l}/#{Vocab.key_r}:Switch info page"
+	end
+	#--------------------------------------------------------------------------
+	# ● Equipment information change text
+	#--------------------------------------------------------------------------  
+	def equip_info_next
+		"#{Vocab.key_x}:Next page"
+	end
+	#--------------------------------------------------------------------------
+	# ● Equipment information change text
+	#--------------------------------------------------------------------------  
+	def equip_info_hide
+		"#{Vocab.key_b}:Close info page"
+	end
+	
+end
+module NWConst::EquipInfo
+	STATUS_MAX = 11
+end
+
+module EquipInfoWindows
+	#--------------------------------------------------------------------------
+	# ● Start processing
+	#--------------------------------------------------------------------------
+	def start
+		super
+		@deactivate_windows = []
+		@hide_windows = []
+		create_equip_info_itemname_window
+		create_equip_info_page_window
+		create_equip_info_window
+		@equip_info_current_window_index = 0
+		@equip_info_page = 0
+		@equip_info_isshow = false
+		@equip_info_windows = [@equip_info_window,@enchant_stone_window,@compare_ex_window]
+	end
+	def create_equip_info_itemname_window
+		@equip_info_itemname_window = Window_ItemName.new
+		@equip_info_itemname_window.viewport = @viewport
+	end
+	def create_equip_info_page_window
+		@equip_info_page_window = Window_Page.new
+		@equip_info_page_window.viewport = @viewport
+	end
+	#--------------------------------------------------------------------------
+	# ○ Frame update
+	#--------------------------------------------------------------------------
+	def update
+		super
+		if !@equip_info_isshow && !equip_info_hide?
+			equip_info_set_item(equip_info_select_item)
+			equip_info_set_page
+		end
+		equip_info_change_visible if Input.trigger?(:X)
+	end
+	#--------------------------------------------------------------------------
+	# ● Simple operation explanation text
+	#--------------------------------------------------------------------------
+	def show_key_text
+		if @equip_info_isshow
+			[Help.equip_info_change,
+				Help.equip_info_next,
+				Help.equip_info_hide
+			]
+		end
+	end
+	#--------------------------------------------------------------------------
+	# ¡Set items in the performance difference comparison window
+	#--------------------------------------------------------------------------
+	def equip_info_set_item(select_item)
+		@equip_info_itemname_window.item = select_item
+		@equip_info_windows.each{|window| window.item = select_item}
+	end
+	
+	#--------------------------------------------------------------------------
+	# ● Set page of performance difference window
+	#--------------------------------------------------------------------------
+	def equip_info_set_page
+		@equip_info_page_window.page_index = equip_info_get_all_page_index[@equip_info_current_window_index] + @equip_info_page
+		@equip_info_page_window.page_max = equip_info_all_page_max
+		equip_info_window.page_index = @equip_info_page
+		equip_info_window.refresh if @equip_info_isshow 
+		
+	end
+	#--------------------------------------------------------------------------
+	# ● All pages
+	#--------------------------------------------------------------------------
+	def equip_info_all_page_max
+		equip_info_windows.map(&:page_max).inject(&:+)
+	end
+	
+	#--------------------------------------------------------------------------
+	# ● Initial number of pages viewed from all pages for each window
+	#--------------------------------------------------------------------------
+	def equip_info_get_all_page_index
+		@equip_info_windows.map(&:page_max).map.with_index{|p,index|
+			(@equip_info_windows.map(&:page_max)[0,index] || []).inject(1){|i,v| i + v}
+		}
+	end
+	#--------------------------------------------------------------------------
+	# ● Get all windows
+	#--------------------------------------------------------------------------
+	def equip_info_windows
+		return @equip_info_windows.select{|window|window.page_max > 0}
+	end
+	
+	#--------------------------------------------------------------------------
+	# ● Get the current display status
+	#--------------------------------------------------------------------------
+	def equip_info_window_visible
+		equip_info_windows.map(&:visible)
+	end
+	#--------------------------------------------------------------------------
+	# ○ Frame update
+	#--------------------------------------------------------------------------
+	def update_all_windows
+		if @equip_info_isshow
+			case
+			when Input.trigger?(:B)
+				equip_info_hide
+				Input.update
+			when Input.trigger?(:L) || Input.trigger?(:LEFT)
+				equip_info_before_page
+				Input.update
+			when Input.trigger?(:R) || Input.trigger?(:RIGHT)
+				equip_info_next_page
+				Input.update
+			end
+		end
+		super
+	end
+	#--------------------------------------------------------------------------
+	# ¡Creation of performance difference comparison window
+	#--------------------------------------------------------------------------
+	def create_equip_info_window
+		
+		@compare_ex_window = Window_ShopCompareEx.new
+		@equip_info_window = Window_ShopStatusEx.new(0, 56, 640, 368)
+		@enchant_stone_window = Window_Enchant_Stones.new(0,56,640,368)
+		
+		@compare_ex_window.z = 100
+		@equip_info_window.z = 100
+		@enchant_stone_window.z = 100
+		@compare_ex_window.viewport = @viewport
+		@equip_info_window.viewport = @viewport
+		@enchant_stone_window.viewport = @viewport
+	end
+	#--------------------------------------------------------------------------
+	# ○ Switch the display state of the performance difference comparison window
+	#--------------------------------------------------------------------------
+	def equip_info_change_visible
+		equip_info_next_page if @equip_info_isshow
+		if !@equip_info_isshow && !equip_info_hide?
+			equip_info_show
+		end
+	end
+	#--------------------------------------------------------------------------
+	# ● To the next page
+	#--------------------------------------------------------------------------
+	def equip_info_next_page
+		@equip_info_page += 1
+		if @equip_info_page >= equip_info_window.page_max 
+			if @equip_info_current_window_index >= equip_info_windows.size-1
+				equip_info_window.hide
+				@equip_info_current_window_index = 0
+				@equip_info_page = 0
+				equip_info_window.show
+			else
+				equip_info_window.hide
+				@equip_info_current_window_index += 1
+				@equip_info_page = 0
+				equip_info_window.show
+			end
+		end
+		equip_info_set_page
+	end
+	#--------------------------------------------------------------------------
+	# ● To the previous page
+	#--------------------------------------------------------------------------
+	def equip_info_before_page
+		@equip_info_page -= 1
+		if @equip_info_page == -1
+			if @equip_info_current_window_index == 0
+				equip_info_window.hide
+				@equip_info_current_window_index = equip_info_windows.size-1
+				@equip_info_page = (equip_info_window.page_max-1)
+				equip_info_window.show
+			else
+				equip_info_window.hide
+				@equip_info_current_window_index -= 1
+				@equip_info_page = (equip_info_window.page_max-1)
+				
+				equip_info_window.show
+			end
+		end
+		equip_info_set_page
+	end
+	#--------------------------------------------------------------------------
+	# ● Obtain a currently active window
+	#--------------------------------------------------------------------------
+	def equip_info_window
+		equip_info_windows[@equip_info_current_window_index]
+	end
+	#--------------------------------------------------------------------------
+	# Display of performance difference comparison window
+	#--------------------------------------------------------------------------
+	def equip_info_show
+		@equip_info_isshow = true
+		@deactivate_windows = []
+		@hide_windows = []
+		instance_variables.each do |varname|
+			ivar = instance_variable_get(varname)
+			if ivar.is_a?(Window)
+				@deactivate_windows << ivar if  ivar.active
+				@hide_windows << ivar if ivar.visible
+			end
+		end
+		@deactivate_windows.each(&:deactivate)
+		@hide_windows.each(&:hide)
+		@equip_info_page = 0
+		@equip_info_current_window_index = 0
+		equip_info_window.show
+		@equip_info_itemname_window.show
+		@equip_info_itemname_window.refresh
+		@equip_info_page_window.show
+		equip_info_window.refresh
+	end
+	#--------------------------------------------------------------------------
+	# ○ Hide performance difference comparison window
+	#--------------------------------------------------------------------------
+	def equip_info_hide
+		@equip_info_itemname_window.hide
+		@equip_info_page_window.hide
+		@equip_info_page = 0
+		@equip_info_current_window_index = 0
+		equip_info_windows.each{|window|window.hide}
+		@deactivate_windows.each(&:activate)
+		@hide_windows.each(&:show)
+		@equip_info_isshow = false
+	end
+	#--------------------------------------------------------------------------
+	# ● Change the performance difference comparison window
+	#--------------------------------------------------------------------------
+	def equip_info_change?
+		return true if (equip_info_select_item.nil? || !equip_info_select_item.enchant_item?) && @enchant_stone_window.visible
+		return true if equip_info_select_item.nil? && @equip_info_window.visible 
+	end
+	
+	def equip_info_refresh
+	end
+end
+
+module EquipInfo
+	attr_accessor :page_index
+	attr_accessor :item
+	
+	def page_max
+		1
+	end
+	
+end
+#==============================================================================
+# ■ Window_ItemName
+#==============================================================================
+class Window_ItemName < Window_Base
+	attr_accessor :item
+	def initialize
+		super(0,0,Graphics.width,56)
+		hide
+	end
+	def item=(item)
+		if @item != item
+			@item = item
+		end
+	end
+	
+	def refresh
+		contents.clear
+		draw_item if item
+	end
+	
+	#--------------------------------------------------------------------------
+	# ● Draw item information
+	#--------------------------------------------------------------------------
+	def draw_item
+		rect = Rect.new(0, 4, contents_width, line_height)
+		enable = SceneManager.scene.equip_info_enable
+		change_color(normal_color)
+		draw_item_name(@item, rect.x, rect.y, enable,contents_width)
+		change_color(normal_color, enable)
+		draw_text(rect, @item.socket_name, 2) if @item.enchant_item?
+	end
+end
+#==============================================================================
+# ■ Window_Page
+#==============================================================================
+class Window_Page < Window_Base
+	attr_accessor :page_index, :page_max
+	def initialize
+		super(0,Graphics.height-56,Graphics.width,56)
+		hide
+	end
+	def page_max=(page_max)
+		if @page_max != page_max
+			@page_max = page_max
+			refresh
+		end
+	end
+	def page_index=(page)
+		if @page_index != page
+			@page_index = page
+			refresh
+		end
+	end
+	
+	def refresh
+		contents.clear
+		draw_page if page_index && page_max
+	end
+	
+	def draw_page
+		rect = Rect.new(Graphics.width/2 -50, 4, 100, line_height)
+		change_color(system_color)
+		draw_text(rect, "←")
+		draw_text(rect, "#{@page_index}/#{@page_max}", 1)
+		draw_text(rect, "→",2)
+	end
+end
+#==============================================================================
+# ■ Window_ShopStatusEx
+#==============================================================================
+class Window_ShopStatusEx < Window_ShopStatus
+	include EquipInfo
+	#--------------------------------------------------------------------------
+	# ● Object initialization
+	#--------------------------------------------------------------------------
+	def initialize(x, y, width, height)
+		super(x, y, width, height)
+		self.back_opacity  = 192
+		self.z = 100
+		hide
+	end
+	#--------------------------------------------------------------------------
+	# ● Item settings
+	#--------------------------------------------------------------------------
+	def item=(item)
+		@item = item
+	end
+	#--------------------------------------------------------------------------
+	# ● Update color tone
+	#--------------------------------------------------------------------------
+	def update_tone
+		self.tone.set($game_system.window_tone)
+	end
+	#--------------------------------------------------------------------------
+	# ○ Updating pages
+	#--------------------------------------------------------------------------
+	def update_page
+		return
+	end
+	
+	#--------------------------------------------------------------------------
+	# ● Drawing basic performance
+	#--------------------------------------------------------------------------
+	def draw_params(x, y, index)
+		rect = Rect.new(x, y, 150, line_height)
+		
+		param_names = @item.param_names
+		change_color(system_color)
+		draw_text(rect, "Base Stats")
+		rect.x += 10
+		rect.y += line_height + 2
+		
+		@item.params.each.with_index{|param,i|
+			next if param == 0
+			change_color(system_color)
+			draw_text(rect,Vocab::param(i))
+			change_color(normal_color)
+			draw_text(rect,param,2)
+			rect.y += line_height
+		}
+		param_names.each{|param|
+			
+			
+		}
+		draw_enchants(x+320,0,index)
+	end
+	
+	
+	#--------------------------------------------------------------------------
+	# ● Draw special effects
+	#--------------------------------------------------------------------------
+	def draw_enchants(x, y, index)
+		
+		rect = Rect.new(x, y, 300, line_height)
+		range_array = draw_enchant_contents(index)
+		enchant_names = @item.enchant_names[range_array[0],range_array[1]]
+		change_color(system_color)
+		draw_text(rect, "Special Effects")
+		rect.x += 10
+		rect.y += line_height + 2
+		change_color(normal_color)
+		
+		while enchant_names && !enchant_names.empty? do
+			rect.y = y + line_height + 2
+			array = enchant_names.shift(NWConst::EquipInfo::STATUS_MAX)
+			array.each{|enchant|
+				draw_text(rect,enchant)
+				rect.y += line_height
+			}
+			rect.x += 320
+		end
+		change_color(system_color)
+		rect.x = 320
+		rect.y = contents.height - (line_height)
+		draw_text(rect,"→ Next Page") if page_max-1 > @page_index
+	end
+	
+	def draw_enchant_contents(index)
+		return [0,(NWConst::EquipInfo::STATUS_MAX)] if index ==0
+		a = draw_enchant_contents(index-1)
+		a[0] = a[1]
+		a[1] +=(NWConst::EquipInfo::STATUS_MAX )* 2
+		return a 
+	end
+	#--------------------------------------------------------------------------
+	# ○ Acquire the maximum number of pages
+	#--------------------------------------------------------------------------
+	def page_max
+		return 0 if @item.nil?
+		return 0 if @item.is_a?(RPG::Item)
+		return param_page_max + enchant_page_max
+	end
+	#--------------------------------------------------------------------------
+	# ○ Refresh
+	#--------------------------------------------------------------------------
+	def refresh
+		contents.clear
+		if @item.nil?
+			change_color(normal_color, false)
+			draw_text(0, 0, contents_width, line_height, "Nothing selected")
+			return
+		end
+		return if page_max == 0
+		return if @item.is_a?(RPG::Item)
+		method_name = draw_methods[@page_index][:name]
+		index = draw_methods[@page_index][:index]
+		send(method_name, 0, 0, index)    
+	end
+	
+	
+	def param_page_max
+		1
+	end
+	def enchant_page_max
+		[((@item.enchant_names.size - NWConst::EquipInfo::STATUS_MAX-1).to_f / (NWConst::EquipInfo::STATUS_MAX)/2.0).ceil , 0].max.to_i
+	end
+	#--------------------------------------------------------------------------
+	# ● Drawing instruction method array acquisition
+	#--------------------------------------------------------------------------
+	def draw_methods
+		methods = []
+		param_page_max.times{|i| methods.push({:name => :draw_params, :index => i})}
+		enchant_page_max.times{|i| methods.push({:name => :draw_enchants, :index => i + param_page_max})}
+		methods.push({:name => :draw_empty}) if methods.empty?
+		return methods
+	end
+end
+
+#==============================================================================
+# ■ Window_ShopCompareEx
+#==============================================================================
+class Window_ShopCompareEx < Window_ShopCompare
+	include EquipInfo
+	#--------------------------------------------------------------------------
+	# ● Update color tone
+	#--------------------------------------------------------------------------
+	def update_tone
+		self.tone.set($game_system.window_tone)
+	end
+	#--------------------------------------------------------------------------
+	# ● Object initialization
+	#--------------------------------------------------------------------------
+	def initialize
+		super()
+		self.y = 56
+		self.z = 100
+		self.height = 368
+		create_contents
+		@page = 0
+		self.back_opacity  = 192
+		hide
+	end
+	def page_index
+		@page
+	end
+	def page_index=(value)
+		@page = value
+	end
+	#--------------------------------------------------------------------------
+	# ● Refresh
+	#--------------------------------------------------------------------------
+	def refresh
+		contents.clear
+		if @item.nil?
+			change_color(normal_color, false)
+			draw_text(0, 0, contents_width, line_height, "Nothing selected")
+			return
+		end
+		return if @item.is_a?(RPG::Item)
+		draw_actors
+	end
+	
+	#--------------------------------------------------------------------------
+	# ● Page movement process
+	#--------------------------------------------------------------------------
+	def process_page_move
+	end
+	#--------------------------------------------------------------------------
+	# ● Number of pages
+	#--------------------------------------------------------------------------
+	def page_max
+		return 1 if @item.nil?
+		return 1 if @item.is_a?(RPG::Item)
+		($game_party.all_members.size - 1) / 6 + 1
+	end
+	#--------------------------------------------------------------------------
+	# ● Drawing actor information
+	#--------------------------------------------------------------------------
+	def draw_actors
+		$game_party.all_members.each_with_index do |actor, i|
+			next if i / 6 != @page
+			num = i % 6
+			x = (contents.width / 2) * (num % 2)
+			y = 92 * (num / 2)
+			draw_actor_equip_info(x, y, actor)
+		end
+	end
+	def item=(item)
+		@item = item
+	end
+end
+#==============================================================================
+# ■ Window_Enchant_Stone
+#==============================================================================
+class Window_Enchant_Stone< Window_Base
+	attr_accessor :stone
+	def initialize(x, y, width, height)
+		super(x, y, width, height)
+		hide
+	end
+	
+	def refresh
+		contents.clear
+		draw_stone if stone
+	end
+	
+	def draw_stone
+		rect = Rect.new(0, 0, contents.width, line_height)
+		draw_text(rect ,"E:")
+		rect.x += 50
+		if stone == :empty
+			draw_text(rect,"------")
+		else
+			draw_item_name(stone,rect.x,rect.y)
+			rect.y += line_height*3/2
+			draw_text_ex(rect.x,rect.y,stone.description.gsub(/^【Secret stone】/i,""))
+		end
+	end
+end
+#==============================================================================
+# ■ Window_Enchant_Stones
+#==============================================================================
+class Window_Enchant_Stones< Window_Base
+	include EquipInfo
+	attr_accessor :item
+	#--------------------------------------------------------------------------
+	# ● Object initialization
+	#--------------------------------------------------------------------------
+	def initialize(x, y, width, height)
+		super(x, y, width, height)
+		@page_index = 0
+		sheight =  height + 3 -(height%3) 
+		@stone_windows = [
+			Window_Enchant_Stone.new(x,y,width,sheight/3),
+			Window_Enchant_Stone.new(x,y+sheight/3,width,sheight/3),
+			Window_Enchant_Stone.new(x,y+sheight/3*2,width,height-sheight/3*2)
+		]
+		hide
+	end
+	
+	def item=(item)
+		@item = item
+		@stone_windows.each{|window|
+			window.stone = nil
+		}
+		if item && item.enchant_item?
+			item.stones.each.with_index{|stone,index|
+				@stone_windows[index].stone = stone || :empty
+			}
+		end
+	end
+	
+	#--------------------------------------------------------------------------
+	# ○ Refresh
+	#--------------------------------------------------------------------------
+	def refresh
+		@stone_windows.each{|window|
+			window.refresh
+		}
+	end
+	
+	def page_max
+		!@item.nil? && @item.enchant_item? ? 1 : 0 	
+	end
+	
+	def show
+		@stone_windows.each{|window|
+			window.show
+		}
+	end
+	
+	def hide
+		super
+		@stone_windows.each{|window|
+			window.hide
+		}
+	end
+	
+	#~ def draw_stones(x,y)
+		#~ rect = Rect.new(x, y, contents.width, line_height)
+		#~ change_color(system_color)
+		#~ draw_text(rect, "Gems")
+		#~ rect.x += 10
+		#~ change_color(normal_color)
+		#~ rect.y += line_height + 2
+		#~ stones = @item.stones
+		#~ stones.each{|stone|
+			#~ rect.y  = draw_stone(rect.x,rect.y,stone)
+		#~ }
+	#~ end
+	
+	#~ def draw_stone(x,y,stone)
+		#~ rect = Rect.new(x, y, contents.width, line_height)
+		#~ draw_text(rect ,"E:")
+		#~ rect.x += 50
+		#~ stone ? draw_item_name(stone,rect.x,rect.y) : draw_text(rect,"------")
+		#~ rect.y += line_height
+		#~ draw_text(rect,stone.description.delete("【Secret stone】")) if stone
+		#~ rect.y += line_height
+		#~ rect.y += line_height
+		#~ rect.y += line_height
+		#~ return rect.y
+	#~ end
+end
+#==============================================================================
+# ■ Scene_Equip
+#==============================================================================
+class Scene_Equip < Scene_MenuBase
+	#--------------------------------------------------------------------------
+	# ● Simple operation explanation text
+	#--------------------------------------------------------------------------
+	def show_key_text
+		return super if super
+		case
+		when @command_window.active
+			[ShowKey_Help.lr_actor]
+		when @slot_window.active
+			[ShowKey_Help.equip_info,
+				ShowKey_Help.equip_shift,
+				ShowKey_Help.favorite_mode(@item_window.favorite_mode),
+				ShowKey_Help.lr_actor]
+		when @item_window.active
+			[ShowKey_Help.equip_info,
+				ShowKey_Help.favorite_item(@item_window.get_favorite_item_state),
+				ShowKey_Help.favorite_mode(@item_window.favorite_mode),
+				ShowKey_Help.lr_scroll]
+		end
+	end
+end
+
+#==============================================================================
+# ■ Scene_Item
+#==============================================================================
+class Scene_Item < Scene_ItemBase
+	#--------------------------------------------------------------------------
+	# ● Simple operation explanation text
+	#--------------------------------------------------------------------------
+	def show_key_text
+		case
+		when @category_window.active
+			[ShowKey_Help.favorite_mode(@item_window.favorite_mode)]
+		when @item_window.active && ![1, 2].include?(@category_window.index)
+			[ShowKey_Help.favorite_item(@item_window.get_favorite_item_state),
+				ShowKey_Help.favorite_mode(@item_window.favorite_mode),
+				ShowKey_Help.lr_scroll]
+		when @item_window.active
+			[ShowKey_Help.equip_info,
+				ShowKey_Help.favorite_item(@item_window.get_favorite_item_state),
+				ShowKey_Help.favorite_mode(@item_window.favorite_mode),
+				ShowKey_Help.lr_scroll]
+		end
+	end
+endd

@@ -1,0 +1,14 @@
+// EVENT 3999
+Name "おねだり終了死亡"
+
+PictureClear(1)
+PictureClear(5)
+PictureClear(6)
+246(2)
+242(2)
+ChangeVariable(1002,1002,0,0,0)
+216(1)
+355("forced_transfer(154,18,52)")
+355("release_temp_actors")
+355("$game_map.screen.clear")
+0()

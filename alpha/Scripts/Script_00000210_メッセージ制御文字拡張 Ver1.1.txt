@@ -1,0 +1,175 @@
+#==============================================================================
+# ★ RGSS 3_Message control character extension Ver1.2
+#==============================================================================
+=begin
+
+Author: tomoaky
+webSite: Tsukimoto(http://hikimoki.sakura.ne.jp/)
+
+Add the following to the control character of the message
+  ·\J[n]... drawing the occupation name of actor n
+  ·\K[n]... Draw two names of actor n
+  ·\T[n]... Draw icon and name of item n
+  ·\W[n]... Draw icon and name of number n weapon
+  ·\A[n]... Draw icon and name of number n armor
+  ·\S[n]... Draw icon and name of number n skill
+  
+Enemy's drop item acquisition message and level up
+Icons are added to skill acquisition messages
+  
+As an extra event command \"increase or decrease item\" \"increase or decrease of weapons\"
+When \"increase / decrease armor\" is executed, get message with icon automatically
+The function to display is carried.
+When turning on the flag switch (default number 9), the function is enabled.
+
+Game switch to use (default setting)
+  0009
+
+2012.04.11  Ver1.2
+  · Draw a job name\J[n] Add
+  
+2011.12.16  Ver1.1
+  · Draw two names\K[n] Add
+  - Corrected so as not to drop errors even if you pass an ID that does not exist
+  
+2011.12.15  Ver1.0
+  Release
+
+=end
+
+#==============================================================================
+# ■ BattleManager
+#==============================================================================
+module BattleManager
+  #--------------------------------------------------------------------------
+  # ● Acquisition and display of drop items 【Redefinition】
+  #--------------------------------------------------------------------------
+  def self.gain_drop_items
+    $game_troop.make_drop_items.each do |item|
+      $game_party.gain_item(item, 1)
+      case item
+      when RPG::Item;   text = "\\T[#{item.id}]"
+      when RPG::Weapon; text = "\\W[#{item.id}]"
+      when RPG::Armor;  text = "\\A[#{item.id}]"
+      end
+      $game_message.add(sprintf(Vocab::ObtainItem, text))
+    end
+    wait_for_message
+  end
+end
+
+#~ #==============================================================================
+#~ # ■ Game_Actor
+#~ #==============================================================================
+#~ class Game_Actor
+#~   #--------------------------------------------------------------------------
+#~   # ● Display of level up message [Redefinition]
+#~   #     new_skills : Array of newly learned skills
+#~   #--------------------------------------------------------------------------
+#~   def display_level_up(new_skills)
+#~     $game_message.new_page
+#~     $game_message.add(sprintf(Vocab::LevelUp, @name, Vocab::level, @level))
+#~     new_skills.each do |skill|
+#~       $game_message.add(sprintf(Vocab::ObtainSkill, "\\S[#{skill.id}]"))
+#~     end
+#~   end
+#~ end
+
+#==============================================================================
+# ■ Game_Interpreter
+#==============================================================================
+class Game_Interpreter
+  #--------------------------------------------------------------------------
+  # ● Increase or decrease items
+  #--------------------------------------------------------------------------
+  alias tmecex_game_interpreter_command_126 command_126
+  def command_126
+    tmecex_game_interpreter_command_126
+    value = operate_value(@params[1], @params[2], @params[3])
+    if value > 0
+      if $game_switches[NWConst::Sw::AUTO_MESSAGE] && !$game_party.in_battle
+        $game_message.add(sprintf(Vocab::ObtainItem,
+          "\\T[#{@params[0]}]#{value > 1 ? " #{value} x" : ""}"))
+      end
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Increase or decrease of weapons
+  #--------------------------------------------------------------------------
+  alias tmecex_game_interpreter_command_127 command_127
+  def command_127
+    tmecex_game_interpreter_command_127
+    value = operate_value(@params[1], @params[2], @params[3])
+    if value > 0
+      if $game_switches[NWConst::Sw::AUTO_MESSAGE] && !$game_party.in_battle
+        $game_message.add(sprintf(Vocab::ObtainItem,
+          "\\W[#{@params[0]}]#{value > 1 ? " #{value} x" : ""}"))
+      end
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Increase or decrease armor
+  #--------------------------------------------------------------------------
+  alias tmecex_game_interpreter_command_128 command_128
+  def command_128
+    tmecex_game_interpreter_command_128
+    value = operate_value(@params[1], @params[2], @params[3])
+    if value > 0
+      if $game_switches[NWConst::Sw::AUTO_MESSAGE] && !$game_party.in_battle
+        $game_message.add(sprintf(Vocab::ObtainItem,
+          "\\A[#{@params[0]}]#{value > 1 ? " #{value} x" : ""}"))
+      end
+    end
+  end
+end
+
+#==============================================================================
+# ■ Window_Base
+#==============================================================================
+class Window_Base < Window
+  #--------------------------------------------------------------------------
+  # ● Pre-conversion of control character
+  #    Before actually drawing, in principle replace only what changes to a string.
+  #    character\"\Is an escape character (\e)Conversion to.
+  #--------------------------------------------------------------------------
+  alias tmecex_window_base_convert_escape_characters convert_escape_characters
+  def convert_escape_characters(text)
+    result = tmecex_window_base_convert_escape_characters(text)
+    result.gsub!(/\eJ\[(\d+)\]/i) { actor_class_name($1.to_i) }
+    result.gsub!(/\eK\[(\d+)\]/i) { actor_nickname($1.to_i) }
+    result.gsub!(/\eT\[(\d+)\]/i) {
+      item = $data_items[$1.to_i]
+      item ? "\eI[#{item.icon_index}]#{item.name}" : ""
+    }
+    result.gsub!(/\eW\[(\d+)\]/i) {
+      item = $data_weapons[$1.to_i]
+      item ? "\eI[#{item.icon_index}]#{item.name}" : ""
+    }
+    result.gsub!(/\eA\[(\d+)\]/i) {
+      item = $data_armors[$1.to_i]
+      item ? "\eI[#{item.icon_index}]#{item.name}" : ""
+    }
+    result.gsub!(/\eS\[(\d+)\]/i) {
+      skill = $data_skills[$1.to_i]
+      skill ? "\eI[#{skill.icon_index}]#{skill.name}" : ""
+    }
+    result
+  end
+  #--------------------------------------------------------------------------
+  # ○ Acquire the name of the actor nth occupation
+  #--------------------------------------------------------------------------
+  def actor_class_name(n)
+    actor = n >= 1 ? $game_actors[n] : nil
+    actor ? actor.class.name : ""
+  end
+  #--------------------------------------------------------------------------
+  # ○ Acquire two names of Actor n
+  #--------------------------------------------------------------------------
+  def actor_nickname(n)
+    actor = n >= 1 ? $game_actors[n] : nil
+    actor ? actor.nickname : ""
+  end
+end
+
+
+

@@ -1,0 +1,576 @@
+
+DisplayName "Haunted Manor Basement"
+
+
+
+EVENT   1
+ PAGE   1
+  0()
+
+
+
+EVENT   2
+ PAGE   1
+  0()
+
+
+
+EVENT   3
+ PAGE   1
+  0()
+
+
+
+EVENT   4
+ PAGE   1
+  0()
+
+
+
+EVENT   5
+ PAGE   1
+  0()
+
+
+
+EVENT   6
+ PAGE   1
+  0()
+
+
+
+EVENT   7
+ PAGE   1
+  0()
+
+
+
+EVENT   8
+ PAGE   1
+  0()
+
+
+
+EVENT   9
+ PAGE   1
+  0()
+
+
+
+EVENT   10
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,343,19,17,2,0)
+  0()
+
+
+
+EVENT   11
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,343,19,17,2,0)
+  0()
+
+
+
+EVENT   12
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,343,19,17,2,0)
+  0()
+
+
+
+EVENT   13
+ PAGE   1
+  0()
+
+
+
+EVENT   14
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,343,19,17,2,0)
+  0()
+
+
+
+EVENT   15
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("The party uses the healing circle...")
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x48,0x65,0x61,0x6c,0x37,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  224(bytes(0x04,0x08,0x75,0x3a,0x0a,0x43,0x6f,0x6c,0x6f,0x72,0x25,0x00,0x00,0x00,0x00,0x00,0xe0,0x6f,0x40,0x00,0x00,0x00,0x00,0x00,0xe0,0x6f,0x40,0x00,0x00,0x00,0x00,0x00,0xe0,0x6f,0x40,0x00,0x00,0x00,0x00,0x00,0xe0,0x6f,0x40),30,true)
+  314(0,0)
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("The party's HP and MP have been fully restored!")
+  0()
+
+
+
+EVENT   16
+ PAGE   1
+  If(0,6,0)
+   ShowMessageFace("sonia_fc1",6,0,2,1)
+   ShowMessage("\\n<Sonya>There's nowhere for you to run now!")
+   0()
+  Else()
+   ShowMessageFace("ruka_fc1",0,0,2,2)
+   ShowMessage("\\n<Luka>We have you cornered for sure this time!")
+   0()
+  EndIf()
+  PictureDisplay(5,"80_chrom_st07",0,0,0,0,100,100,0,0)
+  PictureMove(5,null,0,0,0,0,100,100,255,0,30,true)
+  ShowMessageFace("chrom_fc2",5,0,2,3)
+  ShowMessage("\\n<Chrome>What's wrong you people?! Who are you and why are you trespassing in my laboratory?!")
+  ShowMessageFace("ruka_fc1",0,0,2,4)
+  ShowMessage("\\n<Luka>I was just about to ask that. Who are you, why are you here, and what do you mean by laboratory?")
+  PictureDisplay(5,"80_chrom_st01",0,0,0,0,100,100,255,0)
+  ShowMessageFace("chrom_fc2",0,0,2,5)
+  ShowMessage("\\n<Chrome>I am the great necromancer, Chrome!")
+  ShowMessageFace("chrom_fc2",0,0,2,6)
+  ShowMessage("\\n<Chrome>This mansion was formerly a graveyard, and even before that, it was an execution grounds.")
+  PictureDisplay(5,"80_chrom_st02",0,0,0,0,100,100,255,0)
+  ShowMessageFace("chrom_fc2",1,0,2,7)
+  ShowMessage("\\n<Chrome>This place is perfect for my research thanks to how common corpses are around here.")
+  If(0,6,0)
+   ShowMessageFace("sonia_fc3",7,0,2,8)
+   ShowMessage("\\n<Sonya>Research? What could you possibly be researching?")
+   0()
+  Else()
+   ShowMessageFace("ruka_fc1",0,0,2,9)
+   ShowMessage("\\n<Luka>Research? Research into what?")
+   0()
+  EndIf()
+  ShowMessageFace("chrom_fc2",1,0,2,10)
+  ShowMessage("\\n<Chrome>I already said I was a necromancer. Even idiots like you should be able to put two and two together.")
+  If(4,531,0)
+   ShowMessageFace("saniria_fc2",0,0,2,11)
+   ShowMessage("\\n<King of San Ilia>Necromancy... how abhorrent.")
+   0()
+  EndIf()
+  PictureDisplay(5,"80_chrom_st03",0,0,0,0,100,100,255,0)
+  ShowMessageFace("chrom_fc2",2,0,2,12)
+  ShowMessage("\\n<Chrome>My partner here is Frederica. She died in this mansion from illness, and she is an exceptional corpse. I'm going to use her to make my masterpiece, the ultimate zombie!")
+  ShowMessageFace("ruka_fc1",0,0,2,13)
+  ShowMessage("\\n<Luka>......")
+  ShowMessageFace("",0,0,2,14)
+  ShowMessage("An execution ground, a graveyard, a girl who died of illness, and an evil mage. Every rumor was true!")
+  ShowMessageFace("ruka_fc1",0,0,2,15)
+  ShowMessage("\\n<Luka>So that means, all those zombies in the mansion... They were your doing?!")
+  ShowMessageFace("chrom_fc2",2,0,2,16)
+  ShowMessage("\\n<Chrome>The ghosts appeared here of their own accord, but the zombies are all my handiwork.")
+  If(0,4,0)
+   ShowMessageFace("alice_fc5",0,0,2,17)
+   ShowMessage("\\n<Alice>Hmpf, profaning the dead is nothing to be proud of. I cannot overlook these kinds of actions.")
+   0()
+  EndIf()
+  If(0,5,0)
+   ShowMessageFace("iriasu_fc4",7,0,2,18)
+   ShowMessage("\\n<Ilias>I cannot forgive such savage actions! Regret your sins as I turn you to ash!")
+   0()
+  EndIf()
+  ShowMessageFace("chrom_fc2",2,0,2,19)
+  ShowMessage("\\n<Chrome>Hmph, there's still more I need to research. Fortunately for me, I just received a new batch of volunteers!")
+  ShowMessageFace("chrom_fc2",2,0,2,20)
+  ShowMessage("\\n<Chrome>Let's go, Frederica! We'll teach them the strength of my art!")
+  ShowMessageFace("frederika_fc1",0,0,2,21)
+  ShowMessage("\\n<Frederica>I am Chrome's servant. I won't show mercy to Chrome's enemies.")
+  ShowMessageFace("ruka_fc1",0,0,2,22)
+  ShowMessage("\\n<Luka>The dead aren't your playthings! Disturbing their rest and making them suffer is unforgivable!")
+  If(4,41,0)
+   ShowMessageFace("stein_fc2",2,0,2,23)
+   ShowMessage("\\n<Promestein>I don't see what's wrong with it. Either way, judging by the course of the conversation, we're fighting, right?")
+   0()
+  EndIf()
+  If(4,129,0)
+   ShowMessageFace("brunhild_fc1",0,0,2,24)
+   ShowMessage("\\n<Hild>Target confirmed, initiating combat protocols.")
+   0()
+  EndIf()
+  If(4,134,0)
+   ShowMessageFace("chrom_fc1",6,0,2,25)
+   ShowMessage("\\n<Chrome>What is tha- it's a doppleganger! It'll take my soul if I look at her!")
+   ShowMessageFace("chrom_fc2",5,0,2,26)
+   ShowMessage("\\n<Chrome'>No, we are the same person, just-")
+   ShowMessageFace("chrom_fc1",6,0,2,27)
+   ShowMessage("\\n<Chrome>It's talking! It'll take my soul if I listen!")
+   0()
+  EndIf()
+  PictureClear(5)
+  SetBattleBGM(bytes(0x04,0x08,0x6f,0x3a,0x0d,0x52,0x50,0x47,0x3a,0x3a,0x42,0x47,0x4d,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x62,0x6f,0x73,0x73,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69))
+  ChangeSwitch(22,22,0)
+  Battle(0,196,false,false)
+  ChangeSwitch(22,22,1)
+  SetBattleBGM(bytes(0x04,0x08,0x6f,0x3a,0x0d,0x52,0x50,0x47,0x3a,0x3a,0x42,0x47,0x4d,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0b,0x62,0x61,0x74,0x74,0x6c,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69))
+  PictureDisplay(5,"80_chrom_st41",0,0,0,0,100,100,0,0)
+  PictureMove(5,null,0,0,0,0,100,100,255,0,30,true)
+  ShowMessageFace("chrom_fc1",6,0,2,28)
+  ShowMessage("\\n<Chrome>Nghhh ...to think Frederica and I would lose!")
+  If(4,129,0)
+   ShowMessageFace("brunhild_fc1",0,0,2,29)
+   ShowMessage("\\n<Hild>Target can no longer proceed with combat. Exiting combat mode.")
+   0()
+  EndIf()
+  PictureDisplay(5,"80_chrom_st08",0,0,0,0,100,100,255,0)
+  ShowMessageFace("chrom_fc2",7,0,2,30)
+  ShowMessage("\\n<Chrome>I need to restore the Artiste name and yet my clan's revival is...")
+  If(0,4,0)
+   ShowMessageFace("alice_fc5",0,0,2,31)
+   ShowMessage("\\n<Alice>Artiste, you said? Are you from the Artiste family?")
+   PictureDisplay(5,"80_chrom_st07",0,0,0,0,100,100,255,0)
+   ShowMessageFace("chrom_fc2",5,0,2,32)
+   ShowMessage("\\n<Chrome>You've heard of us? Are you a high ranking yoma? You'd have to be to know about us.")
+   ShowMessageFace("alice_fc5",2,0,2,33)
+   ShowMessage("\\n<Alice>Despite my current appearance, I am the Monster Lord, Alipheese the 16th.")
+   ShowMessageFace("",0,0,2,34)
+   ShowMessage("Alice explained that she is the Monster Lord...")
+   ShowMessageFace("chrom_fc2",5,0,2,35)
+   ShowMessage("\\n<Chrome>I can't believe it, but since you know of the Artiste household's plight, will you hel-")
+   ShowMessageFace("alice_fc5",0,0,2,36)
+   ShowMessage("\\n<Alice>No, I won't help. I hate ghosts, zombies, and those who profane the dead. No matter perfect you think your zombie is, it won't help you restore your name.")
+   PictureDisplay(5,"80_chrom_st41",0,0,0,0,100,100,255,0)
+   ShowMessageFace("chrom_fc1",6,0,2,37)
+   ShowMessage("\\n<Chrome>Eh...?!")
+   If(0,6,0)
+    ShowMessageFace("sonia_fc4",0,0,2,38)
+    ShowMessage("\\n<Sonya>With her fear of the supernatural, there's no way Alice would restore a necromancer's house.")
+    0()
+   Else()
+    ShowMessageFace("ruka_fc1",0,0,2,39)
+    ShowMessage("\\n<Luka>Since the Monster Lord is terrified of ghosts, there's no way she would work with a necromancer.")
+    0()
+   EndIf()
+   ShowMessageFace("alice_fc5",6,0,2,40)
+   ShowMessage("\\n<Alice>I-I'm not scared!")
+   ShowMessageFace("chrom_fc1",6,0,2,41)
+   ShowMessage("\\n<Chrome>N-no way... then my dream of making the ultimate zombie is...")
+   ShowMessageFace("ruka_fc1",0,0,2,42)
+   ShowMessage("\\n<Luka>Knowing that, would you stop making zombies?")
+   PictureDisplay(5,"80_chrom_st42",0,0,0,0,100,100,255,0)
+   ShowMessageFace("chrom_fc1",5,0,2,43)
+   ShowMessage("\\n<Chrome>If zombies are no good, then ghosts are clearly out of the question. From the three great magicrafts, that only leaves dollcraft.")
+   ShowMessageFace("alice_fc5",1,0,2,44)
+   ShowMessage("\\n<Alice>That should suffice. I'm not scared of dolls.")
+   ShowMessageFace("alice_fc5",6,0,2,45)
+   ShowMessage("\\n<Alice>W-wait! T-that doesn't mean I'm scared of zombies or ghosts either!")
+   0()
+  EndIf()
+  If(0,5,0)
+   ShowMessageFace("iriasu_fc4",7,0,2,46)
+   ShowMessage("\\n<Ilias>We shall end your abominable bloodline right here! Now, turn into ash!")
+   If(0,6,0)
+    ShowMessageFace("sonia_fc2",2,0,2,47)
+    ShowMessage("\\n<Sonya>Stop! We can't just kill her without giving her a chance to explain herself!")
+    0()
+   Else()
+    ShowMessageFace("ruka_fc1",0,0,2,48)
+    ShowMessage("\\n<Luka>W-wait! You can't just kill her!")
+    0()
+   EndIf()
+   ShowMessageFace("iriasu_fc4",2,0,2,49)
+   ShowMessage("\\n<Ilias>Well, I knew you and your idealism would force me to refrain.")
+   ShowMessageFace("ruka_fc1",0,0,2,50)
+   ShowMessage("\\n<Luka>Chrome, will you stop desecrating corpses? Necromancy brings nothing but pain to not only the corpses you raise, but to their families too.")
+   PictureDisplay(5,"80_chrom_st07",0,0,0,0,100,100,255,0)
+   ShowMessageFace("chrom_fc2",5,0,2,51)
+   ShowMessage("\\n<Chrome>...I lost, I can only do as the winner says. Even I have that much pride.")
+   ShowMessageFace("chrom_fc2",5,0,2,52)
+   ShowMessage("\\n<Chrome>If zombies are no good, then ghosts are out of the question. Then from the three great magicrafts, that only leaves dollcraft.")
+   ShowMessageFace("ruka_fc1",0,0,2,53)
+   ShowMessage("\\n<Luka>I don't think there's a problem with that, so sure.")
+   0()
+  EndIf()
+  ShowMessageFace("",0,0,2,54)
+  ShowMessage("Mechanical dolls. There shouldn't be any problems with that, and since Chrome is going to stop her necromancy, the rumors will also fade from memory.")
+  PictureDisplay(5,"80_chrom_st01",0,0,0,0,100,100,255,0)
+  ShowMessageFace("chrom_fc2",0,0,2,55)
+  ShowMessage("\\n<Chrome>The Artiste family are the world's best at the three great magicrafts. Dolls will be no problem for me!")
+  ShowMessageFace("chrom_fc2",0,0,2,56)
+  ShowMessage("\\n<Chrome>From here on out, I will no longer be the great necromancer Chrome, but instead I'll be the great puppetmaster Chrome!")
+  If(4,531,0)
+   ShowMessageFace("saniria_fc2",0,0,2,57)
+   ShowMessage("\\n<King of San Ilia> I'm glad you're reforming yourself. With this, the rumors surrounding this mansion will also disappear.")
+   0()
+  EndIf()
+  ShowMessageFace("chrom_fc2",0,0,2,58)
+  ShowMessage("\\n<Chrome>However, please don't make me destroy Frederica. She's my greatest creati-no. She's my precious partner. I put my heart and soul into making her. ")
+  ShowMessageFace("frederika_fc1",0,0,2,59)
+  ShowMessage("\\n<Frederica>I was given life again by Chrome. I wish to stay as Chrome's servant")
+  If(0,6,0)
+   ShowMessageFace("sonia_fc1",0,0,2,60)
+   ShowMessage("\\n<Sonya>Unless you start making zombies again, there shouldn't be any problems.")
+   0()
+  Else()
+   ShowMessageFace("ruka_fc1",0,0,2,61)
+   ShowMessage("\\n<Luka>There shouldn't be any problems as long as you don't bother the dead anymore.")
+   0()
+  EndIf()
+  PictureDisplay(5,"80_chrom_st03",0,0,0,0,100,100,255,0)
+  ShowMessageFace("chrom_fc2",2,0,2,62)
+  ShowMessage("\\n<Chrome>All right, then I can upgrade Frederica with everything other than necromancy... Oh! I'll install doll parts! I can even use that makina stuff that's so popular nowadays!")
+  ShowMessageFace("ruka_fc1",0,0,2,63)
+  ShowMessage("\\n<Luka>......")
+  ShowMessageFace("",0,0,2,64)
+  ShowMessage("...Did she change at all?")
+  PictureClear(5)
+  ShowMessageFace("",0,0,2,65)
+  ShowMessage("Either way, the rumors should fade away, Chrome gave up her zombie research, and peace will surely return to this mansion.")
+  205(-1,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x07,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x15,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  ShowMessageFace("",0,0,2,66)
+  ShowMessage("I think we've done all we can do. Now, let's continue our adventure!")
+  ChangeVariable(1023,1023,0,0,2)
+  355("gain_medal(22)")
+  EndEventProcessing()
+  0()
+ PAGE   2
+  // condition: variable 1023 >= 2
+  If(2,"A",1)
+   ChangeSelfSwitch("A",0)
+   PictureDisplay(5,"80_chrom_st07",0,0,0,0,100,100,0,0)
+   PictureMove(5,null,0,0,0,0,100,100,255,0,30,true)
+   ShowMessageFace("chrom_fc2",5,0,2,1)
+   ShowMessage("\\n<Chrome>Now, where did I put my dollcraft set? I thought I stored it in the 3rd floor attic.")
+   205(17,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x07,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x17,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+   ShowMessageFace("frederika_fc1",0,0,2,2)
+   ShowMessage("\\n<Frederica>Chrome, didn't you throw it away when we had the big house cleaning three years ago?")
+   PictureDisplay(5,"80_chrom_st41",0,0,0,0,100,100,255,0)
+   ShowMessageFace("chrom_fc1",6,0,2,3)
+   ShowMessage("\\n<Chrome>Damn! That was my only dollcraft set. Now I'll have to start all over.")
+   If(0,4,0)
+    ShowMessageFace("alice_fc5",0,0,2,4)
+    ShowMessage("\\n<Alice>Dollcraft is the most ethical out of the three great magicrafts, but unless I'm mistaken, it's the most expensive by a large margin.")
+    0()
+   EndIf()
+   If(0,5,0)
+    ShowMessageFace("iriasu_fc4",0,0,2,5)
+    ShowMessage("\\n<Ilias>Out of all the magicrafts, dollcraft is the most expensive. Even I know that much about abominable monster culture.")
+    0()
+   EndIf()
+   PictureDisplay(5,"80_chrom_st07",0,0,0,0,100,100,255,0)
+   ShowMessageFace("chrom_fc2",5,0,2,6)
+   ShowMessage("\\n<Chrome>I know. I focused on zombies because I had no money. Corpses are free and plentiful.")
+   ShowMessageFace("chrom_fc2",5,0,2,7)
+   ShowMessage("\\n<Chrome>Even if I find some way to pay for the materials, the Magical Thread is another issue entirely.")
+   PictureDisplay(5,"80_chrom_st01",0,0,0,0,100,100,255,0)
+   ShowMessageFace("chrom_fc2",0,0,2,8)
+   ShowMessage("\\n<Chrome>Hey, how about we help each other out? If you find some Magical Thread, let me have it. If you do, I'll help you out.")
+   ShowMessageFace("ruka_fc1",0,0,2,9)
+   ShowMessage("\\n<Luka>Help us out? Do you mean you'll join us?")
+   ShowMessageFace("chrom_fc2",0,0,2,10)
+   ShowMessage("\\n<Chrome>Yes. I can see that you are on some kind of adventure. Wouldn't having strong allies make it easier?")
+   ShowMessageFace("chrom_fc2",0,0,2,11)
+   ShowMessage("\\n<Chrome>Frederica and I are easily worth a hundred soldiers each. This is a pretty generous offer if I do say so myself.")
+   ShowMessageFace("ruka_fc1",0,0,2,12)
+   ShowMessage("\\n<Luka>Yeah, you certainly seem to be very capable.")
+   If(4,118,0)
+    ShowMessageFace("meia_fc1",2,0,2,13)
+    ShowMessage("\\n<Meia>More allies are always welcome.")
+    0()
+   EndIf()
+   ShowMessageFace("chrom_fc2",0,0,2,14)
+   ShowMessage("\\n<Chrome>I have no idea where can you find some Magical Thread, but it's definitely not in the Natalia region or on the Ilias continent.")
+   If(4,66,0)
+    ShowMessageFace("vgirl_fc1",2,0,2,15)
+    ShowMessage("\\n<Vanilla>I haven't heard any rumors about Magical Thread. I still have a long ways to go as a merchant.")
+    0()
+   EndIf()
+   ShowMessageFace("chrom_fc2",0,0,2,16)
+   ShowMessage("\\n<Chrome>In any case, if you happen to find yourself in a place connected to magicraft, you should look for some Magical Thread. Good luck then.")
+   ShowMessageFace("ruka_fc1",0,0,2,17)
+   ShowMessage("\\n<Luka>Got it. If we find some, we'll bring it to you.")
+   PictureClear(5)
+   205(17,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x07,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x15,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+   ShowMessageFace("",0,0,2,18)
+   ShowMessage("If we find some Magical Thread during our adventure, then we can give it to Chrome in exchange for her and Frederica joining us. Let's make the trade if we find some.")
+   EndEventProcessing()
+   0()
+  Else()
+   If(8,518)
+    PictureDisplay(5,"80_chrom_st02",0,0,0,0,100,100,0,0)
+    PictureMove(5,null,0,0,0,0,100,100,255,0,30,true)
+    ShowMessageFace("chrom_fc2",1,0,2,19)
+    ShowMessage("\\n<Chrome>H-hey, that's Magical Thread! Give it! Give it! Frederica and I will join you if you do!")
+    ShowMessageFace("",0,0,2,20)
+    ShowMessage("Give the Magical Thread to Chrome?")
+    ShowChoices(strings("Yes","No"),2)
+    IfPlayerPicksChoice(0,null)
+     ShowMessageFace("chrom_fc2",1,0,2,21)
+     ShowMessage("\\n<Chrome>Thanks! Now I can get to work mastering dollcraft! I'll help you out in my spare time, maybe...")
+     PictureClear(5)
+     205(0,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x09,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x2a,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x0f,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x2c,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+     355("add_actor_ex(134)")
+     PictureDisplay(5,"80_frederika_st02",0,0,0,0,100,100,0,0)
+     PictureMove(5,null,0,0,0,0,100,100,255,0,30,true)
+     ShowMessageFace("frederika_fc1",0,0,2,22)
+     ShowMessage("\\n<Frederica>I must go as well... I must stay with Chrome...")
+     PictureClear(5)
+     205(17,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x0a,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x2a,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x08,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x0f,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x2c,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+     355("add_actor_ex(135)")
+     249(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0c,0x66,0x61,0x6e,0x66,0x61,0x6c,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69))
+     ShowMessageFace("",0,0,2,23)
+     ShowMessage("Chrome and Frederica joined the party!")
+     ChangeSwitch(2136,2136,0)
+     Wait(60)
+     If(4,66,0)
+      ShowMessageFace("vgirl_fc1",0,0,2,24)
+      ShowMessage("\\n<Vanilla>So another who revels in the darkness joins the fold... kukuku, I welcome you.")
+      0()
+     EndIf()
+     If(4,79,0)
+      ShowMessageFace("nuruko_fc1",0,0,2,25)
+      ShowMessage("\\n<Nuruko>Kyukyuu!")
+      0()
+     EndIf()
+     ShowMessageFace("chrom_fc2",1,0,2,26)
+     ShowMessage("\\n<Chrome>By the way, my favorite food is pudding! Now, let's go!")
+     EndEventProcessing()
+     0()
+    IfPlayerPicksChoice(1,null)
+     PictureDisplay(5,"80_chrom_st41",0,0,0,0,100,100,255,0)
+     ShowMessageFace("chrom_fc1",6,0,2,27)
+     ShowMessage("\\n<Chrome>Whyyy?!")
+     PictureClear(5)
+     EndEventProcessing()
+     0()
+    404()
+    0()
+   Else()
+    PictureDisplay(5,"80_chrom_st01",0,0,0,0,100,100,0,0)
+    PictureMove(5,null,0,0,0,0,100,100,255,0,30,true)
+    ShowMessageFace("chrom_fc2",0,0,2,28)
+    ShowMessage("\\n<Chrome>Remember, if you find some Magical Thread, then give it me. Frederica and I will join you if you do.")
+    ShowMessageFace("chrom_fc2",0,0,2,29)
+    ShowMessage("\\n<Chrome>I have no idea where can you find any, but there definitely isn't any in the Natalia region or on the Ilias continent.")
+    ShowMessageFace("chrom_fc2",0,0,2,30)
+    ShowMessage("\\n<Chrome>In any case, if you happen to find yourself in a place connected to magicraft, you should look for some Magical Thread. Good luck then.")
+    PictureClear(5)
+    ShowMessageFace("",0,0,2,31)
+    ShowMessage("If we find some Magical Thread during our adventure, then we can give it to Chrome in exchange for her and Frederica joining us. Let's make the trade if we find some.")
+    PictureClear(5)
+    EndEventProcessing()
+    0()
+   EndIf()
+   0()
+  EndIf()
+  0()
+ PAGE   3
+  // condition: switch 2136 is ON
+  // condition: variable 1026 >= 3
+  0()
+
+
+
+EVENT   17
+ PAGE   1
+  ShowMessageFace("frederika_fc1",0,0,2,1)
+  ShowMessage("\\n<Frederica>I am Chrome's servant. I won't show mercy to Chrome's enemies.")
+  If(4,129,0)
+   ShowMessageFace("brunhild_fc1",0,0,2,2)
+   ShowMessage("\\n<Hild>Hild will not show mercy to Master's enemies either.")
+   0()
+  EndIf()
+  0()
+ PAGE   2
+  // condition: variable 1023 >= 2
+  ShowMessageFace("frederika_fc1",0,0,2,1)
+  ShowMessage("\\n<Frederica>I am Chrome's servant. I exist only to follow Chrome's orders.")
+  0()
+ PAGE   3
+  // condition: switch 2136 is ON
+  // condition: variable 1026 >= 3
+  0()
+
+
+
+EVENT   18
+ PAGE   1
+  0()
+ PAGE   2
+  // condition: variable 1023 >= 2
+  0()
+
+
+
+EVENT   19
+ PAGE   1
+  0()
+ PAGE   2
+  // condition: variable 1023 >= 2
+  0()
+
+
+
+EVENT   20
+ PAGE   1
+  0()
+ PAGE   2
+  // condition: variable 1023 >= 2
+  0()
+
+
+
+EVENT   21
+ PAGE   1
+  0()
+ PAGE   2
+  // condition: variable 1023 >= 2
+  0()
+
+
+
+EVENT   22
+ PAGE   1
+  If(2,"A",1)
+   ChangeSelfSwitch("A",0)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Guard>Y-you there! H-help us!")
+   If(0,6,0)
+    ShowMessageFace("sonia_fc3",7,0,2,2)
+    ShowMessage("\\n<Sonya>Hey, aren't you guys the ones who were sent to clear this place out?")
+    0()
+   Else()
+    ShowMessageFace("ruka_fc1",0,0,2,3)
+    ShowMessage("\\n<Luka>Are you guys the ones who were sent to clear this place out?!")
+    0()
+   EndIf()
+   ShowMessageFace("",0,0,2,4)
+   ShowMessage("\\n<Guard>Th-that's right! We came to the manor and were overpowered by the zombies and ghosts. Afterwards they locked us up in here.")
+   ShowMessageFace("",0,0,2,5)
+   ShowMessage("\\n<Guard>We suffered no casualties, we didn't even suffer any major injuries, but the things they did... I, I don't think anyone will ever marry me now...")
+   ShowMessageFace("ruka_fc1",0,0,2,6)
+   ShowMessage("\\n<Luka>After we catch that girl, we'll contact San Ilia and have them send a rescue team. Just hold out here for the time being!")
+   If(4,68,0)
+    ShowMessageFace("dragonp_fc1",0,0,2,7)
+    ShowMessage("\\n<Papi>We're going to beat up the bad guys!")
+    0()
+   EndIf()
+   ShowMessageFace("",0,0,2,8)
+   ShowMessage("\\n<Guard>Okay, we'll wait right here!")
+   EndEventProcessing()
+   0()
+  Else()
+   ShowMessageFace("",0,0,2,9)
+   ShowMessage("The prisoners don't seem to be in any immediate danger. We can leave the rest to the rescue group, but first, we need answers from that girl.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+ PAGE   2
+  // condition: variable 1023 >= 2
+  0()
+
+
+
+
+EVENT   23
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(40,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+

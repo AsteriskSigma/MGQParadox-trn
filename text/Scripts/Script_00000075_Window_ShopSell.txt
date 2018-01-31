@@ -1,0 +1,5 @@
+"■ Window" -> "■ Window"
+"　ショップ画面で、売却のために所持アイテムの一覧を表示するウィンドウです。" -> "It is a window that displays the list of possessed items for sale on the shop screen."
+"● オブジェクト初期化" -> "● Object initialization"
+"● 選択項目の有効状態を取得" -> "● Acquire the effective state of the selected item"
+"● アイテムを許可状態で表示するかどうか" -> "● Whether items are displayed in the permitted state"

@@ -1,0 +1,8 @@
+"イベント：サキュバス" -> "Event: Succubus"
+"【サキュバス】" -> "【Succubus】"
+"お腹が空いたら、イモもありますよ。" -> "If you are hungry, there are also potatoes."
+"……いりませんか。" -> "... ... Is not it necessary?"
+"【サキュバス】" -> "【Succubus】"
+"サキュバスのオーラ、分けてあげましょう……" -> "Aura of Succubus, let's divide ... ..."
+"サキュバスから不思議な力が与えられた！" -> "Succubus gave a magical power!"
+"次のボスフロアまで、淫技の威力が二倍になる！" -> "Until the next Boss Floor, the power of Honeymoon doubles!"

@@ -1,0 +1,5 @@
+"レミナ城" -> "Remina Castle"
+"【衛兵】" -> "Guards"
+"レミナ城へようこそ！" -> "Welcome to Remina Castle!"
+"【衛兵】" -> "Guards"
+"レミナ城へようこそ！" -> "Welcome to Remina Castle!"

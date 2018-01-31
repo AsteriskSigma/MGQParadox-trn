@@ -1,0 +1,11 @@
+// EVENT 1348
+Name "会話：黒のアリス"
+
+ChangeVariable(25,25,0,0,0)
+ShowMessageFace("alice8th_fc1",0,0,2,1)
+ShowMessage("【黒のアリス】")
+ShowMessage("お話よりも、戦いを楽しみましょう……")
+ShowMessageFace("",0,0,2,2)
+ShowMessage("黒のアリスは会話を拒絶している！")
+EndEventProcessing()
+0()

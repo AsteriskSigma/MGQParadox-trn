@@ -1,0 +1,2 @@
+"さあ行け、我が力はお前の元にあるぞ。" -> "Come now, my strength is in you."
+"仕方ない、一肌脱いでやるとしよう！" -> "I can not help it, let's do it with a single letdown!"

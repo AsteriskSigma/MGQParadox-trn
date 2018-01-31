@@ -1,0 +1,22 @@
+// EVENT 7113
+Name "Teresa: Defeat"
+
+RunCommonEvent(7000)
+PictureDisplay(5,"80_mob_murabito2_st01",0,0,0,0,100,100,255,0)
+PictureClear(6)
+ShowMessageFace("mob_murabito2_fc1",0,0,2,1)
+ShowMessage("\\n<Teresa>これで、My win……\nお金、払ってね。")
+125(1,0,200)
+ShowMessageFace("",0,0,2,2)
+ShowMessage("ルカは 200G 支払った！")
+ShowMessageFace("mob_murabito2_fc1",0,0,2,3)
+ShowMessage("\\n<Teresa>また、バトルファックしようね。\nいっぱい気持ちよくしてあげるから……")
+If(0,2331,1)
+ PictureClear(5)
+ 281(1)
+ TeleportPlayer(0,141,10,6,2,0)
+ 216(0)
+ 0()
+EndIf()
+EndEventProcessing()
+0()

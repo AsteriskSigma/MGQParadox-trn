@@ -1,0 +1,8 @@
+"弥生：敗北" -> "Yayoi: Defeat"
+"【弥生】" -> "[Yayoi]"
+"私の勝ちだな……" -> "I will win ..."
+"それでは、賭け金を頂こうか。" -> "Let's get a bet."
+"ルカは 700G 支払った！" -> "Luke paid 700 G!"
+"【弥生】" -> "[Yayoi]"
+"悔しかったら、また挑んでくるがいい。" -> "If you feel bad, try again."
+"どうせ、何度も精液を撒き散らす羽目になるだろうがな……" -> "Anyway, I guess it's going to scatter semen over and over ... ...."

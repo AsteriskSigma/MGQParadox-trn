@@ -1,0 +1,807 @@
+=begin
+=base/Module
+
+We will focus on Module here
+
+
+==Change log
+  Date     Version Author Comment
+==14/12/13 2.0.0   Tris integration A to E D
+==15/09/03 2.0.2   Tris integration J to U J K M N P Q R S T
+
+=end
+
+#==============================================================================
+# ■ Audio
+#==============================================================================
+class << Audio
+  #--------------------------------------------------------------------------
+  # ● Basic initialization processing
+  #--------------------------------------------------------------------------
+  def init_basic
+    bgm_stop
+    bgs_stop
+    @fiber_bgm = nil
+    @fiber_bgs = nil
+  end
+  #--------------------------------------------------------------------------
+  # ● Update processing
+  #--------------------------------------------------------------------------
+  def update
+  end
+end
+
+#==============================================================================
+# ■ DataManager
+#==============================================================================
+class << DataManager
+  #--------------------------------------------------------------------------
+  # ○ Loading the database
+  #--------------------------------------------------------------------------
+  def load_database
+    if $BTEST
+      load_battle_test_database
+    else
+      load_normal_database
+      check_player_location
+    end
+    $data_library = Data_Library.new
+  end
+  #--------------------------------------------------------------------------
+  # ○ Creating various game objects
+  #--------------------------------------------------------------------------
+  def create_game_objects
+    $game_temp          = Game_Temp.new
+    $game_system        = Game_System.new
+    $game_timer         = Game_Timer.new
+    $game_message       = Game_Message.new
+    $game_switches      = Game_Switches.new
+    $game_variables     = Game_Variables.new
+    $game_self_switches = Game_SelfSwitches.new
+    $game_actors        = Game_Actors.new
+    $game_party         = Game_Party.new
+    $game_troop         = Game_Troop.new
+    $game_map           = Game_Map.new
+    $game_player        = Game_Player.new
+    $game_novel         = Game_Novel.new #
+    $game_poker         = Game_Poker.new #
+    $game_slot          = Game_Slot.new #
+  end
+  #--------------------------------------------------------------------------
+  # ○ Battle test setup
+  #--------------------------------------------------------------------------
+  def setup_battle_test
+    $game_map.setup($data_system.start_map_id) #
+    $game_party.setup_battle_test
+    BattleManager.setup($data_system.test_troop_id)
+    BattleManager.play_battle_bgm
+  end  
+  #--------------------------------------------------------------------------
+  # ○ Create save contents
+  #--------------------------------------------------------------------------
+  def make_save_contents
+    contents = {}
+    contents[:system]        = $game_system
+    contents[:timer]         = $game_timer
+    contents[:message]       = $game_message
+    contents[:switches]      = $game_switches
+    contents[:variables]     = $game_variables
+    contents[:self_switches] = $game_self_switches
+    contents[:actors]        = $game_actors
+    contents[:party]         = $game_party
+    contents[:troop]         = $game_troop
+    contents[:map]           = $game_map
+    contents[:player]        = $game_player
+    contents[:novel]         = $game_novel
+    contents
+  end
+  #--------------------------------------------------------------------------
+  # ○ Expansion of saved contents
+  #--------------------------------------------------------------------------
+  def extract_save_contents(contents)
+    $game_system        = contents[:system]
+    $game_timer         = contents[:timer]
+    $game_message       = contents[:message]
+    $game_switches      = contents[:switches]
+    $game_variables     = contents[:variables]
+    $game_self_switches = contents[:self_switches]
+    $game_actors        = contents[:actors]
+    $game_party         = contents[:party]
+    $game_troop         = contents[:troop]
+    $game_map           = contents[:map]
+    $game_player        = contents[:player]
+    $game_novel         = contents[:novel]
+  end
+end
+
+#==============================================================================
+# ■ SceneManager
+#==============================================================================
+class << SceneManager
+  #--------------------------------------------------------------------------
+  # ○ Execution
+  #--------------------------------------------------------------------------
+  def run
+    Audio.setup_midi if use_midi?
+#~     Audio.init_basic
+    Audio.reset_sound
+    DataManager.init
+    @scene = first_scene_class.new
+    @scene.main while @scene
+  end
+  #--------------------------------------------------------------------------
+  # ● Push to the scene stack
+  #--------------------------------------------------------------------------
+  def push(scene)
+    @stack.push(scene.new)
+  end
+end
+
+#==============================================================================
+# ■ Vocab
+#==============================================================================
+module Vocab
+  #--------------------------------------------------------------------------
+  # ○ Basic replacement
+  #--------------------------------------------------------------------------
+#  Evasion         = "However%sI quickly dodged!"
+  ActorNoHit      = "But %s quickly dodged!"
+  EnemyNoHit      = "But %s quickly dodged!"
+  ActorNoDamage   = "%s took no damage!"
+  EnemyNoDamage   = "%s took no damage!"
+
+  #--------------------------------------------------------------------------
+  # ● User defined
+  #--------------------------------------------------------------------------  
+  Giveup            = [
+    "Luka yields to temptation and stops fighting!", 
+    "His companions desert and leave him to his fate..."
+  ]
+  BindingStart      = [
+    "%s is bound!",
+    "%s is being raped!",
+    "%s is being raped!",
+    "But %s is already bound!"    
+  ]
+  TemptationActionFailure = "But Luka has already been defeated!"
+  
+  Ability           = "Ability"  
+  Shortage            = "But there isn't enough %s!"
+  SkillSealedFailure  = "But that skill is sealed!"
+  ObtainJobExp        = "%s job XP gained."  
+  Stealed             = "Stole %s from %s!"
+  StealFailure        = "Couldn't steal anything from %s!"
+  StealedItemEmpty    = "%s has nothing to steal!"
+  Stand               = "%s refused to admit defeat!"
+  Invalidate          = "It had no effect on %s!"
+  DefenseWall         = "%s was defended by a wall!"
+  PayLife             = "%s was spent!"
+  PayLifeFailure      = "%s was debilitated!"
+  OverDriveSuccess    = "%s stopped time!"
+  OverDriveFailure    = "But time was already stopped!"
+  BindResistSuccess   = "...and escaped from %s's restraint!"
+  BindResistFailure   = "...but couldn't escape from %s's restraint!"
+  EternalBindResist   = "...but is still being held down by %s!"
+  PleasureFinished    = " came!"
+  Predation           = "%s was devoured!"
+  ReStoration         = "%s absorbed %s!"
+  ThrowItem           = "%s threw a %s!"
+  PhysicalReflection = "%s reflects the attack!"
+end
+
+#==============================================================================
+# ■ Vocab
+#==============================================================================
+class << Vocab
+  # Ability value(Short)
+  def params_a(param_id)
+    ["ATK", "DEF", "MAG", "WIL", "AGI", "DEX"][param_id]
+  end
+  # Virtual key
+  def key_a
+    {:gamepad => "1", :keyboard => "Shift"}[$game_system.conf[:key_text]]
+  end
+  def key_b
+    {:gamepad => "2", :keyboard => "X"}[$game_system.conf[:key_text]]
+  end
+  def key_c
+    {:gamepad => "3", :keyboard => "Z"}[$game_system.conf[:key_text]]
+  end
+  def key_x
+    {:gamepad => "4", :keyboard => "A"}[$game_system.conf[:key_text]]
+  end
+  def key_y
+    {:gamepad => "5", :keyboard => "S"}[$game_system.conf[:key_text]]
+  end
+  def key_z
+    {:gamepad => "6", :keyboard => "D"}[$game_system.conf[:key_text]]
+  end
+  def key_l
+    {:gamepad => "7", :keyboard => "Q"}[$game_system.conf[:key_text]]
+  end
+  def key_r
+    {:gamepad => "8", :keyboard => "W"}[$game_system.conf[:key_text]]
+  end      
+  # Party command
+  def giveup;        "Give Up";     end
+  def shift_change;  "Party";       end  
+  def library;       "Library";     end  
+  def config;        "Config";      end  
+  def all_attack;    "Auto Atk"; end
+end
+  
+#==============================================================================
+# Help
+#==============================================================================
+module Help; end
+class << Help
+  #--------------------------------------------------------------------------
+  # ● Help message at the upper part of the ability screen
+  #--------------------------------------------------------------------------
+  def ability
+    "Please choose an ability type"
+  end
+  #--------------------------------------------------------------------------
+  # ● Help message at the bottom of the ability screen
+  #--------------------------------------------------------------------------
+  def ability_key
+    "#{Vocab.key_c}:SelectIn case#{Vocab.key_b}:CancelIn case#{Vocab.key_a}:Remove"
+  end
+  #--------------------------------------------------------------------------
+  # ● Bottom help message for skill screen
+  #--------------------------------------------------------------------------
+  def skill_type_key
+    t = ""
+    t += "\\C[0]"
+    t += "#{Vocab.key_a}:Hide in battle + Disable in auto mode"
+    t += "(Currently has no effect)" unless $game_system.conf[:bt_stype]
+    t += "\n"
+    t += "\\C[16]" if Input.press?(:X)
+    t += "#{Vocab.key_x}↑/↓:Sort by skill type"
+    t += "#{Vocab.key_x}+#{Vocab.key_b}:Reset skill order"
+    return t
+  end
+  #--------------------------------------------------------------------------
+  # ● Help message on the picture book screen
+  #--------------------------------------------------------------------------
+  def library
+    {
+      :blank      => "This entry is blank.",
+      :discovery  => "This entry's details are unknown.",
+      :return_top => "Return to top.",
+      :close_lib  => "Close and return to last screen.",
+      :btn_detail => "#{Vocab.key_c}:View Details",
+      :btn_column => "↑/↓:Select",
+      :btn_jump   => "#{Vocab.key_l}/#{Vocab.key_r}:Jump",
+      :btn_page   => "←/→:Page",
+      :btn_scroll => "#{Vocab.key_y}/#{Vocab.key_z}:Scroll Text",
+    }
+  end
+  #--------------------------------------------------------------------------
+  # ● Config-Color tone help message
+  #--------------------------------------------------------------------------
+  def config_tone
+    [
+      "Set red value.\r\n←/→:-/+#{Vocab.key_l}/#{Vocab.key_r}:Big -/+",
+      "Set green value.\r\n←/→:-/+#{Vocab.key_l}/#{Vocab.key_r}:Big -/+",
+      "Set blue value.\r\n←/→:-/+#{Vocab.key_l}/#{Vocab.key_r}:Big -/+",
+      "Restore defaults.",
+      "Return"
+    ]  
+  end
+  #--------------------------------------------------------------------------
+  # ● Config-Volume help message
+  #--------------------------------------------------------------------------
+  def config_sound
+    [
+      "BGM Volume\r\n←/→:-/+#{Vocab.key_l}/#{Vocab.key_r}:Big -/+",
+      "BGS Volume\r\n←/→:-/+#{Vocab.key_l}/#{Vocab.key_r}:Big -/+",
+      "ME Volume\r\n←/→:-/+#{Vocab.key_l}/#{Vocab.key_r}:Big -/+",
+      "SE Volume\r\n←/→:-/+#{Vocab.key_l}/#{Vocab.key_r}:Big -/+",
+      "Restore defaults.",
+      "Return"
+    ]  
+  end
+  #--------------------------------------------------------------------------
+  # ● Party organization screen help message
+  #--------------------------------------------------------------------------  
+  def party_edit
+    [
+      "#{Vocab.key_a}:Remove",
+      "#{Vocab.key_x}:Status",
+      "#{Vocab.key_y}:Sort",
+      "#{Vocab.key_z}:Warp To",
+    ]
+  end
+  #--------------------------------------------------------------------------
+  # ● Help message for change job screen
+  #--------------------------------------------------------------------------  
+  def job_change
+    ["#{Vocab.key_y}/#{Vocab.key_z}:Sort"]
+  end  
+  #--------------------------------------------------------------------------
+  # ● Equipment item change text on shop screen
+  #--------------------------------------------------------------------------  
+  def shop_equip_change
+    "←/→:Info Change"
+  end
+  #--------------------------------------------------------------------------
+  # ● Equipment item comparison performance on shop screen
+  #--------------------------------------------------------------------------  
+  def shop_param_compare
+    "#{Vocab.key_x}:Stat Change"
+  end
+  #--------------------------------------------------------------------------
+  # ● Operation description text of the slot screen
+  #--------------------------------------------------------------------------  
+  def slot_description
+    {
+      :stand => "→:Increase WagerIn case#{Vocab.key_c}:Spin Slots\n←:Decrease WagerIn case#{Vocab.key_b}:Quit",
+      :play  => "#{Vocab.key_c}:Stop Reel"
+    }
+  end
+end
+
+#==============================================================================
+# ■ SceneManager
+#==============================================================================
+class << SceneManager
+  #--------------------------------------------------------------------------
+  # ○ Create a snapshot for use as a background
+  #--------------------------------------------------------------------------
+  def snapshot_for_background
+    @background_bitmap.dispose if @background_bitmap
+    @background_bitmap = Graphics.snap_to_bitmap
+#    @background_bitmap.blur
+  end
+end
+  
+#==============================================================================
+# ■ BattleManager
+#==============================================================================
+class << BattleManager
+  #--------------------------------------------------------------------------
+  # ○ Setup
+  #--------------------------------------------------------------------------
+  def setup(troop_id, can_escape = true, can_lose = false)
+    init_members
+    $game_troop.setup(troop_id)
+    @can_escape = can_escape
+    @can_lose = can_lose
+    make_escape_ratio
+    setup_terrain
+  end  
+  #--------------------------------------------------------------------------
+  # ○ Initialization of member variables
+  #--------------------------------------------------------------------------
+  def init_members
+    @phase = :init              # Battle progress phase
+    @can_escape = false         # Escape Possible Flag
+    @can_lose = false           # Defeatable flag
+    @event_proc = nil           # Event callback
+    @preemptive = false         # First strike attack flag
+    @surprise = false           # A surprise flag
+    @actor_index = -1           # Actor during command entry
+    @action_forced = nil        # Force battle behavior
+    @map_bgm = nil              # For BGM memory before battle
+    @map_bgs = nil              # For BGS memory before battle
+    @action_battlers = []       # Action order list
+    @action_game_masters = []   # Action order list (GM only)
+    @giveup = false             # Surrender flag
+    @giveup_count = 0           # Rising count
+    @bind_count = 0             # Restraint count
+    @terrain = :undefined          # terrain
+  end
+  #--------------------------------------------------------------------------
+  # ○ Process at encounter
+  #--------------------------------------------------------------------------
+  def on_encounter
+    @preemptive = (rand < rate_preemptive)
+    @surprise = (rand < rate_surprise && !@preemptive)
+    print "First strike attack rate#{(rate_preemptive * 100.0).to_i}%.Pre-empt#{@preemptive ? "success" : "Failure"}.\n" if $TEST
+    print "Surprise explosion rate#{(rate_surprise * 100.0).to_i}%.sucker punch#{@surprise ? "success" : "Failure"}.\n" if $TEST
+  end  
+  #--------------------------------------------------------------------------
+  # ○ Battle BGM playing
+  #--------------------------------------------------------------------------
+  def play_battle_bgm
+    $game_troop.battle_bgm.play
+    RPG::BGS.stop
+  end
+  #--------------------------------------------------------------------------
+  # ● Initial Phase
+  #--------------------------------------------------------------------------  
+  def init_phase
+    @phase = :init
+  end
+  #--------------------------------------------------------------------------
+  # ● Fellow replacement phase
+  #--------------------------------------------------------------------------  
+  def shift_change
+    @phase = :shift_change
+    $game_party.clear_actions
+  end  
+  #--------------------------------------------------------------------------
+  # ● Fellow replacement phase?
+  #--------------------------------------------------------------------------  
+  def shift_change?
+    @phase == :shift_change
+  end
+  #--------------------------------------------------------------------------
+  # Surrender
+  #--------------------------------------------------------------------------  
+  def giveup
+    @giveup = true
+    @giveup_count = 10
+    $game_party.clear_actions
+    $game_party.all_members.reject {|m| m.luca? }.each {|m| m.hide }
+    ($game_party.all_members + $game_troop.alive_members).each {|m| m.clear_states }
+    luca_index = 0
+    $game_party.all_members.each_with_index do |actor, i|
+      luca_index = (actor.luca? ? i : luca_index)
+    end
+    $game_party.swap_order(0, luca_index)
+  end
+  #--------------------------------------------------------------------------
+  # ● Raising in?
+  #--------------------------------------------------------------------------  
+  def giveup?
+    return @giveup
+  end
+  #--------------------------------------------------------------------------
+  # ● surrender countdown
+  #--------------------------------------------------------------------------  
+  def giveup_count_down
+    @giveup_count -= 1
+    return @giveup_count == 0
+  end
+  #--------------------------------------------------------------------------
+  # ● Restraint set
+  #--------------------------------------------------------------------------
+  def bind_set(count)
+    bind_reset
+    @bind_count = count
+    @bind_start_turn = $game_troop.turn_count
+  end
+  #--------------------------------------------------------------------------
+  # ● Restraint turn
+  #--------------------------------------------------------------------------
+  def binding_turn
+    $game_troop.turn_count - @bind_start_turn
+  end
+  #--------------------------------------------------------------------------
+  # ● Restraint countdown
+  #--------------------------------------------------------------------------  
+  def bind_count_down
+    @bind_count -= 1
+    bind_refresh
+  end
+  #--------------------------------------------------------------------------
+  # ● Restraint Refresh
+  #--------------------------------------------------------------------------  
+  def bind_refresh
+    bind_reset unless bind?
+  end
+  #--------------------------------------------------------------------------
+  # ● Restraint occurring?
+  #--------------------------------------------------------------------------  
+  def bind?
+    0 != @bind_count && bind_user_exist? && bind_target_exist?
+  end
+  #--------------------------------------------------------------------------
+  # Reset constraint state
+  #--------------------------------------------------------------------------  
+  def bind_reset
+    $game_party.members.each{|m| m.clear_actions if m.bind_target?}
+    $game_troop.members.each{|m| m.clear_actions if m.bind_user?}
+    @bind_count = 0
+    $game_troop.members.each{|m|
+      m.remove_state(NWConst::State::UBIND)
+      m.remove_state(NWConst::State::EUBIND)
+    }
+    $game_party.members.each{|m|
+      m.remove_state(NWConst::State::TBIND)
+      m.remove_state(NWConst::State::ETBIND)
+    }
+  end
+  #--------------------------------------------------------------------------
+  # Is there a user using the restraint technique?
+  #--------------------------------------------------------------------------  
+  def bind_user_exist?
+    $game_troop.members.any?{|m| m.bind_user?}
+  end
+  #--------------------------------------------------------------------------
+  # ● Does the restraint technique object exist?
+  #--------------------------------------------------------------------------  
+  def bind_target_exist?
+    $game_party.members.any?{|m| m.bind_target?}
+  end
+  #--------------------------------------------------------------------------
+  # ● Index of restraint technique users
+  #--------------------------------------------------------------------------  
+  def bind_user_index
+    $game_troop.members.each_with_index{|member, i|
+      return i if member.bind_user?
+    }
+    return -1
+  end
+  #--------------------------------------------------------------------------
+  # ○ Creation of escape success rate
+  #--------------------------------------------------------------------------
+  def make_escape_ratio
+    lv = $game_actors[NWConst::Actor::LUCA].base_level
+    escape_level = $game_troop.escape_level_max
+    @escape_ratio = lv >= escape_level ? 1.0 : (1.0 / (escape_level - lv + 1))
+  end  
+  #--------------------------------------------------------------------------
+  # ● Battle topography setting
+  #--------------------------------------------------------------------------
+  def setup_terrain
+    NWConst::Field::TERRAIN.each{|key, value|
+      next if value[:tag] != $game_player.terrain_tag && !(value[:map_id].include?($game_map.map_id))
+      @terrain = key
+      break
+    }
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of battle topography
+  #--------------------------------------------------------------------------
+  def terrain
+    return @terrain
+  end
+  #--------------------------------------------------------------------------
+  # ○ Acquire escape permission
+  #--------------------------------------------------------------------------
+  def can_escape?
+    return @can_escape && !bind?
+  end  
+  #--------------------------------------------------------------------------
+  # Battle start
+  #--------------------------------------------------------------------------
+  def battle_start
+    $game_temp.reserve_common_event(NWConst::Common::BATTLE_START) #
+    $game_party.on_battle_start
+    $game_troop.on_battle_start
+    $game_troop.enemy_names.each do |name|
+      $game_message.add(sprintf(Vocab::Emerge, name))
+    end
+    tmp = []
+    $game_troop.members.each {|enemy| tmp.push(enemy.id) if enemy}
+    $game_library.enemy.set_discovery(tmp)
+    if @preemptive
+      $game_message.add(sprintf(Vocab::Preemptive, $game_party.name))
+    elsif @surprise
+      $game_message.add(sprintf(Vocab::Surprise, $game_party.name))
+    end
+    wait_for_message
+  end
+  #--------------------------------------------------------------------------
+  # ○ Treatment of victory
+  #--------------------------------------------------------------------------
+  def process_victory
+    play_battle_end_me
+    replay_bgm_and_bgs
+    $game_message.add(sprintf(Vocab::Victory, $game_party.name))
+    display_exp unless $game_switches[NWConst::Sw::GET_EXP_DISABLE]
+    gain_gold
+    gain_drop_items unless $game_switches[NWConst::Sw::GET_EXP_DISABLE]
+    gain_exp unless $game_switches[NWConst::Sw::GET_EXP_DISABLE]
+    gain_love
+    process_follow #
+    SceneManager.return
+    battle_end(0)
+    return true
+  end
+  #--------------------------------------------------------------------------
+  # ● Increased popularity
+  #--------------------------------------------------------------------------
+  def gain_love
+    $game_party.battle_members.select{|member|
+      !member.luca?
+    }.each{|member|
+      member.love += $game_variables[NWConst::Var::BATTLE_END_GAIN_LOVE]
+    }
+  end
+  #--------------------------------------------------------------------------
+  # ○ Treatment of escape
+  #--------------------------------------------------------------------------
+  def process_escape
+    $game_message.add(sprintf(Vocab::EscapeStart, $game_party.name))
+    success = @preemptive ? true : (rand < @escape_ratio)
+    Sound.play_escape
+    if success
+      process_abort
+    else
+      $game_message.add('\.' + Vocab::EscapeFailure)
+      $game_party.clear_actions
+    end
+    wait_for_message
+    return success
+  end
+  #--------------------------------------------------------------------------
+  # ● Forced escape
+  #--------------------------------------------------------------------------
+  def process_forced_escape
+    $game_message.add(sprintf(Vocab::EscapeStart, $game_party.name))
+    Sound.play_escape
+    if can_forced_escape?
+      process_abort
+    else
+      $game_message.add('\.' + Vocab::EscapeFailure)
+    end
+    wait_for_message
+  end
+  #--------------------------------------------------------------------------
+  # ● Forced escape is possible
+  #--------------------------------------------------------------------------
+  def can_forced_escape?
+    can_escape? and not $game_switches[NWConst::Sw::STRICT_ENCOUNT]
+  end
+  #--------------------------------------------------------------------------
+  # ○ Process of defeat
+  #--------------------------------------------------------------------------
+  def process_defeat
+    if $game_temp.common_event_reserved?
+      SceneManager.scene.process_common_event_on_defeat
+    end
+    $game_message.add(sprintf(Vocab::Defeat, $game_party.name))
+    wait_for_message
+    if @can_lose
+      revive_battle_members
+      replay_bgm_and_bgs
+      SceneManager.return
+    else
+      # Normal game over is completely eliminated
+      Audio.bgm_stop
+      Audio.bgs_stop
+      revive_battle_members
+      $game_map.interpreter.clear
+      reset_player
+      change_novel_scene
+    end
+    battle_end(2)
+    return true
+  end
+  #--------------------------------------------------------------------------
+  # ● Reset player
+  #--------------------------------------------------------------------------  
+  def reset_player
+    $game_player.transparent = true
+    $game_player.followers.visible = false
+    $game_player.moveto(0,0)
+    $game_player.refresh    
+  end
+  #--------------------------------------------------------------------------
+  # ● Transition to Novell Part
+  #--------------------------------------------------------------------------  
+  def change_novel_scene
+    SceneManager.clear
+    SceneManager.push(Scene_Map)
+    $game_novel.setup($game_troop.lose_event_id)
+    SceneManager.goto(Scene_Novel)
+    
+    skip_flag = $game_system.conf[:ls_skip] == 1
+    skip_flag &&= $game_library.lose_event_view?($game_novel.event_id)
+    skip_flag &&= $game_temp.lib_enemy_index == -1    
+    check_flag = $game_system.conf[:ls_skip] == 2
+    check_flag &&= $game_temp.lib_enemy_index == -1
+    choice = -1
+    if no_lose_skip?
+      skip_flag  = false
+      check_flag = false
+    end
+    if check_flag
+      $game_message.add("Skip defeat scene?")
+      ["Yes","No"].each {|s| $game_message.choices.push(s) }
+      $game_message.choice_cancel_type = 2
+      $game_message.choice_proc = Proc.new {|n| choice = n }
+      wait_for_message      
+    end
+    $game_novel.interpreter.goto_ilias if skip_flag || (choice == 0)
+  end
+  #--------------------------------------------------------------------------
+  # ● Impossible to skip
+  #--------------------------------------------------------------------------
+  def no_lose_skip?
+    enemy_id = $game_troop.lose_event_id - NWConst::Common::LOSE_EVENT_BASE
+    return true if enemy_id == 0 # LOSE_EVENT_BASEExecute directly=Chaotic labyrinth enemy
+    return true if $data_enemies[enemy_id].no_lose_skip?
+    return false
+  end
+  #--------------------------------------------------------------------------
+  # Battle end
+  #     result : Result (0:Victory 1:Escape 2:defeat)
+  #--------------------------------------------------------------------------
+  def battle_end(result)
+    @phase = nil
+    @giveup = false
+    @event_proc.call(result) if @event_proc
+    $game_temp.reserve_common_event(NWConst::Common::BATTLE_END) #
+    $game_party.on_battle_end
+    $game_troop.on_battle_end
+    SceneManager.exit if $BTEST
+  end
+  #--------------------------------------------------------------------------
+  # ○ Start turn
+  #--------------------------------------------------------------------------
+  def turn_start
+    @phase = :turn
+    clear_actor
+    $game_party.check_change_action
+    $game_troop.increase_turn
+    make_action_orders
+  end  
+  #--------------------------------------------------------------------------
+  # ● Battle start skill setting
+  #--------------------------------------------------------------------------
+  def set_battle_start_skill
+    @action_game_masters = []
+    return if giveup?
+    return if not $game_party.in_battle
+    return if $game_troop.interpreter.running?
+    ($game_troop.alive_members + $game_party.alive_members).each{|member|
+      member.battle_start_skill.each{|obj|
+        if rand < obj[:per]
+          skill_interrupt(member, obj[:id])
+          break
+        end
+      }
+    }
+  end
+  #--------------------------------------------------------------------------
+  # ● Set start turn skill
+  #--------------------------------------------------------------------------
+  def set_turn_start_skill
+    @action_game_masters = []
+    return if giveup?
+    return if not $game_party.in_battle
+    return if $game_troop.interpreter.running?
+    ($game_troop.alive_members + $game_party.alive_members).each{|member|
+      member.turn_start_skill.each{|obj|
+        if rand < obj[:per]
+          skill_interrupt(member, obj[:id])
+          break
+        end
+      }
+    }
+  end
+  #--------------------------------------------------------------------------
+  # ● Turn end skill setting
+  #--------------------------------------------------------------------------
+  def set_turn_end_skill
+    @action_game_masters = []
+    return if giveup?
+    return if not $game_party.in_battle
+    return if $game_troop.interpreter.running?
+    ($game_troop.alive_members + $game_party.alive_members).each{|member|
+      member.turn_end_skill.each{|obj|
+        if rand < obj[:per]
+          skill_interrupt(member, obj[:id])
+          break
+        end
+      }
+    }
+  end
+  #--------------------------------------------------------------------------
+  # ○ Display of experience value acquired
+  #--------------------------------------------------------------------------
+  def display_exp
+    if $game_troop.exp_total > 0
+      text = sprintf(Vocab::ObtainExp, $game_troop.exp_total)
+      $game_message.add('\.' + text)
+    end
+    if $game_troop.class_exp_total > 0
+      text2 = sprintf(Vocab::ObtainJobExp, $game_troop.class_exp_total)
+      $game_message.add('\.' + text2)
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ○ Acquisition of Experience Value and Display of Level Up
+  #--------------------------------------------------------------------------
+  def gain_exp
+    $game_party.all_members.each { |actor|
+      actor.gain_exp($game_troop.exp_total, $game_troop.class_exp_total)
+    }
+    wait_for_message
+  end
+endd

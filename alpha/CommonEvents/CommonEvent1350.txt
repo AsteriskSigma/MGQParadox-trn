@@ -1,0 +1,12 @@
+// EVENT 1350
+Name "Conversation: Black Alice"
+
+ChangeVariable(25,25,0,0,0)
+ShowMessageFace("alice8th_fc2",1,0,2,1)
+ShowMessage("【Black Alice】")
+ShowMessage("Let's enjoy fighting than talking ... ...")
+ShowMessageFace("",0,0,2,2)
+ShowMessage("Black Alice is rejecting the conversation!")
+EndEventProcessing()
+0()
+

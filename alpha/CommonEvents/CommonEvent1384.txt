@@ -1,0 +1,12 @@
+// EVENT 1384
+Name "Conversation: Ball algae"
+
+ChangeVariable(25,25,0,0,0)
+ShowMessageFace("tamamo_fc3",0,0,2,1)
+ShowMessage("【Tamago Algae】")
+ShowMessage("Question is useless ......")
+ShowMessageFace("",0,0,2,2)
+ShowMessage("Tamako is rejecting the conversation!")
+EndEventProcessing()
+0()
+

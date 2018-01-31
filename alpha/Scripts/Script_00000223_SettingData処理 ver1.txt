@@ -1,0 +1,39 @@
+
+=begin
+
+Troublesome · ___ ___ 0 RPG
+SettingData processing ver1 2015/03/24
+
+* This script is introduced below all of the following
+Reading script of SettingData folder (■ Data setting)
+Section that migrated each file contents of SettingData folder
+
+
+Description of the function is below
+· SkillWords(Actor).rbSKILL_WORDSDescribe \"setting common to all actors\" to actor 0
+
+
+Feature Description
+· SkillWords(Actor).rbSKILL_WORDSDescribe \"setting common to all actors\" to actor 0
+Set the actor ID to 0 and set it like a normal actor
+Those described in Actor 0 are common setting, SKILL of all actors_WORDSCopied to
+
+However, common setting is effective only if the actor does not set about that skill
+That setting is used for the set actor, and the common setting is not used
+·[1576] Actor not set: Actor 0[1576] Settings are copied
+·[1576] There is a setting of actor: that actor's[1576] The setting remains intact
+
+=end
+
+#==============================================================================
+# SkillWords(Actor).rbSKILL_WORDSDescribe \"setting common to all actors\" to actor 0
+#==============================================================================
+if NWConst::Actor::SKILL_WORDS[0]
+  NWConst::Actor::SKILL_WORDS[0].each do |convert_skill_key, convert_value|
+    NWConst::Actor::SKILL_WORDS.each_key do |actor_key|
+      next if actor_key == 0
+      next if NWConst::Actor::SKILL_WORDS[actor_key][convert_skill_key]
+      NWConst::Actor::SKILL_WORDS[actor_key][convert_skill_key] = convert_value
+    end
+  end
+endd

@@ -1,0 +1,397 @@
+#==============================================================================
+# ■ Window_Message
+#------------------------------------------------------------------------------
+# Message window used for text display.
+#==============================================================================
+
+class Window_Message < Window_Base
+  #--------------------------------------------------------------------------
+  # ● Object initialization
+  #--------------------------------------------------------------------------
+  def initialize
+    super(0, 0, window_width, window_height)
+    self.z = 200
+    self.openness = 0
+    create_all_windows
+    create_back_bitmap
+    create_back_sprite
+    clear_instance_variables
+  end
+  #--------------------------------------------------------------------------
+  # ● Obtain window width
+  #--------------------------------------------------------------------------
+  def window_width
+    Graphics.width
+  end
+  #--------------------------------------------------------------------------
+  # ● Obtain window height
+  #--------------------------------------------------------------------------
+  def window_height
+    fitting_height(visible_line_number)
+  end
+  #--------------------------------------------------------------------------
+  # ● Clear instance variable
+  #--------------------------------------------------------------------------
+  def clear_instance_variables
+    @fiber = nil                # Fiber
+    @background = 0             # Background type
+    @position = 2               # Display position
+    clear_flags
+  end
+  #--------------------------------------------------------------------------
+  # ● Clear flag
+  #--------------------------------------------------------------------------
+  def clear_flags
+    @show_fast = false          # Fast-forward flag
+    @line_show_fast = false     # Row-based fast forward flag
+    @pause_skip = false         # Input wait abbreviation flag
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire number of display lines
+  #--------------------------------------------------------------------------
+  def visible_line_number
+    return 4
+  end
+  #--------------------------------------------------------------------------
+  # ● Release
+  #--------------------------------------------------------------------------
+  def dispose
+    super
+    dispose_all_windows
+    dispose_back_bitmap
+    dispose_back_sprite
+  end
+  #--------------------------------------------------------------------------
+  # ● Frame update
+  #--------------------------------------------------------------------------
+  def update
+    super
+    update_all_windows
+    update_back_sprite
+    update_fiber
+  end
+  #--------------------------------------------------------------------------
+  # ● Fiber update
+  #--------------------------------------------------------------------------
+  def update_fiber
+    if @fiber
+      @fiber.resume
+    elsif $game_message.busy? && !$game_message.scroll_mode
+      @fiber = Fiber.new { fiber_main }
+      @fiber.resume
+    else
+      $game_message.visible = false
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Create all windows
+  #--------------------------------------------------------------------------
+  def create_all_windows
+    @gold_window = Window_Gold.new
+    @gold_window.x = Graphics.width - @gold_window.width
+    @gold_window.y = 0
+    @gold_window.openness = 0
+    @choice_window = Window_ChoiceList.new(self)
+    @number_window = Window_NumberInput.new(self)
+    @item_window = Window_KeyItem.new(self)
+  end
+  #--------------------------------------------------------------------------
+  # ● Create background bitmap
+  #--------------------------------------------------------------------------
+  def create_back_bitmap
+    @back_bitmap = Bitmap.new(width, height)
+    rect1 = Rect.new(0, 0, width, 12)
+    rect2 = Rect.new(0, 12, width, height - 24)
+    rect3 = Rect.new(0, height - 12, width, 12)
+    @back_bitmap.gradient_fill_rect(rect1, back_color2, back_color1, true)
+    @back_bitmap.fill_rect(rect2, back_color1)
+    @back_bitmap.gradient_fill_rect(rect3, back_color1, back_color2, true)
+  end
+  #--------------------------------------------------------------------------
+  # ● Obtain background color 1
+  #--------------------------------------------------------------------------
+  def back_color1
+    Color.new(0, 0, 0, 160)
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of background color 2
+  #--------------------------------------------------------------------------
+  def back_color2
+    Color.new(0, 0, 0, 0)
+  end
+  #--------------------------------------------------------------------------
+  # ● Create background sprite
+  #--------------------------------------------------------------------------
+  def create_back_sprite
+    @back_sprite = Sprite.new
+    @back_sprite.bitmap = @back_bitmap
+    @back_sprite.visible = false
+    @back_sprite.z = z - 1
+  end
+  #--------------------------------------------------------------------------
+  # ● Release of all windows
+  #--------------------------------------------------------------------------
+  def dispose_all_windows
+    @gold_window.dispose
+    @choice_window.dispose
+    @number_window.dispose
+    @item_window.dispose
+  end
+  #--------------------------------------------------------------------------
+  # ● Release of background bitmap
+  #--------------------------------------------------------------------------
+  def dispose_back_bitmap
+    @back_bitmap.dispose
+  end
+  #--------------------------------------------------------------------------
+  # ● Release of background sprite
+  #--------------------------------------------------------------------------
+  def dispose_back_sprite
+    @back_sprite.dispose
+  end
+  #--------------------------------------------------------------------------
+  # ● Update all windows
+  #--------------------------------------------------------------------------
+  def update_all_windows
+    @gold_window.update
+    @choice_window.update
+    @number_window.update
+    @item_window.update
+  end
+  #--------------------------------------------------------------------------
+  # ● Update the background sprite
+  #--------------------------------------------------------------------------
+  def update_back_sprite
+    @back_sprite.visible = (@background == 1)
+    @back_sprite.y = y
+    @back_sprite.opacity = openness
+    @back_sprite.update
+  end
+  #--------------------------------------------------------------------------
+  # ● Fiber Main Processing
+  #--------------------------------------------------------------------------
+  def fiber_main
+    $game_message.visible = true
+    update_background
+    update_placement
+    loop do
+      process_all_text if $game_message.has_text?
+      process_input
+      $game_message.clear
+      @gold_window.close
+      Fiber.yield
+      break unless text_continue?
+    end
+    close_and_wait
+    $game_message.visible = false
+    @fiber = nil
+  end
+  #--------------------------------------------------------------------------
+  # ● Update window background
+  #--------------------------------------------------------------------------
+  def update_background
+    @background = $game_message.background
+    self.opacity = @background == 0 ? 255 : 0
+  end
+  #--------------------------------------------------------------------------
+  # ● Update window position
+  #--------------------------------------------------------------------------
+  def update_placement
+    @position = $game_message.position
+    self.y = @position * (Graphics.height - height) / 2
+    @gold_window.y = y > 0 ? 0 : Graphics.height - @gold_window.height
+  end
+  #--------------------------------------------------------------------------
+  # ● Process all text
+  #--------------------------------------------------------------------------
+  def process_all_text
+    open_and_wait
+    text = convert_escape_characters($game_message.all_text)
+    pos = {}
+    new_page(text, pos)
+    process_character(text.slice!(0, 1), text, pos) until text.empty?
+  end
+  #--------------------------------------------------------------------------
+  # ● Input processing
+  #--------------------------------------------------------------------------
+  def process_input
+    if $game_message.choice?
+      input_choice
+    elsif $game_message.num_input?
+      input_number
+    elsif $game_message.item_choice?
+      input_item
+    else
+      input_pause unless @pause_skip
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Open a window and wait until it opens completely
+  #--------------------------------------------------------------------------
+  def open_and_wait
+    open
+    Fiber.yield until open?
+  end
+  #--------------------------------------------------------------------------
+  # ● Close the window and wait until it is completely closed
+  #--------------------------------------------------------------------------
+  def close_and_wait
+    close
+    Fiber.yield until all_close?
+  end
+  #--------------------------------------------------------------------------
+  # ● Determine whether all windows are completely closed
+  #--------------------------------------------------------------------------
+  def all_close?
+    close? && @choice_window.close? &&
+    @number_window.close? && @item_window.close?
+  end
+  #--------------------------------------------------------------------------
+  # ● Determine whether to display text continuously
+  #--------------------------------------------------------------------------
+  def text_continue?
+    $game_message.has_text? && !settings_changed?
+  end
+  #--------------------------------------------------------------------------
+  # ● Change of background and position
+  #--------------------------------------------------------------------------
+  def settings_changed?
+    @background != $game_message.background ||
+    @position != $game_message.position
+  end
+  #--------------------------------------------------------------------------
+  # ● Weight
+  #--------------------------------------------------------------------------
+  def wait(duration)
+    duration.times { Fiber.yield }
+  end
+  #--------------------------------------------------------------------------
+  # ● Update fast forward flag
+  #--------------------------------------------------------------------------
+  def update_show_fast
+    @show_fast = true if Input.trigger?(:C)
+  end
+  #--------------------------------------------------------------------------
+  # ● Weight after outputting one character
+  #--------------------------------------------------------------------------
+  def wait_for_one_character
+    update_show_fast
+    Fiber.yield unless @show_fast || @line_show_fast
+  end
+  #--------------------------------------------------------------------------
+  # ● Page break processing
+  #--------------------------------------------------------------------------
+  def new_page(text, pos)
+    contents.clear
+    draw_face($game_message.face_name, $game_message.face_index, 0, 0)
+    reset_font_settings
+    pos[:x] = new_line_x
+    pos[:y] = 0
+    pos[:new_x] = new_line_x
+    pos[:height] = calc_line_height(text)
+    clear_flags
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire line feed position
+  #--------------------------------------------------------------------------
+  def new_line_x
+    $game_message.face_name.empty? ? 0 : 112
+  end
+  #--------------------------------------------------------------------------
+  # ● Normal character processing
+  #--------------------------------------------------------------------------
+  def process_normal_character(c, pos)
+    super
+    wait_for_one_character
+  end
+  #--------------------------------------------------------------------------
+  # ● Processing newline characters
+  #--------------------------------------------------------------------------
+  def process_new_line(text, pos)
+    @line_show_fast = false
+    super
+    if need_new_page?(text, pos)
+      input_pause
+      new_page(text, pos)
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Determine whether a page break is necessary
+  #--------------------------------------------------------------------------
+  def need_new_page?(text, pos)
+    pos[:y] + pos[:height] > contents.height && !text.empty?
+  end
+  #--------------------------------------------------------------------------
+  # ● Handling of page break characters
+  #--------------------------------------------------------------------------
+  def process_new_page(text, pos)
+    text.slice!(/^\n/)
+    input_pause
+    new_page(text, pos)
+  end
+  #--------------------------------------------------------------------------
+  # ● Processing Icon Drawing by Control Characters
+  #--------------------------------------------------------------------------
+  def process_draw_icon(icon_index, pos)
+    super
+    wait_for_one_character
+  end
+  #--------------------------------------------------------------------------
+  # ● Processing control characters
+  #     code : The main part of the control character (\"\C[1]If \"C\")
+  #     text : String buffer during drawing processing (destructively changed if necessary)
+  #     pos  : Drawing position{:x, :y, :new_x, :height}
+  #--------------------------------------------------------------------------
+  def process_escape_character(code, text, pos)
+    case code.upcase
+    when '$'
+      @gold_window.open
+    when '.'
+      wait(15)
+    when '|'
+      wait(60)
+    when '!'
+      input_pause
+    when '>'
+      @line_show_fast = true
+    when '<'
+      @line_show_fast = false
+    when '^'
+      @pause_skip = true
+    else
+      super
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Input wait processing
+  #--------------------------------------------------------------------------
+  def input_pause
+    self.pause = true
+    wait(10)
+    Fiber.yield until Input.trigger?(:B) || Input.trigger?(:C)
+    Input.update
+    self.pause = false
+  end
+  #--------------------------------------------------------------------------
+  # ● Input processing of options
+  #--------------------------------------------------------------------------
+  def input_choice
+    @choice_window.start
+    Fiber.yield while @choice_window.active
+  end
+  #--------------------------------------------------------------------------
+  # ● Numeric input processing
+  #--------------------------------------------------------------------------
+  def input_number
+    @number_window.start
+    Fiber.yield while @number_window.active
+  end
+  #--------------------------------------------------------------------------
+  # ● Item selection processing
+  #--------------------------------------------------------------------------
+  def input_item
+    @item_window.start
+    Fiber.yield while @item_window.active
+  end
+end
+

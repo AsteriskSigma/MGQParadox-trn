@@ -1,0 +1,2 @@
+"エスタの鐘" -> "Estel's bell"
+"大聖堂の方から、鐘の音が鳴り響いている……" -> "From the cathedral, the sound of the bell is ringing ... ..."

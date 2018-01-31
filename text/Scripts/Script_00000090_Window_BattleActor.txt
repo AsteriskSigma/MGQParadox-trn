@@ -1,0 +1,6 @@
+"■ Window" -> "■ Window"
+"　バトル画面で、行動対象のアクターを選択するウィンドウです。" -> "In the battle screen, it is a window to select actors to act on."
+"● オブジェクト初期化" -> "● Object initialization"
+"情報表示用ビューポート" -> "Information viewport port"
+"● ウィンドウの表示" -> "● Window display"
+"● ウィンドウの非表示" -> "● Hide Window"

@@ -1,0 +1,83 @@
+#~ #とりあえず分けたデータ作るだけ
+#==============================================================================
+# ■ DataManager
+#==============================================================================
+class << DataManager
+	def load_normal_database
+		bm = Benchmark.new
+		bm.start
+		if $TEST && (!FileTest.exist?("Data/ExVersionID.rvdata2") || load_data("Data/ExVersionID.rvdata2") != load_data("Data/System.rvdata2").version_id)
+			nw_base_load_normal_database
+			nw_analyze_database
+			setting_features_data
+			save_analyzed_database_ex
+		else
+			#load_normal_database_ex
+			nw_base_load_normal_database
+			nw_analyze_database
+			setting_features_data
+		end
+		bm.stop
+		p "データベース読み込み時間は#{bm.elapsed}です" if $TEST
+	end
+	
+	def setting_features_data
+		$data_actors.compact.each{|a|a.setting_feature_data}
+    $data_classes.compact.each{|c|c.setting_feature_data}
+    $data_weapons.compact.each{|w|w.setting_feature_data}
+    $data_armors.compact.each{|a|a.setting_feature_data}
+    $data_enemies.compact.each{|e|e.setting_feature_data}
+    $data_states.compact.each{|s|s.setting_feature_data}
+	end
+end
+
+#==============================================================================
+# ■ RPG::BaseItem
+#==============================================================================
+class RPG::BaseItem
+	attr_reader :feature_data
+	def setting_feature_data
+		@feature_data = {}
+		features.each{|ft|
+			@feature_data[ft.code] ||= {}
+			@feature_data[ft.code][ft.data_id] ||=[] 
+			@feature_data[ft.code][ft.data_id].push(ft)
+		}
+	end
+end
+
+class Game_BattlerBase
+  #--------------------------------------------------------------------------
+  # ● 全ての特徴オブジェクトの配列取得
+  #--------------------------------------------------------------------------
+  def all_features
+    feature_objects.inject([]) {|r, obj| r + obj.features }
+  end
+  #--------------------------------------------------------------------------
+  # ● 特徴オブジェクトの配列取得（特徴コードを限定）
+  #--------------------------------------------------------------------------
+  def features(code)
+    feature_objects.inject([]) {|r,obj| obj.feature_data.key?(code) ? r + obj.feature_data[code].map{|k,v|v }  : r}.flatten
+  end
+  #--------------------------------------------------------------------------
+  # ● 特徴オブジェクトの配列取得（特徴コードとデータ ID を限定）
+  #--------------------------------------------------------------------------
+  def features_with_id(code, id)
+    feature_objects.inject([]) {|r,obj| obj.feature_data.key?(code) && obj.feature_data[code].key?(id)  ? r + obj.feature_data[code][id]  : r}
+  end
+end
+
+module Enchant_Item 
+	#--------------------------------------------------------------------------
+	# ● 特徴を取得
+	#--------------------------------------------------------------------------
+	def set_features
+		@base_features = base_data.features.map{|feature|calc_feature(feature)}
+		@enchant_features = enchants.map{|enchant| 
+			enchant.features.map{|feature|
+				calc_feature(feature,enchant.id)
+			}
+		}
+		setting_feature_data
+	end
+end

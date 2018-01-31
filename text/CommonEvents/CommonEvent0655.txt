@@ -1,0 +1,7 @@
+"イベント：エミリ" -> "Event: Emily"
+"【エミリ】" -> "【Emily】"
+"なぁに？　まだなんか用があるの？" -> "What is it? Do you still have something for you?"
+"【エミリ】" -> "【Emily】"
+"あんた達の触手も、いっぱい増えちゃえ～♪" -> "Also increase your tentacles a lot, ♪"
+"エミリから不思議な力が与えられた！" -> "Emily gave a magical power!"
+"次のボスフロアまで、触手技の威力が二倍になる！" -> "Up to the next boss floor, the power of the tentacle technique doubles!"

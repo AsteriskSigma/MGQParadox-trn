@@ -1,0 +1,16298 @@
+﻿
+
+
+TROOP 001
+ Name "Slime Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 002
+ Name "Slime Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 003
+ Name "Bunny Slime, Slime Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,2)
+  ChangeVariable(31,31,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 004
+ Name "Bunny Slime"
+ PAGE 000
+  ChangeVariable(29,29,0,0,2)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 005
+ Name "Bunny Slime, Slime Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,2)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 006
+ Name "Bunny Slime*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,2)
+  ChangeVariable(30,30,0,0,2)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 007
+ Name "Slug Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,4)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 008
+ Name "Slug Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,4)
+  ChangeVariable(30,30,0,0,4)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 009
+ Name "Slug Girl*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,4)
+  ChangeVariable(30,30,0,0,4)
+  ChangeVariable(31,31,0,0,4)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 010
+ Name "Slime Girl, Slug Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,4)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 011
+ Name "Slime Girl*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 012
+ Name "Slime Girl*4"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 013
+ Name "Imp"
+ PAGE 000
+  ChangeVariable(29,29,0,0,5)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 014
+ Name "Imp*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,5)
+  ChangeVariable(30,30,0,0,5)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 015
+ Name "Imp*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,5)
+  ChangeVariable(30,30,0,0,5)
+  ChangeVariable(31,31,0,0,5)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 016
+ Name "Mandragora"
+ PAGE 000
+  ChangeVariable(29,29,0,0,6)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 017
+ Name "Mandragora*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,6)
+  ChangeVariable(30,30,0,0,6)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 018
+ Name "Imp, Mandragora"
+ PAGE 000
+  ChangeVariable(29,29,0,0,5)
+  ChangeVariable(30,30,0,0,6)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 019
+ Name "Dog Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,7)
+  ChangeVariable(30,30,0,0,7)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 020
+ Name "Dog Girl, Mandragora"
+ PAGE 000
+  ChangeVariable(29,29,0,0,7)
+  ChangeVariable(30,30,0,0,6)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 021
+ Name "Earthworm Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,8)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 022
+ Name "Earthworm Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,8)
+  ChangeVariable(30,30,0,0,8)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 023
+ Name "Dog Girl, Earthworm Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,7)
+  ChangeVariable(30,30,0,0,8)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 024
+ Name "Imp*2, Earthworm Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,5)
+  ChangeVariable(30,30,0,0,8)
+  ChangeVariable(31,31,0,0,5)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 025
+ Name "Dog Girl*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,7)
+  ChangeVariable(30,30,0,0,7)
+  ChangeVariable(31,31,0,0,7)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 026
+ Name "Goblin Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,9)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 027
+ Name "Tiny Lamia"
+ PAGE 000
+  ChangeVariable(29,29,0,0,10)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 028
+ Name "Vampire Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,11)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 029
+ Name "Dragon Pup"
+ PAGE 000
+  ChangeVariable(29,29,0,0,12)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 030
+ Name "Rat Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,13)
+  ChangeVariable(30,30,0,0,13)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 031
+ Name "Rat Girl*2, Earthworm Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,13)
+  ChangeVariable(30,30,0,0,13)
+  ChangeVariable(31,31,0,0,8)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 032
+ Name "Rat Girl*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,13)
+  ChangeVariable(30,30,0,0,13)
+  ChangeVariable(31,31,0,0,13)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 033
+ Name "Wolf Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,14)
+  ChangeVariable(30,30,0,0,14)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 034
+ Name "Wolf Girl*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,14)
+  ChangeVariable(30,30,0,0,14)
+  ChangeVariable(31,31,0,0,14)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 035
+ Name "Wolf Girl, Rat Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,14)
+  ChangeVariable(30,30,0,0,13)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 036
+ Name "Rat Girl, Wolf Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,13)
+  ChangeVariable(30,30,0,0,14)
+  ChangeVariable(31,31,0,0,14)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 037
+ Name "Phoenix Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,15)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 038
+ Name "Leech Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,16)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 039
+ Name "Leech Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,16)
+  ChangeVariable(30,30,0,0,16)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 040
+ Name "Leech Girl, Wolf Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,16)
+  ChangeVariable(30,30,0,0,14)
+  ChangeVariable(31,31,0,0,14)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 041
+ Name "Rabbit Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,17)
+  ChangeVariable(30,30,0,0,17)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 042
+ Name "Rabbit Girl*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,17)
+  ChangeVariable(30,30,0,0,17)
+  ChangeVariable(31,31,0,0,17)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 043
+ Name "Rabbit Girl*2, Leech Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,17)
+  ChangeVariable(30,30,0,0,17)
+  ChangeVariable(31,31,0,0,16)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 044
+ Name "Wolf Girl*2, Rabbit Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,14)
+  ChangeVariable(30,30,0,0,14)
+  ChangeVariable(31,31,0,0,17)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 045
+ Name "Sheep Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,18)
+  ChangeVariable(30,30,0,0,18)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 046
+ Name "Sheep Girl*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,18)
+  ChangeVariable(30,30,0,0,18)
+  ChangeVariable(31,31,0,0,18)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 047
+ Name "Rabbit Girl, Sheep Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,17)
+  ChangeVariable(30,30,0,0,18)
+  ChangeVariable(31,31,0,0,18)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 048
+ Name "Sully*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,19)
+  ChangeVariable(30,30,0,0,19)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 049
+ Name "Sully*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,19)
+  ChangeVariable(30,30,0,0,19)
+  ChangeVariable(31,31,0,0,19)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 050
+ Name "Jaide*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,20)
+  ChangeVariable(30,30,0,0,20)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 051
+ Name "Jaide*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,20)
+  ChangeVariable(30,30,0,0,20)
+  ChangeVariable(31,31,0,0,20)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 052
+ Name "Sully, Jaide*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,19)
+  ChangeVariable(30,30,0,0,20)
+  ChangeVariable(31,31,0,0,20)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 053
+ Name "Shesta"
+ PAGE 000
+  ChangeVariable(29,29,0,0,21)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 054
+ Name "Shesta*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,21)
+  ChangeVariable(30,30,0,0,21)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 055
+ Name "Shesta, Sully"
+ PAGE 000
+  ChangeVariable(29,29,0,0,21)
+  ChangeVariable(30,30,0,0,19)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 056
+ Name "Shesta, Jaide"
+ PAGE 000
+  ChangeVariable(29,29,0,0,21)
+  ChangeVariable(30,30,0,0,20)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 057
+ Name "Nuruko"
+ PAGE 000
+  ChangeVariable(29,29,0,0,22)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 058
+ Name "Archangel Ranael<BGM:boss_angel>"
+ PAGE 000
+  0()
+
+
+
+TROOP 059
+ Name "Principality Nagael<BGM:boss_angel>"
+ PAGE 000
+  0()
+
+
+
+TROOP 060
+ Name "Orc Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,23)
+  ChangeVariable(30,30,0,0,23)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 061
+ Name "Orc Girl*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,23)
+  ChangeVariable(30,30,0,0,23)
+  ChangeVariable(31,31,0,0,23)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 062
+ Name "Bee Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,24)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 063
+ Name "Bee Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,24)
+  ChangeVariable(30,30,0,0,24)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 064
+ Name "Bee Girl, Orc Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,24)
+  ChangeVariable(30,30,0,0,23)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 065
+ Name "Sparrow Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,25)
+  ChangeVariable(30,30,0,0,25)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 066
+ Name "Sparrow Girl*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,25)
+  ChangeVariable(30,30,0,0,25)
+  ChangeVariable(31,31,0,0,25)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 067
+ Name "Orc Girl, Sparrow Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,23)
+  ChangeVariable(30,30,0,0,25)
+  ChangeVariable(31,31,0,0,25)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 068
+ Name "Bee Girl, Sparrow Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,24)
+  ChangeVariable(30,30,0,0,25)
+  ChangeVariable(31,31,0,0,25)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 069
+ Name "Harpy"
+ PAGE 000
+  ChangeVariable(29,29,0,0,26)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 070
+ Name "Harpy Sisters"
+ PAGE 000
+  ChangeVariable(29,29,0,0,27)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 071
+ Name "Queen Harpy"
+ PAGE 000
+  ChangeVariable(29,29,0,0,28)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 072
+ Name "Alipheese The 16th"
+ PAGE 000
+  0()
+
+
+
+TROOP 073
+ Name "Reaper"
+ PAGE 000
+  0()
+
+
+
+TROOP 074
+ Name "High Slug Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,29)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 075
+ Name "High Slug Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,29)
+  ChangeVariable(30,30,0,0,29)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 076
+ Name "High Slug Girl, Slug Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,29)
+  ChangeVariable(30,30,0,0,4)
+  ChangeVariable(31,31,0,0,4)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 077
+ Name "Slug Nun"
+ PAGE 000
+  ChangeVariable(29,29,0,0,30)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 078
+ Name "Slug Nun*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,30)
+  ChangeVariable(30,30,0,0,30)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 079
+ Name "High Slug Girl, Slug Nun"
+ PAGE 000
+  ChangeVariable(29,29,0,0,29)
+  ChangeVariable(30,30,0,0,30)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 080
+ Name "Slug Stars"
+ PAGE 000
+  ChangeVariable(29,29,0,0,31)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 081
+ Name "Jack O Lantern"
+ PAGE 000
+  ChangeVariable(29,29,0,0,32)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 082
+ Name "Jack O Lantern*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,32)
+  ChangeVariable(30,30,0,0,32)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 083
+ Name "Jack O Lantern*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,32)
+  ChangeVariable(30,30,0,0,32)
+  ChangeVariable(31,31,0,0,32)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 084
+ Name "Roper Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,33)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 085
+ Name "Roper Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,33)
+  ChangeVariable(30,30,0,0,33)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 086
+ Name "Jack O Lantern, Roper Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,32)
+  ChangeVariable(30,30,0,0,33)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 087
+ Name "Meda Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,34)
+  ChangeVariable(30,30,0,0,34)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 088
+ Name "Meda Girl*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,34)
+  ChangeVariable(30,30,0,0,34)
+  ChangeVariable(31,31,0,0,34)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 089
+ Name "Jack O Lantern, Meda Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,32)
+  ChangeVariable(30,30,0,0,34)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 090
+ Name "Candle Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,35)
+  ChangeVariable(30,30,0,0,35)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 091
+ Name "Candle Girl*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,35)
+  ChangeVariable(30,30,0,0,35)
+  ChangeVariable(31,31,0,0,35)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 092
+ Name "Candle Girl*4"
+ PAGE 000
+  ChangeVariable(29,29,0,0,35)
+  ChangeVariable(30,30,0,0,35)
+  ChangeVariable(31,31,0,0,35)
+  ChangeVariable(32,32,0,0,35)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 093
+ Name "Orc Girl, Candle Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,23)
+  ChangeVariable(30,30,0,0,35)
+  ChangeVariable(31,31,0,0,35)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 094
+ Name "Meda Girl, Candle Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,34)
+  ChangeVariable(30,30,0,0,35)
+  ChangeVariable(31,31,0,0,35)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 095
+ Name "Eater*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,36)
+  ChangeVariable(30,30,0,0,36)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 096
+ Name "Riot"
+ PAGE 000
+  ChangeVariable(29,29,0,0,37)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 097
+ Name "Riot*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,37)
+  ChangeVariable(30,30,0,0,37)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 098
+ Name "Eater, Riot"
+ PAGE 000
+  ChangeVariable(29,29,0,0,36)
+  ChangeVariable(30,30,0,0,37)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 099
+ Name "Luxuru*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,38)
+  ChangeVariable(30,30,0,0,38)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 100
+ Name "Eater, Luxuru"
+ PAGE 000
+  ChangeVariable(29,29,0,0,36)
+  ChangeVariable(30,30,0,0,38)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 101
+ Name "Dark Elf Swordsman*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,39)
+  ChangeVariable(30,30,0,0,39)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 102
+ Name "Dark Elf Swordsman*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,39)
+  ChangeVariable(30,30,0,0,39)
+  ChangeVariable(31,31,0,0,39)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 103
+ Name "Dark Elf Mage*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,40)
+  ChangeVariable(30,30,0,0,40)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 104
+ Name "Dark Elf Swordsman*2, Dark Elf Mage"
+ PAGE 000
+  ChangeVariable(29,29,0,0,39)
+  ChangeVariable(30,30,0,0,39)
+  ChangeVariable(31,31,0,0,40)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 105
+ Name "Fairy*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,41)
+  ChangeVariable(30,30,0,0,41)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 106
+ Name "Fairy*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,41)
+  ChangeVariable(30,30,0,0,41)
+  ChangeVariable(31,31,0,0,41)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 107
+ Name "Jack O Lantern, Fairy"
+ PAGE 000
+  ChangeVariable(29,29,0,0,32)
+  ChangeVariable(30,30,0,0,41)
+  ChangeVariable(31,31,0,0,41)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 108
+ Name "Mini Crab Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,42)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 109
+ Name "Mini Crab Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,42)
+  ChangeVariable(30,30,0,0,42)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 110
+ Name "Catfish Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,43)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 111
+ Name "Catfish Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,43)
+  ChangeVariable(30,30,0,0,43)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 112
+ Name "Catfish Girl, Mini Crab Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,43)
+  ChangeVariable(30,30,0,0,42)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 113
+ Name "Leech Girl, Roper Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,16)
+  ChangeVariable(30,30,0,0,33)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 114
+ Name "Rafflesia Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,44)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 115
+ Name "Rafflesia Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,44)
+  ChangeVariable(30,30,0,0,44)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 116
+ Name "Centaur*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,45)
+  ChangeVariable(30,30,0,0,45)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 117
+ Name "Centaur*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,45)
+  ChangeVariable(30,30,0,0,45)
+  ChangeVariable(31,31,0,0,45)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 118
+ Name "Mimic Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,49)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 119
+ Name "Two-Tail Silver Kitsune"
+ PAGE 000
+  ChangeVariable(29,29,0,0,46)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 120
+ Name "Two-Tail Silver Kitsune*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,46)
+  ChangeVariable(30,30,0,0,46)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 121
+ Name "Two-Tail Geisha Kitsune"
+ PAGE 000
+  ChangeVariable(29,29,0,0,47)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 122
+ Name "Two-Tail Geisha Kitsune*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,47)
+  ChangeVariable(30,30,0,0,47)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 123
+ Name "Two-Tail Geisha Kitsune, Two-Tail Silver Kitsune"
+ PAGE 000
+  ChangeVariable(29,29,0,0,47)
+  ChangeVariable(30,30,0,0,46)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 124
+ Name "Spider Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,48)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 125
+ Name "Nanabi"
+ PAGE 000
+  If(1,1019,0,3,0)
+   ChangeSwitch(2319,2319,0)
+   ShowMessageFace("ruka_fc1",0,0,2,1)
+   ShowMessage("\\n<Luka>Damn, what crazy strength...")
+   If(0,4,0)
+    ShowMessageFace("alice_fc6",0,0,2,2)
+    ShowMessage("\\n<Alice>We can't back down though.")
+    0()
+   EndIf()
+   If(0,5,0)
+    ShowMessageFace("iriasu_fc4",2,0,2,3)
+    ShowMessage("\\n<Ilias>Nevertheless, we can't give up.")
+    0()
+   EndIf()
+   241(bytes(0x04,0x08,0x6f,0x3a,0x0d,0x52,0x50,0x47,0x3a,0x3a,0x42,0x47,0x4d,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x10,0x73,0x63,0x65,0x6e,0x65,0x5f,0x73,0x69,0x6e,0x70,0x69,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69))
+   PictureDisplay(5,"80_neris_st01b",0,0,0,0,100,100,0,0)
+   PictureMove(5,null,0,0,0,0,100,100,255,0,30,true)
+   ShowMessageFace("neris_fc1",0,0,2,4)
+   ShowMessage("\\n<???>Geez, just how long is that guy going to take?")
+   ShowMessageFace("",0,0,2,5)
+   ShowMessage("Suddenly, a mysterious girl interrupts the battle!")
+   PictureDisplay(5,"80_neris_st01",0,0,-200,0,100,100,255,0)
+   ShowMessageFace("nanabi_fc1",3,0,2,6)
+   ShowMessage("\\n<Nanabi>That face... No way!\nAlipheese The 17th!?")
+   If(0,4,0)
+    ShowMessageFace("alice_fc6",0,0,2,7)
+    ShowMessage("\\n<Alice>What!? Alipheese The 17th!?\nWhat are you doing here!?")
+    0()
+   EndIf()
+   If(0,5,0)
+    ShowMessageFace("iriasu_fc4",7,0,2,8)
+    ShowMessage("\\n<Ilias>You're Alipheese The 17th!?\nWhat are you doing here!?")
+    0()
+   EndIf()
+   ShowMessageFace("neris_fc1",0,0,2,9)
+   ShowMessage("\\n<Alipheese The 17th>I should be asking you that. Aren't you supposed to be beating Nanabi?")
+   ShowMessageFace("neris_fc1",0,0,2,10)
+   ShowMessage("\\n<Alipheese The 17th>No matter how you look at it, you're getting stomped. That's not what happened in the stories I was told, though.")
+   ShowMessageFace("nanabi_fc1",3,0,2,11)
+   ShowMessage("\\n<Nanabi>What kind of nonsense is that! Alipheese the 17th, I shall take your life as well!")
+   241(bytes(0x04,0x08,0x6f,0x3a,0x0d,0x52,0x50,0x47,0x3a,0x3a,0x42,0x47,0x4d,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0f,0x62,0x6f,0x73,0x73,0x5f,0x6d,0x61,0x6f,0x75,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69))
+   ShowMessageFace("neris_fc1",0,0,2,12)
+   ShowMessage("\\n<Alipheese The 17th>It looks like I better straighten things out. ♪")
+   PictureClear(5)
+   ShowMessageFace("neris_fc1",0,0,2,13)
+   ShowMessage("\\n<Alipheese The 17th>Be purified in an explosion of crimson fire...\nVaporizing Rebellion Sword!")
+   355("display_skill_name(\"Vaporizing Rebellion Sword\")")
+   337(0,126)
+   ChangeVariable(15,15,0,2,10000,12000)
+   ShowMessageFace("",0,0,2,14)
+   ShowMessage("Burning with the flames of purgatory, Alipheese the 17th attacks in a whirlwind of fire!\\D")
+   ShowMessage("Nanabi takes 3742 damage!\\D")
+   ShowMessage("Nanabi takes 4052 damage!")
+   ShowMessageFace("",0,0,2,15)
+   ShowMessage("Nanabi takes 3693 damage!\\D")
+   ShowMessage("Nanabi takes 4127 damage!\\D")
+   ShowMessage("Nanabi takes 3956 damage!")
+   355("clear_skill_name")
+   PictureDisplay(5,"80_nanabi_st04",0,0,0,0,100,100,255,0)
+   ShowMessageFace("nanabi_fc1",3,0,2,16)
+   ShowMessage("\\n<Nanabi>Gah, what power!\nAaaaah!!")
+   ShowMessageFace("",0,0,2,17)
+   ShowMessage("Nanabi collapses to the ground, unable to fight any longer.")
+   Wait(60)
+   EndBattle()
+   0()
+  EndIf()
+  ChangeVariable(29,29,0,0,50)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 126
+ Name "Morrigan"
+ PAGE 000
+  ChangeVariable(29,29,0,0,51)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 127
+ Name "Sea Cucumber Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,52)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 128
+ Name "Sea Cucumber Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,52)
+  ChangeVariable(30,30,0,0,52)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 129
+ Name "Shellfish Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,53)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 130
+ Name "Shellfish Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,53)
+  ChangeVariable(30,30,0,0,53)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 131
+ Name "Shellfish Girl, Sea Cucumber Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,53)
+  ChangeVariable(30,30,0,0,52)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 132
+ Name "Crab Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,54)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 133
+ Name "Crab Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,54)
+  ChangeVariable(30,30,0,0,54)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 134
+ Name "Shellfish Girl, Crab Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,53)
+  ChangeVariable(30,30,0,0,54)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 135
+ Name "Sea Cucumber Girl, Crab Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,52)
+  ChangeVariable(30,30,0,0,54)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 136
+ Name "Slime Bess"
+ PAGE 000
+  ChangeVariable(29,29,0,0,55)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 137
+ Name "Slime Bess*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,55)
+  ChangeVariable(30,30,0,0,55)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 138
+ Name "Watermelon Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,56)
+  ChangeVariable(30,30,0,0,56)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 139
+ Name "Watermelon Girl*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,56)
+  ChangeVariable(30,30,0,0,56)
+  ChangeVariable(31,31,0,0,56)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 140
+ Name "Pitcher Plant Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,57)
+  ChangeVariable(30,30,0,0,57)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 141
+ Name "Watermelon Girl, Pitcher Plant Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,56)
+  ChangeVariable(30,30,0,0,57)
+  ChangeVariable(31,31,0,0,57)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 142
+ Name "Centaur*2, Watermelon Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,45)
+  ChangeVariable(30,30,0,0,45)
+  ChangeVariable(31,31,0,0,56)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 143
+ Name "Lamia"
+ PAGE 000
+  ChangeVariable(29,29,0,0,58)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 144
+ Name "Seaweed Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,59)
+  ChangeVariable(30,30,0,0,59)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 145
+ Name "Seaweed Girl*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,59)
+  ChangeVariable(30,30,0,0,59)
+  ChangeVariable(31,31,0,0,59)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 146
+ Name "Seaweed Girl, Crab Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,59)
+  ChangeVariable(30,30,0,0,54)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 147
+ Name "Jellyfish Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,60)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 148
+ Name "Jellyfish Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,60)
+  ChangeVariable(30,30,0,0,60)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 149
+ Name "Seaweed Girl, Jellyfish Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,59)
+  ChangeVariable(30,30,0,0,60)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 150
+ Name "Sea Anemone Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,61)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 151
+ Name "Anglerfish Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,62)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 152
+ Name "Anglerfish Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,62)
+  ChangeVariable(30,30,0,0,62)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 153
+ Name "Seaweed Girl*2, Anglerfish Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,59)
+  ChangeVariable(30,30,0,0,59)
+  ChangeVariable(31,31,0,0,62)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 154
+ Name "Jellyfish Girl, Anglerfish Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,60)
+  ChangeVariable(30,30,0,0,62)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 155
+ Name "Meia"
+ PAGE 000
+  ChangeVariable(29,29,0,0,63)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 156
+ Name "Page 17*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,64)
+  ChangeVariable(30,30,0,0,64)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 157
+ Name "Page 17*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,64)
+  ChangeVariable(30,30,0,0,64)
+  ChangeVariable(31,31,0,0,64)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 158
+ Name "Page 257"
+ PAGE 000
+  ChangeVariable(29,29,0,0,65)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 159
+ Name "Page 257*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,65)
+  ChangeVariable(30,30,0,0,65)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 160
+ Name "Page 17, Page 257"
+ PAGE 000
+  ChangeVariable(29,29,0,0,64)
+  ChangeVariable(30,30,0,0,65)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 161
+ Name "Page 17*2, Page 257"
+ PAGE 000
+  ChangeVariable(29,29,0,0,64)
+  ChangeVariable(30,30,0,0,64)
+  ChangeVariable(31,31,0,0,65)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 162
+ Name "Page 65537"
+ PAGE 000
+  ChangeVariable(29,29,0,0,66)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 163
+ Name "Sister Lamia"
+ PAGE 000
+  ChangeVariable(29,29,0,0,67)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 164
+ Name "Sister Lamia*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,67)
+  ChangeVariable(30,30,0,0,67)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 165
+ Name "Succubus Nun*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,68)
+  ChangeVariable(30,30,0,0,68)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 166
+ Name "Sister Lamia, Succubus Nun"
+ PAGE 000
+  ChangeVariable(29,29,0,0,67)
+  ChangeVariable(30,30,0,0,68)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 167
+ Name "Anteater Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,69)
+  ChangeVariable(30,30,0,0,69)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 168
+ Name "Anteater Girl*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,69)
+  ChangeVariable(30,30,0,0,69)
+  ChangeVariable(31,31,0,0,69)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 169
+ Name "Sister Lamia, Anteater Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,67)
+  ChangeVariable(30,30,0,0,69)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 170
+ Name "Succubus Nun, Anteater Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,68)
+  ChangeVariable(30,30,0,0,69)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 171
+ Name "Grizzly Bear Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,70)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 172
+ Name "Grizzly Bear Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,70)
+  ChangeVariable(30,30,0,0,70)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 173
+ Name "Grizzly Bear Girl, Sister Lamia"
+ PAGE 000
+  ChangeVariable(29,29,0,0,70)
+  ChangeVariable(30,30,0,0,67)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 174
+ Name "Grizzly Bear Girl, Succubus Nun"
+ PAGE 000
+  ChangeVariable(29,29,0,0,70)
+  ChangeVariable(30,30,0,0,68)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 175
+ Name "Grizzly Bear Girl, Anteater Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,70)
+  ChangeVariable(30,30,0,0,69)
+  ChangeVariable(31,31,0,0,69)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 176
+ Name "Grizzly Bear Girl, Anteater Girl, Succubus Nun"
+ PAGE 000
+  ChangeVariable(29,29,0,0,70)
+  ChangeVariable(30,30,0,0,69)
+  ChangeVariable(31,31,0,0,68)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 177
+ Name "Experiment XX-7"
+ PAGE 000
+  ChangeVariable(29,29,0,0,71)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 178
+ Name "Experiment XX-7*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,71)
+  ChangeVariable(30,30,0,0,71)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 179
+ Name "Little Bug*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,72)
+  ChangeVariable(30,30,0,0,72)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 180
+ Name "Little Bug*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,72)
+  ChangeVariable(30,30,0,0,72)
+  ChangeVariable(31,31,0,0,72)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 181
+ Name "Experiment XX-7, Little Bug"
+ PAGE 000
+  ChangeVariable(29,29,0,0,71)
+  ChangeVariable(30,30,0,0,72)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 182
+ Name "Canceroid"
+ PAGE 000
+  ChangeVariable(29,29,0,0,73)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 183
+ Name "Brunhilde"
+ PAGE 000
+  ChangeVariable(29,29,0,0,74)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 184
+ Name "Ghost Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,75)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 185
+ Name "Ghost Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,75)
+  ChangeVariable(30,30,0,0,75)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 186
+ Name "Cursed Doll"
+ PAGE 000
+  ChangeVariable(29,29,0,0,76)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 187
+ Name "Cursed Doll*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,76)
+  ChangeVariable(30,30,0,0,76)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 188
+ Name "Ghost Girl, Cursed Doll"
+ PAGE 000
+  ChangeVariable(29,29,0,0,75)
+  ChangeVariable(30,30,0,0,76)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 189
+ Name "Zombie Swordsman"
+ PAGE 000
+  ChangeVariable(29,29,0,0,77)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 190
+ Name "Zombie Swordsman*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,77)
+  ChangeVariable(30,30,0,0,77)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 191
+ Name "Ghost Girl, Zombie Swordsman"
+ PAGE 000
+  ChangeVariable(29,29,0,0,75)
+  ChangeVariable(30,30,0,0,77)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 192
+ Name "Ghost Girl, Cursed Doll, Zombie Swordsman"
+ PAGE 000
+  ChangeVariable(29,29,0,0,75)
+  ChangeVariable(30,30,0,0,76)
+  ChangeVariable(31,31,0,0,77)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 193
+ Name "Zombie Girl*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,78)
+  ChangeVariable(30,30,0,0,79)
+  ChangeVariable(31,31,0,0,80)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 194
+ Name "Zombie Girl*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,78)
+  ChangeVariable(30,30,0,0,79)
+  ChangeVariable(31,31,0,0,81)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 195
+ Name "Zombie Girl*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,78)
+  ChangeVariable(30,30,0,0,80)
+  ChangeVariable(31,31,0,0,81)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 196
+ Name "Chrome, Frederica"
+ PAGE 000
+  ChangeVariable(29,29,0,0,83)
+  ChangeVariable(30,30,0,0,82)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 197
+ Name "Elf*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,84)
+  ChangeVariable(30,30,0,0,84)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 198
+ Name "Elf*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,84)
+  ChangeVariable(30,30,0,0,84)
+  ChangeVariable(31,31,0,0,84)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 199
+ Name "Brownies"
+ PAGE 000
+  ChangeVariable(29,29,0,0,85)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 200
+ Name "Brownies*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,85)
+  ChangeVariable(30,30,0,0,85)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 201
+ Name "Elf, Brownies"
+ PAGE 000
+  ChangeVariable(29,29,0,0,84)
+  ChangeVariable(30,30,0,0,85)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 202
+ Name "Fairy Twins"
+ PAGE 000
+  ChangeVariable(29,29,0,0,86)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 203
+ Name "Fairy Twins*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,86)
+  ChangeVariable(30,30,0,0,86)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 204
+ Name "Brownies, Fairy Twins"
+ PAGE 000
+  ChangeVariable(29,29,0,0,85)
+  ChangeVariable(30,30,0,0,86)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 205
+ Name "Elf, Fairy Twins"
+ PAGE 000
+  ChangeVariable(29,29,0,0,84)
+  ChangeVariable(30,30,0,0,86)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 206
+ Name "Elf, Brownies, Fairy Twins"
+ PAGE 000
+  ChangeVariable(29,29,0,0,84)
+  ChangeVariable(30,30,0,0,85)
+  ChangeVariable(31,31,0,0,86)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 207
+ Name "Fairies*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,87)
+  ChangeVariable(30,30,0,0,88)
+  ChangeVariable(31,31,0,0,89)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 208
+ Name "Fairies*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,87)
+  ChangeVariable(30,30,0,0,90)
+  ChangeVariable(31,31,0,0,91)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 209
+ Name "Fairies*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,87)
+  ChangeVariable(30,30,0,0,91)
+  ChangeVariable(31,31,0,0,92)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 210
+ Name "Fairies*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,87)
+  ChangeVariable(30,30,0,0,88)
+  ChangeVariable(31,31,0,0,90)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 211
+ Name "Fairies*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,87)
+  ChangeVariable(30,30,0,0,89)
+  ChangeVariable(31,31,0,0,91)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 212
+ Name "Sylph"
+ PAGE 000
+  ChangeVariable(29,29,0,0,93)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 213
+ Name "Armored Berserker"
+ PAGE 000
+  0()
+
+
+
+TROOP 214
+ Name "Tarantula Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,95)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 215
+ Name "Tarantula Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,95)
+  ChangeVariable(30,30,0,0,95)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 216
+ Name "Minotaur Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,96)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 217
+ Name "Bandersnatch Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,97)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 218
+ Name "Eva"
+ PAGE 000
+  ChangeVariable(29,29,0,0,98)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 219
+ Name "Sables*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,99)
+  ChangeVariable(30,30,0,0,99)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 220
+ Name "Sables*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,99)
+  ChangeVariable(30,30,0,0,99)
+  ChangeVariable(31,31,0,0,99)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 221
+ Name "Tarantula Girl, Sables"
+ PAGE 000
+  ChangeVariable(29,29,0,0,95)
+  ChangeVariable(30,30,0,0,99)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 222
+ Name "Centipede Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,100)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 223
+ Name "Centipede Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,100)
+  ChangeVariable(30,30,0,0,100)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 224
+ Name "Sables, Centipede Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,99)
+  ChangeVariable(30,30,0,0,100)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 225
+ Name "Scorpion Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,101)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 226
+ Name "Scorpion Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,101)
+  ChangeVariable(30,30,0,0,101)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 227
+ Name "Cactus Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,102)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 228
+ Name "Cactus Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,102)
+  ChangeVariable(30,30,0,0,102)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 229
+ Name "Scorpion Girl, Cactus Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,101)
+  ChangeVariable(30,30,0,0,102)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 230
+ Name "Ostrich Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,103)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 231
+ Name "Ostrich Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,103)
+  ChangeVariable(30,30,0,0,103)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 232
+ Name "Scorpion Girl, Ostrich Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,101)
+  ChangeVariable(30,30,0,0,103)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 233
+ Name "Cactus Girl, Ostrich Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,102)
+  ChangeVariable(30,30,0,0,103)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 234
+ Name "Lamp Genie"
+ PAGE 000
+  ChangeVariable(29,29,0,0,104)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 235
+ Name "Crocodile Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,111)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 236
+ Name "Crocodile Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,111)
+  ChangeVariable(30,30,0,0,111)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 237
+ Name "Cactus Girl, Crocodile Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,102)
+  ChangeVariable(30,30,0,0,111)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 238
+ Name "Ostrich Girl, Crocodile Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,103)
+  ChangeVariable(30,30,0,0,111)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 239
+ Name "Mummy Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,105)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 240
+ Name "Mummy Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,105)
+  ChangeVariable(30,30,0,0,105)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 241
+ Name "Scorpion Girl, Mummy Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,101)
+  ChangeVariable(30,30,0,0,105)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 242
+ Name "Cobra Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,106)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 243
+ Name "Cobra Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,106)
+  ChangeVariable(30,30,0,0,106)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 244
+ Name "Scorpion Girl, Cobra Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,101)
+  ChangeVariable(30,30,0,0,106)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 245
+ Name "Mummy Girl, Cobra Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,105)
+  ChangeVariable(30,30,0,0,106)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 246
+ Name "Nefertiti Lamias"
+ PAGE 000
+  ChangeVariable(29,29,0,0,107)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 247
+ Name "Sphinx"
+ PAGE 000
+  0()
+
+
+
+TROOP 248
+ Name "Sara"
+ PAGE 000
+  ChangeVariable(29,29,0,0,109)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 249
+ Name "Astaroth"
+ PAGE 000
+  ChangeVariable(29,29,0,0,110)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 250
+ Name "Cobra Girl, Crocodile Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,106)
+  ChangeVariable(30,30,0,0,111)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 251
+ Name "Saki"
+ PAGE 000
+  ChangeVariable(29,29,0,0,112)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 252
+ Name "Devil Fighter"
+ PAGE 000
+  ChangeVariable(29,29,0,0,113)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 253
+ Name "Devil Fighter*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,113)
+  ChangeVariable(30,30,0,0,113)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 254
+ Name "Devil Fighter*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,113)
+  ChangeVariable(30,30,0,0,113)
+  ChangeVariable(31,31,0,0,113)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 255
+ Name "Crocodile Girl, Devil Fighter"
+ PAGE 000
+  ChangeVariable(29,29,0,0,111)
+  ChangeVariable(30,30,0,0,113)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 256
+ Name "Large Spider"
+ PAGE 000
+  ChangeVariable(29,29,0,0,114)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 257
+ Name "Large Spider*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,114)
+  ChangeVariable(30,30,0,0,114)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 258
+ Name "Large Spider, Devil Fighter"
+ PAGE 000
+  ChangeVariable(29,29,0,0,114)
+  ChangeVariable(30,30,0,0,113)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 259
+ Name "Suck Vore*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,115)
+  ChangeVariable(30,30,0,0,115)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 260
+ Name "Suck Vore*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,115)
+  ChangeVariable(30,30,0,0,115)
+  ChangeVariable(31,31,0,0,115)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 261
+ Name "Iron Maiden"
+ PAGE 000
+  ChangeVariable(29,29,0,0,116)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 262
+ Name "Iron Maiden*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,116)
+  ChangeVariable(30,30,0,0,116)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 263
+ Name "Suck Vore, Iron Maiden"
+ PAGE 000
+  ChangeVariable(29,29,0,0,115)
+  ChangeVariable(30,30,0,0,116)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 264
+ Name "Worm Villager"
+ PAGE 000
+  ChangeVariable(29,29,0,0,117)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 265
+ Name "Ustrel"
+ PAGE 000
+  ChangeVariable(29,29,0,0,118)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 266
+ Name "Ustrel*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,118)
+  ChangeVariable(30,30,0,0,118)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 267
+ Name "Suck Vore, Ustrel"
+ PAGE 000
+  ChangeVariable(29,29,0,0,115)
+  ChangeVariable(30,30,0,0,118)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 268
+ Name "Iron Maiden, Ustrel"
+ PAGE 000
+  ChangeVariable(29,29,0,0,116)
+  ChangeVariable(30,30,0,0,118)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 269
+ Name "Honey Pot"
+ PAGE 000
+  ChangeVariable(29,29,0,0,119)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 270
+ Name "Lily"
+ PAGE 000
+  ChangeVariable(29,29,0,0,120)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 271
+ Name "Oni"
+ PAGE 000
+  ChangeVariable(29,29,0,0,121)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 272
+ Name "Oni*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,121)
+  ChangeVariable(30,30,0,0,121)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 273
+ Name "Onahole Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,122)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 274
+ Name "Onahole Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,122)
+  ChangeVariable(30,30,0,0,122)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 275
+ Name "Oni, Onahole Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,121)
+  ChangeVariable(30,30,0,0,122)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 276
+ Name "Naccubus"
+ PAGE 000
+  ChangeVariable(29,29,0,0,123)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 277
+ Name "Naccubus*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,123)
+  ChangeVariable(30,30,0,0,123)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 278
+ Name "Oni, Naccubus"
+ PAGE 000
+  ChangeVariable(29,29,0,0,121)
+  ChangeVariable(30,30,0,0,123)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 279
+ Name "Onahole Girl, Naccubus"
+ PAGE 000
+  ChangeVariable(29,29,0,0,122)
+  ChangeVariable(30,30,0,0,123)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 280
+ Name "Lucia"
+ PAGE 000
+  ChangeVariable(29,29,0,0,124)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 281
+ Name "Dodomeki"
+ PAGE 000
+  ChangeVariable(29,29,0,0,125)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 282
+ Name "Dodomeki*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,125)
+  ChangeVariable(30,30,0,0,125)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 283
+ Name "Devil Fighter*2, Dodomeki"
+ PAGE 000
+  ChangeVariable(29,29,0,0,113)
+  ChangeVariable(30,30,0,0,113)
+  ChangeVariable(31,31,0,0,125)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 284
+ Name "Large Spider, Dodomeki"
+ PAGE 000
+  ChangeVariable(29,29,0,0,114)
+  ChangeVariable(30,30,0,0,125)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 285
+ Name "Oni*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,121)
+  ChangeVariable(30,30,0,0,121)
+  ChangeVariable(31,31,0,0,121)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 286
+ Name "Lizard Thief*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,126)
+  ChangeVariable(30,30,0,0,126)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 287
+ Name "Lizard Thief*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,127)
+  ChangeVariable(30,30,0,0,127)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 288
+ Name "Lizard Thief, Lizard Thief*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,126)
+  ChangeVariable(30,30,0,0,127)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 289
+ Name "Lizard Thief, Lizard Thief*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,126)
+  ChangeVariable(30,30,0,0,127)
+  ChangeVariable(31,31,0,0,127)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 290
+ Name "Lizard Thief*2, Lizard Thief"
+ PAGE 000
+  ChangeVariable(29,29,0,0,126)
+  ChangeVariable(30,30,0,0,126)
+  ChangeVariable(31,31,0,0,127)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 291
+ Name "Lizard Boss"
+ PAGE 000
+  ChangeVariable(29,29,0,0,128)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 292
+ Name "Mirage Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,129)
+  ChangeVariable(30,30,0,0,129)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 293
+ Name "Mirage Girl*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,129)
+  ChangeVariable(30,30,0,0,129)
+  ChangeVariable(31,31,0,0,129)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 294
+ Name "Antlion Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,130)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 295
+ Name "Sandworm Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,131)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 296
+ Name "Desert Scylla"
+ PAGE 000
+  ChangeVariable(29,29,0,0,132)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 297
+ Name "Desert Scylla*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,132)
+  ChangeVariable(30,30,0,0,132)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 298
+ Name "Desert Scylla, Mirage Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,132)
+  ChangeVariable(30,30,0,0,129)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 299
+ Name "Gnome"
+ PAGE 000
+  ChangeVariable(29,29,0,0,133)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 300
+ Name "Vitae*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,134)
+  ChangeVariable(30,30,0,0,134)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 301
+ Name "Vitae*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,134)
+  ChangeVariable(30,30,0,0,134)
+  ChangeVariable(31,31,0,0,134)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 302
+ Name "Vetala*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,135)
+  ChangeVariable(30,30,0,0,135)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 303
+ Name "Vetala*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,135)
+  ChangeVariable(30,30,0,0,135)
+  ChangeVariable(31,31,0,0,135)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 304
+ Name "Vitae, Vetala"
+ PAGE 000
+  ChangeVariable(29,29,0,0,134)
+  ChangeVariable(30,30,0,0,135)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 305
+ Name "Valto*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,136)
+  ChangeVariable(30,30,0,0,136)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 306
+ Name "Valto*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,136)
+  ChangeVariable(30,30,0,0,136)
+  ChangeVariable(31,31,0,0,136)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 307
+ Name "Vitae, Valto"
+ PAGE 000
+  ChangeVariable(29,29,0,0,134)
+  ChangeVariable(30,30,0,0,136)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 308
+ Name "Vetala, Valto"
+ PAGE 000
+  ChangeVariable(29,29,0,0,135)
+  ChangeVariable(30,30,0,0,136)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 309
+ Name "Shinifa*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,137)
+  ChangeVariable(30,30,0,0,137)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 310
+ Name "Vitae, Shinifa"
+ PAGE 000
+  ChangeVariable(29,29,0,0,134)
+  ChangeVariable(30,30,0,0,137)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 311
+ Name "Vetala, Shinifa"
+ PAGE 000
+  ChangeVariable(29,29,0,0,135)
+  ChangeVariable(30,30,0,0,137)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 312
+ Name "Valto, Shinifa"
+ PAGE 000
+  ChangeVariable(29,29,0,0,136)
+  ChangeVariable(30,30,0,0,137)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 313
+ Name "Vitae, Vetala, Valto"
+ PAGE 000
+  ChangeVariable(29,29,0,0,134)
+  ChangeVariable(30,30,0,0,135)
+  ChangeVariable(31,31,0,0,136)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 314
+ Name "Vitae, Vetala, Shinifa"
+ PAGE 000
+  ChangeVariable(29,29,0,0,134)
+  ChangeVariable(30,30,0,0,135)
+  ChangeVariable(31,31,0,0,137)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 315
+ Name "Vetala, Valto, Shinifa"
+ PAGE 000
+  ChangeVariable(29,29,0,0,135)
+  ChangeVariable(30,30,0,0,136)
+  ChangeVariable(31,31,0,0,137)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 316
+ Name "Shadow Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,138)
+  ChangeVariable(30,30,0,0,138)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 317
+ Name "Shadow Girl*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,138)
+  ChangeVariable(30,30,0,0,138)
+  ChangeVariable(31,31,0,0,138)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 318
+ Name "Paintgeist"
+ PAGE 000
+  ChangeVariable(29,29,0,0,139)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 319
+ Name "Paintgeist*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,139)
+  ChangeVariable(30,30,0,0,139)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 320
+ Name "Shadow Girl, Paintgeist"
+ PAGE 000
+  ChangeVariable(29,29,0,0,138)
+  ChangeVariable(30,30,0,0,139)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 321
+ Name "Chimera Homunculus"
+ PAGE 000
+  ChangeVariable(29,29,0,0,140)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 322
+ Name "Shadow Girl, Chimera Homunculus"
+ PAGE 000
+  ChangeVariable(29,29,0,0,138)
+  ChangeVariable(30,30,0,0,140)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 323
+ Name "Neo Iron Maiden"
+ PAGE 000
+  ChangeVariable(29,29,0,0,141)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 324
+ Name "Neo Iron Maiden*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,141)
+  ChangeVariable(30,30,0,0,141)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 325
+ Name "Shadow Girl, Neo Iron Maiden"
+ PAGE 000
+  ChangeVariable(29,29,0,0,138)
+  ChangeVariable(30,30,0,0,141)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 326
+ Name "Junk Doll Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,142)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 327
+ Name "Adramelech"
+ PAGE 000
+  0()
+
+
+
+TROOP 328
+ PAGE 000
+  0()
+
+
+
+TROOP 329
+ PAGE 000
+  0()
+
+
+
+TROOP 330
+ Name "===混沌の迷宮・森==="
+ PAGE 000
+  0()
+
+
+
+TROOP 331
+ Name "Slime Girl*4"
+ PAGE 000
+  0()
+
+
+
+TROOP 332
+ Name "Bunny Slime*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 333
+ Name "Slime Girl*2, Bunny Slime"
+ PAGE 000
+  0()
+
+
+
+TROOP 334
+ Name "Imp*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 335
+ Name "Slime Girl, Imp*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 336
+ Name "Bee Girl*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 337
+ Name "Sparrow Girl*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 338
+ Name "スズメ娘*2, ミツバチ娘"
+ PAGE 000
+  0()
+
+
+
+TROOP 339
+ Name "ハーピー<画像非固定>"
+ PAGE 000
+  0()
+
+
+
+TROOP 340
+ Name "ハーピーツインズ<画像非固定>"
+ PAGE 000
+  0()
+
+
+
+TROOP 341
+ Name "ジャックオーランタン*4"
+ PAGE 000
+  0()
+
+
+
+TROOP 342
+ Name "ダークエルフ*4"
+ PAGE 000
+  0()
+
+
+
+TROOP 343
+ Name "ダークエルフ*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 344
+ Name "ダークエルフ*2, ダークエルフ"
+ PAGE 000
+  0()
+
+
+
+TROOP 345
+ Name "フェアリー*4"
+ PAGE 000
+  0()
+
+
+
+TROOP 346
+ Name "Dark Elf Swordsman, Fairy*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 347
+ Name "Dark Elf Mage, Fairy*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 348
+ Name "Rafflesia Girl*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 349
+ Name "Centaur*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 350
+ Name "ラフレシア娘, セントール*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 351
+ Name "Slime Bess*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 352
+ Name "スイカ娘*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 353
+ Name "Pitcher Plant Girl*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 354
+ Name "スイカ娘, ウツボカズラ娘*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 355
+ Name "エルフ*4"
+ PAGE 000
+  0()
+
+
+
+TROOP 356
+ Name "Brownies*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 357
+ Name "エルフ*2, ブラウニーズ"
+ PAGE 000
+  0()
+
+
+
+TROOP 358
+ Name "ツインズフェアリー*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 359
+ Name "エルフ, ツインズフェアリー*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 360
+ Name "Brownies, Fairy Twins"
+ PAGE 000
+  0()
+
+
+
+TROOP 361
+ Name "Fairies, Fairies, Fairies"
+ PAGE 000
+  0()
+
+
+
+TROOP 362
+ Name "Fairies, Fairies, Fairies"
+ PAGE 000
+  0()
+
+
+
+TROOP 363
+ Name "Imp, Imp, Imp"
+ PAGE 000
+  0()
+
+
+
+TROOP 364
+ Name "ケンタウロス娘*2<画像非固定>"
+ PAGE 000
+  0()
+
+
+
+TROOP 365
+ Name "アルラウネ*2<画像非固定>"
+ PAGE 000
+  0()
+
+
+
+TROOP 366
+ Name "ケンタウロス娘, アルラウネ<画像非固定>"
+ PAGE 000
+  0()
+
+
+
+TROOP 367
+ Name "モス娘, モスキート娘, イモムシ娘"
+ PAGE 000
+  0()
+
+
+
+TROOP 368
+ Name "スズメバチ娘*2<画像非固定>"
+ PAGE 000
+  0()
+
+
+
+TROOP 369
+ Name "カマキリ娘*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 370
+ Name "カイコ娘*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 371
+ Name "カマキリ娘, カイコ娘"
+ PAGE 000
+  0()
+
+
+
+TROOP 372
+ Name "アルラ・アルム, アルラ・ルーティー"
+ PAGE 000
+  0()
+
+
+
+TROOP 373
+ Name "アルラ・ボア, アルラ・パラソル, アルラ・プリズン, アルラ・マッシュ"
+ PAGE 000
+  0()
+
+
+
+TROOP 374
+ Name "トリックフェアリー*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 375
+ Name "アマゾネスエルフ*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 376
+ Name "トリックフェアリー, アマゾネスエルフ*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 377
+ Name "カーバンクル娘*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 378
+ Name "トリックフェアリー*2, カーバンクル娘"
+ PAGE 000
+  0()
+
+
+
+TROOP 379
+ Name "アマゾネスエルフ*2, カーバンクル娘"
+ PAGE 000
+  0()
+
+
+
+TROOP 380
+ Name "トリックフェアリー, アマゾネスエルフ, カーバンクル娘"
+ PAGE 000
+  0()
+
+
+
+TROOP 381
+ Name "ジャイガンテック娘"
+ PAGE 000
+  0()
+
+
+
+TROOP 382
+ Name "フォレストアルラウネ*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 383
+ Name "フォレストドリアード*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 384
+ Name "フォレストアルラウネ, フォレストドリアード*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 385
+ Name "ワルラウネ*2<画像非固定>"
+ PAGE 000
+  0()
+
+
+
+TROOP 386
+ Name "ドリアード*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 387
+ Name "ドリアード*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 388
+ Name "ドリアード, ドリアード"
+ PAGE 000
+  0()
+
+
+
+TROOP 389
+ PAGE 000
+  0()
+
+
+
+TROOP 390
+ Name "===混沌の迷宮・丘==="
+ PAGE 000
+  0()
+
+
+
+TROOP 391
+ Name "犬娘*4"
+ PAGE 000
+  0()
+
+
+
+TROOP 392
+ Name "マンドラゴラ娘*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 393
+ Name "犬娘*2, マンドラゴラ娘"
+ PAGE 000
+  0()
+
+
+
+TROOP 394
+ Name "ネズミ娘*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 395
+ Name "狼娘*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 396
+ Name "ネズミ娘*2, 狼娘"
+ PAGE 000
+  0()
+
+
+
+TROOP 397
+ Name "犬娘*2, 狼娘"
+ PAGE 000
+  0()
+
+
+
+TROOP 398
+ Name "ウサギ娘*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 399
+ Name "羊娘*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 400
+ Name "ウサギ娘, 羊娘*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 401
+ Name "犬娘, ネズミ娘, 羊娘"
+ PAGE 000
+  0()
+
+
+
+TROOP 402
+ Name "オーク娘*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 403
+ Name "ウサギ娘*2, オーク娘"
+ PAGE 000
+  0()
+
+
+
+TROOP 404
+ Name "羊娘*2, オーク娘"
+ PAGE 000
+  0()
+
+
+
+TROOP 405
+ Name "銀狐二尾*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 406
+ Name "かむろ二尾*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 407
+ Name "かむろ二尾, 銀狐二尾"
+ PAGE 000
+  0()
+
+
+
+TROOP 408
+ Name "ラミア<画像非固定>"
+ PAGE 000
+  0()
+
+
+
+TROOP 409
+ Name "シスターラミア*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 410
+ Name "シスキュバス*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 411
+ Name "シスターラミア, シスキュバス*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 412
+ Name "アリクイ娘*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 413
+ Name "アリクイ娘*2, シスターラミア"
+ PAGE 000
+  0()
+
+
+
+TROOP 414
+ Name "グリズリー娘*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 415
+ Name "グリズリー娘, シスターラミア"
+ PAGE 000
+  0()
+
+
+
+TROOP 416
+ Name "グリズリー娘, シスキュバス"
+ PAGE 000
+  0()
+
+
+
+TROOP 417
+ Name "タランチュラ娘*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 418
+ Name "ミノタウロス娘<画像非固定>"
+ PAGE 000
+  0()
+
+
+
+TROOP 419
+ Name "バンダースナッチ娘<画像非固定>"
+ PAGE 000
+  0()
+
+
+
+TROOP 420
+ Name "サボレス*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 421
+ Name "タランチュラ娘, サボレス*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 422
+ Name "ムカデ娘*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 423
+ Name "ムカデ娘, サボレス"
+ PAGE 000
+  0()
+
+
+
+TROOP 424
+ Name "タランチュラ娘, ムカデ娘"
+ PAGE 000
+  0()
+
+
+
+TROOP 425
+ Name "デビルファイター*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 426
+ Name "大蜘蛛*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 427
+ Name "デビルファイター*2, 大蜘蛛"
+ PAGE 000
+  0()
+
+
+
+TROOP 428
+ Name "百々目鬼*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 429
+ Name "百々目鬼*2, デビルファイター"
+ PAGE 000
+  0()
+
+
+
+TROOP 430
+ Name "百々目鬼*2, 大蜘蛛"
+ PAGE 000
+  0()
+
+
+
+TROOP 431
+ Name "カエル娘, カエル娘"
+ PAGE 000
+  0()
+
+
+
+TROOP 432
+ Name "くのいちエルフ*2<画像非固定>"
+ PAGE 000
+  0()
+
+
+
+TROOP 433
+ Name "サムライエルフ*2<画像非固定>"
+ PAGE 000
+  0()
+
+
+
+TROOP 434
+ Name "くのいちエルフ, サムライエルフ<画像非固定>"
+ PAGE 000
+  0()
+
+
+
+TROOP 435
+ Name "アリ娘*2<画像非固定>"
+ PAGE 000
+  0()
+
+
+
+TROOP 436
+ Name "スキュラ*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 437
+ Name "メデューサ*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 438
+ Name "スキュラ, メデューサ*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 439
+ Name "あげは娘*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 440
+ Name "スキュラ, あげは娘*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 441
+ Name "メデューサ, あげは娘*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 442
+ Name "スキュラ, メデューサ, あげは娘"
+ PAGE 000
+  0()
+
+
+
+TROOP 443
+ Name "ブロム娘*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 444
+ Name "ウォーマー*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 445
+ Name "ブロム娘, ウォーマー*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 446
+ Name "グール, グール, グール"
+ PAGE 000
+  0()
+
+
+
+TROOP 447
+ Name "ウィングハーピー*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 448
+ Name "ナイトハーピー*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 449
+ Name "ウィングハーピー*2, ナイトハーピー"
+ PAGE 000
+  0()
+
+
+
+TROOP 450
+ Name "ウィングハーピー, ナイトハーピー*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 451
+ Name "ハナビラカマキリ娘*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 452
+ Name "ウィングハーピー, ハナビラカマキリ娘"
+ PAGE 000
+  0()
+
+
+
+TROOP 453
+ Name "ナイトハーピー, ハナビラカマキリ娘"
+ PAGE 000
+  0()
+
+
+
+TROOP 454
+ Name "ゼラチナスキューブ娘*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 455
+ Name "妖鬼*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 456
+ Name "ゼラチナスキューブ娘*2, 妖鬼"
+ PAGE 000
+  0()
+
+
+
+TROOP 457
+ Name "虎娘*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 458
+ Name "ゼラチナスキューブ娘*2, 虎娘"
+ PAGE 000
+  0()
+
+
+
+TROOP 459
+ Name "妖鬼*2, 虎娘"
+ PAGE 000
+  0()
+
+
+
+TROOP 460
+ Name "ゼラチナスキューブ娘, 虎娘, 妖鬼"
+ PAGE 000
+  0()
+
+
+
+TROOP 461
+ Name "氷の魔女*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 462
+ Name "シロクマ娘*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 463
+ Name "氷の魔女*2, シロクマ娘"
+ PAGE 000
+  0()
+
+
+
+TROOP 464
+ PAGE 000
+  0()
+
+
+
+TROOP 465
+ Name "===混沌の迷宮・海==="
+ PAGE 000
+  0()
+
+
+
+TROOP 466
+ Name "ミニカニ娘*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 467
+ Name "ナマズ娘*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 468
+ Name "ミニカニ娘*2, ナマズ娘"
+ PAGE 000
+  0()
+
+
+
+TROOP 469
+ Name "ナマコ娘*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 470
+ Name "貝娘*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 471
+ Name "ナマコ娘, 貝娘"
+ PAGE 000
+  0()
+
+
+
+TROOP 472
+ Name "カニ娘*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 473
+ Name "ナマコ娘, カニ娘"
+ PAGE 000
+  0()
+
+
+
+TROOP 474
+ Name "貝娘, カニ娘"
+ PAGE 000
+  0()
+
+
+
+TROOP 475
+ Name "ワカメ娘*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 476
+ Name "クラゲ娘*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 477
+ Name "ワカメ娘*2, クラゲ娘"
+ PAGE 000
+  0()
+
+
+
+TROOP 478
+ Name "イソギンチャク娘<画像非固定>"
+ PAGE 000
+  0()
+
+
+
+TROOP 479
+ Name "アンコウ娘*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 480
+ Name "ワカメ娘*2, アンコウ娘"
+ PAGE 000
+  0()
+
+
+
+TROOP 481
+ Name "アンコウ娘, クラゲ娘"
+ PAGE 000
+  0()
+
+
+
+TROOP 482
+ Name "襖"
+ PAGE 000
+  0()
+
+
+
+TROOP 483
+ Name "マーメイド*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 484
+ Name "商人マーメイド*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 485
+ Name "海賊マーメイド*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 486
+ Name "マーメイド*2, 商人マーメイド"
+ PAGE 000
+  0()
+
+
+
+TROOP 487
+ Name "マーメイド, 商人マーメイド, 海賊マーメイド"
+ PAGE 000
+  0()
+
+
+
+TROOP 488
+ Name "商人マーメイド, 海賊マーメイド*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 489
+ Name "一反木綿娘, 一反木綿娘, 一反木綿娘"
+ PAGE 000
+  0()
+
+
+
+TROOP 490
+ Name "ダゴン娘*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 491
+ Name "人魂娘*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 492
+ Name "ダゴン娘, 人魂娘*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 493
+ Name "タツノコ海兵*4"
+ PAGE 000
+  0()
+
+
+
+TROOP 494
+ Name "ウミウシ海兵*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 495
+ Name "タツノコ海兵*3, ウミウシ海兵"
+ PAGE 000
+  0()
+
+
+
+TROOP 496
+ Name "フェイクジェリー*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 497
+ Name "スキュラ, フェイクジェリー*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 498
+ Name "メデューサ, フェイクジェリー*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 499
+ Name "スキュラ, メデューサ, フェイクジェリー"
+ PAGE 000
+  0()
+
+
+
+TROOP 500
+ Name "セイレーン*2<画像非固定>"
+ PAGE 000
+  0()
+
+
+
+TROOP 501
+ Name "サンゴ娘*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 502
+ Name "ヒトデ娘*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 503
+ Name "サンゴ娘, ヒトデ娘"
+ PAGE 000
+  0()
+
+
+
+TROOP 504
+ Name "アークジェリー*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 505
+ Name "サンゴ娘, アークジェリー"
+ PAGE 000
+  0()
+
+
+
+TROOP 506
+ Name "ヒトデ娘, アークジェリー"
+ PAGE 000
+  0()
+
+
+
+TROOP 507
+ Name "エルダースキュラ*2<画像非固定>"
+ PAGE 000
+  0()
+
+
+
+TROOP 508
+ Name "シーアネモネ*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 509
+ Name "水龍娘*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 510
+ Name "シーアネモネ, 水龍娘*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 511
+ Name "マンタ娘"
+ PAGE 000
+  0()
+
+
+
+TROOP 512
+ Name "イッカク娘"
+ PAGE 000
+  0()
+
+
+
+TROOP 513
+ Name "ナイトマーメイド*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 514
+ Name "ジェネラルマーメイド*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 515
+ Name "ナイトマーメイド, ジェネラルマーメイド"
+ PAGE 000
+  0()
+
+
+
+TROOP 516
+ Name "ローレライ"
+ PAGE 000
+  0()
+
+
+
+TROOP 517
+ PAGE 000
+  0()
+
+
+
+TROOP 518
+ Name "===混沌の迷宮・砂漠==="
+ PAGE 000
+  0()
+
+
+
+TROOP 519
+ Name "サソリ娘*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 520
+ Name "サボテン娘*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 521
+ Name "サボテン娘, サソリ娘"
+ PAGE 000
+  0()
+
+
+
+TROOP 522
+ Name "ダチョウ娘*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 523
+ Name "サボテン娘, ダチョウ娘"
+ PAGE 000
+  0()
+
+
+
+TROOP 524
+ Name "ランプの魔女*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 525
+ Name "サボテン娘, ランプの魔女"
+ PAGE 000
+  0()
+
+
+
+TROOP 526
+ Name "ダチョウ娘, ランプの魔女"
+ PAGE 000
+  0()
+
+
+
+TROOP 527
+ Name "ミイラ娘*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 528
+ Name "コブラ娘*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 529
+ Name "ミイラ娘, コブラ娘"
+ PAGE 000
+  0()
+
+
+
+TROOP 530
+ Name "ネフェルラミアス"
+ PAGE 000
+  0()
+
+
+
+TROOP 531
+ Name "ワニ娘*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 532
+ Name "蜃気楼娘*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 533
+ Name "蜃気楼娘, ワニ娘"
+ PAGE 000
+  0()
+
+
+
+TROOP 534
+ Name "アリジゴク娘"
+ PAGE 000
+  0()
+
+
+
+TROOP 535
+ Name "サンドワーム娘"
+ PAGE 000
+  0()
+
+
+
+TROOP 536
+ Name "デザートスキュラ*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 537
+ Name "蜃気楼娘, デザートスキュラ"
+ PAGE 000
+  0()
+
+
+
+TROOP 538
+ Name "煙々羅*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 539
+ Name "マスターシャドウ*2, 煙々羅"
+ PAGE 000
+  0()
+
+
+
+TROOP 540
+ Name "マスターシャドウ, 煙々羅*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 541
+ Name "麒麟*2<画像非固定>"
+ PAGE 000
+  0()
+
+
+
+TROOP 542
+ Name "蛇骨女*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 543
+ Name "マスターシャドウ, 蛇骨女"
+ PAGE 000
+  0()
+
+
+
+TROOP 544
+ Name "煙々羅*2, 蛇骨女"
+ PAGE 000
+  0()
+
+
+
+TROOP 545
+ Name "ベヒーモス娘*2<画像非固定>"
+ PAGE 000
+  0()
+
+
+
+TROOP 546
+ Name "ワイバーン*2<画像非固定>"
+ PAGE 000
+  0()
+
+
+
+TROOP 547
+ Name "ベヒーモス娘, ワイバーン<画像非固定>"
+ PAGE 000
+  0()
+
+
+
+TROOP 548
+ Name "巨竜娘"
+ PAGE 000
+  0()
+
+
+
+TROOP 549
+ PAGE 000
+  0()
+
+
+
+TROOP 550
+ Name "===混沌の迷宮・宝箱==="
+ PAGE 000
+  0()
+
+
+
+TROOP 551
+ Name "ミミック娘"
+ PAGE 000
+  0()
+
+
+
+TROOP 552
+ Name "蜜壺"
+ PAGE 000
+  0()
+
+
+
+TROOP 553
+ Name "ハコイリ"
+ PAGE 000
+  0()
+
+
+
+TROOP 554
+ PAGE 000
+  0()
+
+
+
+TROOP 555
+ PAGE 000
+  0()
+
+
+
+TROOP 556
+ PAGE 000
+  0()
+
+
+
+TROOP 557
+ PAGE 000
+  0()
+
+
+
+TROOP 558
+ PAGE 000
+  0()
+
+
+
+TROOP 559
+ PAGE 000
+  0()
+
+
+
+TROOP 560
+ PAGE 000
+  0()
+
+
+
+TROOP 561
+ PAGE 000
+  0()
+
+
+
+TROOP 562
+ PAGE 000
+  0()
+
+
+
+TROOP 563
+ PAGE 000
+  0()
+
+
+
+TROOP 564
+ PAGE 000
+  0()
+
+
+
+TROOP 565
+ PAGE 000
+  0()
+
+
+
+TROOP 566
+ PAGE 000
+  0()
+
+
+
+TROOP 567
+ PAGE 000
+  0()
+
+
+
+TROOP 568
+ PAGE 000
+  0()
+
+
+
+TROOP 569
+ PAGE 000
+  0()
+
+
+
+TROOP 570
+ PAGE 000
+  0()
+
+
+
+TROOP 571
+ PAGE 000
+  0()
+
+
+
+TROOP 572
+ Name "===中章==="
+ PAGE 000
+  0()
+
+
+
+TROOP 573
+ PAGE 000
+  0()
+
+
+
+TROOP 574
+ Name "Mushroom Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,151)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 575
+ Name "Novistador Girl*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,152)
+  ChangeVariable(30,30,0,0,152)
+  ChangeVariable(31,31,0,0,152)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 576
+ Name "Urscylla*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,153)
+  ChangeVariable(30,30,0,0,153)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 577
+ Name "Urscylla, Novistador Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,153)
+  ChangeVariable(30,30,0,0,152)
+  ChangeVariable(31,31,0,0,152)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 578
+ Name "Fusuma"
+ PAGE 000
+  ChangeVariable(29,29,0,0,154)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 579
+ Name "Mermaid*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,155)
+  ChangeVariable(30,30,0,0,155)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 580
+ Name "Mermaid Merchant*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,156)
+  ChangeVariable(30,30,0,0,156)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 581
+ Name "Pirate Mermaid*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,157)
+  ChangeVariable(30,30,0,0,157)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 582
+ Name "Pirate Mermaid*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,157)
+  ChangeVariable(30,30,0,0,157)
+  ChangeVariable(31,31,0,0,157)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 583
+ Name "Mermaid Merchant, Pirate Mermaid*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,156)
+  ChangeVariable(30,30,0,0,157)
+  ChangeVariable(31,31,0,0,157)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 584
+ Name "Bolt of Cotton Girl A, Bolt of Cotton Girl B, Bolt of Cotton Girl C"
+ PAGE 000
+  ChangeVariable(29,29,0,0,158)
+  ChangeVariable(30,30,0,0,159)
+  ChangeVariable(31,31,0,0,160)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 585
+ Name "Dagon*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,161)
+  ChangeVariable(30,30,0,0,161)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 586
+ Name "Will-o-wisp Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,162)
+  ChangeVariable(30,30,0,0,162)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 587
+ Name "Dagon, Will-o-wisp Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,161)
+  ChangeVariable(30,30,0,0,162)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 588
+ Name "Bonnie, Ashel"
+ PAGE 000
+  ChangeVariable(29,29,0,0,164)
+  ChangeVariable(30,30,0,0,163)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 589
+ Name "Sea Horse Sailor*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,165)
+  ChangeVariable(30,30,0,0,165)
+  ChangeVariable(31,31,0,0,165)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 590
+ Name "Sea Slug Sailor*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,166)
+  ChangeVariable(30,30,0,0,166)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 591
+ Name "Sea Horse Sailor*2, Sea Slug Sailor"
+ PAGE 000
+  ChangeVariable(29,29,0,0,165)
+  ChangeVariable(30,30,0,0,165)
+  ChangeVariable(31,31,0,0,166)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 592
+ Name "Leviathan"
+ PAGE 000
+  ChangeVariable(29,29,0,0,167)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 593
+ Name "Mermaid, Mermaid Merchant"
+ PAGE 000
+  ChangeVariable(29,29,0,0,155)
+  ChangeVariable(30,30,0,0,156)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 594
+ Name "Mermaid, Pirate Mermaid"
+ PAGE 000
+  ChangeVariable(29,29,0,0,155)
+  ChangeVariable(30,30,0,0,157)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 595
+ Name "Mermaid, Mermaid Merchant, Pirate Mermaid"
+ PAGE 000
+  ChangeVariable(29,29,0,0,155)
+  ChangeVariable(30,30,0,0,156)
+  ChangeVariable(31,31,0,0,157)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 596
+ Name "Frog Girl A, Frog Girl B"
+ PAGE 000
+  ChangeVariable(29,29,0,0,168)
+  ChangeVariable(30,30,0,0,169)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 597
+ Name "Centaur Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,170)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 598
+ Name "Alraune"
+ PAGE 000
+  ChangeVariable(29,29,0,0,171)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 599
+ Name "Chrysanthemum Bug*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,172)
+  ChangeVariable(30,30,0,0,172)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 600
+ Name "Chrysanthemum Bug*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,172)
+  ChangeVariable(30,30,0,0,172)
+  ChangeVariable(31,31,0,0,172)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 601
+ Name "Spirit Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,173)
+  ChangeVariable(30,30,0,0,173)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 602
+ Name "Spirit Girl*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,173)
+  ChangeVariable(30,30,0,0,173)
+  ChangeVariable(31,31,0,0,173)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 603
+ Name "Chrysanthemum Bug, Spirit Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,172)
+  ChangeVariable(30,30,0,0,173)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 604
+ Name "Chrysanthemum Bug, Spirit Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,172)
+  ChangeVariable(30,30,0,0,173)
+  ChangeVariable(31,31,0,0,173)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 605
+ Name "Chrysanthemum Bug*2, Spirit Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,172)
+  ChangeVariable(30,30,0,0,172)
+  ChangeVariable(31,31,0,0,173)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 606
+ Name "Boxed Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,174)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 607
+ Name "Dullahan"
+ PAGE 000
+  ChangeVariable(29,29,0,0,175)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 608
+ Name "Cerberus"
+ PAGE 000
+  ChangeVariable(29,29,0,0,176)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 609
+ Name "Alma Elma"
+ PAGE 000
+  ChangeVariable(29,29,0,0,177)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 610
+ Name "Granberia"
+ PAGE 000
+  ChangeVariable(29,29,0,0,178)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 611
+ Name "Nure-onna"
+ PAGE 000
+  ChangeVariable(29,29,0,0,179)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 612
+ Name "Nure-onna*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,179)
+  ChangeVariable(30,30,0,0,179)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 613
+ Name "Chrysanthemum Bug, Nure-onna"
+ PAGE 000
+  ChangeVariable(29,29,0,0,172)
+  ChangeVariable(30,30,0,0,179)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 614
+ Name "Spirit Girl, Nure-onna"
+ PAGE 000
+  ChangeVariable(29,29,0,0,173)
+  ChangeVariable(30,30,0,0,179)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 615
+ Name "High Minotauros*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,180)
+  ChangeVariable(30,30,0,0,180)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 616
+ Name "High Minotauros*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,180)
+  ChangeVariable(30,30,0,0,180)
+  ChangeVariable(31,31,0,0,180)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 617
+ Name "Misstauros*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,181)
+  ChangeVariable(30,30,0,0,181)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 618
+ Name "Misstauros*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,181)
+  ChangeVariable(30,30,0,0,181)
+  ChangeVariable(31,31,0,0,181)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 619
+ Name "High Minotauros, Misstauros"
+ PAGE 000
+  ChangeVariable(29,29,0,0,180)
+  ChangeVariable(30,30,0,0,181)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 620
+ Name "Genitauros*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,182)
+  ChangeVariable(30,30,0,0,182)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 621
+ Name "Genitauros*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,182)
+  ChangeVariable(30,30,0,0,182)
+  ChangeVariable(31,31,0,0,182)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 622
+ Name "High Minotauros, Genitauros"
+ PAGE 000
+  ChangeVariable(29,29,0,0,180)
+  ChangeVariable(30,30,0,0,182)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 623
+ Name "Misstauros, Genitauros"
+ PAGE 000
+  ChangeVariable(29,29,0,0,181)
+  ChangeVariable(30,30,0,0,182)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 624
+ Name "High Minotauros, Misstauros, Genitauros"
+ PAGE 000
+  ChangeVariable(29,29,0,0,180)
+  ChangeVariable(30,30,0,0,181)
+  ChangeVariable(31,31,0,0,182)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 625
+ Name "Sun Wukong"
+ PAGE 000
+  ChangeVariable(29,29,0,0,183)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 626
+ Name "Demon Cow Queen"
+ PAGE 000
+  ChangeVariable(29,29,0,0,184)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 627
+ Name "Kunoichi Elf"
+ PAGE 000
+  ChangeVariable(29,29,0,0,185)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 628
+ Name "Samurai Elf"
+ PAGE 000
+  ChangeVariable(29,29,0,0,186)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 629
+ Name "Yuki-Onna"
+ PAGE 000
+  ChangeVariable(29,29,0,0,187)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 630
+ Name "Yuki-Onna*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,187)
+  ChangeVariable(30,30,0,0,187)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 631
+ Name "Nure-onna, Yuki-Onna"
+ PAGE 000
+  ChangeVariable(29,29,0,0,179)
+  ChangeVariable(30,30,0,0,187)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 632
+ Name "Akaname"
+ PAGE 000
+  ChangeVariable(29,29,0,0,189)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 633
+ Name "Nekomata*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,188)
+  ChangeVariable(30,30,0,0,188)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 634
+ Name "Nekomata*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,188)
+  ChangeVariable(30,30,0,0,188)
+  ChangeVariable(31,31,0,0,188)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 635
+ Name "Kappa*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,190)
+  ChangeVariable(30,30,0,0,190)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 636
+ Name "Kappa*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,190)
+  ChangeVariable(30,30,0,0,190)
+  ChangeVariable(31,31,0,0,190)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 637
+ Name "Nekomata, Kappa"
+ PAGE 000
+  ChangeVariable(29,29,0,0,188)
+  ChangeVariable(30,30,0,0,190)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 638
+ Name "Nekomata*2, Kappa"
+ PAGE 000
+  ChangeVariable(29,29,0,0,188)
+  ChangeVariable(30,30,0,0,188)
+  ChangeVariable(31,31,0,0,190)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 639
+ Name "Nekomata, Kappa*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,188)
+  ChangeVariable(30,30,0,0,190)
+  ChangeVariable(31,31,0,0,190)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 640
+ Name "Futakuchi Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,191)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 641
+ Name "Shirohebi"
+ PAGE 000
+  ChangeVariable(29,29,0,0,192)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 642
+ Name "Miko Lamia*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,193)
+  ChangeVariable(30,30,0,0,193)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 643
+ Name "Miko Arachne*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,194)
+  ChangeVariable(30,30,0,0,194)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 644
+ Name "Miko Lamia, Miko Arachne"
+ PAGE 000
+  ChangeVariable(29,29,0,0,193)
+  ChangeVariable(30,30,0,0,194)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 645
+ Name "Kejourou"
+ PAGE 000
+  ChangeVariable(29,29,0,0,195)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 646
+ Name "Yamata no Orochi"
+ PAGE 000
+  ChangeVariable(29,29,0,0,196)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 647
+ Name "Magical Butterfly, Magical Fly"
+ PAGE 000
+  ChangeVariable(29,29,0,0,197)
+  ChangeVariable(30,30,0,0,198)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 648
+ Name "Magical Butterfly, Magical Ladybug"
+ PAGE 000
+  ChangeVariable(29,29,0,0,197)
+  ChangeVariable(30,30,0,0,199)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 649
+ Name "Magical Fly, Magical Ladybug"
+ PAGE 000
+  ChangeVariable(29,29,0,0,198)
+  ChangeVariable(30,30,0,0,199)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 650
+ Name "Magical Butterfly, Magical Fly, Magical Ladybug"
+ PAGE 000
+  ChangeVariable(29,29,0,0,197)
+  ChangeVariable(30,30,0,0,198)
+  ChangeVariable(31,31,0,0,199)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 651
+ Name "Magical Pixie, Magical Elf"
+ PAGE 000
+  ChangeVariable(29,29,0,0,200)
+  ChangeVariable(30,30,0,0,201)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 652
+ Name "Magical Pixie, Magical Succubus"
+ PAGE 000
+  ChangeVariable(29,29,0,0,200)
+  ChangeVariable(30,30,0,0,202)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 653
+ Name "Magical Elf, Magical Succubus"
+ PAGE 000
+  ChangeVariable(29,29,0,0,201)
+  ChangeVariable(30,30,0,0,202)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 654
+ Name "Magical Pixie, Magical Elf, Magical Succubus"
+ PAGE 000
+  ChangeVariable(29,29,0,0,200)
+  ChangeVariable(30,30,0,0,201)
+  ChangeVariable(31,31,0,0,202)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 655
+ Name "Mephisto"
+ PAGE 000
+  ChangeVariable(29,29,0,0,203)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 656
+ Name "Mantis Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,204)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 657
+ Name "Mantis Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,204)
+  ChangeVariable(30,30,0,0,204)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 658
+ Name "Silkworm Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,205)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 659
+ Name "Silkworm Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,205)
+  ChangeVariable(30,30,0,0,205)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 660
+ Name "Mantis Girl, Silkworm Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,204)
+  ChangeVariable(30,30,0,0,205)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 661
+ Name "Alra Alum, Alra Rooty"
+ PAGE 000
+  ChangeVariable(29,29,0,0,206)
+  ChangeVariable(30,30,0,0,207)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 662
+ Name "Alra Vore, Alra Parasol, Alra Prison"
+ PAGE 000
+  ChangeVariable(29,29,0,0,208)
+  ChangeVariable(30,30,0,0,209)
+  ChangeVariable(31,31,0,0,210)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 663
+ Name "Alra Vore, Alra Parasol, Alra Shroom"
+ PAGE 000
+  ChangeVariable(29,29,0,0,208)
+  ChangeVariable(30,30,0,0,209)
+  ChangeVariable(31,31,0,0,211)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 664
+ Name "Alra Parasol, Alra Prison, Alra Shroom"
+ PAGE 000
+  ChangeVariable(29,29,0,0,209)
+  ChangeVariable(30,30,0,0,210)
+  ChangeVariable(31,31,0,0,211)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 665
+ Name "Dorothy, Raffia, Deana"
+ PAGE 000
+  ChangeVariable(29,29,0,0,212)
+  ChangeVariable(30,30,0,0,213)
+  ChangeVariable(31,31,0,0,214)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 666
+ Name "Alra Priestess"
+ PAGE 000
+  ChangeVariable(29,29,0,0,215)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 667
+ Name "Moth Girl, Mosquito Girl, Caterpillar Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,216)
+  ChangeVariable(30,30,0,0,217)
+  ChangeVariable(31,31,0,0,218)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 668
+ Name "Hornet Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,219)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 669
+ Name "Queen Bee"
+ PAGE 000
+  ChangeVariable(29,29,0,0,220)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 670
+ Name "Tezcatlipoca"
+ PAGE 000
+  ChangeVariable(29,29,0,0,221)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 671
+ Name "Quetzalcoatl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,222)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 672
+ Name "Gnosis"
+ PAGE 000
+  ChangeVariable(29,29,0,0,223)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 673
+ Name "Zion"
+ PAGE 000
+  ChangeVariable(29,29,0,0,224)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 674
+ Name "Jelly Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,225)
+  ChangeVariable(30,30,0,0,225)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 675
+ Name "Blob Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,226)
+  ChangeVariable(30,30,0,0,226)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 676
+ Name "Jelly Girl, Blob Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,225)
+  ChangeVariable(30,30,0,0,226)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 677
+ Name "Green Slime, Red Slime, Blue Slime, Purple Slime"
+ PAGE 000
+  ChangeVariable(29,29,0,0,227)
+  ChangeVariable(30,30,0,0,228)
+  ChangeVariable(31,31,0,0,229)
+  ChangeVariable(32,32,0,0,230)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 678
+ Name "Undine"
+ PAGE 000
+  ChangeVariable(29,29,0,0,231)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 679
+ Name "Erubetie"
+ PAGE 000
+  ChangeVariable(29,29,0,0,232)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 680
+ Name "Ant Girls"
+ PAGE 000
+  ChangeVariable(29,29,0,0,233)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 681
+ Name "Automata Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,234)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 682
+ Name "Automata Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,234)
+  ChangeVariable(30,30,0,0,234)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 683
+ Name "Paizuri Doll*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,235)
+  ChangeVariable(30,30,0,0,235)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 684
+ Name "Paizuri Doll*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,235)
+  ChangeVariable(30,30,0,0,235)
+  ChangeVariable(31,31,0,0,235)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 685
+ Name "Automata Girl, Paizuri Doll*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,234)
+  ChangeVariable(30,30,0,0,235)
+  ChangeVariable(31,31,0,0,235)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 686
+ Name "Scylla*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,236)
+  ChangeVariable(30,30,0,0,236)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 687
+ Name "Medusa*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,237)
+  ChangeVariable(30,30,0,0,237)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 688
+ Name "Scylla, Medusa"
+ PAGE 000
+  ChangeVariable(29,29,0,0,236)
+  ChangeVariable(30,30,0,0,237)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 689
+ Name "Butterfly Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,238)
+  ChangeVariable(30,30,0,0,238)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 690
+ Name "Scylla, Butterfly Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,236)
+  ChangeVariable(30,30,0,0,238)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 691
+ Name "Medusa, Butterfly Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,237)
+  ChangeVariable(30,30,0,0,238)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 692
+ Name "Scylla, Medusa, Butterfly Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,236)
+  ChangeVariable(30,30,0,0,237)
+  ChangeVariable(31,31,0,0,238)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 693
+ Name "Brom Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,239)
+  ChangeVariable(30,30,0,0,239)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 694
+ Name "Warmer*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,240)
+  ChangeVariable(30,30,0,0,240)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 695
+ Name "Brom Girl, Warmer"
+ PAGE 000
+  ChangeVariable(29,29,0,0,239)
+  ChangeVariable(30,30,0,0,240)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 696
+ Name "Ghoul A, Ghoul B, Ghoul C"
+ PAGE 000
+  ChangeVariable(29,29,0,0,241)
+  ChangeVariable(30,30,0,0,242)
+  ChangeVariable(31,31,0,0,243)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 697
+ Name "Fake Jelly*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,244)
+  ChangeVariable(30,30,0,0,244)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 698
+ Name "Scylla, Fake Jelly"
+ PAGE 000
+  ChangeVariable(29,29,0,0,236)
+  ChangeVariable(30,30,0,0,244)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 699
+ Name "Medusa, Fake Jelly"
+ PAGE 000
+  ChangeVariable(29,29,0,0,237)
+  ChangeVariable(30,30,0,0,244)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 700
+ Name "Scylla, Medusa, Fake Jelly"
+ PAGE 000
+  ChangeVariable(29,29,0,0,236)
+  ChangeVariable(30,30,0,0,237)
+  ChangeVariable(31,31,0,0,244)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 701
+ Name "Wing Harpy*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,245)
+  ChangeVariable(30,30,0,0,245)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 702
+ Name "Harpy Knight*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,246)
+  ChangeVariable(30,30,0,0,246)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 703
+ Name "Wing Harpy, Harpy Knight"
+ PAGE 000
+  ChangeVariable(29,29,0,0,245)
+  ChangeVariable(30,30,0,0,246)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 704
+ Name "Mud Golem Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,247)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 705
+ Name "Golem Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,248)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 706
+ Name "Flower Mantis Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,249)
+  ChangeVariable(30,30,0,0,249)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 707
+ Name "Wing Harpy, Flower Mantis Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,245)
+  ChangeVariable(30,30,0,0,249)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 708
+ Name "Harpy Knight, Flower Mantis Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,246)
+  ChangeVariable(30,30,0,0,249)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 709
+ Name "Black Golem*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,250)
+  ChangeVariable(30,30,0,0,250)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 710
+ Name "Automata Girl, Black Golem"
+ PAGE 000
+  ChangeVariable(29,29,0,0,234)
+  ChangeVariable(30,30,0,0,250)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 711
+ Name "Paizuri Doll*2, Black Golem"
+ PAGE 000
+  ChangeVariable(29,29,0,0,235)
+  ChangeVariable(30,30,0,0,235)
+  ChangeVariable(31,31,0,0,250)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 712
+ Name "Feral Kitsune*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,251)
+  ChangeVariable(30,30,0,0,251)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 713
+ Name "くのいち三尾*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,252)
+  ChangeVariable(30,30,0,0,252)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 714
+ Name "Three-tailed Kunoichi*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,253)
+  ChangeVariable(30,30,0,0,253)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 715
+ Name "Three-tailed Kunoichi, Four-tailed Samurai"
+ PAGE 000
+  ChangeVariable(29,29,0,0,252)
+  ChangeVariable(30,30,0,0,253)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 716
+ Name "Feral Kitsune, Three-tailed Kunoichi"
+ PAGE 000
+  ChangeVariable(29,29,0,0,251)
+  ChangeVariable(30,30,0,0,252)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 717
+ Name "Feral Kitsune, Four-tailed Samurai"
+ PAGE 000
+  ChangeVariable(29,29,0,0,251)
+  ChangeVariable(30,30,0,0,253)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 718
+ Name "Queen Ant"
+ PAGE 000
+  ChangeVariable(29,29,0,0,254)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 719
+ Name "Lilith"
+ PAGE 000
+  ChangeVariable(29,29,0,0,255)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 720
+ Name "Lava Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,256)
+  ChangeVariable(30,30,0,0,256)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 721
+ Name "Demon Lamia*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,257)
+  ChangeVariable(30,30,0,0,257)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 722
+ Name "Demon Scylla*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,258)
+  ChangeVariable(30,30,0,0,258)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 723
+ Name "Demon Lamia, Demon Scylla"
+ PAGE 000
+  ChangeVariable(29,29,0,0,257)
+  ChangeVariable(30,30,0,0,258)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 724
+ Name "Siren"
+ PAGE 000
+  ChangeVariable(29,29,0,0,259)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 725
+ Name "Coral Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,260)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 726
+ Name "Coral Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,260)
+  ChangeVariable(30,30,0,0,260)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 727
+ Name "Starfish Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,261)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 728
+ Name "Starfish Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,261)
+  ChangeVariable(30,30,0,0,261)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 729
+ Name "Coral Girl, Starfish Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,260)
+  ChangeVariable(30,30,0,0,261)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 730
+ Name "Beelzebub C, Beelzebub A, Beelzebub B"
+ PAGE 000
+  ChangeVariable(29,29,0,0,264)
+  ChangeVariable(30,30,0,0,262)
+  ChangeVariable(31,31,0,0,263)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 731
+ Name "Arch Jelly*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,265)
+  ChangeVariable(30,30,0,0,265)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 732
+ Name "Coral Girl, Arch Jelly"
+ PAGE 000
+  ChangeVariable(29,29,0,0,260)
+  ChangeVariable(30,30,0,0,265)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 733
+ Name "Starfish Girl, Arch Jelly"
+ PAGE 000
+  ChangeVariable(29,29,0,0,261)
+  ChangeVariable(30,30,0,0,265)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 734
+ Name "Elder Scylla"
+ PAGE 000
+  ChangeVariable(29,29,0,0,266)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 735
+ Name "Poseidoness"
+ PAGE 000
+  ChangeVariable(29,29,0,0,267)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 736
+ Name "Succubus A, Succubus B, Succubus C, Succubus D"
+ PAGE 000
+  ChangeVariable(29,29,0,0,268)
+  ChangeVariable(30,30,0,0,269)
+  ChangeVariable(31,31,0,0,270)
+  ChangeVariable(32,32,0,0,271)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 737
+ Name "Meiccubus"
+ PAGE 000
+  ChangeVariable(29,29,0,0,272)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 738
+ Name "Meiccubus*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,272)
+  ChangeVariable(30,30,0,0,272)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 739
+ Name "Maccubus"
+ PAGE 000
+  ChangeVariable(29,29,0,0,273)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 740
+ Name "Mincubus, Lencubus"
+ PAGE 000
+  ChangeVariable(29,29,0,0,274)
+  ChangeVariable(30,30,0,0,275)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 741
+ Name "Succubus"
+ PAGE 000
+  ChangeVariable(29,29,0,0,276)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 742
+ Name "Natasha"
+ PAGE 000
+  ChangeVariable(29,29,0,0,277)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 743
+ Name "Scylla Maid"
+ PAGE 000
+  ChangeVariable(29,29,0,0,278)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 744
+ Name "Madame Insect*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,279)
+  ChangeVariable(30,30,0,0,279)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 745
+ Name "Madame Umbrella*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,280)
+  ChangeVariable(30,30,0,0,280)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 746
+ Name "Madame Insect, Madame Umbrella"
+ PAGE 000
+  ChangeVariable(29,29,0,0,279)
+  ChangeVariable(30,30,0,0,280)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 747
+ Name "Aradia"
+ PAGE 000
+  ChangeVariable(29,29,0,0,281)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 748
+ Name "Candy"
+ PAGE 000
+  ChangeVariable(29,29,0,0,282)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 749
+ Name "Basilisk"
+ PAGE 000
+  ChangeVariable(29,29,0,0,283)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 750
+ Name "Dragon Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,284)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 751
+ Name "Salamander"
+ PAGE 000
+  ChangeVariable(29,29,0,0,285)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 752
+ Name "Granberia"
+ PAGE 000
+  ChangeVariable(29,29,0,0,286)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 753
+ Name "Gelatinous Cube Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,287)
+  ChangeVariable(30,30,0,0,287)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 754
+ Name "Youki*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,288)
+  ChangeVariable(30,30,0,0,288)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 755
+ Name "Gelatinous Cube Girl, Youki"
+ PAGE 000
+  ChangeVariable(29,29,0,0,287)
+  ChangeVariable(30,30,0,0,288)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 756
+ Name "Tiger Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,289)
+  ChangeVariable(30,30,0,0,289)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 757
+ Name "Gelatinous Cube Girl, Tiger Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,287)
+  ChangeVariable(30,30,0,0,289)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 758
+ Name "Youki, Tiger Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,288)
+  ChangeVariable(30,30,0,0,289)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 759
+ Name "Gelatinous Cube Girl, Tiger Girl, Youki"
+ PAGE 000
+  ChangeVariable(29,29,0,0,287)
+  ChangeVariable(30,30,0,0,289)
+  ChangeVariable(31,31,0,0,288)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 760
+ Name "Vampire"
+ PAGE 000
+  ChangeVariable(29,29,0,0,290)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 761
+ Name "Jellaila*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,291)
+  ChangeVariable(30,30,0,0,291)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 762
+ Name "Libo-Libo*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,292)
+  ChangeVariable(30,30,0,0,292)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 763
+ Name "Jellaila, Libo-Libo"
+ PAGE 000
+  ChangeVariable(29,29,0,0,291)
+  ChangeVariable(30,30,0,0,292)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 764
+ Name "Amphil*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,293)
+  ChangeVariable(30,30,0,0,293)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 765
+ Name "Jellaila, Amphil"
+ PAGE 000
+  ChangeVariable(29,29,0,0,291)
+  ChangeVariable(30,30,0,0,293)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 766
+ Name "Libo-Libo, Amphil"
+ PAGE 000
+  ChangeVariable(29,29,0,0,292)
+  ChangeVariable(30,30,0,0,293)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 767
+ Name "Jellaila, Libo-Libo, Amphil"
+ PAGE 000
+  ChangeVariable(29,29,0,0,291)
+  ChangeVariable(30,30,0,0,292)
+  ChangeVariable(31,31,0,0,293)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 768
+ Name "Twinkell"
+ PAGE 000
+  ChangeVariable(29,29,0,0,294)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 769
+ Name "Lilith & Lilim"
+ PAGE 000
+  ChangeVariable(29,29,0,0,295)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 770
+ Name "Cassandra, Emily"
+ PAGE 000
+  ChangeVariable(29,29,0,0,297)
+  ChangeVariable(30,30,0,0,296)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 771
+ Name "Succubus Witch"
+ PAGE 000
+  ChangeVariable(29,29,0,0,298)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 772
+ Name "Sea Anemone Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,299)
+  ChangeVariable(30,30,0,0,299)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 773
+ Name "Sea Dragon Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,300)
+  ChangeVariable(30,30,0,0,300)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 774
+ Name "Sea Anemone Girl, Sea Dragon Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,299)
+  ChangeVariable(30,30,0,0,300)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 775
+ Name "Manta Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,301)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 776
+ Name "Narwhal Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,302)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 777
+ Name "Trick Fairy*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,303)
+  ChangeVariable(30,30,0,0,303)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 778
+ Name "Elf Amazoness*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,304)
+  ChangeVariable(30,30,0,0,304)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 779
+ Name "Trick Fairy, Elf Amazoness"
+ PAGE 000
+  ChangeVariable(29,29,0,0,303)
+  ChangeVariable(30,30,0,0,304)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 780
+ Name "Carbuncle Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,305)
+  ChangeVariable(30,30,0,0,305)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 781
+ Name "Trick Fairy, Carbuncle Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,303)
+  ChangeVariable(30,30,0,0,305)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 782
+ Name "Elf Amazoness, Carbuncle Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,304)
+  ChangeVariable(30,30,0,0,305)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 783
+ Name "Gigantic Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,306)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 784
+ Name "Queen Fairy"
+ PAGE 000
+  ChangeVariable(29,29,0,0,307)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 785
+ Name "Queen Elf"
+ PAGE 000
+  ChangeVariable(29,29,0,0,308)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 786
+ Name "Forest Alraune*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,309)
+  ChangeVariable(30,30,0,0,309)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 787
+ Name "Forest Dryad*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,310)
+  ChangeVariable(30,30,0,0,310)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 788
+ Name "Forest Alraune, Forest Dryad"
+ PAGE 000
+  ChangeVariable(29,29,0,0,309)
+  ChangeVariable(30,30,0,0,310)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 789
+ Name "Walraune"
+ PAGE 000
+  ChangeVariable(29,29,0,0,311)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 790
+ Name "Green Dryad*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,312)
+  ChangeVariable(30,30,0,0,312)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 791
+ Name "Blue Dryad*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,313)
+  ChangeVariable(30,30,0,0,313)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 792
+ Name "Green Dryad, Blue Dryad"
+ PAGE 000
+  ChangeVariable(29,29,0,0,312)
+  ChangeVariable(30,30,0,0,313)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 793
+ Name "Queen Alraune"
+ PAGE 000
+  ChangeVariable(29,29,0,0,314)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 794
+ Name "Aži Dahāka"
+ PAGE 000
+  ChangeVariable(29,29,0,0,315)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 795
+ Name "Mermaid Knight*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,316)
+  ChangeVariable(30,30,0,0,316)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 796
+ Name "Mermaid General*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,317)
+  ChangeVariable(30,30,0,0,317)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 797
+ Name "Mermaid Knight, Mermaid General"
+ PAGE 000
+  ChangeVariable(29,29,0,0,316)
+  ChangeVariable(30,30,0,0,317)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 798
+ Name "Lorelei"
+ PAGE 000
+  ChangeVariable(29,29,0,0,318)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 799
+ PAGE 000
+  0()
+
+
+
+TROOP 800
+ PAGE 000
+  0()
+
+
+
+TROOP 801
+ Name "El"
+ PAGE 000
+  ChangeVariable(29,29,0,0,319)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 802
+ Name "Queen Mermaid"
+ PAGE 000
+  ChangeVariable(29,29,0,0,320)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 803
+ Name "Arachne B, Arachne A, Arachne C"
+ PAGE 000
+  ChangeVariable(29,29,0,0,321)
+  ChangeVariable(30,30,0,0,322)
+  ChangeVariable(31,31,0,0,323)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 804
+ Name "Tsuchigumo"
+ PAGE 000
+  ChangeVariable(29,29,0,0,324)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 805
+ Name "Arachne Lord*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,325)
+  ChangeVariable(30,30,0,0,325)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 806
+ Name "Atlach-Nacha"
+ PAGE 000
+  ChangeVariable(29,29,0,0,326)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 807
+ Name "Spider Princess"
+ PAGE 000
+  ChangeVariable(29,29,0,0,327)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 808
+ Name "Conquista*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,328)
+  ChangeVariable(30,30,0,0,328)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 809
+ Name "Vendetta*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,329)
+  ChangeVariable(30,30,0,0,329)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 810
+ Name "Conquista, Vendetta"
+ PAGE 000
+  ChangeVariable(29,29,0,0,328)
+  ChangeVariable(30,30,0,0,329)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 811
+ Name "Elder Vampire"
+ PAGE 000
+  ChangeVariable(29,29,0,0,330)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 812
+ Name "Carmilla"
+ PAGE 000
+  ChangeVariable(29,29,0,0,331)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 813
+ Name "Elizabeth"
+ PAGE 000
+  ChangeVariable(29,29,0,0,332)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 814
+ Name "Queen Vampire"
+ PAGE 000
+  ChangeVariable(29,29,0,0,333)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 815
+ Name "Master Shadow*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,334)
+  ChangeVariable(30,30,0,0,334)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 816
+ Name "Enera*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,335)
+  ChangeVariable(30,30,0,0,335)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 817
+ Name "Master Shadow, Enera"
+ PAGE 000
+  ChangeVariable(29,29,0,0,334)
+  ChangeVariable(30,30,0,0,335)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 818
+ Name "Master Shadow, Enera*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,334)
+  ChangeVariable(30,30,0,0,335)
+  ChangeVariable(31,31,0,0,335)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 819
+ Name "Kirin"
+ PAGE 000
+  ChangeVariable(29,29,0,0,336)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 820
+ Name "Jakotsu Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,337)
+  ChangeVariable(30,30,0,0,337)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 821
+ Name "Master Shadow, Jakotsu Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,334)
+  ChangeVariable(30,30,0,0,337)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 822
+ Name "Enera, Jakotsu Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,335)
+  ChangeVariable(30,30,0,0,337)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 823
+ Name "Behemoth"
+ PAGE 000
+  ChangeVariable(29,29,0,0,338)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 824
+ Name "Wyvern"
+ PAGE 000
+  ChangeVariable(29,29,0,0,339)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 825
+ Name "Kyoryuu"
+ PAGE 000
+  ChangeVariable(29,29,0,0,340)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 826
+ Name "Succubus Monk*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,341)
+  ChangeVariable(30,30,0,0,341)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 827
+ Name "Demon Monk*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,342)
+  ChangeVariable(30,30,0,0,342)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 828
+ Name "Succubus Monk, Demon Monk"
+ PAGE 000
+  ChangeVariable(29,29,0,0,341)
+  ChangeVariable(30,30,0,0,342)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 829
+ Name "Scylla Servant*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,343)
+  ChangeVariable(30,30,0,0,343)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 830
+ Name "Succubus Monk, Scylla Servant"
+ PAGE 000
+  ChangeVariable(29,29,0,0,341)
+  ChangeVariable(30,30,0,0,343)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 831
+ Name "Demon Monk, Scylla Servant"
+ PAGE 000
+  ChangeVariable(29,29,0,0,342)
+  ChangeVariable(30,30,0,0,343)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 832
+ Name "Guivre Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,344)
+  ChangeVariable(30,30,0,0,344)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 833
+ Name "Succubus Monk, Guivre Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,341)
+  ChangeVariable(30,30,0,0,344)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 834
+ Name "Demon Monk, Guivre Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,342)
+  ChangeVariable(30,30,0,0,344)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 835
+ Name "Succubus Monk, Demon Monk, Guivre Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,341)
+  ChangeVariable(30,30,0,0,342)
+  ChangeVariable(31,31,0,0,344)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 836
+ Name "Kokka, Kokuja, Kurobara"
+ PAGE 000
+  ChangeVariable(29,29,0,0,345)
+  ChangeVariable(30,30,0,0,346)
+  ChangeVariable(31,31,0,0,347)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 837
+ Name "Black Alice (1st Form)"
+ PAGE 000
+  0()
+
+
+
+TROOP 838
+ Name "Black Alice (2nd Form)"
+ PAGE 000
+  0()
+
+
+
+TROOP 839
+ Name "Black Alice (3rd Form)"
+ PAGE 000
+  0()
+
+
+
+TROOP 840
+ Name "Ice Witch*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,351)
+  ChangeVariable(30,30,0,0,351)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 841
+ Name "Polar Bear Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,352)
+  ChangeVariable(30,30,0,0,352)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 842
+ Name "Ice Witch, Polar Bear Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,351)
+  ChangeVariable(30,30,0,0,352)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 843
+ Name "Angel Soldier A, Angel Soldier B, Angel Soldier C<BGM:boss_angel>"
+ PAGE 000
+  ChangeVariable(29,29,0,0,353)
+  ChangeVariable(30,30,0,0,354)
+  ChangeVariable(31,31,0,0,355)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 844
+ Name "Angel Soldier A, Angel Soldier D, Angel Soldier E<BGM:boss_angel>"
+ PAGE 000
+  ChangeVariable(29,29,0,0,353)
+  ChangeVariable(30,30,0,0,356)
+  ChangeVariable(31,31,0,0,357)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 845
+ Name "Trinity C, Trinity A, Trinity B<BGM:boss_angel>"
+ PAGE 000
+  ChangeVariable(29,29,0,0,358)
+  ChangeVariable(30,30,0,0,359)
+  ChangeVariable(31,31,0,0,360)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 846
+ Name "Uranus<BGM:boss_angel>"
+ PAGE 000
+  ChangeVariable(29,29,0,0,361)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 847
+ Name "Eliciel<BGM:boss_angel>"
+ PAGE 000
+  ChangeVariable(29,29,0,0,362)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 848
+ Name "Uranus*2<BGM:boss_angel>"
+ PAGE 000
+  ChangeVariable(29,29,0,0,361)
+  ChangeVariable(30,30,0,0,361)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 849
+ Name "Eliciel*2<BGM:boss_angel>"
+ PAGE 000
+  ChangeVariable(29,29,0,0,362)
+  ChangeVariable(30,30,0,0,362)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 850
+ Name "Uranus, Eliciel<BGM:boss_angel>"
+ PAGE 000
+  ChangeVariable(29,29,0,0,361)
+  ChangeVariable(30,30,0,0,362)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 851
+ Name "Cupid*2<BGM:boss_angel>"
+ PAGE 000
+  ChangeVariable(29,29,0,0,363)
+  ChangeVariable(30,30,0,0,363)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 852
+ Name "Valkyrie*2<BGM:boss_angel>"
+ PAGE 000
+  ChangeVariable(29,29,0,0,364)
+  ChangeVariable(30,30,0,0,364)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 853
+ Name "Cupid, Valkyrie<BGM:boss_angel>"
+ PAGE 000
+  ChangeVariable(29,29,0,0,363)
+  ChangeVariable(30,30,0,0,364)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 854
+ Name "Eden"
+ PAGE 000
+  ChangeVariable(29,29,0,0,365)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 855
+ Name "Heliel<BGM:boss_angel>"
+ PAGE 000
+  ChangeVariable(29,29,0,0,366)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 856
+ Name "Alciel<BGM:boss_angel>"
+ PAGE 000
+  ChangeVariable(29,29,0,0,367)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 857
+ Name "Chimera Beast*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,373)
+  ChangeVariable(30,30,0,0,373)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 858
+ Name "S-2*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,374)
+  ChangeVariable(30,30,0,0,374)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 859
+ Name "Chimera Beast, S-2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,373)
+  ChangeVariable(30,30,0,0,374)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 860
+ Name "A-3*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,375)
+  ChangeVariable(30,30,0,0,375)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 861
+ Name "Chimera Beast, A-3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,373)
+  ChangeVariable(30,30,0,0,375)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 862
+ Name "AD-5*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,376)
+  ChangeVariable(30,30,0,0,376)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 863
+ Name "Chimera Beast, AD-5"
+ PAGE 000
+  ChangeVariable(29,29,0,0,373)
+  ChangeVariable(30,30,0,0,376)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 864
+ Name "A-3, AD-5"
+ PAGE 000
+  ChangeVariable(29,29,0,0,375)
+  ChangeVariable(30,30,0,0,376)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 865
+ Name "Q-5*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,377)
+  ChangeVariable(30,30,0,0,377)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 866
+ Name "Chimera Beast, Q-5"
+ PAGE 000
+  ChangeVariable(29,29,0,0,373)
+  ChangeVariable(30,30,0,0,377)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 867
+ Name "S-2, Q-5"
+ PAGE 000
+  ChangeVariable(29,29,0,0,374)
+  ChangeVariable(30,30,0,0,377)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 868
+ Name "Sonya Mazda"
+ PAGE 000
+  0()
+
+
+
+TROOP 869
+ Name "Sonya Mainyu"
+ PAGE 000
+  0()
+
+
+
+TROOP 870
+ Name "Sonya Chaos"
+ PAGE 000
+  0()
+
+
+
+TROOP 871
+ Name "Fernandez, Queen Lamia, Titania"
+ PAGE 000
+  0()
+
+
+
+TROOP 872
+ Name "Queen Scylla, Former Queen Harpy, Rosa"
+ PAGE 000
+  0()
+
+
+
+TROOP 873
+ Name "Mincubus"
+ PAGE 000
+  ChangeVariable(29,29,0,0,274)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 874
+ Name "Tamamo no Mae"
+ PAGE 000
+  0()
+
+
+
+TROOP 875
+ Name "Mushroom Girl*2<画像非固定>"
+ PAGE 000
+  ChangeVariable(29,29,0,0,151)
+  ChangeVariable(30,30,0,0,151)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 876
+ Name "Centaur Girl*2<画像非固定>"
+ PAGE 000
+  ChangeVariable(29,29,0,0,170)
+  ChangeVariable(30,30,0,0,170)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 877
+ Name "Alraune*2<画像非固定>"
+ PAGE 000
+  ChangeVariable(29,29,0,0,171)
+  ChangeVariable(30,30,0,0,171)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 878
+ Name "Centaur Girl, Alraune<画像非固定>"
+ PAGE 000
+  ChangeVariable(29,29,0,0,170)
+  ChangeVariable(30,30,0,0,171)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 879
+ Name "Kunoichi Elf*2<画像非固定>"
+ PAGE 000
+  ChangeVariable(29,29,0,0,185)
+  ChangeVariable(30,30,0,0,185)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 880
+ Name "Samurai Elf*2<画像非固定>"
+ PAGE 000
+  ChangeVariable(29,29,0,0,186)
+  ChangeVariable(30,30,0,0,186)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 881
+ Name "Kunoichi Elf, Samurai Elf<画像非固定>"
+ PAGE 000
+  ChangeVariable(29,29,0,0,185)
+  ChangeVariable(30,30,0,0,186)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 882
+ Name "Akaname*2<画像非固定>"
+ PAGE 000
+  ChangeVariable(29,29,0,0,189)
+  ChangeVariable(30,30,0,0,189)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 883
+ Name "Futakuchi Girl*2<画像非固定>"
+ PAGE 000
+  ChangeVariable(29,29,0,0,191)
+  ChangeVariable(30,30,0,0,191)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 884
+ Name "Akaname, Futakuchi Girl<画像非固定>"
+ PAGE 000
+  ChangeVariable(29,29,0,0,189)
+  ChangeVariable(30,30,0,0,191)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 885
+ Name "Kejourou*2<画像非固定>"
+ PAGE 000
+  ChangeVariable(29,29,0,0,195)
+  ChangeVariable(30,30,0,0,195)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 886
+ Name "Akaname, Kejourou<画像非固定>"
+ PAGE 000
+  ChangeVariable(29,29,0,0,189)
+  ChangeVariable(30,30,0,0,195)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 887
+ Name "Hornet Girl*2<画像非固定>"
+ PAGE 000
+  ChangeVariable(29,29,0,0,219)
+  ChangeVariable(30,30,0,0,219)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 888
+ Name "Ant Girls*2<画像非固定>"
+ PAGE 000
+  ChangeVariable(29,29,0,0,233)
+  ChangeVariable(30,30,0,0,233)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 889
+ Name "Siren*2<画像非固定>"
+ PAGE 000
+  ChangeVariable(29,29,0,0,259)
+  ChangeVariable(30,30,0,0,259)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 890
+ Name "Elder Scylla*2<画像非固定>"
+ PAGE 000
+  ChangeVariable(29,29,0,0,266)
+  ChangeVariable(30,30,0,0,266)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 891
+ Name "Basilisk*2<画像非固定>"
+ PAGE 000
+  ChangeVariable(29,29,0,0,283)
+  ChangeVariable(30,30,0,0,283)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 892
+ Name "Vampire*2<画像非固定>"
+ PAGE 000
+  ChangeVariable(29,29,0,0,290)
+  ChangeVariable(30,30,0,0,290)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 893
+ Name "Walraune*2<画像非固定>"
+ PAGE 000
+  ChangeVariable(29,29,0,0,311)
+  ChangeVariable(30,30,0,0,311)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 894
+ Name "Kirin*2<画像非固定>"
+ PAGE 000
+  ChangeVariable(29,29,0,0,336)
+  ChangeVariable(30,30,0,0,336)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 895
+ Name "Behemoth*2<画像非固定>"
+ PAGE 000
+  ChangeVariable(29,29,0,0,338)
+  ChangeVariable(30,30,0,0,338)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 896
+ Name "Wyvern*2<画像非固定>"
+ PAGE 000
+  ChangeVariable(29,29,0,0,339)
+  ChangeVariable(30,30,0,0,339)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 897
+ Name "Behemoth, Wyvern<画像非固定>"
+ PAGE 000
+  ChangeVariable(29,29,0,0,338)
+  ChangeVariable(30,30,0,0,339)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 898
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 899
+ Name "Novistador Girl*4"
+ PAGE 000
+  ChangeVariable(29,29,0,0,152)
+  ChangeVariable(30,30,0,0,152)
+  ChangeVariable(31,31,0,0,152)
+  ChangeVariable(32,32,0,0,152)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 900
+ Name "Mermaid*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,155)
+  ChangeVariable(30,30,0,0,155)
+  ChangeVariable(31,31,0,0,155)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 901
+ Name "Mermaid Merchant*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,156)
+  ChangeVariable(30,30,0,0,156)
+  ChangeVariable(31,31,0,0,156)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 902
+ Name "Will-o-wisp Girl*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,162)
+  ChangeVariable(30,30,0,0,162)
+  ChangeVariable(31,31,0,0,162)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 903
+ Name "Dagon, Will-o-wisp Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,161)
+  ChangeVariable(30,30,0,0,162)
+  ChangeVariable(31,31,0,0,162)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 904
+ Name "Sea Horse Sailor*4"
+ PAGE 000
+  ChangeVariable(29,29,0,0,165)
+  ChangeVariable(30,30,0,0,165)
+  ChangeVariable(31,31,0,0,165)
+  ChangeVariable(32,32,0,0,165)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 905
+ Name "Sea Slug Sailor*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,166)
+  ChangeVariable(30,30,0,0,166)
+  ChangeVariable(31,31,0,0,166)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 906
+ Name "Sea Horse Sailor*3, Sea Slug Sailor"
+ PAGE 000
+  ChangeVariable(29,29,0,0,165)
+  ChangeVariable(30,30,0,0,165)
+  ChangeVariable(31,31,0,0,165)
+  ChangeVariable(32,32,0,0,166)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 907
+ Name "Mermaid*2, Mermaid Merchant"
+ PAGE 000
+  ChangeVariable(29,29,0,0,155)
+  ChangeVariable(30,30,0,0,155)
+  ChangeVariable(31,31,0,0,156)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 908
+ Name "Mermaid, Pirate Mermaid*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,155)
+  ChangeVariable(30,30,0,0,157)
+  ChangeVariable(31,31,0,0,157)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 909
+ Name "Chrysanthemum Bug*4"
+ PAGE 000
+  ChangeVariable(29,29,0,0,172)
+  ChangeVariable(30,30,0,0,172)
+  ChangeVariable(31,31,0,0,172)
+  ChangeVariable(32,32,0,0,172)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 910
+ Name "Chrysanthemum Bug*2, Nure-onna"
+ PAGE 000
+  ChangeVariable(29,29,0,0,172)
+  ChangeVariable(30,30,0,0,172)
+  ChangeVariable(31,31,0,0,179)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 911
+ Name "Spirit Girl*2, Nure-onna"
+ PAGE 000
+  ChangeVariable(29,29,0,0,173)
+  ChangeVariable(30,30,0,0,173)
+  ChangeVariable(31,31,0,0,179)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 912
+ Name "High Minotauros*2, Misstauros"
+ PAGE 000
+  ChangeVariable(29,29,0,0,180)
+  ChangeVariable(30,30,0,0,180)
+  ChangeVariable(31,31,0,0,181)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 913
+ Name "High Minotauros, Genitauros*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,180)
+  ChangeVariable(30,30,0,0,182)
+  ChangeVariable(31,31,0,0,182)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 914
+ Name "Misstauros*2, Genitauros"
+ PAGE 000
+  ChangeVariable(29,29,0,0,181)
+  ChangeVariable(30,30,0,0,181)
+  ChangeVariable(31,31,0,0,182)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 915
+ Name "Miko Lamia*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,193)
+  ChangeVariable(30,30,0,0,193)
+  ChangeVariable(31,31,0,0,193)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 916
+ Name "Miko Lamia*2, Miko Arachne"
+ PAGE 000
+  ChangeVariable(29,29,0,0,193)
+  ChangeVariable(30,30,0,0,193)
+  ChangeVariable(31,31,0,0,194)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 917
+ Name "Green Slime, Red Slime, Purple Slime"
+ PAGE 000
+  ChangeVariable(29,29,0,0,227)
+  ChangeVariable(30,30,0,0,228)
+  ChangeVariable(31,31,0,0,230)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 918
+ Name "Green Slime, Blue Slime, Purple Slime"
+ PAGE 000
+  ChangeVariable(29,29,0,0,227)
+  ChangeVariable(30,30,0,0,229)
+  ChangeVariable(31,31,0,0,230)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 919
+ Name "Red Slime, Blue Slime, Purple Slime"
+ PAGE 000
+  ChangeVariable(29,29,0,0,228)
+  ChangeVariable(30,30,0,0,229)
+  ChangeVariable(31,31,0,0,230)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 920
+ Name "Automata Girl*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,234)
+  ChangeVariable(30,30,0,0,234)
+  ChangeVariable(31,31,0,0,234)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 921
+ Name "Paizuri Doll*4"
+ PAGE 000
+  ChangeVariable(29,29,0,0,235)
+  ChangeVariable(30,30,0,0,235)
+  ChangeVariable(31,31,0,0,235)
+  ChangeVariable(32,32,0,0,235)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 922
+ Name "Medusa*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,237)
+  ChangeVariable(30,30,0,0,237)
+  ChangeVariable(31,31,0,0,237)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 923
+ Name "Scylla, Medusa*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,236)
+  ChangeVariable(30,30,0,0,237)
+  ChangeVariable(31,31,0,0,237)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 924
+ Name "Scylla, Butterfly Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,236)
+  ChangeVariable(30,30,0,0,238)
+  ChangeVariable(31,31,0,0,238)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 925
+ Name "Medusa, Butterfly Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,237)
+  ChangeVariable(30,30,0,0,238)
+  ChangeVariable(31,31,0,0,238)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 926
+ Name "Brom Girl*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,239)
+  ChangeVariable(30,30,0,0,239)
+  ChangeVariable(31,31,0,0,239)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 927
+ Name "Warmer*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,240)
+  ChangeVariable(30,30,0,0,240)
+  ChangeVariable(31,31,0,0,240)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 928
+ Name "Brom Girl, Warmer*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,239)
+  ChangeVariable(30,30,0,0,240)
+  ChangeVariable(31,31,0,0,240)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 929
+ Name "Fake Jelly*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,244)
+  ChangeVariable(30,30,0,0,244)
+  ChangeVariable(31,31,0,0,244)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 930
+ Name "Scylla, Fake Jelly*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,236)
+  ChangeVariable(30,30,0,0,244)
+  ChangeVariable(31,31,0,0,244)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 931
+ Name "Medusa, Fake Jelly*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,237)
+  ChangeVariable(30,30,0,0,244)
+  ChangeVariable(31,31,0,0,244)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 932
+ Name "Wing Harpy*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,245)
+  ChangeVariable(30,30,0,0,245)
+  ChangeVariable(31,31,0,0,245)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 933
+ Name "Harpy Knight*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,246)
+  ChangeVariable(30,30,0,0,246)
+  ChangeVariable(31,31,0,0,246)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 934
+ Name "Wing Harpy*2, Harpy Knight"
+ PAGE 000
+  ChangeVariable(29,29,0,0,245)
+  ChangeVariable(30,30,0,0,245)
+  ChangeVariable(31,31,0,0,246)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 935
+ Name "Wing Harpy, Harpy Knight*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,245)
+  ChangeVariable(30,30,0,0,246)
+  ChangeVariable(31,31,0,0,246)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 936
+ Name "Black Golem*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,250)
+  ChangeVariable(30,30,0,0,250)
+  ChangeVariable(31,31,0,0,250)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 937
+ Name "Automata Girl*2, Black Golem"
+ PAGE 000
+  ChangeVariable(29,29,0,0,234)
+  ChangeVariable(30,30,0,0,234)
+  ChangeVariable(31,31,0,0,250)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 938
+ Name "Three-tailed Kunoichi*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,252)
+  ChangeVariable(30,30,0,0,252)
+  ChangeVariable(31,31,0,0,252)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 939
+ Name "Four-tailed Samurai*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,253)
+  ChangeVariable(30,30,0,0,253)
+  ChangeVariable(31,31,0,0,253)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 940
+ Name "Three-tailed Kunoichi*2, Four-tailed Samurai"
+ PAGE 000
+  ChangeVariable(29,29,0,0,252)
+  ChangeVariable(30,30,0,0,252)
+  ChangeVariable(31,31,0,0,253)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 941
+ Name "Three-tailed Kunoichi, Four-tailed Samurai*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,252)
+  ChangeVariable(30,30,0,0,253)
+  ChangeVariable(31,31,0,0,253)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 942
+ Name "Demon Lamia*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,257)
+  ChangeVariable(30,30,0,0,257)
+  ChangeVariable(31,31,0,0,257)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 943
+ Name "Demon Scylla*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,258)
+  ChangeVariable(30,30,0,0,258)
+  ChangeVariable(31,31,0,0,258)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 944
+ Name "Demon Lamia*2, Demon Scylla"
+ PAGE 000
+  ChangeVariable(29,29,0,0,257)
+  ChangeVariable(30,30,0,0,257)
+  ChangeVariable(31,31,0,0,258)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 945
+ Name "Demon Lamia, Demon Scylla*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,257)
+  ChangeVariable(30,30,0,0,258)
+  ChangeVariable(31,31,0,0,258)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 946
+ Name "Meiccubus*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,272)
+  ChangeVariable(30,30,0,0,272)
+  ChangeVariable(31,31,0,0,272)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 947
+ Name "Madame Insect*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,279)
+  ChangeVariable(30,30,0,0,279)
+  ChangeVariable(31,31,0,0,279)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 948
+ Name "Gelatinous Cube Girl*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,287)
+  ChangeVariable(30,30,0,0,287)
+  ChangeVariable(31,31,0,0,287)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 949
+ Name "Youki*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,288)
+  ChangeVariable(30,30,0,0,288)
+  ChangeVariable(31,31,0,0,288)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 950
+ Name "Gelatinous Cube Girl*2, Youki"
+ PAGE 000
+  ChangeVariable(29,29,0,0,287)
+  ChangeVariable(30,30,0,0,287)
+  ChangeVariable(31,31,0,0,288)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 951
+ Name "Jellaila*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,291)
+  ChangeVariable(30,30,0,0,291)
+  ChangeVariable(31,31,0,0,291)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 952
+ Name "Libo-Libo*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,292)
+  ChangeVariable(30,30,0,0,292)
+  ChangeVariable(31,31,0,0,292)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 953
+ Name "Jellaila, Libo-Libo*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,291)
+  ChangeVariable(30,30,0,0,292)
+  ChangeVariable(31,31,0,0,292)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 954
+ Name "Amphil*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,293)
+  ChangeVariable(30,30,0,0,293)
+  ChangeVariable(31,31,0,0,293)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 955
+ Name "Jellaila, Amphil*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,291)
+  ChangeVariable(30,30,0,0,293)
+  ChangeVariable(31,31,0,0,293)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 956
+ Name "Libo-Libo*2, Amphil"
+ PAGE 000
+  ChangeVariable(29,29,0,0,292)
+  ChangeVariable(30,30,0,0,292)
+  ChangeVariable(31,31,0,0,293)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 957
+ Name "Sea Dragon Girl*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,300)
+  ChangeVariable(30,30,0,0,300)
+  ChangeVariable(31,31,0,0,300)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 958
+ Name "Trick Fairy*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,303)
+  ChangeVariable(30,30,0,0,303)
+  ChangeVariable(31,31,0,0,303)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 959
+ Name "Elf Amazoness*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,304)
+  ChangeVariable(30,30,0,0,304)
+  ChangeVariable(31,31,0,0,304)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 960
+ Name "Trick Fairy*2, Elf Amazoness"
+ PAGE 000
+  ChangeVariable(29,29,0,0,303)
+  ChangeVariable(30,30,0,0,303)
+  ChangeVariable(31,31,0,0,304)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 961
+ Name "Forest Alraune*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,309)
+  ChangeVariable(30,30,0,0,309)
+  ChangeVariable(31,31,0,0,309)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 962
+ Name "Forest Dryad*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,310)
+  ChangeVariable(30,30,0,0,310)
+  ChangeVariable(31,31,0,0,310)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 963
+ Name "Forest Alraune*2, Forest Dryad"
+ PAGE 000
+  ChangeVariable(29,29,0,0,309)
+  ChangeVariable(30,30,0,0,310)
+  ChangeVariable(31,31,0,0,310)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 964
+ Name "Forest Alraune, Forest Dryad*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,309)
+  ChangeVariable(30,30,0,0,310)
+  ChangeVariable(31,31,0,0,310)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 965
+ Name "Mermaid Knight*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,316)
+  ChangeVariable(30,30,0,0,316)
+  ChangeVariable(31,31,0,0,316)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 966
+ Name "Arachne Lord"
+ PAGE 000
+  ChangeVariable(29,29,0,0,325)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 967
+ Name "Conquista*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,328)
+  ChangeVariable(30,30,0,0,328)
+  ChangeVariable(31,31,0,0,328)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 968
+ Name "Vendetta*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,329)
+  ChangeVariable(30,30,0,0,329)
+  ChangeVariable(31,31,0,0,329)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 969
+ Name "Conquista*2, Vendetta"
+ PAGE 000
+  ChangeVariable(29,29,0,0,328)
+  ChangeVariable(30,30,0,0,328)
+  ChangeVariable(31,31,0,0,329)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 970
+ Name "Conquista, Vendetta*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,328)
+  ChangeVariable(30,30,0,0,329)
+  ChangeVariable(31,31,0,0,329)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 971
+ Name "Master Shadow*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,334)
+  ChangeVariable(30,30,0,0,334)
+  ChangeVariable(31,31,0,0,334)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 972
+ Name "Enera*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,335)
+  ChangeVariable(30,30,0,0,335)
+  ChangeVariable(31,31,0,0,335)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 973
+ Name "Master Shadow*2, Enera"
+ PAGE 000
+  ChangeVariable(29,29,0,0,334)
+  ChangeVariable(30,30,0,0,334)
+  ChangeVariable(31,31,0,0,335)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 974
+ Name "Succubus Monk*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,341)
+  ChangeVariable(30,30,0,0,341)
+  ChangeVariable(31,31,0,0,341)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 975
+ Name "Demon Monk*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,342)
+  ChangeVariable(30,30,0,0,342)
+  ChangeVariable(31,31,0,0,342)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 976
+ Name "Succubus Monk, Demon Monk*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,341)
+  ChangeVariable(30,30,0,0,342)
+  ChangeVariable(31,31,0,0,342)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 977
+ Name "Guivre Girl*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,344)
+  ChangeVariable(30,30,0,0,344)
+  ChangeVariable(31,31,0,0,344)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 978
+ Name "Succubus Monk, Guivre Girl*2"
+ PAGE 000
+  ChangeVariable(29,29,0,0,341)
+  ChangeVariable(30,30,0,0,344)
+  ChangeVariable(31,31,0,0,344)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 979
+ Name "Demon Monk*2, Guivre Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,342)
+  ChangeVariable(30,30,0,0,342)
+  ChangeVariable(31,31,0,0,344)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 980
+ Name "Ice Witch*3"
+ PAGE 000
+  ChangeVariable(29,29,0,0,351)
+  ChangeVariable(30,30,0,0,351)
+  ChangeVariable(31,31,0,0,351)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 981
+ Name "Queen Bee, Queen Ant<画像非固定>"
+ PAGE 000
+  ChangeVariable(29,29,0,0,220)
+  ChangeVariable(30,30,0,0,254)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 982
+ Name "アルマエルマ"
+ PAGE 000
+  ChangeVariable(29,29,0,0,385)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 983
+ PAGE 000
+  0()
+
+
+
+TROOP 984
+ Name "Wolf Girl, Grizzly Bear Girl, Orc Girl"
+ PAGE 000
+  ChangeVariable(29,29,0,0,14)
+  ChangeVariable(30,30,0,0,70)
+  ChangeVariable(31,31,0,0,23)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 985
+ Name "Tezcatlipoca, Quetzalcoatl<画像非固定>"
+ PAGE 000
+  ChangeVariable(29,29,0,0,221)
+  ChangeVariable(30,30,0,0,222)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 986
+ Name "Sphinx, Leviathan, Yamata no Orochi<画像非固定>"
+ PAGE 000
+  ChangeVariable(29,29,0,0,108)
+  ChangeVariable(30,30,0,0,167)
+  ChangeVariable(31,31,0,0,196)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 987
+ PAGE 000
+  0()
+
+
+
+TROOP 988
+ PAGE 000
+  0()
+
+
+
+TROOP 989
+ PAGE 000
+  0()
+
+
+
+TROOP 990
+ PAGE 000
+  0()
+
+
+
+TROOP 991
+ PAGE 000
+  0()
+
+
+
+TROOP 992
+ PAGE 000
+  0()
+
+
+
+TROOP 993
+ PAGE 000
+  0()
+
+
+
+TROOP 994
+ PAGE 000
+  0()
+
+
+
+TROOP 995
+ PAGE 000
+  0()
+
+
+
+TROOP 996
+ PAGE 000
+  0()
+
+
+
+TROOP 997
+ PAGE 000
+  0()
+
+
+
+TROOP 998
+ PAGE 000
+  0()
+
+
+
+TROOP 999
+ PAGE 000
+  0()
+
+
+
+TROOP 1000
+ Name "===混沌の迷宮・洞窟==="
+ PAGE 000
+  0()
+
+
+
+TROOP 1001
+ Name "ナメクジ娘*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 1002
+ Name "ミミズ娘*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 1003
+ Name "ナメクジ娘, ミミズ娘"
+ PAGE 000
+  0()
+
+
+
+TROOP 1004
+ Name "ヒル娘*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 1005
+ Name "ナメクジ娘*2, ヒル娘"
+ PAGE 000
+  0()
+
+
+
+TROOP 1006
+ Name "ミミズ娘, ヒル娘"
+ PAGE 000
+  0()
+
+
+
+TROOP 1007
+ Name "ローパー娘*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 1008
+ Name "メーダ娘*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 1009
+ Name "ローパー娘, メーダ娘"
+ PAGE 000
+  0()
+
+
+
+TROOP 1010
+ Name "キャンドル娘*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 1011
+ Name "ローパー娘, キャンドル娘*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 1012
+ Name "キャンドル娘*2, メーダ娘"
+ PAGE 000
+  0()
+
+
+
+TROOP 1013
+ Name "クモ娘"
+ PAGE 000
+  0()
+
+
+
+TROOP 1014
+ Name "ゴースト*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 1015
+ Name "呪いの人形娘*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 1016
+ Name "ゴースト, 呪いの人形娘*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 1017
+ Name "ゾンビ剣士*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 1018
+ Name "ゴースト, 呪いの人形娘, ゾンビ剣士"
+ PAGE 000
+  0()
+
+
+
+TROOP 1019
+ Name "ゾンビ娘, ゾンビ娘, ゾンビ娘, ゾンビ娘"
+ PAGE 000
+  0()
+
+
+
+TROOP 1020
+ Name "リザードシーフ*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 1021
+ Name "リザードシーフ*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 1022
+ Name "リザードシーフ, リザードシーフ*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 1023
+ Name "きのこ娘*2<画像非固定>"
+ PAGE 000
+  0()
+
+
+
+TROOP 1024
+ Name "ノビスタドール娘*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 1025
+ Name "ノビスタドール娘*4"
+ PAGE 000
+  0()
+
+
+
+TROOP 1026
+ Name "ウルスキュラ*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 1027
+ Name "ウルスキュラ, ノビスタドール娘*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 1028
+ Name "御菊蟲*4"
+ PAGE 000
+  0()
+
+
+
+TROOP 1029
+ Name "御菊蟲*2, 濡れ女"
+ PAGE 000
+  0()
+
+
+
+TROOP 1030
+ Name "幽霊娘*2, 濡れ女"
+ PAGE 000
+  0()
+
+
+
+TROOP 1031
+ Name "濡れ女*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 1032
+ Name "ジェリー娘*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 1033
+ Name "ブロブ娘*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 1034
+ Name "ジェリー娘, ブロブ娘"
+ PAGE 000
+  0()
+
+
+
+TROOP 1035
+ Name "グリーンスライム, レッドスライム, ブルースライム, パープルスライム"
+ PAGE 000
+  0()
+
+
+
+TROOP 1036
+ Name "溶岩娘*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 1037
+ Name "デーモンラミア*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 1038
+ Name "デーモンスキュラ*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 1039
+ Name "デーモンラミア*2, デーモンスキュラ"
+ PAGE 000
+  0()
+
+
+
+TROOP 1040
+ Name "デーモンラミア, デーモンスキュラ*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 1041
+ Name "バジリスク娘*2<画像非固定>"
+ PAGE 000
+  0()
+
+
+
+TROOP 1042
+ Name "ドラゴン娘"
+ PAGE 000
+  0()
+
+
+
+TROOP 1043
+ Name "アラクネ, アラクネ, アラクネ"
+ PAGE 000
+  0()
+
+
+
+TROOP 1044
+ Name "あやし土蜘蛛"
+ PAGE 000
+  0()
+
+
+
+TROOP 1045
+ Name "アラクネロード*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 1046
+ Name "アトラク＝ナクア"
+ PAGE 000
+  0()
+
+
+
+TROOP 1047
+ PAGE 000
+  0()
+
+
+
+TROOP 1048
+ Name "===混沌の迷宮・塔==="
+ PAGE 000
+  0()
+
+
+
+TROOP 1049
+ Name "ハイスラッグ娘*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 1050
+ Name "ナメクジシスター*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 1051
+ Name "ハイスラッグ娘, ナメクジシスター*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 1052
+ Name "ナメクジ娘*2, ハイスラッグ娘"
+ PAGE 000
+  0()
+
+
+
+TROOP 1053
+ Name "17ページ*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 1054
+ Name "257ページ*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 1055
+ Name "17ページ*2, 257ページ"
+ PAGE 000
+  0()
+
+
+
+TROOP 1056
+ Name "XX-7*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 1057
+ Name "リトルバグ*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 1058
+ Name "リトルバグ, XX-7"
+ PAGE 000
+  0()
+
+
+
+TROOP 1059
+ Name "キャンサーロイド<画像非固定>"
+ PAGE 000
+  0()
+
+
+
+TROOP 1060
+ Name "サックボア*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 1061
+ Name "アイアンメイデン*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 1062
+ Name "サックボア, アイアンメイデン"
+ PAGE 000
+  0()
+
+
+
+TROOP 1063
+ Name "ワームビレッジャ<画像非固定>"
+ PAGE 000
+  0()
+
+
+
+TROOP 1064
+ Name "ウーストレル*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 1065
+ Name "サックボア*2, ウーストレル"
+ PAGE 000
+  0()
+
+
+
+TROOP 1066
+ Name "アイアンメイデン*2, ウーストレル"
+ PAGE 000
+  0()
+
+
+
+TROOP 1067
+ Name "小鬼*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 1068
+ Name "オナホ娘*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 1069
+ Name "小鬼, オナホ娘"
+ PAGE 000
+  0()
+
+
+
+TROOP 1070
+ Name "ナーキュバス*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 1071
+ Name "小鬼, ナーキュバス"
+ PAGE 000
+  0()
+
+
+
+TROOP 1072
+ Name "オナホ娘, ナーキュバス"
+ PAGE 000
+  0()
+
+
+
+TROOP 1073
+ Name "ハイミノタウロス*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 1074
+ Name "ミズタウロス*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 1075
+ Name "ハイミノタウロス*2, ミズタウロス"
+ PAGE 000
+  0()
+
+
+
+TROOP 1076
+ Name "ジニタウロス*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 1077
+ Name "ハイミノタウロス, ジニタウロス*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 1078
+ Name "ミズタウロス*2, ジニタウロス"
+ PAGE 000
+  0()
+
+
+
+TROOP 1079
+ Name "ハイミノタウロス, ミズタウロス, ジニタウロス"
+ PAGE 000
+  0()
+
+
+
+TROOP 1080
+ Name "マジカルアゲハ, マジカルフライ, マジカルテントウ"
+ PAGE 000
+  0()
+
+
+
+TROOP 1081
+ Name "マジカルピクシー, マジカルエルフ, マジカルサキュバス"
+ PAGE 000
+  0()
+
+
+
+TROOP 1082
+ Name "狐獣*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 1083
+ Name "くのいち三尾*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 1084
+ Name "もののふ四尾*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 1085
+ Name "くのいち三尾*2, もののふ四尾"
+ PAGE 000
+  0()
+
+
+
+TROOP 1086
+ Name "くのいち三尾, もののふ四尾*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 1087
+ Name "狐獣, くのいち三尾*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 1088
+ Name "狐獣, もののふ四尾*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 1089
+ Name "ヴァンパイア*2<画像非固定>"
+ PAGE 000
+  0()
+
+
+
+TROOP 1090
+ Name "コンキスタ*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 1091
+ Name "ヴェンデッタ*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 1092
+ Name "コンキスタ*2, ヴェンデッタ"
+ PAGE 000
+  0()
+
+
+
+TROOP 1093
+ Name "コンキスタ, ヴェンデッタ*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 1094
+ Name "エルダーヴァンパイア"
+ PAGE 000
+  0()
+
+
+
+TROOP 1095
+ Name "マスターシャドウ*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 1096
+ Name "モンクサキュバス*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 1097
+ Name "モンクデーモン*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 1098
+ Name "モンクサキュバス, モンクデーモン*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 1099
+ Name "スキュラサーバント*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 1100
+ Name "モンクサキュバス, スキュラサーバント"
+ PAGE 000
+  0()
+
+
+
+TROOP 1101
+ Name "モンクデーモン, スキュラサーバント"
+ PAGE 000
+  0()
+
+
+
+TROOP 1102
+ Name "ヴィーヴル娘*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 1103
+ Name "モンクサキュバス, ヴィーヴル娘*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 1104
+ Name "モンクデーモン*2, ヴィーヴル娘"
+ PAGE 000
+  0()
+
+
+
+TROOP 1105
+ Name "モンクサキュバス, モンクデーモン, ヴィーヴル娘"
+ PAGE 000
+  0()
+
+
+
+TROOP 1106
+ PAGE 000
+  0()
+
+
+
+TROOP 1107
+ Name "===混沌の迷宮・町==="
+ PAGE 000
+  0()
+
+
+
+TROOP 1108
+ Name "雪女*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 1109
+ Name "濡れ女, 雪女"
+ PAGE 000
+  0()
+
+
+
+TROOP 1110
+ Name "あかなめ*2<画像非固定>"
+ PAGE 000
+  0()
+
+
+
+TROOP 1111
+ Name "ねこまた*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 1112
+ Name "河童*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 1113
+ Name "ねこまた*2, 河童*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 1114
+ Name "二口娘*2<画像非固定>"
+ PAGE 000
+  0()
+
+
+
+TROOP 1115
+ Name "あかなめ, 二口娘<画像非固定>"
+ PAGE 000
+  0()
+
+
+
+TROOP 1116
+ Name "巫女ラミア*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 1117
+ Name "巫女アラクネ*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 1118
+ Name "巫女ラミア*2, 巫女アラクネ"
+ PAGE 000
+  0()
+
+
+
+TROOP 1119
+ Name "毛倡妓*2<画像非固定>"
+ PAGE 000
+  0()
+
+
+
+TROOP 1120
+ Name "あかなめ, 毛倡妓<画像非固定>"
+ PAGE 000
+  0()
+
+
+
+TROOP 1121
+ Name "オートマータ娘*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 1122
+ Name "パイズリ人形*4"
+ PAGE 000
+  0()
+
+
+
+TROOP 1123
+ Name "オートマータ娘, パイズリ人形*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 1124
+ Name "マッドゴーレム娘"
+ PAGE 000
+  0()
+
+
+
+TROOP 1125
+ Name "ブラックゴーレム*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 1126
+ Name "オートマータ娘*2, ブラックゴーレム"
+ PAGE 000
+  0()
+
+
+
+TROOP 1127
+ Name "パイズリ人形*2, ブラックゴーレム"
+ PAGE 000
+  0()
+
+
+
+TROOP 1128
+ Name "サキュバス, サキュバス, サキュバス, サキュバス"
+ PAGE 000
+  0()
+
+
+
+TROOP 1129
+ Name "メイキュバス*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 1130
+ Name "マキュバス, ミンキュバス, レンキュバス"
+ PAGE 000
+  0()
+
+
+
+TROOP 1131
+ Name "マダムインセクト*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 1132
+ Name "マダムアンブレラ*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 1133
+ Name "マダムインセクト*2, マダムアンブレラ"
+ PAGE 000
+  0()
+
+
+
+TROOP 1134
+ Name "アラディア"
+ PAGE 000
+  0()
+
+
+
+TROOP 1135
+ Name "天使兵, 天使兵, 天使兵, 天使兵, 天使兵"
+ PAGE 000
+  0()
+
+
+
+TROOP 1136
+ Name "トリニティ, トリニティ, トリニティ"
+ PAGE 000
+  0()
+
+
+
+TROOP 1137
+ Name "ウラヌス*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 1138
+ Name "エリシエル*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 1139
+ Name "ウラヌス, エリシエル"
+ PAGE 000
+  0()
+
+
+
+TROOP 1140
+ Name "キューピッド*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 1141
+ Name "ヴァルキリー*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 1142
+ Name "キューピッド, ヴァルキリー"
+ PAGE 000
+  0()
+
+
+
+TROOP 1143
+ PAGE 000
+  0()
+
+
+
+TROOP 1144
+ Name "===混沌の迷宮・カオス==="
+ PAGE 000
+  0()
+
+
+
+TROOP 1145
+ Name "シュリー*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 1146
+ Name "ジェイド*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 1147
+ Name "シュリー, ジェイド"
+ PAGE 000
+  0()
+
+
+
+TROOP 1148
+ Name "シェスタ*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 1149
+ Name "イーター*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 1150
+ Name "ライオット*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 1151
+ Name "イーター, ライオット"
+ PAGE 000
+  0()
+
+
+
+TROOP 1152
+ Name "ルクスル*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 1153
+ Name "イーター, ルクスル"
+ PAGE 000
+  0()
+
+
+
+TROOP 1154
+ Name "ライオット, ルクスル"
+ PAGE 000
+  0()
+
+
+
+TROOP 1155
+ Name "ヴィタエ*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 1156
+ Name "ヴェータラ*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 1157
+ Name "ヴィタエ, ヴェータラ"
+ PAGE 000
+  0()
+
+
+
+TROOP 1158
+ Name "ヴァルト*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 1159
+ Name "ヴィタエ, ヴァルト"
+ PAGE 000
+  0()
+
+
+
+TROOP 1160
+ Name "ヴェータラ, ヴァルト"
+ PAGE 000
+  0()
+
+
+
+TROOP 1161
+ Name "シニファ*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 1162
+ Name "ヴィタエ, シニファ"
+ PAGE 000
+  0()
+
+
+
+TROOP 1163
+ Name "ヴェータラ, シニファ"
+ PAGE 000
+  0()
+
+
+
+TROOP 1164
+ Name "ヴァルト, シニファ"
+ PAGE 000
+  0()
+
+
+
+TROOP 1165
+ Name "シャドー娘*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 1166
+ Name "ガイストビーネ*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 1167
+ Name "シャドー娘, ガイストビーネ"
+ PAGE 000
+  0()
+
+
+
+TROOP 1168
+ Name "キメラホムンクルス*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 1169
+ Name "シャドー娘, キメラホムンクルス"
+ PAGE 000
+  0()
+
+
+
+TROOP 1170
+ Name "アイアンメイデン改*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 1171
+ Name "シャドー娘, アイアンメイデン改"
+ PAGE 000
+  0()
+
+
+
+TROOP 1172
+ Name "ジャンクドール娘"
+ PAGE 000
+  0()
+
+
+
+TROOP 1173
+ Name "ジェライラ*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 1174
+ Name "リボ・リボ*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 1175
+ Name "ジェライラ, リボ・リボ*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 1176
+ Name "アンフィル*3"
+ PAGE 000
+  0()
+
+
+
+TROOP 1177
+ Name "ジェライラ, アンフィル*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 1178
+ Name "リボ・リボ*2, アンフィル"
+ PAGE 000
+  0()
+
+
+
+TROOP 1179
+ Name "ジェライラ, リボ・リボ, アンフィル"
+ PAGE 000
+  0()
+
+
+
+TROOP 1180
+ Name "ツィンケル"
+ PAGE 000
+  0()
+
+
+
+TROOP 1181
+ Name "ヘリエル"
+ PAGE 000
+  0()
+
+
+
+TROOP 1182
+ Name "アルシエル"
+ PAGE 000
+  0()
+
+
+
+TROOP 1183
+ Name "キメラビースト*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 1184
+ Name "S-2*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 1185
+ Name "キメラビースト, S-2"
+ PAGE 000
+  0()
+
+
+
+TROOP 1186
+ Name "A-3*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 1187
+ Name "キメラビースト, A-3"
+ PAGE 000
+  0()
+
+
+
+TROOP 1188
+ Name "AD-5*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 1189
+ Name "キメラビースト, AD-5"
+ PAGE 000
+  0()
+
+
+
+TROOP 1190
+ Name "A-3, AD-5"
+ PAGE 000
+  0()
+
+
+
+TROOP 1191
+ Name "Q-5*2"
+ PAGE 000
+  0()
+
+
+
+TROOP 1192
+ Name "キメラビースト, Q-5"
+ PAGE 000
+  0()
+
+
+
+TROOP 1193
+ Name "S-2, Q-5"
+ PAGE 000
+  0()
+
+
+
+TROOP 1194
+ PAGE 000
+  0()
+
+
+
+TROOP 1195
+ Name "===混沌の迷宮・ボス==="
+ PAGE 000
+  0()
+
+
+
+TROOP 1196
+ Name "ゴブリン娘, プチラミア, ヴァンパイアガール, ドラゴンパピー<画像非固定>"
+ PAGE 000
+  0()
+
+
+
+TROOP 1197
+ PAGE 000
+  0()
+
+
+
+TROOP 1198
+ PAGE 000
+  0()
+
+
+
+TROOP 1199
+ PAGE 000
+  0()
+
+
+
+TROOP 1200
+ Name "フェニックス娘"
+ PAGE 000
+  0()
+
+
+
+TROOP 1201
+ Name "ヌルコ"
+ PAGE 000
+  0()
+
+
+
+TROOP 1202
+ Name "クィーンハーピー"
+ PAGE 000
+  0()
+
+
+
+TROOP 1203
+ Name "スラグスターズ"
+ PAGE 000
+  0()
+
+
+
+TROOP 1204
+ Name "七尾"
+ PAGE 000
+  0()
+
+
+
+TROOP 1205
+ Name "メイア"
+ PAGE 000
+  0()
+
+
+
+TROOP 1206
+ Name "65537ページ"
+ PAGE 000
+  0()
+
+
+
+TROOP 1207
+ Name "ブリュンヒルデ"
+ PAGE 000
+  0()
+
+
+
+TROOP 1208
+ Name "クロム, フレデリカ"
+ PAGE 000
+  0()
+
+
+
+TROOP 1209
+ Name "シルフ"
+ PAGE 000
+  0()
+
+
+
+TROOP 1210
+ Name "エヴァ"
+ PAGE 000
+  0()
+
+
+
+TROOP 1211
+ Name "サラ"
+ PAGE 000
+  0()
+
+
+
+TROOP 1212
+ Name "サキ"
+ PAGE 000
+  0()
+
+
+
+TROOP 1213
+ Name "リリィ"
+ PAGE 000
+  0()
+
+
+
+TROOP 1214
+ Name "ルシア"
+ PAGE 000
+  0()
+
+
+
+TROOP 1215
+ Name "リザードボス"
+ PAGE 000
+  0()
+
+
+
+TROOP 1216
+ Name "ノーム"
+ PAGE 000
+  0()
+
+
+
+TROOP 1217
+ Name "ボニー, アシェル"
+ PAGE 000
+  0()
+
+
+
+TROOP 1218
+ Name "デュラハン"
+ PAGE 000
+  0()
+
+
+
+TROOP 1219
+ Name "ケルベロス"
+ PAGE 000
+  0()
+
+
+
+TROOP 1220
+ Name "牛魔王"
+ PAGE 000
+  0()
+
+
+
+TROOP 1221
+ Name "白蛇様"
+ PAGE 000
+  0()
+
+
+
+TROOP 1222
+ Name "メフィスト"
+ PAGE 000
+  0()
+
+
+
+TROOP 1223
+ Name "ドローシー, ラフィ, ディーナ"
+ PAGE 000
+  0()
+
+
+
+TROOP 1224
+ Name "アルラ・プリエステス"
+ PAGE 000
+  0()
+
+
+
+TROOP 1225
+ Name "クィーン・ビー"
+ PAGE 000
+  0()
+
+
+
+TROOP 1226
+ Name "ウンディーネ"
+ PAGE 000
+  0()
+
+
+
+TROOP 1227
+ Name "ゴーレム娘"
+ PAGE 000
+  0()
+
+
+
+TROOP 1228
+ Name "クィーンアント"
+ PAGE 000
+  0()
+
+
+
+TROOP 1229
+ Name "ベルゼバブ, ベルゼバブ, ベルゼバブ"
+ PAGE 000
+  0()
+
+
+
+TROOP 1230
+ Name "ポセイドネス"
+ PAGE 000
+  0()
+
+
+
+TROOP 1231
+ Name "サキュバス"
+ PAGE 000
+  0()
+
+
+
+TROOP 1232
+ Name "ナターシャ"
+ PAGE 000
+  0()
+
+
+
+TROOP 1233
+ Name "メイドスキュラ"
+ PAGE 000
+  0()
+
+
+
+TROOP 1234
+ Name "キャンディ"
+ PAGE 000
+  0()
+
+
+
+TROOP 1235
+ Name "サラマンダー"
+ PAGE 000
+  0()
+
+
+
+TROOP 1236
+ Name "リリス＆リリム"
+ PAGE 000
+  0()
+
+
+
+TROOP 1237
+ Name "カサンドラ, エミリ"
+ PAGE 000
+  0()
+
+
+
+TROOP 1238
+ Name "ウィッチサキュバス"
+ PAGE 000
+  0()
+
+
+
+TROOP 1239
+ Name "クィーンフェアリー"
+ PAGE 000
+  0()
+
+
+
+TROOP 1240
+ Name "クィーンエルフ"
+ PAGE 000
+  0()
+
+
+
+TROOP 1241
+ Name "クィーンアルラウネ"
+ PAGE 000
+  0()
+
+
+
+TROOP 1242
+ Name "エル"
+ PAGE 000
+  0()
+
+
+
+TROOP 1243
+ Name "クィーンマーメイド"
+ PAGE 000
+  0()
+
+
+
+TROOP 1244
+ Name "蜘蛛之皇女"
+ PAGE 000
+  0()
+
+
+
+TROOP 1245
+ Name "カーミラ, エリザベート<画像非固定>"
+ PAGE 000
+  0()
+
+
+
+TROOP 1246
+ Name "クィーンヴァンパイア"
+ PAGE 000
+  0()
+
+
+
+TROOP 1247
+ Name "黒華, 黒蛇, 黒薔薇"
+ PAGE 000
+  0()
+
+
+
+TROOP 1248
+ Name "フェルナンデス, クィーンラミア, タイタニア"
+ PAGE 000
+  0()
+
+
+
+TROOP 1249
+ Name "クィーンスキュラ, クィーンハーピー, ロザ"
+ PAGE 000
+  0()
+
+
+
+TROOP 1250
+ PAGE 000
+  0()
+
+
+
+TROOP 1251
+ PAGE 000
+  0()
+
+
+
+TROOP 1252
+ Name "===混沌の迷宮・大ボス==="
+ PAGE 000
+  0()
+
+
+
+TROOP 1253
+ Name "モリガン"
+ PAGE 000
+  0()
+
+
+
+TROOP 1254
+ Name "スフィンクス"
+ PAGE 000
+  0()
+
+
+
+TROOP 1255
+ Name "アスタロト"
+ PAGE 000
+  0()
+
+
+
+TROOP 1256
+ Name "アドラメレク"
+ PAGE 000
+  0()
+
+
+
+TROOP 1257
+ Name "アリスフィーズ16世"
+ PAGE 000
+  0()
+
+
+
+TROOP 1258
+ Name "死神"
+ PAGE 000
+  0()
+
+
+
+TROOP 1259
+ Name "ソニアマズダ"
+ PAGE 000
+  0()
+
+
+
+TROOP 1260
+ Name "ソニアマンユ"
+ PAGE 000
+  0()
+
+
+
+TROOP 1261
+ Name "ミカエラ"
+ PAGE 000
+  0()
+
+
+
+TROOP 1262
+ Name "ルシフィナ"
+ PAGE 000
+  0()
+
+
+
+TROOP 1263
+ Name "リヴァイアサン娘"
+ PAGE 000
+  0()
+
+
+
+TROOP 1264
+ Name "アルマエルマ"
+ PAGE 000
+  0()
+
+
+
+TROOP 1265
+ Name "グランベリア"
+ PAGE 000
+  0()
+
+
+
+TROOP 1266
+ Name "斉天大聖"
+ PAGE 000
+  0()
+
+
+
+TROOP 1267
+ Name "ヤマタノオロチ"
+ PAGE 000
+  0()
+
+
+
+TROOP 1268
+ Name "テスカトリポカ"
+ PAGE 000
+  0()
+
+
+
+TROOP 1269
+ Name "ケツァルコァトル"
+ PAGE 000
+  0()
+
+
+
+TROOP 1270
+ Name "グノーシス"
+ PAGE 000
+  0()
+
+
+
+TROOP 1271
+ Name "シオン"
+ PAGE 000
+  0()
+
+
+
+TROOP 1272
+ Name "エルベティエ"
+ PAGE 000
+  0()
+
+
+
+TROOP 1273
+ Name "リリス"
+ PAGE 000
+  0()
+
+
+
+TROOP 1274
+ Name "アジ・ダハーカ"
+ PAGE 000
+  0()
+
+
+
+TROOP 1275
+ Name "黒のアリス"
+ PAGE 000
+  0()
+
+
+
+TROOP 1276
+ Name "黒のアリス"
+ PAGE 000
+  0()
+
+
+
+TROOP 1277
+ Name "黒のアリス"
+ PAGE 000
+  0()
+
+
+
+TROOP 1278
+ Name "エデン"
+ PAGE 000
+  0()
+
+
+
+TROOP 1279
+ Name "ソニアカオス"
+ PAGE 000
+  0()
+
+
+
+TROOP 1280
+ Name "玉藻"
+ PAGE 000
+  0()
+
+
+
+TROOP 1281
+ Name "ルカ・ホリィ, ルカ・リノア, ルカ・ハイネ, ルカ・キリエ"
+ PAGE 000
+  0()
+
+
+
+TROOP 1282
+ Name "フェルナンデス"
+ PAGE 000
+  0()
+
+
+
+TROOP 1283
+ Name "タイタニア"
+ PAGE 000
+  0()
+
+
+
+TROOP 1284
+ Name "ロザ"
+ PAGE 000
+  0()
+
+
+
+TROOP 1285
+ Name "クィーンラミア"
+ PAGE 000
+  0()
+
+
+
+TROOP 1286
+ Name "クィーンハーピー"
+ PAGE 000
+  0()
+
+
+
+TROOP 1287
+ Name "クィーンスキュラ"
+ PAGE 000
+  0()
+
+
+
+TROOP 1288
+ Name "天使殺し"
+ PAGE 000
+  0()
+
+
+
+TROOP 1289
+ Name "魔王殺し"
+ PAGE 000
+  0()
+
+
+
+TROOP 1290
+ Name "ジャッジメント"
+ PAGE 000
+  0()
+
+
+
+TROOP 1291
+ Name "ワールドブレイカー"
+ PAGE 000
+  0()
+
+
+
+TROOP 1292
+ Name "黒のアリス"
+ PAGE 000
+  0()
+
+
+
+TROOP 1293
+ Name "黒のアリス"
+ PAGE 000
+  0()
+
+
+
+TROOP 1294
+ Name "黒のアリス"
+ PAGE 000
+  0()
+
+
+
+TROOP 1295
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1296
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1297
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1298
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1299
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1300
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1301
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1302
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1303
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1304
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1305
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1306
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1307
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1308
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1309
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1310
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1311
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1312
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1313
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1314
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1315
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1316
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1317
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1318
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1319
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1320
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1321
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1322
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1323
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1324
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1325
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1326
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1327
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1328
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1329
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1330
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1331
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1332
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1333
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1334
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1335
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1336
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1337
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1338
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1339
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1340
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1341
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1342
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1343
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1344
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1345
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1346
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1347
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1348
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1349
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1350
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1351
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1352
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1353
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1354
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1355
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1356
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1357
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1358
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1359
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1360
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1361
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1362
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1363
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1364
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1365
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1366
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1367
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1368
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1369
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1370
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1371
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1372
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1373
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1374
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1375
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1376
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1377
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1378
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1379
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1380
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1381
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1382
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1383
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1384
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1385
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1386
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1387
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1388
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1389
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1390
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1391
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1392
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1393
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1394
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1395
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1396
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1397
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1398
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1399
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1400
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1401
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1402
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1403
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1404
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1405
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1406
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1407
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1408
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1409
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1410
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1411
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1412
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1413
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1414
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1415
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1416
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1417
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1418
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1419
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1420
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1421
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1422
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1423
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1424
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1425
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1426
+ Name "***"
+ PAGE 000
+  ChangeVariable(29,29,0,0,1)
+  ChangeVariable(30,30,0,0,1)
+  ChangeVariable(31,31,0,0,1)
+  ChangeVariable(32,32,0,0,1)
+  RunCommonEvent(6)
+  0()
+
+
+
+TROOP 1427
+ PAGE 000
+  0()
+
+
+
+TROOP 1428
+ PAGE 000
+  0()
+
+
+
+TROOP 1429
+ PAGE 000
+  0()
+
+
+
+TROOP 1430
+ PAGE 000
+  0()
+
+
+
+TROOP 1431
+ PAGE 000
+  0()
+
+
+
+TROOP 1432
+ PAGE 000
+  0()
+
+
+
+TROOP 1433
+ PAGE 000
+  0()
+
+
+
+TROOP 1434
+ PAGE 000
+  0()
+
+
+
+TROOP 1435
+ PAGE 000
+  0()
+
+
+
+TROOP 1436
+ PAGE 000
+  0()
+
+
+
+TROOP 1437
+ PAGE 000
+  0()
+
+
+
+TROOP 1438
+ PAGE 000
+  0()
+
+
+
+TROOP 1439
+ PAGE 000
+  0()
+
+
+
+TROOP 1440
+ PAGE 000
+  0()
+
+
+
+TROOP 1441
+ PAGE 000
+  0()
+
+
+
+TROOP 1442
+ PAGE 000
+  0()
+
+
+
+TROOP 1443
+ PAGE 000
+  0()
+
+
+
+TROOP 1444
+ PAGE 000
+  0()
+
+
+
+TROOP 1445
+ PAGE 000
+  0()
+
+
+
+TROOP 1446
+ PAGE 000
+  0()
+
+
+
+TROOP 1447
+ PAGE 000
+  0()
+
+
+
+TROOP 1448
+ PAGE 000
+  0()
+
+
+
+TROOP 1449
+ PAGE 000
+  0()
+
+
+
+TROOP 1450
+ PAGE 000
+  0()
+
+
+
+TROOP 1451
+ PAGE 000
+  0()
+
+
+
+TROOP 1452
+ PAGE 000
+  0()
+
+
+
+TROOP 1453
+ PAGE 000
+  0()
+
+
+
+TROOP 1454
+ PAGE 000
+  0()
+
+
+
+TROOP 1455
+ PAGE 000
+  0()
+
+
+
+TROOP 1456
+ PAGE 000
+  0()
+
+
+
+TROOP 1457
+ PAGE 000
+  0()
+
+
+
+TROOP 1458
+ PAGE 000
+  0()
+
+
+
+TROOP 1459
+ PAGE 000
+  0()
+
+
+
+TROOP 1460
+ PAGE 000
+  0()
+
+
+
+TROOP 1461
+ PAGE 000
+  0()
+
+
+
+TROOP 1462
+ PAGE 000
+  0()
+
+
+
+TROOP 1463
+ PAGE 000
+  0()
+
+
+
+TROOP 1464
+ PAGE 000
+  0()
+
+
+
+TROOP 1465
+ PAGE 000
+  0()
+
+
+
+TROOP 1466
+ PAGE 000
+  0()
+
+
+
+TROOP 1467
+ PAGE 000
+  0()
+
+
+
+TROOP 1468
+ PAGE 000
+  0()
+
+
+
+TROOP 1469
+ PAGE 000
+  0()
+
+
+
+TROOP 1470
+ PAGE 000
+  0()
+
+
+
+TROOP 1471
+ PAGE 000
+  0()
+
+
+
+TROOP 1472
+ PAGE 000
+  0()
+
+
+
+TROOP 1473
+ PAGE 000
+  0()
+
+
+
+TROOP 1474
+ PAGE 000
+  0()
+
+
+
+TROOP 1475
+ PAGE 000
+  0()
+
+
+
+TROOP 1476
+ PAGE 000
+  0()
+
+
+
+TROOP 1477
+ PAGE 000
+  0()
+
+
+
+TROOP 1478
+ PAGE 000
+  0()
+
+
+
+TROOP 1479
+ PAGE 000
+  0()
+
+
+
+TROOP 1480
+ PAGE 000
+  0()
+
+
+
+TROOP 1481
+ PAGE 000
+  0()
+
+
+
+TROOP 1482
+ PAGE 000
+  0()
+
+
+
+TROOP 1483
+ PAGE 000
+  0()
+
+
+
+TROOP 1484
+ PAGE 000
+  0()
+
+
+
+TROOP 1485
+ PAGE 000
+  0()
+
+
+
+TROOP 1486
+ PAGE 000
+  0()
+
+
+
+TROOP 1487
+ PAGE 000
+  0()
+
+
+
+TROOP 1488
+ PAGE 000
+  0()
+
+
+
+TROOP 1489
+ PAGE 000
+  0()
+
+
+
+TROOP 1490
+ PAGE 000
+  0()
+
+
+
+TROOP 1491
+ PAGE 000
+  0()
+
+
+
+TROOP 1492
+ PAGE 000
+  0()
+
+
+
+TROOP 1493
+ PAGE 000
+  0()
+
+
+
+TROOP 1494
+ PAGE 000
+  0()
+
+
+
+TROOP 1495
+ PAGE 000
+  0()
+
+
+
+TROOP 1496
+ PAGE 000
+  0()
+
+
+
+TROOP 1497
+ PAGE 000
+  0()
+
+
+
+TROOP 1498
+ PAGE 000
+  0()
+
+
+
+TROOP 1499
+ PAGE 000
+  0()
+
+
+
+TROOP 1500
+ PAGE 000
+  0()
+
+
+
+TROOP 1501
+ PAGE 000
+  0()
+
+
+
+TROOP 1502
+ PAGE 000
+  0()
+
+
+
+TROOP 1503
+ PAGE 000
+  0()
+
+
+
+TROOP 1504
+ PAGE 000
+  0()
+
+
+
+TROOP 1505
+ PAGE 000
+  0()
+
+
+
+TROOP 1506
+ PAGE 000
+  0()
+
+
+
+TROOP 1507
+ PAGE 000
+  0()
+
+
+
+TROOP 1508
+ PAGE 000
+  0()
+
+
+
+TROOP 1509
+ PAGE 000
+  0()
+
+
+
+TROOP 1510
+ PAGE 000
+  0()
+
+
+
+TROOP 1511
+ PAGE 000
+  0()
+
+
+
+TROOP 1512
+ PAGE 000
+  0()
+
+
+
+TROOP 1513
+ PAGE 000
+  0()
+
+
+
+TROOP 1514
+ PAGE 000
+  0()
+
+
+
+TROOP 1515
+ PAGE 000
+  0()
+
+
+
+TROOP 1516
+ PAGE 000
+  0()
+
+
+
+TROOP 1517
+ PAGE 000
+  0()
+
+
+
+TROOP 1518
+ PAGE 000
+  0()
+
+
+
+TROOP 1519
+ PAGE 000
+  0()
+
+
+
+TROOP 1520
+ PAGE 000
+  0()
+
+
+
+TROOP 1521
+ PAGE 000
+  0()
+
+
+
+TROOP 1522
+ PAGE 000
+  0()
+
+
+
+TROOP 1523
+ PAGE 000
+  0()
+
+
+
+TROOP 1524
+ PAGE 000
+  0()
+
+
+
+TROOP 1525
+ PAGE 000
+  0()
+
+
+
+TROOP 1526
+ PAGE 000
+  0()
+
+
+
+TROOP 1527
+ PAGE 000
+  0()
+
+
+
+TROOP 1528
+ PAGE 000
+  0()
+
+
+
+TROOP 1529
+ PAGE 000
+  0()
+
+
+
+TROOP 1530
+ PAGE 000
+  0()
+
+
+
+TROOP 1531
+ PAGE 000
+  0()
+
+
+
+TROOP 1532
+ PAGE 000
+  0()
+
+
+
+TROOP 1533
+ PAGE 000
+  0()
+
+
+
+TROOP 1534
+ PAGE 000
+  0()
+
+
+
+TROOP 1535
+ PAGE 000
+  0()
+
+
+
+TROOP 1536
+ PAGE 000
+  0()
+
+
+
+TROOP 1537
+ PAGE 000
+  0()
+
+
+
+TROOP 1538
+ PAGE 000
+  0()
+
+
+
+TROOP 1539
+ PAGE 000
+  0()
+
+
+
+TROOP 1540
+ PAGE 000
+  0()
+
+
+
+TROOP 1541
+ PAGE 000
+  0()
+
+
+
+TROOP 1542
+ PAGE 000
+  0()
+
+
+
+TROOP 1543
+ PAGE 000
+  0()
+
+
+
+TROOP 1544
+ PAGE 000
+  0()
+
+
+
+TROOP 1545
+ PAGE 000
+  0()
+
+
+
+TROOP 1546
+ PAGE 000
+  0()
+
+
+
+TROOP 1547
+ PAGE 000
+  0()
+
+
+
+TROOP 1548
+ PAGE 000
+  0()
+
+
+
+TROOP 1549
+ PAGE 000
+  0()
+
+
+
+TROOP 1550
+ PAGE 000
+  0()
+
+
+
+TROOP 1551
+ PAGE 000
+  0()
+
+
+
+TROOP 1552
+ PAGE 000
+  0()
+
+
+
+TROOP 1553
+ PAGE 000
+  0()
+
+
+
+TROOP 1554
+ PAGE 000
+  0()
+
+
+
+TROOP 1555
+ PAGE 000
+  0()
+
+
+
+TROOP 1556
+ PAGE 000
+  0()
+
+
+
+TROOP 1557
+ PAGE 000
+  0()
+
+
+
+TROOP 1558
+ PAGE 000
+  0()
+
+
+
+TROOP 1559
+ PAGE 000
+  0()
+
+
+
+TROOP 1560
+ PAGE 000
+  0()
+
+
+
+TROOP 1561
+ PAGE 000
+  0()
+
+
+
+TROOP 1562
+ PAGE 000
+  0()
+
+
+
+TROOP 1563
+ PAGE 000
+  0()
+
+
+
+TROOP 1564
+ PAGE 000
+  0()
+
+
+
+TROOP 1565
+ PAGE 000
+  0()
+
+
+
+TROOP 1566
+ PAGE 000
+  0()
+
+
+
+TROOP 1567
+ PAGE 000
+  0()
+
+
+
+TROOP 1568
+ PAGE 000
+  0()
+
+
+
+TROOP 1569
+ PAGE 000
+  0()
+
+
+
+TROOP 1570
+ PAGE 000
+  0()
+
+
+
+TROOP 1571
+ PAGE 000
+  0()
+
+
+
+TROOP 1572
+ PAGE 000
+  0()
+
+
+
+TROOP 1573
+ PAGE 000
+  0()
+
+
+
+TROOP 1574
+ PAGE 000
+  0()
+
+
+
+TROOP 1575
+ PAGE 000
+  0()
+
+
+
+TROOP 1576
+ PAGE 000
+  0()
+
+
+
+TROOP 1577
+ PAGE 000
+  0()
+
+
+
+TROOP 1578
+ PAGE 000
+  0()
+
+
+
+TROOP 1579
+ PAGE 000
+  0()
+
+
+
+TROOP 1580
+ PAGE 000
+  0()
+
+
+
+TROOP 1581
+ PAGE 000
+  0()
+
+
+
+TROOP 1582
+ PAGE 000
+  0()
+
+
+
+TROOP 1583
+ PAGE 000
+  0()
+
+
+
+TROOP 1584
+ PAGE 000
+  0()
+
+
+
+TROOP 1585
+ PAGE 000
+  0()
+
+
+
+TROOP 1586
+ PAGE 000
+  0()
+
+
+
+TROOP 1587
+ PAGE 000
+  0()
+
+
+
+TROOP 1588
+ PAGE 000
+  0()
+
+
+
+TROOP 1589
+ PAGE 000
+  0()
+
+
+
+TROOP 1590
+ PAGE 000
+  0()
+
+
+
+TROOP 1591
+ PAGE 000
+  0()
+
+
+
+TROOP 1592
+ PAGE 000
+  0()
+
+
+
+TROOP 1593
+ PAGE 000
+  0()
+
+
+
+TROOP 1594
+ PAGE 000
+  0()
+
+
+
+TROOP 1595
+ PAGE 000
+  0()
+
+
+
+TROOP 1596
+ PAGE 000
+  0()
+
+
+
+TROOP 1597
+ PAGE 000
+  0()
+
+
+
+TROOP 1598
+ PAGE 000
+  0()
+
+
+
+TROOP 1599
+ PAGE 000
+  0()
+
+
+
+TROOP 1600
+ PAGE 000
+  0()
+
+
+
+TROOP 1601
+ PAGE 000
+  0()
+
+
+
+TROOP 1602
+ PAGE 000
+  0()
+
+
+
+TROOP 1603
+ PAGE 000
+  0()
+
+
+
+TROOP 1604
+ PAGE 000
+  0()
+
+
+
+TROOP 1605
+ PAGE 000
+  0()
+
+
+
+TROOP 1606
+ PAGE 000
+  0()
+
+
+
+TROOP 1607
+ PAGE 000
+  0()
+
+
+
+TROOP 1608
+ PAGE 000
+  0()
+
+
+
+TROOP 1609
+ PAGE 000
+  0()
+
+
+
+TROOP 1610
+ PAGE 000
+  0()
+
+
+
+TROOP 1611
+ PAGE 000
+  0()
+
+
+
+TROOP 1612
+ PAGE 000
+  0()
+
+
+
+TROOP 1613
+ PAGE 000
+  0()
+
+
+
+TROOP 1614
+ PAGE 000
+  0()
+
+
+
+TROOP 1615
+ PAGE 000
+  0()
+
+
+
+TROOP 1616
+ PAGE 000
+  0()
+
+
+
+TROOP 1617
+ PAGE 000
+  0()
+
+
+
+TROOP 1618
+ PAGE 000
+  0()
+
+
+
+TROOP 1619
+ PAGE 000
+  0()
+
+
+
+TROOP 1620
+ PAGE 000
+  0()
+
+
+
+TROOP 1621
+ PAGE 000
+  0()
+
+
+
+TROOP 1622
+ PAGE 000
+  0()
+
+
+
+TROOP 1623
+ PAGE 000
+  0()
+
+
+
+TROOP 1624
+ PAGE 000
+  0()
+
+
+
+TROOP 1625
+ PAGE 000
+  0()
+
+
+
+TROOP 1626
+ PAGE 000
+  0()
+
+
+
+TROOP 1627
+ PAGE 000
+  0()
+
+
+
+TROOP 1628
+ PAGE 000
+  0()
+
+
+
+TROOP 1629
+ PAGE 000
+  0()
+
+
+
+TROOP 1630
+ PAGE 000
+  0()
+
+
+
+TROOP 1631
+ PAGE 000
+  0()
+
+
+
+TROOP 1632
+ PAGE 000
+  0()
+
+
+
+TROOP 1633
+ PAGE 000
+  0()
+
+
+
+TROOP 1634
+ PAGE 000
+  0()
+
+
+
+TROOP 1635
+ PAGE 000
+  0()
+
+
+
+TROOP 1636
+ PAGE 000
+  0()
+
+
+
+TROOP 1637
+ PAGE 000
+  0()
+
+
+
+TROOP 1638
+ PAGE 000
+  0()
+
+
+
+TROOP 1639
+ PAGE 000
+  0()
+
+
+
+TROOP 1640
+ PAGE 000
+  0()
+
+
+
+TROOP 1641
+ PAGE 000
+  0()
+
+
+
+TROOP 1642
+ PAGE 000
+  0()
+
+
+
+TROOP 1643
+ PAGE 000
+  0()
+
+
+
+TROOP 1644
+ PAGE 000
+  0()
+
+
+
+TROOP 1645
+ PAGE 000
+  0()
+
+
+
+TROOP 1646
+ PAGE 000
+  0()
+
+
+
+TROOP 1647
+ PAGE 000
+  0()
+
+
+
+TROOP 1648
+ PAGE 000
+  0()
+
+
+
+TROOP 1649
+ PAGE 000
+  0()
+
+
+
+TROOP 1650
+ PAGE 000
+  0()
+
+
+
+TROOP 1651
+ PAGE 000
+  0()
+
+
+
+TROOP 1652
+ PAGE 000
+  0()
+
+
+
+TROOP 1653
+ PAGE 000
+  0()
+
+
+
+TROOP 1654
+ PAGE 000
+  0()
+
+
+
+TROOP 1655
+ PAGE 000
+  0()
+
+
+
+TROOP 1656
+ PAGE 000
+  0()
+
+
+
+TROOP 1657
+ PAGE 000
+  0()
+
+
+
+TROOP 1658
+ PAGE 000
+  0()
+
+
+
+TROOP 1659
+ PAGE 000
+  0()
+
+
+
+TROOP 1660
+ PAGE 000
+  0()
+
+
+
+TROOP 1661
+ PAGE 000
+  0()
+
+
+
+TROOP 1662
+ PAGE 000
+  0()
+
+
+
+TROOP 1663
+ PAGE 000
+  0()
+
+
+
+TROOP 1664
+ PAGE 000
+  0()
+
+
+
+TROOP 1665
+ PAGE 000
+  0()
+
+
+
+TROOP 1666
+ PAGE 000
+  0()
+
+
+
+TROOP 1667
+ PAGE 000
+  0()
+
+
+
+TROOP 1668
+ PAGE 000
+  0()
+
+
+
+TROOP 1669
+ PAGE 000
+  0()
+
+
+
+TROOP 1670
+ PAGE 000
+  0()
+
+
+
+TROOP 1671
+ PAGE 000
+  0()
+
+
+
+TROOP 1672
+ PAGE 000
+  0()
+
+
+
+TROOP 1673
+ PAGE 000
+  0()
+
+
+
+TROOP 1674
+ PAGE 000
+  0()
+
+
+
+TROOP 1675
+ PAGE 000
+  0()
+
+
+
+TROOP 1676
+ PAGE 000
+  0()
+
+
+
+TROOP 1677
+ PAGE 000
+  0()
+
+
+
+TROOP 1678
+ PAGE 000
+  0()
+
+
+
+TROOP 1679
+ PAGE 000
+  0()
+
+
+
+TROOP 1680
+ PAGE 000
+  0()
+
+
+
+TROOP 1681
+ PAGE 000
+  0()
+
+
+
+TROOP 1682
+ PAGE 000
+  0()
+
+
+
+TROOP 1683
+ PAGE 000
+  0()
+
+
+
+TROOP 1684
+ PAGE 000
+  0()
+
+
+
+TROOP 1685
+ PAGE 000
+  0()
+
+
+
+TROOP 1686
+ PAGE 000
+  0()
+
+
+
+TROOP 1687
+ PAGE 000
+  0()
+
+
+
+TROOP 1688
+ PAGE 000
+  0()
+
+
+
+TROOP 1689
+ PAGE 000
+  0()
+
+
+
+TROOP 1690
+ PAGE 000
+  0()
+
+
+
+TROOP 1691
+ PAGE 000
+  0()
+
+
+
+TROOP 1692
+ PAGE 000
+  0()
+
+
+
+TROOP 1693
+ PAGE 000
+  0()
+
+
+
+TROOP 1694
+ PAGE 000
+  0()
+
+
+
+TROOP 1695
+ PAGE 000
+  0()
+
+
+
+TROOP 1696
+ PAGE 000
+  0()
+
+
+
+TROOP 1697
+ PAGE 000
+  0()
+
+
+
+TROOP 1698
+ PAGE 000
+  0()
+
+
+
+TROOP 1699
+ PAGE 000
+  0()
+
+
+
+TROOP 1700
+ PAGE 000
+  0()
+
+
+
+TROOP 1701
+ PAGE 000
+  0()
+
+
+
+TROOP 1702
+ PAGE 000
+  0()
+
+
+
+TROOP 1703
+ PAGE 000
+  0()
+
+
+
+TROOP 1704
+ PAGE 000
+  0()
+
+
+
+TROOP 1705
+ PAGE 000
+  0()
+
+
+
+TROOP 1706
+ PAGE 000
+  0()
+
+
+
+TROOP 1707
+ PAGE 000
+  0()
+
+
+
+TROOP 1708
+ PAGE 000
+  0()
+
+
+
+TROOP 1709
+ PAGE 000
+  0()
+
+
+
+TROOP 1710
+ PAGE 000
+  0()
+
+
+
+TROOP 1711
+ PAGE 000
+  0()
+
+
+
+TROOP 1712
+ PAGE 000
+  0()
+
+
+
+TROOP 1713
+ PAGE 000
+  0()
+
+
+
+TROOP 1714
+ PAGE 000
+  0()
+
+
+
+TROOP 1715
+ PAGE 000
+  0()
+
+
+
+TROOP 1716
+ PAGE 000
+  0()
+
+
+
+TROOP 1717
+ PAGE 000
+  0()
+
+
+
+TROOP 1718
+ PAGE 000
+  0()
+
+
+
+TROOP 1719
+ PAGE 000
+  0()
+
+
+
+TROOP 1720
+ PAGE 000
+  0()
+
+
+
+TROOP 1721
+ PAGE 000
+  0()
+
+
+
+TROOP 1722
+ PAGE 000
+  0()
+
+
+
+TROOP 1723
+ PAGE 000
+  0()
+
+
+
+TROOP 1724
+ PAGE 000
+  0()
+
+
+
+TROOP 1725
+ PAGE 000
+  0()
+
+
+
+TROOP 1726
+ PAGE 000
+  0()
+
+
+
+TROOP 1727
+ PAGE 000
+  0()
+
+
+
+TROOP 1728
+ PAGE 000
+  0()
+
+
+
+TROOP 1729
+ PAGE 000
+  0()
+
+
+
+TROOP 1730
+ PAGE 000
+  0()
+
+
+
+TROOP 1731
+ PAGE 000
+  0()
+
+
+
+TROOP 1732
+ PAGE 000
+  0()
+
+
+
+TROOP 1733
+ PAGE 000
+  0()
+
+
+
+TROOP 1734
+ PAGE 000
+  0()
+
+
+
+TROOP 1735
+ PAGE 000
+  0()
+
+
+
+TROOP 1736
+ PAGE 000
+  0()
+
+
+
+TROOP 1737
+ PAGE 000
+  0()
+
+
+
+TROOP 1738
+ PAGE 000
+  0()
+
+
+
+TROOP 1739
+ PAGE 000
+  0()
+
+
+
+TROOP 1740
+ PAGE 000
+  0()
+
+
+
+TROOP 1741
+ PAGE 000
+  0()
+
+
+
+TROOP 1742
+ PAGE 000
+  0()
+
+
+
+TROOP 1743
+ PAGE 000
+  0()
+
+
+
+TROOP 1744
+ PAGE 000
+  0()
+
+
+
+TROOP 1745
+ PAGE 000
+  0()
+
+
+
+TROOP 1746
+ PAGE 000
+  0()
+
+
+
+TROOP 1747
+ PAGE 000
+  0()
+
+
+
+TROOP 1748
+ PAGE 000
+  0()
+
+
+
+TROOP 1749
+ PAGE 000
+  0()
+
+
+
+TROOP 1750
+ PAGE 000
+  0()
+
+
+
+TROOP 1751
+ PAGE 000
+  0()
+
+
+
+TROOP 1752
+ PAGE 000
+  0()
+
+
+
+TROOP 1753
+ PAGE 000
+  0()
+
+
+
+TROOP 1754
+ PAGE 000
+  0()
+
+
+
+TROOP 1755
+ PAGE 000
+  0()
+
+
+
+TROOP 1756
+ PAGE 000
+  0()
+
+
+
+TROOP 1757
+ PAGE 000
+  0()
+
+
+
+TROOP 1758
+ PAGE 000
+  0()
+
+
+
+TROOP 1759
+ PAGE 000
+  0()
+
+
+
+TROOP 1760
+ PAGE 000
+  0()
+
+
+
+TROOP 1761
+ PAGE 000
+  0()
+
+
+
+TROOP 1762
+ PAGE 000
+  0()
+
+
+
+TROOP 1763
+ PAGE 000
+  0()
+
+
+
+TROOP 1764
+ PAGE 000
+  0()
+
+
+
+TROOP 1765
+ PAGE 000
+  0()
+
+
+
+TROOP 1766
+ PAGE 000
+  0()
+
+
+
+TROOP 1767
+ PAGE 000
+  0()
+
+
+
+TROOP 1768
+ PAGE 000
+  0()
+
+
+
+TROOP 1769
+ PAGE 000
+  0()
+
+
+
+TROOP 1770
+ PAGE 000
+  0()
+
+
+
+TROOP 1771
+ PAGE 000
+  0()
+
+
+
+TROOP 1772
+ PAGE 000
+  0()
+
+
+
+TROOP 1773
+ PAGE 000
+  0()
+
+
+
+TROOP 1774
+ PAGE 000
+  0()
+
+
+
+TROOP 1775
+ PAGE 000
+  0()
+
+
+
+TROOP 1776
+ PAGE 000
+  0()
+
+
+
+TROOP 1777
+ PAGE 000
+  0()
+
+
+
+TROOP 1778
+ PAGE 000
+  0()
+
+
+
+TROOP 1779
+ PAGE 000
+  0()
+
+
+
+TROOP 1780
+ PAGE 000
+  0()
+
+
+
+TROOP 1781
+ PAGE 000
+  0()
+
+
+
+TROOP 1782
+ PAGE 000
+  0()
+
+
+
+TROOP 1783
+ PAGE 000
+  0()
+
+
+
+TROOP 1784
+ PAGE 000
+  0()
+
+
+
+TROOP 1785
+ PAGE 000
+  0()
+
+
+
+TROOP 1786
+ PAGE 000
+  0()
+
+
+
+TROOP 1787
+ PAGE 000
+  0()
+
+
+
+TROOP 1788
+ PAGE 000
+  0()
+
+
+
+TROOP 1789
+ PAGE 000
+  0()
+
+
+
+TROOP 1790
+ PAGE 000
+  0()
+
+
+
+TROOP 1791
+ PAGE 000
+  0()
+
+
+
+TROOP 1792
+ PAGE 000
+  0()
+
+
+
+TROOP 1793
+ PAGE 000
+  0()
+
+
+
+TROOP 1794
+ PAGE 000
+  0()
+
+
+
+TROOP 1795
+ PAGE 000
+  0()
+
+
+
+TROOP 1796
+ PAGE 000
+  0()
+
+
+
+TROOP 1797
+ PAGE 000
+  0()
+
+
+
+TROOP 1798
+ PAGE 000
+  0()
+
+
+
+TROOP 1799
+ PAGE 000
+  0()
+
+
+
+TROOP 1800
+ PAGE 000
+  0()
+
+
+
+TROOP 1801
+ PAGE 000
+  0()
+
+
+
+TROOP 1802
+ PAGE 000
+  0()
+
+
+
+TROOP 1803
+ PAGE 000
+  0()
+
+
+
+TROOP 1804
+ PAGE 000
+  0()
+
+
+
+TROOP 1805
+ PAGE 000
+  0()
+
+
+
+TROOP 1806
+ PAGE 000
+  0()
+
+
+
+TROOP 1807
+ PAGE 000
+  0()
+
+
+
+TROOP 1808
+ PAGE 000
+  0()
+
+
+
+TROOP 1809
+ PAGE 000
+  0()
+
+
+
+TROOP 1810
+ PAGE 000
+  0()
+
+
+
+TROOP 1811
+ PAGE 000
+  0()
+
+
+
+TROOP 1812
+ PAGE 000
+  0()
+
+
+
+TROOP 1813
+ PAGE 000
+  0()
+
+
+
+TROOP 1814
+ PAGE 000
+  0()
+
+
+
+TROOP 1815
+ PAGE 000
+  0()
+
+
+
+TROOP 1816
+ PAGE 000
+  0()
+
+
+
+TROOP 1817
+ PAGE 000
+  0()
+
+
+
+TROOP 1818
+ PAGE 000
+  0()
+
+
+
+TROOP 1819
+ PAGE 000
+  0()
+
+
+
+TROOP 1820
+ PAGE 000
+  0()
+
+
+
+TROOP 1821
+ PAGE 000
+  0()
+
+
+
+TROOP 1822
+ PAGE 000
+  0()
+
+
+
+TROOP 1823
+ PAGE 000
+  0()
+
+
+
+TROOP 1824
+ PAGE 000
+  0()
+
+
+
+TROOP 1825
+ PAGE 000
+  0()
+
+
+
+TROOP 1826
+ PAGE 000
+  0()
+
+
+
+TROOP 1827
+ PAGE 000
+  0()
+
+
+
+TROOP 1828
+ PAGE 000
+  0()
+
+
+
+TROOP 1829
+ PAGE 000
+  0()
+
+
+
+TROOP 1830
+ PAGE 000
+  0()
+
+
+
+TROOP 1831
+ PAGE 000
+  0()
+
+
+
+TROOP 1832
+ PAGE 000
+  0()
+
+
+
+TROOP 1833
+ PAGE 000
+  0()
+
+
+
+TROOP 1834
+ PAGE 000
+  0()
+
+
+
+TROOP 1835
+ PAGE 000
+  0()
+
+
+
+TROOP 1836
+ PAGE 000
+  0()
+
+
+
+TROOP 1837
+ PAGE 000
+  0()
+
+
+
+TROOP 1838
+ PAGE 000
+  0()
+
+
+
+TROOP 1839
+ PAGE 000
+  0()
+
+
+
+TROOP 1840
+ PAGE 000
+  0()
+
+
+
+TROOP 1841
+ PAGE 000
+  0()
+
+
+
+TROOP 1842
+ PAGE 000
+  0()
+
+
+
+TROOP 1843
+ PAGE 000
+  0()
+
+
+
+TROOP 1844
+ PAGE 000
+  0()
+
+
+
+TROOP 1845
+ PAGE 000
+  0()
+
+
+
+TROOP 1846
+ PAGE 000
+  0()
+
+
+
+TROOP 1847
+ PAGE 000
+  0()
+
+
+
+TROOP 1848
+ PAGE 000
+  0()
+
+
+
+TROOP 1849
+ PAGE 000
+  0()
+
+
+
+TROOP 1850
+ PAGE 000
+  0()
+
+
+
+TROOP 1851
+ PAGE 000
+  0()
+
+
+
+TROOP 1852
+ PAGE 000
+  0()
+
+
+
+TROOP 1853
+ PAGE 000
+  0()
+
+
+
+TROOP 1854
+ PAGE 000
+  0()
+
+
+
+TROOP 1855
+ PAGE 000
+  0()
+
+
+
+TROOP 1856
+ PAGE 000
+  0()
+
+
+
+TROOP 1857
+ PAGE 000
+  0()
+
+
+
+TROOP 1858
+ PAGE 000
+  0()
+
+
+
+TROOP 1859
+ PAGE 000
+  0()
+
+
+
+TROOP 1860
+ PAGE 000
+  0()
+
+
+
+TROOP 1861
+ PAGE 000
+  0()
+
+
+
+TROOP 1862
+ PAGE 000
+  0()
+
+
+
+TROOP 1863
+ PAGE 000
+  0()
+
+
+
+TROOP 1864
+ PAGE 000
+  0()
+
+
+
+TROOP 1865
+ PAGE 000
+  0()
+
+
+
+TROOP 1866
+ PAGE 000
+  0()
+
+
+
+TROOP 1867
+ PAGE 000
+  0()
+
+
+
+TROOP 1868
+ PAGE 000
+  0()
+
+
+
+TROOP 1869
+ PAGE 000
+  0()
+
+
+
+TROOP 1870
+ PAGE 000
+  0()
+
+
+
+TROOP 1871
+ PAGE 000
+  0()
+
+
+
+TROOP 1872
+ PAGE 000
+  0()
+
+
+
+TROOP 1873
+ PAGE 000
+  0()
+
+
+
+TROOP 1874
+ PAGE 000
+  0()
+
+
+
+TROOP 1875
+ PAGE 000
+  0()
+
+
+
+TROOP 1876
+ PAGE 000
+  0()
+
+
+
+TROOP 1877
+ PAGE 000
+  0()
+
+
+
+TROOP 1878
+ PAGE 000
+  0()
+
+
+
+TROOP 1879
+ PAGE 000
+  0()
+
+
+
+TROOP 1880
+ PAGE 000
+  0()
+
+
+
+TROOP 1881
+ PAGE 000
+  0()
+
+
+
+TROOP 1882
+ PAGE 000
+  0()
+
+
+
+TROOP 1883
+ PAGE 000
+  0()
+
+
+
+TROOP 1884
+ PAGE 000
+  0()
+
+
+
+TROOP 1885
+ PAGE 000
+  0()
+
+
+
+TROOP 1886
+ PAGE 000
+  0()
+
+
+
+TROOP 1887
+ PAGE 000
+  0()
+
+
+
+TROOP 1888
+ PAGE 000
+  0()
+
+
+
+TROOP 1889
+ PAGE 000
+  0()
+
+
+
+TROOP 1890
+ PAGE 000
+  0()
+
+
+
+TROOP 1891
+ PAGE 000
+  0()
+
+
+
+TROOP 1892
+ PAGE 000
+  0()
+
+
+
+TROOP 1893
+ PAGE 000
+  0()
+
+
+
+TROOP 1894
+ PAGE 000
+  0()
+
+
+
+TROOP 1895
+ PAGE 000
+  0()
+
+
+
+TROOP 1896
+ PAGE 000
+  0()
+
+
+
+TROOP 1897
+ PAGE 000
+  0()
+
+
+
+TROOP 1898
+ PAGE 000
+  0()
+
+
+
+TROOP 1899
+ PAGE 000
+  0()
+
+
+
+TROOP 1900
+ PAGE 000
+  0()
+
+
+
+TROOP 1901
+ PAGE 000
+  0()
+
+
+
+TROOP 1902
+ PAGE 000
+  0()
+
+
+
+TROOP 1903
+ PAGE 000
+  0()
+
+
+
+TROOP 1904
+ PAGE 000
+  0()
+
+
+
+TROOP 1905
+ PAGE 000
+  0()
+
+
+
+TROOP 1906
+ PAGE 000
+  0()
+
+
+
+TROOP 1907
+ PAGE 000
+  0()
+
+
+
+TROOP 1908
+ PAGE 000
+  0()
+
+
+
+TROOP 1909
+ PAGE 000
+  0()
+
+
+
+TROOP 1910
+ PAGE 000
+  0()
+
+
+
+TROOP 1911
+ PAGE 000
+  0()
+
+
+
+TROOP 1912
+ PAGE 000
+  0()
+
+
+
+TROOP 1913
+ PAGE 000
+  0()
+
+
+
+TROOP 1914
+ PAGE 000
+  0()
+
+
+
+TROOP 1915
+ PAGE 000
+  0()
+
+
+
+TROOP 1916
+ PAGE 000
+  0()
+
+
+
+TROOP 1917
+ PAGE 000
+  0()
+
+
+
+TROOP 1918
+ PAGE 000
+  0()
+
+
+
+TROOP 1919
+ PAGE 000
+  0()
+
+
+
+TROOP 1920
+ PAGE 000
+  0()
+
+
+
+TROOP 1921
+ PAGE 000
+  0()
+
+
+
+TROOP 1922
+ PAGE 000
+  0()
+
+
+
+TROOP 1923
+ PAGE 000
+  0()
+
+
+
+TROOP 1924
+ PAGE 000
+  0()
+
+
+
+TROOP 1925
+ PAGE 000
+  0()
+
+
+
+TROOP 1926
+ PAGE 000
+  0()
+
+
+
+TROOP 1927
+ PAGE 000
+  0()
+
+
+
+TROOP 1928
+ PAGE 000
+  0()
+
+
+
+TROOP 1929
+ PAGE 000
+  0()
+
+
+
+TROOP 1930
+ PAGE 000
+  0()
+
+
+
+TROOP 1931
+ PAGE 000
+  0()
+
+
+
+TROOP 1932
+ PAGE 000
+  0()
+
+
+
+TROOP 1933
+ PAGE 000
+  0()
+
+
+
+TROOP 1934
+ PAGE 000
+  0()
+
+
+
+TROOP 1935
+ PAGE 000
+  0()
+
+
+
+TROOP 1936
+ PAGE 000
+  0()
+
+
+
+TROOP 1937
+ PAGE 000
+  0()
+
+
+
+TROOP 1938
+ PAGE 000
+  0()
+
+
+
+TROOP 1939
+ PAGE 000
+  0()
+
+
+
+TROOP 1940
+ PAGE 000
+  0()
+
+
+
+TROOP 1941
+ PAGE 000
+  0()
+
+
+
+TROOP 1942
+ PAGE 000
+  0()
+
+
+
+TROOP 1943
+ PAGE 000
+  0()
+
+
+
+TROOP 1944
+ PAGE 000
+  0()
+
+
+
+TROOP 1945
+ PAGE 000
+  0()
+
+
+
+TROOP 1946
+ PAGE 000
+  0()
+
+
+
+TROOP 1947
+ PAGE 000
+  0()
+
+
+
+TROOP 1948
+ PAGE 000
+  0()
+
+
+
+TROOP 1949
+ PAGE 000
+  0()
+
+
+
+TROOP 1950
+ PAGE 000
+  0()
+
+
+
+TROOP 1951
+ PAGE 000
+  0()
+
+
+
+TROOP 1952
+ PAGE 000
+  0()
+
+
+
+TROOP 1953
+ PAGE 000
+  0()
+
+
+
+TROOP 1954
+ PAGE 000
+  0()
+
+
+
+TROOP 1955
+ PAGE 000
+  0()
+
+
+
+TROOP 1956
+ PAGE 000
+  0()
+
+
+
+TROOP 1957
+ PAGE 000
+  0()
+
+
+
+TROOP 1958
+ PAGE 000
+  0()
+
+
+
+TROOP 1959
+ PAGE 000
+  0()
+
+
+
+TROOP 1960
+ PAGE 000
+  0()
+
+
+
+TROOP 1961
+ PAGE 000
+  0()
+
+
+
+TROOP 1962
+ PAGE 000
+  0()
+
+
+
+TROOP 1963
+ PAGE 000
+  0()
+
+
+
+TROOP 1964
+ PAGE 000
+  0()
+
+
+
+TROOP 1965
+ PAGE 000
+  0()
+
+
+
+TROOP 1966
+ PAGE 000
+  0()
+
+
+
+TROOP 1967
+ PAGE 000
+  0()
+
+
+
+TROOP 1968
+ PAGE 000
+  0()
+
+
+
+TROOP 1969
+ PAGE 000
+  0()
+
+
+
+TROOP 1970
+ PAGE 000
+  0()
+
+
+
+TROOP 1971
+ PAGE 000
+  0()
+
+
+
+TROOP 1972
+ PAGE 000
+  0()
+
+
+
+TROOP 1973
+ PAGE 000
+  0()
+
+
+
+TROOP 1974
+ PAGE 000
+  0()
+
+
+
+TROOP 1975
+ PAGE 000
+  0()
+
+
+
+TROOP 1976
+ PAGE 000
+  0()
+
+
+
+TROOP 1977
+ PAGE 000
+  0()
+
+
+
+TROOP 1978
+ PAGE 000
+  0()
+
+
+
+TROOP 1979
+ PAGE 000
+  0()
+
+
+
+TROOP 1980
+ PAGE 000
+  0()
+
+
+
+TROOP 1981
+ PAGE 000
+  0()
+
+
+
+TROOP 1982
+ PAGE 000
+  0()
+
+
+
+TROOP 1983
+ PAGE 000
+  0()
+
+
+
+TROOP 1984
+ PAGE 000
+  0()
+
+
+
+TROOP 1985
+ PAGE 000
+  0()
+
+
+
+TROOP 1986
+ PAGE 000
+  0()
+
+
+
+TROOP 1987
+ PAGE 000
+  0()
+
+
+
+TROOP 1988
+ PAGE 000
+  0()
+
+
+
+TROOP 1989
+ PAGE 000
+  0()
+
+
+
+TROOP 1990
+ PAGE 000
+  0()
+
+
+
+TROOP 1991
+ PAGE 000
+  0()
+
+
+
+TROOP 1992
+ PAGE 000
+  0()
+
+
+
+TROOP 1993
+ PAGE 000
+  0()
+
+
+
+TROOP 1994
+ PAGE 000
+  0()
+
+
+
+TROOP 1995
+ PAGE 000
+  0()
+
+
+
+TROOP 1996
+ PAGE 000
+  0()
+
+
+
+TROOP 1997
+ PAGE 000
+  0()
+
+
+
+TROOP 1998
+ PAGE 000
+  0()
+
+
+
+TROOP 1999
+ PAGE 000
+  0()
+
+
+
+TROOP 2000
+ PAGE 000
+  0()

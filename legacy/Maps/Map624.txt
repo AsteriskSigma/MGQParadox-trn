@@ -1,0 +1,1650 @@
+
+DisplayName "Grand Theater"
+
+
+
+EVENT   1
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,625,7,13,0,0)
+  0()
+
+
+
+EVENT   2
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,625,7,13,0,0)
+  0()
+
+
+
+EVENT   3
+ PAGE   1
+  If(1,1030,0,1,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Pianist>Ahh, my soul is bursting! My fingers are responding to Saki-chan's heart!")
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Pianist>Buuurning! My soul is buurningg! Saki-chaan! AAAA, SAKI-CHAAAN!!")
+   0()
+  EndIf()
+  If(1,1030,0,2,1)
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("\\n<Pianist>My soul isn't bursting, and my fingers are no longer responding to anyone's heart... I can only play the piano normally, matching the music...")
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   4
+ PAGE   1
+  // condition: switch 1075 is ON
+  // condition: switch 1074 is ON
+  If(2,"A",1)
+   ChangeSelfSwitch("A",0)
+   ChangeVariable(1037,1037,1,0,1)
+   0()
+  EndIf()
+  ShowMessageFace("hituzi_fc1",3,0,2,1)
+  ShowMessage("\\n<Mary>The more I drink, the stronger I get... *gulp**gulp*...")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("It's our sheep...")
+  ShowMessageFace("hituzi_fc1",3,0,2,3)
+  ShowMessage("\\n<Mary>Uehehehehe...")
+  ShowMessageFace("hituzi_fc1",7,0,2,4)
+  ShowMessage("\\n<Mary>*gulp**gulp**gulp*...")
+  ShowMessageFace("hituzi_fc1",3,0,2,5)
+  ShowMessage("\\n<Mary>Uehehehehe...")
+  ChangeSwitch(31,31,0)
+  If(6,-1,6)
+   205(-1,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x46,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x08,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x09,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x15,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+   0()
+  EndIf()
+  217()
+  205(8,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x12,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x2a,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x08,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x08,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x08,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x08,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x08,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x08,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x08,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x08,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x08,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x08,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x08,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  205(0,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x08,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x29,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x16,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  RunCommonEvent(312)
+  205(8,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x46,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x26,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x07,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x06,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x06,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x06,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x31,0x3b,0x0c,0x5b,0x06,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x21,0x3b,0x0c,0x5b,0x06,0x69,0x24,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  205(0,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x46,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x27,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x2a,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x07,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x06,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x06,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x06,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x2c,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  RunCommonEvent(313)
+  0()
+ PAGE   2
+  // condition: party contains actor #74
+  0()
+ PAGE   3
+  // condition: party contains actor #75
+  0()
+
+
+
+EVENT   5
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Dancer>What's with that Saki girl?! The stage was supposed to be mine today!!")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("111")
+  ShowMessageFace("suika_fc1",0,0,2,2)
+  ShowMessage("\\n<Melon>Eat some watermelon and calm down...")
+  EndEventProcessing()
+  DefineLabel("142")
+  ShowMessageFace("bander_fc1",0,0,2,3)
+  ShowMessage("\\n<Banachi>Whenever someone succeeds, there's always someone gnashing their teeth in the shadows. ...Though this might be a little different from that.")
+  EndEventProcessing()
+  0()
+ PAGE   2
+  // condition: variable 1030 >= 2
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Dancer>It's my first time seeing customers react so badly to my show...")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("100")
+  ShowMessageFace("rahure_fc1",1,0,2,2)
+  ShowMessage("\\n<Fleesia>Shall I fire everyone up with a floral scent...?")
+  EndEventProcessing()
+  DefineLabel("155")
+  ShowMessageFace("saki_fc1",3,0,2,3)
+  ShowMessage("\\n<Saki>Sorry about that☆")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   6
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Young Girl>'Saki-chan,' 'Saki-chan.' Hmph... The men in this world have knotholes for eyes!")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("99")
+  ShowMessageFace("namazu_fc1",0,0,2,2)
+  ShowMessage("\\n<Gigi>If she could only turn that anger into personal strength... Unfortunately, I'm sure she'll just direct it towards sabotaging others instead.")
+  EndEventProcessing()
+  DefineLabel("163")
+  ShowMessageFace("lily_fc1",3,0,2,3)
+  ShowMessage("\\n<Lily>Jealousy is so ugly...")
+  EndEventProcessing()
+  0()
+ PAGE   2
+  // condition: variable 1030 >= 2
+  If(1,1001,0,29,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Young Girl>I understand that Saki-chan left... I was jealous of that girl.")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("99")
+   ShowMessageFace("namazu_fc1",0,0,2,2)
+   ShowMessage("\\n<Gigi>The fact you admitted your unsightliness might mean you have matured.")
+   EndEventProcessing()
+   DefineLabel("120")
+   ShowMessageFace("page257_fc1",0,0,2,3)
+   ShowMessage("\\n<Yoko>Isn't jealousy great? If not for jealousy, romance novels would lose half their content.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,30,1)
+   ShowMessageFace("",0,0,2,4)
+   ShowMessage("【Young girl】")
+   ShowMessage("This theater will not change whenever it comes.")
+   ShowMessage("Everyone wants to forget, worry about the world ......")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   7
+ PAGE   1
+  If(1,1030,0,1,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Merchant>Maybe if I sold Saki-chan handshake tickets... It's a great idea, it will work!")
+   0()
+  EndIf()
+  If(1,1030,0,2,1)
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Merchant>Saki-chan handshake tickets... I sold lots of them, but the person herself is gone...")
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("\\n<Merchant>...There's no choice but to shake their hands myself, right?")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("102")
+   ShowMessageFace("youko_fc1",2,0,2,4)
+   ShowMessage("\\n<Kitsu>This will turn into a riot...")
+   EndEventProcessing()
+   DefineLabel("155")
+   ShowMessageFace("saki_fc1",2,0,2,5)
+   ShowMessage("\\n<Saki>I don't remember approving this...")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   8
+ PAGE   1
+  // condition: switch 31 is ON
+  0()
+
+EVENT   32
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,625,7,13,0,0)
+  0()
+
+
+
+EVENT   60
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,337,29,44,0,0)
+  ChangeSwitch(31,31,1)
+  0()
+
+
+
+EVENT   61
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,337,30,44,0,0)
+  ChangeSwitch(31,31,1)
+  0()
+
+
+
+EVENT   75
+ PAGE   1
+  PictureDisplay(5,"ct_saki2",0,0,0,0,100,100,0,0)
+  PictureMove(5,null,0,0,0,0,100,100,255,0,30,true)
+  If(2,"A",1)
+   ShowMessageFace("saki_fc1",3,0,2,1)
+   ShowMessage("\\n<Saki>Hug you♪ until your heart is in my hands ♪!Hug you ♪! Forcibly steal your lips♪!")
+   PictureDisplay(5,"ct_saki1",0,0,0,0,100,100,255,0)
+   ShowMessageFace("saki_fc1",3,0,2,2)
+   ShowMessage("\\n<Saki>I'll take you there♪ towards the sky ♪! I'll take you there♪ to the abyss of dreams ♪!")
+   PictureDisplay(5,"80_saki_st03",0,0,0,0,100,100,255,0)
+   ShowMessageFace("saki_fc1",2,0,2,3)
+   ShowMessage("\\n<Saki>...Hey, what are you doing up here? No touching!")
+   ShowMessageFace("ruka_fc1",0,0,2,4)
+   ShowMessage("\\n<Luka>Um, could you please quit monopolizing the stage? You're causing problems for the manager and everyone else.")
+   PictureDisplay(5,"80_saki_st01",0,0,0,0,100,100,255,0)
+   ShowMessageFace("saki_fc1",0,0,2,5)
+   ShowMessage("\\n<Saki>I'm not bothering anyone, right? You guys all love Saki, right♪?")
+   ShowMessageFace("",0,0,2,6)
+   ShowMessage("\\n<Fan A>UOOOAAA!")
+   ShowMessageFace("",0,0,2,7)
+   ShowMessage("\\n<Fan B>SAKI-CHAAAN!")
+   PictureDisplay(5,"80_saki_st03",0,0,0,0,100,100,255,0)
+   ShowMessageFace("saki_fc1",2,0,2,8)
+   ShowMessage("\\n<Saki>See? Everyone's cheering me on. Are you going to ruin the show after that?")
+   ShowChoices(strings("Interfere","Don't","SAKI-CHAAAN!"),2)
+   IfPlayerPicksChoice(0,null)
+    ShowMessageFace("saki_fc1",2,0,2,9)
+    ShowMessage("\\n<Saki>What a pain in the ass... Are you guys stalkers or something?")
+    PictureDisplay(5,"80_saki_st04",0,0,0,0,100,100,255,0)
+    ShowMessageFace("saki_fc1",3,0,2,10)
+    ShowMessage("\\n<Saki>In that case, Saki will beat you up♪! Everyone, give me your support☆")
+    ShowMessageFace("",0,0,2,11)
+    ShowMessage("\\n<Fan A>UOOoOoOo!!")
+    ShowMessageFace("",0,0,2,12)
+    ShowMessage("\\n<Fan B>Saki-chaaan!")
+    If(4,155,0)
+     ShowMessageFace("saki_fc1",0,0,2,13)
+     ShowMessage("\\n<Saki>Oh? A Saki look-alike?")
+     ShowMessageFace("saki_fc1",0,0,2,14)
+     ShowMessage("\\n<Saki'>You're Saki as well, so... you probably know whether I'm just a look-alike or not, right?")
+     ShowMessageFace("saki_fc1",3,0,2,15)
+     ShowMessage("\\n<Saki>Certainly, there's no way to cheat Saki's eyes. You aren't a fake, but the real Saki-chan☆")
+     ShowMessageFace("saki_fc1",0,0,2,16)
+     ShowMessage("\\n<Saki'>Let's make this a double-Saki duet☆")
+     0()
+    EndIf()
+    PictureClear(5)
+    SetBattleBGM(bytes(0x04,0x08,0x6f,0x3a,0x0d,0x52,0x50,0x47,0x3a,0x3a,0x42,0x47,0x4d,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x73,0x61,0x6b,0x69,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69))
+    ChangeSwitch(22,22,0)
+    Battle(0,251,false,false)
+    ChangeSwitch(22,22,1)
+    SetBattleBGM(bytes(0x04,0x08,0x6f,0x3a,0x0d,0x52,0x50,0x47,0x3a,0x3a,0x42,0x47,0x4d,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0b,0x62,0x61,0x74,0x74,0x6c,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69))
+    241(bytes(0x04,0x08,0x6f,0x3a,0x0d,0x52,0x50,0x47,0x3a,0x3a,0x42,0x47,0x4d,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x10,0x73,0x63,0x65,0x6e,0x65,0x5f,0x63,0x6f,0x6d,0x69,0x32,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69))
+    PictureDisplay(5,"80_saki_st03",0,0,0,0,100,100,0,0)
+    PictureMove(5,null,0,0,0,0,100,100,255,0,30,true)
+    ChangeSelfSwitch("A",0)
+    355("gain_medal(27)")
+    ShowMessageFace("saki_fc1",2,0,2,17)
+    ShowMessage("\\n<Saki>Saki lost... I'm sorry, my fans...")
+    ShowMessageFace("",0,0,2,18)
+    ShowMessage("\\n<Fan A>UOOoOoOo!!")
+    ShowMessageFace("",0,0,2,19)
+    ShowMessage("\\n<Fan B>Saki-chaaan!")
+    ShowMessageFace("saki_fc1",2,0,2,20)
+    ShowMessage("\\n<Saki>Saki's dream is to become the world's top idol, and yet... To think that dream would end here...")
+    If(0,6,0)
+     ShowMessageFace("sonia_fc2",2,0,2,21)
+     ShowMessage("\\n<Sonya>It's not that big of a deal... We just want you to stop hogging the stage.")
+     0()
+    Else()
+     ShowMessageFace("ruka_fc1",0,0,2,22)
+     ShowMessage("\\n<Luka>It's nothing as exaggerated as that... All we want is for you to stop monopolizing this stage.")
+     0()
+    EndIf()
+    PictureDisplay(5,"80_saki_st01",0,0,0,0,100,100,255,0)
+    ShowMessageFace("saki_fc1",0,0,2,23)
+    ShowMessage("\\n<Saki>Hey, you people are travelers, right? Would you take Saki with you?")
+    DefineLabel("Friend")
+    ShowMessageFace("ruka_fc1",0,0,2,24)
+    ShowMessage("\\n<Luka>Umm...")
+    ShowChoices(strings("Bring her with you","Refuse"),2)
+    IfPlayerPicksChoice(0,null)
+     PictureDisplay(5,"80_saki_st04",0,0,0,0,100,100,255,0)
+     ShowMessageFace("saki_fc1",3,0,2,25)
+     ShowMessage("\\n<Saki>Saki is really, really happy☆! Let's have lots more fun together! ♪")
+     PictureClear(5)
+     205(0,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x09,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x2a,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x0f,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x2c,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+     355("add_actor_ex(155)")
+     249(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0c,0x66,0x61,0x6e,0x66,0x61,0x6c,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69))
+     ShowMessageFace("",0,0,2,26)
+     ShowMessage("Saki has joined the party!")
+     Wait(60)
+     ShowMessageFace("",0,0,2,27)
+     ShowMessage("\\n<Fan A>No way... Saki-chan's shows are going to end...")
+     ShowMessageFace("",0,0,2,28)
+     ShowMessage("\\n<Fan B>No, this is merely the beginning! Saki-chan will become a legend during her country-wide tour!")
+     ShowMessageFace("",0,0,2,29)
+     ShowMessage("\\n<Fan C>UOOooOoo! I'll follow you anywhereee!")
+     ShowMessageFace("saki_fc1",3,0,2,30)
+     ShowMessage("\\n<Saki>Thanks for your support, everyone☆!")
+     ShowMessageFace("",0,0,2,31)
+     ShowMessage("\\n<All Fans>UOOooOOo!")
+     If(0,6,0)
+      ShowMessageFace("sonia_fc4",0,0,2,32)
+      ShowMessage("\\n<Sonya>...Well then, shall we get going?")
+      0()
+     Else()
+      ShowMessageFace("ruka_fc1",0,0,2,33)
+      ShowMessage("\\n<Luka>...Let's go, then.")
+      0()
+     EndIf()
+     ChangeVariable(1030,1030,0,0,2)
+     250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+     TeleportPlayer(0,337,29,44,2,0)
+     EndEventProcessing()
+     0()
+    IfPlayerPicksChoice(1,null)
+     PictureDisplay(5,"80_saki_st03",0,0,0,0,100,100,255,0)
+     ShowMessageFace("saki_fc1",2,0,2,34)
+     ShowMessage("\\n<Saki>No waaay... That makes Saki saaad...")
+     241(bytes(0x04,0x08,0x6f,0x3a,0x0d,0x52,0x50,0x47,0x3a,0x3a,0x42,0x47,0x4d,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x73,0x61,0x6b,0x69,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69))
+     PictureDisplay(5,"80_saki_st04",0,0,0,0,100,100,255,0)
+     ShowMessageFace("saki_fc1",3,0,2,35)
+     ShowMessage("\\n<Saki>I'll turn this sadness into a song! ...*sniffle* Toniiight. ♪")
+     ShowMessageFace("saki_fc1",3,0,2,36)
+     ShowMessage("\\n<Saki>Inside my tears♪*sniffle* toniiight♪ under the night stars...")
+     If(0,6,0)
+      ShowMessageFace("sonia_fc3",2,0,2,37)
+      ShowMessage("\\n<Sonya>Hey! You're gonna keep hogging the stage?!")
+      0()
+     Else()
+      ShowMessageFace("ruka_fc1",0,0,2,38)
+      ShowMessage("\\n<Luka>Are you going to continue monopolizing the stage...?")
+      0()
+     EndIf()
+     ShowMessageFace("",0,0,2,39)
+     ShowMessage("\\n<Fan A>UOooOOoOHH!!")
+     ShowMessageFace("",0,0,2,40)
+     ShowMessage("\\n<Fan B>Saki-chaaan!")
+     PictureClear(5)
+     EndEventProcessing()
+     0()
+    404()
+    0()
+   IfPlayerPicksChoice(1,null)
+    PictureDisplay(5,"80_saki_st04",0,0,0,0,100,100,255,0)
+    ShowMessageFace("saki_fc1",3,0,2,41)
+    ShowMessage("\\n<Saki>Saki is happy that you understand. ♪ And I'll be happy if you support me together with everyone else ☆")
+    205(-1,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x07,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x15,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+    241(bytes(0x04,0x08,0x6f,0x3a,0x0d,0x52,0x50,0x47,0x3a,0x3a,0x42,0x47,0x4d,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x73,0x61,0x6b,0x69,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69))
+    PictureClear(5)
+    EndEventProcessing()
+    0()
+   IfPlayerPicksChoice(2,null)
+    PictureDisplay(5,"80_saki_st04",0,0,0,0,100,100,255,0)
+    ShowMessageFace("saki_fc1",3,0,2,42)
+    ShowMessage("\\n<Saki>Thanks for your support♪, but please don't come on stage. ♪")
+    205(-1,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x07,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x15,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+    241(bytes(0x04,0x08,0x6f,0x3a,0x0d,0x52,0x50,0x47,0x3a,0x3a,0x42,0x47,0x4d,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x73,0x61,0x6b,0x69,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69))
+    PictureClear(5)
+    EndEventProcessing()
+    0()
+   404()
+   0()
+  Else()
+   ShowMessageFace("saki_fc1",3,0,2,43)
+   ShowMessage("\\n<Saki>Hug you♪ until your heart is in my hands ♪!Hug you ♪! Forcibly steal your lips♪!")
+   PictureDisplay(5,"80_saki_st01",0,0,0,0,100,100,255,0)
+   ShowMessageFace("saki_fc1",0,0,2,44)
+   ShowMessage("\\n<Saki>...Ah, you guys again. Will you take Saki with you for a country-wide tour?")
+   JumpToLabel("Friend")
+   0()
+  EndIf()
+  0()
+ PAGE   2
+  // condition: variable 1030 >= 2
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Dancer>Reach them, my heaaaart... *twinkle*☆")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("155")
+  ShowMessageFace("saki_fc1",3,0,2,2)
+  ShowMessage("\\n<Saki>I guess your heart is a little lacking...?")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   76
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Dancer>When you master the Dancer and Bard jobs, you can become a Superstar. You'll learn a lot of useful dances and songs.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Dancer>I look up to them... I'm charmed by them...")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("59")
+  ShowMessageFace("mdg_fc1",0,0,2,3)
+  ShowMessage("\\n<Ragora>Superstars! You admire them as well...")
+  EndEventProcessing()
+  DefineLabel("155")
+  ShowMessageFace("saki_fc1",3,0,2,4)
+  ShowMessage("\\n<Saki>Of course, Saki-chan is a superstar already☆ I'll support everyone with songs and dances. ♪")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   181
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Old Man>Saki-chaaan! *huff* *huff* ...Saki-chaaan!!")
+  0()
+ PAGE   2
+  // condition: variable 1030 >= 2
+  0()
+
+
+
+EVENT   182
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Man>Saki-chaan! Haa, haaa, Saki-chaAAaaaAan!!")
+  0()
+ PAGE   2
+  // condition: variable 1030 >= 2
+  0()
+
+
+
+EVENT   183
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Youth>UOooooh! Saki-chaaan!")
+  0()
+ PAGE   2
+  // condition: variable 1030 >= 2
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Youth>UOooooh! Saki-chaaan!")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Youth>...I know, Saki-chan is no longer here...")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("155")
+  ShowMessageFace("saki_fc1",3,0,2,3)
+  ShowMessage("\\n<Saki>I'm right here☆")
+  ShowMessageFace("",0,0,2,4)
+  ShowMessage("\\n<Youth>Woaaah...Saki-chan!!")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   184
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Dapper Gentleman>Pierce my heart! Saki-chaaan!")
+  0()
+ PAGE   2
+  // condition: variable 1030 >= 2
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Dapper Gentleman>It's about time I go home...")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("155")
+  ShowMessageFace("saki_fc1",0,0,2,2)
+  ShowMessage("\\n<Saki>It's rude to leave in the middle of a show. Watch it properly until the end☆")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Dapper Gentleman>Ohhh... Saki-chaaan!")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   185
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Young Girl>Kyaa! Wonderfuulll!")
+  0()
+ PAGE   2
+  // condition: variable 1030 >= 2
+  0()
+
+
+
+EVENT   186
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Gruff Man>OOOooOOohh! Saki-chwwwaaan!!")
+  0()
+ PAGE   2
+  // condition: variable 1030 >= 2
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Gruff Man>Saki-chwaaaannn!! Come baaaaaackkk!!")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("155")
+  ShowMessageFace("saki_fc1",3,0,2,2)
+  ShowMessage("\\n<Saki>I'm baack☆ I'm just passing by to let you know I'm doing fine, though...")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Gruff Man>I'll be rooting for you! I'll definitely be there for the next concert!")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   187
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Youth>Saki-chaaaan! Aaa-AAaAaaaaAAaaAAaa! AAaa! Sa-SaSaSaSaki-chwaAAaaAannn!!")
+  0()
+ PAGE   2
+  // condition: variable 1030 >= 2
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Youth>Ugh, no one's excited about it any more...")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("155")
+  ShowMessageFace("saki_fc1",2,0,2,2)
+  ShowMessage("\\n<Saki>That's true, no one looks excited... I feel a little responsible.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   188
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Minstrel>These feelings split me apart! Saki-chan splits me apart!!")
+  0()
+ PAGE   2
+  // condition: variable 1030 >= 2
+  0()
+
+
+
+EVENT   189
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Father")
+  ShowMessage("Saki is God!")
+  ShowMessage("Oh God! You are Saki!")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("26")
+  ShowMessageFace("iriasu_fc4",2,0,2,2)
+  ShowMessage("【Iliad】")
+  ShowMessage("God is here.")
+  ShowMessage("I am here.")
+  EndEventProcessing()
+  0()
+ PAGE   2
+  // condition: variable 1030 >= 2
+  0()
+
+
+
+EVENT   190
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Man>Saki-chaaan! SAKI-CHAAAaAAaaaAAn!!")
+  0()
+ PAGE   2
+  // condition: variable 1030 >= 2
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Man>I'm waiting, waiting for the day Saki-chan comes back...")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("155")
+  ShowMessageFace("saki_fc1",3,0,2,2)
+  ShowMessage("\\n<Saki>Take care of me during my next concert☆")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Man>O-of course! I'll be there even if I have to sell my wife to a tool shop to buy a ticket!")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   191
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Youth>Saki-chaaan! VUUOOOOHH!")
+  0()
+ PAGE   2
+  // condition: variable 1030 >= 2
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Youth>Saki-chan...")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("155")
+  ShowMessageFace("saki_fc1",3,0,2,2)
+  ShowMessage("\\n<Saki>You aren't lively enough☆")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Youth>HOOOOAAAA!! IT'S SAKI-CHAAAAN!!")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   192
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Thief>Saki-chaaan! Saki-chaaan!")
+  0()
+ PAGE   2
+  // condition: variable 1030 >= 2
+  0()
+
+
+
+EVENT   193
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Soldier>Saki-chan *twinkle*☆*twinkle*☆*twinkle**twinkle**twinkle*☆")
+  0()
+ PAGE   2
+  // condition: variable 1030 >= 2
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Soldier>*twinkle*☆*twi-twinkle*Household appliances*twinkle**twinkle**twinkle*☆*twinkle**twinkle**twinkle**twinkle**twinkle*.....☆☆☆☆☆☆☆")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("His eyes are dead...")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("155")
+  ShowMessageFace("saki_fc1",2,0,2,3)
+  ShowMessage("\\n<Saki>Did I charm him too much...?")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   194
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Old Man>Saki-chan is a messenger of the Goddess... UOHH, so divine...")
+  0()
+ PAGE   2
+  // condition: variable 1030 >= 2
+  0()
+
+
+
+EVENT   195
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Youth>Reach Saki-chan, oh feelings of mine!")
+  0()
+ PAGE   2
+  // condition: variable 1030 >= 2
+  0()
+
+
+
+EVENT   196
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Soldier>OOOoOOoo! UOoOoOoo!!")
+  0()
+ PAGE   2
+  // condition: variable 1030 >= 2
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Soldier>Oooo... ooo...")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("155")
+  ShowMessageFace("saki_fc1",3,0,2,2)
+  ShowMessage("\\n<Saki>Cheer up, I'll have a concert here again some time☆")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Soldier>OOOoOOoo! UOoOoOoo!!")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   197
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Boy>I love you, Saki-chan!")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("118")
+  ShowMessageFace("meia_fc1",1,0,2,2)
+  ShowMessage("\\n<Meia>Well, I see she's popular even among children...")
+  EndEventProcessing()
+  0()
+ PAGE   2
+  // condition: variable 1030 >= 2
+  0()
+
+
+
+EVENT   198
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Swordsman>UOOOoOOoOO!!")
+  0()
+ PAGE   2
+  // condition: variable 1030 >= 2
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Swordsman>I can't get fired up...")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("155")
+  ShowMessageFace("saki_fc1",3,0,2,2)
+  ShowMessage("\\n<Saki>Want me to set you on fire again...?")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Swordsman>OOOoOoOOooo!! I'm on fire!!")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   199
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Soldier>Saki-chan is the best after all!")
+  0()
+ PAGE   2
+  // condition: variable 1030 >= 2
+  0()
+
+
+
+EVENT   200
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Soldier>I can feel fire-hot pathos!")
+  0()
+ PAGE   2
+  // condition: variable 1030 >= 2
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Soldier>This isn't bad, but... compared to Saki-chan, it's...")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("155")
+  ShowMessageFace("saki_fc1",0,0,2,2)
+  ShowMessage("\\n<Saki>Just like there's only one Saki, there's only one of that girl. ♪ You should play the glad game ☆")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Soldier>That's right... I overlapped Saki-chan with that girl's appearance... That girl isn't Saki-chan, she's just an illusion I chased after!")
+  If(0,6,0)
+   ShowMessageFace("sonia_fc3",2,0,2,4)
+   ShowMessage("\\n<Sonya>Gross!!")
+   0()
+  EndIf()
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   202
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Manager>I'm the manager of this venerable Grand Theater. But lately I spend every day drinking...")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Manager>With all the guards brainwashed, it's ended up like this. The schedule's a mess, and I'm flooded with angry complaints and threats.")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Manager>Travelers, please do something about Saki-chan, even if you have to resort to force! Ah... but please don't resort to bloodshed while on stage.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("57")
+  ShowMessageFace("inp_fc3",0,0,2,4)
+  ShowMessage("\\n<Rumi>We'll keep the damage to her body, we won't touch her face...")
+  EndEventProcessing()
+  DefineLabel("141")
+  ShowMessageFace("mino_fc1",2,0,2,5)
+  ShowMessage("\\n<Mina>How are we supposed to beat her into a bloody pulp without bloodshed?")
+  EndEventProcessing()
+  0()
+ PAGE   2
+  // condition: variable 1030 >= 2
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Manager>With Saki-chan gone, the number of customers coming in has decreased... In the end, all that's left to me is to spend my days drinking...")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Manager>Ahh, if only Saki-chan returned... If only she didn't occupy the stage all the time, she'd be the greatest star of them all...")
+  If(4,155,0)
+   ShowMessageFace("saki_fc1",0,0,2,3)
+   ShowMessage("\\n<Saki>If you say so, I'll make a miraculous comeback☆ Saki-chan will do her best to help. ♪")
+   ShowMessageFace("",0,0,2,4)
+   ShowMessage("\\n<Manager>Ohh, Saki-chaaan! You're welcome any time!")
+   ShowMessageFace("",0,0,2,5)
+   ShowMessage("\\n<Manager>Also, Saki-chan's fellow travelers... If you have any shows you wish to perform, I shall prepare the stage for you.")
+   ShowMessageFace("ruka_fc1",0,0,2,6)
+   ShowMessage("\\n<Luka>Eh? For us too?!")
+   ShowMessageFace("",0,0,2,7)
+   ShowMessage("\\n<Manager>Saki-chan, I have one more thing to ask of you... Could you do that night show again?")
+   ShowMessageFace("saki_fc1",3,0,2,8)
+   ShowMessage("\\n<Saki>By 'that,' you mean the night live? Yup, leave it to me☆")
+   ShowMessageFace("ruka_fc1",0,0,2,9)
+   ShowMessage("\\n<Luka>What's a night live...?")
+   ShowMessageFace("",0,0,2,10)
+   ShowMessage("The party can now perform on the stage! Also, Saki can now give a 'Night Live' show!")
+   ChangeVariable(1030,1030,0,0,3)
+   EndEventProcessing()
+   0()
+  Else()
+   ShowMessageFace("ruka_fc1",0,0,2,11)
+   ShowMessage("\\n<Luka>......")
+   ShowMessageFace("",0,0,2,12)
+   ShowMessage("The manager wants Saki to come back... Let's bring her here.")
+   0()
+  EndIf()
+  0()
+ PAGE   3
+  // condition: variable 1030 >= 3
+  ChangeSwitch(601,700,1)
+  ChangeSwitch(31,31,1)
+  ChangeSwitch(32,32,1)
+  ChangeSwitch(33,33,1)
+  ChangeSwitch(34,34,1)
+  ChangeSwitch(35,35,1)
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Manager>Would you like to do a show? Or would you like to enjoy 'Saki-chan's Night Live'?")
+  355("unlimited_choices(11, [\"Stage 1\",")
+  655("\"Stage 2\",\"Stage 3\",\"Stage 4\",")
+  655("\"Stage 5\", \"Stage 6\", \"Stage 7\", \"Stage 8\", ")
+  655("\"Saki-chan's Live Night\", \"Never mind\"])")
+  If(1,11,0,0,0)
+   RunCommonEvent(121)
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,11,0,1,0)
+   RunCommonEvent(122)
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,11,0,2,0)
+   RunCommonEvent(123)
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,11,0,3,0)
+   RunCommonEvent(124)
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,11,0,4,0)
+   RunCommonEvent(125)
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,11,0,5,0)
+   RunCommonEvent(126)
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,11,0,6,0)
+   RunCommonEvent(127)
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,11,0,7,0)
+   RunCommonEvent(128)
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,11,0,8,0)
+   If(0,25,1)
+    ShowMessageFace(binary"",0,0,2,2)
+    ShowMessage("Chaper 1 has not been integrated, so the Night Live is unavailable.")
+    EndEventProcessing()
+    0()
+   EndIf()
+   ShowChoices(strings("Secret Course (100G)","Match Course (500G)","Main Course (1000G)","Never mind"),4)
+   IfPlayerPicksChoice(0,null)
+    If(8,527)
+     ShowMessageFace("",0,0,2,3)
+     ShowMessage("\\n<Manager>Oh, you have the Saki Pass. I won't charge you in that case.")
+     ShowMessageFace("",0,0,2,4)
+     ShowMessage("\\n<Manager>Well then, please enjoy Saki-chan's Night Live!")
+     242(1)
+     355("call_novel_scene(319)")
+     EndEventProcessing()
+     0()
+    Else()
+     If(7,100,0)
+      125(1,0,100)
+      ShowMessageFace("",0,0,2,5)
+      ShowMessage("\\n<Manager>Well then, please enjoy Saki-chan's Night Live!")
+      242(1)
+      355("call_novel_scene(319)")
+      EndEventProcessing()
+      0()
+     Else()
+      ShowMessageFace("",0,0,2,6)
+      ShowMessage("\\n<Manager>Oh, you don't have enough money...")
+      EndEventProcessing()
+      0()
+     EndIf()
+     0()
+    EndIf()
+    0()
+   IfPlayerPicksChoice(1,null)
+    If(8,527)
+     ShowMessageFace("",0,0,2,7)
+     ShowMessage("\\n<Manager>Oh, you have the Saki Pass. I won't charge you in that case.")
+     ShowMessageFace("",0,0,2,8)
+     ShowMessage("\\n<Manager>Well then, please enjoy Saki-chan's Night Live!")
+     242(1)
+     355("call_novel_scene(320)")
+     EndEventProcessing()
+     0()
+    Else()
+     If(7,500,0)
+      125(1,0,500)
+      ShowMessageFace("",0,0,2,9)
+      ShowMessage("\\n<Manager>Well then, please enjoy Saki-chan's Night Live!")
+      242(1)
+      355("call_novel_scene(320)")
+      EndEventProcessing()
+      0()
+     Else()
+      ShowMessageFace("",0,0,2,10)
+      ShowMessage("\\n<Manager>Oh, you don't have enough money...")
+      EndEventProcessing()
+      0()
+     EndIf()
+     0()
+    EndIf()
+    0()
+   IfPlayerPicksChoice(2,null)
+    If(8,527)
+     ShowMessageFace("",0,0,2,11)
+     ShowMessage("\\n<Manager>Oh, you have the Saki Pass. I won't charge you in that case.")
+     ShowMessageFace("",0,0,2,12)
+     ShowMessage("\\n<Manager>Well then, please enjoy Saki-chan's Night Live!")
+     242(1)
+     355("call_novel_scene(321)")
+     EndEventProcessing()
+     0()
+    Else()
+     If(7,1000,0)
+      125(1,0,1000)
+      ShowMessageFace("",0,0,2,13)
+      ShowMessage("\\n<Manager>Well then, please enjoy Saki-chan's Night Live!")
+      242(1)
+      355("call_novel_scene(321)")
+      EndEventProcessing()
+      0()
+     Else()
+      ShowMessageFace("",0,0,2,14)
+      ShowMessage("\\n<Manager>Oh, you don't have enough money...")
+      EndEventProcessing()
+      0()
+     EndIf()
+     0()
+    EndIf()
+    0()
+   IfPlayerPicksChoice(3,null)
+    EndEventProcessing()
+    0()
+   404()
+   0()
+  EndIf()
+  If(1,11,0,9,0)
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+ PAGE   4
+  // condition: switch 2119 is ON
+  0()
+
+
+
+EVENT   203
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,337,29,44,0,0)
+  ChangeSwitch(31,31,1)
+  0()
+
+
+
+EVENT   204
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Bunny>Saki-chan *twinkle*☆")
+  0()
+
+
+
+EVENT   205
+ PAGE   1
+  If(1,1030,0,1,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Bunny>Saki-chan's concert is a huge success... but the comedians and dancers who had their shows canceled are really angry.")
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Bunny>It seems like the manager has problems with paying the contract penalties... I hope Saki-chan sells big time.")
+   0()
+  EndIf()
+  If(1,1030,0,2,1)
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("\\n<Bunny>With Saki-chan no longer here, the theater is in a slump... Nothing goes well in the world, huh...")
+   0()
+  EndIf()
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("143")
+  ShowMessageFace("eva_fc1",0,0,2,4)
+  ShowMessage("\\n<Eva>I'm somehow relieved to see people having trouble.")
+  EndEventProcessing()
+  DefineLabel("181")
+  ShowMessageFace("gaistvine_fc1",0,0,2,5)
+  ShowMessage("\\n<Lisa>From what I see, the ancient Grand Theater... can not be judged from a commercial standpoint.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   206
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Bunny>Welcome! Drink as much as you like. ♪")
+  Shop(0,428,0,0,false)
+  605(0,431,0,0)
+  0()
+
+
+
+EVENT   207
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Performer>We'll go bankrupt like this... but Saki-chan is so cuuute...")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Performer>...Saki-chan *twinkle*☆")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("78")
+  ShowMessageFace("syesta_fc1",0,0,2,3)
+  ShowMessage("\\n<Shesta>*twinkle*...?")
+  EndEventProcessing()
+  0()
+ PAGE   2
+  // condition: variable 1030 >= 2
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Performer>...Saki-chan *twinkle*☆")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("525")
+  ShowMessageFace("sonia_fc4",0,0,2,2)
+  ShowMessage("\\n<Sonya>He looks thoroughly infected...")
+  EndEventProcessing()
+  DefineLabel("155")
+  ShowMessageFace("saki_fc1",3,0,2,3)
+  ShowMessage("\\n<Saki>Thanks for your support☆")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   208
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Youth>Saki-chan is a succubus, but... she's an idol, so she won't suck men's semen.")
+  ShowChoices(strings("Agreed","I don't think so"),0)
+  IfPlayerPicksChoice(0,null)
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Youth>Rather than a succubus, Saki-chan might be an angel.... Saki-chan... Ahhh... Saki-chan...")
+   0()
+  IfPlayerPicksChoice(1,null)
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("\\n<Youth>You know nothing! You don't even know that you know nothing!")
+   0()
+  404()
+  0()
+ PAGE   2
+  // condition: variable 1030 >= 2
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Youth>Ahh, Saki-chan...")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("155")
+  ShowMessageFace("saki_fc1",0,0,2,2)
+  ShowMessage("\\n<Saki>You called?")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Youth>An illusion... I can see a beautiful illusion...")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   209
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Man>I feel my heart become clean when I hear Saki-chan's singing...")
+  0()
+ PAGE   2
+  // condition: variable 1030 >= 2
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Man>I haven't heard Saki-chan's singing, and now my heart feels dirty...")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("155")
+  ShowMessageFace("saki_fc1",3,0,2,2)
+  ShowMessage("\\n<Saki>I'll refresh your heart a little☆")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Man>Ahh, I feel my heart being purified... I'll go to church and distribute some food for the poor...")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   210
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Gentleman>To think my heart would beat so hard at my age... No way... Am I in love?")
+  0()
+ PAGE   2
+  // condition: variable 1030 >= 2
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Gentleman>It feels lacking, this feeling... I feel lonely even in my home.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("155")
+  ShowMessageFace("saki_fc1",3,0,2,2)
+  ShowMessage("\\n<Saki>I'm having a country-wide tour, so wait for me☆")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Gentleman>Of course I'll come! Even if I have to sell all my property!")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   211
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Lady>What's so good about a girlie like that.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Lady>...Saki-chan *twinkle*☆")
+  0()
+ PAGE   2
+  // condition: variable 1030 >= 2
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Lady>...Saki-chan *twinkle*☆")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("155")
+  ShowMessageFace("saki_fc1",3,0,2,2)
+  ShowMessage("\\n<Saki>Thanks for your support☆")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   212
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Young Woman>Saki-chan-sama... Ahh, you are wonderful...")
+  0()
+ PAGE   2
+  // condition: variable 1030 >= 2
+  0()
+
+
+
+EVENT   213
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Man>Saki-chan is a shooting star sent by the heavens. She shines with her *twinkle*☆ and enchants us with happiness magic...")
+  0()
+ PAGE   2
+  // condition: variable 1030 >= 2
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Man>The shooting star has disappeared in the distant sky. But the happiness magic doesn't seem to disappear...")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("155")
+  ShowMessageFace("saki_fc1",3,0,2,2)
+  ShowMessage("\\n<Saki>I'll update the happiness magic now☆")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Man>The sun speaks to me. It took the form of a beautiful woman...")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   214
+ PAGE   1
+  ShowMessageFace("slime_fc1",0,0,2,1)
+  ShowMessage("\\n<Slime Girl>Yayayaaay! Saki-chan *twinkle*☆")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("53")
+  ShowMessageFace("slime_fc1",0,0,2,2)
+  ShowMessage("\\n<Lime>Let's *twinkle*A crowd.")
+  EndEventProcessing()
+  DefineLabel("54")
+  ShowMessageFace("bunnyslime_fc1",1,0,2,3)
+  ShowMessage("\\n<Bunni>Usausa *twinkle*☆")
+  EndEventProcessing()
+  0()
+ PAGE   2
+  // condition: variable 1030 >= 2
+  0()
+
+
+
+EVENT   215
+ PAGE   1
+  ShowMessageFace("slime_fc1",0,0,2,1)
+  ShowMessage("\\n<Slime Girl>Yaay! Saki-chan *twinkle*☆")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("53")
+  ShowMessageFace("slime_fc1",0,0,2,2)
+  ShowMessage("\\n<Lime>One day I'll *twinkle*Too.")
+  EndEventProcessing()
+  DefineLabel("54")
+  ShowMessageFace("bunnyslime_fc1",1,0,2,3)
+  ShowMessage("\\n<Bunni>Usausa *twinkle*☆")
+  EndEventProcessing()
+  0()
+ PAGE   2
+  // condition: variable 1030 >= 2
+  0()
+
+
+
+EVENT   216
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Youth>Haa, haa, Saki-chan... HAa HAa HAa... Unh!")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("109")
+  ShowMessageFace("kani_fc1",0,0,2,2)
+  ShowMessage("\\n<Soapy>Spurting in a place like this, how dirty. ...Want me to wash it for you?")
+  EndEventProcessing()
+  DefineLabel("120")
+  ShowMessageFace("page257_fc1",2,0,2,3)
+  ShowMessage("\\n<Yoko>The worst...")
+  EndEventProcessing()
+  0()
+ PAGE   2
+  // condition: variable 1030 >= 2
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Youth>Saki-chan... Come back...")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("155")
+  ShowMessageFace("saki_fc1",3,0,2,2)
+  ShowMessage("\\n<Saki>I'll come back here one in a while. ...Be a good boy until then☆")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Youth>Saki-chaAaAaan! I'll be a good boy!")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   217
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Old Man>......")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("There's no response. Excess excitation seems to have stopped his heart...")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("118")
+  ShowMessageFace("meia_fc1",3,0,2,3)
+  ShowMessage("\\n<Meia>Oh, that's serious.")
+  EndEventProcessing()
+  DefineLabel("133")
+  ShowMessageFace("zonbe_fc3",3,0,2,4)
+  ShowMessage("\\n<Zombies>A comrade... comradeee...")
+  EndEventProcessing()
+  0()
+ PAGE   2
+  // condition: variable 1030 >= 2
+  0()
+
+
+
+EVENT   218
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Youth>OOOOooOOooO! Saki-chaaan!!")
+  0()
+ PAGE   2
+  // condition: variable 1030 >= 2
+  0()
+
+
+
+EVENT   219
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Thief>I've had my most important thing stolen from me by Saki-chan! My heart!")
+  0()
+ PAGE   2
+  // condition: variable 1030 >= 2
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Thief>Those Saki-chan concerts were terrific. The old man's heart stopped from the excitement.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Thief>The old man...? Apparently he was resuscitated.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("155")
+  ShowMessageFace("saki_fc1",0,0,2,3)
+  ShowMessage("\\n<Saki>That's great. I wouldn't want someone to die during my concert☆")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   220
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Student>I no longer care about writing my report! Saki-chan is more important than my life!")
+  0()
+ PAGE   2
+  // condition: variable 1030 >= 2
+  0()
+
+
+
+EVENT   221
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Scholar>University? I don't care. Saki-chan's more important!")
+  0()
+ PAGE   2
+  // condition: variable 1030 >= 2
+  0()
+
+
+
+EVENT   222
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Scholar>My brain cells are swelling up! Saki-chan's song and dance are stimulating my brain!")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("41")
+  ShowMessageFace("stein_fc2",0,0,2,2)
+  ShowMessage("\\n<Promestein>My brain cells aren't stimulated by anything...")
+  EndEventProcessing()
+  0()
+ PAGE   2
+  // condition: variable 1030 >= 2
+  0()
+
+
+
+EVENT   223
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Minstrel>I'm thinking of passing on my heart's throbbing to the entire world.")
+  0()
+ PAGE   2
+  // condition: variable 1030 >= 2
+  0()
+
+
+
+EVENT   224
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Young Girl>Ahh, I admire her so much... I want to become Saki-chan too...")
+  0()
+ PAGE   2
+  // condition: variable 1030 >= 2
+  0()
+
+
+
+EVENT   225
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Maid>This world debut is no dream. Saki-chan's songs and dance will heal the world!")
+  0()
+ PAGE   2
+  // condition: variable 1030 >= 2
+  0()
+
+
+
+EVENT   226
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Merchant>I have work to do, but... I've become unable to leave this theater...")
+  0()
+ PAGE   2
+  // condition: variable 1030 >= 2
+  0()
+
+
+
+EVENT   227
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Man>Ahh, I feel like I'm climbing up to the heavens...")
+  0()
+ PAGE   2
+  // condition: variable 1030 >= 2
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Man>This is so-so.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("155")
+  ShowMessageFace("saki_fc1",3,0,2,2)
+  ShowMessage("\\n<Saki>Then come to listen to Saki's song again. I'll do the best concert ever☆")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Man>I'LL COME!!")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   228
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Strong Man>I've had my heart knocked out by Saki-chan. It's full of *twinkle* now.")
+  0()
+ PAGE   2
+  // condition: variable 1030 >= 2
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Strong Man>This isn't enough to resound in my heart...")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("155")
+  ShowMessageFace("saki_fc1",3,0,2,2)
+  ShowMessage("\\n<Saki>Then will you come to Saki's concert again?")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Strong Man>I WIIIILLL!!")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   229
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Gruff Man>This will certainly turn into a myth...")
+  0()
+ PAGE   2
+  // condition: variable 1030 >= 2
+  0()
+
+
+
+EVENT   230
+ PAGE   1
+  0()
+ PAGE   2
+  // condition: variable 1030 >= 2
+  0()
+
+
+
+EVENT   231
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Soldier>This man was spitting obscene words at Saki-chan, so I punished him. No need for any thanks, I just did what was right.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("88")
+  ShowMessageFace("jack_fc1",2,0,2,2)
+  ShowMessage("\\n<Pumpkin>He's enthusiastic, but kinda scary too...")
+  EndEventProcessing()
+  0()
+ PAGE   2
+  // condition: variable 1030 >= 2
+  0()
+
+
+
+EVENT   232
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Soldier>...Honestly, Saki-chan is a divine entity. How could he say such things to this pure angel...")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("86")
+  ShowMessageFace("name_s_fc1",2,0,2,2)
+  ShowMessage("\\n<Rosary>It's already turned into a cult. How sinful...")
+  EndEventProcessing()
+  0()
+ PAGE   2
+  // condition: variable 1030 >= 2
+  0()
+
+
+
+EVENT   233
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Gruff Man>Geez, screwing around like... Don't show yourself in front of Saki-chan again.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("122")
+  ShowMessageFace("sisterlamia_fc1",2,0,2,2)
+  ShowMessage("\\n<Sofia>Oh, Goddess... please grant salvation to this Sodom of violence and degeneration...")
+  EndEventProcessing()
+  0()
+ PAGE   2
+  // condition: variable 1030 >= 2
+  0()
+
+
+
+EVENT   235
+ PAGE   1
+  If(1,1030,0,1,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Dapper Gentleman>There's a casino downstairs. How about you try it out while drunk on Saki-chan's song?")
+   0()
+  EndIf()
+  If(1,1030,0,2,1)
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Dapper Gentleman>There's a casino downstairs. Please enjoy yourself.")
+   0()
+  EndIf()
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("103")
+  ShowMessageFace("kamuro_fc1",2,0,2,3)
+  ShowMessage("\\n<Kamuro>I wonder if I'll get yelled at for playing in a place like this...")
+  EndEventProcessing()
+  DefineLabel("121")
+  ShowMessageFace("page65537_fc1",2,0,2,4)
+  ShowMessage("\\n<Cornelia>Let's go in right away.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   236
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Manager's Wife>There's lots of customers today as well. I'll do my best working! ...Since my husband is busy complaining.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("64")
+  ShowMessageFace("pramia_fc1",0,0,2,2)
+  ShowMessage("\\n<Teeny>She's just like our hostess... I wonder if all people who manage are like that?")
+  EndEventProcessing()
+  DefineLabel("140")
+  ShowMessageFace("taran_fc1",0,0,2,3)
+  ShowMessage("\\n<Rachura>She seems sturdy... Do all merchants have to be of strong character?")
+  EndEventProcessing()
+  0()
+ PAGE   2
+  // condition: variable 1030 >= 2
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Manager's Wife>Life is full of ups and downs. I'll do my best working! ...Since my husband is busy complaining, as usual.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("64")
+  ShowMessageFace("pramia_fc1",0,0,2,2)
+  ShowMessage("\\n<Teeny>Hostess, cheers for your work today as well!")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Manager's Wife>...Hostess?")
+  EndEventProcessing()
+  DefineLabel("103")
+  ShowMessageFace("kamuro_fc1",0,0,2,4)
+  ShowMessage("\\n<Kamuro>What strong leadership she has... I'm unable to emulate that.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   238
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Maid>Madam is always positive. With that said, her husband is just as negative as she is positive.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("108")
+  ShowMessageFace("kai_fc1",0,0,2,2)
+  ShowMessage("\\n<Shelly>Making a husband like him stand up is a good wife's pride. Wait, I didn't mean 'stand up' in a weird way...")
+  EndEventProcessing()
+  DefineLabel("141")
+  ShowMessageFace("mino_fc1",0,0,2,3)
+  ShowMessage("\\n<Mina>Geez, what a troubling husband!")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   239
+ PAGE   1
+  If(1,1030,0,1,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Maid>I dream of debuting one day! ...For now, though, I lose myself in everyday work.")
+   0()
+  EndIf()
+  If(1,1030,0,2,1)
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Maid>Now that Saki-chan isn't here, I can make a spectacular debut! ...No, it's still too early. I'll do some more grunt work first.")
+   0()
+  EndIf()
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("59")
+  ShowMessageFace("mdg_fc1",0,0,2,3)
+  ShowMessage("\\n<Ragora>I, too, am spending days buried in the ground, dreaming of a debut.")
+  EndEventProcessing()
+  DefineLabel("143")
+  ShowMessageFace("eva_fc1",2,0,2,4)
+  ShowMessage("\\n<Eva>I don't really get what this 'grunt work' is about...")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   269
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(428,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   270
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(30,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+

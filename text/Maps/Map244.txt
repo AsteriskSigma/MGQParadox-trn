@@ -1,0 +1,3 @@
+"進軍の丘 第8層" -> "Military Hill No. 8 Layer"
+"【ウィングハーピー】" -> "【Wing Hervey】"
+"人間は、いちいちツタを登らなきゃいけないなんて……不便ね。" -> "It is inconvenient for humans to climb the ivy each time ...."

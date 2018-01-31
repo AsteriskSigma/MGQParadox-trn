@@ -1,0 +1,21 @@
+// EVENT 0966
+Name "Event: Warp 10"
+
+ShowMessageFace("neris_fc1",0,0,2,1)
+ShowMessage("\\n<ネリス>ねぇルカ、おこづかいちょうだい♪\n1000Gくれたら、10階先まで吹っ飛ばしてあげるから♪")
+ShowChoices(strings("10階先まで送ってもらう","遠慮しておく"),2)
+IfPlayerPicksChoice(0,"10階先まで送ってもらう")
+ 125(1,0,1000)
+ ShowMessageFace("neris_fc1",0,0,2,2)
+ ShowMessage("\\n<ネリス>じゃあ行くよっ♪　Eiiya!！")
+ ChangeVariable(121,121,1,0,9)
+ RunCommonEvent(901)
+ EndEventProcessing()
+ 0()
+IfPlayerPicksChoice(1,"遠慮しておく")
+ ShowMessageFace("neris_fc1",2,0,2,3)
+ ShowMessage("\\n<ネリス>おこづかい……")
+ EndEventProcessing()
+ 0()
+404()
+0()

@@ -1,0 +1,12 @@
+=begin
+=SETTING DATA
+
+Copy the configuration file to the section below this
+Please delete the SettingData folder after copying
+It does not matter if you do not move forward, but it is always loaded in order of file name
+
+==Change log
+  Date     Version Author Comment
+
+
+=endd

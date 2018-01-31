@@ -1,0 +1,5 @@
+"＿人人 人人 人人 人人 人人 人人＿" -> "Person person person person person person person person person person person person person person person person person person person person person person person person person _"
+"＞ WASN'T SCARED ONE BIT" -> "> WAS NOT SCARED ONE BIT"
+"　＜" -> "<"
+"￣Y" -> "¯Y"
+"￣" -> "¯"

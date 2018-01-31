@@ -1,0 +1,166 @@
+
+
+
+EVENT   1
+ PAGE   1
+  0()
+
+
+
+EVENT   2
+ PAGE   1
+  0()
+
+
+
+EVENT   3
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<???>So Kagetsumugi... what did you think of the unblessed hero?")
+  205(2,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x46,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x0e,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x09,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x09,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x09,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x09,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x09,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x09,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x09,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x15,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+  ShowMessageFace("kagetumugi_fc1",4,0,2,2)
+  ShowMessage("\\n<Kagetsumugi>Hmm... I cannot yet tell whether he will be a shark or a minnow. I'll save my judgment for now.")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<???>Oh, what a noncommittal answer...")
+  ShowMessageFace("kagetumugi_fc1",4,0,2,4)
+  ShowMessage("\\n<Kagetsumugi>Your opinion of me is probably similar. Am I to be a shark or a minnow in your eyes...")
+  ScrollMap(8,5,4)
+  ShowMessageFace("kagetumugi_fc1",4,0,2,5)
+  ShowMessage("\\n<Kagetsumugi>Have you decided my worth, your majesty Alice the 8th?")
+  241(bytes(0x04,0x08,0x6f,0x3a,0x0d,0x52,0x50,0x47,0x3a,0x3a,0x42,0x47,0x4d,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0e,0x6b,0x75,0x72,0x6f,0x61,0x6c,0x69,0x63,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69))
+  PictureDisplay(5,"80_alice8th_st01",0,0,0,0,100,100,0,0)
+  PictureMove(5,null,0,0,0,0,100,100,255,0,30,true)
+  ShowMessageFace("alice8th_fc1",0,0,2,6)
+  ShowMessage("\\n<Black Alice>You're very valuable to me, Kagetsumugi the 4th, as the latest puppeteer to inherit the title.")
+  PictureDisplay(6,"80_kagetumugi_st51",0,0,-150,0,100,100,255,0)
+  PictureDisplay(5,"80_alice8th_st01",0,0,150,0,100,100,255,0)
+  ShowMessageFace("kagetumugi_fc1",0,0,2,7)
+  ShowMessage("\\n<Kagetsumugi>Your majesty is the one who selected the first of us 500 years ago. Now, our puppet techniques have been perfected and the end approaches.")
+  ShowMessageFace("kagetumugi_fc1",0,0,2,8)
+  ShowMessage("\\n<Kagetsumugi>The ultimate puppet techniques that I have devised will be yours to command, your majesty.")
+  ShowMessageFace("alice8th_fc1",0,0,2,9)
+  ShowMessage("\\n<Black Alice>I'm counting on them. My dream has slipped between my fingers twice already. Although, getting this far after so many defeats is all the sweeter...")
+  ShowMessageFace("alice8th_fc1",0,0,2,10)
+  ShowMessage("\\n<Black Alice>I had White Rabbit, the fusion of dark and holy energies, yet even that power was not enough to prevail against the unblessed hero.")
+  ShowMessageFace("kagetumugi_fc1",0,0,2,11)
+  ShowMessage("\\n<Kagetsumugi>That boy was really so strong? To be honest, I can't even imagine that.")
+  ShowMessageFace("alice8th_fc1",0,0,2,12)
+  ShowMessage("\\n<Black Alice>This time the plan will involve a party of elites. I shall command the legendary monsters who reigned during the age of the Great Monster Wars--")
+  PictureClear(5)
+  PictureClear(6)
+  Wait(60)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0e,0x6d,0x6f,0x6e,0x5f,0x66,0x6c,0x61,0x73,0x68,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x69))
+  PictureDisplay(10,"sys_white",0,0,0,0,100,100,0,0)
+  PictureMove(10,null,0,0,0,0,100,100,255,0,30,true)
+  ChangeSwitch(31,31,0)
+  PictureMove(10,null,0,0,0,0,100,100,0,0,30,true)
+  PictureClear(10)
+  Wait(60)
+  PictureDisplay(5,"80_azidahaka_st01",0,0,0,0,100,100,255,0)
+  ShowMessageFace("azidahaka_fc1",0,0,2,13)
+  ShowMessage("\\n<Azi Dahaka>This world is better off destroyed...")
+  PictureDisplay(5,"80_seitentaisei_st01",0,0,0,0,100,100,255,0)
+  ShowMessageFace("seitentaisei_fc1",0,0,2,14)
+  ShowMessage("\\n<Sun Wukong>Leave it to me! I'll wreck it good!")
+  PictureDisplay(5,"80_coatlus_st01",0,0,0,0,100,100,255,0)
+  ShowMessageFace("coatlus_fc1",0,0,2,15)
+  ShowMessage("\\n<Quetzalcoatl>The frail monsters of this age are no match for me.")
+  PictureDisplay(5,"80_tezcatlipoca_st01",0,0,0,0,100,100,255,0)
+  ShowMessageFace("tezcatlipoca_fc1",0,0,2,16)
+  ShowMessage("\\n<Tezcatlipoca>Unyahh! I'll show them real power!")
+  PictureDisplay(5,"80_izanami_st01",0,0,0,0,100,100,255,0)
+  ShowMessageFace("izanami_fc1",0,0,2,17)
+  ShowMessage("\\n<Izanami>I shall send them back to the underworld.")
+  PictureDisplay(5,"80_tukumokomati_st01",0,0,0,0,100,100,255,0)
+  ShowMessageFace("tukumokomati_fc1",0,0,2,18)
+  ShowMessage("\\n<Himiko>Kuku... Lookin' like this'll be a fancy feast.")
+  PictureDisplay(6,"80_kagetumugi_st51",0,0,-150,0,100,100,255,0)
+  PictureDisplay(5,"80_alice8th_st01",0,0,150,0,100,100,255,0)
+  ShowMessageFace("kagetumugi_fc1",0,0,2,19)
+  ShowMessage("\\n<Kagetsumugi>Fufu, quite the lineup of legendary figures from history, isn't it? But without further ado, let me introduce the Monster Lord puppets I've created.")
+  PictureDisplay(5,"80_alice9th_st01",0,0,0,0,100,100,255,0)
+  PictureClear(6)
+  ShowMessageFace("alice9th_fc1",0,0,2,20)
+  ShowMessage("\\n<Alipheese the 9th>O-Onee-sama... g-good e... evening...")
+  ShowMessageFace("alice8th_fc1",0,0,2,21)
+  ShowMessage("\\n<Black Alice>Ufufu, your skills with zombies are as good as the Artistes. This is truly the ultimate fusion of zombie and puppet techniques.")
+  ShowMessageFace("alice8th_fc1",1,0,2,22)
+  ShowMessage("\\n<Black Alice>Even my little sister who defied me is so polite now... It looks like we can finally get along and even play with dolls together.")
+  PictureDisplay(5,"80_alice11th12th_st01",0,0,0,0,100,100,255,0)
+  ShowMessageFace("alice11th12th_fc2",0,0,2,23)
+  ShowMessage("\\n<Alipheese the 11+12th>Fufu... Ahaha...")
+  ShowMessageFace("kagetumugi_fc1",0,0,2,24)
+  ShowMessage("\\n<Kagetsumugi>The 11th and the 12th had many parts missing from their bodies. I fused their bodies together and successfully created one being out of them.")
+  ShowMessageFace("alice8th_fc1",0,0,2,25)
+  ShowMessage("\\n<Black Alice>Fufu, she looks wonderful. I love your sense of style.")
+  PictureDisplay(5,"80_alice6th_st01",0,0,0,0,100,100,255,0)
+  ShowMessageFace("alice6th_fc1",0,0,2,26)
+  ShowMessage("\\n<Alipheese the 6th>Give... up...\nI will be... Monster Lord... Alipheese...")
+  ShowMessageFace("alice8th_fc1",0,0,2,27)
+  ShowMessage("\\n<Black Alice>My, if it isn't my dear aunt. You seem to be in good health.")
+  ShowMessageFace("kagetumugi_fc1",0,0,2,28)
+  ShowMessage("\\n<Kagetsumugi>Her body was enshrined in Yamatai and therefore well-preserved. It didn't take long to finish her.")
+  ShowMessageFace("kagetumugi_fc1",0,0,2,29)
+  ShowMessage("\\n<Kagetsumugi>The other Monster Lord puppets will require a little more patience. I've secured their bodies already, but they aren't in good condition...")
+  PictureDisplay(6,"80_kagetumugi_st51",0,0,-150,0,100,100,255,0)
+  PictureDisplay(5,"80_alice8th_st01",0,0,150,0,100,100,255,0)
+  ShowMessageFace("alice8th_fc1",0,0,2,30)
+  ShowMessage("\\n<Black Alice>With this many powerful monsters, I have no doubt this tea party will be one to remember. Let's savor every moment of it, ufufu.")
+  ShowMessageFace("kagetumugi_fc1",0,0,2,31)
+  ShowMessage("\\n<Kagetsumugi>Third time's the charm, your majesty.\nAll the world shall be yours...")
+  ShowMessageFace("alice8th_fc1",0,0,2,32)
+  ShowMessage("\\n<Black Alice>All the\\*\\fi worlds\\*\\fi shall be mine!\nUfufufufu...")
+  221()
+  ChangeSwitch(31,31,1)
+  PictureClear(5)
+  PictureClear(6)
+  242(1)
+  Wait(60)
+  211(1)
+  TeleportPlayer(0,2,188,294,2,2)
+  222()
+  355("gain_medal(25)")
+  0()
+
+
+
+EVENT   4
+ PAGE   1
+  // condition: switch 31 is ON
+  0()
+
+
+
+EVENT   5
+ PAGE   1
+  // condition: switch 31 is ON
+  0()
+
+
+
+EVENT   6
+ PAGE   1
+  // condition: switch 31 is ON
+  0()
+
+
+
+EVENT   7
+ PAGE   1
+  // condition: switch 31 is ON
+  0()
+
+
+
+EVENT   8
+ PAGE   1
+  // condition: switch 31 is ON
+  0()
+
+
+
+EVENT   9
+ PAGE   1
+  // condition: switch 31 is ON
+  0()
+

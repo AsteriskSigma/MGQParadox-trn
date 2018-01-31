@@ -1,0 +1,6 @@
+"その頃、エスタ近辺――" -> "Around that time, near Esta -"
+"【騎士団長】" -> "【Grand Chief】"
+"いざ……全軍、進軍開始！" -> "Alright ...... All troops, advance troops start!"
+"グランゴルドの兵どもを、全て海に叩き落とせ！" -> "Drop all the soldiers of the Grand Gord into the sea!"
+"【兵士達】" -> "【Soldiers】"
+"いざ進まん、祖国のために！　女王陛下のために！" -> "Go ahead, for the motherland! For Her Majesty the Queen!"

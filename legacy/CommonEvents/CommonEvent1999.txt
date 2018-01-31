@@ -1,0 +1,10 @@
+// EVENT 1999
+Name "Seduction: Failure"
+
+PictureClear(5)
+PictureClear(6)
+355("battler_graphic_show")
+ChangeSwitch(96,96,1)
+ChangeSwitch(98,98,1)
+EndEventProcessing()
+0()

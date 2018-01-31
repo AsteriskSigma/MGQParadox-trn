@@ -1,0 +1,149 @@
+# -*- encoding: utf-8 -*-
+=begin
+= Field Specialization
+
+=end
+
+#==============================================================================
+# ■ NWConst::Field
+#==============================================================================
+module NWConst::Field
+  # Field specialization map ID
+  # Current
+  # · Pocket Mafoujo Castle can be called
+  # · Map display callable judgment
+  # · Map weight saving
+  # Three are applied
+  FIELD_MAP_ID = [2, 1, 193]
+  # BGMAutomatic switching application map ID
+  AUTO_BGM_MAP_ID = [2,194]
+  
+  # Number of frames to fade out
+  # * Since it is also used for division, please do not specify 0 absolutely
+  FADEOUT_FRAME = 120
+  # Number of frames to be faded in
+  FADEIN_FRAME  = 60
+  
+  # BGMConfiguration
+  BGM = {
+    # Map ID
+    2 => {
+      # 0Region is not set yet. Argument is name, volume, pitch
+      0 => RPG::BGM.new("field1", 100, 100),
+      1 => RPG::BGM.new("field1", 100, 100),
+      2 => RPG::BGM.new("field1", 100, 100),
+      3 => RPG::BGM.new("field1", 100, 100),
+      4 => RPG::BGM.new("field1", 100, 100),
+      5 => RPG::BGM.new("field1", 100, 100),
+      6 => RPG::BGM.new("field1", 100, 100),
+      7 => RPG::BGM.new("field2", 100, 100),
+      8 => RPG::BGM.new("field2", 100, 100),
+      9 => RPG::BGM.new("field2", 100, 100),
+      10 => RPG::BGM.new("sabaku", 100, 100),
+      11 => RPG::BGM.new("sabaku", 100, 100),
+      12 => RPG::BGM.new("field2", 100, 100),
+      13 => RPG::BGM.new("field2", 100, 100),
+      14 => RPG::BGM.new("field2", 100, 100),
+      15 => RPG::BGM.new("umi", 100, 100),
+      16 => RPG::BGM.new("field2", 100, 100),
+      17 => RPG::BGM.new("field2", 100, 100),
+      18 => RPG::BGM.new("field2", 100, 100),
+      19 => RPG::BGM.new("field2", 100, 100),
+      20 => RPG::BGM.new("field2", 100, 100),
+      21 => RPG::BGM.new("field2", 100, 100),
+      22 => RPG::BGM.new("umi", 100, 100),
+      23 => RPG::BGM.new("field2", 100, 100),
+      24 => RPG::BGM.new("field3", 100, 100),
+      25 => RPG::BGM.new("field4", 100, 100),
+      26 => RPG::BGM.new("field2", 100, 100),
+    },
+    194 => {
+      0 => RPG::BGM.new("field2", 100, 100),
+      1 => RPG::BGM.new("field2", 100, 100),
+      2 => RPG::BGM.new("field2", 100, 100),
+      3 => RPG::BGM.new("umi", 100, 100),
+      4 => RPG::BGM.new("field4", 100, 100),
+    }
+  }
+  # BGSConfiguration
+  BGS = {
+    2 => {
+      #22 => RPG::BGS.new("Sea", 100, 100),
+    },
+    194 => {
+    
+    }
+  }
+  # Terrain definition
+  TERRAIN = {
+#    :Woods => {
+    :Forest => {
+      :tag => 1,
+      :map_id => [
+        125, 128, 132, 153, 205, 206, 207, 208, 209, 331,
+        332, 333, 415, 416, 417, 443, 668, 670, 674, 767,
+        813, 816, 828, 832,
+      ],
+     },
+#    :Desert => {
+    :Desert => {
+      :tag => 2,
+      :map_id => [
+        114, 115, 116, 117, 307, 379, 380, 381, 393, 397,
+        404, 405, 407, 408, 409, 410, 411, 412, 413, 414,
+        445, 653, 655, 662, 676, 677, 688, 695, 769, 786,
+      ],    
+    },
+#    :Ocean => {
+    :Sea => {
+      :tag => 3,
+      :map_id => [
+        124, 127, 131, 369, 370, 371, 372, 373, 376, 478,
+        479, 671, 672, 685, 689, 690, 696, 701, 762, 776, 763, 784, 796, 825,
+      ],
+    },
+#    :Deep sea=> {
+    :DeepSea=> {
+      :tag => -1,
+      :map_id => [
+        145, 146, 147, 148, 149, 659, 809,
+      ],
+    },
+#    :A cave=> {
+    :Cave => {
+      :tag => -1,
+      :map_id => [
+         17,  18,  62,  63,  64,  65,  66,  67,  68,  69,
+         70,  71,  72,  73,  74,  75,  76,  77,  78,  79,
+         80,  81,  82,  83,  84,  85, 150, 155, 156, 157,
+        158, 160, 161, 163, 165, 166, 175, 192, 198, 204,
+        210, 214, 231, 232, 233, 234, 236, 239, 241, 243,
+        245, 247, 258, 259, 261, 263, 265, 266, 267, 283,
+        284, 285, 286, 287, 288, 289, 290, 328, 330, 364,
+        365, 366, 367, 368, 398, 399, 400, 401, 402, 403,
+        444, 449, 475, 643, 647, 656, 657, 658, 664, 699,
+        700, 704, 795, 796, 798, 799, 801, 805, 806, 807,
+        808, 812, 821, 822,
+      ],      
+    },
+#    :City=> {
+    :Town => {
+      :tag => -1,
+      :map_id => [
+         23,  29,  33,  45,  46,  55,  56, 164, 176, 177,
+        185, 219, 225, 226, 279, 280, 338, 359, 360, 361,
+        362, 363, 378, 387, 388, 389, 483, 484, 513, 515,
+        616, 624, 667, 679, 680, 681, 682, 683, 684, 686,
+        687, 688, 689, 690, 691, 692, 693, 694, 695, 697,
+        698, 719, 720, 721, 722, 723, 742, 762, 763, 764,
+        765, 766, 768, 770, 771, 776, 777, 778, 779, 783,
+        785, 789, 815, 829,
+      ],
+    },
+  }   
+end
+
+
+
+
+

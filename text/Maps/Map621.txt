@@ -1,0 +1,8 @@
+"【青年】" -> "Youth"
+"父を弔いにきたのです。" -> "I came to mourn my father."
+"家族を捨ててこんな場所に移り住み、そして……" -> "I abandoned my family and moved to such a place, and ......"
+"【青年】" -> "Youth"
+"……………………" -> "........................"
+"【モリガン】" -> "【Morrigan】"
+"遅かれ早かれ、みな運命は同じだよ。" -> "Sooner or later, everyone has the same fate."
+"あたし達にしたって、例外じゃないさ……" -> "It is not an exception to do it to us ......"

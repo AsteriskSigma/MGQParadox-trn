@@ -1,0 +1,1557 @@
+=begin
+=base/DataObject
+
+Here we focus on DataObject
+
+
+==Change log
+  Date     Version Author Comment
+==14/12/19 2.0.1   Tris Integration F ~ I H
+==15/09/03 2.0.2   Tris integration J ~ U J L M N T
+==17/05/16 2.0.4   Tris integrated V ~ W V W
+
+=end
+
+
+#==============================================================================
+# ■ NWRegexp::BaseItem
+#==============================================================================
+module NWRegexp::BaseItem
+	## Extended additional capacity value
+	FEATURE_XPARAM_EX         = /<Expansion(hit|Avoidance|satisfaction|Conviction avoidance|Magic evasion|Magic reflex|Counterattack|HPPlayback|MPPlayback|TPPlayback)rate\s?([-+]?\d+)\%>/i
+	# Party ability
+	PARTY_ABILITY             = /<(Earned amount|Earned items|Encounter|Joining a friend)magnification\s?(\d+)\%>/i
+	SLOT_CHANCE               = /<Slot chances\s?(\d+)>/i
+	UNLOCK_LEVEL              = /<Unlock level\s?(\d+)>/i
+	# Butler's ability
+	STEAL_SUCCESS             = /<Steel success rate\s?(\d+)\%/i
+	GET_EXP_RATE              = /<Acquisition experience value magnification\s?(\d+)\%>/i
+	GET_CLASSEXP_RATE         = /<Earned professional experience magnification\s?(\d+)\%>/i
+	AUTO_STAND                = /<Stay treaded\s?(\d+)\%>/i
+	HEEL_REVERSE              = /<Recovery inversion\s?(\d+)\%>/i
+	AUTO_STATE                = /<Auto state\s?((?:\d+(?:\,\s?)?)+)>/i
+	TRIGGER_STATE             = /<Trigger state\s?([HMT])\s?\,\s?(\d+)\s?\,\s?(\d+)\%\s?\,\s?(\d+)>/i
+	METAL_BODY                = /<Metal body\s?(\d+)>/i
+	DEFENSE_WALL              = /<Defensive Wall Expansion\s?(\d+)>/i
+	INVALIDATE_WALL           = /<Invalidation barriers\s?(\d+)>/i
+	DAMAGE_MP_CONVERT         = /<Damage MP conversion\s?(\d+)\%>/i
+	DAMAGE_GOLD_CONVERT       = /<Damaged gold conversion\s?(\d+)\%>/i
+	DAMAGE_MP_DRAIN           = /<Damage MP absorption\s?(\d+)\%>/i
+	DAMAGE_GOLD_DRAIN         = /<Damaged gold retrieval\s?(\d+)\%>/i  
+	DEAD_SKILL                = /<Skill at death\s?(\d+)>/i
+	BATTLE_START_SKILL        = /<Invocation at the start of battle\s?(\d+)\s?\,\s?(\d+)\%>/i
+	TURN_START_SKILL          = /<Activate at the start of turn\s?(\d+)\s?\,\s?(\d+)\%>/i
+	TURN_END_SKILL            = /<Activate at end of turn\s?(\d+)\s?\,\s?(\d+)\%>/i
+	CHANGE_ACTION             = /<Action change\s?((?:\d+\-\d+(?:\,\s?)?)+)>/i
+	STYPE_COST_RATE           = /<(HP|MP|TP)Type consumption rate\s?(\d+)\s?\,\s?(\d+)\%>/i
+	SKILL_COST_RATE           = /<(HP|MP|TP)Skill consumption rate\s?(\d+)\s?\,\s?(\d+)\%>/i
+	TP_COST_RATE              = /<TPConsumption rate\s?(\d+)\%>/i  
+	HP_COST_RATE              = /<HPConsumption rate\s?(\d+)\%>/i 
+	GOLD_COST_RATE            = /<Gold consumption rate\s?(\d+)\%>/i
+	INCREASE_TP               = /<Max TP(increase|Decrease)\s?(\d+)([%])?>/i
+	START_TP_RATE             = /<Start TP\s?(\d+)%>/i
+	BATTLE_END_HEEL_HP        = /<HP recovery after battle\s?(\d+)%>/i
+	BATTLE_END_HEEL_MP        = /<MP recovery after battle\s?(\d+)%>/i 
+	NORMAL_ATTACK             = /<Regular attack\s?(\d+)>/i
+	COUNTER_SKILL             = /<Counterattack skill\s?((?:\d+(?:\,\s?)?)+)>/i
+	FINAL_INVOKE              = /<Final counterattack\s?((?:\d+(?:\,\s?)?)+)>/i
+	CERTAIN_COUNTER           = /<Counterattack\s?(\d+)\%>/i
+	MAGICAL_COUNTER           = /<Magic Counterattack\s?(\d+)\%>/i
+	CERTAIN_COUNTER_EX        = /<Extended necessity Counterattack\s?(\d+)\%>/i
+	PHYSICAL_COUNTER_EX       = /<Extended counterattack\s?(\d+)\%>/i 
+	MAGICAL_COUNTER_EX        = /<Extended magic counterattack\s?(\d+)\%>/i
+	CONSIDERATE               = /<Fellow feeling\s?(\d+)\%>/i
+	INVOKE_REPEATS_TYPE       = /<Continuous activation type\s?((?:\d+\-\d+(?:\,\s?)?)+)>/i  
+	INVOKE_REPEATS_SKILL      = /<Continuous activation skills\s?((?:\d+\-\d+(?:\,\s?)?)+)>/i  
+	OWN_CRUSH_RESIST          = /<Suicide bomb resistance>/i
+	ELEMENT_DRAIN             = /<Attribute absorption\s?((?:\d+(?:\,\s?)?)+)>/i
+	IGNORE_OVER_DRIVE         = /<Time stop ignored>/i
+	INSTANT_DEAD_REVERSE      = /<Instant death reverse>/i  
+	CHANGE_SKILL              = /<Skill change\s?((?:\d+\-\d+(?:\,\s?)?)+)>/i  
+	ITEM_COST_SCRIMP          = /<Consumption item saving\s?((?:\d+\-\d+(?:\,\s?)?)+)>/i
+	NEED_ITEM_IGNORE          = /<Ignore necessary items\s?((?:\d+(?:\,\s?)?)+)>/i
+	# booster
+	MULTI_BOOSTER             = /<(Attribute enhancement|Weapons hardening physics|Weapons reinforcement magic|Weapons reinforcement necessity|Normal attack enhancement|State ratio reinforcement type|State fixed reinforced type|Strengthen skill type|State ratio strengthening skill|Strengthen skills)\s?((?:\d+\-\d+(?:\,\s?)?)+)>/i
+	WTYPE_SKILL_BOOST         = /<Weapon skill magnification enhancement\s?((?:\d+\-\d+\-\d+(?:\,\s?)?)+)>/i
+	COUNTER_BOOST             = /<Counterattack\s?(\d+)\%>/i
+	FALL_HP_BOOST             = /<HPStrengthened upon decrease\s?(\d+)\s?\,\s?(\d+)\%>/i
+	OVER_SOUL                 = /<Overseas soul\s?(\d+)\%>/i
+	# Explanation Add
+	DUMMY_ENCHANT             = /<Explanation Add(?:\:|:)(\S+)>/i
+	# 
+	TERRAIN_BOOSTER           = /<(\S+)terrain(Super)?Enhancement>/i
+	SKILL_CONVERT_PARAM       = /<Ability value replacement\s?(\d+),\s?(\d+),\s?(\d+)>/
+	PHYSICAL_REFLECTION       = /<Extended physical reflectance\s?([-+]?\d+)\%>/i
+	EQUIP_MASTERY             = /<(weapon|Armor)Mastery\s?((?:\d+\-\d+(?:\,\s?)?)+)>/i
+end
+
+
+#==============================================================================
+# ■ NWRegexp::UsableItem
+#==============================================================================
+module NWRegexp::UsableItem
+	EXT_SCOPE                 = /<Object(?:\:|:)(\S+)>/i
+	HEEL_REVERSE_IGNORE       = /<Ignoring recovery inversion>/i
+	CONSIDERATE_REVISE        = /<Fellow feeling\s?(\d+)\%>/i
+	PAY_LIFE                  = /<Suicide attribute>/i
+	RANDOM_INVOKE             = /<Random activation\s?((?:\d+(?:\,\s?)?)+)>/i
+	MULTI_INVOKE              = /<Sequential invocation\s?((?:\d+(?:\,\s?)?)+)>/i
+	ADD_ANIME                 = /<Additional animation\s+(\d+)>/i
+	ELEMENT_EX                = /<Attack attribute\s?((?:\d+(?:\,\s?)?)+)>/i
+	WEAPON_RATE               = /<Weapon magnification\s?((?:\d+\-\d+(?:\,\s?)?)+)>/i    
+	APPLY_PHARMACOLOGY        = /<Applying medicine knowledge>/i
+	WARP_ITEM                 = /<Warp items>/i
+	PENETRATE                 = /<(attribute)?(State)?Ignore tolerance>/i
+	SLOT                      = /<slot>/i
+	POKER                     = /<poker>/i
+	THROW                     = /<Throwing only>/i
+	#
+	ADD_STEAL                 = /<Steel granting\s?(\d+)>/i
+	ITEM_GET                  = /<Earned items\s?((?:\d+\-\d+(?:\,\s?)?)+)>/i
+	ADD_DEFENSE_WALL          = /<Added defensive wall\s?(\d+)>/i
+	OVER_DRIVE                = /<Time Stop\s?(\d+)>/i
+	GAIN_EXP                  = /<(Basic|Profession|Race)Experience rise\s?(\d+)>/i
+	DEATH_ELEMENT             = /<Attribute instant death\s*ID=(\d+)(?:\s+Ignore tolerance=([01]))?>/i
+	DEATH_STATE               = /<State limited granting\s*Object=(\d+)\s+Grant=(\d+)(?:\s+probability=(\d+))?(?:\s+Ignore tolerance=([01]))?>/i
+	SELF_ENCHANT              = /<Self-granted\s+State=(\d+)(?:\s+probability=(\d+))?(?:\s+Ignore tolerance=([01]))?>/i
+	PREDATION                 = /<Predation technique\s+Start state=((?:\d+(?:,)?)+)\s+absorption=(HP)?(MP)?(TP)?>/i
+	RESTORATION               = /<(HP|MP)reduction\s?(\d+)\%>/i
+	BINDING_START             = /<Binding start technique\s?(\d+)>/i
+	EBINDING_START            = /<Permanent restraint starting technique>/i
+	BIND_RESIST               = /<Struggle>/i
+	
+	REPEATS_EX                = /<Continuous times\s?(\d+)>/i
+	TARGET_REJECT_USER        = /<Special user exclusion>/i
+	ERASE_DEFENSE_WALL        = /<Defensive wall invalidation>/i
+	
+	ADD_ANIME                 = /<Additional animation\s?((?:\d+(?:\,\s?)?)+)>/i
+	GAIN_EXP                  = /<(Basic|Profession|Race)Experience rise(Hide)?\s?(\d+)>/i # 110
+	INCLUDE_BENCH             = /<Including waiting members>/i
+	PERSONA_CHANGE            = /<Personality switch\s?(\d+)>/i
+end
+
+#==============================================================================
+# ■ NWRegexp::Class
+#==============================================================================
+module NWRegexp::Class
+	CLASS_LANK                = /<Occupation rank\s?(\d+)>/i
+	NEED_JOBCHANGE_CLASS      = /<Requested experience\s?((?:\d+\-\d+(?:\,\s?)?)+)>/i
+	SELECT_JOBCHANGE_CLASS    = /<Selected Experience\s?((?:\d+\-\d+(?:\,\s?)?)+)>/i
+	NEED_JOBCHANGE_ITEM       = /<Change job item\s?((?:\d+(?:\,\s?)?)+)>/i
+	MEMORIZE_CAPACITY_REVISE  = /<Memory size compensation\s?((?:\d+(?:\,\s?)?)+)>/i
+end
+
+#==============================================================================
+# ■ NWRegexp::Actor
+#==============================================================================
+module NWRegexp::Actor
+	SEX                       = /<sex(?:\:|:)(Man|Luke)>/i
+	INITIAL_TRIBE_ID          = /<Initial subclass\s?(\d+)>/i
+	USE_EXP_CURVE             = /<Empirical value curve\s?(\d+)>/i
+	HUMAN_ADD_FEATURES        = /<Human hour addition feature\s?(\d+)>/i
+	PECULIAR_SKILL            = /<Intrinsic learning\s?((?:\d+\-\d+(?:\,\s?)?)+)>/i
+	INIT_CLASS_LEVEL          = /<Experienced occupation\s?((?:\d+\-\d+(?:\,\s?)?)+)>/i
+	INIT_EQUIPS               = /<Initial equipment(\d)(?:\:|:)(\d+)>/i
+	INIT_ABILITIES            = /Initial Ability\s?((?:\d+(?:\,\s?)?)+)/i
+	BASE_TP                   = /<TPBasic value\s?(\d+)>/i
+	TP_LEVEL_REVISE           = /<TPLvcorrection\s?(\d+(?:\.\d+)?)>/i
+	CATEGORY                  = /<Category(?:\:|:)(\S+)>/i
+	BEST_PLACE                = /<Nawabari(?:\:|:)(\d+)\-(\d+)\-(\d+)>/i
+	PERSONA                   = /<(Main character|Deputy personality(?:\:|:)ID\s*=\s*(\d+))>/i  
+	ILLUSTRATOR_NAME          = /<An illustration(?:\:|:)(\S+)>/i
+end
+
+#==============================================================================
+# ■ NWRegexp::Enemy
+#==============================================================================
+module NWRegexp::Enemy
+	ESCAPE_LEVEL              = /<Escape Level\s?(\d+)>/i  
+	CLASSEXP                  = /<Occupation Exp\s?(\d+)>/i
+	FRIEND_VARIABLE           = /<Friendship variable\s?(\d+)>/i
+	STEAL_LIST                = /<Steel list\s?(\d+)\s?\,\s?([IWA])\s?\,\s?(\d+)\s?\,\s?(\d+)>/i
+	WEAPON_TYPE               = /<Weapon type(?:\:|:)(\d+)>/i
+	CATEGORY                  = /<Race(?:\:|:)(\S+)>/i
+	LIB_NAME                  = /<Illustration title(?:\:|:)(\S+)>/i
+	JOIN_SWITCH               = /<Fellow ID:(\d+)>/i
+	NO_DIFFICULTY             = /<Ignore difficulty correction>/i
+	NO_PREDATION              = /<Predatory invalid>/
+	NO_LOSE_SKIP              = /<Impossible to skip>/
+end
+
+#==============================================================================
+# ■ NWRegexp::Battler
+#==============================================================================
+module NWRegexp::Battler
+	TEMPTATION_SKILL          = /<Temporary use skill(?:\:|:)(\d+)>/i
+end
+
+#==============================================================================
+# ■ NWRegexp::State
+#==============================================================================
+module NWRegexp::State
+	TMP_EQUIP                 = /<Weapon Equipment\s+(\d+)>/i
+	DEATH                     = /<Instant death>/i
+	DEATH_PLEASURE            = /<Pleasure death>/i
+end
+
+#==============================================================================
+# ■ NWRegexp::Skill
+#==============================================================================
+module NWRegexp::Skill
+	HP_COST_EX                = /<(Absolute)?consumption(HP|MAXHP)\s?(\d+)(\%)?>/i
+	MP_COST_EX                = /<(Absolute)?consumption(MP|MAXMP)\s?(\d+)(\%)?>/i
+	TP_COST_EX                = /<(Absolute)?consumption(TP|MAXTP)\s?(\d+)(\%)?>/i
+	GOLD_COST                 = /<Consumption amount\s?(\d+)>/i
+	ITEM_COST                 = /<Consumption items\s?((?:\d+\-\d+(?:\,\s?)?)+)>/i
+	NEED_ITEM                 = /<Required items\s?((?:\d+(?:\,\s?)?)+)>/i
+	NEED_DUAL_WIELD           = /<Two sword requirement>/i
+	FRIEND_DRAW               = /<Friendship indication>/i
+	STYPE_EX                  = /<Extended skill type\s?((?:\d+(?:\,\s?)?)+)>/i
+	SKILL_HIT                 = /<Skill Accuracy(?:\:|:)(\d+)>/i
+	SKILL_HIT_FACTOR          = /<Skill hit correction ratio(?:\:|:)([-+]?\d+)>/i  
+	NOT_LEARN_ACTORS          = /<Mastered>/i
+	NOT_LEARN_ACTORS_SET      = /<Mastered\s?((?:\d+(?:\,\s?)?)+)>/i
+	NO_AUTO_BATTLE            = /<No automatic combat>/i
+	MEMORIZE_COST             = /<Storage capacity\s?(\d+)>/i
+	PASSIVE_ARMORS            = /<Passive ability armor\s?((?:\d+(?:\,\s?)?)+)>/i
+	NOT_JUMBLE_MEMORIZE       = /<Not coexisting memorize\s?((?:\d+(?:\,\s?)?)+)>/i
+	LIB_NAME                  = /<Illustration title(?:\:|:)(\S+)>/i
+	INVISIBLE                 = /<(?:Technique|skill)Hidden name>/i
+	RECHARGE                  = /<Deathblow\s?(\d+)>/i
+	CYCLE                     = /<Periodic technique\s?(\d+)\+(\d+)\*X>/i
+	LONELY_UNUSED             = /<Uninhabited unused>/i
+end
+
+#==============================================================================
+# ■ NWRegexp::EquipItem
+#==============================================================================
+module NWRegexp::EquipItem
+	EXCLUSIVE_ACTORS          = /<Dedicated equipment\s?((?:\d+(?:\,\s?)?)+)>/i
+end
+
+#==============================================================================
+# ■ NWRegexp::Weapon
+#==============================================================================
+module NWRegexp::Weapon
+	NOT_DUAL_WIELD            = /<No swords>/i
+end
+
+
+#==============================================================================
+# ■ RPG::BaseItem
+#==============================================================================
+class RPG::BaseItem
+	#Data addition processing
+	def get_value(value,type= rate)
+		case type
+		when :rate
+			return value.to_f * 0.01
+		when :int
+			return value,to_i
+		when :string
+			return value
+		end
+	end
+	
+	#--------------------------------------------------------------------------
+	# ● Memo column analysis processing
+	#--------------------------------------------------------------------------
+	alias nw_kure_base_item_note_analyze nw_note_analyze
+	def nw_note_analyze
+		nw_kure_base_item_note_analyze
+		
+		self.note.each_line do |line|
+			if NWRegexp::BaseItem::FEATURE_XPARAM_EX.match(line)
+				array = [:hit, :Avoidance, :satisfaction, :Conviction avoidance, :Magic evasion, :Magic reflex, :Counterattack, :HPPlayback, :MPPlayback, :TPPlayback]
+				@add_features.push(RPG::BaseItem::Feature.new(FEATURE_XPARAM_EX, array.index($1.to_sym), $2.to_f * 0.01))
+			elsif NWRegexp::BaseItem::PARTY_ABILITY.match(line)
+				kind = [:Earned amount, :Earned items, :Encounter, :Joining a friend]
+				kind_id = kind.index($1.to_sym)
+				@add_features.push(RPG::BaseItem::Feature.new(FEATURE_PARTY_EX_ABILITY, kind_id, $2.to_f * 0.01))
+			elsif NWRegexp::BaseItem::SLOT_CHANCE.match(line)
+				@add_features.push(RPG::BaseItem::Feature.new(FEATURE_PARTY_EX_ABILITY, SLOT_CHANCE, $1.to_i))
+			elsif NWRegexp::BaseItem::UNLOCK_LEVEL.match(line)
+				@add_features.push(RPG::BaseItem::Feature.new(FEATURE_PARTY_EX_ABILITY, UNLOCK_LEVEL, $1.to_i))
+			elsif NWRegexp::BaseItem::STEAL_SUCCESS.match(line)
+				@add_features.push(RPG::BaseItem::Feature.new(
+						FEATURE_BATTLER_ABILITY, STEAL_SUCCESS, $1.to_f * 0.01))
+			elsif NWRegexp::BaseItem::GET_EXP_RATE.match(line)
+				@add_features.push(RPG::BaseItem::Feature.new(
+						FEATURE_BATTLER_ABILITY, GET_EXP_RATE, $1.to_f * 0.01))        
+			elsif NWRegexp::BaseItem::GET_CLASSEXP_RATE.match(line)
+				@add_features.push(RPG::BaseItem::Feature.new(
+						FEATURE_BATTLER_ABILITY, GET_CLASSEXP_RATE, $1.to_f * 0.01))        
+			elsif NWRegexp::BaseItem::AUTO_STAND.match(line)
+				@add_features.push(RPG::BaseItem::Feature.new(
+						FEATURE_BATTLER_ABILITY, AUTO_STAND, $1.to_f * 0.01))
+			elsif NWRegexp::BaseItem::HEEL_REVERSE.match(line)
+				@add_features.push(RPG::BaseItem::Feature.new(
+						FEATURE_BATTLER_ABILITY, HEEL_REVERSE, $1.to_f * 0.01))
+			elsif NWRegexp::BaseItem::AUTO_STATE.match(line)
+				array = []
+				$1.split(/\,\s?/).each{|id|array.push(id.to_i)}
+				@add_features.push(RPG::BaseItem::Feature.new(
+						FEATURE_BATTLER_ABILITY, AUTO_STATE, array))
+			elsif NWRegexp::BaseItem::TRIGGER_STATE.match(line)
+				hash = {:point => $1.to_sym, :trigger => $2.to_i, :per => $3.to_f * 0.01, :state_id => $4.to_i}
+				@add_features.push(RPG::BaseItem::Feature.new(
+						FEATURE_BATTLER_ABILITY, TRIGGER_STATE, hash))
+			elsif NWRegexp::BaseItem::METAL_BODY.match(line)
+				@add_features.push(RPG::BaseItem::Feature.new(
+						FEATURE_BATTLER_ABILITY, METAL_BODY, $1.to_i))
+			elsif NWRegexp::BaseItem::DEFENSE_WALL.match(line)  
+				@add_features.push(RPG::BaseItem::Feature.new(
+						FEATURE_BATTLER_ABILITY, DEFENSE_WALL, $1.to_i))
+			elsif NWRegexp::BaseItem::INVALIDATE_WALL.match(line)  
+				@add_features.push(RPG::BaseItem::Feature.new(
+						FEATURE_BATTLER_ABILITY, INVALIDATE_WALL, $1.to_i))
+			elsif NWRegexp::BaseItem::DAMAGE_MP_CONVERT.match(line)
+				@add_features.push(RPG::BaseItem::Feature.new(
+						FEATURE_BATTLER_ABILITY, DAMAGE_MP_CONVERT, $1.to_f * 0.01))          
+			elsif NWRegexp::BaseItem::DAMAGE_GOLD_CONVERT.match(line)
+				@add_features.push(RPG::BaseItem::Feature.new(
+						FEATURE_BATTLER_ABILITY, DAMAGE_GOLD_CONVERT, $1.to_f * 0.01))          
+			elsif NWRegexp::BaseItem::DAMAGE_MP_DRAIN.match(line)
+				@add_features.push(RPG::BaseItem::Feature.new(
+						FEATURE_BATTLER_ABILITY, DAMAGE_MP_DRAIN, $1.to_f * 0.01))          
+			elsif NWRegexp::BaseItem::DAMAGE_GOLD_DRAIN.match(line)
+				@add_features.push(RPG::BaseItem::Feature.new(
+						FEATURE_BATTLER_ABILITY, DAMAGE_GOLD_DRAIN, $1.to_f * 0.01))          
+			elsif NWRegexp::BaseItem::DEAD_SKILL.match(line)
+				@add_features.push(RPG::BaseItem::Feature.new(
+						FEATURE_BATTLER_ABILITY, DEAD_SKILL, $1.to_i))
+			elsif NWRegexp::BaseItem::BATTLE_START_SKILL.match(line)
+				@add_features.push(RPG::BaseItem::Feature.new(
+						FEATURE_BATTLER_ABILITY, BATTLE_START_SKILL,
+						{:id => $1.to_i, :per => $2.to_f * 0.01}))
+			elsif NWRegexp::BaseItem::TURN_START_SKILL.match(line)
+				@add_features.push(RPG::BaseItem::Feature.new(
+						FEATURE_BATTLER_ABILITY, TURN_START_SKILL,
+						{:id => $1.to_i, :per => $2.to_f * 0.01}))
+			elsif NWRegexp::BaseItem::TURN_END_SKILL.match(line)
+				@add_features.push(RPG::BaseItem::Feature.new(
+						FEATURE_BATTLER_ABILITY, TURN_END_SKILL,
+						{:id => $1.to_i, :per => $2.to_f * 0.01}))
+			elsif NWRegexp::BaseItem::CHANGE_ACTION.match(line)
+				array = []
+				$1.scan(/(\d+)\-(\d+)/){|a, b| array.push({:id => a.to_i, :per => b.to_f * 0.01})}
+				@add_features.push(RPG::BaseItem::Feature.new(
+						FEATURE_BATTLER_ABILITY, CHANGE_ACTION, array))
+			elsif NWRegexp::BaseItem::STYPE_COST_RATE.match(line)  
+				@add_features.push(RPG::BaseItem::Feature.new(
+						FEATURE_BATTLER_ABILITY, STYPE_COST_RATE, {:type => $1.to_sym, :id => $2.to_i, :rate => $3.to_f * 0.01}))
+			elsif NWRegexp::BaseItem::SKILL_COST_RATE.match(line)  
+				@add_features.push(RPG::BaseItem::Feature.new(
+						FEATURE_BATTLER_ABILITY, SKILL_COST_RATE, {:type => $1.to_sym, :id => $2.to_i, :rate => $3.to_f * 0.01}))
+			elsif NWRegexp::BaseItem::TP_COST_RATE.match(line)  
+				@add_features.push(RPG::BaseItem::Feature.new(
+						FEATURE_BATTLER_ABILITY, TP_COST_RATE, $1.to_f * 0.01))
+			elsif NWRegexp::BaseItem::HP_COST_RATE.match(line)
+				@add_features.push(RPG::BaseItem::Feature.new(
+						FEATURE_BATTLER_ABILITY, HP_COST_RATE, $1.to_f * 0.01))
+			elsif NWRegexp::BaseItem::GOLD_COST_RATE.match(line)
+				@add_features.push(RPG::BaseItem::Feature.new(
+						FEATURE_BATTLER_ABILITY, GOLD_COST_RATE, $1.to_f * 0.01))
+			elsif NWRegexp::BaseItem::INCREASE_TP.match(line)
+				@add_features.push(RPG::BaseItem::Feature.new(
+						FEATURE_BATTLER_ABILITY, INCREASE_TP, {:plus => $1.to_s == "increase", :num => $2.to_i, :per => $3 ? true : false}))
+			elsif NWRegexp::BaseItem::START_TP_RATE.match(line)
+				@add_features.push(RPG::BaseItem::Feature.new(
+						FEATURE_BATTLER_ABILITY, START_TP_RATE, $1.to_f * 0.01))
+			elsif NWRegexp::BaseItem::BATTLE_END_HEEL_HP.match(line)
+				@add_features.push(RPG::BaseItem::Feature.new(
+						FEATURE_BATTLER_ABILITY, BATTLE_END_HEEL_HP, $1.to_f * 0.01))
+			elsif NWRegexp::BaseItem::BATTLE_END_HEEL_MP.match(line)
+				@add_features.push(RPG::BaseItem::Feature.new(
+						FEATURE_BATTLER_ABILITY, BATTLE_END_HEEL_MP, $1.to_f * 0.01))
+			elsif NWRegexp::BaseItem::NORMAL_ATTACK.match(line)
+				@add_features.push(RPG::BaseItem::Feature.new(
+						FEATURE_BATTLER_ABILITY, Battler::NORMAL_ATTACK, $1.to_i))          
+			elsif NWRegexp::BaseItem::COUNTER_SKILL.match(line)
+				array = []
+				$1.split(/\,\s?/).each{|id| array.push(id.to_i)}
+				@add_features.push(RPG::BaseItem::Feature.new(
+						FEATURE_BATTLER_ABILITY, COUNTER_SKILL, array))
+			elsif NWRegexp::BaseItem::FINAL_INVOKE.match(line)  
+				array = []
+				$1.split(/\,\s?/).each{|id| array.push(id.to_i)}
+				@add_features.push(RPG::BaseItem::Feature.new(
+						FEATURE_BATTLER_ABILITY, FINAL_INVOKE, array))
+			elsif NWRegexp::BaseItem::CERTAIN_COUNTER.match(line)
+				@add_features.push(RPG::BaseItem::Feature.new(
+						FEATURE_BATTLER_ABILITY, CERTAIN_COUNTER, $1.to_f * 0.01))
+			elsif NWRegexp::BaseItem::MAGICAL_COUNTER.match(line)
+				@add_features.push(RPG::BaseItem::Feature.new(
+						FEATURE_BATTLER_ABILITY, MAGICAL_COUNTER, $1.to_f * 0.01))
+			elsif NWRegexp::BaseItem::CERTAIN_COUNTER_EX.match(line)
+				@add_features.push(RPG::BaseItem::Feature.new(
+						FEATURE_BATTLER_ABILITY, CERTAIN_COUNTER_EX, $1.to_f * 0.01))
+			elsif NWRegexp::BaseItem::PHYSICAL_COUNTER_EX.match(line)
+				@add_features.push(RPG::BaseItem::Feature.new(
+						FEATURE_BATTLER_ABILITY, PHYSICAL_COUNTER_EX, $1.to_f * 0.01))
+			elsif NWRegexp::BaseItem::MAGICAL_COUNTER_EX.match(line)
+				@add_features.push(RPG::BaseItem::Feature.new(
+						FEATURE_BATTLER_ABILITY, MAGICAL_COUNTER_EX, $1.to_f * 0.01))
+			elsif NWRegexp::BaseItem::CONSIDERATE.match(line)  
+				@add_features.push(RPG::BaseItem::Feature.new(
+						FEATURE_BATTLER_ABILITY, CONSIDERATE, $1.to_f * 0.01))
+			elsif NWRegexp::BaseItem::INVOKE_REPEATS_TYPE.match(line)
+				hash = {}
+				$1.scan(/(\d+)\-(\d+)/){|a, b| hash[a.to_i] = b.to_i}
+				@add_features.push(RPG::BaseItem::Feature.new(
+						FEATURE_BATTLER_ABILITY, INVOKE_REPEATS_TYPE, hash))
+			elsif NWRegexp::BaseItem::INVOKE_REPEATS_SKILL.match(line)
+				hash = {}
+				$1.scan(/(\d+)\-(\d+)/){|a, b| hash[a.to_i] = b.to_i}
+				@add_features.push(RPG::BaseItem::Feature.new(
+						FEATURE_BATTLER_ABILITY, INVOKE_REPEATS_SKILL, hash))
+			elsif NWRegexp::BaseItem::OWN_CRUSH_RESIST.match(line)
+				@add_features.push(RPG::BaseItem::Feature.new(
+						FEATURE_BATTLER_ABILITY, OWN_CRUSH_RESIST, true))        
+			elsif NWRegexp::BaseItem::ELEMENT_DRAIN.match(line)
+				array = []
+				$1.split(/\,\s?/).each{|id| array.push(id.to_i)}
+				@add_features.push(RPG::BaseItem::Feature.new(
+						FEATURE_BATTLER_ABILITY, ELEMENT_DRAIN, array))
+			elsif NWRegexp::BaseItem::IGNORE_OVER_DRIVE.match(line)
+				@add_features.push(RPG::BaseItem::Feature.new(
+						FEATURE_BATTLER_ABILITY, IGNORE_OVER_DRIVE, true))        
+			elsif NWRegexp::BaseItem::INSTANT_DEAD_REVERSE.match(line)
+				@add_features.push(RPG::BaseItem::Feature.new(
+						FEATURE_BATTLER_ABILITY, INSTANT_DEAD_REVERSE, true))
+			elsif NWRegexp::BaseItem::CHANGE_SKILL.match(line)
+				hash = {}
+				$1.scan(/(\d+)\-(\d+)/){|a, b| hash[a.to_i] = b.to_i}
+				@add_features.push(RPG::BaseItem::Feature.new(
+						FEATURE_BATTLER_ABILITY, CHANGE_SKILL, hash))
+			elsif NWRegexp::BaseItem::ITEM_COST_SCRIMP.match(line)
+				hash = {}
+				$1.scan(/(\d+)\-(\d+)/){|a, b| hash[a.to_i] = b.to_f * 0.01}
+				@add_features.push(RPG::BaseItem::Feature.new(
+						FEATURE_BATTLER_ABILITY, ITEM_COST_SCRIMP, hash))
+			elsif NWRegexp::BaseItem::NEED_ITEM_IGNORE.match(line)
+				array = []
+				$1.split(/\,\s?/).each{|id| array.push(id.to_i)}          
+				@add_features.push(RPG::BaseItem::Feature.new(
+						FEATURE_BATTLER_ABILITY, NEED_ITEM_IGNORE, array))
+			elsif NWRegexp::BaseItem::MULTI_BOOSTER.match(line)
+				kind = [
+					:Attribute enhancement,
+					:Weapons hardening physics,
+					:Weapons reinforcement magic,
+					:Weapons reinforcement necessity,
+					:Normal attack enhancement,
+					:State ratio reinforcement type,
+					:State fixed reinforced type,
+					:Strengthen skill type,
+					:State ratio strengthening skill,
+					:Strengthen skills
+				]
+				kind_id = kind.index($1.to_sym)
+				hash = {}
+				$2.scan(/(\d+)\-(\d+)/){|a, b| hash[a.to_i] = b.to_f * 0.01}
+				@add_features.push(RPG::BaseItem::Feature.new(FEATURE_MULTI_BOOSTER, kind_id, hash))
+			elsif NWRegexp::BaseItem::WTYPE_SKILL_BOOST.match(line)  
+				hash = {}
+				$1.scan(/(\d+)\-(\d+)\-(\d+)/){|a, b, c| hash[[a.to_i, b.to_i]] = c.to_f * 0.01}
+				@add_features.push(RPG::BaseItem::Feature.new(FEATURE_MULTI_BOOSTER, WTYPE_SKILL, hash))
+			elsif NWRegexp::BaseItem::COUNTER_BOOST.match(line)
+				@add_features.push(RPG::BaseItem::Feature.new(FEATURE_MULTI_BOOSTER, COUNTER, $1.to_f * 0.01))
+			elsif NWRegexp::BaseItem::FALL_HP_BOOST.match(line)
+				hash = {:per => $1.to_f * 0.01, :boost => $2.to_f * 0.01}
+				@add_features.push(RPG::BaseItem::Feature.new(FEATURE_MULTI_BOOSTER, FALL_HP, hash))
+			elsif NWRegexp::BaseItem::OVER_SOUL.match(line)
+				@add_features.push(RPG::BaseItem::Feature.new(
+						FEATURE_MULTI_BOOSTER, OVER_SOUL, $1.to_f * 0.01))
+			elsif NWRegexp::BaseItem::DUMMY_ENCHANT.match(line)
+				@add_features.push(RPG::BaseItem::Feature.new(FEATURE_DUMMY_ENCHANT, nil, $1.to_s))
+			elsif NWRegexp::BaseItem::TERRAIN_BOOSTER.match(line)
+				@add_features.push(RPG::BaseItem::Feature.new(
+						FEATURE_TERRAIN_BOOSTER, $1.to_sym, $2.nil? ? 0.2 : 0.4))
+			elsif NWRegexp::BaseItem::SKILL_CONVERT_PARAM.match(line)
+				@data_ex[:skill_convert_param_data] ||= Hash.new
+				@data_ex[:skill_convert_param_data][$1.to_i] ||= []
+				@data_ex[:skill_convert_param_data][$1.to_i].push([$2.to_i + 1, $3.to_i + 1])
+			elsif NWRegexp::BaseItem::PHYSICAL_REFLECTION.match(line)
+				@add_features.push(RPG::BaseItem::Feature.new(
+						FEATURE_BATTLER_ABILITY, PHYSICAL_REFLECTION, $1.to_f * 0.01))
+			elsif NWRegexp::BaseItem::SELLD_DRAW.match(line)
+				@data_ex[:selld_draw] = $1.to_s
+			elsif NWRegexp::BaseItem::EXCLUDE.match(line)
+				@data_ex[:lib_exclude?] = true
+			elsif NWRegexp::BaseItem::EQUIP_MASTERY.match(line)
+				category = [:weapon, :Armor].index($1.to_sym)
+				$2.scan(/(\d+)\-(\d+)/) {|a, b|
+					@add_features.push(RPG::BaseItem::Feature.new(
+							FEATURE_EQUIP_MASTERY, [category, a.to_i], b.to_i * 0.01))
+				}
+				if category == 0
+					@add_features.push(RPG::BaseItem::Feature.new(
+							FEATURE_BATTLER_ABILITY, SLOT_CANNOT_DUAL_WIELD, true))
+				end
+			end
+		end
+	end
+	#--------------------------------------------------------------------------
+	# ● Capacity value replacement for specified skill type
+	#--------------------------------------------------------------------------
+	def category_convert_param_data(stype_id)
+		return [] if @data_ex[:skill_convert_param_data].nil?
+		return @data_ex[:skill_convert_param_data][stype_id]
+	end
+end
+
+#==============================================================================
+# ■ RPG::UsableItem
+#==============================================================================
+class RPG::UsableItem < RPG::BaseItem
+	#--------------------------------------------------------------------------
+	# ● Mix-In
+	#--------------------------------------------------------------------------
+	include NWUsableEffect
+	#--------------------------------------------------------------------------
+	# ● Memo column analysis processing
+	#--------------------------------------------------------------------------
+	alias nw_kure_usable_item_note_analyze nw_note_analyze
+	def nw_note_analyze
+		nw_kure_usable_item_note_analyze    
+		
+		self.note.each_line do |line|
+			if NWRegexp::UsableItem::EXT_SCOPE.match(line)
+				@data_ex[:ext_scope] ||= 0x0
+				@data_ex[:ext_scope] |= NWSex::LUCA if $1.include?("Luke")
+				@data_ex[:ext_scope] |= NWSex::MALE if $1.include?("Man")
+				@data_ex[:ext_scope] |= NWSex::FEMALE if $1.include?("woman")
+				@data_ex[:ext_scope] |= NWSex::ALL if $1.include?("Indiscriminate")        
+			elsif NWRegexp::UsableItem::HEEL_REVERSE_IGNORE.match(line)
+				@data_ex[:heel_reverse_ignore] = true
+			elsif NWRegexp::UsableItem::CONSIDERATE_REVISE.match(line)
+				@data_ex[:considerate_revise] = $1.to_f * 0.01
+			elsif NWRegexp::UsableItem::PAY_LIFE.match(line)
+				@data_ex[:pay_life?] = true
+			elsif NWRegexp::UsableItem::RANDOM_INVOKE.match(line)
+				@data_ex[:random_invoke] ||= []
+				$1.split(/\,\s?/).each{|id| @data_ex[:random_invoke].push(id.to_i)}
+			elsif NWRegexp::UsableItem::MULTI_INVOKE.match(line)
+				@data_ex[:multi_invoke] ||= []
+				$1.split(/\,\s?/).each{|id| @data_ex[:multi_invoke].push(id.to_i)}
+			elsif NWRegexp::UsableItem::ADD_ANIME.match(line)
+				@data_ex[:add_anime] ||= []
+				$1.split(/\,\s?/).each{|id| @data_ex[:add_anime].push(id.to_i)}  
+			elsif NWRegexp::UsableItem::ELEMENT_EX.match(line)
+				@data_ex[:element_ex] ||= []
+				$1.split(/\,\s?/).each{|id| @data_ex[:element_ex].push(id.to_i)}        
+			elsif NWRegexp::UsableItem::WEAPON_RATE.match(line)
+				@data_ex[:weapon_rate] ||= {}
+				$1.scan(/(\d+)\-(\d+)/){|a, b|
+					@data_ex[:weapon_rate][a.to_i] = b.to_f * 0.01
+				}
+			elsif NWRegexp::UsableItem::APPLY_PHARMACOLOGY.match(line)
+				@data_ex[:apply_pharmacology?] = true
+			elsif NWRegexp::UsableItem::WARP_ITEM.match(line)
+				@data_ex[:warp_item?] = true
+			elsif NWRegexp::UsableItem::PENETRATE.match(line)
+				@data_ex[:penetrate] ||= 0
+				@data_ex[:penetrate] |= 0x1 unless $1.to_s.empty?
+				@data_ex[:penetrate] |= 0x2 unless $2.to_s.empty?
+			elsif NWRegexp::UsableItem::SLOT.match(line)
+				@data_ex[:use_slot?] = true
+			elsif NWRegexp::UsableItem::POKER.match(line)
+				@data_ex[:use_poker?] = true
+			elsif NWRegexp::UsableItem::THROW.match(line)
+				@data_ex[:throw?] = true
+			elsif NWRegexp::UsableItem::ADD_STEAL.match(line)
+				@effects_ex.push(RPG::UsableItem::Effect.new(EFFECT_STEAL, $1.to_i))        
+			elsif NWRegexp::UsableItem::ITEM_GET.match(line)
+				id = []; num = []
+				$1.scan(/(\d+)\-(\d+)/){|a, b| id.push(a.to_i); num.push(b.to_i)}
+				@effects_ex.push(RPG::UsableItem::Effect.new(EFFECT_GET_ITEM, id.size, id, num))
+			elsif NWRegexp::UsableItem::ADD_DEFENSE_WALL.match(line)
+				@effects_ex.push(RPG::UsableItem::Effect.new(EFFECT_DEFENSE_WALL, $1.to_i))
+			elsif NWRegexp::UsableItem::OVER_DRIVE.match(line)
+				@effects_ex.push(RPG::UsableItem::Effect.new(EFFECT_OVER_DRIVE, $1.to_i))
+			elsif NWRegexp::UsableItem::GAIN_EXP.match(line)
+				data_id = ["Basic", "Profession", "Race"].index($1.to_s)
+				value1  = $3.to_i
+				value2  = ($2.to_s != "Hide")
+				@effects_ex.push(RPG::UsableItem::Effect.new(EFFECT_GAIN_EXP, data_id, value1, value2))
+			elsif NWRegexp::UsableItem::DEATH_ELEMENT.match(line)
+				@effects_ex.push(RPG::UsableItem::Effect.new(EFFECT_DEATH_ELEMENT, 1, 1.0, {:id => $1.to_i, :opt => $2.nil? ? false : true}))
+			elsif NWRegexp::UsableItem::DEATH_STATE.match(line)
+				@effects_ex.push(RPG::UsableItem::Effect.new(EFFECT_DEATH_STATE, $2.to_i, $3.nil? ? 1.0 : $3.to_f / 100.0, {:id => $1.to_i, :opt => $4.nil? ? false : true}))
+			elsif NWRegexp::UsableItem::PREDATION.match(line)
+				bit = 0
+				bit |= 0x1 unless $2.to_s.empty?
+				bit |= 0x2 unless $3.to_s.empty?
+				bit |= 0x4 unless $4.to_s.empty?
+				@effects_ex.push(RPG::UsableItem::Effect.new(EFFECT_PREDATION, 0, $1.split(",").collect{|id|id.to_i}, bit))
+			elsif NWRegexp::UsableItem::SELF_ENCHANT.match(line)
+				@effects_ex.push(RPG::UsableItem::Effect.new(EFFECT_SELF_ENCHANT, $1.to_i, $2.nil? ? 1.0 : $2.to_f / 100.0, $3.nil? ? false : true))
+			elsif NWRegexp::UsableItem::RESTORATION.match(line)
+				@effects_ex.push(RPG::UsableItem::Effect.new(EFFECT_RESTORATION, $1.to_sym, $2.to_i * 0.01))
+			elsif NWRegexp::UsableItem::BINDING_START.match(line)
+				@data_ex[:binding_start?] = true
+				@effects_ex.push(RPG::UsableItem::Effect.new(EFFECT_BINDING_START, $1.to_i, NWConst::State::UBIND, NWConst::State::TBIND))
+			elsif NWRegexp::UsableItem::EBINDING_START.match(line)
+				@data_ex[:binding_start?] = true
+				# Usage effect is common with normal version
+				@effects_ex.push(RPG::UsableItem::Effect.new(EFFECT_BINDING_START, -1, NWConst::State::EUBIND, NWConst::State::ETBIND))
+			elsif NWRegexp::UsableItem::BIND_RESIST.match(line)
+				@effects_ex.push(RPG::UsableItem::Effect.new(EFFECT_BIND_RESIST, 1))
+			elsif NWRegexp::UsableItem::REPEATS_EX.match(line)
+				@data_ex[:repeat_ex] = $1.to_i
+			elsif NWRegexp::UsableItem::TARGET_REJECT_USER.match(line)
+				@data_ex[:target_reject_user?] = true
+			elsif NWRegexp::UsableItem::ERASE_DEFENSE_WALL.match(line)
+				@data_ex[:erase_defense_wall?] = true
+			elsif NWRegexp::UsableItem::INCLUDE_BENCH.match(line)
+				@data_ex[:include_bench?] = true
+			elsif NWRegexp::UsableItem::PERSONA_CHANGE.match(line)
+				@data_ex[:persona_change] = $1.to_i
+			end
+		end
+	end
+	#--------------------------------------------------------------------------
+	# ● Object
+	#--------------------------------------------------------------------------
+	def ext_scope
+		@data_ex.key?(:ext_scope) ? @data_ex[:ext_scope] : NWSex::ALL
+	end
+	#--------------------------------------------------------------------------
+	# ● Recovery inversion neglect flag
+	#--------------------------------------------------------------------------  
+	def heel_reverse_ignore?
+		@data_ex.key?(:heel_reverse_ignore) ? true : false
+	end
+	#--------------------------------------------------------------------------
+	# ● Companion feeling (when used)
+	#--------------------------------------------------------------------------  
+	def considerate_revise
+		@data_ex.key?(:considerate_revise) ? @data_ex[:considerate_revise] : 0.0
+	end
+	#--------------------------------------------------------------------------
+	# ● Suicide bomb attribute?
+	#--------------------------------------------------------------------------  
+	def pay_life?
+		@data_ex.key?(:pay_life?) ? true : false
+	end  
+	#--------------------------------------------------------------------------
+	# ● Random activation
+	#--------------------------------------------------------------------------
+	def random_invoke
+		@data_ex.key?(:random_invoke) ? @data_ex[:random_invoke] : nil
+	end
+	#--------------------------------------------------------------------------
+	# ● Sequential invocation
+	#--------------------------------------------------------------------------
+	def multi_invoke
+		@data_ex.key?(:multi_invoke) ? @data_ex[:multi_invoke] : nil
+	end
+	#--------------------------------------------------------------------------
+	# ● Slot use?
+	#--------------------------------------------------------------------------
+	def use_slot?
+		@data_ex.key?(:use_slot?) ? true : false
+	end
+	#--------------------------------------------------------------------------
+	# ● Poker use?
+	#--------------------------------------------------------------------------
+	def use_poker?
+		@data_ex.key?(:use_poker?) ? true : false
+	end
+	#--------------------------------------------------------------------------
+	# ● Additional animation
+	#--------------------------------------------------------------------------
+	def add_anime
+		@data_ex.key?(:add_anime) ? @data_ex[:add_anime] : []
+	end
+	#--------------------------------------------------------------------------
+	# ● Basic attribute array
+	#--------------------------------------------------------------------------
+	def default_elements
+		return damage.none? || (damage.element_id == 0) ? [] : [damage.element_id]
+	end
+	#--------------------------------------------------------------------------
+	# Attribute array
+	#--------------------------------------------------------------------------
+	def elements
+		@data_ex.key?(:element_ex) ? default_elements + @data_ex[:element_ex] : default_elements
+	end
+	#--------------------------------------------------------------------------
+	# ● Weapon magnification
+	#--------------------------------------------------------------------------  
+	def weapon_rate(wtype_id)
+		return 1.0 unless @data_ex.key?(:weapon_rate)
+		return 1.0 unless @data_ex[:weapon_rate].key?(wtype_id)
+		return 1.0 + @data_ex[:weapon_rate][wtype_id]
+	end
+	#--------------------------------------------------------------------------
+	# ● Application of medicine knowledge?
+	#--------------------------------------------------------------------------  
+	def apply_pharmacology?
+		@data_ex.key?(:apply_pharmacology?) ? true : false
+	end
+	#--------------------------------------------------------------------------
+	# ● Warp item?
+	#--------------------------------------------------------------------------  
+	def warp_item?
+		@data_ex.key?(:warp_item?) ? true : false
+	end
+	#--------------------------------------------------------------------------
+	# ● Attribute tolerance ignored?
+	#--------------------------------------------------------------------------
+	def element_penetrate?
+		@data_ex.key?(:penetrate) ? @data_ex[:penetrate] & 0x1 == 0x1 : false
+	end
+	#--------------------------------------------------------------------------
+	# ● Throwing only item?
+	#--------------------------------------------------------------------------
+	def throw?
+		@data_ex.key?(:throw?) ? true : false
+	end
+	#--------------------------------------------------------------------------
+	# ● State tolerance ignored?
+	#--------------------------------------------------------------------------
+	def state_penetrate?
+		@data_ex.key?(:penetrate) ? @data_ex[:penetrate] & 0x2 == 0x2 : false
+	end 
+	#--------------------------------------------------------------------------
+	# ● Binding start technique?
+	#--------------------------------------------------------------------------
+	def binding_start?
+		@data_ex.key?(:binding_start?) ? true : false
+	end
+	#--------------------------------------------------------------------------
+	# ○ Effect of use
+	#--------------------------------------------------------------------------  
+	alias nw_kure_usable_effects effects
+	def effects
+		nw_kure_usable_effects + @effects_ex
+	end
+	#--------------------------------------------------------------------------
+	# ○ Continuous times
+	#--------------------------------------------------------------------------  
+	alias nw_kure_usable_repeats repeats
+	def repeats
+		@data_ex.key?(:repeat_ex) ? @data_ex[:repeat_ex] : nw_kure_usable_repeats
+	end
+	#--------------------------------------------------------------------------
+	# ○ Exclude users from target
+	#--------------------------------------------------------------------------
+	def target_reject_user?
+		@data_ex.key?(:target_reject_user?) ? true : false
+	end
+	#--------------------------------------------------------------------------
+	# ○ Turn off defensive walls
+	#--------------------------------------------------------------------------
+	def erase_defense_wall?
+		@data_ex.key?(:erase_defense_wall?) ? true : false
+	end
+	#--------------------------------------------------------------------------
+	# ● Standby member subject?
+	#--------------------------------------------------------------------------
+	def include_bench?
+		@data_ex.key?(:include_bench?) ? true : false
+	end
+	#--------------------------------------------------------------------------
+	# ● Personality change
+	#--------------------------------------------------------------------------  
+	def persona_change
+		@data_ex.key?(:persona_change) ? @data_ex[:persona_change] : nil
+	end
+	#--------------------------------------------------------------------------
+	# ● Type of item used to determine
+	#--------------------------------------------------------------------------
+	def use_items_mode
+		return :slot   if use_slot?
+		return :poker  if use_poker?
+		return :random if random_invoke
+		return :multi  if multi_invoke
+		return :normal
+	end
+end
+
+#==============================================================================
+# ■ RPG::Class
+#==============================================================================
+class RPG::Class < RPG::BaseItem
+	#--------------------------------------------------------------------------
+	# ● Memo column analysis processing
+	#--------------------------------------------------------------------------
+	alias nw_kure_class_note_analyze nw_note_analyze
+	def nw_note_analyze
+		nw_kure_class_note_analyze
+		
+		self.note.each_line do |line|
+			if NWRegexp::Class::CLASS_LANK.match(line)
+				@data_ex[:class_lank] = $1.to_i
+			elsif NWRegexp::Class::NEED_JOBCHANGE_CLASS.match(line)
+				@data_ex[:need_jobchange_class] ||= []
+				$1.scan(/(\d+)\-(\d+)/){|a, b|
+					@data_ex[:need_jobchange_class].push({:id => a.to_i, :lv => b.to_i})
+				}
+			elsif NWRegexp::Class::SELECT_JOBCHANGE_CLASS.match(line)
+				@data_ex[:select_jobchange_class] ||= []
+				$1.scan(/(\d+)\-(\d+)/){|a, b|
+					@data_ex[:select_jobchange_class].push({:id => a.to_i, :lv => b.to_i})
+				}
+			elsif NWRegexp::Class::NEED_JOBCHANGE_ITEM.match(line)
+				@data_ex[:need_jobchange_item] ||= []
+				$1.split(/\,\s?/).each{|id|
+					@data_ex[:need_jobchange_item].push(id.to_i)
+				}
+			elsif NWRegexp::Class::MEMORIZE_CAPACITY_REVISE.match(line)
+				@data_ex[:memorize_capacity_revise] ||= {}
+				$1.split(/\,\s?/).each_with_index{|capacity, i|
+					@data_ex[:memorize_capacity_revise][i + 1] = capacity.to_i
+				}
+			end
+		end
+	end
+	#--------------------------------------------------------------------------
+	# ● Occupation rank
+	#--------------------------------------------------------------------------  
+	def class_lank
+		@data_ex.key?(:class_lank) ? @data_ex[:class_lank] : 0    
+	end
+	#--------------------------------------------------------------------------
+	# ● Required changeover class
+	#--------------------------------------------------------------------------  
+	def need_jobchange_class
+		@data_ex.key?(:need_jobchange_class) ? @data_ex[:need_jobchange_class] : []    
+	end
+	#--------------------------------------------------------------------------
+	# ● Selective changeover class
+	#--------------------------------------------------------------------------  
+	def select_jobchange_class
+		@data_ex.key?(:select_jobchange_class) ? @data_ex[:select_jobchange_class] : []    
+	end
+	#--------------------------------------------------------------------------
+	# ● Required change job items
+	#--------------------------------------------------------------------------  
+	def need_jobchange_item
+		@data_ex.key?(:need_jobchange_item) ? @data_ex[:need_jobchange_item] : []    
+	end
+	#--------------------------------------------------------------------------
+	# ● Memory capacity
+	#--------------------------------------------------------------------------  
+	def memorize_capacity_revise
+		@data_ex.key?(:memorize_capacity_revise) ? @data_ex[:memorize_capacity_revise] : {}
+	end  
+	#--------------------------------------------------------------------------
+	# ● Class for occupation?
+	#--------------------------------------------------------------------------
+	def job?
+		NWConst::Class::JOB_RANGE.include?(self.id)
+	end
+	#--------------------------------------------------------------------------
+	# ● Class for tribes?
+	#--------------------------------------------------------------------------
+	def tribe?
+		NWConst::Class::TRIBE_RANGE.include?(self.id)
+	end
+end
+
+#==============================================================================
+# ■ RPG::Actor
+#==============================================================================
+class RPG::Actor < RPG::BaseItem
+	#--------------------------------------------------------------------------
+	# ● Memo column analysis processing
+	#--------------------------------------------------------------------------
+	alias nw_kure_actor_note_analyze nw_note_analyze
+	def nw_note_analyze
+		nw_kure_actor_note_analyze
+		
+		self.note.each_line do |line|
+			if NWRegexp::Actor::SEX.match(line)
+				case $1.to_s
+				when "Man"
+					@data_ex[:sex] = NWSex::MALE
+				when "Luke"
+					@data_ex[:sex] = NWSex::LUCA
+				end
+			elsif NWRegexp::Actor::INITIAL_TRIBE_ID.match(line)
+				@data_ex[:initial_tribe_id] = $1.to_i
+			elsif NWRegexp::Actor::USE_EXP_CURVE.match(line)
+				@data_ex[:use_exp_curve] = $1.to_i
+			elsif NWRegexp::Actor::HUMAN_ADD_FEATURES.match(line)
+				@data_ex[:human_add_features] = $1.to_i
+			elsif NWRegexp::Actor::PECULIAR_SKILL.match(line)
+				@data_ex[:peculiar_skill] ||= []
+				$1.scan(/(\d+)\-(\d+)/){|a, b|
+					@data_ex[:peculiar_skill].push({:lv=> a.to_i, :id => b.to_i})
+				}
+			elsif NWRegexp::Actor::INIT_CLASS_LEVEL.match(line)
+				@data_ex[:init_class_level] ||= []
+				$1.scan(/(\d+)\-(\d+)/){|a, b|
+					@data_ex[:init_class_level].push({:id => a.to_i, :lv => b.to_i})
+				}
+			elsif NWRegexp::Actor::INIT_EQUIPS.match(line)
+				@data_ex[:init_equips] ||= [0, 0, 0, 0, 0]
+				@data_ex[:init_equips][$1.to_i] = $2.to_i if (0..4).include?($1.to_i)
+			elsif NWRegexp::Actor::INIT_ABILITIES.match(line)
+				@data_ex[:init_abilities] ||= []
+				$1.split(/\,\s?/).each{|id|
+					@data_ex[:init_abilities].push(id.to_i)
+				}
+			elsif NWRegexp::Actor::BASE_TP.match(line)
+				@data_ex[:base_tp] = $1.to_i
+			elsif NWRegexp::Actor::TP_LEVEL_REVISE.match(line)
+				@data_ex[:tp_level_revise] = $1.to_f * 0.01
+			elsif NWRegexp::Actor::CATEGORY.match(line)
+				@data_ex[:actor_category] ||= []
+				@data_ex[:actor_category].push($1.to_sym)
+			elsif NWRegexp::Actor::BEST_PLACE.match(line)
+				@data_ex[:best_place] =  {:map_id => $1.to_i, :x => $2.to_i, :y => $3.to_i}
+			elsif NWRegexp::Actor::PERSONA.match(line)
+				if $1.to_s == "Main character"
+					@data_ex[:persona_kind] = :original
+				else
+					@data_ex[:persona_kind] = :sub
+					@data_ex[:original_persona_id] = $2.to_i
+				end
+			elsif NWRegexp::Battler::TEMPTATION_SKILL.match(line)
+				@data_ex[:temptation_skill] = $1.to_i
+			elsif NWRegexp::Actor::ILLUSTRATOR_NAME.match(line)
+				@data_ex[:illustrator_name] = $1.to_s
+			end
+		end
+	end
+	#--------------------------------------------------------------------------
+	# ● Gender
+	#--------------------------------------------------------------------------
+	def sex
+		@data_ex.key?(:sex) ? @data_ex[:sex] : NWSex::FEMALE
+	end
+	#--------------------------------------------------------------------------
+	# ● Initial race ID
+	#--------------------------------------------------------------------------  
+	def initial_tribe_id
+		@data_ex.key?(:initial_tribe_id) ? @data_ex[:initial_tribe_id] : 0
+	end
+	#--------------------------------------------------------------------------
+	# ● Experience Value Curve
+	#--------------------------------------------------------------------------  
+	def use_exp_curve
+		@data_ex.key?(:use_exp_curve) ? @data_ex[:use_exp_curve] : 0
+	end
+	#--------------------------------------------------------------------------
+	# ● Additional features at human time
+	#--------------------------------------------------------------------------  
+	def human_add_features
+		@data_ex.key?(:human_add_features) ? [$data_classes[@data_ex[:human_add_features]]] : []
+	end
+	#--------------------------------------------------------------------------
+	# ● Actor-specific skills
+	#--------------------------------------------------------------------------  
+	def peculiar_skill
+		@data_ex.key?(:peculiar_skill) ? @data_ex[:peculiar_skill] : []
+	end  
+	#--------------------------------------------------------------------------
+	# ● Initial occupation level
+	#--------------------------------------------------------------------------  
+	def init_class_level
+		@data_ex.key?(:init_class_level) ? @data_ex[:init_class_level] : []    
+	end
+	#--------------------------------------------------------------------------
+	# ○ Acquire initial equipment
+	#--------------------------------------------------------------------------
+	def equips
+		@data_ex.key?(:init_equips) ? @data_ex[:init_equips] : [0,0,0,0,0]
+	end
+	#--------------------------------------------------------------------------
+	# Initial Ability
+	#--------------------------------------------------------------------------  
+	def init_abilities
+		@data_ex.key?(:init_abilities) ? @data_ex[:init_abilities] : []    
+	end
+	#--------------------------------------------------------------------------
+	# ● Base TP
+	#--------------------------------------------------------------------------  
+	def base_tp
+		@data_ex.key?(:base_tp) ? @data_ex[:base_tp] : 0    
+	end
+	#--------------------------------------------------------------------------
+	# ● TP level correction
+	#--------------------------------------------------------------------------  
+	def tp_level_revise
+		@data_ex.key?(:tp_level_revise) ? @data_ex[:tp_level_revise] : 0.0
+	end
+	#--------------------------------------------------------------------------
+	# ● Category
+	#--------------------------------------------------------------------------  
+	def actor_categories
+		@data_ex.key?(:actor_category) ? @data_ex[:actor_category] : []
+	end
+	#--------------------------------------------------------------------------
+	# ● Nawabari
+	#--------------------------------------------------------------------------  
+	def best_place
+		@data_ex.key?(:best_place) ? @data_ex[:best_place] : nil
+	end
+	#--------------------------------------------------------------------------
+	# ● Personality type
+	#--------------------------------------------------------------------------  
+	def persona_kind
+		@data_ex.key?(:persona_kind) ? @data_ex[:persona_kind] : :none
+	end
+	#--------------------------------------------------------------------------
+	# ● Main personality ID
+	#--------------------------------------------------------------------------  
+	def original_persona_id
+		@data_ex.key?(:original_persona_id) ? @data_ex[:original_persona_id] : @actor_id    
+	end
+	#--------------------------------------------------------------------------
+	# ● Temporary use skills
+	#--------------------------------------------------------------------------
+	def temptation_skill
+		return @data_ex.key?(:temptation_skill) ? @data_ex[:temptation_skill] : nil
+	end
+	#--------------------------------------------------------------------------
+	# ● Illustrator name
+	#--------------------------------------------------------------------------
+	def illustrator_name
+		return @data_ex.key?(:illustrator_name) ? @data_ex[:illustrator_name] : ""    
+	end
+end
+
+#==============================================================================
+# ■ RPG::Enemy
+#==============================================================================
+class RPG::Enemy < RPG::BaseItem
+	#--------------------------------------------------------------------------
+	# ● Memo column analysis processing
+	#--------------------------------------------------------------------------
+	alias nw_kure_enemy_note_analyze nw_note_analyze
+	def nw_note_analyze
+		nw_kure_enemy_note_analyze
+		
+		self.note.each_line do |line|
+			if NWRegexp::Enemy::ESCAPE_LEVEL.match(line)
+				@data_ex[:escape_level] = $1.to_i
+			elsif NWRegexp::Enemy::CLASSEXP.match(line)
+				@data_ex[:class_exp] = $1.to_i
+			elsif NWRegexp::Enemy::FRIEND_VARIABLE.match(line)
+				@data_ex[:friend_variable] = $1.to_i
+			elsif NWRegexp::Enemy::STEAL_LIST.match(line)
+				@data_ex[:steal_list] ||= {1 => [], 2 => [], 3 => [], 4 => []}
+				@data_ex[:steal_list][$1.to_i].push({
+						:kind => {:I => 1, :W => 2, :A => 3}[$2.to_sym],
+						:data_id => $3.to_i,
+						:denominator => $4.to_i})
+			elsif NWRegexp::Enemy::WEAPON_TYPE.match(line)    
+				@data_ex[:wtype_id] = $1.to_i
+			elsif NWRegexp::Enemy::CATEGORY.match(line)
+				@data_ex[:lib_category] = $1.to_sym
+			elsif NWRegexp::Enemy::LIB_NAME.match(line)
+				@data_ex[:lib_name] = $1.to_s
+			elsif NWRegexp::Battler::TEMPTATION_SKILL.match(line)
+				@data_ex[:temptation_skill] = $1.to_i
+			elsif NWRegexp::Enemy::JOIN_SWITCH.match(line)
+				@data_ex[:join_switch] = $1.to_i
+			elsif NWRegexp::Enemy::NO_DIFFICULTY.match(line)
+				@data_ex[:no_difficulty] = true
+			elsif NWRegexp::Enemy::NO_PREDATION.match(line)
+				@data_ex[:no_predation] = true
+			elsif NWRegexp::Enemy::NO_LOSE_SKIP.match(line)
+				@data_ex[:no_lose_skip] = true
+			end
+		end
+	end
+	#--------------------------------------------------------------------------
+	# ● Escape Level
+	#--------------------------------------------------------------------------  
+	def escape_level
+		@data_ex.key?(:escape_level) ? @data_ex[:escape_level] : 1
+	end
+	#--------------------------------------------------------------------------
+	# ● Employment Experience Value
+	#--------------------------------------------------------------------------  
+	def class_exp
+		@data_ex.key?(:class_exp) ? @data_ex[:class_exp] : self.exp    
+	end
+	#--------------------------------------------------------------------------
+	# ● List of stolen items
+	#--------------------------------------------------------------------------  
+	def steal_list
+		@data_ex.key?(:steal_list) ? @data_ex[:steal_list] : {1 => [], 2 => [], 3 => [], 4 => []}
+	end
+	#--------------------------------------------------------------------------
+	# ● Weapon type attribute
+	#--------------------------------------------------------------------------  
+	def wtype_id
+		@data_ex.key?(:wtype_id) ? @data_ex[:wtype_id] : NWConst::WType::DEFAULT_ENEMY
+	end
+	#--------------------------------------------------------------------------
+	# ● picture book tribe name
+	#--------------------------------------------------------------------------
+	def lib_category
+		return @data_ex.key?(:lib_category) ? @data_ex[:lib_category] : :EMPTY
+	end  
+	#--------------------------------------------------------------------------
+	# ● picture book title
+	#--------------------------------------------------------------------------
+	def lib_name
+		return @data_ex.key?(:lib_name) ? @data_ex[:lib_name] : self.name
+	end
+	#--------------------------------------------------------------------------
+	# ● Temporary use skills
+	#--------------------------------------------------------------------------
+	def temptation_skill
+		return @data_ex.key?(:temptation_skill) ? @data_ex[:temptation_skill] : nil
+	end
+	#--------------------------------------------------------------------------
+	# ● Family joining notation switch
+	#--------------------------------------------------------------------------
+	def join_switch
+		@data_ex.key?(:join_switch) ? @data_ex[:join_switch] : nil
+	end
+	#--------------------------------------------------------------------------
+	# ● Ignore difficulty correction
+	#--------------------------------------------------------------------------
+	def no_difficulty?
+		@data_ex.key?(:no_difficulty) ? true : false
+	end
+	#--------------------------------------------------------------------------
+	# ● Invalid predation
+	#--------------------------------------------------------------------------
+	def no_predation?
+		@data_ex.key?(:no_predation) ? true : false
+	end
+	#--------------------------------------------------------------------------
+	# ● Defeat event impossible to skip
+	#--------------------------------------------------------------------------
+	def no_lose_skip?
+		@data_ex.key?(:no_lose_skip) ? true : false
+	end
+	#--------------------------------------------------------------------------
+	# ● Setting of friendship
+	#--------------------------------------------------------------------------  
+	def friend=(value)
+		variable_id = @data_ex.key?(:friend_variable) ? @data_ex[:friend_variable] : self.id
+		$game_variables[NWConst::Var::ENEMY_REL_BASE + variable_id] = value
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquisition of friendship
+	#--------------------------------------------------------------------------  
+	def friend
+		variable_id = @data_ex.key?(:friend_variable) ? @data_ex[:friend_variable] : self.id
+		return $game_variables[NWConst::Var::ENEMY_REL_BASE + variable_id]
+	end
+	#--------------------------------------------------------------------------
+	# ● Chaotic labyrinth whether enemy or not
+	#--------------------------------------------------------------------------
+	def ex_dungeon_enemy?
+		(1001..2000).include?(id)
+	end
+	#--------------------------------------------------------------------------
+	# ● Event ID after defeat
+	#--------------------------------------------------------------------------  
+	def lose_event_id
+		return NWConst::Common::LOSE_EVENT_BASE if ex_dungeon_enemy?
+		return NWConst::Common::LOSE_EVENT_BASE + self.id
+	end
+end
+
+#==============================================================================
+# ■ RPG::State
+#==============================================================================
+class RPG::State < RPG::BaseItem
+	#--------------------------------------------------------------------------
+	# ● Memo column analysis
+	#--------------------------------------------------------------------------
+	alias nw_kure_note_analyze nw_note_analyze
+	def nw_note_analyze
+		nw_kure_note_analyze    
+		self.note.each_line do |line|
+			if NWRegexp::State::TMP_EQUIP.match(line)
+				@data_ex[:tmp_equip] = $1.to_i
+			elsif NWRegexp::State::DEATH.match(line)
+				@data_ex[:death?] = true
+			elsif NWRegexp::State::DEATH_PLEASURE.match(line)
+				@data_ex[:death_pleasure?] = true
+			end
+		end
+	end  
+	#--------------------------------------------------------------------------
+	# ● temporary equipment
+	#--------------------------------------------------------------------------
+	def tmp_equip
+		@data_ex.key?(:tmp_equip) ? @data_ex[:tmp_equip] : 0
+	end  
+	#--------------------------------------------------------------------------
+	# ● Additional battle impossible state?
+	#--------------------------------------------------------------------------
+	def death?
+		return (self.id == 1 || @data_ex.key?(:death?)) ? true : false
+	end
+	#--------------------------------------------------------------------------
+	# Pleasure death state?
+	#--------------------------------------------------------------------------
+	def death_pleasure?
+		return @data_ex.key?(:death_pleasure?) ? true : false
+	end
+	#--------------------------------------------------------------------------
+	# ● Restraint usage state?
+	#--------------------------------------------------------------------------
+	def user_bind?
+		return self.id == NWConst::State::UBIND
+	end
+	#--------------------------------------------------------------------------
+	# ● State of restraint?
+	#--------------------------------------------------------------------------
+	def target_bind?
+		return self.id == NWConst::State::TBIND
+	end
+	#--------------------------------------------------------------------------
+	# ● Permanently constrained use state?
+	#--------------------------------------------------------------------------
+	def eternal_user_bind?
+		return self.id == NWConst::State::EUBIND
+	end
+	#--------------------------------------------------------------------------
+	# ● Permanently restrained state?
+	#--------------------------------------------------------------------------
+	def eternal_target_bind?
+		return self.id == NWConst::State::ETBIND
+	end  
+end
+
+#==============================================================================
+# ■ RPG::Skill
+#==============================================================================
+class RPG::Skill < RPG::UsableItem
+	#--------------------------------------------------------------------------
+	# ● Memo column analysis processing
+	#--------------------------------------------------------------------------
+	alias nw_kure_skill_note_analyze nw_note_analyze
+	def nw_note_analyze
+		nw_kure_skill_note_analyze
+		
+		self.note.each_line do |line|
+			if NWRegexp::Skill::HP_COST_EX.match(line)
+				@data_ex[:hp_cost_ex] = {}
+				@data_ex[:hp_cost_ex][:data] = $3.to_i
+				@data_ex[:hp_cost_ex][:abs?] = $1 ? true : false
+				@data_ex[:hp_cost_ex][:max?] = $2 == "MAXHP" ? true : false
+				@data_ex[:hp_cost_ex][:per?] = $4.nil? ? false : true
+			elsif NWRegexp::Skill::MP_COST_EX.match(line)
+				@data_ex[:mp_cost_ex] = {}
+				@data_ex[:mp_cost_ex][:data] = $3.to_i
+				@data_ex[:mp_cost_ex][:abs?] = $1 ? true : false
+				@data_ex[:mp_cost_ex][:max?] = $2 == "MAXMP" ? true : false
+				@data_ex[:mp_cost_ex][:per?] = $4.nil? ? false : true
+			elsif NWRegexp::Skill::TP_COST_EX.match(line)
+				@data_ex[:tp_cost_ex] = {}
+				@data_ex[:tp_cost_ex][:data] = $3.to_i
+				@data_ex[:tp_cost_ex][:abs?] = $1 ? true : false
+				@data_ex[:tp_cost_ex][:max?] = $2 == "MAXTP" ? true : false
+				@data_ex[:tp_cost_ex][:per?] = $4.nil? ? false : true
+			elsif NWRegexp::Skill::GOLD_COST.match(line)
+				@data_ex[:gold_cost] = $1.to_i
+			elsif NWRegexp::Skill::ITEM_COST.match(line)
+				@data_ex[:item_cost] ||= []
+				$1.scan(/(\d+)\-(\d+)/){|a, b| @data_ex[:item_cost].push({:id => a.to_i, :num => b.to_i})}
+			elsif NWRegexp::Skill::NEED_ITEM.match(line)
+				@data_ex[:need_item] ||= []
+				$1.split(/\,\s?/).each{|id| @data_ex[:need_item].push(id.to_i)}
+			elsif NWRegexp::Skill::NEED_DUAL_WIELD.match(line)
+				@data_ex[:need_dual_wield?] = true
+			elsif NWRegexp::Skill::FRIEND_DRAW.match(line)
+				@data_ex[:friend_draw?] = true
+			elsif NWRegexp::Skill::STYPE_EX.match(line)
+				@data_ex[:stype_ex] ||= []
+				$1.split(/\,\s?/).each{|id| @data_ex[:stype_ex].push(id.to_i)}
+			elsif NWRegexp::Skill::SKILL_HIT.match(line)
+				@data_ex[:skill_hit] = $1.to_f * 0.01
+			elsif NWRegexp::Skill::SKILL_HIT_FACTOR.match(line)
+				@data_ex[:skill_hit_factor] = $1.to_f * 0.01
+			elsif NWRegexp::Skill::NOT_LEARN_ACTORS.match(line)  
+				@data_ex[:not_learn_actors] = true
+			elsif NWRegexp::Skill::NOT_LEARN_ACTORS_SET.match(line)  
+				@data_ex[:not_learn_actors] = true
+			elsif NWRegexp::Skill::MEMORIZE_COST.match(line)
+				@data_ex[:memorize_cost] = $1.to_i
+			elsif NWRegexp::Skill::PASSIVE_ARMORS.match(line)
+				@data_ex[:passive_armors] ||= []
+				$1.split(/\,\s?/).each{|id|@data_ex[:passive_armors].push(id.to_i)}
+			elsif NWRegexp::Skill::NOT_JUMBLE_MEMORIZE.match(line)
+				@data_ex[:not_jumble_memorize] ||= []        
+				$1.split(/\,\s?/).each{|id| @data_ex[:not_jumble_memorize].push(id.to_i)}                
+			elsif NWRegexp::Enemy::LIB_NAME.match(line)
+				@data_ex[:lib_name] = $1.to_s
+			elsif NWRegexp::Skill::INVISIBLE.match(line)
+				@data_ex[:visible?] = true
+			elsif NWRegexp::Skill::RECHARGE.match(line)
+				@data_ex[:recharge] = $1.to_i
+			elsif NWRegexp::Skill::CYCLE.match(line)
+				@data_ex[:cycle] = "($game_troop.turn_count - #{$1}) % #{$2} == 0"
+			elsif NWRegexp::Skill::LONELY_UNUSED.match(line)
+				@data_ex[:lonely_unused?] = true
+			elsif NWRegexp::Skill::NO_AUTO_BATTLE.match(line)
+				@data_ex[:no_auto_battle?] = true
+			end
+		end
+	end
+	#--------------------------------------------------------------------------
+	# ● Extended consumption HP
+	#--------------------------------------------------------------------------
+	def hp_cost_ex
+		@data_ex.key?(:hp_cost_ex) ? @data_ex[:hp_cost_ex] : nil
+	end
+	#--------------------------------------------------------------------------
+	# ● Extended consumption MP
+	#--------------------------------------------------------------------------
+	def mp_cost_ex
+		@data_ex.key?(:mp_cost_ex) ? @data_ex[:mp_cost_ex] : nil
+	end
+	#--------------------------------------------------------------------------
+	# ● Extended consumption TP
+	#--------------------------------------------------------------------------
+	def tp_cost_ex
+		@data_ex.key?(:tp_cost_ex) ? @data_ex[:tp_cost_ex] : nil
+	end
+	#--------------------------------------------------------------------------
+	# ● Consumption amount
+	#--------------------------------------------------------------------------
+	def gold_cost
+		@data_ex.key?(:gold_cost) ? @data_ex[:gold_cost] : 0
+	end
+	#--------------------------------------------------------------------------
+	# ● Consumption items
+	#--------------------------------------------------------------------------
+	def item_cost
+		@data_ex.key?(:item_cost) ? @data_ex[:item_cost] : []
+	end
+	#--------------------------------------------------------------------------
+	# ● Required items
+	#--------------------------------------------------------------------------
+	def need_item
+		@data_ex.key?(:need_item) ? @data_ex[:need_item] : []
+	end
+	#--------------------------------------------------------------------------
+	# Require two weapons
+	#--------------------------------------------------------------------------
+	def need_dual_wield?
+		@data_ex.key?(:need_dual_wield?) ? true : false
+	end
+	#--------------------------------------------------------------------------
+	# ● Friendship display?
+	#--------------------------------------------------------------------------  
+	def friend_draw?
+		@data_ex.key?(:friend_draw?) ? true : false
+	end
+	#--------------------------------------------------------------------------
+	# ● Skill type array
+	#--------------------------------------------------------------------------
+	def stypes
+		@data_ex.key?(:stype_ex) ? [stype_id] + @data_ex[:stype_ex] : [stype_id]
+	end
+	#--------------------------------------------------------------------------
+	# ● Skill Accuracy
+	#--------------------------------------------------------------------------
+	def skill_hit
+		@data_ex.key?(:skill_hit) ? @data_ex[:skill_hit] : nil
+	end
+	#--------------------------------------------------------------------------
+	# ● skill hit correction rate
+	#--------------------------------------------------------------------------
+	def skill_hit_factor
+		@data_ex.key?(:skill_hit_factor) ? @data_ex[:skill_hit_factor] : 0.0
+	end
+	#--------------------------------------------------------------------------
+	# ● Unacquired actor ID array
+	#--------------------------------------------------------------------------
+	def not_learn_actors
+		@data_ex.key?(:not_learn_actors) ? NWConst::Actor::NOT_LEARN_ACTORS : []
+	end
+	#--------------------------------------------------------------------------
+	# ● Memory cost
+	#--------------------------------------------------------------------------
+	def memorize_cost
+		@data_ex.key?(:memorize_cost) ? @data_ex[:memorize_cost] : 0
+	end    
+	#--------------------------------------------------------------------------
+	# ● Passive armor ID array
+	#--------------------------------------------------------------------------
+	def passive_armors
+		@data_ex.key?(:passive_armors) ? @data_ex[:passive_armors] : []
+	end  
+	#--------------------------------------------------------------------------
+	# ● Coexistence impossible memory array
+	#--------------------------------------------------------------------------
+	def not_jumble_memorize
+		@data_ex.key?(:not_jumble_memorize) ? @data_ex[:not_jumble_memorize] : []
+	end  
+	#--------------------------------------------------------------------------
+	# ● picture book title
+	#--------------------------------------------------------------------------
+	def lib_name
+		return @data_ex.key?(:lib_name) ? @data_ex[:lib_name] : self.name
+	end
+	#--------------------------------------------------------------------------
+	# ● Obtain invisible flag
+	#--------------------------------------------------------------------------
+	def visible?
+		@data_ex.key?(:visible?) ? false : true    
+	end
+	#--------------------------------------------------------------------------
+	# ● Reuse turn
+	#--------------------------------------------------------------------------
+	def recharge
+		return @data_ex.key?(:recharge) ? @data_ex[:recharge] : 0
+	end
+	#--------------------------------------------------------------------------
+	# Periodic technique judgment
+	#--------------------------------------------------------------------------
+	def cycle_skill?
+		return @data_ex.key?(:cycle) ? true : false
+	end
+	#--------------------------------------------------------------------------
+	# Evaluation of periodic condition
+	#--------------------------------------------------------------------------
+	def cycle_eval
+		return cycle_skill? ? eval(@data_ex[:cycle]) : false
+	end
+	#--------------------------------------------------------------------------
+	# ● Traveling alone?
+	#--------------------------------------------------------------------------
+	def lonely_unused?
+		return @data_ex.key?(:lonely_unused?) ? true : false
+	end  
+	#--------------------------------------------------------------------------
+	# ● Automatic combat impossible
+	#--------------------------------------------------------------------------
+	def no_auto_battle?
+		@data_ex.key?(:no_auto_battle?) ? true : false
+	end
+	#--------------------------------------------------------------------------
+	# Skill judgment
+	#--------------------------------------------------------------------------
+	def is_skill?
+		return true
+	end
+	#--------------------------------------------------------------------------
+	# ● Object
+	#--------------------------------------------------------------------------
+	def ext_scope
+		return NWSex::LUCA if bind? || eternal_bind?
+		return super
+	end  
+	#--------------------------------------------------------------------------
+	# ● Special technique at restraint?
+	#--------------------------------------------------------------------------
+	def bind?
+		self.stype_id == NWConst::SType::BIND
+	end
+	#--------------------------------------------------------------------------
+	# ● Special technique for permanent restraint?
+	#--------------------------------------------------------------------------
+	def eternal_bind?
+		self.stype_id == NWConst::SType::EBIND
+	end
+end
+
+#==============================================================================
+# ■ RPG::EquipItem
+#==============================================================================
+class RPG::EquipItem < RPG::BaseItem
+	#--------------------------------------------------------------------------
+	# ● Memo column analysis processing
+	#--------------------------------------------------------------------------
+	alias nw_kure_equip_note_analyze nw_note_analyze
+	def nw_note_analyze
+		nw_kure_equip_note_analyze
+		
+		self.note.each_line do |line|
+			if NWRegexp::EquipItem::EXCLUSIVE_ACTORS.match(line)
+				@data_ex[:exclusive_actors] ||= []
+				$1.split(/\,\s?/).each{|id|
+					@data_ex[:exclusive_actors].push(id.to_i)
+				}
+			end
+		end 
+	end
+	#--------------------------------------------------------------------------
+	# ● Special equipment
+	#--------------------------------------------------------------------------
+	def exclusive_actors
+		@data_ex.key?(:exclusive_actors) ? @data_ex[:exclusive_actors] : nil
+	end
+end
+
+#==============================================================================
+# ■ RPG::Weapon
+#==============================================================================
+class RPG::Weapon < RPG::EquipItem
+	#--------------------------------------------------------------------------
+	# ● Memo column analysis processing
+	#--------------------------------------------------------------------------
+	alias nw_kure_weapon_note_analyze nw_note_analyze
+	def nw_note_analyze
+		nw_kure_weapon_note_analyze
+		
+		self.note.each_line do |line|
+			if NWRegexp::Weapon::NOT_DUAL_WIELD.match(line)
+				@data_ex[:not_dual_wield?] = true
+			end
+		end 
+	end
+	#--------------------------------------------------------------------------
+	# ● Two swords impossible?
+	#--------------------------------------------------------------------------
+	def not_dual_wield?
+		@data_ex.key?(:not_dual_wield?) ? true : false
+	end
+	#--------------------------------------------------------------------------
+	# ● Performance evaluation
+	#--------------------------------------------------------------------------
+	def performance 
+		params.inject(0) {|r, v| r += v }
+	end
+end
+
+
+#==============================================================================
+# ■ RPG::Armor
+#==============================================================================
+class RPG::Armor < RPG::EquipItem
+	#--------------------------------------------------------------------------
+	# ● Accessory determination
+	#--------------------------------------------------------------------------
+	def is_accessory?
+		return self.atype_id == NWConst::Armor::ACCESSORY
+	end
+end
+
+#==============================================================================
+# ■ RPG::Item
+#==============================================================================
+class RPG::Item < RPG::UsableItem
+	#--------------------------------------------------------------------------
+	# Skill judgment
+	#--------------------------------------------------------------------------
+	def is_skill?
+		return false
+	end
+	#--------------------------------------------------------------------------
+	# ● Present judgment
+	#--------------------------------------------------------------------------
+	def is_present?
+		NWConst::Item::PRESENT_RANGE.include?(self.id)
+	end
+end
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,7 @@
+"更新履歴" -> "Change log"
+"新規" -> "New"
+"追加1" -> "Addition 1"
+"追加1" -> "Addition 1"
+"ワープ時にスイッチ変更" -> "Switch change when warping"
+"追加1" -> "Addition 1"
+"ワープ時にスイッチ変更" -> "Switch change when warping"

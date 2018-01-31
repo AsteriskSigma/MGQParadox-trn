@@ -1,0 +1,1 @@
+"人形遣いの塔 2F" -> "Puppet Tower 2F"

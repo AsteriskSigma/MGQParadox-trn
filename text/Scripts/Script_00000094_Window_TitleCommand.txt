@@ -1,0 +1,7 @@
+"■ Window" -> "■ Window"
+"　タイトル画面で、ニューゲーム／コンティニューを選択するウィンドウです。" -> "On the title screen, this is the window to select New Game / Continue."
+"● オブジェクト初期化" -> "● Object initialization"
+"● ウィンドウ幅の取得" -> "● Obtain window width"
+"● ウィンドウ位置の更新" -> "● Update window position"
+"● コマンドリストの作成" -> "● Create command list"
+"● コンティニューの有効状態を取得" -> "● Acquire the effective status of Continue"

@@ -1,0 +1,8 @@
+"■ Game" -> "■ Game"
+"　セルフスイッチを扱うクラスです。組み込みクラス Hash のラッパーです。このク" -> "It is a class dealing with self-switch. It is a wrapper for the built-in class Hash. This"
+"ラスのインスタンスは " -> "An instance of Ras"
+"で参照されます。" -> "It is referred to."
+"● オブジェクト初期化" -> "● Object initialization"
+"● セルフスイッチの取得" -> "● Acquisition of self switch"
+"● セルフスイッチの設定" -> "● Self-switch setting"
+"● セルフスイッチの設定時の処理" -> "● Processing when setting the self switch"

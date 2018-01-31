@@ -1,0 +1,7 @@
+"【ハインリヒ】" -> "【Heinrich】"
+"魂のみとなった僕だけれど……" -> "I am only a soul ... but ...."
+"せめて、勇者の奥義「グランドリオン」を伝えよう。" -> "At the very least, let's tell the mystery of the brave \"Grand Leon\"."
+"選択" -> "Choice"
+"選択" -> "Choice"
+"【ハインリヒ】" -> "【Heinrich】"
+"君は、僕のようになっちゃ駄目だよ……" -> "You must not be like me ..."

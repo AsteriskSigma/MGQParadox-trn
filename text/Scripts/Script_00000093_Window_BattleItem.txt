@@ -1,0 +1,7 @@
+"■ Window" -> "■ Window"
+"　バトル画面で、使用するアイテムを選択するウィンドウです。" -> "In the battle screen, it is a window to select items to use."
+"● オブジェクト初期化" -> "● Object initialization"
+"情報表示用ビューポート" -> "Information viewport port"
+"● アイテムをリストに含めるかどうか" -> "● Whether to include items in the list"
+"● ウィンドウの表示" -> "● Window display"
+"● ウィンドウの非表示" -> "● Hide Window"

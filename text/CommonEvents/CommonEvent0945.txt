@@ -1,0 +1,3 @@
+"まいど、うちは行商マーメイドや。" -> "Maido, we are a peddler Mermaid and."
+"今日は仕入れに失敗してしもたわ……" -> "I have failed to purchase today ..."
+"次は本気見せるから、見捨てんといてな。" -> "I will show my earliest next time, so I have to abandon them."

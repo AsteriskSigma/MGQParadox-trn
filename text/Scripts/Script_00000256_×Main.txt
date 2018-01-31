@@ -1,0 +1,2 @@
+"■ Main" -> "■ Main"
+"　モジュールとクラスの定義が終わった後に実行される処理です。" -> "Processing to be executed after definition of modules and classes is over."

@@ -1,0 +1,4 @@
+"「Mrs" -> "\"Mrs"
+"」" -> "\""
+"バトルファックを挑む" -> "Challenge battle fuck"
+"やめておく" -> "To give up"

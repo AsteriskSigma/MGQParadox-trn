@@ -1,0 +1,25 @@
+=begin
+
+
+● For script material users
+
+* When using the script obtained on the material distribution site etc. on the Internet,
+Please create a new section in this position and paste it there.
+(Select \"Insert\" from the pop-up menu on the left list box)
+
+* In addition, if there are special instructions from material producers, please follow it.
+
+* In principle what is the script for \"RPG Menu VX\" and \"RPG Maker XP\"
+    Since there is no compatibility, it is a material for \"RPG Maker VX Ace\"
+    Please check and use.
+
+
+● For those who produce script material
+
+* If you are developing a script to distribute to an unspecified number of users,
+Just by using redefinition or alias as much as possible, simply paste it in this position
+We recommend that you adjust it to work.
+
+
+=end
+

@@ -1,0 +1,7 @@
+"ミリオ：勝利" -> "Milio: Victory"
+"【Milio】" -> "【Milio】"
+"【Milio】" -> "【Milio】"
+"【Milio】" -> "【Milio】"
+"♪" -> "♪"
+"【Milio】" -> "【Milio】"
+"♪" -> "♪"

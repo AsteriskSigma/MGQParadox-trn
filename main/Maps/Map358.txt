@@ -1,0 +1,905 @@
+
+DisplayName "Don Father's Mansion"
+
+
+
+EVENT   1
+ PAGE   1
+  If(1,1033,0,1,0)
+   RunCommonEvent(308)
+   EndEventProcessing()
+   0()
+  EndIf()
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,358,73,43,0,0)
+  0()
+
+
+
+EVENT   2
+ PAGE   1
+  If(1,1001,0,25,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("【escort】")
+   ShowMessage("There is a don · father on this.")
+   ShowMessage("Do not be rude ......")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,26,1)
+   355("actor_label_jump")
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("【escort】")
+   ShowMessage("Don Father is on vacation.")
+   ShowMessage("You can enter the room, keeping a message ......")
+   EndEventProcessing()
+   DefineLabel("520")
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("【escort】")
+   ShowMessage("Is cheers for good work!")
+   ShowMessageFace("lazarus3_fc1",1,0,2,4)
+   ShowMessage("【Lazarus】")
+   ShowMessage("Ou, thank you.")
+   EndEventProcessing()
+   DefineLabel("522")
+   ShowMessageFace("",0,0,2,5)
+   ShowMessage("【escort】")
+   ShowMessage("Is cheers for good work!")
+   ShowMessageFace("merlin_fc1",0,0,2,6)
+   ShowMessage("【Merlin】")
+   ShowMessage("Thank you for your hard work.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+EVENT   45
+ PAGE   1
+  0()
+
+
+
+EVENT   46
+ PAGE   1
+  0()
+
+
+
+EVENT   47
+ PAGE   1
+  If(1,1033,0,1,0)
+   RunCommonEvent(308)
+   EndEventProcessing()
+   0()
+  EndIf()
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,358,73,43,0,0)
+  0()
+
+
+
+EVENT   49
+ PAGE   1
+  ChangeSwitch(31,31,1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,358,73,11,0,0)
+  0()
+
+
+
+EVENT   50
+ PAGE   1
+  ChangeSwitch(31,31,1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,358,74,11,0,0)
+  0()
+
+
+
+EVENT   51
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,337,62,21,0,0)
+  0()
+
+
+
+EVENT   52
+ PAGE   1
+  281(1)
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x09,0x4d,0x6f,0x76,0x65,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  TeleportPlayer(0,337,63,21,0,0)
+  0()
+
+
+
+EVENT   240
+ PAGE   1
+  PictureDisplay(5,"80_merlin_st01",0,0,0,0,100,100,0,0)
+  PictureMove(5,null,0,0,0,0,100,100,255,0,30,true)
+  If(1,1033,0,0,0)
+   ChangeVariable(1033,1033,0,0,1)
+   ChangeSwitch(100,100,0)
+   ShowMessageFace("merlin_fc1",0,0,2,1)
+   ShowMessage("\\n<Merlin>Nice meeting you for the first time. I am Don Father, Merlin.")
+   If(0,6,0)
+    ShowMessageFace("sonia_fc3",2,0,2,2)
+    ShowMessage("\\n<Sonya>So gentlemanly!")
+    0()
+   Else()
+    ShowMessageFace("ruka_fc1",0,0,2,3)
+    ShowMessage("\\n<Luka>Completely different from what I expected...")
+    0()
+   EndIf()
+   ShowMessageFace("merlin_fc1",0,0,2,4)
+   ShowMessage("\\n<Merlin>Coercion and threats are what my subordinates do. I am unrelated to such activities.")
+   If(0,4,0)
+    ShowMessageFace("alice_fc5",0,0,2,5)
+    ShowMessage("\\n<Alice>Still, to think that the big boss of the underworld is in the Sabasa region... Well done managing to escape the previous King of Sabasa's sight.")
+    0()
+   EndIf()
+   If(0,5,0)
+    ShowMessageFace("iriasu_fc4",2,0,2,6)
+    ShowMessage("\\n<Ilias>However, for the mafia's emperor to be in the land of Sabasa... Impressive that you were able to escape the previous King of Sabasa's sight.")
+    0()
+   EndIf()
+   ShowMessageFace("merlin_fc1",0,0,2,7)
+   ShowMessage("\\n<Merlin>Just like a coin has a front and a back, so too does human society.")
+   ShowMessageFace("merlin_fc1",0,0,2,8)
+   ShowMessage("\\n<Merlin>The previous King of Sabasa understood that very well too. Where there is light, there is always shadow...")
+   ShowMessageFace("ruka_fc1",0,0,2,9)
+   ShowMessage("\\n<Luka>Are you saying that the previous king let the mafia be?")
+   ShowMessageFace("merlin_fc1",0,0,2,10)
+   ShowMessage("\\n<Merlin>Of course not. I swear on the previous King's honor that he didn't go that far. ...But villains don't disappear so easily.")
+   ShowMessageFace("merlin_fc1",0,0,2,11)
+   ShowMessage("\\n<Merlin>After all, evil has its roots in basic human emotions. You, I, and everyone else are evil to a smaller or greater extent.")
+   ShowMessageFace("merlin_fc1",0,0,2,12)
+   ShowMessage("\\n<Merlin>If you try to wholly force it out of society, it will impose a huge strain on it. The previous King of Sabasa was aware of that.")
+   ShowMessageFace("merlin_fc1",0,0,2,13)
+   ShowMessage("\\n<Merlin>Furthermore, uncontrolled evil is more dangerous than controlled evil. The king understood society very well.")
+   ShowMessageFace("merlin_fc1",0,0,2,14)
+   ShowMessage("\\n<Merlin>As such, from his standpoint, crushing an organization without thinking it through would force it to hide in the underground, which would make it difficult to monitor.")
+   ShowMessageFace("merlin_fc1",0,0,2,15)
+   ShowMessage("\\n<Merlin>His previous Majesty... It is a shame we lost such a great person. With war imminent, he was someone this country now needs.")
+   If(4,529,0)
+    ShowMessageFace("sara_fc1",4,0,2,16)
+    ShowMessage("\\n<Sara>I don't think father would be delighted to see a mafia boss mourn him...")
+    0()
+   EndIf()
+   ShowMessageFace("merlin_fc1",0,0,2,17)
+   ShowMessage("\\n<Merlin>Whoops... I shouldn't involve you travelers in idle talk. Please, stop by again. I shall treat you to a delicious Darjeeling.")
+   PictureMove(5,null,0,0,0,0,100,100,0,0,30,true)
+   PictureClear(5)
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1033,0,1,1)
+   ShowMessageFace("merlin_fc1",0,0,2,18)
+   ShowMessage("\\n<Merlin>Welcome, travelers. Is it all right to meet a person like me multiple times?")
+   ShowMessageFace("merlin_fc1",0,0,2,19)
+   ShowMessage("\\n<Merlin>I personally do not mind, but we are being monitored by the authorities. I cannot confidently state it will not be troubling for you...")
+   PictureMove(5,null,0,0,0,0,100,100,0,0,30,true)
+   PictureClear(5)
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+ PAGE   2
+  // condition: variable 1001 >= 26
+  0()
+
+
+
+EVENT   241
+ PAGE   1
+  355("actor_label_jump")
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Guard>You may pass.")
+  EndEventProcessing()
+  DefineLabel("520")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("【escort】")
+  ShowMessage("Is cheers for good work!")
+  ShowMessageFace("lazarus3_fc1",1,0,2,3)
+  ShowMessage("【Lazarus】")
+  ShowMessage("Ou, thank you.")
+  EndEventProcessing()
+  DefineLabel("522")
+  ShowMessageFace("",0,0,2,4)
+  ShowMessage("【escort】")
+  ShowMessage("Is cheers for good work!")
+  ShowMessageFace("merlin_fc1",0,0,2,5)
+  ShowMessage("【Merlin】")
+  ShowMessage("Thank you for your hard work.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   242
+ PAGE   1
+  355("actor_label_jump")
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Guard>You may pass.")
+  EndEventProcessing()
+  DefineLabel("520")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("【escort】")
+  ShowMessage("Is cheers for good work!")
+  ShowMessageFace("lazarus3_fc1",1,0,2,3)
+  ShowMessage("【Lazarus】")
+  ShowMessage("Ou, thank you.")
+  EndEventProcessing()
+  DefineLabel("522")
+  ShowMessageFace("",0,0,2,4)
+  ShowMessage("【escort】")
+  ShowMessage("Is cheers for good work!")
+  ShowMessageFace("merlin_fc1",0,0,2,5)
+  ShowMessage("【Merlin】")
+  ShowMessage("Thank you for your hard work.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   243
+ PAGE   1
+  If(1,1001,0,25,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Showy Woman>Fufu... Try laying your hands on me, and it will end badly for you. I think that... I might fall for a man with such guts. ♪")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,26,1)
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("[A flashy woman]")
+   ShowMessage("Don, I wonder if I will return soon ......")
+   ShowMessage("Refuge, which do you think it is?")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("520")
+   ShowMessageFace("lazarus3_fc1",1,0,2,3)
+   ShowMessage("【Lazarus】")
+   ShowMessage("Of course, it's me?")
+   ShowMessageFace("",0,0,2,4)
+   ShowMessage("[A flashy woman]")
+   ShowMessage("Uhufu, which way?")
+   EndEventProcessing()
+   DefineLabel("522")
+   ShowMessageFace("merlin_fc1",0,0,2,5)
+   ShowMessage("【Merlin】")
+   ShowMessage("Of course, is not it me?")
+   ShowMessageFace("",0,0,2,6)
+   ShowMessage("[A flashy woman]")
+   ShowMessage("Uhufu, which way?")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   244
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Guard>......")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("He's quietly standing in a corner, like a watchdog...")
+  0()
+
+
+
+EVENT   245
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Guard>......")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("He's quietly standing in a corner, like a watchdog...")
+  0()
+
+
+
+EVENT   246
+ PAGE   1
+  If(1,1001,0,25,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Executive>So you have a connection to Elka... Don't worry, Elka is also affiliated with Father.")
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Executive>After all, Father is the underworld's emperor. There are none who can stand against him.")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("72")
+   ShowMessageFace("phoenix_fc1",3,0,2,3)
+   ShowMessage("\\n<Mini>Wow, he's more amazing than Don... I'm shocked!")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,26,1)
+   ShowMessageFace("",0,0,2,4)
+   ShowMessage("【Executive】")
+   ShowMessage("Fairly impossible, collect attractive accessories.")
+   ShowMessage("You made obligation in various places ... ...")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("520")
+   ShowMessageFace("lazarus3_fc1",1,0,2,5)
+   ShowMessage("【Lazarus】")
+   ShowMessage("That kind of thing, I had a hard time with Elka too.")
+   ShowMessage("I am going to treat you at a grilled meat shop ......")
+   ShowMessageFace("",0,0,2,6)
+   ShowMessage("【Executive】")
+   ShowMessage("Mr. Elka, I just worked that much and only grilled meat ... ....?")
+   ShowMessageFace("lazarus3_fc1",1,0,2,7)
+   ShowMessage("【Lazarus】")
+   ShowMessage("Stupid, it's about Shinagi.")
+   ShowMessage("I will be able to make a new yakiniku restaurant next time at Grangoldo.")
+   EndEventProcessing()
+   DefineLabel("522")
+   ShowMessageFace("merlin_fc1",0,0,2,8)
+   ShowMessage("【Merlin】")
+   ShowMessage("Well, the return will be enough.")
+   ShowMessage("It was worth the dying.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+ PAGE   2
+  // condition: variable 1001 >= 26
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Executive】")
+  ShowMessage("Fairly impossible, collect attractive accessories.")
+  ShowMessage("You made obligation in various places ... ...")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("520")
+  ShowMessageFace("lazarus3_fc1",1,0,2,2)
+  ShowMessage("【Lazarus】")
+  ShowMessage("That kind of thing, I had a hard time with Elka too.")
+  ShowMessage("I am going to treat you at a grilled meat shop ......")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("【Executive】")
+  ShowMessage("Mr. Elka, I just worked that much and only grilled meat ... ....?")
+  ShowMessageFace("lazarus3_fc1",1,0,2,4)
+  ShowMessage("【Lazarus】")
+  ShowMessage("Stupid, it's about Shinagi.")
+  ShowMessage("I will be able to make a new yakiniku restaurant next time at Grangoldo.")
+  EndEventProcessing()
+  DefineLabel("522")
+  ShowMessageFace("merlin_fc1",0,0,2,5)
+  ShowMessage("【Merlin】")
+  ShowMessage("It was a lot hard work.")
+  ShowMessage("I look forward to working with you.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   247
+ PAGE   1
+  If(1,1001,0,25,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Executive>Rosso's request... the usual, a horse-drawn carriage with a bomb.")
+   205(0,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x08,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x29,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x1e,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Executive>...Whoops, you didn't hear that, did you? It's better if you didn't.")
+   205(0,bytes(0x04,0x08,0x6f,0x3a,0x13,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x52,0x6f,0x75,0x74,0x65,0x09,0x3a,0x0c,0x40,0x72,0x65,0x70,0x65,0x61,0x74,0x46,0x3a,0x0f,0x40,0x73,0x6b,0x69,0x70,0x70,0x61,0x62,0x6c,0x65,0x46,0x3a,0x0a,0x40,0x77,0x61,0x69,0x74,0x54,0x3a,0x0a,0x40,0x6c,0x69,0x73,0x74,0x5b,0x08,0x6f,0x3a,0x15,0x52,0x50,0x47,0x3a,0x3a,0x4d,0x6f,0x76,0x65,0x43,0x6f,0x6d,0x6d,0x61,0x6e,0x64,0x07,0x3a,0x0a,0x40,0x63,0x6f,0x64,0x65,0x69,0x18,0x3a,0x10,0x40,0x70,0x61,0x72,0x61,0x6d,0x65,0x74,0x65,0x72,0x73,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x28,0x3b,0x0c,0x5b,0x00,0x6f,0x3b,0x0a,0x07,0x3b,0x0b,0x69,0x00,0x3b,0x0c,0x5b,0x00))
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("64")
+   ShowMessageFace("pramia_fc1",0,0,2,3)
+   ShowMessage("\\n<Teeny>Not hearing what should not be heard is a maid's duty.")
+   EndEventProcessing()
+   DefineLabel("529")
+   ShowMessageFace("sara_fc1",2,0,2,4)
+   ShowMessage("\\n<Sara>What on earth are they plotting, I wonder...?")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+ PAGE   2
+  // condition: variable 1001 >= 26
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Executive】")
+  ShowMessage("It was taken care of in the strategy of Grangold.")
+  ShowMessage("……eh? Do not you remember?")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("【Executive】")
+  ShowMessage("Oh, I was disguised at that time.")
+  ShowMessage("You looked like a batten, do not you?")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("520")
+  ShowMessageFace("lazarus3_fc1",1,0,2,3)
+  ShowMessage("【Lazarus】")
+  ShowMessage("If there is something again, I will ask.")
+  EndEventProcessing()
+  DefineLabel("522")
+  ShowMessageFace("merlin_fc1",0,0,2,4)
+  ShowMessage("【Merlin】")
+  ShowMessage("If there is something again, I will leave it to you.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   248
+ PAGE   1
+  If(1,1001,0,25,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Executive>Your way of doing things is unrefined...")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("531")
+   ShowMessageFace("saniria_fc2",0,0,2,2)
+   ShowMessage("\\n<King of San Ilia>Indeed, very unrefined...")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,26,1)
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("【Executive】")
+   ShowMessage("There are various tastes in the large work of the example ... ...")
+   ShowMessage("It came to be able to chew also the restructuring plan of the Grangoldo.")
+   ShowMessageFace("",0,0,2,4)
+   ShowMessage("【Executive】")
+   ShowMessage("Again, thanks to you.")
+   ShowMessage("No, I am not saying ironically.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   249
+ PAGE   1
+  If(1,1001,0,25,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Guard>Don Father is upstairs. Be polite, or else...")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,26,1)
+   355("actor_label_jump")
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("【escort】")
+   ShowMessage("Don Father is on vacation.")
+   ShowMessage("You can enter the room, keeping a message ......")
+   EndEventProcessing()
+   DefineLabel("520")
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("【escort】")
+   ShowMessage("Is cheers for good work!")
+   ShowMessageFace("lazarus3_fc1",1,0,2,4)
+   ShowMessage("【Lazarus】")
+   ShowMessage("Ou, thank you.")
+   EndEventProcessing()
+   DefineLabel("522")
+   ShowMessageFace("",0,0,2,5)
+   ShowMessage("【escort】")
+   ShowMessage("Is cheers for good work!")
+   ShowMessageFace("merlin_fc1",0,0,2,6)
+   ShowMessage("【Merlin】")
+   ShowMessage("Thank you for your hard work.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   251
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Gangster>Despite this, I graduated from university. You can't get this far without a comprehension of economics.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Gangster>I keep all the accounting in my head. If I put it on paper, it could become evidence...")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("66")
+  ShowMessageFace("vgirl_fc1",2,0,2,3)
+  ShowMessage("\\n<Vanilla>I see... Oops, I shouldn't learn stuff like that.")
+  EndEventProcessing()
+  DefineLabel("141")
+  ShowMessageFace("mino_fc1",2,0,2,4)
+  ShowMessage("\\n<Mina>That's definitely impossible for me...")
+  EndEventProcessing()
+  DefineLabel("520")
+  ShowMessageFace("lazarus3_fc1",1,0,2,5)
+  ShowMessage("【Lazarus】")
+  ShowMessage("I can not do foolish work.")
+  ShowMessage("I will ask you from now on.")
+  EndEventProcessing()
+  DefineLabel("522")
+  ShowMessageFace("merlin_fc1",0,0,2,6)
+  ShowMessage("【Merlin】")
+  ShowMessage("That brain is reliable.")
+  ShowMessage("We will continue to do our best in the organization.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   252
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Gangster>Whenever war happens, this occupation has a shortage of manpower. It's 'cause hot-blooded folks join the army...")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("171")
+  ShowMessageFace("lizardboss_fc1",3,0,2,2)
+  ShowMessage("\\n<Miranda>It's the same for bandits. They shouldn't give away their young lives like that.")
+  EndEventProcessing()
+  0()
+ PAGE   2
+  // condition: variable 1001 >= 26
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("Clerk")
+  ShowMessage("Mr. Lazarus is usually a friendly person, but ....")
+  ShowMessage("When remembering sanctions against the White Rose group at the time of Mafia War ... ...")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("Clerk")
+  ShowMessage("Uhhh, the meshes become unable to eat ... ...")
+  ShowMessage("Since then, I can not see eyes with him ... ...")
+  355("actor_label_jump")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   253
+ PAGE   1
+  If(1,1001,0,25,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Executive>Yeah, all right, I get it. You properly disposed of the evidence, right?")
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Priest>Yes, of course... I recovered it all...")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("531")
+   ShowMessageFace("saniria_fc2",0,0,2,3)
+   ShowMessage("\\n<King of San Ilia>Now, what evidence are you talking about?")
+   ShowMessageFace("",0,0,2,4)
+   ShowMessage("\\n<Priest>Y-your Holiness! That's isn't... I'm...")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,26,1)
+   ShowMessageFace("",0,0,2,5)
+   ShowMessage("【Executive】")
+   ShowMessage("There is no tax on yakuza.")
+   ShowMessage("We are unemployed on tax law ......")
+   If(4,143,0)
+    ShowMessageFace("eva_fc1",0,0,2,6)
+    ShowMessage("【Eva】")
+    ShowMessage("I am also unemployed in tax law.")
+    ShowMessageFace("",0,0,2,7)
+    ShowMessage("【Executive】")
+    ShowMessage("You are genuine unemployed ... ...")
+    ShowMessageFace("eva_fc1",2,0,2,8)
+    ShowMessage("【Eva】")
+    ShowMessage("Why did you understand? What?")
+    ShowMessageFace("",0,0,2,9)
+    ShowMessage("【Executive】")
+    ShowMessage("If people can not see you, I can not sit on such a chair.")
+    0()
+   EndIf()
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   254
+ PAGE   1
+  If(4,531,0)
+   ShowMessageFace("saniria_fc2",0,0,2,1)
+   ShowMessage("\\n<King of San Ilia>......")
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("\\n<Priest>I-it's not like that, Your Holiness... This is...")
+   ShowMessageFace("saniria_fc2",0,0,2,3)
+   ShowMessage("\\n<King of San Ilia>There is no need to explain. We have already investigated you...")
+   ShowMessageFace("",0,0,2,4)
+   ShowMessage("\\n<Priest>N-no way...")
+   0()
+  Else()
+   ShowMessageFace("",0,0,2,5)
+   ShowMessage("\\n<Priest>H-hey! I'm in the middle of an important conversation right now!")
+   ShowMessageFace("",0,0,2,6)
+   ShowMessage("\\n<Executive>Ah, it's all right. They're from Elka's place.")
+   ShowMessageFace("",0,0,2,7)
+   ShowMessage("\\n<Priest>Ohh, Elka Company's... Please, keep it a secret that I was here. I have my own standing...")
+   0()
+  EndIf()
+  0()
+ PAGE   2
+  // condition: variable 1001 >= 26
+  0()
+
+
+
+EVENT   255
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Executive>I am in charge of the prostitution industry. Even my colleagues say that I exploit women...")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Executive>But do you know how much the percentage of venereal diseases has decreased ever since we took charge of it?")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Executive>If you leave prostitutes to themselves, venereal diseases spread... and they themselves shorten their lifespans a great deal.")
+  ShowMessageFace("",0,0,2,4)
+  ShowMessage("\\n<Executive>They are splendid goods, and we manage them. That's why saying that we abuse prostitutes is an unjustified criticism.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("529")
+  ShowMessageFace("sara_fc1",2,0,2,5)
+  ShowMessage("\\n<Sara>Are you trying to say it's a necessary evil? That's a very selfish thesis...")
+  EndEventProcessing()
+  0()
+ PAGE   2
+  // condition: variable 1001 >= 26
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("【Executive】")
+  ShowMessage("Don is currently hiding the glasses.")
+  ShowMessage("It's a big job in the example, I got stormy loud ... ...")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("520")
+  ShowMessageFace("lazarus3_fc1",1,0,2,2)
+  ShowMessage("【Lazarus】")
+  ShowMessage("Right now I am traveling with a brave person.")
+  ShowMessage("I remember the old days ... ...")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("【Executive】")
+  ShowMessage("Don, please just cry ...")
+  ShowMessage("Because the dispute for disputes is dismissal.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   256
+ PAGE   1
+  If(1,1001,0,25,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Executive>Villains are all over the place. No wonder this occupation won't disappear...")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,26,1)
+   ShowMessageFace("",0,0,2,2)
+   ShowMessage("【Executive】")
+   ShowMessage("It is true that executives only know that Mr. Lazarus is a true Don · Father.")
+   ShowMessage("However, Mr. Merlin is not a shadow warrior, he is doing important work as a don.")
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("【Executive】")
+   ShowMessage("Rather than Mr. Lazarus and Mr. Merlin,")
+   ShowMessage("Together they are Don Father.")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("520")
+   ShowMessageFace("lazarus3_fc1",1,0,2,4)
+   ShowMessage("【Lazarus】")
+   ShowMessage("Well, that's it.")
+   ShowMessage("Originally, it was a job I started doing with Mr. Marlin.")
+   EndEventProcessing()
+   DefineLabel("522")
+   ShowMessageFace("merlin_fc1",0,0,2,5)
+   ShowMessage("【Merlin】")
+   ShowMessage("Lazarus is better for the leader though ....")
+   ShowMessage("For the time being, I am serving the face on the surface.")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   257
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Maid>Not hearing anything in here is one of my duties. If it's for this exceptional pay, I shall close my eyes and ears.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("64")
+  ShowMessageFace("pramia_fc1",0,0,2,2)
+  ShowMessage("\\n<Teeny>That's a maid's spirit... right?")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   258
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Maid>I thought that serving in the mafia emperor's own house would fill my life with bullets flying all over.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Maid>But that never happens, not at all. It's somewhat anticlimactic. Don Father, too, is a calm and gentlemanly person.")
+  0()
+
+
+
+EVENT   259
+ PAGE   1
+  If(1,1001,0,25,2)
+   ShowMessageFace("",0,0,2,1)
+   ShowMessage("\\n<Executive>This town's casino is under my jurisdiction. I hope you enjoyed it.")
+   355("actor_label_jump")
+   EndEventProcessing()
+   DefineLabel("121")
+   ShowMessageFace("page65537_fc1",2,0,2,2)
+   ShowMessage("\\n<Cornelia>Yes, very much!")
+   EndEventProcessing()
+   0()
+  EndIf()
+  If(1,1001,0,26,1)
+   ShowMessageFace("",0,0,2,3)
+   ShowMessage("【Executive】")
+   ShowMessage("As the publicity gets darker, casino revenues will increase.")
+   ShowMessage("It makes me feel complicated ......")
+   EndEventProcessing()
+   0()
+  EndIf()
+  0()
+
+
+
+EVENT   260
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Executive>We don't use drugs. The only things we deal with are regular herbs.")
+  ShowMessageFace("",0,0,2,2)
+  ShowMessage("\\n<Executive>That is Don Father's policy. And Don Father's decisions are the rules of this world.")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("520")
+  ShowMessageFace("ruka_fc1",0,0,2,3)
+  ShowMessage("【Luke】")
+  ShowMessage("Why do not you handle drugs?")
+  ShowMessage("Perhaps a handful of conscience remains?")
+  ShowMessageFace("lazarus3_fc1",0,0,2,4)
+  ShowMessage("【Lazarus】")
+  ShowMessage("Well, remember.")
+  ShowMessage("If you handle medicines, it is already war.")
+  ShowMessageFace("lazarus3_fc1",0,0,2,5)
+  ShowMessage("【Lazarus】")
+  ShowMessage("The authorities overlook most things if you hold even money.")
+  ShowMessage("Threats and rashes, gambling and prostitution are everything.")
+  ShowMessageFace("lazarus3_fc1",0,0,2,6)
+  ShowMessage("【Lazarus】")
+  ShowMessage("Let's get civil engineering work, but miss it if there is a spill.")
+  ShowMessage("In most cases, you can buy the official constitution with money.")
+  ShowMessageFace("lazarus3_fc1",0,0,2,7)
+  ShowMessage("【Lazarus】")
+  ShowMessage("But only medicine is another.")
+  ShowMessage("Only for medicine, absolutely not miss the official constitution.")
+  ShowMessageFace("lazarus3_fc1",0,0,2,8)
+  ShowMessage("【Lazarus】")
+  ShowMessage("That's the beginning of the war ......")
+  ShowMessage("To do a war with the official constitution, my house is a bit too big.")
+  ShowMessageFace("lazarus3_fc1",0,0,2,9)
+  ShowMessage("【Lazarus】")
+  ShowMessage("That's why I will not bite my medicine.")
+  ShowMessage("I am sorry to return to the era of Mafia War.")
+  EndEventProcessing()
+  DefineLabel("522")
+  ShowMessageFace("merlin_fc1",0,0,2,10)
+  ShowMessage("【Merlin】")
+  ShowMessage("Dust makes people to rot.")
+  ShowMessage("In turn, the markets and even the organizations they deal with will be rotten.")
+  ShowMessageFace("merlin_fc1",0,0,2,11)
+  ShowMessage("【Merlin】")
+  ShowMessage("Mr. Lazarus, you know that well.")
+  ShowMessage("It is a fashionable, sustainable business model nowadays.")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   261
+ PAGE   1
+  // condition: switch 31 is ON
+  0()
+
+
+
+EVENT   262
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Cat>Meow! Meow!")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("70")
+  ShowMessageFace("nezumi_fc1",2,0,2,2)
+  ShowMessage("\\n<Ratty>Hyaa!")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   263
+ PAGE   1
+  ShowMessageFace("",0,0,2,1)
+  ShowMessage("\\n<Gangster>Here you go, canned food for yooou. ♪")
+  355("actor_label_jump")
+  EndEventProcessing()
+  DefineLabel("60")
+  ShowMessageFace("dog_fc1",1,0,2,2)
+  ShowMessage("\\n<Pochi>Give me canned food!")
+  ShowMessageFace("",0,0,2,3)
+  ShowMessage("\\n<Gangster>I got nothin' for ya.")
+  ShowMessageFace("dog_fc1",0,0,2,4)
+  ShowMessage("\\n<Pochi>......")
+  ShowMessageFace("",0,0,2,5)
+  ShowMessage("\\n<Gangster>...It can't be helped, you can have one.")
+  EndEventProcessing()
+  DefineLabel("222")
+  ShowMessageFace("nekomata_fc1",0,0,2,6)
+  ShowMessage("【Tama】")
+  ShowMessage("........................")
+  ShowMessageFace("",0,0,2,7)
+  ShowMessage("Clerk")
+  ShowMessage("........................")
+  ShowMessageFace("nekomata_fc1",0,0,2,8)
+  ShowMessage("【Tama】")
+  ShowMessage("........................")
+  ShowMessageFace("",0,0,2,9)
+  ShowMessage("Clerk")
+  ShowMessage("Well ....")
+  ShowMessageFace("nekomata_fc1",2,0,2,10)
+  ShowMessage("【Tama】")
+  ShowMessage("Meow")
+  EndEventProcessing()
+  0()
+
+
+
+EVENT   265
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(32,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   266
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventoryWeapon(896,0,0,1,false)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   267
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventoryWeapon(521,0,0,1,false)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+
+EVENT   268
+ PAGE   1
+  250(bytes(0x04,0x08,0x6f,0x3a,0x0c,0x52,0x50,0x47,0x3a,0x3a,0x53,0x45,0x08,0x3a,0x0a,0x40,0x6e,0x61,0x6d,0x65,0x49,0x22,0x0a,0x49,0x74,0x65,0x6d,0x31,0x06,0x3a,0x06,0x45,0x54,0x3a,0x0b,0x40,0x70,0x69,0x74,0x63,0x68,0x69,0x69,0x3a,0x0c,0x40,0x76,0x6f,0x6c,0x75,0x6d,0x65,0x69,0x55))
+  ChangeSelfSwitch("A",0)
+  ChangeInventory_Item(331,0,0,1)
+  0()
+ PAGE   2
+  // condition: self-switch A is ON
+  0()
+
+
+

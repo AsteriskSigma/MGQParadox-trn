@@ -1,0 +1,86 @@
+#==============================================================================
+# ■ Window_MenuStatus
+#------------------------------------------------------------------------------
+# This window displays the status of party members on the menu screen.
+#==============================================================================
+
+class Window_MenuStatus < Window_Selectable
+  #--------------------------------------------------------------------------
+  # ● Public instance variables
+  #--------------------------------------------------------------------------
+  attr_reader   :pending_index            # Pending position (for rearrangement)
+  #--------------------------------------------------------------------------
+  # ● Object initialization
+  #--------------------------------------------------------------------------
+  def initialize(x, y)
+    super(x, y, window_width, window_height)
+    @pending_index = -1
+    refresh
+  end
+  #--------------------------------------------------------------------------
+  # ● Obtain window width
+  #--------------------------------------------------------------------------
+  def window_width
+    Graphics.width - 160
+  end
+  #--------------------------------------------------------------------------
+  # ● Obtain window height
+  #--------------------------------------------------------------------------
+  def window_height
+    Graphics.height
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of number of items
+  #--------------------------------------------------------------------------
+  def item_max
+    $game_party.members.size
+  end
+  #--------------------------------------------------------------------------
+  # ● Get item height
+  #--------------------------------------------------------------------------
+  def item_height
+    (height - standard_padding * 2) / 4
+  end
+  #--------------------------------------------------------------------------
+  # ● Drawing items
+  #--------------------------------------------------------------------------
+  def draw_item(index)
+    actor = $game_party.members[index]
+    enabled = $game_party.battle_members.include?(actor)
+    rect = item_rect(index)
+    draw_item_background(index)
+    draw_actor_face(actor, rect.x + 1, rect.y + 1, enabled)
+    draw_actor_simple_status(actor, rect.x + 108, rect.y + line_height / 2)
+  end
+  #--------------------------------------------------------------------------
+  # ● Draw the background of the item
+  #--------------------------------------------------------------------------
+  def draw_item_background(index)
+    if index == @pending_index
+      contents.fill_rect(item_rect(index), pending_color)
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Processing when the enter button is pressed
+  #--------------------------------------------------------------------------
+  def process_ok
+    super
+    $game_party.menu_actor = $game_party.members[index]
+  end
+  #--------------------------------------------------------------------------
+  # ● Return the last selected position
+  #--------------------------------------------------------------------------
+  def select_last
+    select($game_party.menu_actor.index || 0)
+  end
+  #--------------------------------------------------------------------------
+  # ● Setting of hold position (for rearrangement)
+  #--------------------------------------------------------------------------
+  def pending_index=(index)
+    last_pending_index = @pending_index
+    @pending_index = index
+    redraw_item(@pending_index)
+    redraw_item(last_pending_index)
+  end
+end
+

@@ -1,0 +1,7 @@
+"イベント：職業経験値" -> "Event: Employment Experience Value"
+"【サン・イリア王】" -> "【King of Saint Iria】"
+"皆で神に祈り、職業経験を高めようぞ……" -> "Let's all pray to God and improve your professional experience ..."
+"サン・イリア王の祈りで、パーティ全員に職業経験値が与えられた！" -> "In the pray of King Saint-Iria, all the parties were given work experience values!"
+"【サン・イリア王】" -> "【King of Saint Iria】"
+"何度も神を煩わせる訳にはいくまい。" -> "It is not going to bother God over and over again."
+"また時をおいてから、祈って差し上げようぞ。" -> "Let 's keep on time and pray."

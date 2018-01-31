@@ -1,0 +1,394 @@
+module NWConst::Storehouse
+	MAX_ITEM_NUMBER = 999
+end
+
+class Item_Data
+	attr_accessor :storehouse_item_number
+	alias storehouse_initialize initialize
+	def initialize
+		storehouse_initialize
+		@storehouse_item_number = 0
+	end
+end
+
+class Game_Party < Game_Unit
+	alias hima_storehouse_initialize initialize
+	#--------------------------------------------------------------------------
+	# ● 倉庫アイテムの最大数取得
+	#--------------------------------------------------------------------------
+	def storehouse_max_item_number(item)
+		NWConst::Storehouse::MAX_ITEM_NUMBER
+	end
+	#--------------------------------------------------------------------------
+	# ● アイテムを最大まで所持しているか判定
+	#--------------------------------------------------------------------------
+	def storehouse_item_max?(item)
+		storehouse_item_number(item) >= storehouse_max_item_number(item)
+	end
+	#--------------------------------------------------------------------------
+	# ● 倉庫のアイテムオブジェクトの配列取得 
+	#--------------------------------------------------------------------------
+	def storehouse_items
+		@items.map.with_index { |data,index| data.storehouse_item_number > 0 ? index : nil if data }.compact.map{|id| $data_items[id]}
+	end
+	#--------------------------------------------------------------------------
+	# ● 倉庫の武器オブジェクトの配列取得 
+	#--------------------------------------------------------------------------
+	def storehouse_weapons
+		storehouse_enchant_weapons + @weapons.map.with_index { |data,index| data.storehouse_item_number > 0 ? index : nil if data }.compact.map{|id| $data_weapons[id] }
+	end
+	#--------------------------------------------------------------------------
+	# ● 倉庫の防具オブジェクトの配列取得 
+	#--------------------------------------------------------------------------
+	def storehouse_armors
+		storehouse_enchant_armors + @armors.map.with_index { |data,index| data.storehouse_item_number > 0 ? index : nil if data }.compact.map{|id| $data_armors[id] }
+	end
+	#--------------------------------------------------------------------------
+	# ● 倉庫のエンチャント武器オブジェクトの配列取得 
+	#--------------------------------------------------------------------------
+	def storehouse_enchant_weapons
+		@enchant_weapons.map{ |data| data.storehouse_item_number > 0 ? data.item_object.id : nil if data }.compact.map{|id| $data_weapons[id] }
+	end
+	#--------------------------------------------------------------------------
+	# ● 倉庫のエンチャント防具オブジェクトの配列取得 
+	#--------------------------------------------------------------------------
+	def storehouse_enchant_armors
+		@enchant_armors.map{ |data| data.storehouse_item_number > 0 ? data.item_object.id : nil if data }.compact.map{|id| $data_armors[id] }
+	end
+	#--------------------------------------------------------------------------
+	# ● 倉庫の全ての装備品オブジェクトの配列取得
+	#--------------------------------------------------------------------------
+	def storehouse_equip_items
+		storehouse_weapons + storehouse_armors
+	end
+	#--------------------------------------------------------------------------
+	# ● 倉庫の全てのアイテムオブジェクトの配列取得
+	#--------------------------------------------------------------------------
+	def storehouse_all_items
+		storehouse_items + storehouse_equip_items
+	end
+	#--------------------------------------------------------------------------
+	# ● 倉庫のアイテム数取得
+	#--------------------------------------------------------------------------
+	def storehouse_item_number(item)
+		container = item_container(item)
+		container ? container[item.index].storehouse_item_number : 0 
+	end
+	#--------------------------------------------------------------------------
+	# ● アイテムを倉庫に預ける
+	#--------------------------------------------------------------------------
+	def item_keep(item, amount)
+		return unless item
+		if amount >= 1
+			amount = [amount, storehouse_max_item_number(item) - storehouse_item_number(item) , item_number(item)].min
+		elsif amount <= -1
+			amount = [-amount, max_item_number(item) + item_number(item) , storehouse_item_number(item)].min * -1
+		end
+		return false if amount==0
+		storehouse_gain_item(item,amount)
+		lose_item(item, amount,false,true)
+		$game_map.need_refresh = true
+	end
+
+	#--------------------------------------------------------------------------
+	# ● 倉庫アイテムの増減
+	#--------------------------------------------------------------------------
+	def storehouse_gain_item(item,amount)
+		container = item_container(item)
+		return unless container
+		last_number = storehouse_item_number(item)
+		new_number = last_number + amount
+		new_number = [[new_number, 0].max, storehouse_max_item_number(item)].min
+		container[item.index].storehouse_item_number = new_number
+	end
+	
+end
+class << ShowKey_Help
+  #--------------------------------------------------------------------------
+  # ● アイテム保管
+  #--------------------------------------------------------------------------
+  def lr_keep
+    "#{Vocab.key_l}/#{Vocab.key_r}:10毎移動"
+  end
+	def arrow_keep
+		"←/→:1毎移動"
+	end
+end
+
+class Scene_Storehouse < Scene_Item
+	#--------------------------------------------------------------------------
+	# 開始処理
+	#--------------------------------------------------------------------------
+	def start
+		super
+		create_item_keep_window
+	end
+	#--------------------------------------------------------------------------
+	# ● アイテム保管ウィンドウ作成
+	#--------------------------------------------------------------------------
+	def create_item_keep_window
+		@item_keep_window = Window_ItemKeep.new
+		@item_keep_window.set_handler(:ok,     method(:on_item_keep_ok))
+		@item_keep_window.set_handler(:cancel, method(:on_item_keep_ok))
+		@item_window.item_keep_window = @item_keep_window
+	end
+	#--------------------------------------------------------------------------
+	# ● カテゴリ［決定］
+	#--------------------------------------------------------------------------
+	def on_category_ok
+		@item_window.activate
+		@item_window.select(0)
+	end
+	#--------------------------------------------------------------------------
+	# ● カテゴリウィンドウの作成
+	#--------------------------------------------------------------------------
+	def create_category_window
+		@category_window = Window_StorehouseItemCategory.new
+		@category_window.viewport = @viewport
+		@category_window.help_window = @help_window
+		@category_window.y = @help_window.height
+		@category_window.set_handler(:ok,     method(:on_category_ok))
+		@category_window.set_handler(:cancel, method(:return_scene))
+	end
+	#--------------------------------------------------------------------------
+	# ● アイテムウィンドウの作成
+	#--------------------------------------------------------------------------
+	def create_item_window
+		wy = @category_window.y + @category_window.height
+		wh = Graphics.height - wy
+		@item_window = Window_StorehouseItemList.new(0, wy, Graphics.width, wh)
+		@item_window.viewport = @viewport
+		@item_window.help_window = @help_window
+		@item_window.set_handler(:ok,     method(:on_item_ok))
+		@item_window.set_handler(:cancel, method(:on_item_cancel))
+		@category_window.item_window = @item_window
+	end
+	#--------------------------------------------------------------------------
+	# ● アイテム［決定］
+	#--------------------------------------------------------------------------
+	def on_item_ok
+		@item_keep_window.show
+		@item_keep_window.activate
+	end
+	
+	#--------------------------------------------------------------------------
+	# ● アイテム保管[決定＆キャンセル]
+	#--------------------------------------------------------------------------
+	def on_item_keep_ok
+		@item_keep_window.hide
+		@item_keep_window.deactivate
+		@item_window.activate
+		@item_window.refresh
+	end
+	
+	
+	def show_key_text
+		ret = super
+		return super if super
+		if @item_keep_window && @item_keep_window.active 
+			[ShowKey_Help.arrow_keep ,
+			 ShowKey_Help.lr_keep	
+			]
+		end
+  end
+end
+class Window_StorehouseItemCategory < Window_ItemCategory
+  #--------------------------------------------------------------------------
+  # ● 桁数の取得
+  #--------------------------------------------------------------------------
+  def col_max
+    return 4 if display_stone?
+		return 3
+  end
+	
+	#--------------------------------------------------------------------------
+	# ● コマンドリストの作成
+	#--------------------------------------------------------------------------
+	def make_command_list
+		add_command(Vocab::item,     :item)
+		add_command(Vocab::weapon,   :weapon)
+		add_command(Vocab::armor,    :armor)
+		add_command("秘石",          :enchant_stone) if display_stone?
+	end
+	
+end
+
+class Window_StorehouseItemList <Window_ItemList
+	attr_accessor :item_keep_window
+	#--------------------------------------------------------------------------
+	# ● アイテムを許可状態で表示するかどうか
+	#--------------------------------------------------------------------------
+	def enable?(item)
+		item
+	end
+	#--------------------------------------------------------------------------
+	# ● 桁数の取得
+	#--------------------------------------------------------------------------
+	def col_max
+		return 2
+	end
+	#--------------------------------------------------------------------------
+	# ● アイテムリストの作成
+	#--------------------------------------------------------------------------
+	def make_item_list
+		@data = ($game_party.all_items + $game_party.storehouse_all_items).uniq.select {|item| include?(item) }
+		@data.reject! {|item| !$game_party.favorite_item?(item) } if @favorite_mode
+		sort_item_list
+	end
+	
+	#--------------------------------------------------------------------------
+	# ● アイテムリストのソート
+	#--------------------------------------------------------------------------
+	def sort_item_list
+		@data.sort_by!{|data|
+			data.sort_id
+		}
+	end
+	
+	#--------------------------------------------------------------------------
+	# ● 項目の描画
+	#--------------------------------------------------------------------------
+	def draw_item(index)
+		item = @data[index]
+		if item
+			rect = item_rect(index)
+			rect.width -= 4
+			#draw_item_name(item, rect.x, rect.y, enable?(item) ,410 - rect.x)
+			#draw_item_number(rect, item)
+			draw_item_name(item, rect.x, rect.y, enable?(item),180)
+			draw_item_number(rect,item)
+		end
+	end
+	#--------------------------------------------------------------------------
+	# ● アイテムの個数を描画
+	#--------------------------------------------------------------------------
+=begin
+  def draw_item_number(rect, item)
+		change_color(text_color(5))
+    draw_text(410, rect.y, 40, line_height, "所持",2)
+		change_color(text_color(0))
+		draw_text(430, rect.y, 50, line_height, sprintf(":%2d", $game_party.item_number(item)) ,2)
+		change_color(text_color(5))
+		draw_text(520, rect.y, 40, line_height, "倉庫",2)
+		change_color(text_color(0))
+		draw_text(540, rect.y, 60, line_height, sprintf(":%3d", $game_party.storehouse_item_number(item)),2)
+  end
+=end
+	def draw_item_number(rect, item)
+		draw_text(rect,sprintf( ":%2d(%3d)" , $game_party.item_number(item),$game_party.storehouse_item_number(item)),2)
+	end
+	def update_help
+		super
+		@item_keep_window.item = item
+	end
+	
+	
+end
+
+class Window_ItemKeep < Window_Selectable
+	attr_accessor :item
+	attr_accessor :item_number
+	attr_accessor :storehouse_item_number
+	def initialize
+		super((Graphics.width/2) - (window_width/2), (Graphics.height/2) - (window_height/2), window_width, window_height)
+		self.z = 200
+		self.back_opacity =255
+		hide
+	end
+	
+	def window_width
+		236 + standard_padding * 2
+	end
+	
+	def window_height
+		fitting_height(3)
+	end
+	
+	def item= (item)
+		if @item != item
+			@item = item
+			refresh
+		end
+	end
+	#--------------------------------------------------------------------------
+	# ● リフレッシュ
+	#--------------------------------------------------------------------------
+	def refresh
+		contents.clear
+		
+		draw_item
+		draw_item_number if item
+		draw_storehouse_item_number if item
+		draw_arrow
+	end
+	
+	#--------------------------------------------------------------------------
+	# ● アイテム名の描画
+	#--------------------------------------------------------------------------
+	def draw_item
+		p "a"
+		draw_item_name(@item,0,0,true,contents.width)
+	end
+	
+	def draw_item_number
+		rect = item_number_rect
+		draw_rect = text_size("所持")
+		change_color(system_color)
+		draw_text(rect,"所持")
+		change_color(normal_color)
+		rect.width =draw_rect.width
+		rect.y += line_height
+		draw_text(rect,$game_party.item_number(item),1)
+	end
+	
+	def draw_storehouse_item_number
+		rect = item_number_rect
+		draw_rect = text_size("倉庫")
+		change_color(system_color)
+		draw_text(rect,"倉庫",2)
+		change_color(normal_color)
+		rect.x = contents_width-50- draw_rect.width
+		rect.width = draw_rect.width
+		rect.y += line_height
+		draw_text(rect,$game_party.storehouse_item_number(item),1)
+		
+	end
+	
+	def draw_arrow
+		dfont = contents.font.size
+		contents.font.size = 20
+		change_color(tp_gauge_color2)
+		rect = item_number_rect
+		rect.y += line_height*1/2
+		rect.height = line_height*2/3
+		draw_text(rect,"→",1)
+		rect.y += line_height*2/3
+		draw_text(rect,"←",1)
+		change_color(normal_color)
+		contents.font.size = dfont
+	end
+	def item_number_rect
+		Rect.new(50, line_height, contents_width-100, line_height) 
+	end
+	#--------------------------------------------------------------------------
+	# ● カーソルの移動処理
+	#--------------------------------------------------------------------------
+	def process_cursor_move
+		return unless open? && active
+		cursor_item_keep(1) if Input.repeat?(:RIGHT)
+		cursor_item_keep(-1)  if Input.repeat?(:LEFT)
+		cursor_item_keep(10)   if Input.trigger?(:R)
+		cursor_item_keep(-10)   if Input.trigger?(:L)
+	end
+	
+	#--------------------------------------------------------------------------
+	# ● アイテム預ける 
+	#--------------------------------------------------------------------------
+	def cursor_item_keep(amount)
+		if $game_party.item_keep(item,amount)
+			Sound.play_cursor
+			refresh
+		end
+	end
+	
+end

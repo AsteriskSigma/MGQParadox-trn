@@ -1,0 +1,4 @@
+"錬金素材自動ゲット" -> "Alchemical material automatic get"
+"錬金砂を手に入れた！" -> "I got an alchemical sand!"
+"魔水銀を手に入れた！" -> "I got a demonic mercury!"
+"賢者の石を手に入れた！" -> "I got a philosopher's stone!"

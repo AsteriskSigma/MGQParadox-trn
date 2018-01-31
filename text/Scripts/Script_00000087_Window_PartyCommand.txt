@@ -1,0 +1,7 @@
+"■ Window" -> "■ Window"
+"　バトル画面で、戦うか逃げるかを選択するウィンドウです。" -> "In the battle screen, it is a window that selects whether to fight or escape."
+"● オブジェクト初期化" -> "● Object initialization"
+"● ウィンドウ幅の取得" -> "● Obtain window width"
+"● 表示行数の取得" -> "● Acquire number of display lines"
+"● コマンドリストの作成" -> "● Create command list"
+"● セットアップ" -> "● Setup"

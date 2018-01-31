@@ -1,0 +1,2 @@
+"あれっ？　こんなところで奇遇だね。" -> "That? It's strange in such a place."
+"せっかくだから、助けてあげるよ！" -> "Because I'm puzzling, I will save you!"

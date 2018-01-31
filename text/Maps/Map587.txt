@@ -1,0 +1,8 @@
+"【モリガン’】" -> "【Morrigan '】"
+"よっ！　元気そうだな！" -> "Good! You look good."
+"【モリガン】" -> "【Morrigan】"
+"そっちにもあたしがいるのかよ……" -> "I wonder if there is me ......"
+"どうやら、時間軸が相当にねじくれてるみたいだな。" -> "Apparently, it seems that the time axis is considerably twisted."
+"【モリガン】" -> "【Morrigan】"
+"こういうのも、始末していいんだっけ……" -> "I hope I can clean up these kinds of things ......"
+"まあいい、ここで潰しとくか！" -> "Okay, I will crush here!"

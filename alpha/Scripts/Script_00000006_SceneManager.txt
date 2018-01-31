@@ -1,0 +1,94 @@
+#==============================================================================
+# ■ SceneManager
+#------------------------------------------------------------------------------
+# This module manages scene transitions. For example, from the main menu to the item screen
+# You can handle a hierarchical structure such as calling up and returning.
+#==============================================================================
+
+module SceneManager
+  #--------------------------------------------------------------------------
+  # ● Module instance variable
+  #--------------------------------------------------------------------------
+  @scene = nil                            # Current scene object
+  @stack = []                             # Stack for hierarchical transition
+  @background_bitmap = nil                # Bitmap for background
+  #--------------------------------------------------------------------------
+  # ● Execution
+  #--------------------------------------------------------------------------
+  def self.run
+    DataManager.init
+    Audio.setup_midi if use_midi?
+    @scene = first_scene_class.new
+    @scene.main while @scene
+  end
+  #--------------------------------------------------------------------------
+  # ● Get the first scene class
+  #--------------------------------------------------------------------------
+  def self.first_scene_class
+    $BTEST ? Scene_Battle : Scene_Title
+  end
+  #--------------------------------------------------------------------------
+  # ● Do you use MIDI
+  #--------------------------------------------------------------------------
+  def self.use_midi?
+    $data_system.opt_use_midi
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire the current scene
+  #--------------------------------------------------------------------------
+  def self.scene
+    @scene
+  end
+  #--------------------------------------------------------------------------
+  # ● Current scene class determination
+  #--------------------------------------------------------------------------
+  def self.scene_is?(scene_class)
+    @scene.instance_of?(scene_class)
+  end
+  #--------------------------------------------------------------------------
+  # ● Direct transition
+  #--------------------------------------------------------------------------
+  def self.goto(scene_class)
+    @scene = scene_class.new
+  end
+  #--------------------------------------------------------------------------
+  # ● Call
+  #--------------------------------------------------------------------------
+  def self.call(scene_class)
+    @stack.push(@scene)
+    @scene = scene_class.new
+  end
+  #--------------------------------------------------------------------------
+  # ● Return to caller
+  #--------------------------------------------------------------------------
+  def self.return
+    @scene = @stack.pop
+  end
+  #--------------------------------------------------------------------------
+  # ● Clear call stack
+  #--------------------------------------------------------------------------
+  def self.clear
+    @stack.clear
+  end
+  #--------------------------------------------------------------------------
+  # ● Game ends
+  #--------------------------------------------------------------------------
+  def self.exit
+    @scene = nil
+  end
+  #--------------------------------------------------------------------------
+  # ● Create a snapshot for use as a background
+  #--------------------------------------------------------------------------
+  def self.snapshot_for_background
+    @background_bitmap.dispose if @background_bitmap
+    @background_bitmap = Graphics.snap_to_bitmap
+    @background_bitmap.blur
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire background bitmap
+  #--------------------------------------------------------------------------
+  def self.background_bitmap
+    @background_bitmap
+  end
+end
+

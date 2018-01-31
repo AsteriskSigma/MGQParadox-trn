@@ -1,0 +1,7 @@
+﻿// EVENT 0913
+Name "混沌迷宮青宝箱"
+
+ChangeSwitch(73,73,0)
+RunCommonEvent(799)
+ChangeSwitch(73,73,1)
+0()

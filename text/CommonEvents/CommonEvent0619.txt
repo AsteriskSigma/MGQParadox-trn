@@ -1,0 +1,7 @@
+"イベント：防御力アップ" -> "Event: Increase Defense"
+"【ミニカニ娘】" -> "【Mini Kani girl】"
+"ねぇねぇ、甲羅の特訓しようよ～♪" -> "Hey, let's train the shell of the shell ~ ♪"
+"誰が特訓しますか？" -> "Who will take special training?"
+"ミニカニ娘と共に特訓し、防御力が2ポイントアップした！" -> "Special training with Mini Kani daughter, defensive power increased by 2 points!"
+"【ミニカニ娘】" -> "【Mini Kani girl】"
+"また、一緒に特訓しようね♪" -> "Let's also train together ♪"

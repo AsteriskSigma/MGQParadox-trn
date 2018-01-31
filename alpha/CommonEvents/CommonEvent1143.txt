@@ -1,0 +1,12 @@
+// EVENT 1143
+Name "Talk: Adramelech"
+
+ChangeVariable(25,25,0,0,0)
+ShowMessageFace("adramelek_fc1",1,0,2,1)
+ShowMessage("\\n<Adramelech>Disappear...")
+ShowMessageFace("",0,0,2,2)
+ShowMessage("Adramelech rejects any attempt at conversation!")
+EndEventProcessing()
+0()
+
+

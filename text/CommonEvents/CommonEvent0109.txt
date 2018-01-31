@@ -1,0 +1,8 @@
+"♪　Chi Pa Pa ♪" -> "♪ Chi Pa Pa ♪"
+"♪" -> "♪"
+"♪　Chi Pa Pa ♪" -> "♪ Chi Pa Pa ♪"
+"♪" -> "♪"
+"♪　Chi Pa Pa ♪" -> "♪ Chi Pa Pa ♪"
+"♪" -> "♪"
+"♪　Chi Pa Pa ♪" -> "♪ Chi Pa Pa ♪"
+"♪" -> "♪"

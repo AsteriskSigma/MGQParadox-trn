@@ -1,0 +1,474 @@
+=begin
+=ワープ
+
+
+
+
+==更新履歴
+  Date     Version Author Comment
+==15/09/03 2.0.2   トリス 統合J～U N
+==17/09/21 2.2.0   ひまわり 統合2 X
+
+=end
+
+#==============================================================================
+# ■ NWConst::Warp
+#==============================================================================
+module NWConst::Warp
+  AREA_SELECT_TEXT  = "Please select a region."
+  PLACE_SELECT_TEXT = "Please select a location."
+  CONFIRM_TEXT      = "Warping to %s. Is that okay?"
+  MOVE_SE           = RPG::SE.new("Wind1")
+end
+
+# 重複防止用ネームスペース
+module Foo; module Warp; end; end
+
+#==============================================================================
+# ■ WarpManager
+#==============================================================================
+module WarpManager
+  #--------------------------------------------------------------------------
+  # ● 全ての場所情報配列の取得
+  #--------------------------------------------------------------------------
+  def self.all_places
+    NWConst::Warp::Places
+  end
+  #--------------------------------------------------------------------------
+  # ● 開放中の場所情報配列の取得
+  #--------------------------------------------------------------------------
+  def self.opend_places
+    index = NWConst::Sw::WARP_OPEN_BASE
+    all_places.select{|place| result = $game_switches[index]; index += 1; result}
+  end
+  #--------------------------------------------------------------------------
+  # ● 開放中の場所情報配列の取得（カテゴリー集約）
+  #--------------------------------------------------------------------------
+  def self.opend_places_sort(category)
+    opend_places.select{|place| place[:category] == category}
+  end  
+  #--------------------------------------------------------------------------
+  # ● ワープ使用可能？
+  #--------------------------------------------------------------------------
+  def self.usable?
+    !($game_switches[NWConst::Sw::WARP_BAN] || opend_places.empty?)
+  end
+  #--------------------------------------------------------------------------
+  # ● 天界が開放された？
+  #--------------------------------------------------------------------------
+  def self.opend_heaven?
+    opend_places.any?{|place| place[:category] == :天界}
+  end
+  #--------------------------------------------------------------------------
+  # ● 魔界が開放された？
+  #--------------------------------------------------------------------------
+  def self.opend_hell?
+    opend_places.any?{|place| place[:category] == :魔界}
+  end  
+  #--------------------------------------------------------------------------
+  # ● 地上だけしか開放されていない？
+  #--------------------------------------------------------------------------
+  def self.ground_only?
+    !(opend_heaven? || opend_hell?)
+  end  
+end
+
+#==============================================================================
+# ■ Foo::Warp::Window_Help
+#==============================================================================
+class Foo::Warp::Window_Help < Window_Base
+  #--------------------------------------------------------------------------
+  # ● オブジェクト初期化
+  #--------------------------------------------------------------------------
+  def initialize
+    super(0, 0, 320, fitting_height(1))
+    @text = nil
+  end
+  #--------------------------------------------------------------------------
+  # ● テキスト設定
+  #--------------------------------------------------------------------------
+  def set_text(text)
+    if text != @text
+      @text = text
+      refresh
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● クリア
+  #--------------------------------------------------------------------------
+  def clear
+    set_text("")
+  end
+  #--------------------------------------------------------------------------
+  # ● リフレッシュ
+  #--------------------------------------------------------------------------
+  def refresh
+    contents.clear
+    draw_text_ex(4, 0, @text)
+  end  
+end
+
+#==============================================================================
+# ■ Foo::Warp::Window_SelectArea
+#==============================================================================
+class Foo::Warp::Window_SelectArea < Window_HorzCommand
+  #--------------------------------------------------------------------------
+  # ● ウィンドウ幅の取得
+  #--------------------------------------------------------------------------
+  def window_width
+    return 480
+  end
+  #--------------------------------------------------------------------------
+  # ● 桁数の取得
+  #--------------------------------------------------------------------------
+  def col_max
+    return @list.size
+  end
+  #--------------------------------------------------------------------------
+  # ● アライメントの取得
+  #--------------------------------------------------------------------------
+  def alignment
+    return 1
+  end
+  #--------------------------------------------------------------------------
+  # ● コマンドリストの作成
+  #--------------------------------------------------------------------------
+  def make_command_list
+    add_command("地上", :ok, true, :地上)
+    add_command("天界", :ok, true, :天界) if WarpManager.opend_heaven?
+    add_command("魔界", :ok, true, :魔界) if WarpManager.opend_hell?
+  end  
+end
+
+#==============================================================================
+# ■ Foo::Warp::Window_SelectPlace
+#==============================================================================
+class Foo::Warp::Window_SelectPlace < Window_Command
+  #--------------------------------------------------------------------------
+  # ● オブジェクト初期化
+  #--------------------------------------------------------------------------
+  def initialize
+    @category = :地上
+    super(0, 0)
+  end
+  #--------------------------------------------------------------------------
+  # ● ウィンドウ幅の取得
+  #--------------------------------------------------------------------------
+  def window_width
+    return 480
+  end
+  #--------------------------------------------------------------------------
+  # ● 桁数の取得
+  #--------------------------------------------------------------------------
+  def col_max
+    return 2
+  end
+  #--------------------------------------------------------------------------
+  # ● 横に項目が並ぶときの空白の幅を取得
+  #--------------------------------------------------------------------------
+  def spacing
+    return 8
+  end
+  #--------------------------------------------------------------------------
+  # ● 表示行数の取得
+  #--------------------------------------------------------------------------
+  def visible_line_number
+    [15, (item_max + 1) / 2].min
+  end
+  #--------------------------------------------------------------------------
+  # ● カテゴリーの設定
+  #--------------------------------------------------------------------------
+  def set_category(category)
+    @category   = category
+    refresh
+  end
+  #--------------------------------------------------------------------------
+  # ● コマンドリストの作成
+  #--------------------------------------------------------------------------
+  def make_command_list
+    WarpManager.opend_places_sort(@category).each{|place|
+      add_command(place[:name], :ok, true, place)
+    }
+  end
+  #--------------------------------------------------------------------------
+  # ● リフレッシュ
+  #--------------------------------------------------------------------------
+  def refresh
+    clear_command_list
+    make_command_list
+    self.height =  window_height
+    create_contents
+    contents.clear
+    draw_all_items
+  end  
+end
+
+#==============================================================================
+# ■ Window_ItemList
+#==============================================================================
+class Window_ItemList < Window_Selectable
+  #--------------------------------------------------------------------------
+  # ○ アイテムを許可状態で表示するかどうか
+  #--------------------------------------------------------------------------
+  alias nw_warp_enable? enable?
+  def enable?(item)
+    nw_warp_enable?(item) && warp_usable?(item)
+  end
+  #--------------------------------------------------------------------------
+  # ● ワープアイテムの使用可能判定
+  #--------------------------------------------------------------------------
+  def warp_usable?(item)
+    return true unless item.warp_item?
+    return true if WarpManager.usable?
+    return false
+  end  
+end
+
+#==============================================================================
+# ■ Window_SkillList
+#==============================================================================
+class Window_SkillList < Window_Selectable
+  #--------------------------------------------------------------------------
+  # ○ スキルを許可状態で表示するかどうか
+  #--------------------------------------------------------------------------
+  alias nw_warp_enable? enable?
+  def enable?(item)
+    nw_warp_enable?(item) && warp_usable?(item)
+  end
+  #--------------------------------------------------------------------------
+  # ● ワープアイテムの使用可能判定
+  #--------------------------------------------------------------------------
+  def warp_usable?(item)
+    return true unless item.warp_item?
+    return true if WarpManager.usable?
+    return false
+  end
+end
+  
+#==============================================================================
+# ■ Scene_ItemBase
+#==============================================================================
+class Scene_ItemBase < Scene_MenuBase
+  #--------------------------------------------------------------------------
+  # ○ アイテムの使用
+  #--------------------------------------------------------------------------
+  alias nw_warp_use_item use_item
+  def use_item
+    if item.warp_item?
+      SceneManager.goto(Scene_Warp)
+      SceneManager.scene.prepare(item)
+    else
+      nw_warp_use_item
+    end
+  end
+end
+
+#==============================================================================
+# ■ Scene_Warp
+#==============================================================================
+class Scene_Warp < Scene_MenuBase
+  #--------------------------------------------------------------------------
+  # ● 準備
+  #--------------------------------------------------------------------------
+  def prepare(cost_item)
+    @cost_item = cost_item
+  end  
+  #--------------------------------------------------------------------------
+  # ● 開始処理
+  #--------------------------------------------------------------------------
+  def start
+    super
+    create_help_window
+    create_select_area_window
+    create_select_place_window
+    create_popup_confirm_window
+  end
+  #--------------------------------------------------------------------------
+  # ● 背景の作成
+  #--------------------------------------------------------------------------
+  def create_background
+    @background_sprite = Sprite.new
+    @background_sprite.bitmap = SceneManager.background_bitmap
+    @background_sprite.viewport = @viewport
+  end
+  #--------------------------------------------------------------------------
+  # ● ヘルプウィンドウの作成
+  #--------------------------------------------------------------------------
+  def create_help_window
+    @help_window = Foo::Warp::Window_Help.new
+    @help_window.viewport = @viewport
+  end
+  #--------------------------------------------------------------------------
+  # ● エリア選択ウィンドウの作成
+  #--------------------------------------------------------------------------
+  def create_select_area_window
+    @select_area_window = Foo::Warp::Window_SelectArea.new(0, @help_window.height)
+    @select_area_window.viewport = @viewport
+    @select_area_window.set_handler(:ok, method(:select_area_ok))
+    @select_area_window.set_handler(:cancel, method(:goto_map))
+    @help_window.set_text(NWConst::Warp::AREA_SELECT_TEXT)
+    return unless WarpManager.ground_only?
+    @select_area_window.hide.deactivate
+  end
+  #--------------------------------------------------------------------------
+  # ● エリア選択の決定
+  #--------------------------------------------------------------------------
+  def select_area_ok
+    @select_place_window.set_category(@select_area_window.current_ext)
+    @select_place_window.select(0)
+    @select_place_window.show.activate
+    @select_area_window.deactivate
+    @help_window.set_text(NWConst::Warp::PLACE_SELECT_TEXT)
+  end
+  #--------------------------------------------------------------------------
+  # ● 場所選択ウィンドウの作成
+  #--------------------------------------------------------------------------
+  def create_select_place_window
+    @select_place_window = Foo::Warp::Window_SelectPlace.new
+    @select_place_window.viewport = @viewport
+    @select_place_window.set_handler(:ok, method(:select_place_ok))    
+    @select_place_window.set_handler(:cancel, method(:select_place_cancel))    
+    if WarpManager.ground_only?
+      @select_place_window.y = @help_window.height
+      @help_window.set_text(NWConst::Warp::PLACE_SELECT_TEXT)
+    else
+      @select_place_window.y = @help_window.height + @select_area_window.height
+      @select_place_window.hide.deactivate
+    end
+  end    
+  #--------------------------------------------------------------------------
+  # ● 場所選択の決定
+  #--------------------------------------------------------------------------
+  def select_place_ok
+    @select_place_window.deactivate
+    @popup_confirm_window.refresh
+    @popup_confirm_window.show.activate
+    @popup_confirm_window.set_name(@select_place_window.current_ext[:name])
+    @popup_confirm_window.select(0)
+  end
+  #--------------------------------------------------------------------------
+  # ● 場所選択のキャンセル
+  #--------------------------------------------------------------------------
+  def select_place_cancel
+    if WarpManager.ground_only?
+      goto_map
+    else
+      @select_place_window.hide.deactivate
+      @select_area_window.activate
+      @help_window.set_text(NWConst::Warp::AREA_SELECT_TEXT)
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● 確認ポップアップウィンドウの作成
+  #--------------------------------------------------------------------------  
+  def create_popup_confirm_window
+    @popup_confirm_window = Window_PopupConfirm.new
+    @popup_confirm_window.set_title(NWConst::Warp::CONFIRM_TEXT)
+    @popup_confirm_window.viewport = @viewport
+    @popup_confirm_window.hide
+    @popup_confirm_window.set_handler(:ok, method(:confirm_ok))
+    @popup_confirm_window.set_handler(:cancel, method(:confirm_cancel))
+  end
+  #--------------------------------------------------------------------------
+  # ● 確認：決定
+  #--------------------------------------------------------------------------  
+  def confirm_ok
+		(31..39).each{|id|
+			$game_switches[id] = false
+		}
+    if @cost_item.is_a?(RPG::Item)
+      $game_party.consume_item(@cost_item)
+    else
+      @actor.pay_skill_cost(@cost_item)
+    end
+    NWConst::Warp::MOVE_SE.play
+    RPG::BGM.fade(500)
+    RPG::BGS.fade(500)
+    fadeout(30)
+    RPG::BGM.stop
+    RPG::BGS.stop
+    place = @select_place_window.current_ext
+    $game_player.forced_get_off_vehicle
+    $game_player.reserve_transfer(place[:map_id], place[:x], place[:y])
+    $game_player.perform_transfer
+    $game_map.autoplay
+    $game_player.followers.visible = true
+    $game_player.refresh
+    $game_map.screen.clear
+    # 乗り物の移動
+    if $game_map.ship.exist? && place.key?(:v2location)
+      unless place[:v2location][0].kind_of?(Array)
+        map_id = place[:v2location][0]
+        x = place[:v2location][1]
+        y = place[:v2location][2]
+      else
+        s = $game_switches
+        v = $game_variables
+        use_location = nil
+        place[:v2location].each do |location|
+          if eval(location[3])
+            use_location = location
+            break
+          end
+        end
+        use_location ||= place[:v2location][-1]
+        map_id, x, y, * = use_location
+      end
+      $game_map.ship.set_location(map_id, x, y)
+    end
+    if $game_map.airship.exist? && place.key?(:v3location)
+      map_id = place[:v3location][0]
+      x = place[:v3location][1]
+      y = place[:v3location][2]        
+      $game_map.airship.set_location(map_id, x, y)
+    end
+    # ポケット魔王城の出口修正
+    if place[:map_id] == 126
+      $game_variables[21] = 2
+      $game_variables[22] = 295
+      $game_variables[23] = 356
+    end
+    goto_map
+  end
+  #--------------------------------------------------------------------------
+  # ● 確認：キャンセル
+  #--------------------------------------------------------------------------  
+  def confirm_cancel
+    @popup_confirm_window.hide
+    @select_place_window.activate
+  end
+  #--------------------------------------------------------------------------
+  # ● マップに遷移
+  #--------------------------------------------------------------------------
+  def goto_map
+    SceneManager.clear
+    SceneManager.goto(Scene_Map)
+  end
+  #--------------------------------------------------------------------------
+  # ● フレーム更新（フェード用）
+  #--------------------------------------------------------------------------
+  def update_for_fade
+    update_basic
+    $game_map.update(false)
+  end
+  #--------------------------------------------------------------------------
+  # ● 汎用フェード処理
+  #--------------------------------------------------------------------------
+  def fade_loop(duration)
+    duration.times do |i|
+      yield 255 * (i + 1) / duration
+      update_for_fade
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● 画面のフェードアウト
+  #--------------------------------------------------------------------------
+  def fadeout(duration)
+    fade_loop(duration) {|v| Graphics.brightness = 255 - v }
+  end  
+end
+
+
+
+
+

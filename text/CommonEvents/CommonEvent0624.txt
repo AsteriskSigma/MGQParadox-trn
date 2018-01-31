@@ -1,0 +1,8 @@
+"イベント：ナーキュバス" -> "Event: Nurkubasu"
+"【ナーキュバス】" -> "【Nurukubasu】"
+"お大事に♪" -> "I wish you well"
+"【ナーキュバス】" -> "【Nurukubasu】"
+"ここから先も大変ですから……" -> "From here on too much trouble ......"
+"ワクチンを注射してあげますね♪" -> "I will inject a vaccine ♪"
+"ワクチンを注射してもらった！" -> "I had my vaccine injected!"
+"次のボスフロアまで、不利なステータス異常を受け付けない！" -> "We will not accept unfavorable status anomalies until the next boss floor!"

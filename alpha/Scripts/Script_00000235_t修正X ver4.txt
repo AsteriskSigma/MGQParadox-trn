@@ -1,0 +1,679 @@
+
+=begin
+
+Troublesome · ___ ___ 0 RPG
+Tris Correction X ver 4 2017/06/11
+
+
+
+The list of functions added below this time is ● What updated this time is ○
+· The level upper limit can be set to 100 or more
+· Fixed an error when joining actor
+· Remove empty lines of unique abilities description of character books
+· Specify the unique abilities description of the character picture book with a control character \"{\"When\"}Enlarges / reduces character size with
+· CG browsing with demon illustrations and character illustrations, CG without existence skipping without error
+· Change the character color of the CG browsing command in the demon illustrations and character books by the presence or absence of CG
+Switching position of ship at warp by condition script
+- Fixed that there was sometimes an error dropping when warping on board a ship
+Boarding/Fixed that it was impossible to move when warping on the way off the ship
+● Capability value of the 1st page of the demon illustrator(8seed)Reflects the magnification of the \"normal ability value\" of the feature on the display of
+- Fixed two descriptive counts listed in \"All adventures\" in the illustration
+● Continuous attack on the same target(<Enemy unit continuous:N>)Then.\ETarget name display of \"Toward\" will not be attached
+
+Feature Description
+· The level upper limit can be set to 100 or more
+IDReserve.rb MAX_BASE_LEVEL Can be set to 100 or more
+100 or more required experience values ​​are calculated by setting the experience curve of the database
+An ability value of 100 or more is increased by \"ability value of 99 - ability value of 98\"
+
+· Fixed an error when joining actor
+Fixed an error occurred due to mistake during integration
+
+· Remove empty lines of unique abilities description of character books
+Fixed that extra blank line was added on the line where the character reached the right end of the window
+
+· Specify the unique abilities description of the character picture book with a control character \"{\"When\"}Enlarges / reduces character size with
+\"{\"And expanded\"}Reduce by
+Adjust one pixel at a time for each control letter
+(\"Display of sentence\" \"\{\"\}\"Adjust by 8 pixels at a time)
+
+· CG browsing with demon illustrations and character illustrations, CG without existence skipping without error
+(Treat only files that are outside the encrypted archive)
+CG_VIEW_IMAGE, ACTORCG_VIEW_IMAGEof:draw(:registOne or more IDs of)about,
+Specified:registIf there is one that does not exist in the image of
+Skip that draw
+When skipping all draws, make the CG browse command unselectable
+
+· Change the character color of the CG browsing command in the demon illustrations and character books by the presence or absence of CG
+CG view setting(CG_VIEW_IMAGE, ACTORCG_VIEW_IMAGE)Apply the following only if there is
+To skip all draws, red
+To skip some draws, blue
+
+Switching position of ship at warp by condition script
+A ship(:v2location)Only targeted player and airship(:v3location)Not covered
+Switching the warp position depending on whether it matches the condition script
+In the condition script, switch can be described as s, variable as v
+Example: \"Variable 1001 is greater than 30\""v[1001]>=30", \"Always matched\" is"true"
+· For normal setting:v2location => [Map ID, XCoordinate, YCoordinate] But
+Switch setting is:v2location => [[Map ID, XCoordinate, YCoordinate, conditions], 
+      [Map ID, XCoordinate, YCoordinate, conditions], ... ] And multiple
+· The setting that matches the condition is included in the switching setting
+If there is more than one, adopt \"the first matching setting\"
+If there is none, adopt \"Last written description\"
+
+- Fixed that there was sometimes an error dropping when warping on board a ship
+Boarding/Fixed that it was impossible to move when warping on the way off the ship
+Opening a menu while walking on a boat or a boat and warping occurs
+For each vehicle, error on the first ship in save data is dropped, otherwise it is immovable
+
+● Capability value of the 1st page of the demon illustrator(8seed)Reflects the magnification of the \"normal ability value\" of the feature on the display of
+Correspondence to black Alice (third form)
+
+- Fixed two descriptive counts listed in \"All adventures\" in the illustration
+
+● Continuous attack on the same target(<Enemy unit continuous:N>)Then.\ETarget name display of \"Toward\" will not be attached
+In case
+
+=end
+
+#~ #==============================================================================
+#~ # ■ Sprite_Picture
+#~ #==============================================================================
+#~ class Sprite_Picture < Sprite
+#~   #--------------------------------------------------------------------------
+#~   # ● Updating the transfer source bitmap
+#~   #--------------------------------------------------------------------------
+#~   def update_bitmap
+#~     raise
+#~     if @picture.name =~ /\.\.\/Battlers\/([\S\s]+)/
+#~       self.bitmap = Cache.battler($1, 0)
+#~     else
+#~       self.bitmap = Cache.picture(@picture.name)
+#~     end
+#~   end
+#~ end
+
+#~ #==============================================================================
+#~ # ■ RPG::BaseItem
+#~ #==============================================================================
+#~ class RPG::BaseItem
+#~   #--------------------------------------------------------------------------
+#~   # ● Get enchantment name array
+#~   #--------------------------------------------------------------------------  
+#~   def enchant_names
+#~     names = []
+#~     
+#~     method_table = {
+#~       FEATURE_ELEMENT_RATE      => :element_rate_name,
+#~       FEATURE_DEBUFF_RATE       => :debuff_rate_name,
+#~       FEATURE_STATE_RATE        => :state_rate_name,
+#~       FEATURE_STATE_RESIST      => :state_resist_name,
+#~       FEATURE_PARAM             => :param_name,
+#~       FEATURE_XPARAM            => :xparam_name,
+#~       FEATURE_SPARAM            => :sparam_name,
+#~       FEATURE_ATK_ELEMENT       => :atk_element_name,
+#~       FEATURE_ATK_STATE         => :atk_state_name,
+#~       FEATURE_ATK_SPEED         => :atk_speed_name,
+#~       FEATURE_ATK_TIMES         => :atk_times_name,
+#~       FEATURE_STYPE_ADD         => :stype_add_name,
+#~       FEATURE_STYPE_SEAL        => :stype_seal_name,
+#~       FEATURE_EQUIP_WTYPE       => :equip_wtype_name,
+#~       FEATURE_EQUIP_ATYPE       => :equip_atype_name,
+#~       FEATURE_EQUIP_FIX         => :equip_fix_name,
+#~       FEATURE_EQUIP_SEAL        => :equip_seal_name,
+#~       FEATURE_SLOT_TYPE         => :slot_type_name,
+#~       FEATURE_ACTION_PLUS       => :action_plus_name,
+#~       FEATURE_SPECIAL_FLAG      => :special_flag_name,
+#~       FEATURE_COLLAPSE_TYPE     => :collaplse_type_name,
+#~       FEATURE_PARTY_ABILITY     => :party_ability_name,
+#~       FEATURE_XPARAM_EX         => :xparam_ex_name,
+#~       FEATURE_PARTY_EX_ABILITY  => :party_ex_ability_name,
+#~       FEATURE_BATTLER_ABILITY   => :battler_ability_name,
+#~       FEATURE_MULTI_BOOSTER     => :multi_booster_name,
+#~       FEATURE_DUMMY_ENCHANT     => :dummy_enchant_name,  
+#~       FEATURE_TERRAIN_BOOSTER   => :terrain_booster_name,
+#~       FEATURE_EQUIP_MASTERY     => :equip_mastery_name,
+#~     }
+#~     
+#~     dummy = nil
+#~     self.features.sort_by{|ft| [ft.code, ft.data_id]}.each{|ft|
+#~       method_name = method_table[ft.code]
+#~       if method_name == :dummy_enchant_name
+#~         dummy ||= []
+#~         dummy.push(send(method_name, ft))
+#~       elsif method_name
+#~         names.push(send(method_name, ft))
+#~       end
+#~     }
+#~     names = dummy if dummy
+#~     return names.flatten.compact.uniq
+#~   end
+#~   #--------------------------------------------------------------------------
+#~   # ● Acquire Extended Party Ability Name
+#~   #--------------------------------------------------------------------------  
+#~   def party_ex_ability_name(ft)
+#~     method_table = {
+#~       GET_GOLD_RATE   => :get_gold_rate_name,
+#~       GET_ITEM_RATE   => :get_item_rate_name,
+#~       ENCOUNTER_RATE  => :encounter_rate_name,
+#~       COLLECT_RATE    => :collect_rate_name,
+#~       SLOT_CHANCE     => :slot_chance_name,
+#~       UNLOCK_LEVEL    => :unlock_level_name,
+#~     }
+#~     method_name = method_table[ft.data_id]
+#~     return method_name ? send(method_name, ft) : "UNKNOWN:PartyExAbility #{ft.data_id}"
+#~   end
+#~   #--------------------------------------------------------------------------
+#~   # ● Acquisition of Butler Ability Name
+#~   #--------------------------------------------------------------------------  
+#~   def battler_ability_name(ft)    
+#~     method_table = {
+#~       STEAL_SUCCESS           => :steal_success_name,
+#~       AUTO_STAND              => :auto_stand_name,
+#~       HEEL_REVERSE            => :heel_reverse_name,
+#~       AUTO_STATE              => :auto_state_names,
+#~       TRIGGER_STATE           => :trigger_state_name,
+#~       METAL_BODY              => :metal_body_name,
+#~       DEFENSE_WALL            => :defense_wall_name,
+#~       INVALIDATE_WALL         => :invalidate_wall_name,
+#~       DAMAGE_MP_CONVERT       => :damage_mp_convert_name,
+#~       DAMAGE_GOLD_CONVERT     => :damage_gold_convert_name,
+#~       DAMAGE_MP_DRAIN         => :damage_mp_drain_name,
+#~       DAMAGE_GOLD_DRAIN       => :damage_gold_drain_name,
+#~       DEAD_SKILL              => :dead_skill_name,
+#~       BATTLE_START_SKILL      => :battle_start_skill_name,
+#~       TURN_START_SKILL        => :turn_start_skill_name,
+#~       TURN_END_SKILL          => :turn_end_skill_name,
+#~       CHANGE_ACTION           => :change_action_names,
+#~       STYPE_COST_RATE         => :stype_cost_rate_name,
+#~       SKILL_COST_RATE         => :skill_cost_rate_name,
+#~       TP_COST_RATE            => :tp_cost_rate_name,
+#~       HP_COST_RATE            => :hp_cost_rate_name,
+#~       GOLD_COST_RATE          => :gold_cost_rate_name,
+#~       INCREASE_TP             => :increase_tp_name,
+#~       START_TP_RATE           => :start_tp_rate_name,
+#~       BATTLE_END_HEEL_HP      => :battle_end_heel_hp_name,
+#~       BATTLE_END_HEEL_MP      => :battle_end_heel_mp_name,
+#~       Battler::NORMAL_ATTACK  => :normal_attack_name,
+#~       COUNTER_SKILL           => :counter_skill_names,
+#~       FINAL_INVOKE            => :final_invoke_names,
+#~       CERTAIN_COUNTER         => :certain_counter_name,
+#~       MAGICAL_COUNTER         => :magical_counter_name,
+#~       PHYSICAL_COUNTER_EX     => :physical_counter_ex_name,
+#~       MAGICAL_COUNTER_EX      => :magical_counter_ex_name,
+#~       CERTAIN_COUNTER_EX      => :certain_counter_ex_name,
+#~       CONSIDERATE             => :considerate_name,
+#~       GET_EXP_RATE            => :get_exp_rate_name,
+#~       GET_CLASSEXP_RATE       => :get_classexp_rate_name,
+#~       INVOKE_REPEATS_TYPE     => :invoke_repeats_type_names,
+#~       INVOKE_REPEATS_SKILL    => :invoke_repeats_skill_names,
+#~       OWN_CRUSH_RESIST        => :own_crush_resist_name,
+#~       ELEMENT_DRAIN           => :element_drain_names,
+#~       IGNORE_OVER_DRIVE       => :ignore_over_drive_name,
+#~       INSTANT_DEAD_REVERSE    => :instant_dead_reverse_name,
+#~       CHANGE_SKILL            => :change_skill_name,
+#~       PHYSICAL_REFLECTION     => :physical_reclection_name,
+#~       SLOT_CANNOT_DUAL_WIELD  => :slot_cannot_dual_wield_name,
+#~     }
+#~     method_name = method_table[ft.data_id]
+#~     return method_name ? send(method_name, ft) : "UNKNOWN:BattlerAbility #{ft.data_id}"    
+#~   end
+#~   #--------------------------------------------------------------------------
+#~   # ● Acquisition of Multi Booster Name
+#~   #--------------------------------------------------------------------------  
+#~   def multi_booster_name(ft)    
+#~     method_table = {
+#~       ELEMENT                => :booster_element_name,
+#~       WEAPON_PHYSICAL        => :booster_weapon_physical_name,
+#~       WEAPON_MAGICAL         => :booster_weapon_magical_name,
+#~       WEAPON_CERTAIN         => :booster_weapon_certain_name,
+#~       Booster::NORMAL_ATTACK => :booster_normal_attack_name,
+#~       STATE_RATIO_TYPE       => :booster_state_ratio_type_name,
+#~       STATE_FIX_TYPE         => :booster_state_fix_type_name,
+#~       SKILL_TYPE             => :booster_skill_type_name,
+#~       STATE_RATIO_SKILL      => :booster_state_ratio_skill_name,
+#~       SKILL                  => :booster_skill_name,
+#~       WTYPE_SKILL            => :booster_wtype_skill_name,
+#~       COUNTER                => :booster_counter_name,
+#~       FALL_HP                => :booster_fall_hp_name,
+#~       OVER_SOUL              => :over_soul_name,
+#~     }
+#~     method_name = method_table[ft.data_id]
+#~     return method_name ? send(method_name, ft) : "UNKNOWN:MultiBooster #{ft.data_id}"            
+#~   end
+#~ end
+
+# Level upper limit can be set to 100 or more
+#==============================================================================
+# ■ RPG::Class
+#==============================================================================
+class RPG::Class < RPG::BaseItem
+  def based_actor
+    actor_id = @id - NWConst::Class::BASE_PARAM_BASE
+    return nil if actor_id < 0
+    return $data_actors[actor_id]
+  end
+  def need_over_params
+    return false if @maked_over_params
+    return true if based_actor and NWConst::Actor::MAX_BASE_LEVEL >= 100
+    return false
+  end
+  def make_over_params
+    new_params = Table.new(8, NWConst::Actor::MAX_BASE_LEVEL + 1)
+    (1..99).each do |i|
+      (0..7).each do |j|
+        new_params[j, i] = @params[j, i]
+      end
+    end
+    @params = new_params
+    (100..NWConst::Actor::MAX_BASE_LEVEL).each do |i|
+      (0..7).each do |j|
+        @params[j, i] = @params[j, i-1] + (@params[j, 99] - @params[j, 98])
+      end
+    end
+  end
+  def params
+    make_over_params if need_over_params
+    @maked_over_params = true
+    @params
+  end
+end
+
+# Fixed an error when joining actor
+#==============================================================================
+# ■ Game_Interpreter
+#==============================================================================
+class Game_Interpreter
+  #--------------------------------------------------------------------------
+  # ● Extended actor subscription
+  #--------------------------------------------------------------------------
+  def add_actor_ex(actor_id)
+    $game_party.persona_change(actor_id)
+    return if $game_party.exist_party_actor_id?(actor_id)
+    if $game_party.party_member_full?
+      $game_message.add("The party is full.")
+      $game_message.add("Choose someone to remove from the party.")
+      stand_actor = $game_party.choice_stand_actor_on_member_full(actor_id, nil)
+      move_stand_actor(stand_actor.id) if stand_actor
+    end
+    actor = $game_actors[actor_id]
+    $game_party.add_actor(actor.id)
+    $game_switches[NWConst::Sw::ADD_ACTOR_BASE + actor.id] = true
+  end
+end
+
+# Eliminate empty line of unique abilities description of character map book
+# The unique abilities description of the character picture book is referred to as a control character \"{\"When\"}Enlarges / reduces character size with
+#==============================================================================
+# ■ Window_Library_RightMain
+#==============================================================================
+class Window_Library_RightMain < Window_Selectable
+  #--------------------------------------------------------------------------
+  # ● Actor's unique ability
+  #--------------------------------------------------------------------------
+  def draw_actor_fix_ability(y, actor)
+    fix_abilities = ACTOR_FIX_ABILITY[actor.id]
+    return y unless fix_abilities
+    rect = standard_rect(y)
+    reset_font_settings
+    
+    change_color(system_color)
+    draw_text(rect, FIX_ABILITY_NAME)
+    rect.y += rect.height
+    change_color(special_color)
+    draw_text(rect, fix_abilities.first)
+    rect.y += rect.height
+    change_color(normal_color)
+    
+    all_text = ""
+    fix_abilities[1...fix_abilities.size].each{|fix_ability|
+      all_text += fix_ability
+      all_text += "\n"
+    }
+    all_text.slice!(-1, 1)
+    rect = draw_text_auto_line_ex(rect, all_text)
+    return rect.y
+  end
+  #--------------------------------------------------------------------------
+  # ● Automatic line feed text display Line break at break of array
+  #--------------------------------------------------------------------------
+  def draw_text_auto_line_ex(rect, text)
+    array = []
+    s = ""
+    text.size.times{|i|
+      case text[i]
+      when"{"
+        s += '\{'
+        make_font_bigger
+        next
+      when "}"
+        s += '\}'
+        make_font_smaller
+        next
+      when "\n"
+      else
+        s += text[i]
+      end
+      s_for_calc_width = s.gsub('\{', "").gsub('\}', "")
+      s_width_for_calc_new_line = text_size(s_for_calc_width).width + (standard_padding * 2)
+      if (text[i] == "\n") or self.contents.width < s_width_for_calc_new_line
+        array.push(s) if s != ""
+        s = ""
+      end
+    }
+    array.push(s)
+    all_text = array.inject("") {|text, line| text += line + "\n"}
+    contents.font.size = Font.default_size
+    draw_text_ex(rect.x, rect.y, all_text)
+    return rect
+  end
+  #--------------------------------------------------------------------------
+  # ● Increase font size
+  #--------------------------------------------------------------------------
+  def make_font_bigger
+    contents.font.size += 1
+  end
+  #--------------------------------------------------------------------------
+  # ● Decrease font size
+  #--------------------------------------------------------------------------
+  def make_font_smaller
+    contents.font.size -= 1
+  end
+end
+
+# In CG browsing with demon illustrations and character books, CGs that do not exist will skip without error
+# Changing the character color of CG browsing command in demon illustrations and character illustrations with or without CG
+#==============================================================================
+# ■ Window_Library_EnemyCommand
+#==============================================================================
+class Window_Library_EnemyCommand < Window_Command
+  #--------------------------------------------------------------------------
+  # ● Create command list
+  #--------------------------------------------------------------------------
+  def make_command_list
+    enable = !$game_party.in_battle
+    if enemy?
+      cg_exist_state = enemy_cg_exist_state
+      enable &&= cg_view? && cg_exist_state[0]
+      add_command("Replay Scene",   :memory_event, enable && memory_event?)
+      add_command("View Images",   :cg_view, enable, cg_exist_state[1])
+      add_command("Cancel", :cancel, true)
+      self.height = fitting_height(3) unless disposed?
+    else
+      cg_exist_state = actor_cg_exist_state
+      enable &&= actor_cg_view? && cg_exist_state[0]
+      enable &&= $game_variables[NWConst::Var::ACTOR_REL_BASE + actor.id] >= 100
+      add_command("View Images",   :actor_cg_view, enable, cg_exist_state[1])
+      add_command("Cancel", :cancel, true)
+      self.height = fitting_height(2) unless disposed?
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ●
+  #--------------------------------------------------------------------------
+  def draw_item(index)
+    change_color(command_color(index), command_enabled?(index))
+    draw_text(item_rect_for_text(index), command_name(index), alignment)
+  end
+  #--------------------------------------------------------------------------
+  # ●
+  #--------------------------------------------------------------------------
+  def command_color(index)
+    return case @list[index][:ext]
+    when :all_exist
+      normal_color
+    when :some_exist
+      system_color
+    when :none_exist
+      bad_color
+    else
+      normal_color
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ●
+  #--------------------------------------------------------------------------
+  def enemy_cg_exist_state
+    enemy_id = enemy.id
+    cg_view_image = NWConst::Library::CG_VIEW_IMAGE[enemy_id]
+    return cg_exist_state(cg_view_image)
+  end
+  #--------------------------------------------------------------------------
+  # ●
+  #--------------------------------------------------------------------------
+  def actor_cg_exist_state
+    actor_id = actor.id
+    cg_view_image = NWConst::Library::ACTOR_CG_VIEW_IMAGE[actor_id]
+    return cg_exist_state(cg_view_image)
+  end
+  #--------------------------------------------------------------------------
+  # ●
+  #--------------------------------------------------------------------------
+  def cg_exist_state(cg_view_image)
+    return [false, nil] if cg_view_image == nil
+    regist = cg_view_image[:regist]
+    draw = cg_view_image[:draw]
+    cg_sprite_ids = Scene_CGViewer.create_cg_sprite_ids(regist)
+    cg_draw_set = Scene_CGViewer.create_cg_draw_set(draw, cg_sprite_ids)
+    regist_exist = regist.map {|id, data| NWSimpleFileTest.png_exist?(data[0], data[1])}
+    state = [false, :some_exist]
+    state[0] = true if !cg_draw_set.empty?
+    state[1] = :all_exist if cg_draw_set == draw
+    state[1] = :none_exist if cg_draw_set.empty?
+    return state
+  end
+end
+#==============================================================================
+# ■ Scene_CGViewer
+#==============================================================================
+class Scene_CGViewer < Scene_Base
+  #--------------------------------------------------------------------------
+  # ● Start processing
+  #--------------------------------------------------------------------------
+  def start
+    super
+    @select = 0
+    create_background_sprite
+    create_cg_sprites
+    create_cg_sprite_ids
+    create_cg_draw_set
+    refresh_cg_sprites(true)
+  end
+  #--------------------------------------------------------------------------
+  # ● Generation of CG sprite
+  #--------------------------------------------------------------------------
+  def create_cg_sprites
+    @cg_sprites = []
+    cg_view_image[:regist].each{|id, data| # Later in register
+      if NWSimpleFileTest.png_exist?(data[0], data[1])
+        @cg_sprites.push(Sprite_CGViewer.new(id, data))
+      end
+    }
+  end
+  #--------------------------------------------------------------------------
+  # ● Generation of CG sprite
+  #--------------------------------------------------------------------------
+  def create_cg_sprite_ids
+    @cg_sprite_ids = self.class.create_cg_sprite_ids(cg_view_image[:regist])
+  end
+  def self.create_cg_sprite_ids(regist)
+    cg_sprite_ids = []
+    regist.each{|id, data| # Later in register
+      if NWSimpleFileTest.png_exist?(data[0], data[1])
+        cg_sprite_ids.push(id)
+      end
+    }
+    return cg_sprite_ids
+  end
+  #--------------------------------------------------------------------------
+  # ●
+  #--------------------------------------------------------------------------
+  def create_cg_draw_set
+    @cg_draw_set = self.class.create_cg_draw_set(cg_view_image[:draw], @cg_sprite_ids)
+  end
+  def self.create_cg_draw_set(draw, cg_sprite_ids)
+    cg_draw_set = draw.select {|draw_sprite_ids|
+      draw_sprite_ids.all?{|sprite_id| cg_sprite_ids.include?(sprite_id)}
+    }
+    return cg_draw_set
+  end
+  #--------------------------------------------------------------------------
+  # ● Refresh CG sprite
+  #--------------------------------------------------------------------------
+  def refresh_cg_sprites(forced = false)
+    @cg_sprites.each{|sprite|
+      sprite.refresh(@cg_draw_set[@select], forced)
+    }
+  end
+  #--------------------------------------------------------------------------
+  # ● Change of CG
+  #--------------------------------------------------------------------------
+  def process_cg_change
+    return unless current_cg_sprites.first.full_view?
+    if Input.trigger?(:RIGHT) || Input.trigger?(:C)
+      max = @cg_draw_set.size
+      if @select + 1 == max
+        return_scene
+      else
+        @select = @select + 1
+      end
+    elsif Input.trigger?(:LEFT)
+      if @select == 0
+        
+      else
+        @select = @select - 1
+      end
+    end
+    refresh_cg_sprites
+  end
+end
+#==============================================================================
+# ■ NWSimpleFileTest
+#----------------------------------------------------------------------------
+# It is a module for judging the existence of a file
+# NWFileTestUnlike the encryption archive, it does not investigate
+#==============================================================================
+module NWSimpleFileTest
+  #--------------------------------------------------------------------------
+  # ● File existence judgment
+  #--------------------------------------------------------------------------
+  def filepath_exist?(path)
+    if File.exist?(path)
+      print "File exists - \"#{path}\"\n" if $TEST
+      return true
+    else
+      print "File does not exist - \"#{path}\"\n" if $TEST
+      return false
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● File existence judgment
+  #--------------------------------------------------------------------------
+  def file_exist?(path, filename)
+    return filepath_exist?(path + filename)
+  end
+  #--------------------------------------------------------------------------
+  # ● File existence judgment
+  #--------------------------------------------------------------------------
+  def png_exist?(path, filename)
+    return file_exist?(path, filename + ".png")
+  end
+  module_function :filepath_exist?, :file_exist?
+  module_function :png_exist?
+end
+
+# Switching position of ship at warp by condition script
+#==============================================================================
+# ■ Scene_Warp
+#==============================================================================
+
+# Fixed that there was sometimes an error dropping when warping on board a ship
+# Boarding/Fixed that it was impossible to move when warping on the way off the ship
+
+
+
+# Capability value of the 1st page of the demon illustrator(8seed)Reflects the magnification of the \"normal ability value\" of the feature on the display of
+#==============================================================================
+# ■ Window_Library_RightMain
+#==============================================================================
+class Window_Library_RightMain < Window_Selectable
+  #--------------------------------------------------------------------------
+  # ● Multiply the feature value of enemy object
+  #--------------------------------------------------------------------------
+  def enemy_features_pi(enemy, code, id)
+    all_features = enemy.features
+    features_with_id = all_features.select {|ft| ft.code == code && ft.data_id == id }
+    features_pi = features_with_id.inject(1.0) {|r, ft| r *= ft.value }
+    return features_pi
+  end
+  #--------------------------------------------------------------------------
+  # ● Enemy character ability drawing
+  #--------------------------------------------------------------------------
+  def draw_enemy_status(y, enemy)
+    rect = standard_rect(y)
+    # Capability drawing
+    # Get parameter string with maximum width
+    max_width = 0
+    for i in 0..7
+      txt = "#{Vocab::param(i)}"
+      now_w = text_size(txt).width
+      max_width = now_w + 10 if max_width < now_w + 10
+    end
+    # Drawing process
+    for i in 0..7
+      if i % 2 == 0
+        # Create a rectangle for ability drawing
+        lr = Rect.new(rect.x, rect.y, max_width, rect.height)
+        rr = Rect.new(rect.x + max_width, rect.y, self.contents.width / 2 - max_width - 24, rect.height)
+      else
+        # Create a rectangle for ability drawing
+        lr = Rect.new(self.contents.width / 2, rect.y, max_width, rect.height)
+        rr = Rect.new(self.contents.width / 2 + max_width, rect.y, self.contents.width / 2 - max_width - 24, rect.height)
+        rect.y += rect.height
+      end
+      change_color(system_color)
+      txt = "#{Vocab::param(i)}"
+      draw_text(lr, txt, 2)
+      change_color(normal_color)
+      param_base = enemy.params[i]
+      param_rate = enemy_features_pi(enemy, Game_BattlerBase::FEATURE_PARAM, i)
+      txt = "#{(param_base * param_rate).to_i}"
+      draw_text(rr, txt, 2)
+    end
+    
+    rect = standard_rect(rect.y + LINE_HEIGHT)
+    change_color(system_color)
+    draw_text(rect, "Resist")
+    rect.y += rect.height
+    r = []
+    NWConst::Status::ELEMENT_RESIST.size.times{r.push(half_left_rect(rect.y))}
+    r.each_with_index { |elem, i|
+      elem.x += elem.width * (i % 2)
+      elem.y += elem.height * (i / 2)
+      elem.width -= 16
+    }
+    r.each_with_index do |rect, i|
+      element_id = NWConst::Status::ELEMENT_RESIST[i]
+      icon_id = NWConst::Status::ELEMENT_ICONS[i]
+      draw_element_resist(rect, enemy, element_id, icon_id)
+    end
+    return r[-1].y + r[-1].height + LINE_HEIGHT
+  end
+end
+
+
+# Continuous attack on the same target(<Enemy unit continuous:N>)Then.\ETarget name display of \"Toward\" will not be attached
+#==============================================================================
+# ■ Window_BattleLog
+#==============================================================================
+class Window_BattleLog < Window_Selectable
+  #--------------------------------------------------------------------------
+  # ● Replacement of additional control characters
+  #--------------------------------------------------------------------------
+  def replace_ext_character(original_text, subject, targets)
+    text = original_text.dup
+    text.gsub!(/\\u/i) { subject.name }
+    text.gsub!(/\\e/i) { targets.first.name + ((2 <= targets.uniq.size) ? "s" : "") }
+    return text
+  end
+endd

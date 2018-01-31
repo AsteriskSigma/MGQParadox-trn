@@ -1,0 +1,7 @@
+"イベント：ドラゴン娘" -> "Event: Dragon girl"
+"【ドラゴン娘】" -> "【Dragon's girl】"
+"せいぜい火傷せんようにな！" -> "I hope it will not burn at most!"
+"【ドラゴン娘】" -> "【Dragon's girl】"
+"竜の力、授けてやろう！" -> "Dragon's power, I will give it!"
+"ドラゴン娘から不思議な力が与えられた！" -> "Dragon girl gave a magical power!"
+"次のボスフロアまで、ブレスの威力が二倍になる！" -> "Breath's power doubles until the next boss floor!"

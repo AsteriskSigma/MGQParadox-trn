@@ -1,0 +1,591 @@
+=begin
+=Remodeling/General-purpose store by Foo
+
+
+==Change log
+Date     Version Author Comment
+==15/09/03 2.0.2   Tris integration J ~ U R
+==17/05/16 2.0.4   Tris integrated V ~ W V
+==17/10/21 2.2.0  Modification of sunflower display
+
+=end
+
+#==============================================================================
+# ■ NWRegexp::BaseItem
+#==============================================================================
+module NWRegexp::BaseItem
+	SELLD_DRAW = /<Special sale(?:\:|:)(\S+)>/i
+end
+
+#==============================================================================
+# ■ NWConst::Shop
+#==============================================================================
+module NWConst::Shop
+	STATUS_MAX = 9
+	#
+	NotEquip = "Unable to equip."
+end
+
+#==============================================================================
+# ■ RPG::BaseItem
+#==============================================================================
+class RPG::BaseItem
+	#--------------------------------------------------------------------------
+	# ○ Memo column analysis processing
+	#--------------------------------------------------------------------------
+	alias nw_shop_note_analyze nw_note_analyze
+	def nw_note_analyze
+		nw_shop_note_analyze
+		self.note.each_line do |line|
+			if NWRegexp::BaseItem::SELLD_DRAW.match(line)
+				@data_ex[:selld_draw] = $1.to_s
+			end
+		end
+	end
+	#--------------------------------------------------------------------------
+	# ● Special sales
+	#--------------------------------------------------------------------------
+	def selld_draw
+		return @data_ex.key?(:selld_draw) ? @data_ex[:selld_draw] : nil
+	end
+end
+
+#==============================================================================
+# ■ Scene_Base
+#==============================================================================
+class Scene_Base
+	#--------------------------------------------------------------------------
+	# ○ Showing the equipment information window?
+	#--------------------------------------------------------------------------
+	def compare_window_visible?
+		return true if @compare_window    and @compare_window.visible
+		return true if @compare_ex_window and @compare_ex_window.visible
+		return false
+	end
+end
+
+#==============================================================================
+# ■ Window_ShopBuy
+#==============================================================================
+class Window_ShopBuy < Window_Selectable
+	#--------------------------------------------------------------------------
+	# ● Activating the window
+	#--------------------------------------------------------------------------
+	def activate
+		@compare_window.hide.activate if @compare_window
+		super
+	end
+	#--------------------------------------------------------------------------
+	# ● Deactivate the window
+	#--------------------------------------------------------------------------
+	def deactivate
+		@compare_window.hide.deactivate if @compare_window
+		super
+	end  
+	#--------------------------------------------------------------------------
+	# ○ Drawing items
+	#--------------------------------------------------------------------------
+	def draw_item(index)
+		item = @data[index]
+		rect = item_rect(index)
+		name_width = rect.width - text_size(price(item)).width - 24
+		draw_item_name(item, rect.x, rect.y, enable?(item), name_width)
+		rect.width -= 4
+		draw_text(rect, price(item), 2)
+	end
+	#--------------------------------------------------------------------------
+	# ● Setting of Performance Difference Comparison Window
+	#--------------------------------------------------------------------------
+	def compare_window=(compare_window)
+		@compare_window = compare_window
+		call_update_help
+	end
+	#--------------------------------------------------------------------------
+	# ○ Help text update
+	#--------------------------------------------------------------------------
+	def update_help
+		@help_window.set_item(item) if @help_window
+		@status_window.item = item if @status_window
+		@compare_window.item = item if @compare_window
+	end
+end
+
+#==============================================================================
+# ■ Window_ShopStatus
+#==============================================================================
+class Window_ShopStatus < Window_Base
+	#--------------------------------------------------------------------------
+	# ● Deactivate the window
+	#--------------------------------------------------------------------------
+	def deactivate
+		super
+		refresh
+	end
+	#--------------------------------------------------------------------------
+	# ○ Refresh
+	#--------------------------------------------------------------------------
+	def refresh
+		contents.clear
+		return if @item.nil?
+		draw_possession(4, 0)
+		return unless self.active
+		return if @item.is_a?(RPG::Item)
+		draw_button(0, contents.height - (line_height * 2))
+		return if page_max == 0
+		
+		method_name = draw_methods[@page_index][:name]
+		index = draw_methods[@page_index][:index]
+		send(method_name, 0, 28, index)    
+	end
+	#--------------------------------------------------------------------------
+	# ○ Item setting
+	#--------------------------------------------------------------------------
+	def item=(item)
+		@item = item
+		@page_index = 0
+		refresh
+	end
+	#--------------------------------------------------------------------------
+	# ● Drawing instruction method array acquisition
+	#--------------------------------------------------------------------------
+	def draw_methods
+		methods = []
+		param_page_max.times{|i| methods.push({:name => :draw_params, :index => i})}
+		enchant_page_max.times{|i| methods.push({:name => :draw_enchants, :index => i})}    
+		return methods
+	end  
+	#--------------------------------------------------------------------------
+	# ● Drawing a button description
+	#--------------------------------------------------------------------------
+	def draw_button(x, y)
+		rect = Rect.new(x, y, contents.width, line_height)
+		change_color(system_color)
+		if 1 < page_max
+			draw_text(rect, Help.shop_equip_change)
+			draw_text(rect, "#{@page_index + 1}/#{page_max}", 2)
+		end
+		rect.y += line_height
+		draw_text(rect, Help.shop_param_compare)
+	end
+	#--------------------------------------------------------------------------
+	# ● Drawing basic performance
+	#--------------------------------------------------------------------------
+	def draw_params(x, y, index)
+		rect = Rect.new(x, y, contents.width, line_height)
+		param_names = @item.param_names[index * NWConst::Shop::STATUS_MAX, NWConst::Shop::STATUS_MAX]
+		change_color(system_color)
+		draw_text(rect, "Basic Stats")
+		rect.y += line_height + 2
+		change_color(normal_color)
+		param_names.each{|name|
+			draw_text(rect, name)
+			rect.y += line_height
+		}
+	end
+	
+	#--------------------------------------------------------------------------
+	# ● Draw special effects
+	#--------------------------------------------------------------------------
+	def draw_enchants(x, y, index)
+		rect = Rect.new(x, y, contents.width, line_height)
+		enchant_names = @item.enchant_names[index * NWConst::Shop::STATUS_MAX, NWConst::Shop::STATUS_MAX]
+		change_color(system_color)
+		draw_text(rect, "Special Effects")
+		rect.y += line_height + 2
+		change_color(normal_color)
+		enchant_names.each{|name|
+			draw_text(rect, name)
+			rect.y += line_height
+		}
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquisition of maximum number of pages for basic performance
+	#--------------------------------------------------------------------------
+	def param_page_max
+		return (@item.param_names.size - 1) / NWConst::Shop::STATUS_MAX + 1
+	end  
+	#--------------------------------------------------------------------------
+	# ● Acquire special effect maximum page number
+	#--------------------------------------------------------------------------
+	def enchant_page_max
+		return (@item.enchant_names.size - 1) / NWConst::Shop::STATUS_MAX + 1
+	end  
+	#--------------------------------------------------------------------------
+	# ○ Acquire the maximum number of pages
+	#--------------------------------------------------------------------------
+	def page_max
+		return param_page_max + enchant_page_max
+	end
+	#--------------------------------------------------------------------------
+	# ○ Updating pages
+	#--------------------------------------------------------------------------
+	def update_page
+		return unless active
+		if visible && @item.is_a?(RPG::EquipItem) && page_max > 1
+			if Input.trigger?(:RIGHT)
+				@page_index = (@page_index + 1) % page_max
+				refresh
+			elsif Input.trigger?(:LEFT)
+				@page_index = ((@page_index - 1) + page_max) % page_max
+				refresh
+			end
+		end
+	end
+end
+
+#==============================================================================
+# ■ Window_ShopCompare
+#==============================================================================
+class Window_ShopCompare < Window_Base
+	#--------------------------------------------------------------------------
+	# ● Object initialization
+	#--------------------------------------------------------------------------
+	def initialize
+		super(0, 56, 640, 424)
+		self.z = 200
+		self.back_opacity  = 192
+		@item = nil
+		hide.deactivate
+		@page = 0
+	end
+	#--------------------------------------------------------------------------
+	# ● Hide Window
+	#--------------------------------------------------------------------------
+	def hide
+		super
+	end
+	#--------------------------------------------------------------------------
+	# ● Item settings
+	#--------------------------------------------------------------------------
+	def item=(item)
+		@item = item
+		refresh
+	end
+	#--------------------------------------------------------------------------
+	# ● Number of pages
+	#--------------------------------------------------------------------------
+	def page_max
+		($game_party.all_members.size - 1) / 8 + 1
+	end
+	#--------------------------------------------------------------------------
+	# ● Update processing
+	#--------------------------------------------------------------------------
+	def update
+		super
+		unless @item.nil? || @item.is_a?(RPG::Item)
+			process_page_move
+		end
+		if active && Input.trigger?(:X)
+			visible ? hide : show
+			Input.update
+		end
+		if active && visible && Input.trigger?(:B) and
+			!self.is_a?(Window_ShopCompareEx)
+			hide
+			Input.update
+		end
+		if @last_favorite and @last_favorite[0] == @item and
+			@last_favorite[1] != $game_party.favorite_item?(@item)
+			refresh
+		end
+		@last_favorite = [@item, $game_party.favorite_item?(@item)]
+	end
+	#--------------------------------------------------------------------------
+	# ● Page movement process
+	#--------------------------------------------------------------------------
+	def process_page_move
+		last_page_index = @page
+		if visible && Input.trigger?(:R)
+			move_page( 1)
+			Input.update
+		end
+		if visible && Input.trigger?(:L)
+			move_page(-1)
+			Input.update
+		end
+		if @page != last_page_index
+			Sound.play_cursor
+			refresh
+		end
+	end
+	#--------------------------------------------------------------------------
+	# ● Move the cursor one page backward
+	#--------------------------------------------------------------------------
+	def move_page(num)
+		if page_max > 1
+			@page += num
+			@page %= page_max
+		end
+	end
+	#--------------------------------------------------------------------------
+	# ● Update color tone
+	#--------------------------------------------------------------------------
+	def update_tone
+		self.tone.set(-255, -255, -255)
+	end
+	#--------------------------------------------------------------------------
+	# ● Refresh
+	#--------------------------------------------------------------------------
+	def refresh
+		contents.clear
+		if @item.nil?
+			change_color(normal_color, false)
+			draw_text(0, 0, contents_width, line_height, "I have not selected anything")
+			return
+		end
+		draw_item
+		return if @item.is_a?(RPG::Item)
+		draw_page_number
+		draw_actors
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire capability value ID corresponding to selected item
+	#    By default weapons will be attack power, if protective gears are to be defensive.
+	#--------------------------------------------------------------------------
+	def param_id
+		@item.is_a?(RPG::Weapon) ? 2 : 3
+	end
+	#--------------------------------------------------------------------------
+	# ● Acquire current equipment
+	#    If there are two or more equipments of the same type, such as two swords, return the weaker one.
+	#--------------------------------------------------------------------------
+	def current_equipped_item(actor, etype_id)
+		list = []
+		actor.equip_slots.each_with_index do |slot_etype_id, i|
+			list.push(actor.equips[i]) if slot_etype_id == etype_id
+		end
+		list.min_by {|item| item ? item.params[param_id] : 0 }
+	end  
+	#--------------------------------------------------------------------------
+	# ● Drawing page numbers
+	#--------------------------------------------------------------------------
+	def draw_page_number
+		change_color(normal_color)
+		if page_max > 1
+			s =  "page #{@page + 1}/#{page_max}"
+			s += " (#{Vocab.key_l}/#{Vocab.key_r}:Page switching)"
+			draw_text(0, 0, self.contents.width, line_height, s, 2)
+		end
+	end
+	#~ #--------------------------------------------------------------------------
+	#~ # ● Draw item name
+	#~ #--------------------------------------------------------------------------
+	#~ def draw_item_name(item, x, y, enabled = true, width = 236)
+		#~ return unless item
+		#~ draw_icon(item.icon_index, x, y, enabled)
+		#~ change_color(normal_color, enabled)
+		#~ draw_text(x + 24, y, width, line_height, item.name)
+	#~ end
+	#--------------------------------------------------------------------------
+	# ● Draw item information
+	#--------------------------------------------------------------------------
+	def draw_item
+		rect = Rect.new(0, 0, 304, line_height)
+		enable = SceneManager.scene.equip_info_enable
+		draw_item_name(@item, rect.x, rect.y, enable)
+		change_color(normal_color, enable)
+		draw_text(rect, sprintf(":%2d", $game_party.item_number(@item)), 2)
+	end
+	#--------------------------------------------------------------------------
+	# ● Drawing actor information
+	#--------------------------------------------------------------------------
+	def draw_actors
+		$game_party.all_members.each_with_index do |actor, i|
+			next if i / 8 != @page
+			num = i % 8
+			x = (contents.width / 2) * (num % 2)
+			y = line_height + 92 * (num / 2)
+			draw_actor_equip_info(x, y, actor)
+		end
+	end
+	#--------------------------------------------------------------------------
+	# ● Draw equipment information of the actor
+	#--------------------------------------------------------------------------
+	def draw_actor_equip_info(x, y, actor)
+		reset_font_settings
+		rect = Rect.new(x, y, contents.width / 2, line_height)
+		enabled = actor.equippable?(@item)    
+		change_color(normal_color, enabled)
+		draw_text(rect, actor.name)
+		rect.y += line_height
+		current_item = current_equipped_item(actor, @item.etype_id)
+		draw_item_name(current_item, rect.x, rect.y, enabled)
+		rect.y += line_height    
+		draw_item_param_change(actor, rect.x, rect.y, enabled)
+	end
+	#--------------------------------------------------------------------------
+	# ● Drawing parameter change values ​​of items
+	#--------------------------------------------------------------------------
+	def draw_item_param_change(actor, x, y, enable)
+		if enable
+			current_item = current_equipped_item(actor, @item.etype_id)
+			change_index = current_item ? actor.equips.index(current_item) : @item.etype_id
+			temp_actor = Marshal.load(Marshal.dump(actor))
+			temp_actor.force_change_equip(change_index, @item)
+			params6 = (2..7).collect{|i| actor.param(i) - temp_actor.param(i) }
+			base_rect = Rect.new(x, y, (contents.width / 2) / 3, 20)
+			last_font = contents.font.size
+			contents.font.size = 20
+			6.times{|i|
+				r = base_rect.clone
+				r.x += base_rect.width  * (i % 3)
+				r.y += base_rect.height * (i / 3)
+				change_color(system_color)
+				draw_text(r, Vocab::params_a(i), 0)
+				r.x     += text_size(Vocab::params_a(i)).width
+				r.width -= text_size(Vocab::params_a(i)).width
+				color = [power_up_color, normal_color, power_down_color][(params6[i] <=> 0) + 1]
+				prefix = ["+", "±", "-"][(params6[i] <=> 0) + 1]
+				change_color(color)
+				draw_text(r, prefix + params6[i].abs.to_s, 0)
+			}
+			contents.font.size = last_font
+		else
+			rect = Rect.new(x, y, contents.width / 2, line_height)
+			change_color(bad_color)
+			draw_text(rect, NWConst::Shop::NotEquip)
+		end
+	end   
+end
+
+#==============================================================================
+# ■ Scene_Shop
+#==============================================================================
+class Scene_Shop < Scene_MenuBase
+	#--------------------------------------------------------------------------
+	# ○ Start processing
+	#--------------------------------------------------------------------------
+	def start
+		super
+		create_help_window
+		create_gold_window
+		create_command_window
+		create_dummy_window
+		create_number_window
+		create_status_window
+		create_compare_window
+		create_buy_window
+		create_category_window
+		create_sell_window
+		create_popup_confirm_window
+	end
+	#--------------------------------------------------------------------------
+	# ○ Create Number Entry Window
+	#--------------------------------------------------------------------------
+	def create_number_window
+		wy = @dummy_window.y
+		wh = @dummy_window.height
+		@number_window = Window_ShopNumber.new(0, wy, wh)
+		@number_window.viewport = @viewport
+		@number_window.hide
+		@number_window.set_handler(:ok,     method(:unavailable_check))
+		@number_window.set_handler(:cancel, method(:on_number_cancel))
+	end
+	#--------------------------------------------------------------------------
+	# ● Creating performance difference comparison window
+	#--------------------------------------------------------------------------  
+	def create_compare_window
+		@compare_window = Window_ShopCompare.new
+		@compare_window.viewport = @viewport
+	end
+	#--------------------------------------------------------------------------
+	# ○ Create purchase window
+	#--------------------------------------------------------------------------
+	def create_buy_window
+		wy = @dummy_window.y
+		wh = @dummy_window.height
+		@buy_window = Window_ShopBuy.new(0, wy, wh, @goods)
+		@buy_window.viewport = @viewport
+		@buy_window.help_window = @help_window
+		@buy_window.status_window = @status_window
+		@buy_window.compare_window = @compare_window
+		@buy_window.hide
+		@buy_window.set_handler(:ok,     method(:on_buy_ok))
+		@buy_window.set_handler(:cancel, method(:on_buy_cancel))
+	end  
+	#--------------------------------------------------------------------------
+	# ● Create confirmation popup window
+	#--------------------------------------------------------------------------  
+	def create_popup_confirm_window
+		@popup_confirm_window = Window_PopupConfirm.new
+		@popup_confirm_window.viewport = @viewport
+		@popup_confirm_window.hide
+		@popup_confirm_window.set_handler(:ok, method(:on_number_ok))
+		@popup_confirm_window.set_handler(:cancel, method(:on_number_cancel))
+	end
+	#--------------------------------------------------------------------------
+	# ● Check if items can not be re-purchased
+	#--------------------------------------------------------------------------  
+	def unavailable_check
+		if @command_window.current_symbol == :sell && @sell_window.item.selld_draw
+			@popup_confirm_window.refresh
+			@popup_confirm_window.show.activate
+			@popup_confirm_window.set_title(@sell_window.item.selld_draw)
+			@popup_confirm_window.set_name(@sell_window.item.name)
+			@popup_confirm_window.select(1)
+		else
+			on_number_ok
+		end
+	end
+	#--------------------------------------------------------------------------
+	# ○ Purchase [decision]
+	#--------------------------------------------------------------------------
+	def on_buy_ok
+		@item = @buy_window.item
+		@buy_window.hide
+		@number_window.set(@item, max_buy, buying_price, currency_unit)
+		@number_window.show.activate
+		@status_window.deactivate
+	end  
+	#--------------------------------------------------------------------------
+	# ○ sale [decision]
+	#--------------------------------------------------------------------------
+	def on_sell_ok
+		@item = @sell_window.item
+		@status_window.item = @item
+		@category_window.hide
+		@sell_window.hide
+		@number_window.set(@item, max_sell, selling_price, currency_unit)
+		@number_window.show.activate
+		@status_window.show.deactivate
+	end
+	#--------------------------------------------------------------------------
+	# ○ Number input [decision]
+	#--------------------------------------------------------------------------
+	def on_number_ok
+		@popup_confirm_window.hide if @popup_confirm_window.visible
+		Sound.play_shop
+		case @command_window.current_symbol
+		when :buy
+			do_buy(@number_window.number)
+		when :sell
+			do_sell(@number_window.number)
+		end
+		end_number_input
+		@gold_window.refresh
+		@status_window.refresh
+	end
+	#--------------------------------------------------------------------------
+	# ○ Number input [Cancel]
+	#--------------------------------------------------------------------------
+	def on_number_cancel
+		@popup_confirm_window.hide if @popup_confirm_window.visible
+		end_number_input
+	end
+	#--------------------------------------------------------------------------
+	# ○ End of number input
+	#--------------------------------------------------------------------------
+	def end_number_input
+		@number_window.hide
+		@status_window.activate
+		case @command_window.current_symbol
+		when :buy
+			activate_buy_window
+		when :sell
+			activate_sell_window
+		end
+	end  
+end
+
+
+

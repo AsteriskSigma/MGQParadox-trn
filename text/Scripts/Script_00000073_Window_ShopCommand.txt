@@ -1,0 +1,6 @@
+"■ Window" -> "■ Window"
+"　ショップ画面で、購入／売却を選択するウィンドウです。" -> "On the shop screen, you can select purchase / sell window."
+"● オブジェクト初期化" -> "● Object initialization"
+"● ウィンドウ幅の取得" -> "● Obtain window width"
+"● 桁数の取得" -> "● Acquisition of the number of digits"
+"● コマンドリストの作成" -> "● Create command list"

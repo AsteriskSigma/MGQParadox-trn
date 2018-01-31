@@ -1,0 +1,1 @@
+"攻撃武器レア" -> "Attack Weapon Rare"

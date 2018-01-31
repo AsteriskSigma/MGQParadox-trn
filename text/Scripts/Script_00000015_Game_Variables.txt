@@ -1,0 +1,8 @@
+"■ Game" -> "■ Game"
+"　変数を扱うクラスです。組み込みクラス Array のラッパーです。このクラスのイ" -> "Class to deal with variables. It is a wrapper around the built-in class Array. In this class"
+"ンスタンスは " -> "The instance is"
+"で参照されます。" -> "It is referred to."
+"● オブジェクト初期化" -> "● Object initialization"
+"● 変数の取得" -> "● Obtaining variables"
+"● 変数の設定" -> "● Setting variables"
+"● 変数の設定時の処理" -> "● Processing when setting variables"

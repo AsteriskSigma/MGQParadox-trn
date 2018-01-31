@@ -1,0 +1,65 @@
+=begin
+=window/Ahead member status
+
+
+
+
+==Change log
+  Date     Version Author Comment
+==14/12/13 2.0.0   Tris integration A to E B
+==17/05/16 2.0.4   Tris integrated V ~ W V
+
+=end
+
+#==============================================================================
+# ■ Window_BenchStatus
+#==============================================================================
+class Window_BenchStatus < Window_BattleStatus
+  #--------------------------------------------------------------------------
+  # ● Open window 【Override】
+  #--------------------------------------------------------------------------
+  def open
+    self.openness = 255
+    self
+  end
+  #--------------------------------------------------------------------------
+  # ● Close the window 【Override】
+  #--------------------------------------------------------------------------
+  def close
+    self.openness = 0
+    self
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire number of display lines
+  #--------------------------------------------------------------------------
+  def visible_line_number
+    [4, $game_party.party_member_max - 4].max
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of number of items 【Override】
+  #--------------------------------------------------------------------------
+  def item_max
+    $game_party.bench_members.size
+  end
+  #--------------------------------------------------------------------------
+  # ● Get currently selected member position 【override】
+  #--------------------------------------------------------------------------
+  def member_index
+    return self.index + $game_party.max_battle_members
+  end
+  #--------------------------------------------------------------------------
+  # ● Drawing items 【Override】
+  #--------------------------------------------------------------------------
+  def draw_item(index)
+    actor = $game_party.bench_members[index]
+    draw_basic_area(basic_area_rect(index), actor)
+    draw_gauge_area(gauge_area_rect(index), actor)
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire the effective state of the selected item
+  #--------------------------------------------------------------------------
+  def current_item_enabled?
+    !(BattleManager.shift_change? && SceneManager.scene.no_change_all_dead_on_bench?)
+  end
+end
+

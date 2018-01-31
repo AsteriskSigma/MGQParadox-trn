@@ -1,0 +1,8 @@
+"■ Window" -> "■ Window"
+"　アイテム画面またはショップ画面で、通常アイテムや装備品の分類を選択するウィ" -> "On the item screen or shop screen, select the classification of ordinary items and accessories"
+"ンドウです。" -> "It is a monkey."
+"● コマンドリストの作成" -> "● Create command list"
+"秘石" -> "Secret stone"
+"● 項目数の取得" -> "● Acquisition of number of items"
+"● アイテムの取得" -> "● Item acquisition"
+"● アイテムをリストに含めるかどうか" -> "● Whether to include items in the list"

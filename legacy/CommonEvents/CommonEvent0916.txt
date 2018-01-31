@@ -1,0 +1,5 @@
+﻿// EVENT 0916
+Name "混沌戦闘前処理"
+
+ChangeSwitch(73,73,0)
+0()

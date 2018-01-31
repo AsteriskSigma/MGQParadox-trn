@@ -1,0 +1,6 @@
+"■ Window" -> "■ Window"
+"　スキル画面で、コマンド（装備変更、最強装備など）を選択するウィンドウです。" -> "In the skill screen, it is a window to select a command (equipment change, strongest equipment etc)."
+"● オブジェクト初期化" -> "● Object initialization"
+"● ウィンドウ幅の取得" -> "● Obtain window width"
+"● 桁数の取得" -> "● Acquisition of the number of digits"
+"● コマンドリストの作成" -> "● Create command list"

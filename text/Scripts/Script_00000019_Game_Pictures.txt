@@ -1,0 +1,7 @@
+"■ Game" -> "■ Game"
+"　ピクチャの配列のラッパーです。このクラスは Game" -> "It is a wrapper around an array of pictures. This class is Game"
+"クラスの内部で使用" -> "Used inside class"
+"されます。マップ画面のピクチャとバトル画面のピクチャは別々に扱われます。" -> "It will be. The picture on the map screen and the picture on the battle screen are handled separately."
+"● オブジェクト初期化" -> "● Object initialization"
+"● ピクチャの取得" -> "● Picture acquisition"
+"● イテレータ" -> "● Iterator"

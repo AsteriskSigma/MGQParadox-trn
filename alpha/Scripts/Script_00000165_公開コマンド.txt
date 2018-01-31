@@ -1,0 +1,333 @@
+=begin
+=Foo_Public script command
+
+
+
+
+==Change log
+  Date     Version Author Comment
+==15/09/03 2.0.2   Public script command
+==17/05/16 2.0.4   Tris integrated V ~ W V W
+
+=end
+
+
+#==============================================================================
+# ■ Game_Interpreter
+#==============================================================================
+class Game_Interpreter
+  include NWConst::LibraryManager
+  include NWConst::PartyManager  
+  #--------------------------------------------------------------------------
+  # ● Skill interruption for present behavior
+  #--------------------------------------------------------------------------  
+  def interrupt_skill(skill_id, symbol = :event_interrupt)
+    battler = $game_actors[v(NWConst::Var::ACTION_USER)]
+    return if !$game_party.in_battle || $data_skills[skill_id].nil? || battler.nil?
+    BattleManager.skill_interrupt(battler, skill_id, symbol)
+  end
+  #--------------------------------------------------------------------------
+  # ● Option call
+  #--------------------------------------------------------------------------
+  def unlimited_choices(var_id, names)
+    return if names.empty? || var_id <= 0
+    names.each { |name| $game_message.choices.push(name.to_s) }
+    $game_message.choice_cancel_type = names.size + 1
+    $game_message.choice_proc = Proc.new {|n| $game_variables[var_id] = n }
+    Fiber.yield while $game_message.choice?
+  end  
+  #--------------------------------------------------------------------------
+  # ● Forcibly ride a boat
+  #--------------------------------------------------------------------------
+  def forced_get_on_boat
+    $game_player.forced_get_on_vehicle(:boat)
+  end   
+  #--------------------------------------------------------------------------
+  # ● Forcibly ride a large ship
+  #--------------------------------------------------------------------------
+  def forced_get_on_ship
+    $game_player.forced_get_on_vehicle(:ship)
+  end   
+  #--------------------------------------------------------------------------
+  # ● Forcibly ride an airship
+  #--------------------------------------------------------------------------
+  def forced_get_on_airship
+    $game_player.forced_get_on_vehicle(:airship)
+  end   
+  #--------------------------------------------------------------------------
+  # ● Forcibly get off the vehicle
+  #--------------------------------------------------------------------------
+  def forced_get_off_vehicle
+    $game_player.forced_get_off_vehicle
+  end
+  #--------------------------------------------------------------------------
+  # ● Display Skill Name
+  #--------------------------------------------------------------------------
+  def display_skill_name(text)
+    $game_party.display_skill_name = text
+  end  
+  #--------------------------------------------------------------------------
+  # ● Hide skill names
+  #--------------------------------------------------------------------------
+  def clear_skill_name
+    $game_party.display_skill_name = nil
+  end
+  #--------------------------------------------------------------------------
+  # ● Enter key
+  #--------------------------------------------------------------------------
+  def input_keys(duration)
+    $game_temp.keys_stack = []
+    duration.times{
+      Fiber.yield      
+      if Input.trigger?(:UP)
+        $game_temp.keys_stack.push(:U)
+      elsif Input.trigger?(:DOWN)
+        $game_temp.keys_stack.push(:D)
+      elsif Input.trigger?(:LEFT)
+        $game_temp.keys_stack.push(:L)
+      elsif Input.trigger?(:RIGHT)
+        $game_temp.keys_stack.push(:R)
+      elsif Input.trigger?(:A)
+        $game_temp.keys_stack.push(:B1)
+      elsif Input.trigger?(:B)
+        $game_temp.keys_stack.push(:B2)
+      elsif Input.trigger?(:C)
+        $game_temp.keys_stack.push(:B3)        
+      elsif Input.trigger?(:X)
+        $game_temp.keys_stack.push(:B4)
+      elsif Input.trigger?(:Y)
+        $game_temp.keys_stack.push(:B5)        
+      elsif Input.trigger?(:Z)
+        $game_temp.keys_stack.push(:B6)        
+      elsif Input.trigger?(:L)
+        $game_temp.keys_stack.push(:B7)        
+      elsif Input.trigger?(:R)
+        $game_temp.keys_stack.push(:B8)        
+      end
+    }
+  end
+  #--------------------------------------------------------------------------
+  # ● Obtaining the input key stack
+  #--------------------------------------------------------------------------
+  def keys_stack
+    return $game_temp.keys_stack
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of unlocking level
+  #--------------------------------------------------------------------------
+  def unlock_level
+    return $game_party.unlock_level
+  end
+  #--------------------------------------------------------------------------
+  # ● Set of temporary members
+  #--------------------------------------------------------------------------
+  def set_temp_actors(*args)
+    $game_party.set_temp_actors(args)
+  end
+  #--------------------------------------------------------------------------
+  # ● Release temporary members
+  #--------------------------------------------------------------------------
+  def release_temp_actors
+    $game_party.release_temp_actors
+  end
+  #--------------------------------------------------------------------------
+  # ● Extended actor subscription
+  #--------------------------------------------------------------------------
+  def add_actor_ex(actor_id)
+    $game_party.persona_change(actor_id)
+    return if $game_party.exist_actor_id?(actor_id)
+    if $game_party.party_member_full?
+      $game_message.add("The party is already full")
+      $game_message.add("Who will be removed from the party?")
+      stand_actor = $game_party.choice_stand_actor_on_member_full(actor_id, nil)
+      move_stand_actor(stand_actor.id) if stand_actor
+    end
+    actor = $game_actors[actor_id]
+    $game_party.add_actor(actor.id)
+    $game_switches[NWConst::Sw::ADD_ACTOR_BASE + actor.id] = true
+  end
+  #--------------------------------------------------------------------------
+  # ● Extended Actor Move
+  #--------------------------------------------------------------------------
+  def move_actor_ex(actor_id)
+    if $game_party.party_member_full?
+      $game_message.add("The party is already full")
+      $game_message.add("Who will be removed from the party?")
+      stand_actor = $game_party.choice_stand_actor_on_member_full(actor_id, nil)
+      move_stand_actor(stand_actor.id) if stand_actor
+      return unless stand_actor
+    end
+    move_actor(actor_id)
+  end
+  #--------------------------------------------------------------------------
+  # ● Other than Luca to wait for the castle
+  #--------------------------------------------------------------------------
+  def move_stand_actors_except_luca
+    party_members.each do |actor|
+      move_stand_actor(actor.id) unless actor.luca?
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Jump to the label when there is a designated actor in the party
+  #--------------------------------------------------------------------------
+  def actor_label_jump
+    labels = $game_party.all_members.collect{|actor| "#{actor.id}"}
+    index = []
+    @list.each_with_index{|command, i|
+      next unless command.code == 118 && labels.include?(command.parameters[0])
+      index.push(i)
+    }
+    return if index.empty?
+    @index = index.sample
+  end  
+  #--------------------------------------------------------------------------
+  # ● Friendliness change of designated enemy
+  #--------------------------------------------------------------------------
+  def change_friend(value)
+    return unless $data_enemies[$game_variables[51]]
+    return if value == 0
+    enemy = $data_enemies[$game_variables[51]]
+    se   = RPG::SE.new(0 < value ? "Raise3" : "Down3", 100, 100)
+    text = sprintf("%s's Affinity went %s%d!", enemy.name, 0 < value ? "up by " : "down by ", value.abs,)
+    enemy.friend += value
+    se.play
+    $game_message.add(text)
+    wait_for_message
+  end  
+  #--------------------------------------------------------------------------
+  # ● Changing occupation (tribal) level
+  #--------------------------------------------------------------------------
+  def set_class_level(actor_id, class_id, level, show = false, change = false)
+    return unless $game_actors.exist?(actor_id)
+    actor = $game_actors[actor_id]
+    kind = NWConst::Class::JOB_RANGE.include?(class_id) ? :class : :tribe
+    temp_class_id = kind == :class ? actor.class_id : actor.tribe_id
+		tactor = Marshal.load(Marshal.dump(actor))
+    actor.change_class(class_id, kind)    
+    actor.change_level_if_low(level, show, kind)
+    unless change
+      actor.change_class(temp_class_id, kind)
+			actor.equip_abilities = tactor.equip_abilities
+      tactor.equips.each_with_index{|equip, i| actor.change_equip(i, equip)}
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Actor ID:NIs a job ID:MIf it was
+  #--------------------------------------------------------------------------
+  def actor_class?(actor_id, class_id)
+    return false unless $game_actors.exist?(actor_id)
+    actor = $game_actors[actor_id]
+    return [actor.class_id, actor.tribe_id].include?(class_id)
+  end
+  #--------------------------------------------------------------------------
+  # ● Actor ID:NOccupation ID:MIf it is L or more
+  #--------------------------------------------------------------------------
+  def actor_class_level_over?(actor_id, class_id, level)
+    return false unless $game_actors.exist?(actor_id)
+    actor = $game_actors[actor_id]
+    return false if actor.level_list[class_id].nil?
+    return level <= actor.level_list[class_id]
+  end
+  #--------------------------------------------------------------------------
+  # ● Call Party Screen
+  #--------------------------------------------------------------------------
+  def call_party_edit
+    # Collision set
+    $game_player.followers.gather
+    Fiber.yield until $game_player.followers.gather?
+    # Release of Luke's battle impossibility
+    $game_actors[NWConst::Actor::LUCA].remove_state(1)
+    SceneManager.call(Scene_PartyEdit)
+    Fiber.yield    
+  end
+  #--------------------------------------------------------------------------
+  # ● Butler image not displayed On
+  #--------------------------------------------------------------------------
+  def battler_graphic_hide
+    $game_temp.battler_graphic_hide = true
+  end
+  #--------------------------------------------------------------------------
+  # ● Butler image not displayed off
+  #--------------------------------------------------------------------------
+  def battler_graphic_show
+    $game_temp.battler_graphic_hide = false
+  end
+  #--------------------------------------------------------------------------
+  # ● Experience value increase for specified actor
+  #--------------------------------------------------------------------------
+  def gain_actor_exp(actor_id, kind, n, rate, show = true)
+    actor = $game_actors[actor_id]
+    case kind
+    when :base
+      now  = actor.base_exp
+      plus = n
+      plus = (n * actor.final_exp_rate).ceil if rate
+    when :class
+      now  = actor.class_exp
+      plus = n
+      plus = (n * actor.final_cexp_rate).ceil if rate
+    when :tribe
+      now  = actor.tribe_exp
+      plus = n
+      plus = (n * actor.final_cexp_rate).ceil if rate
+    end
+    actor.change_exp(now + plus, show, kind)
+  end
+  #--------------------------------------------------------------------------
+  # ○ Assign to the switch whether there is a picture (ignoring the inside of the encrypted archive)
+  #--------------------------------------------------------------------------
+  def check_picture_exist(filename, switch_id)
+    path  = "Graphics/Pictures/#{filename}"
+    result = File.exist?(path)
+    $game_switches[switch_id] = result
+    return result
+  end
+  #--------------------------------------------------------------------------
+  # ○ Map designation Encounter prohibition
+  #--------------------------------------------------------------------------
+  def no_enemy_map_on(*map_ids)
+    $game_system.no_enemy_map_on(*map_ids)
+  end
+  def no_enemy_map_off(*map_ids)
+    $game_system.no_enemy_map_off(*map_ids)
+  end
+  def no_enemy_map_clear
+    $game_system.no_enemy_map_clear
+  end
+  def no_enemy_map_show
+    $game_system.no_enemy_map_show
+  end
+  #--------------------------------------------------------------------------
+  # ○ Assign \"switch all battle members have one or more designated categories\" to the switch
+  #--------------------------------------------------------------------------
+  def check_party_category(switch_id, *categories)
+    result = $game_party.battle_members.all? do |actor|
+      actor.is_include_categories?(*categories.map(&:to_sym))
+    end
+    $game_switches[switch_id] = result
+    return result
+  end
+  #--------------------------------------------------------------------------
+  # ○ Assign to the switch whether \"All members have one or more designated categories\"
+  #--------------------------------------------------------------------------
+  def check_all_party_category(switch_id, *categories)
+    result = $game_party.all_members.all? do |actor|
+      actor.is_include_categories?(*categories.map(&:to_sym))
+    end
+    $game_switches[switch_id] = result
+    return result
+  end
+end
+
+
+
+
+
+
+
+
+
+
+
+
+

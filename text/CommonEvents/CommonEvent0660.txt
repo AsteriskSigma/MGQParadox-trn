@@ -1,0 +1,7 @@
+"イベント：ラ・クロワ" -> "Event: La Croix"
+"【ラ・クロワ】" -> "【La Croix】"
+"どこまでも進むがいい……" -> "Proceed anywhere ... ..."
+"【ラ・クロワ】" -> "【La Croix】"
+"造り物の力、私が倍加させてやろう……" -> "I will doubles the power of the building, ... ..."
+"ラ・クロワから不思議な力が与えられた！" -> "La Croix gave a magical power!"
+"次のボスフロアまで、造技の威力が二倍になる！" -> "Up to the next boss floor, the power of the technique doubles!"

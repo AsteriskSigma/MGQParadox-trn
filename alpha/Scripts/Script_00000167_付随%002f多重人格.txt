@@ -1,0 +1,134 @@
+=begin
+= Infrastructure system/Multiple personality
+
+Multiple RPG::ActorMake an actor to switch classes
+
+
+==Change log
+  Date     Version Author Comment
+==17/05/16 2.0.4   Tris integrated V ~ W W
+
+=end
+
+#==============================================================================
+# ■ Game_Actor
+#==============================================================================
+class Game_Actor < Game_Battler  
+  #--------------------------------------------------------------------------
+  # ● Change Personality
+  #--------------------------------------------------------------------------
+  def persona_change(persona_id)
+    return if $data_actors[persona_id].persona_kind == :none
+    $game_switches[NWConst::Sw::ADD_ACTOR_BASE + @actor_id] = false
+    @actor_id = persona_id
+    $game_switches[NWConst::Sw::ADD_ACTOR_BASE + @actor_id] = true
+    @name = actor.name
+    @nickname = actor.nickname
+    init_graphics
+    refresh
+  end
+end
+
+#==============================================================================
+# ■ Game_Actors
+#==============================================================================
+class Game_Actors
+  #--------------------------------------------------------------------------
+  # ○ Acquisition of actors
+  #--------------------------------------------------------------------------
+  alias nw_persona_array []
+  def [](actor_id)
+    return nil unless $data_actors[actor_id]
+    actor = $data_actors[actor_id]
+    id = (actor.persona_kind == :sub) ? actor.original_persona_id : actor_id
+    nw_persona_array(id)
+  end
+end
+
+
+#==============================================================================
+# ■ Game_Party
+#==============================================================================
+# The actor ID to be registered at the party is unified with personality actor
+class Game_Party
+  #--------------------------------------------------------------------------
+  # ○ Party/Add an actor to the castle standby
+  #--------------------------------------------------------------------------
+  alias nw_persona_add_actor add_actor
+  def add_actor(actor_id)
+    nw_persona_add_actor($game_actors[actor_id].id)
+  end
+  #--------------------------------------------------------------------------
+  # ○ Party/Remove actor from castle standby
+  #--------------------------------------------------------------------------
+  alias nw_persona_remove_actor remove_actor
+  def remove_actor(actor_id)
+    nw_persona_remove_actor($game_actors[actor_id].id)
+  end
+  #--------------------------------------------------------------------------
+  # ● Add an actor to the castle standby from outside
+  #--------------------------------------------------------------------------
+  alias nw_persona_add_stand_actor add_stand_actor
+  def add_stand_actor(actor_id)
+    nw_persona_add_stand_actor($game_actors[actor_id].id)
+  end
+  #--------------------------------------------------------------------------
+  # ● Remove the actor from the castle standby
+  #--------------------------------------------------------------------------
+  alias nw_persona_remove_stand_actor remove_stand_actor
+  def remove_stand_actor(actor_id)
+    nw_persona_remove_stand_actor($game_actors[actor_id].id)
+  end
+  #--------------------------------------------------------------------------
+  # ● Move actors from castle standby to party removeStand-add
+  #--------------------------------------------------------------------------
+  alias nw_persona_move_actor move_actor
+  def move_actor(actor_id)
+    nw_persona_move_actor($game_actors[actor_id].id)
+  end
+  #--------------------------------------------------------------------------
+  # ● Move an actor from a party to a castle wait remove remove-addStand
+  #--------------------------------------------------------------------------
+  alias nw_persona_move_stand_actor move_stand_actor
+  def move_stand_actor(actor_id)
+    nw_persona_move_stand_actor($game_actors[actor_id].id)
+  end
+  #--------------------------------------------------------------------------
+  # ● Change Personality
+  #--------------------------------------------------------------------------
+  def persona_change(persona_id)
+    actor = $data_actors[persona_id]
+    return unless actor
+    return if actor.persona_kind == :none
+    actor_id = (actor.persona_kind == :original) ? persona_id : actor.original_persona_id
+    $game_actors[actor_id].persona_change(persona_id)
+    refresh_persona(actor_id, persona_id)
+    $game_player.refresh
+  end
+  #--------------------------------------------------------------------------
+  # ● Refresh when the changed personality actor exists in the party
+  #--------------------------------------------------------------------------
+  def refresh_persona(actor_id, persona_id)
+    @actors.collect!{|last_id|
+      ($game_actors[persona_id] == $game_actors[last_id]) ? persona_id : last_id
+    }
+    @stand_actors.collect!{|last_id|
+      ($game_actors[persona_id] == $game_actors[last_id]) ? persona_id : last_id
+    }
+    $game_library.actor.set_had(persona_id) 
+  end
+end
+
+#==============================================================================
+# ■ Game_Interpreter
+#==============================================================================
+class Game_Interpreter
+  #--------------------------------------------------------------------------
+  # ● Change Personality
+  #--------------------------------------------------------------------------
+  def persona_change(persona_id)
+    $game_party.persona_change(persona_id)
+  end
+end
+
+

@@ -1,0 +1,6 @@
+"忍奥義・火遁焔舞" -> "Ninjyoshi Fire & Fire Mai Dance"
+"忍奥義・水遁豪流" -> "Ninjyoshi · Water journal flows"
+"忍奥義・雷迅白夜" -> "Ninjitsu · Thunder Spirit Night"
+"忍奥義・火遁焔舞" -> "Ninjyoshi Fire & Fire Mai Dance"
+"忍奥義・水遁豪流" -> "Ninjyoshi · Water journal flows"
+"忍奥義・雷迅白夜" -> "Ninjitsu · Thunder Spirit Night"

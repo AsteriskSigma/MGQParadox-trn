@@ -1,0 +1,6 @@
+"「わかめダンス」、教えてあげる……" -> "\"Wakame dance\", I will tell you ..."
+"でも「踊る」が使えないとうまく踊れないよ。" -> "But if you can not use \"dancing\" you will not be able to dance well."
+"誰が「わかめダンス」を修得しますか？" -> "Who will acquire 'Wakame Dance'?"
+"わかめダンス" -> "Wakame dance"
+"を修得した！" -> "Learned!"
+"今日は干涸らびそうだから、また今度ね……" -> "Today it seems to drip away, so next time ..."

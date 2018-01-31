@@ -1,0 +1,105 @@
+#==============================================================================
+# ■ Window_DebugLeft
+#------------------------------------------------------------------------------
+# In the debug screen, it is a window that specifies the switch and variable block.
+#==============================================================================
+
+class Window_DebugLeft < Window_Selectable
+  #--------------------------------------------------------------------------
+  # ● Class variables
+  #--------------------------------------------------------------------------
+  @@last_top_row = 0                      # For saving the first line
+  @@last_index   = 0                      # For saving the cursor position
+  #--------------------------------------------------------------------------
+  # ● Public instance variables
+  #--------------------------------------------------------------------------
+  attr_reader   :right_window             # Right window
+  #--------------------------------------------------------------------------
+  # ● Object initialization
+  #--------------------------------------------------------------------------
+  def initialize(x, y)
+    super(x, y, window_width, window_height)
+    refresh
+    self.top_row = @@last_top_row
+    select(@@last_index)
+    activate
+  end
+  #--------------------------------------------------------------------------
+  # ● Obtain window width
+  #--------------------------------------------------------------------------
+  def window_width
+    return 164
+  end
+  #--------------------------------------------------------------------------
+  # ● Obtain window height
+  #--------------------------------------------------------------------------
+  def window_height
+    Graphics.height
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of number of items
+  #--------------------------------------------------------------------------
+  def item_max
+    @item_max || 0
+  end
+  #--------------------------------------------------------------------------
+  # ● Frame update
+  #--------------------------------------------------------------------------
+  def update
+    super
+    return unless @right_window
+    @right_window.mode = mode
+    @right_window.top_id = top_id
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire mode
+  #--------------------------------------------------------------------------
+  def mode
+    index < @switch_max ? :switch : :variable
+  end
+  #--------------------------------------------------------------------------
+  # ● Getting the ID to display at the top
+  #--------------------------------------------------------------------------
+  def top_id
+    (index - (index < @switch_max ? 0 : @switch_max)) * 10 + 1
+  end
+  #--------------------------------------------------------------------------
+  # ● Refresh
+  #--------------------------------------------------------------------------
+  def refresh
+    @switch_max = ($data_system.switches.size - 1 + 9) / 10
+    @variable_max = ($data_system.variables.size - 1 + 9) / 10
+    @item_max = @switch_max + @variable_max
+    create_contents
+    draw_all_items
+  end
+  #--------------------------------------------------------------------------
+  # ● Drawing items
+  #--------------------------------------------------------------------------
+  def draw_item(index)
+    if index < @switch_max
+      n = index * 10
+      text = sprintf("S [%04d-%04d]", n+1, n+10)
+    else
+      n = (index - @switch_max) * 10
+      text = sprintf("V [%04d-%04d]", n+1, n+10)
+    end
+    draw_text(item_rect_for_text(index), text)
+  end
+  #--------------------------------------------------------------------------
+  # ● Processing when the cancel button is pressed
+  #--------------------------------------------------------------------------
+  def process_cancel
+    super
+    @@last_top_row = top_row
+    @@last_index = index
+  end
+  #--------------------------------------------------------------------------
+  # ● Setting in the right window
+  #--------------------------------------------------------------------------
+  def right_window=(right_window)
+    @right_window = right_window
+    update
+  end
+end
+

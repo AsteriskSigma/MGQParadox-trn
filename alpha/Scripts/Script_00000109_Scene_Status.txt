@@ -1,0 +1,26 @@
+#==============================================================================
+# ■ Scene_Status
+#------------------------------------------------------------------------------
+# It is a class that processes status screen.
+#==============================================================================
+
+class Scene_Status < Scene_MenuBase
+  #--------------------------------------------------------------------------
+  # ● Start processing
+  #--------------------------------------------------------------------------
+  def start
+    super
+    @status_window = Window_Status.new(@actor)
+    @status_window.set_handler(:cancel,   method(:return_scene))
+    @status_window.set_handler(:pagedown, method(:next_actor))
+    @status_window.set_handler(:pageup,   method(:prev_actor))
+  end
+  #--------------------------------------------------------------------------
+  # ● Switching actors
+  #--------------------------------------------------------------------------
+  def on_actor_change
+    @status_window.actor = @actor
+    @status_window.activate
+  end
+end
+

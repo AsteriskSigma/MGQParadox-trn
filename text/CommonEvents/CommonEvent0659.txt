@@ -1,0 +1,7 @@
+"イベント：フレデリカ" -> "Event: Frederica"
+"【フレデリカ】" -> "【Frederica】"
+"クロム、風呂入ったか……" -> "Chrome, did you take a bath ...?"
+"【フレデリカ】" -> "【Frederica】"
+"死の……力を……" -> "Death ...... Power ......"
+"フレデリカから不思議な力が与えられた！" -> "Fredellica gave a magical power!"
+"次のボスフロアまで、屍技の威力が二倍になる！" -> "Up to the next boss floor, the power of the death technique doubles!"

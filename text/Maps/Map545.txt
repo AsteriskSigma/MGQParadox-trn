@@ -1,0 +1,8 @@
+"■■ be swallowed ■■■ " -> "■■ be swallowed ■■■"
+"■■■ to your dreams" -> "■■■ to your dreams"
+"■■■■■■■ time" -> "■■■■■■■ time"
+"■■■■■■■ out ■■■ " -> "■■■■■■■ out ■■■"
+"■■■■ forget ■■■■■■■ " -> "■■■■ forget ■■■■■■■"
+"■rld ■■■■■ " -> "■ rld ■■■■■"
+"■ " -> "■"
+"■■■■ " -> "■■■■"

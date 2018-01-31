@@ -1,0 +1,8 @@
+"イベント：クィーンハーピー" -> "Event: Queen Harpy"
+"【クィーンハーピー】" -> "【Queen Harpie】"
+"今度、私の集落にいらっしゃって下さい。" -> "Please come to my village next time."
+"たっぷり歓迎して差し上げましょう……" -> "Let's welcome with plenty ... ..."
+"【クィーンハーピー】" -> "【Queen Harpie】"
+"翼の力、高めて差し上げましょう。" -> "Let me give you the power of the wings."
+"クィーンハーピーから不思議な力が与えられた！" -> "QUEEN HARPY gave a magical power!"
+"次のボスフロアまで、翼技の威力が二倍になる！" -> "Up to the next boss floor, the power of the wing technique doubles!"

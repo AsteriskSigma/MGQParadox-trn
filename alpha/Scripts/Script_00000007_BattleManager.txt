@@ -1,0 +1,393 @@
+#==============================================================================
+# ■ BattleManager
+#------------------------------------------------------------------------------
+# It is a module that manages the progress of battle.
+#==============================================================================
+
+module BattleManager
+  #--------------------------------------------------------------------------
+  # ● Setup
+  #--------------------------------------------------------------------------
+  def self.setup(troop_id, can_escape = true, can_lose = false)
+    init_members
+    $game_troop.setup(troop_id)
+    @can_escape = can_escape
+    @can_lose = can_lose
+    make_escape_ratio
+  end
+  #--------------------------------------------------------------------------
+  # ● Initialization of member variables
+  #--------------------------------------------------------------------------
+  def self.init_members
+    @phase = :init              # Battle progress phase
+    @can_escape = false         # Escape Possible Flag
+    @can_lose = false           # Defeatable flag
+    @event_proc = nil           # Event callback
+    @preemptive = false         # First strike attack flag
+    @surprise = false           # A surprise flag
+    @actor_index = -1           # Actor during command entry
+    @action_forced = nil        # Force battle behavior
+    @map_bgm = nil              # For BGM memory before battle
+    @map_bgs = nil              # For BGS memory before battle
+    @action_battlers = []       # Action order list
+  end
+  #--------------------------------------------------------------------------
+  # ● Processing at encounter
+  #--------------------------------------------------------------------------
+  def self.on_encounter
+    @preemptive = (rand < rate_preemptive)
+    @surprise = (rand < rate_surprise && !@preemptive)
+  end
+  #--------------------------------------------------------------------------
+  # Obtain probability of first strike
+  #--------------------------------------------------------------------------
+  def self.rate_preemptive
+    $game_party.rate_preemptive($game_troop.agi)
+  end
+  #--------------------------------------------------------------------------
+  # ● Obtain probability of surprise
+  #--------------------------------------------------------------------------
+  def self.rate_surprise
+    $game_party.rate_surprise($game_troop.agi)
+  end
+  #--------------------------------------------------------------------------
+  # ● Save BGM and BGS
+  #--------------------------------------------------------------------------
+  def self.save_bgm_and_bgs
+    @map_bgm = RPG::BGM.last
+    @map_bgs = RPG::BGS.last
+  end
+  #--------------------------------------------------------------------------
+  # ● Battle BGM playing
+  #--------------------------------------------------------------------------
+  def self.play_battle_bgm
+    $game_system.battle_bgm.play
+    RPG::BGS.stop
+  end
+  #--------------------------------------------------------------------------
+  # ● Battle end ME playing
+  #--------------------------------------------------------------------------
+  def self.play_battle_end_me
+    $game_system.battle_end_me.play
+  end
+  #--------------------------------------------------------------------------
+  # ● Resume BGM and BGS
+  #--------------------------------------------------------------------------
+  def self.replay_bgm_and_bgs
+    @map_bgm.replay unless $BTEST
+    @map_bgs.replay unless $BTEST
+  end
+  #--------------------------------------------------------------------------
+  # ● Creation of escape success rate
+  #--------------------------------------------------------------------------
+  def self.make_escape_ratio
+    @escape_ratio = 1.5 - 1.0 * $game_troop.agi / $game_party.agi
+  end
+  #--------------------------------------------------------------------------
+  # ● Turn judged during execution
+  #--------------------------------------------------------------------------
+  def self.in_turn?
+    @phase == :turn
+  end
+  #--------------------------------------------------------------------------
+  # ● Judging during end of turn
+  #--------------------------------------------------------------------------
+  def self.turn_end?
+    @phase == :turn_end
+  end
+  #--------------------------------------------------------------------------
+  # ● Battle Interruption Judgment
+  #--------------------------------------------------------------------------
+  def self.aborting?
+    @phase == :aborting
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire escape permission
+  #--------------------------------------------------------------------------
+  def self.can_escape?
+    @can_escape
+  end
+  #--------------------------------------------------------------------------
+  # ● Get actor while entering command
+  #--------------------------------------------------------------------------
+  def self.actor
+    @actor_index >= 0 ? $game_party.members[@actor_index] : nil
+  end
+  #--------------------------------------------------------------------------
+  # ● Clear actor while entering command
+  #--------------------------------------------------------------------------
+  def self.clear_actor
+    @actor_index = -1
+  end
+  #--------------------------------------------------------------------------
+  # ● To the next command input
+  #--------------------------------------------------------------------------
+  def self.next_command
+    begin
+      if !actor || !actor.next_command
+        @actor_index += 1
+        return false if @actor_index >= $game_party.members.size
+      end
+    end until actor.inputable?
+    return true
+  end
+  #--------------------------------------------------------------------------
+  # ● To the previous command input
+  #--------------------------------------------------------------------------
+  def self.prior_command
+    begin
+      if !actor || !actor.prior_command
+        @actor_index -= 1
+        return false if @actor_index < 0
+      end
+    end until actor.inputable?
+    return true
+  end
+  #--------------------------------------------------------------------------
+  # ● Proc settings for callbacks to events
+  #--------------------------------------------------------------------------
+  def self.event_proc=(proc)
+    @event_proc = proc
+  end
+  #--------------------------------------------------------------------------
+  # ● Setting method for weight
+  #--------------------------------------------------------------------------
+  def self.method_wait_for_message=(method)
+    @method_wait_for_message = method
+  end
+  #--------------------------------------------------------------------------
+  # ● Weight until message display is over
+  #--------------------------------------------------------------------------
+  def self.wait_for_message
+    @method_wait_for_message.call if @method_wait_for_message
+  end
+  #--------------------------------------------------------------------------
+  # Battle start
+  #--------------------------------------------------------------------------
+  def self.battle_start
+    $game_system.battle_count += 1
+    $game_party.on_battle_start
+    $game_troop.on_battle_start
+    $game_troop.enemy_names.each do |name|
+      $game_message.add(sprintf(Vocab::Emerge, name))
+    end
+    if @preemptive
+      $game_message.add(sprintf(Vocab::Preemptive, $game_party.name))
+    elsif @surprise
+      $game_message.add(sprintf(Vocab::Surprise, $game_party.name))
+    end
+    wait_for_message
+  end
+  #--------------------------------------------------------------------------
+  # ● Battle Interruptions
+  #--------------------------------------------------------------------------
+  def self.abort
+    @phase = :aborting
+  end
+  #--------------------------------------------------------------------------
+  # ● Victory or defeat
+  #--------------------------------------------------------------------------
+  def self.judge_win_loss
+    if @phase
+      return process_abort   if $game_party.members.empty?
+      return process_defeat  if $game_party.all_dead?
+      return process_victory if $game_troop.all_dead?
+      return process_abort   if aborting?
+    end
+    return false
+  end
+  #--------------------------------------------------------------------------
+  # ● Processing Victory
+  #--------------------------------------------------------------------------
+  def self.process_victory
+    play_battle_end_me
+    replay_bgm_and_bgs
+    $game_message.add(sprintf(Vocab::Victory, $game_party.name))
+    display_exp
+    gain_gold
+    gain_drop_items
+    gain_exp
+    SceneManager.return
+    battle_end(0)
+    return true
+  end
+  #--------------------------------------------------------------------------
+  # ● Treatment of escape
+  #--------------------------------------------------------------------------
+  def self.process_escape
+    $game_message.add(sprintf(Vocab::EscapeStart, $game_party.name))
+    success = @preemptive ? true : (rand < @escape_ratio)
+    Sound.play_escape
+    if success
+      process_abort
+    else
+      @escape_ratio += 0.1
+      $game_message.add('\.' + Vocab::EscapeFailure)
+      $game_party.clear_actions
+    end
+    wait_for_message
+    return success
+  end
+  #--------------------------------------------------------------------------
+  # ● Interruption processing
+  #--------------------------------------------------------------------------
+  def self.process_abort
+    replay_bgm_and_bgs
+    SceneManager.return
+    battle_end(1)
+    return true
+  end
+  #--------------------------------------------------------------------------
+  # ● Process of defeat
+  #--------------------------------------------------------------------------
+  def self.process_defeat
+    $game_message.add(sprintf(Vocab::Defeat, $game_party.name))
+    wait_for_message
+    if @can_lose
+      revive_battle_members
+      replay_bgm_and_bgs
+      SceneManager.return
+    else
+      SceneManager.goto(Scene_Gameover)
+    end
+    battle_end(2)
+    return true
+  end
+  #--------------------------------------------------------------------------
+  # ● Resurgence of combat members (at defeat)
+  #--------------------------------------------------------------------------
+  def self.revive_battle_members
+    $game_party.battle_members.each do |actor|
+      actor.hp = 1 if actor.dead?
+    end
+  end
+  #--------------------------------------------------------------------------
+  # Battle end
+  #     result : Result (0:Victory 1:Escape 2:defeat)
+  #--------------------------------------------------------------------------
+  def self.battle_end(result)
+    @phase = nil
+    @event_proc.call(result) if @event_proc
+    $game_party.on_battle_end
+    $game_troop.on_battle_end
+    SceneManager.exit if $BTEST
+  end
+  #--------------------------------------------------------------------------
+  # ● Command input start
+  #--------------------------------------------------------------------------
+  def self.input_start
+    if @phase != :input
+      @phase = :input
+      $game_party.make_actions
+      $game_troop.make_actions
+      clear_actor
+    end
+    return !@surprise && $game_party.inputable?
+  end
+  #--------------------------------------------------------------------------
+  # ● Start a turn
+  #--------------------------------------------------------------------------
+  def self.turn_start
+    @phase = :turn
+    clear_actor
+    $game_troop.increase_turn
+    make_action_orders
+  end
+  #--------------------------------------------------------------------------
+  # ● End of Turn
+  #--------------------------------------------------------------------------
+  def self.turn_end
+    @phase = :turn_end
+    @preemptive = false
+    @surprise = false
+  end
+  #--------------------------------------------------------------------------
+  # ● Display of experience value acquired
+  #--------------------------------------------------------------------------
+  def self.display_exp
+    if $game_troop.exp_total > 0
+      text = sprintf(Vocab::ObtainExp, $game_troop.exp_total)
+      $game_message.add('\.' + text)
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition and display of money
+  #--------------------------------------------------------------------------
+  def self.gain_gold
+    if $game_troop.gold_total > 0
+      text = sprintf(Vocab::ObtainGold, $game_troop.gold_total)
+      $game_message.add('\.' + text)
+      $game_party.gain_gold($game_troop.gold_total)
+    end
+    wait_for_message
+  end
+  #--------------------------------------------------------------------------
+  # ● Drop item acquisition and display
+  #--------------------------------------------------------------------------
+  def self.gain_drop_items
+    $game_troop.make_drop_items.each do |item|
+      $game_party.gain_item(item, 1)
+      $game_message.add(sprintf(Vocab::ObtainItem, item.name))
+    end
+    wait_for_message
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of Experience Value and Display of Level Up
+  #--------------------------------------------------------------------------
+  def self.gain_exp
+    $game_party.all_members.each do |actor|
+      actor.gain_exp($game_troop.exp_total)
+    end
+    wait_for_message
+  end
+  #--------------------------------------------------------------------------
+  # ● Create action sequence
+  #--------------------------------------------------------------------------
+  def self.make_action_orders
+    @action_battlers = []
+    @action_battlers += $game_party.members unless @surprise
+    @action_battlers += $game_troop.members unless @preemptive
+    @action_battlers.each {|battler| battler.make_speed }
+    @action_battlers.sort! {|a,b| b.speed - a.speed }
+  end
+  #--------------------------------------------------------------------------
+  # ● Force combat action
+  #--------------------------------------------------------------------------
+  def self.force_action(battler)
+    @action_forced = battler
+    @action_battlers.delete(battler)
+  end
+  #--------------------------------------------------------------------------
+  # ● Obtain forced state of combat action
+  #--------------------------------------------------------------------------
+  def self.action_forced?
+    @action_forced != nil
+  end
+  #--------------------------------------------------------------------------
+  # ● Get a butler who was forced to fight
+  #--------------------------------------------------------------------------
+  def self.action_forced_battler
+    @action_forced
+  end
+  #--------------------------------------------------------------------------
+  # ● Clear forced combat action
+  #--------------------------------------------------------------------------
+  def self.clear_action_force
+    @action_forced = nil
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of the next acting entity
+  #    Get a butler from the beginning of the action order list.
+  #    If you get an actor that is not currently in the party (index is nil, Battle Ive
+  #    Occurred immediately after leaving, etc.), skip it.
+  #--------------------------------------------------------------------------
+  def self.next_subject
+    loop do
+      battler = @action_battlers.shift
+      return nil unless battler
+      next unless battler.index && battler.alive?
+      return battler
+    end
+  end
+end
+

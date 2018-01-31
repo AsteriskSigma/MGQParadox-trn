@@ -1,0 +1,111 @@
+#==============================================================================
+# ■ Window_BattleStatus
+#------------------------------------------------------------------------------
+# In the battle screen, this window displays the status of party members.
+#==============================================================================
+
+class Window_BattleStatus < Window_Selectable
+  #--------------------------------------------------------------------------
+  # ● Object initialization
+  #--------------------------------------------------------------------------
+  def initialize
+    super(0, 0, window_width, window_height)
+    refresh
+    self.openness = 0
+  end
+  #--------------------------------------------------------------------------
+  # ● Obtain window width
+  #--------------------------------------------------------------------------
+  def window_width
+    Graphics.width - 128
+  end
+  #--------------------------------------------------------------------------
+  # ● Obtain window height
+  #--------------------------------------------------------------------------
+  def window_height
+    fitting_height(visible_line_number)
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire number of display lines
+  #--------------------------------------------------------------------------
+  def visible_line_number
+    return 4
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquisition of number of items
+  #--------------------------------------------------------------------------
+  def item_max
+    $game_party.battle_members.size
+  end
+  #--------------------------------------------------------------------------
+  # ● Refresh
+  #--------------------------------------------------------------------------
+  def refresh
+    contents.clear
+    draw_all_items
+  end
+  #--------------------------------------------------------------------------
+  # ● Drawing items
+  #--------------------------------------------------------------------------
+  def draw_item(index)
+    actor = $game_party.battle_members[index]
+    draw_basic_area(basic_area_rect(index), actor)
+    draw_gauge_area(gauge_area_rect(index), actor)
+  end
+  #--------------------------------------------------------------------------
+  # ● Get the rectangle of the basic area
+  #--------------------------------------------------------------------------
+  def basic_area_rect(index)
+    rect = item_rect_for_text(index)
+    rect.width -= gauge_area_width + 10
+    rect
+  end
+  #--------------------------------------------------------------------------
+  # ● Acquire gauge area rectangle
+  #--------------------------------------------------------------------------
+  def gauge_area_rect(index)
+    rect = item_rect_for_text(index)
+    rect.x += rect.width - gauge_area_width
+    rect.width = gauge_area_width
+    rect
+  end
+  #--------------------------------------------------------------------------
+  # ● Get the width of gauge area
+  #--------------------------------------------------------------------------
+  def gauge_area_width
+    return 220
+  end
+  #--------------------------------------------------------------------------
+  # ● Drawing the basic area
+  #--------------------------------------------------------------------------
+  def draw_basic_area(rect, actor)
+    draw_actor_name(actor, rect.x + 0, rect.y, 100)
+    draw_actor_icons(actor, rect.x + 104, rect.y, rect.width - 104)
+  end
+  #--------------------------------------------------------------------------
+  # ● Drawing a gauge area
+  #--------------------------------------------------------------------------
+  def draw_gauge_area(rect, actor)
+    if $data_system.opt_display_tp
+      draw_gauge_area_with_tp(rect, actor)
+    else
+      draw_gauge_area_without_tp(rect, actor)
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Drawing gauge area (with TP)
+  #--------------------------------------------------------------------------
+  def draw_gauge_area_with_tp(rect, actor)
+    draw_actor_hp(actor, rect.x + 0, rect.y, 72)
+    draw_actor_mp(actor, rect.x + 82, rect.y, 64)
+    draw_actor_tp(actor, rect.x + 156, rect.y, 64)
+  end
+  #--------------------------------------------------------------------------
+  # ● Drawing gauge area (without TP)
+  #--------------------------------------------------------------------------
+  def draw_gauge_area_without_tp(rect, actor)
+    draw_actor_hp(actor, rect.x + 0, rect.y, 134)
+    draw_actor_mp(actor, rect.x + 144,  rect.y, 76)
+  end
+end
+

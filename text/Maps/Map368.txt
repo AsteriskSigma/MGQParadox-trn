@@ -1,0 +1,7 @@
+"【アリス】" -> "【Alice】"
+"おお！　ここが噂の隠し宝物庫に違いないぞ！" -> "Oh! This must be a hidden treasure chest of rumors!"
+"【イリアス】" -> "【Iliad】"
+"ここが隠し宝物庫ですね！" -> "This is a hidden treasures store!"
+"さあ、財宝を頂戴しましょう……♪" -> "Let's get treasure now ... ♪"
+"【ボニー】" -> "【Bonnie】"
+"これだから、海賊稼業はやめられんな！" -> "As a result, pirates can not stop working!"

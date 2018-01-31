@@ -1,0 +1,19 @@
+// EVENT 0335
+Name "Ledo mountain battle blockade"
+
+If(0,4,0)
+ ShowMessageFace("alice_fc5",2,0,2,1)
+ ShowMessage("【Alice】")
+ ShowMessage("If you get bad, you will not get caught up in battle ...")
+ ShowMessage("Nagai is useless, Luke.")
+ 0()
+EndIf()
+If(0,5,0)
+ ShowMessageFace("iriasu_fc4",2,0,2,2)
+ ShowMessage("【Iliad】")
+ ShowMessage("In such a place, the monsters skirmish each other ... ...")
+ ShowMessage("The one not involved is better, Luca.")
+ 0()
+EndIf()
+0()
+

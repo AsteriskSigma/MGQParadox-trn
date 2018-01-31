@@ -1,0 +1,17 @@
+// EVENT 0159
+Name "Colosseum after the game"
+
+ChangeSwitch(81,81,1)
+ChangeSwitch(84,84,1)
+ChangeSwitch(85,85,1)
+ChangeSwitch(86,86,1)
+ChangeSwitch(27,27,1)
+ChangeSwitch(87,87,1)
+If(0,28,0)
+ ChangeSwitch(28,28,1)
+ ChangeVariable(902,902,0,1,908)
+ 0()
+EndIf()
+RunCommonEvent(112)
+0()
+

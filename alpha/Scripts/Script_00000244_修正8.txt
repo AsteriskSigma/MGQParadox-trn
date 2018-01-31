@@ -1,0 +1,139 @@
+#No reflections added
+module NWConst::UsableItem
+	IGNORE_REFLECTION_ID = [41,42,43,44,45,46,47,48,49,50,51,52]
+end
+
+class Scene_Battle < Scene_Base
+	#--------------------------------------------------------------------------
+	# ○ Activate skill / item
+	#--------------------------------------------------------------------------
+	def invoke_item(target, item)
+		return unless @subject.alive?
+		if target.item_reflection?(@subject,item)
+			invoke_magic_reflection(target, item)
+		else
+			apply_item_effects(apply_substitute(target, item), item)
+		end
+		@subject.last_target_index = target.index
+	end
+end
+
+class Game_Battler < Game_BattlerBase
+	def item_reflection?(user ,item)
+		return false unless alive?
+		i = user.final_elements(item).select{|element| element_ignore_reflection?(element)}
+		if i.size > 0
+			return i.all?{|element| element_reflection(element)}
+		else
+			return rand < item_mrf(user, item) || user.final_elements(item).any?{|element| element_reflection(element)}
+		end
+	end
+	def element_ignore_reflection?(id)
+		NWConst::UsableItem::IGNORE_REFLECTION_ID.include?(id)
+	end
+end
+
+#Do not count as time stops
+class Scene_Battle < Scene_Base
+	#--------------------------------------------------------------------------
+	# ○ Apply skill / item to target
+	#--------------------------------------------------------------------------
+	def process_invoke_item(base_action, first_use_items)
+		enable_counter = !BattleManager.giveup?
+		base_item = base_action.item
+		@subject.invoke_repeats(base_item).times do |repeat_time|
+			break unless @subject.current_action
+			use_items = (repeat_time == 0 ? first_use_items : base_action.use_items(false))
+			display_item = use_items.size == 1 ? use_items[0] : base_item
+			if repeat_time != 0
+				process_skill_word(display_item, base_action)
+			end
+			use_items.each_with_index do |item, item_time|
+				
+				break unless @subject.current_action
+				if repeat_time != 0 or item_time != 0 # Return from counterattack skill
+					display_skill_name(display_item)
+					display_use_item(base_action, display_item)
+				end
+				enable_invoke = true
+				action = Game_Action.new(@subject)
+				action.send(item.is_skill? ? :set_skill : :set_item, item.id)
+				action.target_index = base_action.target_index
+				targets = action.make_targets.compact
+				targets.delete(@subject) if item.target_reject_user?
+				show_animation(targets, item.animation_id)
+				item.add_anime.each {|anime_id| show_animation(targets, anime_id) }
+				if enable_counter                     # Extended counterattack
+					targets.uniq.each {|target|
+						if target.item_counter_ex?(target,item)
+							invoke_counter_attack(target, item)
+							enable_invoke = false           # Disable skill activation and normal counterattack
+							break                           # Invalid afterward counterattack
+						end
+					}
+				end
+				if enable_invoke                      # Activate effect
+					$game_temp.normal_invoke_start
+					targets.each {|target| item.repeats.times { invoke_item(target, item) } }
+					@subject.item_one_use_apply(item, targets, self)
+					$game_temp.normal_invoke_end
+				end
+				if enable_invoke and enable_counter   # Usually fight back
+					targets.uniq.each {|target|
+						if target.item_counter?(target,item)
+							invoke_counter_attack(target, item)
+						end
+					}
+				end
+				enable_counter = false  # Only the first skill of the first round can fight back
+				@log_window.clear
+			end # use_items.each
+			@log_window.clear  # 2Clear on line may be ignored by break
+			break if $game_troop.all_dead?
+		end # invoke_repeats.times
+	end
+end
+
+class Game_Battler
+	def enable_counter?
+		alive? && !($game_party.in_over_drive? && $game_party.od_user == self)
+	end
+	def item_counter?(user ,item)
+		enable_counter? && rand < item_cnt(user, item)
+	end
+	
+	def item_counter_ex?(user , item)
+		enable_counter? && rand < item_cnt_ex(user, item)
+	end
+end
+
+#Change annihilation
+#==============================================================================
+# ■ Game_Party
+#==============================================================================
+class Game_Party < Game_Unit
+	def all_dead?
+		return (super || alive_members.all?{|member|member.all_dead_state?})&& !$game_switches[NWConst::Sw::ALL_DEAD_DISABLE] 
+	end
+end
+
+
+class Game_Battler < Game_BattlerBase
+	def all_dead_state?
+		states.any?{|state| state.all_dead?}
+	end
+end
+
+
+class RPG::State < RPG::BaseItem
+	def all_dead?
+		@data_ex.key?(:all_dead) ? @data_ex[:all_dead] : false
+	end
+end
+
+class Game_Party < Game_Unit
+	def battle_members_id
+		@actors[0, max_battle_members]
+	end
+end
+

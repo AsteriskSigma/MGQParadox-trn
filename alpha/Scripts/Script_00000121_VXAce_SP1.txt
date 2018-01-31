@@ -1,0 +1,158 @@
+#==============================================================================
+# ■ VXAce_SP1
+#------------------------------------------------------------------------------
+# Correct the defect of the preset script. User defined script material,
+# In principle place it below this section.
+#==============================================================================
+
+#------------------------------------------------------------------------------
+# 【Fixes】
+#------------------------------------------------------------------------------
+# ● In the event command [change state], simultaneously add and release the same state
+#   Fixed a bug that the addition after the second time fails when it goes.
+# ● In the event command [Display animation], the animation being displayed is
+#   Fixed a bug that was not synchronized with the scroll of the screen.
+# - Fixed a bug that automatic battle behavior is not selected properly.
+# ● Equipment that is no longer equipped can not be equipped with another accessory due to the disconnected equipment
+#   When it became, the problem that the equipment proliferated was corrected.
+# ● A problem that an extra load is applied after executing the event command [Picture Erase]
+#   Fixed.
+# ● With the option of \"Move route\" checked \"Skip if it can not move\"
+#   When you touch the event of trigger [contact from player], the event is running
+#   Fixed a bug that startup reservation will be done.
+# - Fixed a problem that state validity is not reflected on magic reflected skills
+# It was.
+# ● Even if bold or italics is enabled by default in the font, status pictures
+#   Fixed a bug that returned to an invalid state, such as when switching faces.
+#------------------------------------------------------------------------------
+class Game_Battler
+  attr_accessor :magic_reflection
+  #--------------------------------------------------------------------------
+  # ● Determination of hostile relationship
+  #--------------------------------------------------------------------------
+  alias vxace_sp1_opposite? opposite?
+  def opposite?(battler)
+    vxace_sp1_opposite?(battler) || battler.magic_reflection
+  end
+end
+#------------------------------------------------------------------------------
+class Game_Actor
+  #--------------------------------------------------------------------------
+  # ● Remove the equipment that can not be equipped
+  #     item_gain : Returning the removed equipment to the party
+  #--------------------------------------------------------------------------
+  alias vxace_sp1_release_unequippable_items release_unequippable_items
+  def release_unequippable_items(item_gain = true)
+    loop do
+      last_equips = equips.dup
+      vxace_sp1_release_unequippable_items(item_gain)
+      return if equips == last_equips
+    end
+  end
+  #--------------------------------------------------------------------------
+  # ● Create battle behavior during automatic battle
+  #--------------------------------------------------------------------------
+  def make_auto_battle_actions
+    @actions.size.times do |i|
+      @actions[i] = make_action_list.max_by {|action| action.value }
+    end
+  end
+end
+#------------------------------------------------------------------------------
+class Game_Player
+  #--------------------------------------------------------------------------
+  # ● Activate map event
+  #     triggers : Trigger array
+  #     normal   : Priority [same as normal character] or not
+  #--------------------------------------------------------------------------
+  alias vxace_sp1_start_map_event start_map_event
+  def start_map_event(x, y, triggers, normal)
+    return if $game_map.interpreter.running?
+    vxace_sp1_start_map_event(x, y, triggers, normal)
+  end
+end
+#------------------------------------------------------------------------------
+class Game_Picture
+  #--------------------------------------------------------------------------
+  # ● Picture erasing
+  #--------------------------------------------------------------------------
+  alias vxace_sp1_erase erase
+  def erase
+    vxace_sp1_erase
+    @origin = 0
+  end
+end
+#------------------------------------------------------------------------------
+class Game_Interpreter
+  #--------------------------------------------------------------------------
+  # ● State change
+  #--------------------------------------------------------------------------
+  alias vxace_sp1_command_313 command_313
+  def command_313
+    vxace_sp1_command_313
+    $game_party.clear_results
+  end
+end
+#------------------------------------------------------------------------------
+class Sprite_Character
+  #--------------------------------------------------------------------------
+  # ● Update location
+  #--------------------------------------------------------------------------
+  alias vxace_sp1_update_position update_position
+  def update_position
+    move_animation(@character.screen_x - x, @character.screen_y - y)
+    vxace_sp1_update_position
+  end
+  #--------------------------------------------------------------------------
+  # ● Move animation
+  #--------------------------------------------------------------------------
+  def move_animation(dx, dy)
+    if @animation && @animation.position != 3
+      @ani_ox += dx
+      @ani_oy += dy
+      @ani_sprites.each do |sprite|
+        sprite.x += dx
+        sprite.y += dy
+      end
+    end
+  end
+end
+#------------------------------------------------------------------------------
+class Sprite_Picture
+  #--------------------------------------------------------------------------
+  # ● Updating the transfer source bitmap
+  #--------------------------------------------------------------------------
+  alias vxace_sp1_update_bitmap update_bitmap
+  def update_bitmap
+    if @picture.name.empty?
+      self.bitmap = nil
+    else
+      vxace_sp1_update_bitmap
+    end
+  end
+end
+#------------------------------------------------------------------------------
+class Window_Base
+  #--------------------------------------------------------------------------
+  # ● Resetting font settings
+  #--------------------------------------------------------------------------
+  alias vxace_sp1_reset_font_settings reset_font_settings
+  def reset_font_settings
+    vxace_sp1_reset_font_settings
+    contents.font.bold = Font.default_bold
+    contents.font.italic = Font.default_italic
+  end
+end
+#------------------------------------------------------------------------------
+class Scene_Battle
+  #--------------------------------------------------------------------------
+  # ● Activate magic reflex
+  #--------------------------------------------------------------------------
+  alias vxace_sp1_invoke_magic_reflection invoke_magic_reflection
+  def invoke_magic_reflection(target, item)
+    @subject.magic_reflection = true
+    vxace_sp1_invoke_magic_reflection(target, item)
+    @subject.magic_reflection = false
+  end
+end
+

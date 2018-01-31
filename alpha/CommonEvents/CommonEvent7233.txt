@@ -1,0 +1,27 @@
+// EVENT 7233
+Name "Julia: Defeat"
+
+RunCommonEvent(7000)
+PictureDisplay(5,"80_mob_sensi1_st01",0,0,0,0,100,100,255,0)
+PictureClear(6)
+ShowMessageFace("mob_sensi1_fc1",0,0,2,1)
+ShowMessage("【Julia】")
+ShowMessage("It's my win.")
+ShowMessage("I'll take the wager then.")
+125(1,0,600)
+ShowMessageFace("",0,0,2,2)
+ShowMessage("Luka hands over 600G!")
+ShowMessageFace("mob_sensi1_fc1",0,0,2,3)
+ShowMessage("【Julia】")
+ShowMessage("I'll challenge you any time.")
+ShowMessage("No matter what, I'll always win...")
+If(0,2331,1)
+ PictureClear(5)
+ 281(1)
+ TeleportPlayer(0,21,65,41,2,0)
+ 216(0)
+ 0()
+EndIf()
+EndEventProcessing()
+0()
+
